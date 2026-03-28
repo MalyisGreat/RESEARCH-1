@@ -140,6 +140,31 @@ python -m arc_tactic3.language_partial_untied_watch --watch-dir artifacts/watch_
 python -m arc_tactic3.language_nanochat_watch --watch-dir artifacts/watch_runs/nanochat_watch_50m_20260328_retry2
 ```
 
+Launch the current best candidate (`partial_untied`) on an A100 or H100 with automatic hardware defaults, FineWeb-Edu streaming/cache build, checkpoints, live progress, and fixed-prompt samples:
+
+```bash
+python -m arc_tactic3.language_partial_untied_cluster \
+  --output-dir runs/partial_untied_cluster_h100 \
+  --device cuda
+```
+
+To inspect the resolved hardware-tuned config before running:
+
+```bash
+python -m arc_tactic3.language_partial_untied_cluster \
+  --output-dir runs/partial_untied_cluster_h100 \
+  --device cuda \
+  --print-config
+```
+
+To watch an active cluster run from another shell:
+
+```bash
+python -m arc_tactic3.language_partial_untied_cluster \
+  --target-watch-dir runs/partial_untied_cluster_h100 \
+  --watch-once
+```
+
 Key benchmark and experiment sources live under:
 
 - [`arc_tactic3/`](./arc_tactic3)
