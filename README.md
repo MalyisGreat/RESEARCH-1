@@ -27,39 +27,50 @@ There is also some ARC/agent code preserved in `arc_tactic3/` because it is part
 
 ## Main Results
 
-### 50M-token head-to-head
+### 50M-token head-to-head watch runs
 
-| Model | Params | Final val loss | Train tok/s | Pure train tok/s | Peak VRAM |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `partial_untied` | 8,069,555 | 5.3370 | 37.5k | 38.5k | 2201.9 MB |
-| `nanochat_small` | 8,125,570 | 5.3958 | 39.9k | 41.5k | 3931.2 MB |
+This is the cleanest current headline because it compares the two main models under the same long-run token budget and the same local cache path. It is still only a 1-seed result, so it should be read as a strong single-run comparison, not a settled scaling-law conclusion.
 
-Source artifacts:
-
-- [`partial_untied` final run](./artifacts/watch_runs/partial_untied_watch_50m_20260328/final.json)
-- [`nanochat_small` final run](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json)
+| Model | Seeds | Train tokens | Params | Final val loss | Train tok/s | Pure train tok/s | Peak VRAM | Artifact |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| `partial_untied` | 1 | 50.0M | 8,069,555 | 5.3370 | 37.5k | 38.5k | 2201.9 MB | [`partial_untied_watch_50m_20260328/final.json`](./artifacts/watch_runs/partial_untied_watch_50m_20260328/final.json) |
+| `nanochat_small` | 1 | 50.0M | 8,125,570 | 5.3958 | 39.9k | 41.5k | 3931.2 MB | [`nanochat_watch_50m_20260328_retry2/final.json`](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json) |
 
 ![50M loss curve](./figures/loss_curve_50m.png)
 
 ![50M tradeoff](./figures/tradeoff_50m.png)
 
-### Recurrent-family progression
+### Fair 2-seed short-budget sweep
 
-In the recurrent-only fair comparison sweep, the current strongest near-budget line is `partial_untied`, which improved over the older recurrent champion:
+This section stays inside one artifact only: [`language_recurrent_nano_tricks_fair_20260327.json`](./artifacts/benchmark_runs/language/language_recurrent_nano_tricks_fair_20260327.json). It should be read as a short-budget architectural sweep, not as the same regime as the 50M watch runs.
 
-| Model | Params | Mean final val loss | Mean train tok/s |
-| --- | ---: | ---: | ---: |
-| `recurrent_baseline` | 7,787,379 | 7.5159 | 51.3k |
-| `recurrent_champion` | 7,995,315 | 7.4073 | 51.2k |
-| `partial_untied` | 8,143,795 | 7.3573 | 50.2k |
-| `factorized_untied` | 11,220,979 | 7.2199 | 53.7k |
-| `nanochat_small` | 8,125,570 | 7.2290 | 35.1k |
+| Model | Seeds | Train steps | Params | Mean final val loss | Mean train tok/s | Mean peak VRAM | Artifact |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| `recurrent_baseline` | 2 | 192 | 7,787,379 | 7.5159 | 51.3k | 1904.5 MB | fair 2-seed |
+| `recurrent_champion` | 2 | 192 | 7,995,315 | 7.4073 | 51.2k | 1968.4 MB | fair 2-seed |
+| `partial_untied` | 2 | 192 | 8,143,795 | 7.3573 | 50.2k | 2284.5 MB | fair 2-seed |
+| `nanochat_small` | 2 | 192 | 8,125,570 | 7.6712 | 28.8k | 4187.0 MB | fair 2-seed |
 
-Primary artifact:
+Parameter-expanded models belong in a separate bucket:
 
-- [`language_recurrent_nano_tricks_fair_20260327.json`](./artifacts/benchmark_runs/language/language_recurrent_nano_tricks_fair_20260327.json)
+| Model | Seeds | Train steps | Params | Mean final val loss | Mean train tok/s |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `factorized_untied` | 2 | 192 | 11,220,979 | 7.2199 | 53.7k |
+| `full_untied` | 2 | 192 | 15,024,387 | 7.1254 | 50.8k |
 
-![Quality throughput scatter](./figures/quality_throughput_scatter.png)
+![Fair short-budget sweep](./figures/fair_short_budget_scatter.png)
+
+### Separate Nanochat comparison regime
+
+This is a different experiment family and should not be mixed into the fair 2-seed table above. The numbers below come only from [`language_nanochat_actual_compare_1p5x_moredata_20260327.json`](./artifacts/benchmark_runs/language/language_nanochat_actual_compare_1p5x_moredata_20260327.json).
+
+| Model | Params | Mean final val loss | Mean train tok/s | Mean peak VRAM |
+| --- | ---: | ---: | ---: | ---: |
+| `baseline` | 7,787,379 | 7.2694 | 59.4k | 1904.5 MB |
+| `windowed_32` | 7,787,379 | 7.2643 | 59.4k | 2083.7 MB |
+| `nanochat_small` | 8,125,570 | 7.2290 | 35.1k | 3895.5 MB |
+
+![Separate Nanochat regime](./figures/nanochat_separate_compare_scatter.png)
 
 ### Synthetic fast-learning scaling
 
@@ -82,6 +93,7 @@ Primary artifact:
 - A small recurrent memory architecture can be competitive with, and in some settings beat, a Nanochat-style small transformer at similar parameter counts.
 - The best current recurrent line is not the original baseline. `partial_untied` appears to be the strongest stable recurrent variant in this repo.
 - Nanochat-style models remain attractive on raw throughput, but their VRAM cost is much higher in the local experiments preserved here.
+- The reporting is split by regime on purpose: long-run watch results, fair 2-seed short-budget sweep, and separate Nanochat comparison runs should not be read as one merged table.
 - The architecture search contained a large number of negative results. Short-budget wins frequently disappeared under longer holds, which is why the negative artifacts are preserved.
 - The strongest architecture insight from the later GPU work is that stateful memory seems valuable, but naive dense memory writeback paths are inefficient. Several compact or chunked-memory variants looked promising early and then failed to hold.
 
@@ -120,7 +132,7 @@ The benchmark scripts themselves are in:
 ## Limitations
 
 - This is a research repo, not a final benchmark suite.
-- Some results are 2-seed averages, some are 1-seed long runs, and some are smoke or cheap-screen artifacts.
+- Some results are 2-seed averages, some are 1-seed long runs, and some are smoke or cheap-screen artifacts. They are now reported in separate sections, but they still should not be over-interpreted.
 - The Nanochat baseline is a local Nanochat-style reimplementation and training harness, not the official upstream training codepath.
 - Large derived dataset caches were not committed directly when that would create impractical or GitHub-incompatible artifacts.
 - Some code in `arc_tactic3/` is unrelated to the central language-model comparison and is preserved for completeness rather than because it is part of the README’s core claims.

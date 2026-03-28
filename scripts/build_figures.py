@@ -126,25 +126,17 @@ def _build_fastlearn_scaling(summary: dict) -> None:
     }
 
 
-def _build_model_scatter(summary: dict) -> None:
+def _build_fair_short_budget(summary: dict) -> None:
     fair = _load_json(ARTIFACTS / "benchmark_runs" / "language" / "language_recurrent_nano_tricks_fair_20260327.json")
-    actual = _load_json(ARTIFACTS / "benchmark_runs" / "language" / "language_nanochat_actual_compare_1p5x_moredata_20260327.json")
-
-    chosen = {
-        "recurrent_baseline": fair["summary"]["recurrent_baseline"],
-        "recurrent_champion": fair["summary"]["recurrent_champion"],
-        "partial_untied": fair["summary"]["partial_untied"],
-        "factorized_untied": fair["summary"]["factorized_untied"],
-        "nanochat_small": actual["summary"]["nanochat_small"],
-    }
-
-    normalized = {}
-    for name, row in chosen.items():
-        normalized[name] = {
-            "mean_final_val_loss": row.get("mean_final_val_loss", row.get("avg_final_val_loss")),
-            "mean_train_tok_per_sec": row.get("mean_train_tok_per_sec", row.get("avg_train_tok_per_sec")),
+    normalized = {
+        name: {
+            "mean_final_val_loss": row["mean_final_val_loss"],
+            "mean_train_tok_per_sec": row["mean_train_tok_per_sec"],
+            "mean_peak_vram_mb": row["mean_peak_vram_mb"],
             "parameter_count": row["parameter_count"],
         }
+        for name, row in fair["summary"].items()
+    }
 
     plt.figure(figsize=(8.8, 5.4))
     colors = {
@@ -153,6 +145,9 @@ def _build_model_scatter(summary: dict) -> None:
         "partial_untied": "#2f855a",
         "factorized_untied": "#805ad5",
         "nanochat_small": "#dd6b20",
+        "full_untied": "#97266d",
+        "gru_only": "#718096",
+        "low_rank_untied": "#319795",
     }
     for name, row in normalized.items():
         plt.scatter(
@@ -167,13 +162,63 @@ def _build_model_scatter(summary: dict) -> None:
 
     plt.xlabel("Train Throughput (k tok/s)")
     plt.ylabel("Mean Final Val Loss")
-    plt.title("Quality / Throughput Tradeoff")
+    plt.title("Fair 2-Seed Short-Budget Sweep")
     plt.grid(alpha=0.25)
     plt.tight_layout()
-    plt.savefig(FIGURES / "quality_throughput_scatter.png", dpi=180)
+    plt.savefig(FIGURES / "fair_short_budget_scatter.png", dpi=180)
     plt.close()
 
-    summary["model_scatter"] = normalized
+    summary["fair_short_budget_2seed"] = {
+        "artifact": "language_recurrent_nano_tricks_fair_20260327.json",
+        "seeds": fair["seeds"],
+        "train_steps": fair["config"]["train_steps"],
+        "train_blocks": fair["config"]["train_blocks"],
+        "sequence_length": fair["runs"][0]["config"]["sequence_length"],
+        "models": normalized,
+    }
+
+
+def _build_separate_nanochat_compare(summary: dict) -> None:
+    actual = _load_json(ARTIFACTS / "benchmark_runs" / "language" / "language_nanochat_actual_compare_1p5x_moredata_20260327.json")
+    normalized = {
+        name: {
+            "avg_final_val_loss": row["avg_final_val_loss"],
+            "avg_train_tok_per_sec": row["avg_train_tok_per_sec"],
+            "avg_peak_vram_mb": row["avg_peak_vram_mb"],
+            "parameter_count": row["parameter_count"],
+        }
+        for name, row in actual["summary"].items()
+    }
+
+    plt.figure(figsize=(8.8, 5.4))
+    colors = {
+        "baseline": "#4a5568",
+        "gru_only": "#718096",
+        "shared_projection": "#319795",
+        "windowed_32": "#2f855a",
+        "nanochat_small": "#dd6b20",
+    }
+    for name, row in normalized.items():
+        plt.scatter(
+            row["avg_train_tok_per_sec"] / 1000.0,
+            row["avg_final_val_loss"],
+            s=max(row["parameter_count"] / 30000.0, 40.0),
+            color=colors[name],
+            alpha=0.85,
+        )
+        plt.text(row["avg_train_tok_per_sec"] / 1000.0 + 0.2, row["avg_final_val_loss"] + 0.005, name, fontsize=8)
+    plt.xlabel("Train Throughput (k tok/s)")
+    plt.ylabel("Mean Final Val Loss")
+    plt.title("Separate 1.5x-Param Nanochat Comparison Regime")
+    plt.grid(alpha=0.25)
+    plt.tight_layout()
+    plt.savefig(FIGURES / "nanochat_separate_compare_scatter.png", dpi=180)
+    plt.close()
+
+    summary["nanochat_separate_compare_1p5x"] = {
+        "artifact": "language_nanochat_actual_compare_1p5x_moredata_20260327.json",
+        "models": normalized,
+    }
 
 
 def _write_summary_files(summary: dict) -> None:
@@ -189,6 +234,30 @@ def _write_summary_files(summary: dict) -> None:
                 "train_tok_per_sec": row["train_tok_per_sec"],
                 "pure_train_tok_per_sec": row["pure_train_tok_per_sec"],
                 "peak_vram_mb": row["peak_vram_mb"],
+                "parameter_count": row["parameter_count"],
+            }
+        )
+    for name, row in summary["fair_short_budget_2seed"]["models"].items():
+        rows.append(
+            {
+                "experiment": "fair_short_budget_2seed",
+                "artifact": summary["fair_short_budget_2seed"]["artifact"],
+                "model": name,
+                "final_val_loss": row["mean_final_val_loss"],
+                "train_tok_per_sec": row["mean_train_tok_per_sec"],
+                "peak_vram_mb": row["mean_peak_vram_mb"],
+                "parameter_count": row["parameter_count"],
+            }
+        )
+    for name, row in summary["nanochat_separate_compare_1p5x"]["models"].items():
+        rows.append(
+            {
+                "experiment": "nanochat_separate_compare_1p5x",
+                "artifact": summary["nanochat_separate_compare_1p5x"]["artifact"],
+                "model": name,
+                "final_val_loss": row["avg_final_val_loss"],
+                "train_tok_per_sec": row["avg_train_tok_per_sec"],
+                "peak_vram_mb": row["avg_peak_vram_mb"],
                 "parameter_count": row["parameter_count"],
             }
         )
@@ -233,7 +302,8 @@ def main() -> None:
     _build_50m_curves(summary)
     _build_50m_tradeoff(summary)
     _build_fastlearn_scaling(summary)
-    _build_model_scatter(summary)
+    _build_fair_short_budget(summary)
+    _build_separate_nanochat_compare(summary)
     _write_summary_files(summary)
     print("Generated figures and summary files.")
 

@@ -35,31 +35,99 @@
       "gpt2_like_seq_acc": 0.0
     }
   },
-  "model_scatter": {
-    "recurrent_baseline": {
-      "mean_final_val_loss": 7.515918612480164,
-      "mean_train_tok_per_sec": 51334.27612039454,
-      "parameter_count": 7787379
-    },
-    "recurrent_champion": {
-      "mean_final_val_loss": 7.40727236866951,
-      "mean_train_tok_per_sec": 51224.30325374432,
-      "parameter_count": 7995315
-    },
-    "partial_untied": {
-      "mean_final_val_loss": 7.3572618663311005,
-      "mean_train_tok_per_sec": 50206.788676880555,
-      "parameter_count": 8143795
-    },
-    "factorized_untied": {
-      "mean_final_val_loss": 7.219859853386879,
-      "mean_train_tok_per_sec": 53703.05139538637,
-      "parameter_count": 11220979
-    },
-    "nanochat_small": {
-      "mean_final_val_loss": 7.229031071066856,
-      "mean_train_tok_per_sec": 35134.70060735201,
-      "parameter_count": 8125570
+  "fair_short_budget_2seed": {
+    "artifact": "language_recurrent_nano_tricks_fair_20260327.json",
+    "seeds": [
+      13,
+      29
+    ],
+    "train_steps": 192,
+    "train_blocks": 8192,
+    "sequence_length": 127,
+    "models": {
+      "factorized_untied": {
+        "mean_final_val_loss": 7.219859853386879,
+        "mean_train_tok_per_sec": 53703.05139538637,
+        "mean_peak_vram_mb": 2130.73583984375,
+        "parameter_count": 11220979
+      },
+      "full_untied": {
+        "mean_final_val_loss": 7.12543910741806,
+        "mean_train_tok_per_sec": 50814.080170735644,
+        "mean_peak_vram_mb": 2439.51953125,
+        "parameter_count": 15024387
+      },
+      "gru_only": {
+        "mean_final_val_loss": 7.52835887670517,
+        "mean_train_tok_per_sec": 62149.227205684874,
+        "mean_peak_vram_mb": 2024.87890625,
+        "parameter_count": 7703857
+      },
+      "low_rank_untied": {
+        "mean_final_val_loss": 7.328871533274651,
+        "mean_train_tok_per_sec": 49003.5716154077,
+        "mean_peak_vram_mb": 2244.7578125,
+        "parameter_count": 11220979
+      },
+      "nanochat_small": {
+        "mean_final_val_loss": 7.671165108680725,
+        "mean_train_tok_per_sec": 28821.80539327168,
+        "mean_peak_vram_mb": 4187.02734375,
+        "parameter_count": 8125570
+      },
+      "partial_untied": {
+        "mean_final_val_loss": 7.3572618663311005,
+        "mean_train_tok_per_sec": 50206.788676880555,
+        "mean_peak_vram_mb": 2284.5263671875,
+        "parameter_count": 8143795
+      },
+      "recurrent_baseline": {
+        "mean_final_val_loss": 7.515918612480164,
+        "mean_train_tok_per_sec": 51334.27612039454,
+        "mean_peak_vram_mb": 1904.52490234375,
+        "parameter_count": 7787379
+      },
+      "recurrent_champion": {
+        "mean_final_val_loss": 7.40727236866951,
+        "mean_train_tok_per_sec": 51224.30325374432,
+        "mean_peak_vram_mb": 1968.4482421875,
+        "parameter_count": 7995315
+      }
+    }
+  },
+  "nanochat_separate_compare_1p5x": {
+    "artifact": "language_nanochat_actual_compare_1p5x_moredata_20260327.json",
+    "models": {
+      "baseline": {
+        "avg_final_val_loss": 7.2694175988435745,
+        "avg_train_tok_per_sec": 59395.376036457106,
+        "avg_peak_vram_mb": 1904.52490234375,
+        "parameter_count": 7787379
+      },
+      "gru_only": {
+        "avg_final_val_loss": 7.3034224808216095,
+        "avg_train_tok_per_sec": 72267.43913609834,
+        "avg_peak_vram_mb": 1963.41357421875,
+        "parameter_count": 7703857
+      },
+      "nanochat_small": {
+        "avg_final_val_loss": 7.229031071066856,
+        "avg_train_tok_per_sec": 35134.70060735201,
+        "avg_peak_vram_mb": 3895.48779296875,
+        "parameter_count": 8125570
+      },
+      "shared_projection": {
+        "avg_final_val_loss": 7.273692280054092,
+        "avg_train_tok_per_sec": 59477.178235088344,
+        "avg_peak_vram_mb": 2023.38037109375,
+        "parameter_count": 7745763
+      },
+      "windowed_32": {
+        "avg_final_val_loss": 7.26429195702076,
+        "avg_train_tok_per_sec": 59398.46299352767,
+        "avg_peak_vram_mb": 2083.68798828125,
+        "parameter_count": 7787379
+      }
     }
   }
 }
