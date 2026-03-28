@@ -1,0 +1,72 @@
+{
+  "base_config": {
+    "batch_size": 16,
+    "device": "cuda",
+    "dropout": 0.1,
+    "epochs": 10,
+    "eval_batch_size": 16,
+    "gpt2_d_model": 48,
+    "gpt2_ff_dim": 160,
+    "gpt2_heads": 4,
+    "gpt2_layers": 2,
+    "gru_embedding_dim": 48,
+    "gru_hidden_dim": 80,
+    "gru_memory_dim": null,
+    "learning_rate": 0.002,
+    "max_support": 8,
+    "query_examples": 12,
+    "seed": 13,
+    "support_shots": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "test_tasks": 64,
+    "train_support_min": 8,
+    "train_tasks": 192,
+    "use_amp": true,
+    "val_tasks": 48,
+    "weight_decay": 0.0001
+  },
+  "benchmark": "language_fastlearn_scaling",
+  "device": "cuda",
+  "results": {
+    "large": {
+      "fairness": {
+        "fast_gru_parameter_count": 144769,
+        "gpt2_like_parameter_count": 145184,
+        "parameter_gap_ok": true,
+        "relative_parameter_gap": 0.0028584417015649105,
+        "same_optimizer": "AdamW",
+        "same_schedule": true,
+        "same_support_query_protocol": true,
+        "same_task_distribution": true,
+        "same_vocab": true
+      },
+      "models": {
+        "fast_gru": {
+          "adaptation_auc_mean": 0.3733743174234405,
+          "parameter_count_mean": 144769.0,
+          "shot8_sequence_accuracy": 0.004557291744276881,
+          "shot8_token_accuracy": 0.379625104367733
+        },
+        "gpt2_like": {
+          "adaptation_auc_mean": 0.2438127298373729,
+          "parameter_count_mean": 145184.0,
+          "shot8_sequence_accuracy": 0.0,
+          "shot8_token_accuracy": 0.24738970771431923
+        }
+      },
+      "winner_by_adaptation_auc": "fast_gru"
+    }
+  },
+  "scales": [
+    "large"
+  ],
+  "seeds": [
+    13,
+    29
+  ]
+}

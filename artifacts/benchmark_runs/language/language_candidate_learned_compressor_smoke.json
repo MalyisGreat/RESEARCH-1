@@ -1,0 +1,208 @@
+{
+  "architecture_summary": {
+    "candidate": "learned_chunk_writer",
+    "design": [
+      "A GRU backbone produces token states and a ReLU^2 readout produces base token logits.",
+      "Tokens are grouped into chunks, but long-term memory is not mean-pooled.",
+      "A learned per-token write scorer chooses which token states to keep inside each chunk via a masked softmax.",
+      "A learned retain gate can suppress whole chunk summaries before they are written into long-term memory.",
+      "Queries read chunk summaries causally and add their memory contribution only through a partial untied token head."
+    ],
+    "question": "Can the model learn what to keep and discard for long-term memory?"
+  },
+  "benchmark": "language_candidate_learned_compressor",
+  "config": {
+    "batch_size": 16,
+    "cache_dataset_on_device": false,
+    "cache_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\fineweb_edu_first20m_gpt2tokens_cache.pt",
+    "chunk_size": 8,
+    "compute_val_bpb": false,
+    "device": "cuda",
+    "dropout": 0.1,
+    "eval_batch_size": 32,
+    "eval_interval": 8,
+    "learning_rate": 0.002,
+    "lr_schedule": "none",
+    "min_lr_scale": 1.0,
+    "optimizer_recipe": "default",
+    "paired_train_batches": true,
+    "partial_untied_tokens": 1024,
+    "pin_memory": true,
+    "recurrent_embedding_dim": 144,
+    "recurrent_hidden_dim": 288,
+    "recurrent_memory_dim": 144,
+    "reseed_per_model": true,
+    "seed": 13,
+    "sequence_length": 127,
+    "tensor_batching": false,
+    "tokenizer_name": "gpt2",
+    "train_blocks": 1024,
+    "train_schedule_seed": null,
+    "train_steps": 16,
+    "use_amp": true,
+    "use_fused_adamw": true,
+    "val_blocks": 64,
+    "warmup_steps": 0,
+    "weight_decay": 0.0001
+  },
+  "delta_vs_partial_untied": {
+    "chunk_mean_token_memory": {
+      "loss_minus_partial_untied": -1.2849273681640625,
+      "pure_train_tok_per_sec_minus_partial_untied": 6459.720367315182,
+      "train_tok_per_sec_minus_partial_untied": 4427.418203729838
+    },
+    "learned_chunk_writer": {
+      "loss_minus_partial_untied": -1.0674571990966797,
+      "pure_train_tok_per_sec_minus_partial_untied": 2379.825451233897,
+      "train_tok_per_sec_minus_partial_untied": 1531.5467918738796
+    }
+  },
+  "results": {
+    "chunk_mean_token_memory": {
+      "eval_overhead_seconds": 0.10489620000043942,
+      "final_val_loss": 8.258945941925049,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.937319278717041
+        },
+        {
+          "sequences_seen": 128.0,
+          "step": 8.0,
+          "tokens_seen": 16256.0,
+          "train_loss": 9.826080322265625,
+          "val_loss": 9.7405424118042
+        },
+        {
+          "sequences_seen": 256.0,
+          "step": 16.0,
+          "tokens_seen": 32512.0,
+          "train_loss": 8.493160247802734,
+          "val_loss": 8.258945941925049
+        }
+      ],
+      "initial_val_loss": 10.937319278717041,
+      "paired_train_batches": true,
+      "parameter_count": 8185121,
+      "peak_vram_mb": 2019.1376953125,
+      "pure_train_time_seconds": 0.5247088999994958,
+      "pure_train_tok_per_sec": 61961.975487801414,
+      "reseed_per_model": true,
+      "step_time_mean_ms": 32.794306249968486,
+      "step_time_median_ms": 32.25320000001375,
+      "total_training_time_seconds": 0.6296050999999352,
+      "train_tok_per_sec": 51638.717666047094,
+      "train_tokens_seen": 32512,
+      "val_bits_per_token": 11.915140353385297,
+      "val_bpb": null
+    },
+    "learned_chunk_writer": {
+      "eval_overhead_seconds": 0.1053170000004684,
+      "final_val_loss": 8.476416110992432,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.828388690948486
+        },
+        {
+          "sequences_seen": 128.0,
+          "step": 8.0,
+          "tokens_seen": 16256.0,
+          "train_loss": 9.889801979064941,
+          "val_loss": 9.91069221496582
+        },
+        {
+          "sequences_seen": 256.0,
+          "step": 16.0,
+          "tokens_seen": 32512.0,
+          "train_loss": 8.654769897460938,
+          "val_loss": 8.476416110992432
+        }
+      ],
+      "initial_val_loss": 10.828388690948486,
+      "paired_train_batches": true,
+      "parameter_count": 8269221,
+      "peak_vram_mb": 2079.64453125,
+      "pure_train_time_seconds": 0.5616936999995232,
+      "pure_train_tok_per_sec": 57882.08057172013,
+      "reseed_per_model": true,
+      "step_time_mean_ms": 35.1058562499702,
+      "step_time_median_ms": 32.91155000033541,
+      "total_training_time_seconds": 0.6670106999999916,
+      "train_tok_per_sec": 48742.846254191136,
+      "train_tokens_seen": 32512,
+      "val_bits_per_token": 12.228883487840095,
+      "val_bpb": null
+    },
+    "partial_untied": {
+      "eval_overhead_seconds": 0.10287069999867526,
+      "final_val_loss": 9.543873310089111,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.82751989364624
+        },
+        {
+          "sequences_seen": 128.0,
+          "step": 8.0,
+          "tokens_seen": 16256.0,
+          "train_loss": 9.851961135864258,
+          "val_loss": 9.960686683654785
+        },
+        {
+          "sequences_seen": 256.0,
+          "step": 16.0,
+          "tokens_seen": 32512.0,
+          "train_loss": 9.460618019104004,
+          "val_loss": 9.543873310089111
+        }
+      ],
+      "initial_val_loss": 10.82751989364624,
+      "paired_train_batches": true,
+      "parameter_count": 8143795,
+      "peak_vram_mb": 1932.72021484375,
+      "pure_train_time_seconds": 0.5857780000005732,
+      "pure_train_tok_per_sec": 55502.25512048623,
+      "reseed_per_model": true,
+      "step_time_mean_ms": 36.61112500003583,
+      "step_time_median_ms": 31.18425000047864,
+      "total_training_time_seconds": 0.6886486999992485,
+      "train_tok_per_sec": 47211.299462317256,
+      "train_tokens_seen": 32512,
+      "val_bits_per_token": 13.768898695338098,
+      "val_bpb": null
+    }
+  },
+  "summary": {
+    "chunk_mean_token_memory": {
+      "final_val_loss": 8.258945941925049,
+      "parameter_count": 8185121,
+      "peak_vram_mb": 2019.1376953125,
+      "pure_train_tok_per_sec": 61961.975487801414,
+      "train_tok_per_sec": 51638.717666047094
+    },
+    "learned_chunk_writer": {
+      "final_val_loss": 8.476416110992432,
+      "parameter_count": 8269221,
+      "peak_vram_mb": 2079.64453125,
+      "pure_train_tok_per_sec": 57882.08057172013,
+      "train_tok_per_sec": 48742.846254191136
+    },
+    "partial_untied": {
+      "final_val_loss": 9.543873310089111,
+      "parameter_count": 8143795,
+      "peak_vram_mb": 1932.72021484375,
+      "pure_train_tok_per_sec": 55502.25512048623,
+      "train_tok_per_sec": 47211.299462317256
+    }
+  }
+}

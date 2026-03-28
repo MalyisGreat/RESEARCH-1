@@ -1,0 +1,35 @@
+{
+  "device": "cuda",
+  "variants": {
+    "baseline_tensor": {
+      "associative_recurrent": {
+        "runtime": 0.17514879999998811,
+        "final_val_loss": 2.9657063484191895
+      },
+      "gpt2_like": {
+        "runtime": 0.06917880000037258,
+        "final_val_loss": 32.41559600830078
+      }
+    },
+    "optimized_tensor": {
+      "associative_recurrent": {
+        "runtime": 0.05614330000025802,
+        "final_val_loss": 3.0822105407714844
+      },
+      "gpt2_like": {
+        "runtime": 0.055062399999769696,
+        "final_val_loss": 34.044944763183594
+      }
+    },
+    "dataloader_path": {
+      "associative_recurrent": {
+        "runtime": 0.05031790000066394,
+        "final_val_loss": 3.2258167266845703
+      },
+      "gpt2_like": {
+        "runtime": 0.06120869999995193,
+        "final_val_loss": 35.70206069946289
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "device": "cuda",
+  "variants": {
+    "baseline_tensor": {
+      "runs": [
+        {
+          "seed": 13,
+          "models": {
+            "associative_recurrent": {
+              "runtime": 0.1610830999998143,
+              "final_val_loss": 3.372929096221924
+            },
+            "gpt2_like": {
+              "runtime": 0.06233619999966322,
+              "final_val_loss": 34.606781005859375
+            }
+          }
+        },
+        {
+          "seed": 29,
+          "models": {
+            "associative_recurrent": {
+              "runtime": 0.04176180000013119,
+              "final_val_loss": 3.2541136741638184
+            },
+            "gpt2_like": {
+              "runtime": 0.05136159999983647,
+              "final_val_loss": 34.13100051879883
+            }
+          }
+        }
+      ],
+      "summary": {
+        "associative_recurrent": {
+          "mean_runtime": 0.10142244999997274,
+          "mean_final_val_loss": 3.313521385192871
+        },
+        "gpt2_like": {
+          "mean_runtime": 0.05684889999974985,
+          "mean_final_val_loss": 34.3688907623291
+        }
+      }
+    },
+    "optimized_tensor": {
+      "runs": [
+        {
+          "seed": 13,
+          "models": {
+            "associative_recurrent": {
+              "runtime": 0.048698999999942316,
+              "final_val_loss": 3.3729705810546875
+            },
+            "gpt2_like": {
+              "runtime": 0.058276300000216,
+              "final_val_loss": 34.606746673583984
+            }
+          }
+        },
+        {
+          "seed": 29,
+          "models": {
+            "associative_recurrent": {
+              "runtime": 0.04058329999952548,
+              "final_val_loss": 3.254108428955078
+            },
+            "gpt2_like": {
+              "runtime": 0.05266070000016043,
+              "final_val_loss": 34.13115310668945
+            }
+          }
+        }
+      ],
+      "summary": {
+        "associative_recurrent": {
+          "mean_runtime": 0.0446411499997339,
+          "mean_final_val_loss": 3.313539505004883
+        },
+        "gpt2_like": {
+          "mean_runtime": 0.055468500000188214,
+          "mean_final_val_loss": 34.36894989013672
+        }
+      }
+    }
+  }
+}

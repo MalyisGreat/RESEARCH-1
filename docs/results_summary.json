@@ -1,0 +1,65 @@
+{
+  "runs_50m": {
+    "partial_untied": {
+      "final_val_loss": 5.336977809667587,
+      "train_tok_per_sec": 37517.13712351116,
+      "pure_train_tok_per_sec": 38499.206131484985,
+      "peak_vram_mb": 2201.89697265625,
+      "parameter_count": 8069555
+    },
+    "nanochat_small": {
+      "final_val_loss": 5.3957759737968445,
+      "train_tok_per_sec": 39919.828459079865,
+      "pure_train_tok_per_sec": 41475.345286622425,
+      "peak_vram_mb": 3931.23583984375,
+      "parameter_count": 8125570
+    }
+  },
+  "fastlearn_scaling": {
+    "small": {
+      "fast_gru_auc": 0.37206127025462965,
+      "gpt2_like_auc": 0.22444661458333334,
+      "fast_gru_seq_acc": 0.004557291666666666,
+      "gpt2_like_seq_acc": 0.0
+    },
+    "medium": {
+      "fast_gru_auc": 0.37555157696759256,
+      "gpt2_like_auc": 0.23714192708333334,
+      "fast_gru_seq_acc": 0.004557291666666666,
+      "gpt2_like_seq_acc": 0.0
+    },
+    "large": {
+      "fast_gru_auc": 0.37485532407407407,
+      "gpt2_like_auc": 0.2432183159722222,
+      "fast_gru_seq_acc": 0.003255208333333333,
+      "gpt2_like_seq_acc": 0.0
+    }
+  },
+  "model_scatter": {
+    "recurrent_baseline": {
+      "mean_final_val_loss": 7.515918612480164,
+      "mean_train_tok_per_sec": 51334.27612039454,
+      "parameter_count": 7787379
+    },
+    "recurrent_champion": {
+      "mean_final_val_loss": 7.40727236866951,
+      "mean_train_tok_per_sec": 51224.30325374432,
+      "parameter_count": 7995315
+    },
+    "partial_untied": {
+      "mean_final_val_loss": 7.3572618663311005,
+      "mean_train_tok_per_sec": 50206.788676880555,
+      "parameter_count": 8143795
+    },
+    "factorized_untied": {
+      "mean_final_val_loss": 7.219859853386879,
+      "mean_train_tok_per_sec": 53703.05139538637,
+      "parameter_count": 11220979
+    },
+    "nanochat_small": {
+      "mean_final_val_loss": 7.229031071066856,
+      "mean_train_tok_per_sec": 35134.70060735201,
+      "parameter_count": 8125570
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "benchmark": "language_realtext_smallopt_matrix",
+  "results": {
+    "fast_defaults": [
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.605104386806488,
+          "training_runtime_seconds": 0.35647919999973965
+        },
+        "gpt2_like": {
+          "final_val_loss": 15.942081689834595,
+          "training_runtime_seconds": 0.21480049999991024
+        }
+      },
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.798754245042801,
+          "training_runtime_seconds": 0.1542736999999761
+        },
+        "gpt2_like": {
+          "final_val_loss": 15.605276346206665,
+          "training_runtime_seconds": 0.21504759999970702
+        }
+      }
+    ],
+    "no_cache_on_device": [
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.743193358182907,
+          "training_runtime_seconds": 0.17293270000027405
+        },
+        "gpt2_like": {
+          "final_val_loss": 16.835872650146484,
+          "training_runtime_seconds": 0.2239425999996456
+        }
+      },
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.7657854855060577,
+          "training_runtime_seconds": 0.16955229999985022
+        },
+        "gpt2_like": {
+          "final_val_loss": 15.200390577316284,
+          "training_runtime_seconds": 0.19978600000013103
+        }
+      }
+    ],
+    "no_fused_adamw": [
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.645138531923294,
+          "training_runtime_seconds": 0.18283949999931792
+        },
+        "gpt2_like": {
+          "final_val_loss": 14.330981731414795,
+          "training_runtime_seconds": 0.21071550000033312
+        }
+      },
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.8068399131298065,
+          "training_runtime_seconds": 0.17233709999982239
+        },
+        "gpt2_like": {
+          "final_val_loss": 14.547154664993286,
+          "training_runtime_seconds": 0.2051739999997153
+        }
+      }
+    ],
+    "dataloader_path": [
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.777172178030014,
+          "training_runtime_seconds": 0.1673252999999022
+        },
+        "gpt2_like": {
+          "final_val_loss": 14.942988157272339,
+          "training_runtime_seconds": 0.21234259999982896
+        }
+      },
+      {
+        "associative_recurrent": {
+          "final_val_loss": 1.5884927809238434,
+          "training_runtime_seconds": 0.20963529999971797
+        },
+        "gpt2_like": {
+          "final_val_loss": 14.082908868789673,
+          "training_runtime_seconds": 0.2385776999999507
+        }
+      }
+    ]
+  }
+}

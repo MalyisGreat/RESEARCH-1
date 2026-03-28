@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "step": 24607,
+  "train_steps": 24607,
+  "progress": 1.0,
+  "tokens_seen": 50001424,
+  "target_tokens": 50001424,
+  "latest_val_loss": 5.3957759737968445,
+  "train_tok_per_sec": 39919.828459079865,
+  "pure_train_tok_per_sec": 41475.345286622425,
+  "peak_vram_mb": 3931.23583984375,
+  "final_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\nanochat_watch_50m_20260328_retry2\\final.json"
+}

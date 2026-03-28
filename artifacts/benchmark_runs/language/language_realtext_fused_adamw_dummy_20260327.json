@@ -1,0 +1,261 @@
+{
+  "benchmark": "language_realtext_fused_adamw_dummy",
+  "results": [
+    {
+      "seed": 13,
+      "fused": false,
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.164445877075195
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.320208787918091,
+              "val_loss": 3.2652536630630493
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.0896021127700806,
+              "val_loss": 1.3926184922456741
+            }
+          ],
+          "initial_val_loss": 6.164445877075195,
+          "final_val_loss": 1.3926184922456741,
+          "training_runtime_seconds": 0.246630799999366
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 42.18129348754883
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 24.422321319580078,
+              "val_loss": 21.47569227218628
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.479523658752441,
+              "val_loss": 13.355301141738892
+            }
+          ],
+          "initial_val_loss": 42.18129348754883,
+          "final_val_loss": 13.355301141738892,
+          "training_runtime_seconds": 0.20620340000004944
+        }
+      }
+    },
+    {
+      "seed": 13,
+      "fused": true,
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.164445877075195
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.320244312286377,
+              "val_loss": 3.2652937173843384
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.089598536491394,
+              "val_loss": 1.3926257193088531
+            }
+          ],
+          "initial_val_loss": 6.164445877075195,
+          "final_val_loss": 1.3926257193088531,
+          "training_runtime_seconds": 0.17502189999959228
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 42.18129348754883
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 24.42212677001953,
+              "val_loss": 21.475632667541504
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.479490280151367,
+              "val_loss": 13.35538125038147
+            }
+          ],
+          "initial_val_loss": 42.18129348754883,
+          "final_val_loss": 13.35538125038147,
+          "training_runtime_seconds": 0.1853608000001259
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "fused": false,
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.041724443435669
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.437183380126953,
+              "val_loss": 2.848825454711914
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.291853666305542,
+              "val_loss": 0.8737308531999588
+            }
+          ],
+          "initial_val_loss": 6.041724443435669,
+          "final_val_loss": 0.8737308531999588,
+          "training_runtime_seconds": 0.16728669999974954
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 43.3592472076416
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 26.491422653198242,
+              "val_loss": 22.77970314025879
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.55774211883545,
+              "val_loss": 13.311847448348999
+            }
+          ],
+          "initial_val_loss": 43.3592472076416,
+          "final_val_loss": 13.311847448348999,
+          "training_runtime_seconds": 0.20550490000005084
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "fused": true,
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.041724443435669
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.4371695518493652,
+              "val_loss": 2.8488558530807495
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.2918531894683838,
+              "val_loss": 0.8737981021404266
+            }
+          ],
+          "initial_val_loss": 6.041724443435669,
+          "final_val_loss": 0.8737981021404266,
+          "training_runtime_seconds": 0.16690970000036032
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 43.3592472076416
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 26.491456985473633,
+              "val_loss": 22.77973747253418
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.557771682739258,
+              "val_loss": 13.311891317367554
+            }
+          ],
+          "initial_val_loss": 43.3592472076416,
+          "final_val_loss": 13.311891317367554,
+          "training_runtime_seconds": 0.20035989999996673
+        }
+      }
+    }
+  ]
+}

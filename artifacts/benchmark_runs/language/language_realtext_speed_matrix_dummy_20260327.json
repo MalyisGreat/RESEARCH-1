@@ -1,0 +1,281 @@
+{
+  "benchmark": "language_realtext_speed_matrix_dummy",
+  "results": [
+    {
+      "variant": "baseline_path",
+      "seed": 13,
+      "config": {
+        "tensor_batching": false,
+        "cache_dataset_on_device": false,
+        "pin_memory": false
+      },
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.164445877075195
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.320244312286377,
+              "val_loss": 3.2652937173843384
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.089598536491394,
+              "val_loss": 1.3926257193088531
+            }
+          ],
+          "initial_val_loss": 6.164445877075195,
+          "final_val_loss": 1.3926257193088531,
+          "training_runtime_seconds": 0.4847287000002325
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 42.18129348754883
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 24.42212677001953,
+              "val_loss": 21.475632667541504
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.479490280151367,
+              "val_loss": 13.35538125038147
+            }
+          ],
+          "initial_val_loss": 42.18129348754883,
+          "final_val_loss": 13.35538125038147,
+          "training_runtime_seconds": 0.20029479999993782
+        }
+      }
+    },
+    {
+      "variant": "fast_path",
+      "seed": 13,
+      "config": {
+        "tensor_batching": true,
+        "cache_dataset_on_device": true,
+        "pin_memory": true
+      },
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.164445877075195
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.3287911415100098,
+              "val_loss": 3.4309938549995422
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.3135175704956055,
+              "val_loss": 1.5647966861724854
+            }
+          ],
+          "initial_val_loss": 6.164445877075195,
+          "final_val_loss": 1.5647966861724854,
+          "training_runtime_seconds": 0.20490540000082547
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 42.18129348754883
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 24.54127311706543,
+              "val_loss": 21.80033779144287
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 15.203011512756348,
+              "val_loss": 13.532755136489868
+            }
+          ],
+          "initial_val_loss": 42.18129348754883,
+          "final_val_loss": 13.532755136489868,
+          "training_runtime_seconds": 0.22115870000016002
+        }
+      }
+    },
+    {
+      "variant": "baseline_path",
+      "seed": 29,
+      "config": {
+        "tensor_batching": false,
+        "cache_dataset_on_device": false,
+        "pin_memory": false
+      },
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.041724443435669
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.4371695518493652,
+              "val_loss": 2.8488558530807495
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.2918531894683838,
+              "val_loss": 0.8737981021404266
+            }
+          ],
+          "initial_val_loss": 6.041724443435669,
+          "final_val_loss": 0.8737981021404266,
+          "training_runtime_seconds": 0.16229399999974703
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 43.3592472076416
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 26.491456985473633,
+              "val_loss": 22.77973747253418
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 14.557771682739258,
+              "val_loss": 13.311891317367554
+            }
+          ],
+          "initial_val_loss": 43.3592472076416,
+          "final_val_loss": 13.311891317367554,
+          "training_runtime_seconds": 0.193046499999582
+        }
+      }
+    },
+    {
+      "variant": "fast_path",
+      "seed": 29,
+      "config": {
+        "tensor_batching": true,
+        "cache_dataset_on_device": true,
+        "pin_memory": true
+      },
+      "models": {
+        "associative_recurrent": {
+          "parameter_count": 116034,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 6.041724443435669
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 3.6429309844970703,
+              "val_loss": 3.2837454676628113
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 1.297959566116333,
+              "val_loss": 1.05919349193573
+            }
+          ],
+          "initial_val_loss": 6.041724443435669,
+          "final_val_loss": 1.05919349193573,
+          "training_runtime_seconds": 0.14704489999985526
+        },
+        "gpt2_like": {
+          "parameter_count": 120576,
+          "history": [
+            {
+              "step": 0.0,
+              "sequences_seen": 0.0,
+              "tokens_seen": 0.0,
+              "train_loss": NaN,
+              "val_loss": 43.3592472076416
+            },
+            {
+              "step": 8.0,
+              "sequences_seen": 128.0,
+              "tokens_seen": 8192.0,
+              "train_loss": 26.411224365234375,
+              "val_loss": 23.41996669769287
+            },
+            {
+              "step": 16.0,
+              "sequences_seen": 256.0,
+              "tokens_seen": 16384.0,
+              "train_loss": 15.368621826171875,
+              "val_loss": 13.813029766082764
+            }
+          ],
+          "initial_val_loss": 43.3592472076416,
+          "final_val_loss": 13.813029766082764,
+          "training_runtime_seconds": 0.199166299999888
+        }
+      }
+    }
+  ]
+}

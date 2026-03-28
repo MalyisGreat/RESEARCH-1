@@ -1,0 +1,202 @@
+{
+  "benchmark": "language_realtext_microbench_compare_with_samples_scaled",
+  "comparison": {
+    "final_val_loss_gap": 0.4986976683139801,
+    "recurrent_better_by_loss": true,
+    "relative_final_loss_advantage_vs_gpt": 0.07273939125083223,
+    "same_tokens_seen": true,
+    "target_data_scale_vs_previous_256step_run": {
+      "new_tokens_seen": 1310720.0,
+      "old_tokens_seen": 262144,
+      "ratio": 5.0
+    },
+    "target_parameter_scale_vs_previous_baseline": {
+      "new_gpt_vs_old_ratio": 2.0344415534354825,
+      "new_recurrent_vs_old_ratio": 2.0013537926246374,
+      "old_gpt_params": 3320640,
+      "old_recurrent_params": 3366099
+    }
+  },
+  "config": {
+    "batch_size": 16,
+    "dataset_config": "wikitext-2-raw-v1",
+    "dataset_name": "wikitext",
+    "device": "cuda",
+    "dropout": 0.1,
+    "eval_batch_size": 32,
+    "eval_interval": 256,
+    "gpt_d_model": 128,
+    "gpt_ff_dim": 352,
+    "gpt_heads": 4,
+    "gpt_layers": 2,
+    "learning_rate": 0.002,
+    "max_eval_sequences": 512,
+    "max_train_sequences": 20480,
+    "recurrent_embedding_dim": 128,
+    "recurrent_hidden_dim": 192,
+    "recurrent_memory_dim": 112,
+    "seed": 13,
+    "sequence_length": 64,
+    "text_column": "text",
+    "tokenizer_name": "gpt2",
+    "train_split": "train",
+    "train_steps": 1280,
+    "use_amp": true,
+    "validation_split": "validation",
+    "weight_decay": 0.0001
+  },
+  "dataset": {
+    "config": "wikitext-2-raw-v1",
+    "name": "wikitext",
+    "sequence_length": 64,
+    "tokenizer_name": "gpt2",
+    "train_sequences": 20480,
+    "validation_sequences": 512
+  },
+  "fairness": {
+    "associative_recurrent_parameter_count": 6736755,
+    "gpt2_like_parameter_count": 6755648,
+    "parameter_gap_ok": true,
+    "relative_parameter_gap": 0.0027966229146337996,
+    "same_dataset": true,
+    "same_optimizer": "AdamW",
+    "same_tokenizer": true,
+    "same_training_tokens": true
+  },
+  "models": {
+    "associative_recurrent": {
+      "final_val_loss": 6.357252866029739,
+      "final_val_perplexity": 576.6600161271572,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 12.254036128520966
+        },
+        {
+          "sequences_seen": 4096.0,
+          "step": 256.0,
+          "tokens_seen": 262144.0,
+          "train_loss": 7.024151802062988,
+          "val_loss": 6.917522460222244
+        },
+        {
+          "sequences_seen": 8192.0,
+          "step": 512.0,
+          "tokens_seen": 524288.0,
+          "train_loss": 6.544771671295166,
+          "val_loss": 6.684473246335983
+        },
+        {
+          "sequences_seen": 12288.0,
+          "step": 768.0,
+          "tokens_seen": 786432.0,
+          "train_loss": 6.514774799346924,
+          "val_loss": 6.55945548415184
+        },
+        {
+          "sequences_seen": 16384.0,
+          "step": 1024.0,
+          "tokens_seen": 1048576.0,
+          "train_loss": 6.3313374519348145,
+          "val_loss": 6.440907895565033
+        },
+        {
+          "sequences_seen": 20480.0,
+          "step": 1280.0,
+          "tokens_seen": 1310720.0,
+          "train_loss": 6.16770076751709,
+          "val_loss": 6.357252866029739
+        }
+      ],
+      "initial_val_loss": 12.254036128520966,
+      "loss_delta": 5.896783262491226,
+      "parameter_count": 6736755,
+      "relative_loss_reduction": 0.4812115127330667,
+      "runtime_seconds": 57.23249439999927,
+      "sequences_seen": 20480.0,
+      "tokens_seen": 1310720.0
+    },
+    "gpt2_like": {
+      "final_val_loss": 6.8559505343437195,
+      "final_val_perplexity": 949.5142464916419,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 86.93927907943726
+        },
+        {
+          "sequences_seen": 4096.0,
+          "step": 256.0,
+          "tokens_seen": 262144.0,
+          "train_loss": 7.991039276123047,
+          "val_loss": 7.415585786104202
+        },
+        {
+          "sequences_seen": 8192.0,
+          "step": 512.0,
+          "tokens_seen": 524288.0,
+          "train_loss": 7.457730770111084,
+          "val_loss": 7.10206925868988
+        },
+        {
+          "sequences_seen": 12288.0,
+          "step": 768.0,
+          "tokens_seen": 786432.0,
+          "train_loss": 7.34466552734375,
+          "val_loss": 7.0106251537799835
+        },
+        {
+          "sequences_seen": 16384.0,
+          "step": 1024.0,
+          "tokens_seen": 1048576.0,
+          "train_loss": 6.9495320320129395,
+          "val_loss": 6.936591535806656
+        },
+        {
+          "sequences_seen": 20480.0,
+          "step": 1280.0,
+          "tokens_seen": 1310720.0,
+          "train_loss": 6.632967948913574,
+          "val_loss": 6.8559505343437195
+        }
+      ],
+      "initial_val_loss": 86.93927907943726,
+      "loss_delta": 80.08332854509354,
+      "parameter_count": 6755648,
+      "relative_loss_reduction": 0.921140931844174,
+      "runtime_seconds": 34.27838809997775,
+      "sequences_seen": 20480.0,
+      "tokens_seen": 1310720.0
+    }
+  },
+  "runtime_seconds_total": 110.72822970000561,
+  "samples": [
+    {
+      "associative_recurrent": " = Homarus gammarus = \n<|endoftext|> \" The S. \" and \" The S. \" and \" The S. \" and \" The S. \" and \" The S. \" and \" The S. \" and \" The S. \" and \" The S. \"",
+      "gpt2_like": " = Homarus gammarus = \n<|endoftext|> = = = = = = = = = = = = = \n<|endoftext|> = = = = = = = = \n<|endoftext|> = = = = = = = = = = = = = \n<|endoftext|> = = = ",
+      "prompt": " = Homarus gammarus = \n"
+    },
+    {
+      "associative_recurrent": " Homarus gammarus , known as the European lobster or common lobster , is a European @-@ @-@ @-@@ @-@@ @-@@ @-@@ @-@@ @-@@@ @-@@@ @-@@@ @-@@@",
+      "gpt2_like": " Homarus gammarus , known as the European lobster or common lobster , is the first . \n<|endoftext|> = = = = = = = = = = = = \n<|endoftext|> = = = = = = = = = = = = = \n<|endoftext|> = = = \n<|endoftext|> = = = = =",
+      "prompt": " Homarus gammarus , known as the European lobster or common lobster , is"
+    },
+    {
+      "associative_recurrent": " = = Description = = \n<|endoftext|> In the United States , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first",
+      "gpt2_like": " = = Description = = \n<|endoftext|> = = = = = = = \n<|endoftext|> = = = = = \n<|endoftext|> = = = = = = = = \n<|endoftext|> = = = = = = = = = = = = = \n<|endoftext|> = =",
+      "prompt": " = = Description = = \n"
+    },
+    {
+      "associative_recurrent": " Homarus gammarus is a large crustacean , with a body length of the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time , the first time",
+      "gpt2_like": " Homarus gammarus is a large crustacean , with a body length . \n<|endoftext|> = = = = = = = = = = = = = = \n<|endoftext|> = = = \n<|endoftext|> = = = = = = = \n<|endoftext|> = = = \n<|endoftext|> = = = = =",
+      "prompt": " Homarus gammarus is a large crustacean , with a body length"
+    }
+  ],
+  "winner_by_final_val_loss": "associative_recurrent"
+}

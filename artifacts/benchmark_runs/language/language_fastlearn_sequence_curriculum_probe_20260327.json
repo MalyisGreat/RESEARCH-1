@@ -1,0 +1,308 @@
+{
+  "hybrid_curriculum": {
+    "base_config": {
+      "batch_size": 16,
+      "device": "cuda",
+      "dropout": 0.1,
+      "epochs": 6,
+      "eval_batch_size": 16,
+      "gpt2_d_model": 48,
+      "gpt2_ff_dim": 160,
+      "gpt2_heads": 4,
+      "gpt2_layers": 2,
+      "gru_embedding_dim": 48,
+      "gru_hidden_dim": 80,
+      "gru_memory_dim": null,
+      "learning_rate": 0.002,
+      "max_support": 8,
+      "query_examples": 12,
+      "rollout_loss_weight": 0.25,
+      "rollout_teacher_forcing_decay_epochs": 6,
+      "rollout_teacher_forcing_prob": 0.25,
+      "rollout_weight_ramp_epochs": 4,
+      "seed": 13,
+      "sequence_focus_temperature": 0.5,
+      "sequence_focus_weight": 0.25,
+      "support_shots": [
+        0,
+        1,
+        2,
+        4,
+        8
+      ],
+      "test_tasks": 48,
+      "train_support_min": 8,
+      "train_tasks": 128,
+      "use_amp": true,
+      "val_tasks": 32,
+      "weight_decay": 0.0001
+    },
+    "benchmark": "language_fastlearn_scaling",
+    "device": "cuda",
+    "results": {
+      "large": {
+        "fairness": {
+          "fast_gru_parameter_count": 144769,
+          "gpt2_like_parameter_count": 144096,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.004648785306246503,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.3785686728395061,
+            "autoregressive_adaptation_auc_mean": 0.3794608410493827,
+            "parameter_count_mean": 144769.0,
+            "shot8_autoregressive_sequence_accuracy": 0.003472222222222222,
+            "shot8_autoregressive_token_accuracy": 0.3888888888888889,
+            "shot8_sequence_accuracy": 0.003472222222222222,
+            "shot8_token_accuracy": 0.38425925925925924
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.23254243827160495,
+            "autoregressive_adaptation_auc_mean": 0.23673804012345678,
+            "parameter_count_mean": 144096.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.24344135802469136,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.2322530864197531
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      },
+      "medium": {
+        "fairness": {
+          "fast_gru_parameter_count": 51601,
+          "gpt2_like_parameter_count": 55232,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.06574087485515644,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.37386670524691357,
+            "autoregressive_adaptation_auc_mean": 0.37603684413580246,
+            "parameter_count_mean": 51601.0,
+            "shot8_autoregressive_sequence_accuracy": 0.001736111111111111,
+            "shot8_autoregressive_token_accuracy": 0.3861882716049383,
+            "shot8_sequence_accuracy": 0.001736111111111111,
+            "shot8_token_accuracy": 0.38425925925925924
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.23379629629629628,
+            "autoregressive_adaptation_auc_mean": 0.24124710648148148,
+            "parameter_count_mean": 55232.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.23996913580246915,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.2337962962962963
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      },
+      "small": {
+        "fairness": {
+          "fast_gru_parameter_count": 26201,
+          "gpt2_like_parameter_count": 24512,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.0644631884279226,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.32634066358024694,
+            "autoregressive_adaptation_auc_mean": 0.32981288580246915,
+            "parameter_count_mean": 26201.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.33796296296296297,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.3279320987654321
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.2281298225308642,
+            "autoregressive_adaptation_auc_mean": 0.22955246913580246,
+            "parameter_count_mean": 24512.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.2318672839506173,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.22878086419753085
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      }
+    },
+    "scales": [
+      "small",
+      "medium",
+      "large"
+    ],
+    "seeds": [
+      13
+    ]
+  },
+  "hybrid_fixed": {
+    "base_config": {
+      "batch_size": 16,
+      "device": "cuda",
+      "dropout": 0.1,
+      "epochs": 6,
+      "eval_batch_size": 16,
+      "gpt2_d_model": 48,
+      "gpt2_ff_dim": 160,
+      "gpt2_heads": 4,
+      "gpt2_layers": 2,
+      "gru_embedding_dim": 48,
+      "gru_hidden_dim": 80,
+      "gru_memory_dim": null,
+      "learning_rate": 0.002,
+      "max_support": 8,
+      "query_examples": 12,
+      "rollout_loss_weight": 0.25,
+      "rollout_teacher_forcing_decay_epochs": 0,
+      "rollout_teacher_forcing_prob": 0.25,
+      "rollout_weight_ramp_epochs": 0,
+      "seed": 13,
+      "sequence_focus_temperature": 0.5,
+      "sequence_focus_weight": 0.25,
+      "support_shots": [
+        0,
+        1,
+        2,
+        4,
+        8
+      ],
+      "test_tasks": 48,
+      "train_support_min": 8,
+      "train_tasks": 128,
+      "use_amp": true,
+      "val_tasks": 32,
+      "weight_decay": 0.0001
+    },
+    "benchmark": "language_fastlearn_scaling",
+    "device": "cuda",
+    "results": {
+      "large": {
+        "fairness": {
+          "fast_gru_parameter_count": 144769,
+          "gpt2_like_parameter_count": 144096,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.004648785306246503,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.3785686728395062,
+            "autoregressive_adaptation_auc_mean": 0.37895447530864196,
+            "parameter_count_mean": 144769.0,
+            "shot8_autoregressive_sequence_accuracy": 0.003472222222222222,
+            "shot8_autoregressive_token_accuracy": 0.38773148148148145,
+            "shot8_sequence_accuracy": 0.003472222222222222,
+            "shot8_token_accuracy": 0.38503086419753085
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.23386863425925927,
+            "autoregressive_adaptation_auc_mean": 0.23673804012345678,
+            "parameter_count_mean": 144096.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.24344135802469136,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.2341820987654321
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      },
+      "medium": {
+        "fairness": {
+          "fast_gru_parameter_count": 51601,
+          "gpt2_like_parameter_count": 55232,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.06574087485515644,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.3758921682098766,
+            "autoregressive_adaptation_auc_mean": 0.376832561728395,
+            "parameter_count_mean": 51601.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.38503086419753085,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.38580246913580246
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.2338204089506173,
+            "autoregressive_adaptation_auc_mean": 0.24211516203703703,
+            "parameter_count_mean": 55232.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.24344135802469136,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.2334104938271605
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      },
+      "small": {
+        "fairness": {
+          "fast_gru_parameter_count": 26201,
+          "gpt2_like_parameter_count": 24512,
+          "parameter_gap_ok": true,
+          "relative_parameter_gap": 0.0644631884279226,
+          "same_optimizer": "AdamW",
+          "same_schedule": true,
+          "same_support_query_protocol": true,
+          "same_task_distribution": true,
+          "same_vocab": true
+        },
+        "models": {
+          "fast_gru": {
+            "adaptation_auc_mean": 0.33195891203703703,
+            "autoregressive_adaptation_auc_mean": 0.3331886574074074,
+            "parameter_count_mean": 26201.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.3395061728395062,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.33217592592592593
+          },
+          "gpt2_like": {
+            "adaptation_auc_mean": 0.22878086419753085,
+            "autoregressive_adaptation_auc_mean": 0.2358940972222222,
+            "parameter_count_mean": 24512.0,
+            "shot8_autoregressive_sequence_accuracy": 0.0,
+            "shot8_autoregressive_token_accuracy": 0.2361111111111111,
+            "shot8_sequence_accuracy": 0.0,
+            "shot8_token_accuracy": 0.22878086419753085
+          }
+        },
+        "winner_by_adaptation_auc": "fast_gru"
+      }
+    },
+    "scales": [
+      "small",
+      "medium",
+      "large"
+    ],
+    "seeds": [
+      13
+    ]
+  }
+}

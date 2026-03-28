@@ -1,0 +1,174 @@
+{
+  "benchmark": "language_realtext_microbench_compare_with_samples",
+  "comparison": {
+    "final_val_loss_gap": 0.5334417223930359,
+    "recurrent_better_by_loss": true,
+    "relative_final_loss_advantage_vs_gpt": 0.06904867856820085,
+    "same_tokens_seen": true
+  },
+  "config": {
+    "batch_size": 16,
+    "dataset_config": "wikitext-2-raw-v1",
+    "dataset_name": "wikitext",
+    "device": "cuda",
+    "dropout": 0.1,
+    "eval_batch_size": 32,
+    "eval_interval": 64,
+    "gpt_d_model": 64,
+    "gpt_ff_dim": 256,
+    "gpt_heads": 4,
+    "gpt_layers": 2,
+    "learning_rate": 0.002,
+    "max_eval_sequences": 256,
+    "max_train_sequences": 2048,
+    "recurrent_embedding_dim": 64,
+    "recurrent_hidden_dim": 128,
+    "recurrent_memory_dim": 64,
+    "seed": 13,
+    "sequence_length": 64,
+    "text_column": "text",
+    "tokenizer_name": "gpt2",
+    "train_split": "train",
+    "train_steps": 256,
+    "use_amp": true,
+    "validation_split": "validation",
+    "weight_decay": 0.0001
+  },
+  "dataset": {
+    "config": "wikitext-2-raw-v1",
+    "name": "wikitext",
+    "sequence_length": 64,
+    "tokenizer_name": "gpt2",
+    "train_sequences": 2048,
+    "validation_sequences": 256
+  },
+  "fairness": {
+    "associative_recurrent_parameter_count": 3366099,
+    "gpt2_like_parameter_count": 3320640,
+    "parameter_gap_ok": true,
+    "relative_parameter_gap": 0.013504950389159677,
+    "same_dataset": true,
+    "same_optimizer": "AdamW",
+    "same_tokenizer": true,
+    "same_training_tokens": true
+  },
+  "models": {
+    "associative_recurrent": {
+      "final_val_loss": 7.192147433757782,
+      "final_val_perplexity": 1328.953984230841,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 11.373090624809265
+        },
+        {
+          "sequences_seen": 1024.0,
+          "step": 64.0,
+          "tokens_seen": 65536.0,
+          "train_loss": 8.57564640045166,
+          "val_loss": 8.645105838775635
+        },
+        {
+          "sequences_seen": 2048.0,
+          "step": 128.0,
+          "tokens_seen": 131072.0,
+          "train_loss": 7.376188278198242,
+          "val_loss": 7.6336323618888855
+        },
+        {
+          "sequences_seen": 3072.0,
+          "step": 192.0,
+          "tokens_seen": 196608.0,
+          "train_loss": 6.8422675132751465,
+          "val_loss": 7.327415347099304
+        },
+        {
+          "sequences_seen": 4096.0,
+          "step": 256.0,
+          "tokens_seen": 262144.0,
+          "train_loss": 6.678372383117676,
+          "val_loss": 7.192147433757782
+        }
+      ],
+      "initial_val_loss": 11.373090624809265,
+      "loss_delta": 4.180943191051483,
+      "parameter_count": 3366099,
+      "relative_loss_reduction": 0.36761715253821786,
+      "sequences_seen": 4096.0,
+      "tokens_seen": 262144.0
+    },
+    "gpt2_like": {
+      "final_val_loss": 7.725589156150818,
+      "final_val_perplexity": 2265.5869788444693,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 43.822420597076416
+        },
+        {
+          "sequences_seen": 1024.0,
+          "step": 64.0,
+          "tokens_seen": 65536.0,
+          "train_loss": 13.693842887878418,
+          "val_loss": 12.894910335540771
+        },
+        {
+          "sequences_seen": 2048.0,
+          "step": 128.0,
+          "tokens_seen": 131072.0,
+          "train_loss": 8.976030349731445,
+          "val_loss": 8.750630378723145
+        },
+        {
+          "sequences_seen": 3072.0,
+          "step": 192.0,
+          "tokens_seen": 196608.0,
+          "train_loss": 7.746872425079346,
+          "val_loss": 7.927556097507477
+        },
+        {
+          "sequences_seen": 4096.0,
+          "step": 256.0,
+          "tokens_seen": 262144.0,
+          "train_loss": 7.47031307220459,
+          "val_loss": 7.725589156150818
+        }
+      ],
+      "initial_val_loss": 43.822420597076416,
+      "loss_delta": 36.0968314409256,
+      "parameter_count": 3320640,
+      "relative_loss_reduction": 0.8237069278490238,
+      "sequences_seen": 4096.0,
+      "tokens_seen": 262144.0
+    }
+  },
+  "samples": [
+    {
+      "associative_recurrent": " = Homarus gammarus = \n<|endoftext|> The the of the of the of the of the of the of the of the of the of the of the of the of the of the of the of",
+      "gpt2_like": " = Homarus gammarus = \n<|endoftext|> , the the the , the , and the the , and , the the , and the the the , the the , the the the the , and the",
+      "prompt": " = Homarus gammarus = \n"
+    },
+    {
+      "associative_recurrent": " Homarus gammarus , known as the European lobster or common lobster , is a species of clawed lobster from the eastern Atlantic Ocean , Mediterranean Sea and parts the of the of the , and the of the of the of the , and the of the of the of the of the , and the the of the of",
+      "gpt2_like": " Homarus gammarus , known as the European lobster or common lobster , is a species of clawed lobster from the eastern Atlantic Ocean , Mediterranean Sea and parts the , and the the the , and the the , the the , the , and , and the the , and the the the the the the , and the",
+      "prompt": " Homarus gammarus , known as the European lobster or common lobster , is a species of clawed lobster from the eastern Atlantic Ocean , Mediterranean Sea and parts"
+    },
+    {
+      "associative_recurrent": " = = Description = = \n<|endoftext|> = = = = = = \n<|endoftext|> = = = = = = \n<|endoftext|> = = = = = = \n<|endoftext|> = = = =",
+      "gpt2_like": " = = Description = = \n<|endoftext|> = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =",
+      "prompt": " = = Description = = \n"
+    },
+    {
+      "associative_recurrent": " Homarus gammarus is a large crustacean , with a body length up to 60 centimetres ( 24 in ) and weighing up to 5 \u2013 the ) , and the a of the of the of the , and the a of the of the of the , and the of the of the of the ,",
+      "gpt2_like": " Homarus gammarus is a large crustacean , with a body length up to 60 centimetres ( 24 in ) and weighing up to 5 \u2013 , and , and the the the the the the the the the the the , and , and the the the the , the the the the the the , and",
+      "prompt": " Homarus gammarus is a large crustacean , with a body length up to 60 centimetres ( 24 in ) and weighing up to 5 \u2013"
+    }
+  ],
+  "winner_by_final_val_loss": "associative_recurrent"
+}

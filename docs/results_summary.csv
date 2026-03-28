@@ -1,0 +1,9 @@
+adaptation_auc,experiment,final_val_loss,model,parameter_count,peak_vram_mb,pure_train_tok_per_sec,sequence_accuracy,train_tok_per_sec
+,50m_head_to_head,5.336977809667587,partial_untied,8069555,2201.89697265625,38499.206131484985,,37517.13712351116
+,50m_head_to_head,5.3957759737968445,nanochat_small,8125570,3931.23583984375,41475.345286622425,,39919.828459079865
+0.37206127025462965,fastlearn_small,,fast_gru,,,,0.004557291666666666,
+0.22444661458333334,fastlearn_small,,gpt2_like,,,,0.0,
+0.37555157696759256,fastlearn_medium,,fast_gru,,,,0.004557291666666666,
+0.23714192708333334,fastlearn_medium,,gpt2_like,,,,0.0,
+0.37485532407407407,fastlearn_large,,fast_gru,,,,0.003255208333333333,
+0.2432183159722222,fastlearn_large,,gpt2_like,,,,0.0,

@@ -1,0 +1,137 @@
+{
+  "benchmark": "language_realtext_microbench",
+  "config": {
+    "batch_size": 16,
+    "dataset_config": "wikitext-2-raw-v1",
+    "dataset_name": "wikitext",
+    "device": "cuda",
+    "dropout": 0.1,
+    "eval_batch_size": 32,
+    "eval_interval": 16,
+    "gpt_d_model": 64,
+    "gpt_ff_dim": 256,
+    "gpt_heads": 4,
+    "gpt_layers": 2,
+    "learning_rate": 0.001,
+    "max_eval_sequences": 256,
+    "max_train_sequences": 2048,
+    "recurrent_embedding_dim": 64,
+    "recurrent_hidden_dim": 128,
+    "recurrent_memory_dim": 64,
+    "seed": 13,
+    "sequence_length": 64,
+    "text_column": "text",
+    "tokenizer_name": "gpt2",
+    "train_split": "train",
+    "train_steps": 64,
+    "use_amp": true,
+    "validation_split": "validation",
+    "weight_decay": 0.0001
+  },
+  "dataset": {
+    "config": "wikitext-2-raw-v1",
+    "name": "wikitext",
+    "sequence_length": 64,
+    "tokenizer_name": "gpt2",
+    "train_sequences": 2048,
+    "validation_sequences": 256
+  },
+  "fairness": {
+    "associative_recurrent_parameter_count": 3366099,
+    "gpt2_like_parameter_count": 3320640,
+    "parameter_gap_ok": true,
+    "relative_parameter_gap": 0.013504950389159677,
+    "same_dataset": true,
+    "same_optimizer": "AdamW",
+    "same_tokenizer": true,
+    "same_training_tokens": true
+  },
+  "models": {
+    "associative_recurrent": {
+      "final_val_loss": 9.327998280525208,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 11.373090624809265
+        },
+        {
+          "sequences_seen": 256.0,
+          "step": 16.0,
+          "tokens_seen": 16384.0,
+          "train_loss": 10.326404571533203,
+          "val_loss": 10.314537048339844
+        },
+        {
+          "sequences_seen": 512.0,
+          "step": 32.0,
+          "tokens_seen": 32768.0,
+          "train_loss": 9.853555679321289,
+          "val_loss": 9.902786612510681
+        },
+        {
+          "sequences_seen": 768.0,
+          "step": 48.0,
+          "tokens_seen": 49152.0,
+          "train_loss": 9.638358116149902,
+          "val_loss": 9.589136719703674
+        },
+        {
+          "sequences_seen": 1024.0,
+          "step": 64.0,
+          "tokens_seen": 65536.0,
+          "train_loss": 9.311912536621094,
+          "val_loss": 9.327998280525208
+        }
+      ],
+      "initial_val_loss": 11.373090624809265,
+      "parameter_count": 3366099
+    },
+    "gpt2_like": {
+      "final_val_loss": 17.74863600730896,
+      "history": [
+        {
+          "sequences_seen": 0.0,
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 43.822420597076416
+        },
+        {
+          "sequences_seen": 256.0,
+          "step": 16.0,
+          "tokens_seen": 16384.0,
+          "train_loss": 30.303173065185547,
+          "val_loss": 29.624534606933594
+        },
+        {
+          "sequences_seen": 512.0,
+          "step": 32.0,
+          "tokens_seen": 32768.0,
+          "train_loss": 23.003799438476562,
+          "val_loss": 22.617255687713623
+        },
+        {
+          "sequences_seen": 768.0,
+          "step": 48.0,
+          "tokens_seen": 49152.0,
+          "train_loss": 20.46478843688965,
+          "val_loss": 19.830649614334106
+        },
+        {
+          "sequences_seen": 1024.0,
+          "step": 64.0,
+          "tokens_seen": 65536.0,
+          "train_loss": 18.844329833984375,
+          "val_loss": 17.74863600730896
+        }
+      ],
+      "initial_val_loss": 43.822420597076416,
+      "parameter_count": 3320640
+    }
+  },
+  "runtime_seconds": 32.37363889999688,
+  "winner_by_final_val_loss": "associative_recurrent"
+}

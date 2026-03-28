@@ -1,0 +1,14 @@
+{
+  "partial_untied": {
+    "forward_ms": 14.249860000018089,
+    "trainstep_ms": 45.71009499995853
+  },
+  "dense_value_window32": {
+    "forward_ms": 10.02477000001818,
+    "trainstep_ms": 51.785849999942
+  },
+  "dense_partial_window32": {
+    "forward_ms": 9.73414749987569,
+    "trainstep_ms": 51.29225500022585
+  }
+}

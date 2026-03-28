@@ -1,0 +1,152 @@
+{
+  "base_config": {
+    "batch_size": 16,
+    "device": "cuda",
+    "dropout": 0.1,
+    "epochs": 10,
+    "eval_batch_size": 16,
+    "gpt2_d_model": 48,
+    "gpt2_ff_dim": 160,
+    "gpt2_heads": 4,
+    "gpt2_layers": 2,
+    "gru_embedding_dim": 48,
+    "gru_hidden_dim": 80,
+    "gru_memory_dim": null,
+    "learning_rate": 0.002,
+    "max_support": 8,
+    "query_examples": 12,
+    "rollout_loss_weight": 0.0,
+    "rollout_teacher_forcing_prob": 0.0,
+    "seed": 13,
+    "sequence_focus_temperature": 0.5,
+    "sequence_focus_weight": 0.0,
+    "support_shots": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "test_tasks": 64,
+    "train_support_min": 8,
+    "train_tasks": 192,
+    "use_amp": true,
+    "val_tasks": 48,
+    "weight_decay": 0.0001
+  },
+  "benchmark": "language_fastlearn_scaling",
+  "device": "cuda",
+  "results": {
+    "large": {
+      "fairness": {
+        "fast_gru_parameter_count": 144769,
+        "gpt2_like_parameter_count": 144096,
+        "parameter_gap_ok": true,
+        "relative_parameter_gap": 0.004648785306246503,
+        "same_optimizer": "AdamW",
+        "same_schedule": true,
+        "same_support_query_protocol": true,
+        "same_task_distribution": true,
+        "same_vocab": true
+      },
+      "models": {
+        "fast_gru": {
+          "adaptation_auc_mean": 0.3713650173611111,
+          "autoregressive_adaptation_auc_mean": 0.37322771990740744,
+          "parameter_count_mean": 144769.0,
+          "shot8_autoregressive_sequence_accuracy": 0.0026041666666666665,
+          "shot8_autoregressive_token_accuracy": 0.3783275462962963,
+          "shot8_sequence_accuracy": 0.0026041666666666665,
+          "shot8_token_accuracy": 0.3783275462962963
+        },
+        "gpt2_like": {
+          "adaptation_auc_mean": 0.24589482060185186,
+          "autoregressive_adaptation_auc_mean": 0.248291015625,
+          "parameter_count_mean": 144096.0,
+          "shot8_autoregressive_sequence_accuracy": 0.0,
+          "shot8_autoregressive_token_accuracy": 0.25593171296296297,
+          "shot8_sequence_accuracy": 0.0,
+          "shot8_token_accuracy": 0.25188078703703703
+        }
+      },
+      "winner_by_adaptation_auc": "fast_gru"
+    },
+    "medium": {
+      "fairness": {
+        "fast_gru_parameter_count": 51601,
+        "gpt2_like_parameter_count": 55232,
+        "parameter_gap_ok": true,
+        "relative_parameter_gap": 0.06574087485515644,
+        "same_optimizer": "AdamW",
+        "same_schedule": true,
+        "same_support_query_protocol": true,
+        "same_task_distribution": true,
+        "same_vocab": true
+      },
+      "models": {
+        "fast_gru": {
+          "adaptation_auc_mean": 0.3755425347222222,
+          "autoregressive_adaptation_auc_mean": 0.3749095775462963,
+          "parameter_count_mean": 51601.0,
+          "shot8_autoregressive_sequence_accuracy": 0.003255208333333333,
+          "shot8_autoregressive_token_accuracy": 0.38165509259259256,
+          "shot8_sequence_accuracy": 0.003255208333333333,
+          "shot8_token_accuracy": 0.3817997685185185
+        },
+        "gpt2_like": {
+          "adaptation_auc_mean": 0.23848922164351852,
+          "autoregressive_adaptation_auc_mean": 0.2372775607638889,
+          "parameter_count_mean": 55232.0,
+          "shot8_autoregressive_sequence_accuracy": 0.0,
+          "shot8_autoregressive_token_accuracy": 0.2417534722222222,
+          "shot8_sequence_accuracy": 0.0,
+          "shot8_token_accuracy": 0.23929398148148148
+        }
+      },
+      "winner_by_adaptation_auc": "fast_gru"
+    },
+    "small": {
+      "fairness": {
+        "fast_gru_parameter_count": 26201,
+        "gpt2_like_parameter_count": 24512,
+        "parameter_gap_ok": true,
+        "relative_parameter_gap": 0.0644631884279226,
+        "same_optimizer": "AdamW",
+        "same_schedule": true,
+        "same_support_query_protocol": true,
+        "same_task_distribution": true,
+        "same_vocab": true
+      },
+      "models": {
+        "fast_gru": {
+          "adaptation_auc_mean": 0.37831850405092593,
+          "autoregressive_adaptation_auc_mean": 0.3781919126157407,
+          "parameter_count_mean": 26201.0,
+          "shot8_autoregressive_sequence_accuracy": 0.0026041666666666665,
+          "shot8_autoregressive_token_accuracy": 0.3851273148148148,
+          "shot8_sequence_accuracy": 0.0026041666666666665,
+          "shot8_token_accuracy": 0.38599537037037035
+        },
+        "gpt2_like": {
+          "adaptation_auc_mean": 0.22540509259259262,
+          "autoregressive_adaptation_auc_mean": 0.23649088541666666,
+          "parameter_count_mean": 24512.0,
+          "shot8_autoregressive_sequence_accuracy": 0.0,
+          "shot8_autoregressive_token_accuracy": 0.23943865740740738,
+          "shot8_sequence_accuracy": 0.0,
+          "shot8_token_accuracy": 0.23292824074074076
+        }
+      },
+      "winner_by_adaptation_auc": "fast_gru"
+    }
+  },
+  "scales": [
+    "small",
+    "medium",
+    "large"
+  ],
+  "seeds": [
+    13,
+    29
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "partial_untied_forward_ms": 14.461185000072874,
+  "dense_value_window32_forward_ms": 10.064185000010184,
+  "partial_untied_trainstep_ms": 45.591534999766736,
+  "dense_value_window32_trainstep_ms": 51.8404800001008
+}

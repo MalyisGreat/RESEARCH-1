@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "id": "arc_agi3_public_competition_scorecard",
+      "type": "primary",
+      "command": "python -m arc_tactic3.arc_agi3_public --competition-mode --no-progress --diagnostics",
+      "working_directory": "E:\\DEVNEW",
+      "protected_paths": [
+        "E:\\DEVNEW\\arc_tactic3\\arc_agi3_public.py",
+        "E:\\DEVNEW\\arc_tactic3\\competition_benchmark_registry.json",
+        "E:\\DEVNEW\\environment_files\\"
+      ],
+      "metrics": [
+        "score",
+        "total_levels_completed",
+        "total_levels",
+        "total_actions"
+      ],
+      "notes": "ARC-AGI-3 public scorecard run in OperationMode.COMPETITION with diagnostics enabled."
+    },
+    {
+      "id": "arc_tactic3_regression_tests",
+      "type": "guardrail",
+      "command": "python -m pytest E:\\DEVNEW\\arc_tactic3\\tests -q",
+      "working_directory": "E:\\DEVNEW",
+      "metrics": [
+        "pytest_pass"
+      ],
+      "notes": "Local regression and policy tests must stay green."
+    }
+  ]
+}

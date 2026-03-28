@@ -1,0 +1,88 @@
+{
+  "benchmark": "language_recurrent_sequence_sweep",
+  "config": {
+    "cache_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\fineweb_edu_first20m_gpt2tokens_cache.pt",
+    "device": "cuda",
+    "eval_interval": 8,
+    "seed": 13,
+    "sequence_lengths": [
+      64,
+      96,
+      127
+    ],
+    "train_blocks": 1024,
+    "train_steps": 16,
+    "val_blocks": 64
+  },
+  "results": {
+    "127": {
+      "feature_retrieval_chunk8": {
+        "final_val_loss": 9.796439170837402,
+        "parameter_count": 8057377,
+        "peak_vram_mb": 2031.458984375,
+        "pure_train_tok_per_sec": 58371.871479918926,
+        "train_tok_per_sec": 49566.66519800108
+      },
+      "partial_untied": {
+        "final_val_loss": 9.537850856781006,
+        "parameter_count": 8143795,
+        "peak_vram_mb": 1994.36572265625,
+        "pure_train_tok_per_sec": 56531.28277592764,
+        "train_tok_per_sec": 46769.24387085241
+      },
+      "recurrent_champion": {
+        "final_val_loss": 9.664743900299072,
+        "parameter_count": 7995315,
+        "peak_vram_mb": 1907.2275390625,
+        "pure_train_tok_per_sec": 56198.30367956178,
+        "train_tok_per_sec": 48212.853102936446
+      }
+    },
+    "64": {
+      "feature_retrieval_chunk8": {
+        "final_val_loss": 10.069162368774414,
+        "parameter_count": 8057377,
+        "peak_vram_mb": 1160.89892578125,
+        "pure_train_tok_per_sec": 37635.842443074805,
+        "train_tok_per_sec": 32444.90070086185
+      },
+      "partial_untied": {
+        "final_val_loss": 9.7679123878479,
+        "parameter_count": 8143795,
+        "peak_vram_mb": 1111.658203125,
+        "pure_train_tok_per_sec": 37509.621227023184,
+        "train_tok_per_sec": 31987.917064147263
+      },
+      "recurrent_champion": {
+        "final_val_loss": 9.86980676651001,
+        "parameter_count": 7995315,
+        "peak_vram_mb": 1036.67919921875,
+        "pure_train_tok_per_sec": 26648.961415935555,
+        "train_tok_per_sec": 24127.63732202406
+      }
+    },
+    "96": {
+      "feature_retrieval_chunk8": {
+        "final_val_loss": 9.894269943237305,
+        "parameter_count": 8057377,
+        "peak_vram_mb": 1602.64404296875,
+        "pure_train_tok_per_sec": 49243.41547654425,
+        "train_tok_per_sec": 41506.76165347688
+      },
+      "partial_untied": {
+        "final_val_loss": 9.609129905700684,
+        "parameter_count": 8143795,
+        "peak_vram_mb": 1559.3173828125,
+        "pure_train_tok_per_sec": 51056.616003460134,
+        "train_tok_per_sec": 38940.105345535994
+      },
+      "recurrent_champion": {
+        "final_val_loss": 9.727883338928223,
+        "parameter_count": 7995315,
+        "peak_vram_mb": 1478.41943359375,
+        "pure_train_tok_per_sec": 50466.21078151147,
+        "train_tok_per_sec": 43620.896496750705
+      }
+    }
+  }
+}

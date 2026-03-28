@@ -1,0 +1,108 @@
+{
+  "benchmark": "language_recurrent_hold_compare_long_bestcfg",
+  "config": {
+    "cache_dataset_on_device": true,
+    "cache_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\fineweb_edu_first20m_gpt2tokens_cache.pt",
+    "chunk_size": 4,
+    "device": "cuda",
+    "eval_interval": 64,
+    "partial_untied_tokens": 2048,
+    "seeds": [
+      13,
+      29
+    ],
+    "sequence_length": 127,
+    "train_blocks": 4096,
+    "train_steps": 128,
+    "val_blocks": 256
+  },
+  "runs": [
+    {
+      "final_val_loss": 7.444393694400787,
+      "model": "recurrent_relu2_legacy",
+      "parameter_count": 7995315,
+      "peak_vram_mb": 1916.0341796875,
+      "pure_train_tok_per_sec": 53754.88281023952,
+      "seed": 13,
+      "train_tok_per_sec": 49361.91765705282
+    },
+    {
+      "final_val_loss": 7.34011697769165,
+      "model": "partial_untied",
+      "parameter_count": 8292275,
+      "peak_vram_mb": 2014.27001953125,
+      "pure_train_tok_per_sec": 58326.883863847805,
+      "seed": 13,
+      "train_tok_per_sec": 52134.928070627655
+    },
+    {
+      "final_val_loss": 7.440934419631958,
+      "model": "recurrent_champion",
+      "parameter_count": 8333601,
+      "peak_vram_mb": 2119.0185546875,
+      "pure_train_tok_per_sec": 56830.81505511868,
+      "seed": 13,
+      "train_tok_per_sec": 51089.08238394206
+    },
+    {
+      "final_val_loss": 7.469463467597961,
+      "model": "recurrent_relu2_legacy",
+      "parameter_count": 7995315,
+      "peak_vram_mb": 1916.0341796875,
+      "pure_train_tok_per_sec": 56307.545502525834,
+      "seed": 29,
+      "train_tok_per_sec": 51784.55176764103
+    },
+    {
+      "final_val_loss": 7.340050637722015,
+      "model": "partial_untied",
+      "parameter_count": 8292275,
+      "peak_vram_mb": 2014.36279296875,
+      "pure_train_tok_per_sec": 62651.53968825736,
+      "seed": 29,
+      "train_tok_per_sec": 56453.21870556351
+    },
+    {
+      "final_val_loss": 7.420160472393036,
+      "model": "recurrent_champion",
+      "parameter_count": 8333601,
+      "peak_vram_mb": 2118.58349609375,
+      "pure_train_tok_per_sec": 58177.28284207228,
+      "seed": 29,
+      "train_tok_per_sec": 52340.17507685992
+    }
+  ],
+  "summary": {
+    "delta_vs_partial_untied": {
+      "loss_improvement_percent": -1.2324605641516027,
+      "pure_train_tok_per_sec_improvement_percent": -4.935033437878133,
+      "train_tok_per_sec_improvement_percent": -4.750877023458248
+    },
+    "delta_vs_relu2_legacy": {
+      "loss_improvement_percent": 0.35378017504549913,
+      "pure_train_tok_per_sec_improvement_percent": 4.493513054583397,
+      "train_tok_per_sec_improvement_percent": 2.2569132161431775
+    },
+    "partial_untied": {
+      "mean_final_val_loss": 7.340083807706833,
+      "mean_peak_vram_mb": 2014.31640625,
+      "mean_pure_train_tok_per_sec": 60489.21177605259,
+      "mean_train_tok_per_sec": 54294.07338809558,
+      "parameter_count": 8292275
+    },
+    "recurrent_champion": {
+      "mean_final_val_loss": 7.430547446012497,
+      "mean_peak_vram_mb": 2118.801025390625,
+      "mean_pure_train_tok_per_sec": 57504.048948595475,
+      "mean_train_tok_per_sec": 51714.62873040099,
+      "parameter_count": 8333601
+    },
+    "recurrent_relu2_legacy": {
+      "mean_final_val_loss": 7.456928580999374,
+      "mean_peak_vram_mb": 1916.0341796875,
+      "mean_pure_train_tok_per_sec": 55031.21415638267,
+      "mean_train_tok_per_sec": 50573.23471234692,
+      "parameter_count": 7995315
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "benchmark": "language_chunk8_token_partial_vs_partial_fair",
+  "config": {
+    "cache_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\fineweb_edu_first20m_gpt2tokens_cache.pt",
+    "device": "cuda",
+    "eval_interval": 16,
+    "seeds": [
+      13,
+      29
+    ],
+    "sequence_length": 127,
+    "train_blocks": 2048,
+    "train_steps": 32,
+    "val_blocks": 128
+  },
+  "runs": [
+    {
+      "final_val_loss": 8.725400447845459,
+      "model": "partial_untied",
+      "parameter_count": 8143795,
+      "peak_vram_mb": 1932.72021484375,
+      "pure_train_tok_per_sec": 51118.259086223494,
+      "seed": 13,
+      "train_tok_per_sec": 43181.756451664995
+    },
+    {
+      "final_val_loss": 7.94438910484314,
+      "model": "chunk8_token_partial_memory",
+      "parameter_count": 8185121,
+      "peak_vram_mb": 2019.1376953125,
+      "pure_train_tok_per_sec": 56664.57056106461,
+      "seed": 13,
+      "train_tok_per_sec": 47575.32235015703
+    },
+    {
+      "final_val_loss": 8.771048784255981,
+      "model": "partial_untied",
+      "parameter_count": 8143795,
+      "peak_vram_mb": 1932.72021484375,
+      "pure_train_tok_per_sec": 56570.36260746398,
+      "seed": 29,
+      "train_tok_per_sec": 46592.524000797064
+    },
+    {
+      "final_val_loss": 7.945672869682312,
+      "model": "chunk8_token_partial_memory",
+      "parameter_count": 8185121,
+      "peak_vram_mb": 2018.1279296875,
+      "pure_train_tok_per_sec": 53557.15144559358,
+      "seed": 29,
+      "train_tok_per_sec": 44585.055709739856
+    }
+  ],
+  "summary": {
+    "chunk8_token_partial_memory": {
+      "mean_final_val_loss": 7.945030987262726,
+      "mean_peak_vram_mb": 2018.6328125,
+      "mean_pure_train_tok_per_sec": 55110.8610033291,
+      "mean_train_tok_per_sec": 46080.189029948444,
+      "parameter_count": 8185121
+    },
+    "delta": {
+      "loss_improvement_percent": 9.181218636228689,
+      "pure_train_tok_per_sec_improvement_percent": 2.3522450869284324,
+      "train_tok_per_sec_improvement_percent": 2.657885527356951
+    },
+    "partial_untied": {
+      "mean_final_val_loss": 8.74822461605072,
+      "mean_peak_vram_mb": 1932.72021484375,
+      "mean_pure_train_tok_per_sec": 53844.31084684374,
+      "mean_train_tok_per_sec": 44887.14022623103,
+      "parameter_count": 8143795
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "step": 24607,
+  "train_steps": 24607,
+  "progress": 1.0,
+  "tokens_seen": 50001424,
+  "target_tokens": 50001424,
+  "latest_val_loss": 5.336977809667587,
+  "train_tok_per_sec": 37517.13712351116,
+  "pure_train_tok_per_sec": 38499.206131484985,
+  "peak_vram_mb": 2201.89697265625,
+  "final_path": "E:\\DEVNEW\\arc_tactic3\\benchmark_runs\\partial_untied_watch_50m_20260328\\final.json"
+}

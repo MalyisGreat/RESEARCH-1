@@ -1,0 +1,1646 @@
+{
+  "games": [
+    {
+      "game_id": "ls20",
+      "steps": 80,
+      "levels_completed": 0,
+      "win_levels": 7,
+      "state": "NOT_FINISHED",
+      "scorecard": {
+        "source_url": null,
+        "tags": null,
+        "opaque": null,
+        "card_id": "45c8f230-8ad5-483c-976e-b572040459a2",
+        "api_key": null,
+        "score": 0.0,
+        "environments": [
+          {
+            "id": "ls20-9607627b",
+            "runs": [
+              {
+                "id": null,
+                "guid": "b35cbc25-ee71-4e03-a418-eb9afe76f4a2",
+                "score": 0.0,
+                "levels_completed": 0,
+                "actions": 0,
+                "resets": 0,
+                "state": "NOT_FINISHED",
+                "completed": false,
+                "level_scores": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "level_actions": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "level_baseline_actions": [
+                  21,
+                  123,
+                  39,
+                  92,
+                  54,
+                  108,
+                  109
+                ],
+                "number_of_levels": null,
+                "number_of_environments": null,
+                "message": null
+              },
+              {
+                "id": null,
+                "guid": "b35cbc25-ee71-4e03-a418-eb9afe76f4a2",
+                "score": 0.0,
+                "levels_completed": 0,
+                "actions": 80,
+                "resets": 0,
+                "state": "NOT_FINISHED",
+                "completed": false,
+                "level_scores": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "level_actions": [
+                  80,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "level_baseline_actions": [
+                  21,
+                  123,
+                  39,
+                  92,
+                  54,
+                  108,
+                  109
+                ],
+                "number_of_levels": null,
+                "number_of_environments": null,
+                "message": null
+              }
+            ],
+            "score": 0.0,
+            "actions": 80,
+            "levels_completed": 0,
+            "completed": false,
+            "level_count": 7,
+            "resets": 0
+          }
+        ],
+        "tags_scores": [
+          {
+            "id": "keyboard",
+            "guid": null,
+            "score": 0.0,
+            "levels_completed": 0,
+            "actions": 0,
+            "resets": null,
+            "state": null,
+            "completed": null,
+            "level_scores": null,
+            "level_actions": null,
+            "level_baseline_actions": null,
+            "number_of_levels": 7,
+            "number_of_environments": 1,
+            "message": null
+          }
+        ],
+        "competition_mode": null,
+        "total_environments_completed": 0,
+        "total_environments": 1,
+        "total_levels_completed": 0,
+        "total_levels": 7,
+        "total_actions": 80
+      },
+      "action_trace": [
+        {
+          "step": 1,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 2,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 3,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 4,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 5,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 6,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 7,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 8,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 9,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 10,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 11,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 12,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 13,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 14,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 15,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 16,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 17,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 18,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 19,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 20,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 21,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 22,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 23,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 24,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 25,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 26,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 27,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 28,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 29,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 30,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 31,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 32,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 33,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 34,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 35,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 36,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 37,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 38,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 39,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 40,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 41,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 42,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 43,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 44,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 45,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 46,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 47,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 48,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 49,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 50,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 51,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 52,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 53,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 54,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 55,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 56,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 57,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 58,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 59,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 60,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 61,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 62,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 63,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 64,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 65,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 66,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 67,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 68,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 69,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 70,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 71,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 72,
+          "action": {
+            "action_id": 3,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 73,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 74,
+          "action": {
+            "action_id": 2,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 75,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 76,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 77,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 78,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 79,
+          "action": {
+            "action_id": 1,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 80,
+          "action": {
+            "action_id": 4,
+            "source": "button"
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        }
+      ]
+    },
+    {
+      "game_id": "r11l",
+      "steps": 60,
+      "levels_completed": 0,
+      "win_levels": 6,
+      "state": "GAME_OVER",
+      "scorecard": {
+        "source_url": null,
+        "tags": null,
+        "opaque": null,
+        "card_id": "72fdf7a6-a56c-4251-8bf9-1f96aea7a0f7",
+        "api_key": null,
+        "score": 0.0,
+        "environments": [
+          {
+            "id": "r11l-aa269680",
+            "runs": [
+              {
+                "id": null,
+                "guid": "f6d5ea98-068d-4a50-a4c6-9835cfe3841a",
+                "score": 0.0,
+                "levels_completed": 0,
+                "actions": 0,
+                "resets": 0,
+                "state": "NOT_FINISHED",
+                "completed": false,
+                "level_scores": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "level_actions": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "level_baseline_actions": [
+                  7,
+                  28,
+                  30,
+                  20,
+                  37,
+                  45
+                ],
+                "number_of_levels": null,
+                "number_of_environments": null,
+                "message": null
+              },
+              {
+                "id": null,
+                "guid": "f6d5ea98-068d-4a50-a4c6-9835cfe3841a",
+                "score": 0.0,
+                "levels_completed": 0,
+                "actions": 60,
+                "resets": 0,
+                "state": "GAME_OVER",
+                "completed": false,
+                "level_scores": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "level_actions": [
+                  60,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "level_baseline_actions": [
+                  7,
+                  28,
+                  30,
+                  20,
+                  37,
+                  45
+                ],
+                "number_of_levels": null,
+                "number_of_environments": null,
+                "message": null
+              }
+            ],
+            "score": 0.0,
+            "actions": 60,
+            "levels_completed": 0,
+            "completed": false,
+            "level_count": 6,
+            "resets": 0
+          }
+        ],
+        "tags_scores": [
+          {
+            "id": "click",
+            "guid": null,
+            "score": 0.0,
+            "levels_completed": 0,
+            "actions": 0,
+            "resets": null,
+            "state": null,
+            "completed": null,
+            "level_scores": null,
+            "level_actions": null,
+            "level_baseline_actions": null,
+            "number_of_levels": 6,
+            "number_of_environments": 1,
+            "message": null
+          }
+        ],
+        "competition_mode": null,
+        "total_environments_completed": 0,
+        "total_environments": 1,
+        "total_levels_completed": 0,
+        "total_levels": 6,
+        "total_actions": 60
+      },
+      "action_trace": [
+        {
+          "step": 1,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 54,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 2,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 3,
+            "y": 60
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 3,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 31,
+            "y": 32
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 4,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 24,
+            "y": 2
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 5,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 29,
+            "y": 45
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 6,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 30,
+            "y": 32
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 7,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 28,
+            "y": 45
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 8,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 27,
+            "y": 52
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 9,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 27,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 10,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 59,
+            "y": 7
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 11,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 27,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 12,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 63,
+            "y": 31
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 13,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 45,
+            "y": 45
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 14,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 36,
+            "y": 52
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 15,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 31,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 16,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 29,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 17,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 58,
+            "y": 17
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 18,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 51,
+            "y": 63
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 19,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 4,
+            "y": 52
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 20,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 15,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 21,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 21,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 22,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 24,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 23,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 25,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 24,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 54,
+            "y": 8
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 25,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 58,
+            "y": 0
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 26,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 51,
+            "y": 4
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 27,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 0,
+            "y": 31
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 28,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 13,
+            "y": 45
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 29,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 20,
+            "y": 52
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 30,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 23,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 31,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 25,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 32,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 4,
+            "y": 63
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 33,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 26,
+            "y": 0
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 34,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 26,
+            "y": 9
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 35,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 26,
+            "y": 34
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 36,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 26,
+            "y": 46
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 37,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 26,
+            "y": 52
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 38,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 26,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 39,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 26,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 40,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 31,
+            "y": 63
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 41,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 29,
+            "y": 61
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 42,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 7,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 43,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 17,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 44,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 22,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 45,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 63,
+            "y": 8
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 46,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 1,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 47,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 31,
+            "y": 0
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 48,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 40,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 49,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 33,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 50,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 30,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 51,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 28,
+            "y": 58
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 52,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 63,
+            "y": 55
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 53,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 1,
+            "y": 4
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 54,
+          "action": {
+            "action_id": 6,
+            "source": "bbox_mid",
+            "x": 51,
+            "y": 48
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 55,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 39,
+            "y": 53
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 56,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 33,
+            "y": 56
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 57,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 30,
+            "y": 57
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 58,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 30,
+            "y": 32
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 59,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 28,
+            "y": 45
+          },
+          "state": "NOT_FINISHED",
+          "levels_completed": 0
+        },
+        {
+          "step": 60,
+          "action": {
+            "action_id": 6,
+            "source": "component_center",
+            "x": 27,
+            "y": 52
+          },
+          "state": "GAME_OVER",
+          "levels_completed": 0
+        }
+      ]
+    }
+  ]
+}
