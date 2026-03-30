@@ -20,6 +20,7 @@ from arc_tactic3.language_partial_untied_cluster import (
     _MAX_CACHE_ON_DEVICE_BYTES,
     _autocast_context,
     _batch_from_flat_tokens,
+    _compute_resume_aware_rates,
     _evaluate_loss,
     _hardware_profile_from_override,
     _iter_train_batch_indices,
@@ -427,6 +428,7 @@ def run_nanochat_cluster(
     latest_ckpt = resolved_config.output_dir / "checkpoints" / "latest.pt"
     best_ckpt = resolved_config.output_dir / "checkpoints" / "best.pt"
     final_ckpt = resolved_config.output_dir / "checkpoints" / "final.pt"
+    nonfinite_ckpt = resolved_config.output_dir / "checkpoints" / "latest_nonfinite.pt"
     final_path = resolved_config.output_dir / "final.json"
     resolved_config.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -484,6 +486,9 @@ def run_nanochat_cluster(
     best_val_loss = float("inf")
     latest_val_loss = float("nan")
     initial_val_loss = float("nan")
+    resume_tokens_seen = 0
+    resume_wall_time_seconds = 0.0
+    resume_pure_train_time_seconds = 0.0
 
     if latest_ckpt.exists():
         checkpoint_payload = torch.load(latest_ckpt, map_location=device, weights_only=False)
@@ -495,8 +500,11 @@ def run_nanochat_cluster(
             scaler.load_state_dict(checkpoint_payload["scaler_state"])
         start_step = int(checkpoint_payload["step"]) + 1
         tokens_seen = int(checkpoint_payload["tokens_seen"])
+        resume_tokens_seen = tokens_seen
         latest_val_loss = float(checkpoint_payload.get("latest_val_loss", float("nan")))
         best_val_loss = float(checkpoint_payload.get("best_val_loss", float("inf")))
+        resume_wall_time_seconds = float(checkpoint_payload.get("wall_time_seconds", 0.0) or 0.0)
+        resume_pure_train_time_seconds = float(checkpoint_payload.get("pure_train_time_seconds", 0.0) or 0.0)
         if print_progress:
             print(f"resumed from checkpoint {latest_ckpt} at step={start_step-1:,} tokens={tokens_seen:,}", flush=True)
 
@@ -538,13 +546,125 @@ def run_nanochat_cluster(
         with _autocast_context(resolved_config):
             logits = model(batch["input_ids"])
             loss, token_count = _loss_and_tokens(logits, batch["targets"])
+        loss_value = float(loss.item())
+        if not math.isfinite(loss_value):
+            elapsed_since_resume = time.perf_counter() - start
+            train_tok_per_sec, pure_train_tok_per_sec, wall_time_seconds, pure_train_time_seconds = _compute_resume_aware_rates(
+                tokens_seen=tokens_seen,
+                resume_tokens_seen=resume_tokens_seen,
+                elapsed_since_resume=elapsed_since_resume,
+                step_times=step_times,
+                resume_wall_time_seconds=resume_wall_time_seconds,
+                resume_pure_train_time_seconds=resume_pure_train_time_seconds,
+            )
+            progress = (step_index - 1) / real_config.train_steps
+            failure_payload = {
+                "benchmark": "language_nanochat_cluster",
+                "status": "failed_nonfinite_loss",
+                "failure_step": step_index,
+                "step": step_index - 1,
+                "train_steps": real_config.train_steps,
+                "progress": progress,
+                "tokens_seen": tokens_seen,
+                "target_tokens": actual_train_tokens,
+                "train_tok_per_sec": train_tok_per_sec,
+                "pure_train_tok_per_sec": pure_train_tok_per_sec,
+                "eta_seconds": float("inf"),
+                "latest_train_loss": loss_value,
+                "latest_val_loss": latest_val_loss,
+                "best_val_loss": best_val_loss,
+                "peak_vram_mb": _peak_vram_mb(real_config.device),
+                "parameter_count": count_parameters(model),
+                "hardware_profile": profile.name,
+                "cache_path": str(resolved_cache_path),
+                "wall_time_seconds": wall_time_seconds,
+                "pure_train_time_seconds": pure_train_time_seconds,
+            }
+            _write_json(state_path, failure_payload)
+            _append_jsonl(metrics_path, {"kind": "failure", **failure_payload, "timestamp": time.time()})
+            _save_checkpoint(
+                nonfinite_ckpt,
+                model=model,
+                optimizer=optimizer,
+                scheduler=scheduler,
+                scaler=scaler,
+                config=resolved_config,
+                step=step_index - 1,
+                tokens_seen=tokens_seen,
+                latest_val_loss=latest_val_loss,
+                best_val_loss=best_val_loss,
+                cache_path=resolved_cache_path,
+                wall_time_seconds=wall_time_seconds,
+                pure_train_time_seconds=pure_train_time_seconds,
+            )
+            raise RuntimeError(
+                f"Non-finite training loss at step {step_index:,}: {loss_value!r}. "
+                f"Preserved the last good training state in {nonfinite_ckpt}."
+            )
         optimizer.zero_grad(set_to_none=True)
         if scaler is not None:
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)
         else:
             loss.backward()
-        torch.nn.utils.clip_grad_norm_(parameter_list, max_norm=1.0)
+        grad_norm = torch.nn.utils.clip_grad_norm_(parameter_list, max_norm=1.0)
+        grad_norm_value = float(grad_norm)
+        if not math.isfinite(grad_norm_value):
+            optimizer.zero_grad(set_to_none=True)
+            elapsed_since_resume = time.perf_counter() - start
+            train_tok_per_sec, pure_train_tok_per_sec, wall_time_seconds, pure_train_time_seconds = _compute_resume_aware_rates(
+                tokens_seen=tokens_seen,
+                resume_tokens_seen=resume_tokens_seen,
+                elapsed_since_resume=elapsed_since_resume,
+                step_times=step_times,
+                resume_wall_time_seconds=resume_wall_time_seconds,
+                resume_pure_train_time_seconds=resume_pure_train_time_seconds,
+            )
+            progress = (step_index - 1) / real_config.train_steps
+            failure_payload = {
+                "benchmark": "language_nanochat_cluster",
+                "status": "failed_nonfinite_grad_norm",
+                "failure_step": step_index,
+                "step": step_index - 1,
+                "train_steps": real_config.train_steps,
+                "progress": progress,
+                "tokens_seen": tokens_seen,
+                "target_tokens": actual_train_tokens,
+                "train_tok_per_sec": train_tok_per_sec,
+                "pure_train_tok_per_sec": pure_train_tok_per_sec,
+                "eta_seconds": float("inf"),
+                "latest_train_loss": loss_value,
+                "latest_val_loss": latest_val_loss,
+                "best_val_loss": best_val_loss,
+                "peak_vram_mb": _peak_vram_mb(real_config.device),
+                "parameter_count": count_parameters(model),
+                "hardware_profile": profile.name,
+                "cache_path": str(resolved_cache_path),
+                "wall_time_seconds": wall_time_seconds,
+                "pure_train_time_seconds": pure_train_time_seconds,
+                "latest_grad_norm": grad_norm_value,
+            }
+            _write_json(state_path, failure_payload)
+            _append_jsonl(metrics_path, {"kind": "failure", **failure_payload, "timestamp": time.time()})
+            _save_checkpoint(
+                nonfinite_ckpt,
+                model=model,
+                optimizer=optimizer,
+                scheduler=scheduler,
+                scaler=scaler,
+                config=resolved_config,
+                step=step_index - 1,
+                tokens_seen=tokens_seen,
+                latest_val_loss=latest_val_loss,
+                best_val_loss=best_val_loss,
+                cache_path=resolved_cache_path,
+                wall_time_seconds=wall_time_seconds,
+                pure_train_time_seconds=pure_train_time_seconds,
+            )
+            raise RuntimeError(
+                f"Non-finite grad norm at step {step_index:,}: {grad_norm_value!r}. "
+                f"Preserved the last good training state in {nonfinite_ckpt}."
+            )
         if scaler is not None:
             scaler.step(optimizer)
             scaler.update()
@@ -558,10 +678,16 @@ def run_nanochat_cluster(
         step_times.append(step_duration)
         tokens_seen += token_count
         sequences_seen += batch["input_ids"].size(0)
-        elapsed = time.perf_counter() - start
+        elapsed_since_resume = time.perf_counter() - start
         progress = step_index / real_config.train_steps
-        train_tok_per_sec = tokens_seen / max(elapsed, 1e-9)
-        pure_train_tok_per_sec = tokens_seen / max(sum(step_times), 1e-9)
+        train_tok_per_sec, pure_train_tok_per_sec, wall_time_seconds, pure_train_time_seconds = _compute_resume_aware_rates(
+            tokens_seen=tokens_seen,
+            resume_tokens_seen=resume_tokens_seen,
+            elapsed_since_resume=elapsed_since_resume,
+            step_times=step_times,
+            resume_wall_time_seconds=resume_wall_time_seconds,
+            resume_pure_train_time_seconds=resume_pure_train_time_seconds,
+        )
         remaining_tokens = max(actual_train_tokens - tokens_seen, 0)
         eta_seconds = remaining_tokens / max(train_tok_per_sec, 1e-9)
         state_payload = {
@@ -582,6 +708,8 @@ def run_nanochat_cluster(
             "parameter_count": count_parameters(model),
             "hardware_profile": profile.name,
             "cache_path": str(resolved_cache_path),
+            "wall_time_seconds": wall_time_seconds,
+            "pure_train_time_seconds": pure_train_time_seconds,
         }
         if step_index % resolved_config.log_interval == 0 or step_index == real_config.train_steps:
             _write_json(state_path, state_payload)
@@ -644,6 +772,8 @@ def run_nanochat_cluster(
                     latest_val_loss=latest_val_loss,
                     best_val_loss=best_val_loss,
                     cache_path=resolved_cache_path,
+                    wall_time_seconds=wall_time_seconds,
+                    pure_train_time_seconds=pure_train_time_seconds,
                 )
 
         if should_sample:
@@ -687,10 +817,19 @@ def run_nanochat_cluster(
                 latest_val_loss=latest_val_loss,
                 best_val_loss=best_val_loss,
                 cache_path=resolved_cache_path,
+                wall_time_seconds=wall_time_seconds,
+                pure_train_time_seconds=pure_train_time_seconds,
             )
 
-    total_time = time.perf_counter() - start
-    pure_train_time = sum(step_times)
+    elapsed_since_resume = time.perf_counter() - start
+    _, _, total_time, pure_train_time = _compute_resume_aware_rates(
+        tokens_seen=tokens_seen,
+        resume_tokens_seen=resume_tokens_seen,
+        elapsed_since_resume=elapsed_since_resume,
+        step_times=step_times,
+        resume_wall_time_seconds=resume_wall_time_seconds,
+        resume_pure_train_time_seconds=resume_pure_train_time_seconds,
+    )
     report = {
         "parameter_count": count_parameters(model),
         "history": history,
@@ -720,6 +859,8 @@ def run_nanochat_cluster(
             latest_val_loss=latest_val_loss,
             best_val_loss=best_val_loss,
             cache_path=resolved_cache_path,
+            wall_time_seconds=total_time,
+            pure_train_time_seconds=pure_train_time,
         )
     final_payload = {
         "benchmark": "language_nanochat_cluster",

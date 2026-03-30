@@ -9,6 +9,7 @@ from arc_tactic3.language_partial_untied_cluster import (
     PartialUntiedClusterConfig,
     _DEFAULT_PROMPTS,
     _apply_named_preset,
+    _compute_resume_aware_rates,
     _default_cache_path,
     _estimate_partial_untied_parameter_count,
     _hardware_profile_from_name,
@@ -102,3 +103,31 @@ def test_large_cache_budget_is_not_cached_on_device() -> None:
     )
     resolved, _ = resolve_cluster_config(config)
     assert resolved.cache_dataset_on_device is False
+
+
+def test_compute_resume_aware_rates_uses_resume_delta_without_timing_offsets() -> None:
+    train_tok_per_sec, pure_train_tok_per_sec, wall_time_seconds, pure_train_time_seconds = _compute_resume_aware_rates(
+        tokens_seen=650,
+        resume_tokens_seen=500,
+        elapsed_since_resume=3.0,
+        step_times=[1.0, 1.0],
+    )
+    assert train_tok_per_sec == 50.0
+    assert pure_train_tok_per_sec == 75.0
+    assert wall_time_seconds == 3.0
+    assert pure_train_time_seconds == 2.0
+
+
+def test_compute_resume_aware_rates_preserves_total_timing_when_offsets_exist() -> None:
+    train_tok_per_sec, pure_train_tok_per_sec, wall_time_seconds, pure_train_time_seconds = _compute_resume_aware_rates(
+        tokens_seen=650,
+        resume_tokens_seen=500,
+        elapsed_since_resume=3.0,
+        step_times=[1.0, 1.0],
+        resume_wall_time_seconds=5.0,
+        resume_pure_train_time_seconds=4.0,
+    )
+    assert train_tok_per_sec == 650 / 8.0
+    assert pure_train_tok_per_sec == 650 / 6.0
+    assert wall_time_seconds == 8.0
+    assert pure_train_time_seconds == 6.0
