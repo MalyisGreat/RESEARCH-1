@@ -87,6 +87,10 @@ def test_h100_100m_1b_preset_targets_about_100m_params() -> None:
     assert config.val_tokens == 20_000_000
     assert config.batch_size == 192
     assert config.eval_batch_size == 256
+    assert config.learning_rate == 6e-4
+    assert config.warmup_steps == 1024
+    assert config.lr_schedule == "cosine"
+    assert config.min_lr_scale == 0.1
     assert config.cache_dataset_on_device is True
     assert 99_000_000 <= _estimate_partial_untied_parameter_count(config) <= 101_000_000
 

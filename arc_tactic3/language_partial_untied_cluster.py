@@ -58,6 +58,9 @@ class ClusterPreset:
     memory_dim: int
     partial_token_count: int
     learning_rate: float
+    warmup_steps: int
+    lr_schedule: str
+    min_lr_scale: float
     cache_dataset_on_device: bool
     tokenization_batch_size: int
     sample_temperature: float
@@ -80,7 +83,10 @@ _NAMED_PRESETS: dict[str, ClusterPreset] = {
         hidden_dim=2432,
         memory_dim=1024,
         partial_token_count=4096,
-        learning_rate=1e-3,
+        learning_rate=6e-4,
+        warmup_steps=1024,
+        lr_schedule="cosine",
+        min_lr_scale=0.1,
         cache_dataset_on_device=True,
         tokenization_batch_size=8192,
         sample_temperature=0.9,
@@ -123,6 +129,9 @@ class PartialUntiedClusterConfig:
     seed: int = 13
     learning_rate: float = 2e-3
     weight_decay: float = 1e-4
+    warmup_steps: int = 0
+    lr_schedule: str = "none"
+    min_lr_scale: float = 1.0
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     local_files_only: bool = False
     use_amp: bool = torch.cuda.is_available()
@@ -298,6 +307,9 @@ def _apply_named_preset(config: PartialUntiedClusterConfig, preset_name: str | N
         memory_dim=preset.memory_dim,
         partial_token_count=preset.partial_token_count,
         learning_rate=preset.learning_rate,
+        warmup_steps=preset.warmup_steps,
+        lr_schedule=preset.lr_schedule,
+        min_lr_scale=preset.min_lr_scale,
         cache_dataset_on_device=preset.cache_dataset_on_device,
         tokenization_batch_size=preset.tokenization_batch_size,
         sample_temperature=preset.sample_temperature,
@@ -586,6 +598,9 @@ def _make_realtext_config(config: PartialUntiedClusterConfig, *, train_steps: in
         eval_batch_size=config.eval_batch_size,
         learning_rate=config.learning_rate,
         weight_decay=config.weight_decay,
+        warmup_steps=config.warmup_steps,
+        lr_schedule=config.lr_schedule,
+        min_lr_scale=config.min_lr_scale,
         device=config.device,
         use_amp=config.use_amp and config.device.startswith("cuda"),
         pin_memory=config.pin_memory,
@@ -795,6 +810,10 @@ def _load_checkpoint(
         scheduler.load_state_dict(payload["scheduler_state"])
     if scaler is not None and payload.get("scaler_state") is not None:
         scaler.load_state_dict(payload["scaler_state"])
+    if scheduler is not None and payload.get("scheduler_state") is None:
+        completed_step = int(payload.get("step", 0))
+        if completed_step > 0:
+            scheduler.step(completed_step - 1)
     return payload
 
 
@@ -1463,6 +1482,9 @@ def main() -> None:
     parser.add_argument("--partial-token-count", type=int, default=1024)
     parser.add_argument("--learning-rate", type=float, default=2e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument("--warmup-steps", type=int, default=0)
+    parser.add_argument("--lr-schedule", choices=("none", "cosine", "linear"), default="none")
+    parser.add_argument("--min-lr-scale", type=float, default=1.0)
     parser.add_argument("--amp-dtype", choices=("auto", "bf16", "fp16", "fp32"), default="auto")
     parser.add_argument("--tokenization-batch-size", type=int, default=0)
     parser.add_argument("--cache-dataset-on-device", dest="cache_dataset_on_device", action="store_true")
@@ -1508,6 +1530,9 @@ def main() -> None:
         partial_token_count=args.partial_token_count,
         learning_rate=args.learning_rate,
         weight_decay=args.weight_decay,
+        warmup_steps=args.warmup_steps,
+        lr_schedule=args.lr_schedule,
+        min_lr_scale=args.min_lr_scale,
         amp_dtype=args.amp_dtype,
         tokenization_batch_size=args.tokenization_batch_size,
         cache_dataset_on_device=args.cache_dataset_on_device,
