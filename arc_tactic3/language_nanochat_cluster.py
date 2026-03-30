@@ -3,19 +3,33 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import os
 import statistics
 import time
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any
 
 import torch
-from datasets import DownloadConfig, load_dataset
 from transformers import AutoTokenizer
 
 from arc_tactic3.language_fastlearn_benchmark import count_parameters, set_global_seed
-from arc_tactic3.language_nanochat_actual_compare import _peak_vram_mb
+from arc_tactic3.language_nanochat_actual_compare import NanochatMiniLM, _peak_vram_mb
+from arc_tactic3.language_partial_untied_cluster import (
+    ClusterHardwareProfile,
+    _DEFAULT_PROMPTS,
+    _MAX_CACHE_ON_DEVICE_BYTES,
+    _autocast_context,
+    _batch_from_flat_tokens,
+    _evaluate_loss,
+    _hardware_profile_from_override,
+    _iter_train_batch_indices,
+    _prepare_token_buffer,
+    _sample_generate,
+    _save_checkpoint,
+    _token_block_count,
+    detect_cluster_hardware_profile,
+    ensure_fineweb_cache,
+)
 from arc_tactic3.language_partial_untied_watch import (
     _append_jsonl,
     _bar,
@@ -29,22 +43,13 @@ from arc_tactic3.language_realtext_microbench import (
     _build_scheduler,
     _loss_and_tokens,
 )
-from arc_tactic3.language_recurrent_nano_tricks import PartialUntiedAssociativeLM
-
-
-_DEFAULT_PROMPTS = (
-    "The capital of France is",
-    "Machine learning is a field of study that",
-    "Python is a programming language that",
-    "In a surprising result, the experiment showed that",
-)
 
 _GPT2_VOCAB_SIZE = 50_257
-_MAX_CACHE_ON_DEVICE_BYTES = 8 * 1024**3
+_NANOCHAT_PAD_VOCAB_SIZE_TO = 64
 
 
 @dataclass(frozen=True, slots=True)
-class ClusterPreset:
+class NanochatPreset:
     train_tokens: int
     val_tokens: int
     batch_size: int
@@ -53,10 +58,10 @@ class ClusterPreset:
     log_interval: int
     checkpoint_interval: int
     sample_interval: int
-    embedding_dim: int
-    hidden_dim: int
-    memory_dim: int
-    partial_token_count: int
+    n_layer: int
+    n_head: int
+    n_kv_head: int
+    n_embd: int
     learning_rate: float
     cache_dataset_on_device: bool
     tokenization_batch_size: int
@@ -66,8 +71,8 @@ class ClusterPreset:
     sample_repetition_penalty: float
 
 
-_NAMED_PRESETS: dict[str, ClusterPreset] = {
-    "h100_100m_1b": ClusterPreset(
+_NAMED_PRESETS: dict[str, NanochatPreset] = {
+    "h100_100m_1b": NanochatPreset(
         train_tokens=980_000_000,
         val_tokens=20_000_000,
         batch_size=192,
@@ -76,10 +81,10 @@ _NAMED_PRESETS: dict[str, ClusterPreset] = {
         log_interval=64,
         checkpoint_interval=4096,
         sample_interval=4096,
-        embedding_dim=1024,
-        hidden_dim=2432,
-        memory_dim=1024,
-        partial_token_count=4096,
+        n_layer=8,
+        n_head=8,
+        n_kv_head=2,
+        n_embd=512,
         learning_rate=1e-3,
         cache_dataset_on_device=True,
         tokenization_batch_size=8192,
@@ -92,24 +97,7 @@ _NAMED_PRESETS: dict[str, ClusterPreset] = {
 
 
 @dataclass(frozen=True, slots=True)
-class ClusterHardwareProfile:
-    name: str
-    device_name: str
-    total_memory_gb: float
-    amp_dtype: str
-    batch_size: int
-    eval_batch_size: int
-    tokenization_batch_size: int
-    eval_interval: int
-    log_interval: int
-    checkpoint_interval: int
-    sample_interval: int
-    cache_dataset_on_device: bool
-    use_compile: bool
-
-
-@dataclass(frozen=True, slots=True)
-class PartialUntiedClusterConfig:
+class NanochatClusterConfig:
     output_dir: Path
     cache_path: Path | None = None
     dataset_name: str = "HuggingFaceFW/fineweb-edu"
@@ -138,11 +126,6 @@ class PartialUntiedClusterConfig:
     log_interval: int = 0
     checkpoint_interval: int = 0
     sample_interval: int = 0
-    embedding_dim: int = 320
-    hidden_dim: int = 640
-    memory_dim: int = 320
-    partial_token_count: int = 1024
-    dropout: float = 0.1
     initial_eval: bool = True
     train_schedule_seed: int | None = None
     sample_prompts: tuple[str, ...] = _DEFAULT_PROMPTS
@@ -157,128 +140,48 @@ class PartialUntiedClusterConfig:
     hf_xet_high_performance: bool = True
     tokenizer_parallelism: bool = True
     hardware_profile_override: str | None = None
+    nano_n_layer: int = 4
+    nano_n_head: int = 4
+    nano_n_kv_head: int = 4
+    nano_n_embd: int = 40
+    nano_window_pattern: str = "SSSL"
+    nano_softcap: float = 15.0
+    nano_use_value_embeddings: bool = True
+    nano_use_smear: bool = True
+    nano_use_backout: bool = True
 
 
-def _hardware_profile_from_name(device_name: str, total_memory_gb: float) -> ClusterHardwareProfile:
-    upper = device_name.upper()
-    if "H100" in upper:
-        return ClusterHardwareProfile(
-            name="h100",
-            device_name=device_name,
-            total_memory_gb=total_memory_gb,
-            amp_dtype="bf16",
-            batch_size=128,
-            eval_batch_size=192,
-            tokenization_batch_size=4096,
-            eval_interval=256,
-            log_interval=32,
-            checkpoint_interval=512,
-            sample_interval=256,
-            cache_dataset_on_device=True,
-            use_compile=False,
-        )
-    if "A100" in upper and total_memory_gb >= 70.0:
-        return ClusterHardwareProfile(
-            name="a100_80g",
-            device_name=device_name,
-            total_memory_gb=total_memory_gb,
-            amp_dtype="bf16",
-            batch_size=96,
-            eval_batch_size=160,
-            tokenization_batch_size=3072,
-            eval_interval=256,
-            log_interval=32,
-            checkpoint_interval=512,
-            sample_interval=256,
-            cache_dataset_on_device=True,
-            use_compile=False,
-        )
-    if "A100" in upper:
-        return ClusterHardwareProfile(
-            name="a100_40g",
-            device_name=device_name,
-            total_memory_gb=total_memory_gb,
-            amp_dtype="bf16",
-            batch_size=64,
-            eval_batch_size=128,
-            tokenization_batch_size=2048,
-            eval_interval=256,
-            log_interval=32,
-            checkpoint_interval=512,
-            sample_interval=256,
-            cache_dataset_on_device=True,
-            use_compile=False,
-        )
-    return ClusterHardwareProfile(
-        name="generic_cuda" if device_name.upper() != "CPU" else "cpu",
-        device_name=device_name,
-        total_memory_gb=total_memory_gb,
-        amp_dtype="fp16" if device_name.upper() != "CPU" else "fp32",
-        batch_size=32 if device_name.upper() != "CPU" else 8,
-        eval_batch_size=64 if device_name.upper() != "CPU" else 16,
-        tokenization_batch_size=1024,
-        eval_interval=256,
-        log_interval=32,
-        checkpoint_interval=512,
-        sample_interval=256,
-        cache_dataset_on_device=device_name.upper() != "CPU",
-        use_compile=False,
-    )
+def _nano_padded_vocab_size(vocab_size: int) -> int:
+    return ((vocab_size + _NANOCHAT_PAD_VOCAB_SIZE_TO - 1) // _NANOCHAT_PAD_VOCAB_SIZE_TO) * _NANOCHAT_PAD_VOCAB_SIZE_TO
 
 
-def _hardware_profile_from_override(name: str) -> ClusterHardwareProfile:
-    normalized = name.lower()
-    if normalized == "h100":
-        return _hardware_profile_from_name("NVIDIA H100 80GB HBM3", 80.0)
-    if normalized == "a100_80g":
-        return _hardware_profile_from_name("NVIDIA A100-SXM4-80GB", 80.0)
-    if normalized == "a100_40g":
-        return _hardware_profile_from_name("NVIDIA A100-PCIE-40GB", 40.0)
-    if normalized == "generic_cuda":
-        return _hardware_profile_from_name("Generic CUDA", 24.0)
-    if normalized == "cpu":
-        return _hardware_profile_from_name("CPU", 0.0)
-    raise ValueError(f"Unsupported hardware profile override: {name}")
+def _nano_value_embedding_layers(layer_count: int) -> int:
+    return (layer_count + 1) // 2
 
 
-def detect_cluster_hardware_profile(device: str | None = None) -> ClusterHardwareProfile:
-    device_name = "cpu"
-    total_memory_gb = 0.0
-    if torch.cuda.is_available() and (device is None or device.startswith("cuda")):
-        device_index = 0
-        if device is not None and ":" in device:
-            device_index = int(device.split(":", 1)[1])
-        props = torch.cuda.get_device_properties(device_index)
-        device_name = props.name
-        total_memory_gb = props.total_memory / (1024**3)
-    return _hardware_profile_from_name(device_name, total_memory_gb)
+def _estimate_nanochat_parameter_count(config: NanochatClusterConfig, *, vocab_size: int = _GPT2_VOCAB_SIZE) -> int:
+    padded_vocab_size = _nano_padded_vocab_size(vocab_size)
+    n_layer = config.nano_n_layer
+    n_head = config.nano_n_head
+    n_kv_head = config.nano_n_kv_head
+    n_embd = config.nano_n_embd
+    kv_dim = (n_embd * n_kv_head) // n_head
+    ve_layers = _nano_value_embedding_layers(n_layer) if config.nano_use_value_embeddings else 0
+    ve_gate_channels = min(12, n_embd)
+    smear_gate_channels = min(24, n_embd)
+    embedding_params = padded_vocab_size * n_embd
+    block_params = n_layer * (10 * n_embd * n_embd + 2 * n_embd * kv_dim)
+    value_embed_params = ve_layers * padded_vocab_size * kv_dim
+    ve_gate_params = ve_layers * ve_gate_channels * n_kv_head
+    misc_params = (2 * n_layer) + smear_gate_channels + 1
+    return embedding_params + block_params + embedding_params + value_embed_params + ve_gate_params + misc_params
 
 
-def _estimate_partial_untied_parameter_count(config: PartialUntiedClusterConfig, *, vocab_size: int = _GPT2_VOCAB_SIZE) -> int:
-    embedding_dim = config.embedding_dim
-    hidden_dim = config.hidden_dim
-    memory_dim = config.memory_dim
-    partial_token_count = config.partial_token_count
-    return (
-        vocab_size * (embedding_dim + 1)
-        + 7 * hidden_dim * embedding_dim
-        + 3 * hidden_dim * hidden_dim
-        + 2 * hidden_dim * memory_dim
-        + 4 * embedding_dim * embedding_dim
-        + 7 * hidden_dim
-        + 2 * memory_dim
-        + 5 * embedding_dim
-        + embedding_dim * partial_token_count
-        + partial_token_count
-        + 2
-    )
-
-
-def _token_cache_bytes(config: PartialUntiedClusterConfig) -> int:
+def _token_cache_bytes(config: NanochatClusterConfig) -> int:
     return config.total_tokens * torch.tensor([], dtype=torch.int32).element_size()
 
 
-def _apply_named_preset(config: PartialUntiedClusterConfig, preset_name: str | None) -> PartialUntiedClusterConfig:
+def _apply_named_preset(config: NanochatClusterConfig, preset_name: str | None) -> NanochatClusterConfig:
     if preset_name is None:
         return config
     preset = _NAMED_PRESETS[preset_name]
@@ -293,10 +196,6 @@ def _apply_named_preset(config: PartialUntiedClusterConfig, preset_name: str | N
         log_interval=preset.log_interval,
         checkpoint_interval=preset.checkpoint_interval,
         sample_interval=preset.sample_interval,
-        embedding_dim=preset.embedding_dim,
-        hidden_dim=preset.hidden_dim,
-        memory_dim=preset.memory_dim,
-        partial_token_count=preset.partial_token_count,
         learning_rate=preset.learning_rate,
         cache_dataset_on_device=preset.cache_dataset_on_device,
         tokenization_batch_size=preset.tokenization_batch_size,
@@ -304,10 +203,14 @@ def _apply_named_preset(config: PartialUntiedClusterConfig, preset_name: str | N
         sample_top_p=preset.sample_top_p,
         sample_top_k=preset.sample_top_k,
         sample_repetition_penalty=preset.sample_repetition_penalty,
+        nano_n_layer=preset.n_layer,
+        nano_n_head=preset.n_head,
+        nano_n_kv_head=preset.n_kv_head,
+        nano_n_embd=preset.n_embd,
     )
 
 
-def resolve_cluster_config(config: PartialUntiedClusterConfig) -> tuple[PartialUntiedClusterConfig, ClusterHardwareProfile]:
+def resolve_cluster_config(config: NanochatClusterConfig) -> tuple[NanochatClusterConfig, ClusterHardwareProfile]:
     profile = (
         _hardware_profile_from_override(config.hardware_profile_override)
         if config.hardware_profile_override is not None
@@ -351,20 +254,9 @@ def resolve_cluster_config(config: PartialUntiedClusterConfig) -> tuple[PartialU
     return resolved, profile
 
 
-def _default_cache_path(config: PartialUntiedClusterConfig) -> Path:
-    safe_name = f"finewebedu_train{config.train_tokens}_val{config.val_tokens}_seq{config.sequence_length}_{config.tokenizer_name}.pt"
-    return config.output_dir / "cache" / safe_name
+def _configure_runtime_env(config: NanochatClusterConfig) -> None:
+    import os
 
-
-def _validate_token_budget(config: PartialUntiedClusterConfig) -> None:
-    if config.train_tokens + config.val_tokens != config.total_tokens:
-        raise ValueError("train_tokens + val_tokens must equal total_tokens.")
-    block_size = config.sequence_length + 1
-    if config.train_tokens % block_size != 0 or config.val_tokens % block_size != 0:
-        raise ValueError("train_tokens and val_tokens must each be divisible by sequence_length + 1.")
-
-
-def _configure_runtime_env(config: PartialUntiedClusterConfig) -> None:
     if config.hf_xet_high_performance:
         os.environ.setdefault("HF_XET_HIGH_PERFORMANCE", "1")
     if config.tokenizer_parallelism:
@@ -375,14 +267,14 @@ def _configure_runtime_env(config: PartialUntiedClusterConfig) -> None:
         torch.set_float32_matmul_precision("high")
 
 
-def _config_payload(config: PartialUntiedClusterConfig, *, profile: ClusterHardwareProfile) -> dict[str, Any]:
+def _config_payload(config: NanochatClusterConfig, *, profile: ClusterHardwareProfile) -> dict[str, Any]:
     payload = asdict(config)
     payload["output_dir"] = str(config.output_dir)
     payload["cache_path"] = str(config.cache_path) if config.cache_path is not None else None
     payload["hardware_profile"] = asdict(profile)
     tokens_per_step = config.sequence_length * config.batch_size
     resolved_train_steps = math.ceil(config.train_tokens / max(tokens_per_step, 1)) if tokens_per_step > 0 else 0
-    payload["estimated_parameter_count"] = _estimate_partial_untied_parameter_count(config)
+    payload["estimated_parameter_count"] = _estimate_nanochat_parameter_count(config)
     payload["token_cache_bytes"] = _token_cache_bytes(config)
     payload["token_cache_gib"] = round(_token_cache_bytes(config) / (1024**3), 3)
     payload["tokens_per_step"] = tokens_per_step
@@ -391,192 +283,7 @@ def _config_payload(config: PartialUntiedClusterConfig, *, profile: ClusterHardw
     return payload
 
 
-def _fill_train_val_token_buffers(
-    texts: Iterable[str],
-    *,
-    tokenizer,
-    train_tokens: int,
-    val_tokens: int,
-    batch_size: int,
-    print_prefix: str | None,
-) -> tuple[torch.Tensor, torch.Tensor]:
-    eos_id = tokenizer.eos_token_id
-    if eos_id is None:
-        raise ValueError(f"Tokenizer {tokenizer.name_or_path} does not expose eos_token_id.")
-    total_tokens = train_tokens + val_tokens
-    train_buffer = torch.empty(train_tokens, dtype=torch.int32)
-    val_buffer = torch.empty(val_tokens, dtype=torch.int32)
-    cursor = 0
-    pending: list[str] = []
-    started = time.perf_counter()
-    last_report = started
-
-    def _consume(batch_texts: Sequence[str]) -> None:
-        nonlocal cursor
-        encoded = tokenizer(batch_texts, add_special_tokens=False, truncation=False)
-        for token_ids in encoded["input_ids"]:
-            if cursor >= total_tokens:
-                break
-            if not token_ids:
-                continue
-            ids = list(token_ids) + [eos_id]
-            remaining = total_tokens - cursor
-            if len(ids) > remaining:
-                ids = ids[:remaining]
-            chunk = torch.tensor(ids, dtype=torch.int32)
-            start = cursor
-            stop = cursor + chunk.numel()
-            train_stop = min(stop, train_tokens)
-            if start < train_tokens:
-                train_buffer[start:train_stop] = chunk[: train_stop - start]
-            if stop > train_tokens:
-                val_start = max(start, train_tokens) - train_tokens
-                val_stop = stop - train_tokens
-                chunk_start = max(train_tokens - start, 0)
-                val_buffer[val_start:val_stop] = chunk[chunk_start:]
-            cursor += chunk.numel()
-
-    for text in texts:
-        if cursor >= total_tokens:
-            break
-        if not text or not text.strip():
-            continue
-        pending.append(text)
-        if len(pending) < batch_size:
-            continue
-        _consume(pending)
-        pending = []
-        now = time.perf_counter()
-        if print_prefix is not None and now - last_report >= 5.0:
-            tok_per_sec = cursor / max(now - started, 1e-9)
-            print(
-                f"{print_prefix} cache_build {_bar(cursor / total_tokens)} "
-                f"{cursor:,}/{total_tokens:,} tokens tok/s={tok_per_sec:,.0f}",
-                flush=True,
-            )
-            last_report = now
-    if pending and cursor < total_tokens:
-        _consume(pending)
-    if cursor != total_tokens:
-        raise RuntimeError(f"Token stream ended early: expected {total_tokens} tokens, got {cursor}.")
-    return train_buffer, val_buffer
-
-
-def _token_block_count(token_buffer: torch.Tensor, *, sequence_length: int) -> int:
-    block_size = sequence_length + 1
-    if token_buffer.numel() % block_size != 0:
-        raise ValueError("Token buffer length must be divisible by sequence_length + 1.")
-    return token_buffer.numel() // block_size
-
-
-def _prepare_token_buffer(
-    token_buffer: torch.Tensor,
-    *,
-    device: torch.device,
-    cache_on_device: bool,
-    pin_memory: bool,
-) -> torch.Tensor:
-    if cache_on_device and device.type == "cuda":
-        return token_buffer.to(device=device, non_blocking=False)
-    if pin_memory and token_buffer.device.type == "cpu":
-        return token_buffer.pin_memory()
-    return token_buffer
-
-
-def _batch_from_flat_tokens(
-    token_buffer: torch.Tensor,
-    *,
-    sequence_length: int,
-    batch_indices: torch.Tensor,
-    device: torch.device,
-    non_blocking: bool,
-) -> dict[str, torch.Tensor]:
-    block_size = sequence_length + 1
-    if batch_indices.device.type != token_buffer.device.type:
-        batch_indices = batch_indices.to(token_buffer.device)
-    starts = batch_indices.long() * block_size
-    offsets = torch.arange(block_size, device=token_buffer.device, dtype=torch.long)
-    flat_indices = starts.unsqueeze(1) + offsets.unsqueeze(0)
-    blocks = token_buffer.index_select(0, flat_indices.reshape(-1)).view(batch_indices.numel(), block_size)
-    return {
-        "input_ids": blocks[:, :-1].to(device=device, dtype=torch.long, non_blocking=non_blocking),
-        "targets": blocks[:, 1:].to(device=device, dtype=torch.long, non_blocking=non_blocking),
-    }
-
-
-def _top_token_ids_from_token_buffer(
-    token_buffer: torch.Tensor,
-    *,
-    count: int,
-    vocab_size: int,
-    chunk_size: int = 16_000_000,
-) -> torch.Tensor:
-    histogram = torch.zeros(vocab_size, dtype=torch.int64)
-    for start in range(0, token_buffer.numel(), chunk_size):
-        chunk = token_buffer[start : start + chunk_size].to(dtype=torch.int64)
-        histogram += torch.bincount(chunk, minlength=vocab_size)
-    top_k = min(max(count, 1), vocab_size)
-    return torch.topk(histogram, k=top_k, largest=True, sorted=False).indices
-
-
-def ensure_fineweb_cache(
-    config: PartialUntiedClusterConfig,
-    *,
-    print_progress: bool = True,
-) -> tuple[torch.Tensor, torch.Tensor, int, Path]:
-    _validate_token_budget(config)
-    cache_path = config.cache_path if config.cache_path is not None else _default_cache_path(config)
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-
-    if cache_path.exists():
-        payload = torch.load(cache_path, map_location="cpu", weights_only=False)
-        train_tokens = payload["train_tokens"]
-        val_tokens = payload["val_tokens"]
-        if train_tokens.numel() < config.train_tokens or val_tokens.numel() < config.val_tokens:
-            raise ValueError(
-                f"Cache {cache_path} is too small for requested token budget: "
-                f"train {train_tokens.numel()} < {config.train_tokens} or val {val_tokens.numel()} < {config.val_tokens}."
-            )
-        return train_tokens[: config.train_tokens], val_tokens[: config.val_tokens], int(payload["vocab_size"]), cache_path
-
-    tokenizer = AutoTokenizer.from_pretrained(
-        config.tokenizer_name,
-        use_fast=True,
-        local_files_only=config.local_files_only,
-    )
-    tokenizer.model_max_length = int(1e9)
-    download_config = DownloadConfig(max_retries=20, resume_download=True)
-    stream = load_dataset(
-        config.dataset_name,
-        split=config.split,
-        streaming=True,
-        download_config=download_config,
-    )
-    train_tokens, val_tokens = _fill_train_val_token_buffers(
-        (row[config.text_column] for row in stream),
-        tokenizer=tokenizer,
-        train_tokens=config.train_tokens,
-        val_tokens=config.val_tokens,
-        batch_size=config.tokenization_batch_size,
-        print_prefix="cluster_partial_untied" if print_progress else None,
-    )
-    torch.save(
-        {
-            "dataset_name": config.dataset_name,
-            "split": config.split,
-            "tokenizer_name": config.tokenizer_name,
-            "sequence_length": config.sequence_length,
-            "train_tokens": train_tokens,
-            "val_tokens": val_tokens,
-            "vocab_size": tokenizer.vocab_size,
-            "total_tokens": config.total_tokens,
-        },
-        cache_path,
-    )
-    return train_tokens, val_tokens, tokenizer.vocab_size, cache_path
-
-
-def _make_realtext_config(config: PartialUntiedClusterConfig, *, train_steps: int) -> RealTextConfig:
+def _make_realtext_config(config: NanochatClusterConfig, *, train_steps: int) -> RealTextConfig:
     return RealTextConfig(
         seed=config.seed,
         sequence_length=config.sequence_length,
@@ -595,206 +302,11 @@ def _make_realtext_config(config: PartialUntiedClusterConfig, *, train_steps: in
         paired_train_batches=True,
         reseed_per_model=True,
         train_schedule_seed=config.train_schedule_seed,
-        dropout=config.dropout,
         initial_eval=False,
     )
 
 
-def _autocast_context(config: PartialUntiedClusterConfig):
-    if not config.use_amp or not config.device.startswith("cuda"):
-        return torch.autocast(device_type="cpu", enabled=False)
-    dtype = torch.bfloat16 if config.amp_dtype == "bf16" else torch.float16
-    return torch.autocast(device_type="cuda", dtype=dtype, enabled=True)
-
-
-def _iter_train_batch_indices(
-    total_examples: int,
-    *,
-    batch_size: int,
-    steps: int,
-    seed: int,
-    start_step: int = 1,
-    drop_last: bool = True,
-):
-    if total_examples <= 0:
-        raise ValueError("total_examples must be positive.")
-    if batch_size <= 0:
-        raise ValueError("batch_size must be positive.")
-    if steps <= 0:
-        return
-    usable_total = total_examples if not drop_last else total_examples - (total_examples % batch_size)
-    if usable_total <= 0:
-        raise ValueError("Not enough examples to form a single batch.")
-    generator = torch.Generator(device="cpu")
-    generator.manual_seed(seed)
-    epoch_order = torch.randperm(total_examples, generator=generator)
-    epoch_cursor = 0
-    for step_index in range(1, steps + 1):
-        while True:
-            if drop_last and epoch_cursor + batch_size > usable_total:
-                epoch_order = torch.randperm(total_examples, generator=generator)
-                epoch_cursor = 0
-            elif not drop_last and epoch_cursor >= total_examples:
-                epoch_order = torch.randperm(total_examples, generator=generator)
-                epoch_cursor = 0
-            batch_indices = epoch_order[epoch_cursor : epoch_cursor + batch_size]
-            if drop_last and batch_indices.numel() < batch_size:
-                epoch_order = torch.randperm(total_examples, generator=generator)
-                epoch_cursor = 0
-                continue
-            epoch_cursor += batch_size
-            if step_index >= start_step:
-                yield step_index, batch_indices.clone()
-            break
-
-
-def _evaluate_loss(
-    model: torch.nn.Module,
-    val_tokens: torch.Tensor,
-    *,
-    device: torch.device,
-    config: PartialUntiedClusterConfig,
-) -> float:
-    model.eval()
-    total_loss = 0.0
-    total_tokens = 0
-    batch_size = config.eval_batch_size
-    total_examples = _token_block_count(val_tokens, sequence_length=config.sequence_length)
-    with torch.no_grad():
-        for start in range(0, total_examples, batch_size):
-            stop = min(start + batch_size, total_examples)
-            batch_indices = torch.arange(start, stop, dtype=torch.long, device=val_tokens.device)
-            batch = _batch_from_flat_tokens(
-                val_tokens,
-                sequence_length=config.sequence_length,
-                batch_indices=batch_indices,
-                device=device,
-                non_blocking=config.pin_memory and device.type == "cuda",
-            )
-            with _autocast_context(config):
-                logits = model(batch["input_ids"])
-                loss, token_count = _loss_and_tokens(logits, batch["targets"])
-            total_loss += float(loss.item()) * token_count
-            total_tokens += token_count
-    return total_loss / max(total_tokens, 1)
-
-
-def _sample_next_token(
-    logits: torch.Tensor,
-    *,
-    sequence: list[int],
-    temperature: float,
-    top_p: float,
-    top_k: int,
-    repetition_penalty: float,
-) -> int:
-    next_logits = logits.float()
-    if repetition_penalty > 1.0 and sequence:
-        seen = torch.tensor(sorted(set(sequence)), dtype=torch.long, device=next_logits.device)
-        seen_logits = next_logits.index_select(0, seen)
-        adjusted = torch.where(seen_logits >= 0, seen_logits / repetition_penalty, seen_logits * repetition_penalty)
-        next_logits = next_logits.scatter(0, seen, adjusted)
-    if temperature <= 0.0:
-        return int(next_logits.argmax().item())
-    next_logits = next_logits / max(temperature, 1e-5)
-    if top_k > 0 and top_k < next_logits.numel():
-        threshold = torch.topk(next_logits, k=top_k).values.min()
-        next_logits = next_logits.masked_fill(next_logits < threshold, torch.finfo(next_logits.dtype).min)
-    if 0.0 < top_p < 1.0:
-        sorted_logits, sorted_indices = torch.sort(next_logits, descending=True)
-        sorted_probs = torch.softmax(sorted_logits, dim=-1)
-        cumulative = torch.cumsum(sorted_probs, dim=-1)
-        remove_mask = cumulative > top_p
-        remove_mask[0] = False
-        sorted_logits = sorted_logits.masked_fill(remove_mask, torch.finfo(sorted_logits.dtype).min)
-        next_logits = torch.full_like(next_logits, torch.finfo(next_logits.dtype).min)
-        next_logits.scatter_(0, sorted_indices, sorted_logits)
-    probs = torch.softmax(next_logits, dim=-1)
-    return int(torch.multinomial(probs, num_samples=1).item())
-
-
-def _sample_generate(
-    model: torch.nn.Module,
-    prompt_ids: list[int],
-    *,
-    sequence_length: int,
-    device: torch.device,
-    max_new_tokens: int,
-    config: PartialUntiedClusterConfig,
-) -> list[int]:
-    sequence = list(prompt_ids)
-    model.eval()
-    with torch.no_grad():
-        for _ in range(max_new_tokens):
-            window = sequence[-sequence_length:]
-            input_ids = torch.tensor(window, dtype=torch.long, device=device).unsqueeze(0)
-            with _autocast_context(config):
-                logits = model(input_ids)
-            sequence.append(
-                _sample_next_token(
-                    logits[0, -1],
-                    sequence=sequence,
-                    temperature=config.sample_temperature,
-                    top_p=config.sample_top_p,
-                    top_k=config.sample_top_k,
-                    repetition_penalty=config.sample_repetition_penalty,
-                )
-            )
-    return sequence
-
-
-def _save_checkpoint(
-    path: Path,
-    *,
-    model: torch.nn.Module,
-    optimizer: torch.optim.Optimizer,
-    scheduler: Any,
-    scaler: torch.amp.GradScaler | None,
-    config: PartialUntiedClusterConfig,
-    step: int,
-    tokens_seen: int,
-    latest_val_loss: float,
-    best_val_loss: float,
-    cache_path: Path,
-) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    torch.save(
-        {
-            "model_state": model.state_dict(),
-            "optimizer_state": optimizer.state_dict(),
-            "scheduler_state": scheduler.state_dict() if scheduler is not None else None,
-            "scaler_state": scaler.state_dict() if scaler is not None else None,
-            "step": step,
-            "tokens_seen": tokens_seen,
-            "latest_val_loss": latest_val_loss,
-            "best_val_loss": best_val_loss,
-            "config": asdict(config),
-            "cache_path": str(cache_path),
-        },
-        path,
-    )
-
-
-def _load_checkpoint(
-    path: Path,
-    *,
-    model: torch.nn.Module,
-    optimizer: torch.optim.Optimizer,
-    scheduler: Any,
-    scaler: torch.amp.GradScaler | None,
-    device: torch.device,
-) -> dict[str, Any]:
-    payload = torch.load(path, map_location=device, weights_only=False)
-    model.load_state_dict(payload["model_state"])
-    optimizer.load_state_dict(payload["optimizer_state"])
-    if scheduler is not None and payload.get("scheduler_state") is not None:
-        scheduler.load_state_dict(payload["scheduler_state"])
-    if scaler is not None and payload.get("scaler_state") is not None:
-        scaler.load_state_dict(payload["scaler_state"])
-    return payload
-
-
-def watch_cluster_run(output_dir: Path, *, refresh_seconds: float = 5.0, once: bool = False) -> None:
+def watch_nanochat_cluster_run(output_dir: Path, *, refresh_seconds: float = 5.0, once: bool = False) -> None:
     state_path = output_dir / "state.json"
     final_path = output_dir / "final.json"
     metrics_path = output_dir / "metrics.jsonl"
@@ -828,7 +340,7 @@ def watch_cluster_run(output_dir: Path, *, refresh_seconds: float = 5.0, once: b
             train_loss_text = "----" if train_loss is None or not math.isfinite(float(train_loss)) else f"{float(train_loss):.4f}"
             val_loss_text = "----" if val_loss is None or not math.isfinite(float(val_loss)) else f"{float(val_loss):.4f}"
             print(
-                f"cluster_partial_untied {_bar(progress)} {progress * 100:5.1f}% "
+                f"nanochat_cluster {_bar(progress)} {progress * 100:5.1f}% "
                 f"step={step:,}/{train_steps:,} tok={tokens_seen:,}/{target_tokens:,} "
                 f"train={train_loss_text} val={val_loss_text} "
                 f"tok/s={train_tok_per_sec:,.0f} pure_tok/s={pure_train_tok_per_sec:,.0f} "
@@ -893,8 +405,8 @@ def watch_cluster_run(output_dir: Path, *, refresh_seconds: float = 5.0, once: b
         time.sleep(refresh_seconds)
 
 
-def run_partial_untied_cluster(
-    config: PartialUntiedClusterConfig,
+def run_nanochat_cluster(
+    config: NanochatClusterConfig,
     *,
     print_progress: bool = True,
     print_samples: bool = True,
@@ -919,25 +431,24 @@ def run_partial_untied_cluster(
     resolved_config.output_dir.mkdir(parents=True, exist_ok=True)
 
     set_global_seed(resolved_config.seed)
-    partial_token_ids = _top_token_ids_from_token_buffer(
-        train_tokens,
-        count=resolved_config.partial_token_count,
+    model = NanochatMiniLM(
         vocab_size=vocab_size,
-    )
-    model = PartialUntiedAssociativeLM(
-        vocab_size=vocab_size,
-        embedding_dim=resolved_config.embedding_dim,
-        hidden_dim=resolved_config.hidden_dim,
-        memory_dim=resolved_config.memory_dim,
-        dropout=resolved_config.dropout,
-        max_length=resolved_config.sequence_length,
-        untied_token_ids=partial_token_ids,
+        sequence_length=resolved_config.sequence_length,
+        n_layer=resolved_config.nano_n_layer,
+        n_head=resolved_config.nano_n_head,
+        n_kv_head=resolved_config.nano_n_kv_head,
+        n_embd=resolved_config.nano_n_embd,
+        window_pattern=resolved_config.nano_window_pattern,
+        softcap=resolved_config.nano_softcap,
+        use_value_embeddings=resolved_config.nano_use_value_embeddings,
+        use_smear=resolved_config.nano_use_smear,
+        use_backout=resolved_config.nano_use_backout,
     )
     device = torch.device(real_config.device)
     model.to(device)
     if resolved_config.use_compile and hasattr(torch, "compile"):
         model = torch.compile(model, mode="max-autotune")
-    optimizer = _build_optimizer(model, real_config, model_name="partial_untied_cluster")
+    optimizer = _build_optimizer(model, real_config, model_name="nanochat_cluster")
     scheduler = _build_scheduler(optimizer, real_config)
     use_scaler = resolved_config.use_amp and resolved_config.amp_dtype == "fp16" and device.type == "cuda"
     scaler = torch.amp.GradScaler(device="cuda", enabled=use_scaler) if device.type == "cuda" else None
@@ -975,14 +486,13 @@ def run_partial_untied_cluster(
     initial_val_loss = float("nan")
 
     if latest_ckpt.exists():
-        checkpoint_payload = _load_checkpoint(
-            latest_ckpt,
-            model=model,
-            optimizer=optimizer,
-            scheduler=scheduler,
-            scaler=scaler,
-            device=device,
-        )
+        checkpoint_payload = torch.load(latest_ckpt, map_location=device, weights_only=False)
+        model.load_state_dict(checkpoint_payload["model_state"])
+        optimizer.load_state_dict(checkpoint_payload["optimizer_state"])
+        if scheduler is not None and checkpoint_payload.get("scheduler_state") is not None:
+            scheduler.load_state_dict(checkpoint_payload["scheduler_state"])
+        if scaler is not None and checkpoint_payload.get("scaler_state") is not None:
+            scaler.load_state_dict(checkpoint_payload["scaler_state"])
         start_step = int(checkpoint_payload["step"]) + 1
         tokens_seen = int(checkpoint_payload["tokens_seen"])
         latest_val_loss = float(checkpoint_payload.get("latest_val_loss", float("nan")))
@@ -1055,7 +565,7 @@ def run_partial_untied_cluster(
         remaining_tokens = max(actual_train_tokens - tokens_seen, 0)
         eta_seconds = remaining_tokens / max(train_tok_per_sec, 1e-9)
         state_payload = {
-            "benchmark": "language_partial_untied_cluster",
+            "benchmark": "language_nanochat_cluster",
             "status": "running",
             "step": step_index,
             "train_steps": real_config.train_steps,
@@ -1078,7 +588,7 @@ def run_partial_untied_cluster(
             _append_jsonl(metrics_path, {"kind": "train", **state_payload, "timestamp": time.time()})
             if print_progress:
                 print(
-                    f"cluster_partial_untied {_bar(progress)} {step_index}/{real_config.train_steps} "
+                    f"nanochat_cluster {_bar(progress)} {step_index}/{real_config.train_steps} "
                     f"train={loss.item():.4f} val={latest_val_loss:.4f} tok={tokens_seen:,}/{actual_train_tokens:,} "
                     f"tok/s={train_tok_per_sec:,.0f} eta={eta_seconds/60:.1f}m",
                     flush=True,
@@ -1112,15 +622,16 @@ def run_partial_untied_cluster(
                 "peak_vram_mb": _peak_vram_mb(real_config.device),
                 "timestamp": time.time(),
             }
-            _write_json(state_path, {**state_payload, "latest_val_loss": latest_val_loss, "best_val_loss": best_val_loss})
             _append_jsonl(metrics_path, eval_payload)
+            _write_json(state_path, {**state_payload, **eval_payload, "status": "running", "best_val_loss": best_val_loss})
             if print_progress:
+                status = "best" if latest_val_loss <= prior_best else "eval"
                 print(
-                    f"eval step={step_index:,} tokens={tokens_seen:,} val={latest_val_loss:.4f} "
-                    f"train_tok/s={train_tok_per_sec:,.0f} pure_tok/s={pure_train_tok_per_sec:,.0f}",
+                    f"[{status}] step={step_index:,} tok={tokens_seen:,} "
+                    f"val={latest_val_loss:.4f} best={best_val_loss:.4f}",
                     flush=True,
                 )
-            if resolved_config.save_best_checkpoint and latest_val_loss <= prior_best:
+            if latest_val_loss <= prior_best and resolved_config.save_best_checkpoint:
                 _save_checkpoint(
                     best_ckpt,
                     model=model,
@@ -1211,7 +722,7 @@ def run_partial_untied_cluster(
             cache_path=resolved_cache_path,
         )
     final_payload = {
-        "benchmark": "language_partial_untied_cluster",
+        "benchmark": "language_nanochat_cluster",
         "config": {
             **_config_payload(resolved_config, profile=profile),
             "resolved_train_steps": train_steps,
@@ -1243,7 +754,7 @@ def run_partial_untied_cluster(
     )
     if print_progress:
         print(
-            f"completed cluster_partial_untied final_val={latest_val_loss:.4f} best_val={best_val_loss:.4f} "
+            f"completed nanochat_cluster final_val={latest_val_loss:.4f} best_val={best_val_loss:.4f} "
             f"tokens={tokens_seen:,} train_tok/s={report['train_tok_per_sec']:,.0f} "
             f"pure_tok/s={report['pure_train_tok_per_sec']:,.0f}",
             flush=True,
@@ -1262,7 +773,7 @@ def _parse_prompts(prompt_file: Path | None) -> tuple[str, ...]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Run cluster-grade partial_untied training with automatic H100/A100 defaults, FineWeb-Edu streaming cache build, checkpoints, and sampled prompt completions."
+        description="Run cluster-grade nanochat training with automatic H100/A100 defaults, FineWeb-Edu streaming cache build, checkpoints, and sampled prompt completions."
     )
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--cache-path", type=Path)
@@ -1284,10 +795,6 @@ def main() -> None:
     parser.add_argument("--log-interval", type=int, default=0)
     parser.add_argument("--checkpoint-interval", type=int, default=0)
     parser.add_argument("--sample-interval", type=int, default=0)
-    parser.add_argument("--embedding-dim", type=int, default=320)
-    parser.add_argument("--hidden-dim", type=int, default=640)
-    parser.add_argument("--memory-dim", type=int, default=320)
-    parser.add_argument("--partial-token-count", type=int, default=1024)
     parser.add_argument("--learning-rate", type=float, default=2e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--amp-dtype", choices=("auto", "bf16", "fp16", "fp32"), default="auto")
@@ -1302,19 +809,36 @@ def main() -> None:
     parser.add_argument("--prompt-file", type=Path)
     parser.add_argument("--compile", action="store_true")
     parser.add_argument("--local-files-only", action="store_true")
-    parser.set_defaults(cache_dataset_on_device=True)
+    parser.add_argument("--nano-n-layer", type=int, default=4)
+    parser.add_argument("--nano-n-head", type=int, default=4)
+    parser.add_argument("--nano-n-kv-head", type=int, default=4)
+    parser.add_argument("--nano-n-embd", type=int, default=40)
+    parser.add_argument("--nano-window-pattern", type=str, default="SSSL")
+    parser.add_argument("--nano-softcap", type=float, default=15.0)
+    parser.add_argument("--nano-use-value-embeddings", dest="nano_use_value_embeddings", action="store_true")
+    parser.add_argument("--nano-no-value-embeddings", dest="nano_use_value_embeddings", action="store_false")
+    parser.add_argument("--nano-use-smear", dest="nano_use_smear", action="store_true")
+    parser.add_argument("--nano-no-smear", dest="nano_use_smear", action="store_false")
+    parser.add_argument("--nano-use-backout", dest="nano_use_backout", action="store_true")
+    parser.add_argument("--nano-no-backout", dest="nano_use_backout", action="store_false")
+    parser.set_defaults(
+        cache_dataset_on_device=True,
+        nano_use_value_embeddings=True,
+        nano_use_smear=True,
+        nano_use_backout=True,
+    )
     args = parser.parse_args()
 
     if args.target_watch_dir is not None:
-        watch_cluster_run(args.target_watch_dir, refresh_seconds=args.watch_refresh, once=args.watch_once)
+        watch_nanochat_cluster_run(args.target_watch_dir, refresh_seconds=args.watch_refresh, once=args.watch_once)
         return
 
     output_dir = args.output_dir
     if output_dir is None:
         timestamp = time.strftime("%Y%m%d_%H%M%S")
-        output_dir = Path("runs") / f"partial_untied_cluster_{timestamp}"
+        output_dir = Path("runs") / f"nanochat_cluster_{timestamp}"
 
-    config = PartialUntiedClusterConfig(
+    config = NanochatClusterConfig(
         output_dir=output_dir,
         cache_path=args.cache_path,
         seed=args.seed,
@@ -1329,10 +853,6 @@ def main() -> None:
         log_interval=args.log_interval,
         checkpoint_interval=args.checkpoint_interval,
         sample_interval=args.sample_interval,
-        embedding_dim=args.embedding_dim,
-        hidden_dim=args.hidden_dim,
-        memory_dim=args.memory_dim,
-        partial_token_count=args.partial_token_count,
         learning_rate=args.learning_rate,
         weight_decay=args.weight_decay,
         amp_dtype=args.amp_dtype,
@@ -1347,13 +867,22 @@ def main() -> None:
         use_compile=args.compile,
         local_files_only=args.local_files_only,
         hardware_profile_override=args.hardware_profile,
+        nano_n_layer=args.nano_n_layer,
+        nano_n_head=args.nano_n_head,
+        nano_n_kv_head=args.nano_n_kv_head,
+        nano_n_embd=args.nano_n_embd,
+        nano_window_pattern=args.nano_window_pattern,
+        nano_softcap=args.nano_softcap,
+        nano_use_value_embeddings=args.nano_use_value_embeddings,
+        nano_use_smear=args.nano_use_smear,
+        nano_use_backout=args.nano_use_backout,
     )
     config = _apply_named_preset(config, args.preset)
     resolved, profile = resolve_cluster_config(config)
     if args.print_config:
         print(json.dumps(_config_payload(resolved, profile=profile), indent=2))
         return
-    payload = run_partial_untied_cluster(resolved, print_progress=True, print_samples=True)
+    payload = run_nanochat_cluster(resolved, print_progress=True, print_samples=True)
     print(json.dumps({"final_val_loss": payload["report"]["final_val_loss"], "final_path": str(output_dir / "final.json")}, indent=2))
 
 

@@ -78,15 +78,15 @@ def test_default_partial_untied_cluster_size_is_about_20m_params() -> None:
     assert _DEFAULT_PROMPTS[0] == "The capital of France is"
 
 
-def test_h100_100m_5b_preset_targets_about_100m_params() -> None:
+def test_h100_100m_1b_preset_targets_about_100m_params() -> None:
     base = PartialUntiedClusterConfig(output_dir=Path("runs/test"), device="cuda")
-    config = _apply_named_preset(base, "h100_100m_5b")
-    assert config.total_tokens == 5_000_000_000
-    assert config.train_tokens == 4_900_000_000
-    assert config.val_tokens == 100_000_000
+    config = _apply_named_preset(base, "h100_100m_1b")
+    assert config.total_tokens == 1_000_000_000
+    assert config.train_tokens == 980_000_000
+    assert config.val_tokens == 20_000_000
     assert config.batch_size == 192
     assert config.eval_batch_size == 256
-    assert config.cache_dataset_on_device is False
+    assert config.cache_dataset_on_device is True
     assert 99_000_000 <= _estimate_partial_untied_parameter_count(config) <= 101_000_000
 
 
