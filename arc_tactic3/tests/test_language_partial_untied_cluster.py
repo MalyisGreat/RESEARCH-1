@@ -8,7 +8,9 @@ from arc_tactic3.language_fastlearn_benchmark import count_parameters
 from arc_tactic3.language_partial_untied_cluster import (
     PartialUntiedClusterConfig,
     _DEFAULT_PROMPTS,
+    _apply_named_preset,
     _default_cache_path,
+    _estimate_partial_untied_parameter_count,
     _hardware_profile_from_name,
     resolve_cluster_config,
 )
@@ -32,6 +34,21 @@ def test_resolve_cluster_config_disables_cuda_features_on_cpu() -> None:
     assert resolved.use_fused_adamw is False
     assert resolved.cache_dataset_on_device is False
     assert resolved.amp_dtype == "fp32"
+
+
+def test_hardware_profile_override_resolves_h100_without_local_gpu() -> None:
+    config = PartialUntiedClusterConfig(
+        output_dir=Path("tmp"),
+        device="cuda",
+        hardware_profile_override="h100",
+        amp_dtype="auto",
+    )
+    resolved, profile = resolve_cluster_config(config)
+    assert profile.name == "h100"
+    assert resolved.batch_size == 128
+    assert resolved.eval_batch_size == 192
+    assert resolved.amp_dtype == "bf16"
+    assert resolved.use_amp is True
 
 
 def test_default_cache_path_contains_budget_and_tokenizer() -> None:
@@ -59,3 +76,29 @@ def test_default_partial_untied_cluster_size_is_about_20m_params() -> None:
     )
     assert 19_000_000 <= count_parameters(model) <= 21_000_000
     assert _DEFAULT_PROMPTS[0] == "The capital of France is"
+
+
+def test_h100_100m_5b_preset_targets_about_100m_params() -> None:
+    base = PartialUntiedClusterConfig(output_dir=Path("runs/test"), device="cuda")
+    config = _apply_named_preset(base, "h100_100m_5b")
+    assert config.total_tokens == 5_000_000_000
+    assert config.train_tokens == 4_900_000_000
+    assert config.val_tokens == 100_000_000
+    assert config.batch_size == 192
+    assert config.eval_batch_size == 256
+    assert config.cache_dataset_on_device is False
+    assert 99_000_000 <= _estimate_partial_untied_parameter_count(config) <= 101_000_000
+
+
+def test_large_cache_budget_is_not_cached_on_device() -> None:
+    config = PartialUntiedClusterConfig(
+        output_dir=Path("runs/test"),
+        device="cuda",
+        hardware_profile_override="h100",
+        total_tokens=5_000_000_000,
+        train_tokens=4_900_000_000,
+        val_tokens=100_000_000,
+        cache_dataset_on_device=True,
+    )
+    resolved, _ = resolve_cluster_config(config)
+    assert resolved.cache_dataset_on_device is False
