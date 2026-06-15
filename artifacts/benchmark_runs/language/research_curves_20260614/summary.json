@@ -1,6 +1,7 @@
 {
-  "point_count": 1557,
-  "curve_count": 694,
+  "point_count": 1585,
+  "curve_count": 696,
+  "neuron_summary_count": 74,
   "top_by_long_final_loss": [
     {
       "label": "wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605",
@@ -281,7 +282,9 @@
   "outputs": {
     "curves_png": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\all_language_val_loss_vs_tokens.png",
     "final_scatter_png": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\final_points_val_loss_vs_tokens.png",
+    "readme_overview_png": "E:\\CODEXRESEARCH\\RESEARCH-1\\figures\\research_overview_20260614.png",
     "points_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\extracted_points.csv",
-    "summary_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\curve_summary.csv"
+    "summary_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\curve_summary.csv",
+    "neuron_summary_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\neuron_search_summary.csv"
   }
 }

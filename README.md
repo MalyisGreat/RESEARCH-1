@@ -1,202 +1,183 @@
 # RESEARCH-1
 
-Recurrent memory language models versus a Nanochat-style small-transformer baseline under shared small-scale training budgets.
+Local language-model architecture research focused on long-context, linear-sequence alternatives to small transformer baselines.
+
+The current best family in this snapshot is **causal multi-scale low-rank conv-memory**: causal depthwise convolutions, low-rank causal memory, and a squared-activation FFN. The strongest measured run so far is the 76M-parameter low-rank conv-memory line at 2.20B tokens with validation loss `4.1517`.
+
+This repository is an artifact trail, not a polished benchmark paper. It preserves code, logs, plots, JSON/CSV summaries, negative results, and short-screen neuron experiments so claims can be checked instead of reconstructed from memory.
+
+## Current Picture
+
+![Research evidence map](./figures/research_overview_20260614.png)
+
+Generated from:
+
+- [`curve_summary.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/curve_summary.csv)
+- [`extracted_points.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/extracted_points.csv)
+- [`neuron_search_summary.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/neuron_search_summary.csv)
+
+Extraction scope:
+
+- `1,585` validation-loss points
+- `696` distinct extracted curves
+- `74` aggregated real-sequence neuron-search rows
+- old 50M-token `partial_untied` and Nanochat watch runs
+- long-sequence anchor scaling runs
+- local/house GPU wave runs
+- manual neuron-search screens
+
+The left panel shows absolute validation loss versus training tokens. The right panel shows short neuron-search deltas versus matched baselines, where negative means the candidate beat its baseline.
 
 ## TL;DR
 
-- This repo preserves the full code and benchmark artifact trail for the language-architecture experiments developed in `arc_tactic3`, with a focus on stateful recurrent memory models.
-- In the matched 50M-token FineWeb-Edu watch runs, `partial_untied` finished with lower validation loss than the Nanochat-style baseline: `5.3370` vs `5.3958`, while using much less VRAM: `2201.9 MB` vs `3931.2 MB`.
-- Nanochat remained somewhat faster in raw training throughput in the 50M run: `39.9k tok/s` vs `37.5k tok/s`.
-- In the synthetic fast-learning scaling benchmark, the recurrent `fast_gru` family beat the GPT-2-like baseline at every tested scale on adaptation AUC.
-- Many candidate branches produced short-run gains that did not survive longer holds. Those negative results are included here on purpose.
+- The best current measured model is `wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605`: `2.200B` tokens, final validation loss `4.1517`.
+- Scaling the older dense anchor larger did not beat it. The 160M 5B-token anchor ended at `4.5841`; the 160M 2B-token run ended at `4.6422`.
+- The older 80M anchor line reached around `4.82` at 2B tokens; its later fresh-after-2B continuation briefly reached `4.7715` best validation loss but ended at `4.8059`.
+- The original 8M-parameter `partial_untied` result is still real: it beat the local Nanochat-style watch run at 50M tokens (`5.3370` vs `5.3958`) with lower VRAM. It is no longer the frontier of this repo.
+- The neuron search found real short-screen signals, but no candidate is scale-cleared. The best multi-seed signal is rank-competition/memory coupling; the best 2048-step hidden-drop rows are strong but still short-screen evidence.
+- Simple activation swaps were not the answer. Plain SwiGLU and SiLU-square were already tested and were not promoted.
 
-## What This Repo Contains
+## Long-Run Leaderboard
 
-This repo is structured around one main research question:
+These rows are the clearest long-run comparisons currently extracted. They are not all the same exact hardware path, but they use the same next-token validation objective and are useful for ranking the local research lines.
 
-> Can a recurrent memory architecture match or beat a Nanochat-style small language model at similar parameter counts and modest training budgets while preserving a stronger stateful-memory bias?
+| Line | Tokens | Final val loss | Best val loss | Notes |
+| --- | ---: | ---: | ---: | --- |
+| `76M low-rank conv-memory` | `2.200B` | `4.1517` | `4.1517` | Current standout; 3080 run from wave10 family. |
+| `160M anchor, 5B` | `5.000B` | `4.5841` | `4.5841` | Much longer run, but worse than the 76M low-rank conv-memory line. |
+| `160M anchor, 2B` | `2.000B` | `4.6422` | `4.6422` | Larger dense anchor did not close the gap. |
+| `80M fresh-after-2B continuation` | `3.205B` | `4.8059` | `4.7715` | Best checkpoint was earlier than the final point. |
+| `80M anchor, 2B` | `2.000B` | `4.8262` | `4.8169` | Earlier 80M baseline. |
+| `40M anchor, 600M` | `600M` | about `5.05` | about `5.05` | Useful scale reference, not a leader. |
 
-It includes:
+The important result is not just "more tokens helped." The 76M low-rank conv-memory architecture beat larger and longer dense-anchor lines by a large margin in the extracted runs.
 
-- the language-model comparison code from `arc_tactic3/`
-- the benchmark artifacts that support the current claims
-- generated figures and summary tables
-- negative-result artifacts for failed or inconclusive architecture branches
+## Historical Baselines
 
-There is also some ARC/agent code preserved in `arc_tactic3/` because it is part of the same research workspace, but the README is scoped to the language-model memory comparison work.
+The earlier README centered on 8M-parameter recurrent memory models versus a small Nanochat-style baseline. That evidence is still preserved, but it is now a historical baseline for this repo rather than the main result.
 
-## Main Results
+| Model | Tokens | Params | Final val loss | Train tok/s | Peak VRAM | Artifact |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| `partial_untied` | `50.0M` | `8.07M` | `5.3370` | `37.5k` | `2201.9 MB` | [`final.json`](./artifacts/watch_runs/partial_untied_watch_50m_20260328/final.json) |
+| `nanochat_watch` | `50.0M` | `8.13M` | `5.3958` | `39.9k` | `3931.2 MB` | [`final.json`](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json) |
 
-### 50M-token head-to-head watch runs
+There are also older short-budget sweeps where `partial_untied`, `factorized_untied`, `full_untied`, and Nanochat-style variants were compared. Those are useful for history, but they should not be mixed with the long-sequence 2026 runs as if they were the same regime.
 
-This is the cleanest current headline because it compares the two main models under the same long-run token budget and the same local cache path. It is still only a 1-seed result, so it should be read as a strong single-run comparison, not a settled scaling-law conclusion.
+## Architecture Trail
 
-| Model | Seeds | Train tokens | Params | Final val loss | Train tok/s | Pure train tok/s | Peak VRAM | Artifact |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| `partial_untied` | 1 | 50.0M | 8,069,555 | 5.3370 | 37.5k | 38.5k | 2201.9 MB | [`partial_untied_watch_50m_20260328/final.json`](./artifacts/watch_runs/partial_untied_watch_50m_20260328/final.json) |
-| `nanochat_small` | 1 | 50.0M | 8,125,570 | 5.3958 | 39.9k | 41.5k | 3931.2 MB | [`nanochat_watch_50m_20260328_retry2/final.json`](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json) |
+The research moved through several stages:
 
-![50M loss curve](./figures/loss_curve_50m.png)
+1. **Recurrent memory and partial untie experiments**
+   - Main result: `partial_untied` beat the local Nanochat-style 50M-token watch run at similar parameter count and much lower VRAM.
+   - Main limitation: this was an 8M-parameter, 50M-token regime.
 
-![50M tradeoff](./figures/tradeoff_50m.png)
+2. **Long-sequence anchor experiments**
+   - Moved to sequence length `10160` and sampled-vocab anchors.
+   - Explored 20M, 40M, 80M, and 160M parameter regions.
+   - 80M and 160M anchors improved with scale, but the dense-anchor family was not enough.
 
-### Fair 2-seed short-budget sweep
+3. **Wave architecture search**
+   - Tested dense stride variants, gated blocks, landmark-style ideas, multi-scale convolution, adaptive/dilated multi-scale variants, and memory variants.
+   - The strongest surviving family was low-rank conv-memory.
 
-This section stays inside one artifact only: [`language_recurrent_nano_tricks_fair_20260327.json`](./artifacts/benchmark_runs/language/language_recurrent_nano_tricks_fair_20260327.json). It should be read as a short-budget architectural sweep, not as the same regime as the 50M watch runs.
+4. **Current best family**
+   - `CausalMultiScaleLowRankConvMemoryBlock`
+   - multi-scale causal depthwise conv
+   - low-rank causal memory
+   - squared FFN nonlinearity
+   - no transformer-style quadratic sequence attention
 
-| Model | Seeds | Train steps | Params | Mean final val loss | Mean train tok/s | Mean peak VRAM | Artifact |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| `recurrent_baseline` | 2 | 192 | 7,787,379 | 7.5159 | 51.3k | 1904.5 MB | fair 2-seed |
-| `recurrent_champion` | 2 | 192 | 7,995,315 | 7.4073 | 51.2k | 1968.4 MB | fair 2-seed |
-| `partial_untied` | 2 | 192 | 8,143,795 | 7.3573 | 50.2k | 2284.5 MB | fair 2-seed |
-| `nanochat_small` | 2 | 192 | 8,125,570 | 7.6712 | 28.8k | 4187.0 MB | fair 2-seed |
+5. **Neuron and block-local search**
+   - Tested memory-neuron coupling, conv-conditioned neurons, adaptive nonlinear bases, channel/rank competition, stateful thresholds, phase/residual neurons, stability variants, and bottleneck-aware variants.
+   - The results are promising but not scale-cleared.
 
-Parameter-expanded models belong in a separate bucket:
+## Neuron Search
 
-| Model | Seeds | Train steps | Params | Mean final val loss | Mean train tok/s |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `factorized_untied` | 2 | 192 | 11,220,979 | 7.2199 | 53.7k |
-| `full_untied` | 2 | 192 | 15,024,387 | 7.1254 | 50.8k |
+Main synthesis:
 
-![Fair short-budget sweep](./figures/fair_short_budget_scatter.png)
+- Best multi-seed 1024-step real-seq signal: `rank_competition_memory_suppressed_centered_gate_neuron`.
+- It beat matched baselines in `5/5` runs, mean validation delta `-0.010564`, but cost about `135k` parameters and ran at about `0.838x` baseline speed.
+- Longer confirmation exposed instability risk, including non-finite candidate loss in at least one weak-seed path.
+- Best 2048-step screen rows came from hidden-drop square variants, especially `hidden_drop_square_neuron`, but several of those rows are one-seed or narrow confirmations.
+- No neuron candidate is approved for 3080 scale-up yet.
 
-### Separate Nanochat comparison regime
+Representative real-seq10160 rows:
 
-This is a different experiment family and should not be mixed into the fair 2-seed table above. The numbers below come only from [`language_nanochat_actual_compare_1p5x_moredata_20260327.json`](./artifacts/benchmark_runs/language/language_nanochat_actual_compare_1p5x_moredata_20260327.json).
+| Variant | Steps | n | Wins | Mean val delta | Best | Worst | Speed ratio | Param delta |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `hidden_drop_square_neuron` | `2048` | `3` | `3` | `-0.034577` | `-0.036506` | `-0.031223` | `0.988` | `0` |
+| `rank_competition_memory_suppressed_centered_gate_neuron` | `1024` | `5` | `5` | `-0.010564` | `-0.019104` | `-0.000137` | `0.838` | `135170` |
+| `rank_competition_memory_centered_gate_neuron` | `1024` | `5` | `4` | `-0.005945` | `-0.014662` | `0.003996` | `0.869` | `135170` |
+| `rank_competition_centered_residual_neuron` | `1024` | `3` | `3` | `-0.003985` | `-0.005062` | `-0.002814` | `0.892` | `2050` |
+| `rank_competition_neuron` | `1024` | `3` | `3` | `-0.003895` | `-0.004362` | `-0.003204` | `0.990` | `2` |
+| `phase_residual_memory_gate_neuron` | `1024` | `6` | `3` | `-0.003185` | `-0.014127` | `0.002403` | `0.892` | `135168` |
 
-| Model | Params | Mean final val loss | Mean train tok/s | Mean peak VRAM |
-| --- | ---: | ---: | ---: | ---: |
-| `baseline` | 7,787,379 | 7.2694 | 59.4k | 1904.5 MB |
-| `windowed_32` | 7,787,379 | 7.2643 | 59.4k | 2083.7 MB |
-| `nanochat_small` | 8,125,570 | 7.2290 | 35.1k | 3895.5 MB |
+Primary neuron artifacts:
 
-![Separate Nanochat regime](./figures/nanochat_separate_compare_scatter.png)
+- [`manual_self/synthesis_20260605_current.md`](./artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/synthesis_20260605_current.md)
+- [`manual_self/aggregate_results_20260605_current.csv`](./artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/aggregate_results_20260605_current.csv)
+- [`neuron_search_summary.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/neuron_search_summary.csv)
 
-### Synthetic fast-learning scaling
+## What Failed Or Stayed Unclear
 
-The recurrent `fast_gru` family outperformed the GPT-2-like baseline at every tested scale on adaptation AUC and was the only family to achieve non-zero exact sequence completion in this benchmark suite.
+Negative and non-promoted directions are part of the repo:
 
-| Scale | `fast_gru` AUC | `gpt2_like` AUC | `fast_gru` shot-8 seq acc | `gpt2_like` shot-8 seq acc |
-| --- | ---: | ---: | ---: | ---: |
-| Small | 0.3721 | 0.2244 | 0.00456 | 0.00000 |
-| Medium | 0.3756 | 0.2371 | 0.00456 | 0.00000 |
-| Large | 0.3749 | 0.2432 | 0.00326 | 0.00000 |
+- plain SwiGLU and SiLU-square activation swaps
+- naive dense memory writeback paths
+- local-global memory variants
+- learned compressor variants
+- slot memory variants
+- dynamic token-basis variants
+- several landmark or bottleneck-heavy variants
+- several early neuron variants that won tiny/synthetic screens but failed real longer screens
 
-Primary artifact:
+See [`docs/negative_results.md`](./docs/negative_results.md) and the per-agent neuron writeups under [`neuron_search_20260605`](./artifacts/benchmark_runs/language/neuron_search_20260605).
 
-- [`language_fastlearn_scaling_gpt2icl_hybrid_20260327.json`](./artifacts/benchmark_runs/language/language_fastlearn_scaling_gpt2icl_hybrid_20260327.json)
+## How To Regenerate The Current Figures
 
-![Fastlearn scaling](./figures/fastlearn_scaling.png)
+Generate the current evidence map and extracted summary tables:
 
-## Key Findings
+```bash
+python artifacts/benchmark_runs/language/plot_research_curves_20260614.py
+```
 
-- A small recurrent memory architecture can be competitive with, and in some settings beat, a Nanochat-style small transformer at similar parameter counts.
-- The best current recurrent line is not the original baseline. `partial_untied` appears to be the strongest stable recurrent variant in this repo.
-- Nanochat-style models remain attractive on raw throughput, but their VRAM cost is much higher in the local experiments preserved here.
-- The reporting is split by regime on purpose: long-run watch results, fair 2-seed short-budget sweep, and separate Nanochat comparison runs should not be read as one merged table.
-- The architecture search contained a large number of negative results. Short-budget wins frequently disappeared under longer holds, which is why the negative artifacts are preserved.
-- The strongest architecture insight from the later GPU work is that stateful memory seems valuable, but naive dense memory writeback paths are inefficient. Several compact or chunked-memory variants looked promising early and then failed to hold.
-
-## Negative Results And Failed Directions
-
-Representative negative or non-promoted lines:
-
-- `local_global_memory`
-- `learned_compressor`
-- `slot_memory`
-- `dynamic_token_basis`
-- compact shortlist-memory rewrites
-- chunked token-memory rewrites that looked good on cheap probes but failed longer holds
-
-See:
-
-- [`docs/negative_results.md`](./docs/negative_results.md)
-
-## Experimental Setup
-
-Common setup across much of the language suite:
-
-- cached FineWeb-Edu GPT-2-tokenized blocks
-- sequence length `127`
-- shared training harness and optimizer family (`AdamW`)
-- single-GPU local hardware for the preserved headline runs
-- most of the long-form runs were executed on an RTX 2080 SUPER with AMP enabled
-
-The benchmark scripts themselves are in:
-
-- [`arc_tactic3/language_realtext_microbench.py`](./arc_tactic3/language_realtext_microbench.py)
-- [`arc_tactic3/language_nanochat_actual_compare.py`](./arc_tactic3/language_nanochat_actual_compare.py)
-- [`arc_tactic3/language_partial_untied_watch.py`](./arc_tactic3/language_partial_untied_watch.py)
-- [`arc_tactic3/language_nanochat_watch.py`](./arc_tactic3/language_nanochat_watch.py)
-
-## Limitations
-
-- This is a research repo, not a final benchmark suite.
-- Some results are 2-seed averages, some are 1-seed long runs, and some are smoke or cheap-screen artifacts. They are now reported in separate sections, but they still should not be over-interpreted.
-- The Nanochat baseline is a local Nanochat-style reimplementation and training harness, not the official upstream training codepath.
-- Large derived dataset caches were not committed directly when that would create impractical or GitHub-incompatible artifacts.
-- Large long-sequence `.pt` caches/checkpoints are kept out of Git and recorded in [`docs/large_artifacts_manifest.md`](./docs/large_artifacts_manifest.md).
-- Some code in `arc_tactic3/` is unrelated to the central language-model comparison and is preserved for completeness rather than because it is part of the README’s core claims.
-
-## Reproduce
-
-Generate the figures and summary tables from the preserved artifacts:
+Legacy figure builder for the original README figures:
 
 ```bash
 python scripts/build_figures.py
 ```
 
-Watch a long run live during training:
+The graph extractor writes:
 
-```bash
-python -m arc_tactic3.language_partial_untied_watch --watch-dir artifacts/watch_runs/partial_untied_watch_50m_20260328
-python -m arc_tactic3.language_nanochat_watch --watch-dir artifacts/watch_runs/nanochat_watch_50m_20260328_retry2
-```
+- [`figures/research_overview_20260614.png`](./figures/research_overview_20260614.png)
+- [`all_language_val_loss_vs_tokens.png`](./artifacts/benchmark_runs/language/research_curves_20260614/all_language_val_loss_vs_tokens.png)
+- [`final_points_val_loss_vs_tokens.png`](./artifacts/benchmark_runs/language/research_curves_20260614/final_points_val_loss_vs_tokens.png)
+- [`curve_summary.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/curve_summary.csv)
+- [`extracted_points.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/extracted_points.csv)
+- [`neuron_search_summary.csv`](./artifacts/benchmark_runs/language/research_curves_20260614/neuron_search_summary.csv)
 
-Launch the current best candidate (`partial_untied`) on an A100 or H100 with automatic hardware defaults, FineWeb-Edu streaming/cache build, checkpoints, live progress, and fixed-prompt samples:
+## Important Caveats
 
-```bash
-python -m arc_tactic3.language_partial_untied_cluster \
-  --output-dir runs/partial_untied_cluster_h100 \
-  --device cuda
-```
-
-To inspect the resolved hardware-tuned config before running:
-
-```bash
-python -m arc_tactic3.language_partial_untied_cluster \
-  --output-dir runs/partial_untied_cluster_h100 \
-  --device cuda \
-  --print-config
-```
-
-To watch an active cluster run from another shell:
-
-```bash
-python -m arc_tactic3.language_partial_untied_cluster \
-  --target-watch-dir runs/partial_untied_cluster_h100 \
-  --watch-once
-```
-
-Key benchmark and experiment sources live under:
-
-- [`arc_tactic3/`](./arc_tactic3)
-- [`artifacts/benchmark_runs/language/`](./artifacts/benchmark_runs/language)
-- [`artifacts/watch_runs/`](./artifacts/watch_runs)
+- This is a research snapshot with mixed regimes, not one locked benchmark table.
+- Some rows are long full runs; some are cheap probes; some are one-seed screens; some are multi-seed short confirmations.
+- Validation-loss numbers are most comparable inside the same cache/config family. The graph is an evidence map, not a single clean scaling law.
+- Hub logs used for the latest long-run extraction are summarized into committed CSV/PNG artifacts, but the raw heavyweight checkpoints and local hub state are not all in Git.
+- Large `.pt` caches and checkpoints are intentionally excluded from GitHub. See [`docs/large_artifacts_manifest.md`](./docs/large_artifacts_manifest.md).
+- No neuron variant should be scaled to a 5B-token run until it beats the same controls under a longer stable confirmation.
 
 ## Repo Layout
 
 ```text
-arc_tactic3/                 Research code and tests copied from the working repo
-artifacts/benchmark_runs/    JSON artifacts for benchmark suites and ablations
-artifacts/watch_runs/        Long-run watch outputs for 50M-token comparisons
-figures/                     Generated PNG figures for the README
-docs/                        Negative results, summaries, and artifact notes
-scripts/                     Utility scripts, including figure generation
+arc_tactic3/                                  Research code and tests
+artifacts/benchmark_runs/language/           Language-model runs, logs, plots, summaries, and neuron search
+artifacts/watch_runs/                         Old 50M-token partial_untied and Nanochat watch runs
+figures/                                      README-facing figures
+docs/                                         Artifact notes, negative results, and large-file manifest
+scripts/                                      Utility scripts and legacy figure generation
 ```
 
 ## Status
 
-This repository is an active research snapshot. The strongest current public claim supported by the preserved artifacts is narrow:
+Current best recommendation from the saved evidence:
 
-> At roughly 8M parameters and 50M training tokens on cached FineWeb-Edu blocks, the `partial_untied` recurrent model finished with lower validation loss and much lower VRAM than the local Nanochat-style small baseline, while Nanochat retained somewhat higher raw throughput.
+> Treat `CausalMultiScaleLowRankConvMemoryBlock` as the leading architecture family. The 76M low-rank conv-memory run is the scale-up candidate to beat. Keep neuron-search work in the short-screen/confirmation lane until a candidate is stable beyond the current 1024-step and 2048-step evidence.

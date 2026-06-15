@@ -11,9 +11,12 @@ from typing import Any
 import matplotlib.pyplot as plt
 
 
-LANGUAGE_ROOT = Path(r"E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+LANGUAGE_ROOT = REPO_ROOT / "artifacts" / "benchmark_runs" / "language"
+WATCH_ROOT = REPO_ROOT / "artifacts" / "watch_runs"
 HUB_RUNS_ROOT = Path(r"E:\CODEXRESEARCH\house_compute_hub\runs")
 OUTPUT_DIR = LANGUAGE_ROOT / "research_curves_20260614"
+FIGURES_DIR = REPO_ROOT / "figures"
 
 
 @dataclass
@@ -47,6 +50,8 @@ def to_float(value: Any) -> float | None:
 def compact_label(path: Path, fallback: str) -> str:
     parts = path.parts
     name = path.stem
+    if "watch_runs" in parts:
+        return path.parent.name
     if "variant_results" in parts:
         idx = parts.index("variant_results")
         run = parts[idx - 1] if idx > 0 else path.parent.name
@@ -72,8 +77,9 @@ def label_from_json(path: Path, payload: Any, local_label: str | None = None) ->
             return run_name
         if isinstance(variant, str):
             return f"{compact_label(path, path.stem)}/{variant}"
-        if isinstance(benchmark, str) and path.name == "result.json":
-            return f"{compact_label(path, path.parent.name)}/{benchmark}"
+        if isinstance(benchmark, str) and path.name in {"result.json", "final.json"}:
+            base = compact_label(path, path.parent.name)
+            return base if "watch_runs" in path.parts else f"{base}/{benchmark}"
     return compact_label(path, path.stem)
 
 
@@ -209,29 +215,32 @@ def parse_result_like_dict(out: list[Point], path: Path, payload: dict[str, Any]
 
 def parse_json_files() -> list[Point]:
     points: list[Point] = []
-    for path in LANGUAGE_ROOT.rglob("*.json"):
-        if OUTPUT_DIR in path.parents:
+    for root in (LANGUAGE_ROOT, WATCH_ROOT):
+        if not root.exists():
             continue
-        lower_name = path.name.lower()
-        if (
-            lower_name == "state.json"
-            or ".state.json" in lower_name
-            or lower_name.endswith("_ranked_results.json")
-            or lower_name.endswith("_screen_results.json")
-            or lower_name.startswith("aggregate_results")
-            or lower_name in {"design_notes.json", "grad_and_params.json"}
-        ):
-            continue
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        if isinstance(payload, dict):
-            parse_result_like_dict(points, path, payload)
-        elif isinstance(payload, list):
-            for index, item in enumerate(payload):
-                if isinstance(item, dict):
-                    parse_result_like_dict(points, path, {"results": {f"row_{index}": item}, **item})
+        for path in root.rglob("*.json"):
+            if OUTPUT_DIR in path.parents:
+                continue
+            lower_name = path.name.lower()
+            if (
+                lower_name == "state.json"
+                or ".state.json" in lower_name
+                or lower_name.endswith("_ranked_results.json")
+                or lower_name.endswith("_screen_results.json")
+                or lower_name.startswith("aggregate_results")
+                or lower_name in {"design_notes.json", "grad_and_params.json"}
+            ):
+                continue
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if isinstance(payload, dict):
+                parse_result_like_dict(points, path, payload)
+            elif isinstance(payload, list):
+                for index, item in enumerate(payload):
+                    if isinstance(item, dict):
+                        parse_result_like_dict(points, path, {"results": {f"row_{index}": item}, **item})
     return points
 
 
@@ -366,6 +375,9 @@ def is_highlight(label: str) -> bool:
     return any(
         key in lower
         for key in (
+            "partial_untied_watch_50m",
+            "nanochat_watch_50m",
+            "language_partial_untied_50m",
             "lowrank_conv_memory_76m",
             "low_rank_conv_memory_76m",
             "80m_2b_lr1e3",
@@ -377,6 +389,58 @@ def is_highlight(label: str) -> bool:
             "wave10_3080_lowrank",
         )
     )
+
+
+def parse_neuron_rows() -> list[dict[str, Any]]:
+    aggregate_path = LANGUAGE_ROOT / "neuron_search_20260605" / "manual_self" / "aggregate_results_20260605_current.csv"
+    if not aggregate_path.exists():
+        return []
+    groups: dict[tuple[str, int], list[dict[str, Any]]] = {}
+    with aggregate_path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            seq = to_float(row.get("sequence_length"))
+            val_blocks = to_float(row.get("val_blocks"))
+            steps = to_float(row.get("steps"))
+            delta = to_float(row.get("val_delta_vs_baseline"))
+            speed = to_float(row.get("speed_ratio_vs_baseline"))
+            variant = row.get("variant")
+            cache_path = row.get("cache_path", "")
+            if not isinstance(variant, str) or not variant:
+                continue
+            if seq != 10160 or val_blocks != 8 or steps is None:
+                continue
+            if "real_cache" not in cache_path and "real" not in row.get("group", ""):
+                continue
+            if delta is None or speed is None:
+                continue
+            groups.setdefault((variant, int(steps)), []).append(row)
+
+    summaries: list[dict[str, Any]] = []
+    for (variant, steps), rows in groups.items():
+        deltas = [to_float(row.get("val_delta_vs_baseline")) for row in rows]
+        speeds = [to_float(row.get("speed_ratio_vs_baseline")) for row in rows]
+        params = [to_float(row.get("param_delta")) for row in rows]
+        deltas = [value for value in deltas if value is not None]
+        speeds = [value for value in speeds if value is not None]
+        params = [value for value in params if value is not None]
+        if not deltas or not speeds:
+            continue
+        summaries.append(
+            {
+                "variant": variant,
+                "steps": steps,
+                "n": len(deltas),
+                "wins": sum(1 for value in deltas if value < 0),
+                "mean_val_delta": sum(deltas) / len(deltas),
+                "best_val_delta": min(deltas),
+                "worst_val_delta": max(deltas),
+                "mean_speed_ratio": sum(speeds) / len(speeds),
+                "mean_param_delta": sum(params) / len(params) if params else None,
+            }
+        )
+    summaries.sort(key=lambda row: (row["steps"], row["mean_val_delta"]))
+    return summaries
 
 
 def short_name(label: str, max_len: int = 74) -> str:
@@ -478,8 +542,147 @@ def plot_final_scatter(rows: list[dict[str, Any]], out_path: Path) -> None:
     plt.close(fig)
 
 
-def write_outputs(points: list[Point], rows: list[dict[str, Any]]) -> None:
+def overview_highlight(label: str) -> tuple[str, str, tuple[int, int]] | None:
+    lower = label.lower()
+    if "wave10_3080_lowrank_conv_memory_76m_3b" in lower:
+        return ("76M low-rank conv-memory, 2.2B", "#dc2626", (7, -1))
+    if "longseq_anchor16_160m_5b_fresh_after2b" in lower:
+        return ("160M anchor, 5B", "#9333ea", (7, 8))
+    if "longseq_anchor16_160m_2b_cosine" in lower:
+        return ("160M anchor, 2B", "#7c3aed", (7, -2))
+    if "80m_2b_lr1e3" in lower and "language_longseq" in lower:
+        return ("80M anchor, 2B", "#ea580c", (7, -12))
+    if "80m_fresh1b_after2b" in lower and "language_longseq" in lower:
+        return ("80M fresh-after-2B continuation", "#f97316", (7, 8))
+    if "partial_untied_watch_50m" in lower or "language_partial_untied_50m_20260328" in lower:
+        return ("partial_untied, 50M", "#0f766e", (7, -8))
+    if "nanochat_watch_50m" in lower:
+        return ("Nanochat-style, 50M", "#0284c7", (7, 8))
+    return None
+
+
+def plot_readme_overview(groups: dict[str, list[Point]], neuron_rows: list[dict[str, Any]], out_path: Path) -> None:
+    fig, (ax_loss, ax_neuron) = plt.subplots(
+        1,
+        2,
+        figsize=(17, 7.5),
+        dpi=180,
+        gridspec_kw={"width_ratios": [1.65, 1.0]},
+    )
+
+    curve_items = [
+        (label, values)
+        for label, values in groups.items()
+        if len(values) >= 2 and max(p.tokens for p in values) >= 10_000_000
+    ]
+    for label, values in curve_items:
+        xs = [p.tokens / 1e9 for p in values if p.tokens > 0]
+        ys = [p.val_loss for p in values if p.tokens > 0]
+        if len(xs) < 2:
+            continue
+        highlight = overview_highlight(label)
+        color = highlight[1] if highlight else "#94a3b8"
+        linewidth = 2.4 if highlight else 0.8
+        alpha = 0.95 if highlight else 0.22
+        ax_loss.plot(
+            xs,
+            ys,
+            marker="o" if highlight else None,
+            markersize=3.4 if highlight else 0,
+            linewidth=linewidth,
+            alpha=alpha,
+            color=color,
+            zorder=3 if highlight else 1,
+        )
+        if highlight:
+            ax_loss.annotate(
+                highlight[0],
+                xy=(xs[-1], ys[-1]),
+                xytext=highlight[2],
+                textcoords="offset points",
+                fontsize=7,
+                color=color,
+                va="center",
+            )
+
+    ax_loss.set_xscale("log")
+    ax_loss.set_xlabel("training tokens, billions (log scale)")
+    ax_loss.set_ylabel("validation loss (lower is better)")
+    ax_loss.set_title("Language runs: old baselines through long-context scale-up")
+    ax_loss.grid(True, which="both", linewidth=0.45, alpha=0.28)
+    ax_loss.set_ylim(3.9, 11.1)
+    ax_loss.text(
+        0.02,
+        0.02,
+        "Gray: extracted runs/probes. Colored lines: README-highlighted old baselines and current long-run leaders.",
+        transform=ax_loss.transAxes,
+        fontsize=8,
+        color="#475569",
+    )
+
+    plot_rows = [
+        row
+        for row in neuron_rows
+        if row["steps"] in {1024, 2048}
+        and -0.13 <= row["mean_val_delta"] <= 0.04
+        and row["mean_speed_ratio"] <= 1.25
+    ]
+    colors = {1024: "#2563eb", 2048: "#16a34a"}
+    for row in plot_rows:
+        ax_neuron.scatter(
+            [row["mean_speed_ratio"]],
+            [row["mean_val_delta"]],
+            s=24 + 10 * min(row["n"], 5),
+            color=colors.get(row["steps"], "#64748b"),
+            alpha=0.7,
+            edgecolor="white",
+            linewidth=0.4,
+        )
+
+    keep_names = {
+        "rank_competition_memory_suppressed_centered_gate_neuron",
+        "rank_competition_memory_centered_gate_neuron",
+        "phase_residual_memory_gate_neuron",
+        "hidden_drop_square_neuron",
+        "rank_competition_neuron",
+    }
+    for row in sorted(plot_rows, key=lambda item: item["mean_val_delta"])[:8]:
+        if row["variant"] not in keep_names and row["mean_val_delta"] > -0.01:
+            continue
+        ax_neuron.annotate(
+            short_name(row["variant"], 34),
+            xy=(row["mean_speed_ratio"], row["mean_val_delta"]),
+            xytext=(4, 3),
+            textcoords="offset points",
+            fontsize=6.7,
+            color="#0f172a",
+        )
+
+    ax_neuron.axhline(0, color="#334155", linewidth=0.8, alpha=0.6)
+    ax_neuron.axvline(1, color="#334155", linewidth=0.8, alpha=0.6)
+    ax_neuron.set_xlabel("speed ratio vs matched baseline")
+    ax_neuron.set_ylabel("validation-loss delta vs baseline (negative is better)")
+    ax_neuron.set_title("Neuron search: real seq10160 short screens")
+    ax_neuron.grid(True, linewidth=0.45, alpha=0.28)
+    ax_neuron.set_ylim(0.025, -0.125)
+    ax_neuron.text(
+        0.02,
+        0.02,
+        "Blue: 1024 steps. Green: 2048 steps. These are short screens, not scale-clear runs.",
+        transform=ax_neuron.transAxes,
+        fontsize=8,
+        color="#475569",
+    )
+
+    fig.suptitle("RESEARCH-1 language-model evidence map", fontsize=15, fontweight="bold")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.close(fig)
+
+
+def write_outputs(points: list[Point], rows: list[dict[str, Any]], neuron_rows: list[dict[str, Any]]) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     with (OUTPUT_DIR / "extracted_points.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
             handle,
@@ -506,9 +709,27 @@ def write_outputs(points: list[Point], rows: list[dict[str, Any]]) -> None:
         )
         writer.writeheader()
         writer.writerows(rows)
+    with (OUTPUT_DIR / "neuron_search_summary.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "variant",
+                "steps",
+                "n",
+                "wins",
+                "mean_val_delta",
+                "best_val_delta",
+                "worst_val_delta",
+                "mean_speed_ratio",
+                "mean_param_delta",
+            ],
+        )
+        writer.writeheader()
+        writer.writerows(neuron_rows)
     summary = {
         "point_count": len(points),
         "curve_count": len(rows),
+        "neuron_summary_count": len(neuron_rows),
         "top_by_long_final_loss": [
             row
             for row in sorted(
@@ -519,8 +740,10 @@ def write_outputs(points: list[Point], rows: list[dict[str, Any]]) -> None:
         "outputs": {
             "curves_png": str(OUTPUT_DIR / "all_language_val_loss_vs_tokens.png"),
             "final_scatter_png": str(OUTPUT_DIR / "final_points_val_loss_vs_tokens.png"),
+            "readme_overview_png": str(FIGURES_DIR / "research_overview_20260614.png"),
             "points_csv": str(OUTPUT_DIR / "extracted_points.csv"),
             "summary_csv": str(OUTPUT_DIR / "curve_summary.csv"),
+            "neuron_summary_csv": str(OUTPUT_DIR / "neuron_search_summary.csv"),
         },
     }
     (OUTPUT_DIR / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -530,12 +753,16 @@ def main() -> None:
     points = dedupe(parse_json_files() + parse_log_files())
     groups = dedupe_groups_by_curve(grouped(points))
     rows = final_rows(groups)
-    write_outputs(points, rows)
+    neuron_rows = parse_neuron_rows()
+    write_outputs(points, rows, neuron_rows)
     plot_curves(groups, OUTPUT_DIR / "all_language_val_loss_vs_tokens.png")
     plot_final_scatter(rows, OUTPUT_DIR / "final_points_val_loss_vs_tokens.png")
+    plot_readme_overview(groups, neuron_rows, FIGURES_DIR / "research_overview_20260614.png")
     print(f"POINTS={len(points)}")
     print(f"CURVES={len(rows)}")
+    print(f"NEURON_SUMMARIES={len(neuron_rows)}")
     print(f"OUTPUT_DIR={OUTPUT_DIR}")
+    print(f"README_OVERVIEW={FIGURES_DIR / 'research_overview_20260614.png'}")
     for row in sorted([r for r in rows if r["max_tokens"] >= 100_000_000], key=lambda r: r["final_val_loss"])[:12]:
         print(
             f"TOP_LONG label={short_name(row['label'], 90)} "
