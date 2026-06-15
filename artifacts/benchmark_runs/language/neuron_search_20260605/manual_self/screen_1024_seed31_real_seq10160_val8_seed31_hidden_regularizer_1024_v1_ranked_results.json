@@ -1,0 +1,62 @@
+[
+  {
+    "block_type": "rank_competition_fixed_feather_hidden_drop_neuron",
+    "final_train_loss": 5.591558456420898,
+    "final_val_loss": 6.488661163247476,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9635782194523769,
+    "tok_per_sec": 81599.08282225367,
+    "val_delta_vs_baseline": -0.002129950673561254
+  },
+  {
+    "block_type": "hidden_drop_square_neuron",
+    "final_train_loss": 5.591764450073242,
+    "final_val_loss": 6.488811957085226,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9784350801626216,
+    "tok_per_sec": 82857.21234728894,
+    "val_delta_vs_baseline": -0.001979156835811402
+  },
+  {
+    "block_type": "hidden_drop_low_square_neuron",
+    "final_train_loss": 5.573938369750977,
+    "final_val_loss": 6.4907588776641,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9777300477946744,
+    "tok_per_sec": 82797.50780704187,
+    "val_delta_vs_baseline": -3.2236256937601127e-05
+  },
+  {
+    "block_type": "rank_competition_fixed_feather_channel_drop_neuron",
+    "final_train_loss": 5.608437538146973,
+    "final_val_loss": 6.490867328456067,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9641386184585664,
+    "tok_per_sec": 81646.5393172184,
+    "val_delta_vs_baseline": 7.62145350297061e-05
+  },
+  {
+    "block_type": "channel_drop_square_neuron",
+    "final_train_loss": 5.609025955200195,
+    "final_val_loss": 6.491031453083819,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9786937736519904,
+    "tok_per_sec": 82879.11939234084,
+    "val_delta_vs_baseline": 0.00024033916278121126
+  }
+]

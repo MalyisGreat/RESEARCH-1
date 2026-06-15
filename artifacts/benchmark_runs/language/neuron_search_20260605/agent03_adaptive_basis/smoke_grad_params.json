@@ -1,0 +1,57 @@
+{
+  "baseline_block_grad": {
+    "grad_params": 6696,
+    "loss": 1.0043904781341553,
+    "nonzero_grad_params": 6623,
+    "ok": true,
+    "total_params": 6696
+  },
+  "baseline_mini_params": 15250481,
+  "baseline_model_grad": {
+    "candidate_size": 74,
+    "grad_params": 28592,
+    "loss": 4.586625099182129,
+    "nonzero_grad_params": 26224,
+    "ok": true,
+    "token_count": 62,
+    "total_params": 28592
+  },
+  "candidate_block_grad": {
+    "grad_params": 7528,
+    "loss": 0.9793382287025452,
+    "nonzero_grad_params": 7464,
+    "ok": true,
+    "total_params": 7528
+  },
+  "candidate_mini_params": 15260209,
+  "candidate_model_grad": {
+    "candidate_size": 74,
+    "grad_params": 30256,
+    "loss": 4.589994430541992,
+    "nonzero_grad_params": 27888,
+    "ok": true,
+    "token_count": 62,
+    "total_params": 30256
+  },
+  "candidate_param_delta": 9728,
+  "candidate_v2_block_grad": {
+    "grad_params": 7208,
+    "loss": 0.9882957339286804,
+    "nonzero_grad_params": 7135,
+    "ok": true,
+    "total_params": 7208
+  },
+  "candidate_v2_mini_params": 15256625,
+  "candidate_v2_model_grad": {
+    "candidate_size": 74,
+    "grad_params": 29616,
+    "loss": 4.5883073806762695,
+    "nonzero_grad_params": 27248,
+    "ok": true,
+    "token_count": 62,
+    "total_params": 29616
+  },
+  "candidate_v2_param_delta": 6144,
+  "cuda_visible_devices": "-1",
+  "torch_cuda_available": false
+}

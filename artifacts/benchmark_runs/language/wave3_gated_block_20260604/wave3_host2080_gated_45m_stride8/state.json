@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8\\checkpoint.pt",
+  "final_train_loss": 5.750812530517578,
+  "final_val_loss": 5.742143817492358,
+  "peak_vram_mb": 3022.13037109375,
+  "pure_train_tok_per_sec": 105908.607993911,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8\\result.json",
+  "run_name": "wave3_host2080_gated_45m_stride8",
+  "status": "completed",
+  "step": 4429,
+  "tokens_seen": 44998640,
+  "train_steps": 4429
+}

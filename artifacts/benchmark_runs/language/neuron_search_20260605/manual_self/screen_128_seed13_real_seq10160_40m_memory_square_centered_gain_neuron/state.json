@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_memory_square_centered_gain_neuron\\checkpoint.pt",
+  "final_train_loss": 6.969663619995117,
+  "final_val_loss": 7.050359352554862,
+  "peak_vram_mb": 4295.7939453125,
+  "pure_train_tok_per_sec": 91864.05964273875,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_memory_square_centered_gain_neuron\\result.json",
+  "run_name": "screen_128_seed13_real_seq10160_40m_memory_square_centered_gain_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

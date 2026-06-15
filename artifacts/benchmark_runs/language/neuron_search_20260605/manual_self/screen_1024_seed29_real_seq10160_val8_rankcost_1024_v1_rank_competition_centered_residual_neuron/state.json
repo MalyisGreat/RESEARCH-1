@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed29_real_seq10160_val8_rankcost_1024_v1_rank_competition_centered_residual_neuron\\checkpoint.pt",
+  "final_train_loss": 5.410987854003906,
+  "final_val_loss": 6.495301617881444,
+  "peak_vram_mb": 4715.162109375,
+  "pure_train_tok_per_sec": 74566.67829839443,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed29_real_seq10160_val8_rankcost_1024_v1_rank_competition_centered_residual_neuron\\result.json",
+  "run_name": "screen_1024_seed29_real_seq10160_val8_rankcost_1024_v1_rank_competition_centered_residual_neuron",
+  "status": "completed",
+  "step": 1024,
+  "tokens_seen": 10403840,
+  "train_steps": 1024
+}

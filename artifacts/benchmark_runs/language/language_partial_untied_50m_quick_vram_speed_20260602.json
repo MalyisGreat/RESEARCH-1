@@ -1,0 +1,25 @@
+{
+  "benchmark": "language_partial_untied_50m_quick_vram_speed",
+  "results": [
+    {
+      "amp": "fp16 autocast",
+      "batch_size": 16,
+      "embedding_dim": 672,
+      "forward_ms": 27.409958333313018,
+      "forward_peak_vram_mb": 898.8076171875,
+      "forward_tok_per_sec": 74133.64060208674,
+      "hidden_dim": 1344,
+      "last_train_loss": 0.09023725241422653,
+      "memory_dim": 672,
+      "optimizer": "fused AdamW",
+      "parameter_count": 49880083,
+      "partial_tokens": 1024,
+      "sequence_length": 127,
+      "tokens_per_step": 2032,
+      "train_peak_vram_mb": 1969.828125,
+      "train_step_ms": 100.08250000009866,
+      "train_tok_per_sec": 20303.249818879394,
+      "vocab_size": 50257
+    }
+  ]
+}

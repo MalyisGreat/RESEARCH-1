@@ -1,0 +1,75 @@
+WAVE3_LOCAL_START run=wave3_host2080_memory_stride4_60m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=wave3_host2080_memory_stride4_60m device=NVIDIA GeForce RTX 2080 SUPER params=50,359,345 seq=10160 steps=5906
+TRAIN step=1/5906 tokens=10160 loss=10.6145 lr=1.2e-06 pure_tok_s=18891
+TRAIN step=500/5906 tokens=5080000 loss=7.1243 lr=0.0006 pure_tok_s=70099
+TRAIN step=1000/5906 tokens=10160000 loss=6.5172 lr=0.000587634 pure_tok_s=70166
+TRAIN step=1500/5906 tokens=15240000 loss=6.0362 lr=0.000551574 pure_tok_s=70080
+TRAIN step=2000/5906 tokens=20320000 loss=5.9712 lr=0.000494841 pure_tok_s=69996
+TRAIN step=2500/5906 tokens=25400000 loss=5.6852 lr=0.000422193 pure_tok_s=69548
+TRAIN step=3000/5906 tokens=30480000 loss=5.6049 lr=0.00033972 pure_tok_s=69555
+TRAIN step=3500/5906 tokens=35560000 loss=5.6580 lr=0.000254337 pure_tok_s=69533
+TRAIN step=4000/5906 tokens=40640000 loss=5.5181 lr=0.0001732 pure_tok_s=69527
+TRAIN step=4500/5906 tokens=45720000 loss=5.4868 lr=0.000103114 pure_tok_s=69548
+TRAIN step=5000/5906 tokens=50800000 loss=5.4799 lr=4.99522e-05 pure_tok_s=69174
+TRAIN step=5500/5906 tokens=55880000 loss=5.4447 lr=1.81729e-05 pure_tok_s=68682
+EVAL step=5906/5906 tokens=60004960 train=5.5737 val=5.4664 eval_s=1.4
+RESULT {"candidate_size_mean": 32867.42008127328, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_memory_stride4_60m\\checkpoint.pt", "final_train_loss": 5.573738098144531, "final_val_loss": 5.466395527484223, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.573738098144531, "val_loss": 5.466395527484223}], "parameter_count": 50359345, "peak_vram_mb": 4319.88916015625, "pure_train_tok_per_sec": 68291.05068805313, "step_time_mean_ms": 148.7749843886557, "step_time_median_ms": 146.81990000826772, "train_tokens_seen": 60004960}
+WAVE3_LOCAL_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave3_gated_block_20260604\wave3_host2080_memory_stride4_60m\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "block_type": "memory",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 5906,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 5906,
+    "full_eval_token_chunk_size": 1024,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_memory_stride4_60m",
+    "resume_checkpoint": null,
+    "run_name": "wave3_host2080_memory_stride4_60m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 5906,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.42008127328,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_memory_stride4_60m\\checkpoint.pt",
+    "final_train_loss": 5.573738098144531,
+    "final_val_loss": 5.466395527484223,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.573738098144531,
+        "val_loss": 5.466395527484223
+      }
+    ],
+    "parameter_count": 50359345,
+    "peak_vram_mb": 4319.88916015625,
+    "pure_train_tok_per_sec": 68291.05068805313,
+    "step_time_mean_ms": 148.7749843886557,
+    "step_time_median_ms": 146.81990000826772,
+    "train_tokens_seen": 60004960
+  }
+}
+
+WAVE3_LOCAL_DONE run=wave3_host2080_memory_stride4_60m

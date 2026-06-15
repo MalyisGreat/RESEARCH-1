@@ -1,0 +1,2 @@
+E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\longseq_scaling_goal_watcher.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.utcnow().isoformat(timespec="seconds") + "Z"

@@ -1,0 +1,65 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1776, in <module>
+    main()
+    ~~~~^^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1767, in main
+    payload = run_longseq_replay_probe(config)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1624, in run_longseq_replay_probe
+    reports[variant] = _train_variant(
+                       ~~~~~~~~~~~~~~^
+        variant,
+        ^^^^^^^^
+    ...<7 lines>...
+        variant_artifact_dir=variant_artifact_dir,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1226, in _train_variant
+    initial_val_loss, eval_duration = _evaluate_standard_loss(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~^
+        model,
+        ^^^^^^
+    ...<5 lines>...
+        max_seconds=config.max_eval_seconds,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1031, in _evaluate_standard_loss
+    loss, token_count = _factorized_full_loss_chunked(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model,
+        ^^^^^^
+    ...<2 lines>...
+        token_chunk_size=token_chunk_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 981, in _factorized_full_loss_chunked
+    loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), chunk_targets.reshape(-1))
+  File "C:\Users\joshj\AppData\Roaming\Python\Python313\site-packages\torch\nn\functional.py", line 3494, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<4 lines>...
+        label_smoothing,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+RuntimeError: "nll_loss_forward_reduce_cuda_kernel_2d_index" not implemented for 'Int'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1790, in <module>
+    main()
+    ~~~~^^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1781, in main
+    payload = run_longseq_replay_probe(config)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1616, in run_longseq_replay_probe
+    partial_token_ids = _top_token_ids(train_dataset, count=config.partial_token_count, vocab_size=vocab_size)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_recurrent_nano_tricks.py", line 1020, in _top_token_ids
+    flat_tokens = dataset.targets.reshape(-1)
+RuntimeError: [enforce fail at alloc_cpu.cpp:115] data. DefaultCPUAllocator: not enough memory: you tried to allocate 8000024640 bytes.

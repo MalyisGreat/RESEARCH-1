@@ -1,0 +1,63 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale_lowrank_conv_memory_silu_square",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 256,
+    "conv_kernel_size": 7,
+    "conv_layers": 1,
+    "conv_rank": 192,
+    "embedding_dim": 512,
+    "eval_interval": 128,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 256,
+    "min_learning_rate": 6e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\side_neuron_variants_20260605",
+    "resume_checkpoint": null,
+    "run_name": "silu_square_lowrank_40m_steps256",
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 16,
+    "train_steps": 256,
+    "val_blocks": 8,
+    "vocab_size": 50257,
+    "warmup_steps": 64,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 16825.87890625,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\side_neuron_variants_20260605\\checkpoint.pt",
+    "final_train_loss": 6.995581150054932,
+    "final_val_loss": 6.930970085793593,
+    "history": [
+      {
+        "learning_rate": 0.0004649999999999999,
+        "step": 128.0,
+        "tokens_seen": 1300480.0,
+        "train_loss": 7.112898826599121,
+        "val_loss": 7.17048171392576
+      },
+      {
+        "learning_rate": 6e-05,
+        "step": 256.0,
+        "tokens_seen": 2600960.0,
+        "train_loss": 6.995581150054932,
+        "val_loss": 6.930970085793593
+      }
+    ],
+    "parameter_count": 39033617,
+    "peak_vram_mb": 2316.8671875,
+    "pure_train_tok_per_sec": 129440.32234351977,
+    "step_time_mean_ms": 78.49176992186813,
+    "step_time_median_ms": 71.64224999996804,
+    "train_tokens_seen": 2600960
+  }
+}

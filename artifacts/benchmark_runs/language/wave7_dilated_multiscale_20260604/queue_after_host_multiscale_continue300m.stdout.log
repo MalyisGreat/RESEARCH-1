@@ -1,0 +1,3 @@
+WAVE7_QUEUE_WAIT wait_pid=34004 script=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave7_dilated_multiscale_20260604\run_host_2080_dilated_multiscale_stride4_60m.ps1
+WAVE7_QUEUE_LAUNCH 2026-06-04T19:34:46.7053909-05:00
+WAVE7_QUEUE_STARTED pid=29468 stdout=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave7_dilated_multiscale_20260604\host_2080_dilated_multiscale_stride4_60m.stdout.log stderr=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave7_dilated_multiscale_20260604\host_2080_dilated_multiscale_stride4_60m.stderr.log

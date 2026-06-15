@@ -1,0 +1,26 @@
+[
+  {
+    "block_type": "rank_competition_feather_neuron",
+    "final_train_loss": 4.495212554931641,
+    "final_val_loss": 6.788191381214172,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2,
+    "parameter_count": 40437011,
+    "speed_ratio_vs_baseline": 0.9822562282255025,
+    "tok_per_sec": 82109.442355868,
+    "val_delta_vs_baseline": 0.0001210741170742935
+  },
+  {
+    "block_type": "rank_competition_ultrasoft_neuron",
+    "final_train_loss": 4.493058204650879,
+    "final_val_loss": 6.7890008991158854,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2,
+    "parameter_count": 40437011,
+    "speed_ratio_vs_baseline": 0.9833969430339716,
+    "tok_per_sec": 82204.79777751768,
+    "val_delta_vs_baseline": 0.0009305920187880901
+  }
+]

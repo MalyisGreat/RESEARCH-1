@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_phase_amplitude_neuron\\checkpoint.pt",
+  "final_train_loss": 8.565406799316406,
+  "final_val_loss": 11.23939957151226,
+  "peak_vram_mb": 200.65185546875,
+  "pure_train_tok_per_sec": 17157.403990049857,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_phase_amplitude_neuron\\result.json",
+  "run_name": "screen_256_seed17_phase_amplitude_neuron",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 65280,
+  "train_steps": 256
+}

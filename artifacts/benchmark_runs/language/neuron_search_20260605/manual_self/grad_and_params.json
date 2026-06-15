@@ -1,0 +1,22 @@
+{
+  "grad": {
+    "hidden_drop_p35_square_neuron": {
+      "block_type": "hidden_drop_p35_square_neuron",
+      "finite_grads": true,
+      "finite_output": true,
+      "loss": 1.0879732370376587,
+      "max_grad": 0.005989133380353451
+    },
+    "multi_scale_lowrank_conv_memory": {
+      "block_type": "multi_scale_lowrank_conv_memory",
+      "finite_grads": true,
+      "finite_output": true,
+      "loss": 1.0523654222488403,
+      "max_grad": 0.0031888470984995365
+    }
+  },
+  "params": {
+    "hidden_drop_p35_square_neuron": 40437009,
+    "multi_scale_lowrank_conv_memory": 40437009
+  }
+}

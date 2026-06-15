@@ -1,0 +1,41 @@
+{
+  "caveat": "Two points only support a fixed-token slope, not a stable Kaplan-style scaling law with irreducible loss. Add at least one more model size to fit curvature/excess-loss exponent.",
+  "fixed_train_tokens": 100004880,
+  "points": [
+    {
+      "label": "20m",
+      "params": 20034967,
+      "path": "artifacts\\benchmark_runs\\language\\language_longseq_anchor16_100m_seq10160_seed13_20260602.json",
+      "peak_vram_mb": 3774.69287109375,
+      "perplexity": 307.2225935892854,
+      "pure_train_time_seconds": 1876.336760400416,
+      "pure_train_tok_per_sec": 53297.937827886846,
+      "step_time_median_ms": 144.69879999523982,
+      "tokens": 100004880,
+      "val_loss": 5.727572545409203
+    },
+    {
+      "label": "40m",
+      "params": 40100417,
+      "path": "artifacts\\benchmark_runs\\language\\language_longseq_anchor16_40m_100m_seq10160_seed13_20260602.json",
+      "peak_vram_mb": 3975.97998046875,
+      "perplexity": 272.54161133391426,
+      "pure_train_time_seconds": 1144.9503566002022,
+      "pure_train_tok_per_sec": 87344.2935088932,
+      "step_time_median_ms": 62.982700001157355,
+      "tokens": 100004880,
+      "val_loss": 5.607791304588318
+    }
+  ],
+  "two_point_fit": {
+    "form": "val_loss = intercept + slope * ln(parameter_count)",
+    "intercept": 8.629804279792264,
+    "loss_delta_40m_minus_20m": -0.1197812408208847,
+    "loss_delta_per_param_doubling": -0.11964997215286627,
+    "param_ratio": 2.0015214899031277,
+    "perplexity_delta_40m_minus_20m": -34.680982255371134,
+    "perplexity_ratio_40m_over_20m": 0.8871144799274273,
+    "slope_loss_per_ln_param": -0.17261842146744275
+  },
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

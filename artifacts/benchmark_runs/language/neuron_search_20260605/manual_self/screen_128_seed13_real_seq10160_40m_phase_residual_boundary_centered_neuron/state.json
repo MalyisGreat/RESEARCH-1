@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_phase_residual_boundary_centered_neuron\\checkpoint.pt",
+  "final_train_loss": 6.972344398498535,
+  "final_val_loss": 7.037923017449266,
+  "peak_vram_mb": 4732.30859375,
+  "pure_train_tok_per_sec": 73931.92828894552,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_phase_residual_boundary_centered_neuron\\result.json",
+  "run_name": "screen_128_seed13_real_seq10160_40m_phase_residual_boundary_centered_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

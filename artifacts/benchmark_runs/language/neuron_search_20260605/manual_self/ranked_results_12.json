@@ -1,0 +1,98 @@
+[
+  {
+    "block_type": "phase_amplitude_neuron",
+    "final_train_loss": 8.749227523803711,
+    "final_val_loss": 10.823182356591317,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 16640,
+    "parameter_count": 4951601,
+    "speed_ratio_vs_baseline": 2.410286766896048,
+    "tok_per_sec": 634.9817681382367,
+    "val_delta_vs_baseline": -0.008631012486477019
+  },
+  {
+    "block_type": "stable_square_neuron",
+    "final_train_loss": 8.71673583984375,
+    "final_val_loss": 10.830923115973379,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1,
+    "parameter_count": 4934962,
+    "speed_ratio_vs_baseline": 1.959692825537625,
+    "tok_per_sec": 516.2743423141259,
+    "val_delta_vs_baseline": -0.0008902531044157058
+  },
+  {
+    "block_type": "rank_competition_neuron",
+    "final_train_loss": 8.717469215393066,
+    "final_val_loss": 10.830975553101185,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1,
+    "parameter_count": 4934962,
+    "speed_ratio_vs_baseline": 1.5493841078543649,
+    "tok_per_sec": 408.1799202663424,
+    "val_delta_vs_baseline": -0.0008378159766095905
+  },
+  {
+    "block_type": "conv_disagreement_neuron",
+    "final_train_loss": 8.715544700622559,
+    "final_val_loss": 10.831527496786679,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 1.2472850087987302,
+    "tok_per_sec": 328.592950489153,
+    "val_delta_vs_baseline": -0.00028587229111565193
+  },
+  {
+    "block_type": "stateful_threshold_neuron",
+    "final_train_loss": 8.715497970581055,
+    "final_val_loss": 10.831711524140601,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1,
+    "parameter_count": 4934962,
+    "speed_ratio_vs_baseline": 0.8096703435963151,
+    "tok_per_sec": 213.30487037771437,
+    "val_delta_vs_baseline": -0.00010184493719300747
+  },
+  {
+    "block_type": "mem_threshold_neuron",
+    "final_train_loss": 8.754547119140625,
+    "final_val_loss": 10.837275824827307,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 3328,
+    "parameter_count": 4938289,
+    "speed_ratio_vs_baseline": 1.047183514583048,
+    "tok_per_sec": 275.87689929172427,
+    "val_delta_vs_baseline": 0.005462455749512429
+  },
+  {
+    "block_type": "bottleneck_aware_neuron",
+    "final_train_loss": 8.731861114501953,
+    "final_val_loss": 10.838079001856785,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 10624,
+    "parameter_count": 4945585,
+    "speed_ratio_vs_baseline": 2.953643978044407,
+    "tok_per_sec": 778.1273586979704,
+    "val_delta_vs_baseline": 0.006265632778990948
+  },
+  {
+    "block_type": "adaptive_basis_neuron",
+    "final_train_loss": 8.72116470336914,
+    "final_val_loss": 10.838090015860164,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 195,
+    "parameter_count": 4935156,
+    "speed_ratio_vs_baseline": 1.733781606775152,
+    "tok_per_sec": 456.75880785479995,
+    "val_delta_vs_baseline": 0.00627664678236961
+  }
+]

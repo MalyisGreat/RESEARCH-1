@@ -1,0 +1,23 @@
+FRESH1B_AFTER2B_START 2026-06-03T18:05:36.8363170-05:00
+resume_checkpoint=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_80m_3b_lr1e3_continue_20260603\variant_results\seq10160_steps295276_val32_batch1_eval9843_init1_seed13\anchor16_2p205b_resume.pt
+output_dir=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_80m_fresh1b_after2b_20260603
+cache_path=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_80m_fresh1b_after2b_20260603\cache\fresh_after2b_plus_valskip_train1000106586_val325152_seq10160_gpt2.pt
+source_train_token_offset=2000528163
+fresh_train_blocks=98426 global_train_steps=315426
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=1,142,553/2,000,528,163 tok/s=225,341
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=2,254,084/2,000,528,163 tok/s=206,608
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=3,784,913/2,000,528,163 tok/s=237,616
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=5,426,893/2,000,528,163 tok/s=258,007
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=6,702,742/2,000,528,163 tok/s=256,972
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=8,608,340/2,000,528,163 tok/s=276,156
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=10,492,992/2,000,528,163 tok/s=289,547
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=12,184,386/2,000,528,163 tok/s=294,883
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=13,686,196/2,000,528,163 tok/s=295,200
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=15,351,121/2,000,528,163 tok/s=298,324
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=16,858,127/2,000,528,163 tok/s=298,411
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=18,562,325/2,000,528,163 tok/s=301,034
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=19,766,807/2,000,528,163 tok/s=296,094
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=21,073,426/2,000,528,163 tok/s=293,592
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=22,606,974/2,000,528,163 tok/s=294,100
+cluster_partial_untied cache_build [----------------------------] 0/1,000,106,586 tokens skipped=24,388,450/2,000,528,163 tok/s=297,637
+FRESH1B_AFTER2B_EXIT=-1073740791 2026-06-03T18:07:45.2684819-05:00

@@ -248,6 +248,7 @@ def run_nanochat_watch(config: NanochatWatchConfig, *, print_progress: bool = Tr
 
     history: list[dict[str, float]] = []
     step_times: list[float] = []
+    pure_train_time = 0.0
     tokens_seen = 0
     sequences_seen = 0
     latest_val_loss = float("nan")
@@ -292,13 +293,13 @@ def run_nanochat_watch(config: NanochatWatchConfig, *, print_progress: bool = Tr
             torch.cuda.synchronize()
         step_time = time.perf_counter() - step_start
         step_times.append(step_time)
+        pure_train_time += step_time
 
         batch_tokens = token_count
         batch_sequences = int(batch["input_ids"].size(0))
         tokens_seen += batch_tokens
         sequences_seen += batch_sequences
 
-        pure_train_time = sum(step_times)
         elapsed = time.perf_counter() - start
         train_tok_per_sec = tokens_seen / max(elapsed, 1e-9)
         pure_train_tok_per_sec = tokens_seen / max(pure_train_time, 1e-9)
@@ -365,7 +366,6 @@ def run_nanochat_watch(config: NanochatWatchConfig, *, print_progress: bool = Tr
                 )
 
     total_time = time.perf_counter() - start
-    pure_train_time = sum(step_times)
     report = {
         "parameter_count": count_parameters(model),
         "history": history,

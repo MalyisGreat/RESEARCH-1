@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_2048_seed31_real_seq10160_val8_seed31_suppressed_stopgrad_2048_v1_rank_competition_memory_suppressed_stopgrad_mask_centered_gate_neuron\\checkpoint.pt",
+  "final_train_loss": 4.48503303527832,
+  "final_val_loss": 6.796138498163598,
+  "peak_vram_mb": 4811.39306640625,
+  "pure_train_tok_per_sec": 70939.63037142166,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_2048_seed31_real_seq10160_val8_seed31_suppressed_stopgrad_2048_v1_rank_competition_memory_suppressed_stopgrad_mask_centered_gate_neuron\\result.json",
+  "run_name": "screen_2048_seed31_real_seq10160_val8_seed31_suppressed_stopgrad_2048_v1_rank_competition_memory_suppressed_stopgrad_mask_centered_gate_neuron",
+  "status": "completed",
+  "step": 2048,
+  "tokens_seen": 20807680,
+  "train_steps": 2048
+}

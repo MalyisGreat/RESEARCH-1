@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "parameter_count": 28401,
+    "loss": 5.556443214416504,
+    "finite_loss": true,
+    "finite_grads": true,
+    "nonzero_grad_tensors": 30,
+    "total_grad_tensors": 30
+  },
+  "candidate": {
+    "block_type": "memory_threshold_basis_lowrank",
+    "parameter_count": 29489,
+    "loss": 5.609872341156006,
+    "finite_loss": true,
+    "finite_grads": true,
+    "nonzero_grad_tensors": 33,
+    "total_grad_tensors": 33
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed17_real_seq10160_40m_1024_rank_competition_memory_centered_gate_neuron\\checkpoint.pt",
+  "final_train_loss": 5.581412315368652,
+  "final_val_loss": 6.478446355391675,
+  "peak_vram_mb": 4231.83740234375,
+  "pure_train_tok_per_sec": 72360.51548636852,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed17_real_seq10160_40m_1024_rank_competition_memory_centered_gate_neuron\\result.json",
+  "run_name": "screen_1024_seed17_real_seq10160_40m_1024_rank_competition_memory_centered_gate_neuron",
+  "status": "completed",
+  "step": 1024,
+  "tokens_seen": 10403840,
+  "train_steps": 1024
+}

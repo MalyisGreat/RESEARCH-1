@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_conv_disagreement_neuron\\checkpoint.pt",
+  "final_train_loss": 6.982368469238281,
+  "final_val_loss": 7.050714299434752,
+  "peak_vram_mb": 4275.9208984375,
+  "pure_train_tok_per_sec": 81490.45010605718,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed13_real_seq10160_40m_conv_disagreement_neuron\\result.json",
+  "run_name": "screen_128_seed13_real_seq10160_40m_conv_disagreement_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

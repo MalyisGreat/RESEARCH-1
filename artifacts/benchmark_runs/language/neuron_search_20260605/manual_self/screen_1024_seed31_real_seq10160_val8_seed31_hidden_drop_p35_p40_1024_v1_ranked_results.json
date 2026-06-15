@@ -1,0 +1,26 @@
+[
+  {
+    "block_type": "hidden_drop_p35_square_neuron",
+    "final_train_loss": 5.706451892852783,
+    "final_val_loss": 6.488544294026893,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9835618651215299,
+    "tok_per_sec": 82949.05520195396,
+    "val_delta_vs_baseline": -0.0022468198941449913
+  },
+  {
+    "block_type": "hidden_drop_p40_square_neuron",
+    "final_train_loss": 5.721555709838867,
+    "final_val_loss": 6.490488214286294,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.984599838436081,
+    "tok_per_sec": 83036.59306695264,
+    "val_delta_vs_baseline": -0.00030289963474405823
+  }
+]

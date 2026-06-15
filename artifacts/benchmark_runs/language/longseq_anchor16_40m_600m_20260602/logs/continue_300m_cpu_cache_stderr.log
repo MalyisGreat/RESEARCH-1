@@ -1,0 +1,18 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1743, in <module>
+    main()
+    ~~~~^^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1734, in main
+    payload = run_longseq_replay_probe(config)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1580, in run_longseq_replay_probe
+    train_dataset, val_dataset, vocab_size, resolved_cache_path = ensure_fineweb_cache(cache_config, print_progress=True)
+                                                                  ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_partial_untied_cluster.py", line 369, in ensure_fineweb_cache
+    train_dataset = _buffer_to_dataset(train_tokens, sequence_length=config.sequence_length)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_partial_untied_cluster.py", line 309, in _buffer_to_dataset
+    return TokenBlockDataset(blocks[:, :-1].contiguous(), blocks[:, 1:].contiguous())
+                                                          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: [enforce fail at alloc_cpu.cpp:115] data. DefaultCPUAllocator: not enough memory: you tried to allocate 4800234240 bytes.

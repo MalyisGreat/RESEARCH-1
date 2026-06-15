@@ -1,0 +1,26 @@
+[
+  {
+    "block_type": "rank_competition_soft_neuron",
+    "final_train_loss": 4.486319065093994,
+    "final_val_loss": 6.7916145317197785,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2,
+    "parameter_count": 40437011,
+    "speed_ratio_vs_baseline": 0.9828363199038789,
+    "tok_per_sec": 82197.68075527773,
+    "val_delta_vs_baseline": 0.0035442246226811136
+  },
+  {
+    "block_type": "rank_competition_mild_neuron",
+    "final_train_loss": 4.479122161865234,
+    "final_val_loss": 6.7956020523244005,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2,
+    "parameter_count": 40437011,
+    "speed_ratio_vs_baseline": 0.9827709875236176,
+    "tok_per_sec": 82192.21680362379,
+    "val_delta_vs_baseline": 0.007531745227303155
+  }
+]

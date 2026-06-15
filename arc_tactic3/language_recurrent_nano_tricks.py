@@ -652,6 +652,32 @@ class PartialUntiedAssociativeLM(nn.Module):
         return base_logits
 
 
+class FastPartialUntiedAssociativeLM(PartialUntiedAssociativeLM):
+    def forward(self, input_ids: torch.Tensor) -> torch.Tensor:
+        embeddings = self.embedding(input_ids)
+        states, _ = self.encoder(embeddings)
+        states = self.dropout(states)
+        head_features = F.relu(self.head_fc(states)).square()
+        base_features = self.head_proj(head_features)
+        base_logits = F.linear(base_features, self.embedding.weight, self.output_bias)
+        partial_logits = self.partial_head(base_features)
+        index = self.untied_token_ids.view(1, 1, -1).expand(input_ids.size(0), input_ids.size(1), -1)
+        base_logits.scatter_add_(2, index, partial_logits.to(base_logits.dtype))
+        query_keys = self.query_proj(states)
+        memory_keys = self.key_proj(states)
+        scores = torch.matmul(query_keys, memory_keys.transpose(1, 2)) / query_keys.size(-1) ** 0.5
+        causal_mask = self._causal_mask[:, : input_ids.size(1), : input_ids.size(1)]
+        scores = scores.masked_fill(~causal_mask, torch.finfo(scores.dtype).min)
+        attention = torch.softmax(scores, dim=-1)
+        attention = attention * causal_mask
+        attention = attention / attention.sum(dim=-1, keepdim=True).clamp_min(1e-6)
+        value_index = input_ids.unsqueeze(1).expand(-1, input_ids.size(1), -1)
+        gate = torch.sigmoid(self.gate(states))
+        gated_attention = (attention * (gate * self.memory_scale)).to(base_logits.dtype)
+        base_logits.scatter_add_(2, value_index, gated_attention)
+        return base_logits
+
+
 class SmearAssociativeLM(nn.Module):
     def __init__(
         self,
@@ -991,8 +1017,15 @@ class ReLU2UntiedHeadAssociativeLM(nn.Module):
 
 
 def _top_token_ids(dataset, *, count: int, vocab_size: int) -> torch.Tensor:
-    flat_tokens = dataset.targets.reshape(-1)
-    histogram = torch.bincount(flat_tokens, minlength=vocab_size)
+    targets = dataset.targets
+    histogram = torch.zeros(vocab_size, dtype=torch.long, device=targets.device)
+    rows_per_chunk = max(1, 8_000_000 // max(int(targets.size(-1)), 1))
+    for start in range(0, targets.size(0), rows_per_chunk):
+        chunk = targets[start : start + rows_per_chunk]
+        flat_tokens = chunk.reshape(-1)
+        if flat_tokens.dtype != torch.long:
+            flat_tokens = flat_tokens.long()
+        histogram += torch.bincount(flat_tokens, minlength=vocab_size)
     top_k = min(max(count, 1), vocab_size)
     return torch.topk(histogram, k=top_k, largest=True, sorted=False).indices
 

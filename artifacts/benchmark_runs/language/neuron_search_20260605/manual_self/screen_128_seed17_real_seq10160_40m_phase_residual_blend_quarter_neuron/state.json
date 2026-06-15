@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed17_real_seq10160_40m_phase_residual_blend_quarter_neuron\\checkpoint.pt",
+  "final_train_loss": 7.251125335693359,
+  "final_val_loss": 7.069849496000395,
+  "peak_vram_mb": 4531.30908203125,
+  "pure_train_tok_per_sec": 77089.7993729512,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed17_real_seq10160_40m_phase_residual_blend_quarter_neuron\\result.json",
+  "run_name": "screen_128_seed17_real_seq10160_40m_phase_residual_blend_quarter_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

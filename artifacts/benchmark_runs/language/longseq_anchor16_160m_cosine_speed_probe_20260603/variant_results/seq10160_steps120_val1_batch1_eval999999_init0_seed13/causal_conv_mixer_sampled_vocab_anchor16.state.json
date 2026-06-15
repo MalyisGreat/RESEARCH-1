@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": null,
+  "final_learning_rate": 6e-05,
+  "final_val_loss": 7.336325645446777,
+  "lr_schedule": "cosine",
+  "peak_vram_mb": 4817.4228515625,
+  "pure_train_tok_per_sec": 40337.45403545197,
+  "result_path": "artifacts\\benchmark_runs\\language\\longseq_anchor16_160m_cosine_speed_probe_20260603\\variant_results\\seq10160_steps120_val1_batch1_eval999999_init0_seed13\\causal_conv_mixer_sampled_vocab_anchor16.json",
+  "status": "completed",
+  "step": 120,
+  "tokens_seen": 1219200,
+  "train_steps": 120,
+  "validation_loss_mode": "full",
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

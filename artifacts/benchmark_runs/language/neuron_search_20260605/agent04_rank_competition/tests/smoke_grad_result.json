@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "block_type": "multi_scale_lowrank_conv_memory",
+      "finite": true,
+      "grad_norm": 0.40145091988240456,
+      "grad_params": 50,
+      "loss": 6.281929969787598,
+      "parameter_count": 134976
+    },
+    {
+      "block_type": "rank_competition_lowrank_conv_memory",
+      "finite": true,
+      "grad_norm": 0.41314290122714625,
+      "grad_params": 54,
+      "loss": 6.281771659851074,
+      "parameter_count": 134980
+    },
+    {
+      "block_type": "energy_preserving_rank_competition_lowrank_conv_memory",
+      "finite": true,
+      "grad_norm": 0.4028657455170511,
+      "grad_params": 54,
+      "loss": 6.28148078918457,
+      "parameter_count": 134980
+    }
+  ],
+  "cuda_available": false,
+  "screen_parameter_counts": {
+    "energy_preserving_rank_competition_lowrank_conv_memory": 15250485,
+    "multi_scale_lowrank_conv_memory": 15250481,
+    "rank_competition_lowrank_conv_memory": 15250485
+  }
+}

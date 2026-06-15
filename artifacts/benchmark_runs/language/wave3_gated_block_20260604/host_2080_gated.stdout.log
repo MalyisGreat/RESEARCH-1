@@ -1,0 +1,71 @@
+WAVE3_LOCAL_START run=wave3_host2080_gated_45m_stride8 host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=wave3_host2080_gated_45m_stride8 device=NVIDIA GeForce RTX 2080 SUPER params=51,844,145 seq=10160 steps=4429
+TRAIN step=1/4429 tokens=10160 loss=10.2972 lr=1.5e-06 pure_tok_s=12697
+TRAIN step=500/4429 tokens=5080000 loss=7.1282 lr=0.000599104 pure_tok_s=104940
+TRAIN step=1000/4429 tokens=10160000 loss=6.5531 lr=0.0005683 pure_tok_s=105926
+TRAIN step=1500/4429 tokens=15240000 loss=6.1128 lr=0.000497978 pure_tok_s=106167
+TRAIN step=2000/4429 tokens=20320000 loss=6.0006 lr=0.000398694 pure_tok_s=106143
+TRAIN step=2500/4429 tokens=25400000 loss=5.6873 lr=0.000285347 pure_tok_s=106084
+TRAIN step=3000/4429 tokens=30480000 loss=5.7165 lr=0.000174951 pure_tok_s=106016
+TRAIN step=3500/4429 tokens=35560000 loss=5.7104 lr=8.4072e-05 pure_tok_s=105959
+TRAIN step=4000/4429 tokens=40640000 loss=5.5924 lr=2.63515e-05 pure_tok_s=105916
+EVAL step=4429/4429 tokens=44998640 train=5.7508 val=5.7421 eval_s=1.2
+RESULT {"candidate_size_mean": 16832.78663355159, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8\\checkpoint.pt", "final_train_loss": 5.750812530517578, "final_val_loss": 5.742143817492358, "history": [{"learning_rate": 1e-05, "step": 4429.0, "tokens_seen": 44998640.0, "train_loss": 5.750812530517578, "val_loss": 5.742143817492358}], "parameter_count": 51844145, "peak_vram_mb": 3022.13037109375, "pure_train_tok_per_sec": 105908.607993911, "step_time_mean_ms": 95.93176789354202, "step_time_median_ms": 95.83320000092499, "train_tokens_seen": 44998640}
+WAVE3_LOCAL_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave3_gated_block_20260604\wave3_host2080_gated_45m_stride8\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "block_type": "gated",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 4429,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 4429,
+    "full_eval_token_chunk_size": 1024,
+    "learning_rate": 0.0006,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8",
+    "resume_checkpoint": null,
+    "run_name": "wave3_host2080_gated_45m_stride8",
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 8,
+    "train_steps": 4429,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 400,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 16832.78663355159,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8\\checkpoint.pt",
+    "final_train_loss": 5.750812530517578,
+    "final_val_loss": 5.742143817492358,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 4429.0,
+        "tokens_seen": 44998640.0,
+        "train_loss": 5.750812530517578,
+        "val_loss": 5.742143817492358
+      }
+    ],
+    "parameter_count": 51844145,
+    "peak_vram_mb": 3022.13037109375,
+    "pure_train_tok_per_sec": 105908.607993911,
+    "step_time_mean_ms": 95.93176789354202,
+    "step_time_median_ms": 95.83320000092499,
+    "train_tokens_seen": 44998640
+  }
+}
+
+WAVE3_LOCAL_DONE run=wave3_host2080_gated_45m_stride8

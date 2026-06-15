@@ -1,0 +1,56 @@
+{
+  "agent_id": "agent03_adaptive_basis",
+  "artifact_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis",
+  "block_type": "multi_scale_lowrank_conv_memory_ffn_adaptive_basis",
+  "candidate_metrics": {
+    "candidate_size_mean": 4279.3125,
+    "failure_notes": "v1 all-sites adaptive basis was slower and worse than baseline.",
+    "final_train_loss": 9.59893798828125,
+    "final_val_loss": 10.833111882209778,
+    "parameter_count": 15260209,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 61.904983696632485,
+    "run_name": "agent03_adaptive_basis_cpu64",
+    "train_tokens_seen": 16320
+  },
+  "code_location": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\adaptive_basis_train.py:426 AdaptiveLocalBasisNeuron; :453 CausalMultiScaleLowRankConvMemoryAdaptiveBasisBlock; :510 CausalMultiScaleLowRankConvMemoryFFNAdaptiveBasisBlock",
+  "core_equations": "b(z)=[relu(z)^2, -relu(-z)^2, z*tanh(z), z*sigmoid(z)]; pi[b,t,c,k]=softmax_k(z[b,t,c]*a[c,k]+beta[c,k]); phi(z)[b,t,c]=sum_k pi[b,t,c,k]*b_k(z[b,t,c]). v1 uses phi on conv, memory, and FFN nonlinear sites; v2 uses phi only on FFN hidden.",
+  "design_name": "Adaptive Local Basis Neuron",
+  "failure_notes": "No CUDA was used. The initial import harness failed because dataclass modules loaded through importlib must be registered in sys.modules; fixed in smoke_grad_params.py. v1 passed grad checks but was slower and worse. v2 tied baseline within noise and is not scale-ready.",
+  "next_ablation": "Repeat baseline vs v2 for 128 steps with two seeds; then ablate FFN-only basis without the negative quadratic basis.",
+  "novelty": "Per-token/per-channel learned routing over multiple nonlinear basis responses using per-channel slope/bias router parameters, rather than selecting one global activation such as SwiGLU, SiLU, GELU, or ReLU.",
+  "params": 15256625,
+  "recommendation": "kill v1; keep v2 only for a repeated small ablation, do not scale yet",
+  "second_iteration_metrics": {
+    "candidate_size_mean": 4279.3125,
+    "final_train_loss": 9.597796440124512,
+    "final_val_loss": 10.832677960395813,
+    "parameter_count": 15256625,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 117.88325601053062,
+    "run_name": "agent03_ffn_adaptive_basis_cpu64",
+    "train_tokens_seen": 16320
+  },
+  "status": "tested_cpu_v1_rejected_v2_tie_keep_for_ablation",
+  "tested": true,
+  "vram_mb": null,
+  "why_help": "CausalMultiScaleLowRankConvMemoryBlock has fixed nonlinearities after local multi-scale conv, low-rank causal memory, and FFN expansion. A local basis router lets each token/channel choose a positive, inhibitory, saturating, or smooth-gated response without changing tokenizer, objective, eval metric, or adding seq x seq attention.",
+  "baseline_metrics": {
+    "candidate_size_mean": 4279.3125,
+    "final_train_loss": 9.59754753112793,
+    "final_val_loss": 10.832715392112732,
+    "parameter_count": 15250481,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 91.03283354558579,
+    "run_name": "agent03_baseline_multiscale_lowrank_cpu64",
+    "train_tokens_seen": 16320
+  },
+  "commands": [
+    "$env:CUDA_VISIBLE_DEVICES='-1'; python -m py_compile E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\adaptive_basis_train.py E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\smoke_grad_params.py",
+    "$env:CUDA_VISIBLE_DEVICES='-1'; python E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\smoke_grad_params.py",
+    "$env:CUDA_VISIBLE_DEVICES='-1'; python E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\adaptive_basis_train.py --cache-path E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\screen_cache_synth_seq255_train768_val64_gpt2.pt --output-dir E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\baseline --run-name agent03_baseline_multiscale_lowrank_cpu64 --sequence-length 255 --seed 13 --train-steps 64 --eval-interval 64 --checkpoint-interval 0 --milestone-checkpoint-interval 0 --val-blocks 8 --embedding-dim 192 --block-type multi_scale_lowrank_conv_memory --conv-layers 2 --conv-kernel-size 7 --conv-rank 96 --memory-rank 32 --landmark-stride 64 --sampled-vocab-size 4096 --token-stride 4 --token-chunk-size 512 --full-eval-token-chunk-size 512 --learning-rate 0.0006 --min-learning-rate 0.00001",
+    "$env:CUDA_VISIBLE_DEVICES='-1'; python E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\adaptive_basis_train.py --cache-path E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\screen_cache_synth_seq255_train768_val64_gpt2.pt --output-dir E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\candidate_v1 --run-name agent03_adaptive_basis_cpu64 --sequence-length 255 --seed 13 --train-steps 64 --eval-interval 64 --checkpoint-interval 0 --milestone-checkpoint-interval 0 --val-blocks 8 --embedding-dim 192 --block-type multi_scale_lowrank_conv_memory_adaptive_basis --conv-layers 2 --conv-kernel-size 7 --conv-rank 96 --memory-rank 32 --landmark-stride 64 --sampled-vocab-size 4096 --token-stride 4 --token-chunk-size 512 --full-eval-token-chunk-size 512 --learning-rate 0.0006 --min-learning-rate 0.00001",
+    "$env:CUDA_VISIBLE_DEVICES='-1'; python E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\adaptive_basis_train.py --cache-path E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\screen_cache_synth_seq255_train768_val64_gpt2.pt --output-dir E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\candidate_v2 --run-name agent03_ffn_adaptive_basis_cpu64 --sequence-length 255 --seed 13 --train-steps 64 --eval-interval 64 --checkpoint-interval 0 --milestone-checkpoint-interval 0 --val-blocks 8 --embedding-dim 192 --block-type multi_scale_lowrank_conv_memory_ffn_adaptive_basis --conv-layers 2 --conv-kernel-size 7 --conv-rank 96 --memory-rank 32 --landmark-stride 64 --sampled-vocab-size 4096 --token-stride 4 --token-chunk-size 512 --full-eval-token-chunk-size 512 --learning-rate 0.0006 --min-learning-rate 0.00001"
+  ],
+  "tok_per_sec": 117.88325601053062
+}

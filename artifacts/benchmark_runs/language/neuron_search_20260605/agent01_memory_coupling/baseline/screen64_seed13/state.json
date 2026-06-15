@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent01_memory_coupling\\baseline\\screen64_seed13\\checkpoint.pt",
+  "final_train_loss": 9.59754753112793,
+  "final_val_loss": 10.832715392112732,
+  "peak_vram_mb": null,
+  "pure_train_tok_per_sec": 99.18429757958368,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent01_memory_coupling\\baseline\\screen64_seed13\\result.json",
+  "run_name": "baseline_multiscale_lowrank_memory_seq255_64",
+  "status": "completed",
+  "step": 64,
+  "tokens_seen": 16320,
+  "train_steps": 64
+}

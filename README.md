@@ -135,6 +135,7 @@ The benchmark scripts themselves are in:
 - Some results are 2-seed averages, some are 1-seed long runs, and some are smoke or cheap-screen artifacts. They are now reported in separate sections, but they still should not be over-interpreted.
 - The Nanochat baseline is a local Nanochat-style reimplementation and training harness, not the official upstream training codepath.
 - Large derived dataset caches were not committed directly when that would create impractical or GitHub-incompatible artifacts.
+- Large long-sequence `.pt` caches/checkpoints are kept out of Git and recorded in [`docs/large_artifacts_manifest.md`](./docs/large_artifacts_manifest.md).
 - Some code in `arc_tactic3/` is unrelated to the central language-model comparison and is preserved for completeness rather than because it is part of the README’s core claims.
 
 ## Reproduce

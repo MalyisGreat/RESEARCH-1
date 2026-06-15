@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_real_blend_strength_phase_residual_blend_tiny_neuron\\checkpoint.pt",
+  "final_train_loss": 6.473139762878418,
+  "final_val_loss": 8.425091890727773,
+  "peak_vram_mb": 200.478515625,
+  "pure_train_tok_per_sec": 17376.869454347136,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_real_blend_strength_phase_residual_blend_tiny_neuron\\result.json",
+  "run_name": "screen_256_seed17_real_blend_strength_phase_residual_blend_tiny_neuron",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 65280,
+  "train_steps": 256
+}

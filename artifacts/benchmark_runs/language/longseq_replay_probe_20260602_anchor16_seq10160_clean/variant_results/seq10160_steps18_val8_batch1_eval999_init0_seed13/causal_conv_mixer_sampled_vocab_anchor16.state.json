@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602_anchor16_seq10160_clean\\variant_results\\seq10160_steps18_val8_batch1_eval999_init0_seed13\\causal_conv_mixer_sampled_vocab_anchor16.checkpoint.pt",
+  "final_val_loss": 7.706308126449585,
+  "peak_vram_mb": 2377.7236328125,
+  "pure_train_tok_per_sec": 177506.02290579828,
+  "result_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602_anchor16_seq10160_clean\\variant_results\\seq10160_steps18_val8_batch1_eval999_init0_seed13\\causal_conv_mixer_sampled_vocab_anchor16.json",
+  "status": "completed",
+  "step": 18,
+  "tokens_seen": 182880,
+  "train_steps": 18,
+  "validation_loss_mode": "full",
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

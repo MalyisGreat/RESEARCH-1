@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_rank_pressure_fixed_v1_rank_competition_fixed_dust_neuron\\checkpoint.pt",
+  "final_train_loss": 8.75937271118164,
+  "final_val_loss": 10.830974242266487,
+  "peak_vram_mb": 313.4873046875,
+  "pure_train_tok_per_sec": 13648.041108253958,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_rank_pressure_fixed_v1_rank_competition_fixed_dust_neuron\\result.json",
+  "run_name": "screen_1_seed13_smoke_rank_pressure_fixed_v1_rank_competition_fixed_dust_neuron",
+  "status": "completed",
+  "step": 1,
+  "tokens_seen": 255,
+  "train_steps": 1
+}

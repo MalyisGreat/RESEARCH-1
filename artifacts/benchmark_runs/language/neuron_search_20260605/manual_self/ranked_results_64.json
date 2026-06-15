@@ -1,0 +1,74 @@
+[
+  {
+    "block_type": "phase_amplitude_neuron",
+    "final_train_loss": 8.687536239624023,
+    "final_val_loss": 10.826257771136714,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 16640,
+    "parameter_count": 4951601,
+    "speed_ratio_vs_baseline": 0.8777846763729784,
+    "tok_per_sec": 2790.9054651517317,
+    "val_delta_vs_baseline": -0.002849251616234838
+  },
+  {
+    "block_type": "stable_competition_neuron",
+    "final_train_loss": 8.776633262634277,
+    "final_val_loss": 10.827849238526587,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2,
+    "parameter_count": 4934963,
+    "speed_ratio_vs_baseline": 0.6392003152197775,
+    "tok_per_sec": 2032.3294551516774,
+    "val_delta_vs_baseline": -0.001257784226361025
+  },
+  {
+    "block_type": "phase_amplitude_neutral_neuron",
+    "final_train_loss": 8.776702880859375,
+    "final_val_loss": 10.828014379389145,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 0.7667443533479963,
+    "tok_per_sec": 2437.854138642865,
+    "val_delta_vs_baseline": -0.001092643363802992
+  },
+  {
+    "block_type": "stable_square_neuron",
+    "final_train_loss": 8.77720832824707,
+    "final_val_loss": 10.828241757785573,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1,
+    "parameter_count": 4934962,
+    "speed_ratio_vs_baseline": 0.48197323002371345,
+    "tok_per_sec": 1532.4278925535175,
+    "val_delta_vs_baseline": -0.0008652649673752677
+  },
+  {
+    "block_type": "rank_competition_neuron",
+    "final_train_loss": 8.77670955657959,
+    "final_val_loss": 10.828301109987146,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1,
+    "parameter_count": 4934962,
+    "speed_ratio_vs_baseline": 0.7028678648515857,
+    "tok_per_sec": 2234.759637636124,
+    "val_delta_vs_baseline": -0.0008059127658022192
+  },
+  {
+    "block_type": "conv_disagreement_neuron",
+    "final_train_loss": 8.777067184448242,
+    "final_val_loss": 10.828834402794932,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 0.684702259380592,
+    "tok_per_sec": 2177.0023208915736,
+    "val_delta_vs_baseline": -0.0002726199580163069
+  }
+]

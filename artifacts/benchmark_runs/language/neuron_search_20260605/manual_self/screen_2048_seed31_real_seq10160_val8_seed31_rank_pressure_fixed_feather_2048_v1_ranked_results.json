@@ -1,0 +1,14 @@
+[
+  {
+    "block_type": "rank_competition_fixed_feather_neuron",
+    "final_train_loss": 4.495086669921875,
+    "final_val_loss": 6.788181459528254,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9822131735323825,
+    "tok_per_sec": 82062.45366717703,
+    "val_delta_vs_baseline": 0.00011115243115700224
+  }
+]

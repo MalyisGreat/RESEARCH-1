@@ -121,3 +121,34 @@ def test_partial_untie_tracks_requested_tokens() -> None:
         untied_token_ids=token_ids,
     )
     assert torch.equal(model.untied_token_ids.cpu(), token_ids)
+
+
+def test_fast_partial_untied_matches_partial_untied_logits() -> None:
+    torch.manual_seed(7)
+    token_ids = torch.tensor([1, 5, 9, 12, 17], dtype=torch.long)
+    baseline = tricks.PartialUntiedAssociativeLM(
+        vocab_size=32,
+        embedding_dim=8,
+        hidden_dim=12,
+        memory_dim=8,
+        dropout=0.0,
+        max_length=8,
+        untied_token_ids=token_ids,
+    )
+    fast = tricks.FastPartialUntiedAssociativeLM(
+        vocab_size=32,
+        embedding_dim=8,
+        hidden_dim=12,
+        memory_dim=8,
+        dropout=0.0,
+        max_length=8,
+        untied_token_ids=token_ids,
+    )
+    fast.load_state_dict(baseline.state_dict())
+    baseline.eval()
+    fast.eval()
+    input_ids = torch.randint(0, 32, (3, 8), dtype=torch.long)
+    with torch.no_grad():
+        baseline_logits = baseline(input_ids)
+        fast_logits = fast(input_ids)
+    assert torch.equal(fast_logits, baseline_logits)

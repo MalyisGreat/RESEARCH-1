@@ -1,0 +1,81 @@
+{
+  "multi_scale_lowrank_conv_memory": {
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "command": "reuse existing E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_baseline\\result.json",
+    "elapsed_s": 0.0,
+    "final_train_loss": 5.562407493591309,
+    "final_val_loss": 6.490791113921038,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_baseline",
+    "parameter_count": 40437009,
+    "peak_vram_mb": 3672.59912109375,
+    "pure_train_tok_per_sec": 84116.30187691773,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_baseline\\result.json",
+    "reused_existing": true
+  },
+  "phase_residual_memory_centered_gate_neuron": {
+    "block_type": "phase_residual_memory_centered_gate_neuron",
+    "command": "trainer.train({'cache_path': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt'), 'output_dir': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_centered_gate_neuron'), 'run_name': 'screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_centered_gate_neuron', 'vocab_size': 50257, 'sequence_length': 10160, 'batch_size': 1, 'train_steps': 1024, 'eval_interval': 1024, 'val_blocks': 8, 'checkpoint_interval': 0, 'milestone_checkpoint_interval': 0, 'seed': 31, 'embedding_dim': 512, 'block_type': 'phase_residual_memory_centered_gate_neuron', 'conv_layers': 2, 'conv_rank': 192, 'conv_kernel_size': 7, 'memory_rank': 64, 'attention_heads': 4, 'landmark_stride': 128, 'sampled_vocab_size': 24576, 'token_stride': 4, 'token_chunk_size': 512, 'full_eval_token_chunk_size': 1024, 'learning_rate': 0.0006, 'min_learning_rate': 1e-05, 'warmup_steps': 256, 'weight_decay': 0.0001, 'amp_dtype': 'fp16', 'resume_checkpoint': None})",
+    "elapsed_s": 156.2777610000012,
+    "final_train_loss": 5.5345354080200195,
+    "final_val_loss": 6.495628151180237,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_centered_gate_neuron",
+    "parameter_count": 40572177,
+    "peak_vram_mb": 4799.02734375,
+    "pure_train_tok_per_sec": 73390.4453102986,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_centered_gate_neuron\\result.json"
+  },
+  "phase_residual_memory_gate_neuron": {
+    "block_type": "phase_residual_memory_gate_neuron",
+    "command": "trainer.train({'cache_path': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt'), 'output_dir': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_gate_neuron'), 'run_name': 'screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_gate_neuron', 'vocab_size': 50257, 'sequence_length': 10160, 'batch_size': 1, 'train_steps': 1024, 'eval_interval': 1024, 'val_blocks': 8, 'checkpoint_interval': 0, 'milestone_checkpoint_interval': 0, 'seed': 31, 'embedding_dim': 512, 'block_type': 'phase_residual_memory_gate_neuron', 'conv_layers': 2, 'conv_rank': 192, 'conv_kernel_size': 7, 'memory_rank': 64, 'attention_heads': 4, 'landmark_stride': 128, 'sampled_vocab_size': 24576, 'token_stride': 4, 'token_chunk_size': 512, 'full_eval_token_chunk_size': 1024, 'learning_rate': 0.0006, 'min_learning_rate': 1e-05, 'warmup_steps': 256, 'weight_decay': 0.0001, 'amp_dtype': 'fp16', 'resume_checkpoint': None})",
+    "elapsed_s": 142.25080850000086,
+    "final_train_loss": 5.539336204528809,
+    "final_val_loss": 6.493193677185088,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_gate_neuron",
+    "parameter_count": 40572177,
+    "peak_vram_mb": 4652.41845703125,
+    "pure_train_tok_per_sec": 74509.97169810852,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_gate_neuron\\result.json"
+  },
+  "phase_residual_memory_small_gate_neuron": {
+    "block_type": "phase_residual_memory_small_gate_neuron",
+    "command": "trainer.train({'cache_path': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt'), 'output_dir': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_small_gate_neuron'), 'run_name': 'screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_small_gate_neuron', 'vocab_size': 50257, 'sequence_length': 10160, 'batch_size': 1, 'train_steps': 1024, 'eval_interval': 1024, 'val_blocks': 8, 'checkpoint_interval': 0, 'milestone_checkpoint_interval': 0, 'seed': 31, 'embedding_dim': 512, 'block_type': 'phase_residual_memory_small_gate_neuron', 'conv_layers': 2, 'conv_rank': 192, 'conv_kernel_size': 7, 'memory_rank': 64, 'attention_heads': 4, 'landmark_stride': 128, 'sampled_vocab_size': 24576, 'token_stride': 4, 'token_chunk_size': 512, 'full_eval_token_chunk_size': 1024, 'learning_rate': 0.0006, 'min_learning_rate': 1e-05, 'warmup_steps': 256, 'weight_decay': 0.0001, 'amp_dtype': 'fp16', 'resume_checkpoint': None})",
+    "elapsed_s": 143.28093149999768,
+    "final_train_loss": 5.542759895324707,
+    "final_val_loss": 6.493580949400354,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_small_gate_neuron",
+    "parameter_count": 40572177,
+    "peak_vram_mb": 4192.994140625,
+    "pure_train_tok_per_sec": 74643.39675459077,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_small_gate_neuron\\result.json"
+  },
+  "phase_residual_memory_tiny_gate_neuron": {
+    "block_type": "phase_residual_memory_tiny_gate_neuron",
+    "command": "trainer.train({'cache_path': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt'), 'output_dir': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_tiny_gate_neuron'), 'run_name': 'screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_tiny_gate_neuron', 'vocab_size': 50257, 'sequence_length': 10160, 'batch_size': 1, 'train_steps': 1024, 'eval_interval': 1024, 'val_blocks': 8, 'checkpoint_interval': 0, 'milestone_checkpoint_interval': 0, 'seed': 31, 'embedding_dim': 512, 'block_type': 'phase_residual_memory_tiny_gate_neuron', 'conv_layers': 2, 'conv_rank': 192, 'conv_kernel_size': 7, 'memory_rank': 64, 'attention_heads': 4, 'landmark_stride': 128, 'sampled_vocab_size': 24576, 'token_stride': 4, 'token_chunk_size': 512, 'full_eval_token_chunk_size': 1024, 'learning_rate': 0.0006, 'min_learning_rate': 1e-05, 'warmup_steps': 256, 'weight_decay': 0.0001, 'amp_dtype': 'fp16', 'resume_checkpoint': None})",
+    "elapsed_s": 141.65892969999913,
+    "final_train_loss": 5.544368743896484,
+    "final_val_loss": 6.493510592453123,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_tiny_gate_neuron",
+    "parameter_count": 40572177,
+    "peak_vram_mb": 4655.56884765625,
+    "pure_train_tok_per_sec": 74764.1121850167,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_tiny_gate_neuron\\result.json"
+  },
+  "phase_residual_memory_zero_mean_gate_neuron": {
+    "block_type": "phase_residual_memory_zero_mean_gate_neuron",
+    "command": "trainer.train({'cache_path': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt'), 'output_dir': WindowsPath('E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/manual_self/screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_zero_mean_gate_neuron'), 'run_name': 'screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_zero_mean_gate_neuron', 'vocab_size': 50257, 'sequence_length': 10160, 'batch_size': 1, 'train_steps': 1024, 'eval_interval': 1024, 'val_blocks': 8, 'checkpoint_interval': 0, 'milestone_checkpoint_interval': 0, 'seed': 31, 'embedding_dim': 512, 'block_type': 'phase_residual_memory_zero_mean_gate_neuron', 'conv_layers': 2, 'conv_rank': 192, 'conv_kernel_size': 7, 'memory_rank': 64, 'attention_heads': 4, 'landmark_stride': 128, 'sampled_vocab_size': 24576, 'token_stride': 4, 'token_chunk_size': 512, 'full_eval_token_chunk_size': 1024, 'learning_rate': 0.0006, 'min_learning_rate': 1e-05, 'warmup_steps': 256, 'weight_decay': 0.0001, 'amp_dtype': 'fp16', 'resume_checkpoint': None})",
+    "elapsed_s": 142.87711499999932,
+    "final_train_loss": 5.539278984069824,
+    "final_val_loss": 6.493214203147438,
+    "ok": true,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_zero_mean_gate_neuron",
+    "parameter_count": 40572177,
+    "peak_vram_mb": 4806.333984375,
+    "pure_train_tok_per_sec": 74112.33310839707,
+    "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_40m_1024_extra_phase_residual_memory_zero_mean_gate_neuron\\result.json"
+  }
+}

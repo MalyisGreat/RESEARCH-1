@@ -1,0 +1,12 @@
+2026-06-03T06:27:42Z watcher_start
+2026-06-03T06:27:42Z primary_80m_unstable step=11617 train=nan val=nan queued_retry=80m_lr1e3
+2026-06-03T06:27:42Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:27:42Z heartbeat 80m: status=running step=11617/196851 tokens=118028720 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:28:42Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:28:42Z heartbeat 80m: status=running step=12167/196851 tokens=123616720 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:29:43Z launch_80m_retry_wait_gpu gpu_used_mb=4754
+2026-06-03T06:29:43Z heartbeat 80m: status=running step=12747/196851 tokens=129509520 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:30:43Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:30:43Z heartbeat 80m: status=running step=13297/196851 tokens=135097520 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:31:43Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:31:43Z heartbeat 80m: status=running step=13877/196851 tokens=140990320 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=

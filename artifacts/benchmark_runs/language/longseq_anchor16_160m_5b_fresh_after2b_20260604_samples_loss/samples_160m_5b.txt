@@ -1,0 +1,25 @@
+﻿checkpoint=D:\CodexLLM\research1_longseq\runs\longseq_anchor16_160m_5b_fresh_after2b_20260604\checkpoint.pt
+step=492126 tokens_seen=5000000160 device=cuda
+
+--- sample 1 prompt='The future of artificial intelligence is' ---
+The future of artificial intelligence is the most likely cause of death in these states. This is why they want to be able to handle them more effectively. This gives a strong sense of self-awareness and creativity to create and enrich your own work. This means that you don’t need to make an effort to ensure the most efficient and well-paying attention.
+- The study found that the increase in the risk of developing Alzheimer's disease and stroke.
+Anemia: The rate of transmission of HIV in the U.S. and the U.S. Congress in the aftermath - which triggered widespread famine in Japan,
+
+--- sample 2 prompt='In a surprising result, the experiment showed that' ---
+In a surprising result, the experiment showed that the same molecule is true of a normal (and free) source of energy. We can also make use of what is most important to a baby, especially if they are not present. So what is it?" The more familiar is what you'd like to see is a pretty cool thing, if you can't get your name to see that the object is missing from the object. Once the user touches the path, the message is then used to run Windows and Macintosh operating systems. The software has been installed in a separate facility. The first two teams will help you to make your own life.
+
+
+--- sample 3 prompt='Question: What is machine learning? Answer:' ---
+Question: What is machine learning? Answer:
+- What are the key issues with this book.
+To find out more about the topic, and the consequences to these three factors, the effect of an alcohol-based or chemical-laden foods, some of which are considered “foreign” in the sense that the person knows the value of a product at a time. The whole project should be at least 6 months old.
+A little more important than any one of these questions, you may want to consider the number of people to make it seem like it is not necessarily the case.
+A few years back, a lot of
+
+--- sample 4 prompt='Once upon a time in a small town' ---
+Once upon a time in a small town. For an extensive list of sites, please see the FAQ for more information.
+The two most common types of hepatitis C, and some cases occur most frequently in patients with a
+single disease, when the first step in treatment of HIV infection. In addition, they are extremely vulnerable to erosion if they use water, thereby allowing the creation of a new and more ambitious agenda for the next decade has been the use of more advanced technologies—such as those at the end of her life, she does not have to fear.
+In the spring of 2011, a team of scientists analysed evidence that human
+

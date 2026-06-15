@@ -1,0 +1,11 @@
+{
+  "final_val_loss": 8.593221932649612,
+  "peak_vram_mb": 3712.837890625,
+  "pure_train_tok_per_sec": 7797.688261723753,
+  "result_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602\\variant_results\\seq5080_steps24_val64_batch1_eval999_init0_seed17\\partial_untied.json",
+  "status": "completed",
+  "step": 24,
+  "tokens_seen": 121920,
+  "train_steps": 24,
+  "variant": "partial_untied"
+}

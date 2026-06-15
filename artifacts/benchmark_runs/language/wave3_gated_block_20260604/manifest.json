@@ -1,0 +1,70 @@
+﻿{
+    "wave":  "wave3_gated_block_20260604",
+    "submitted_at":  "2026-06-04T16:41:40",
+    "local_host":  {
+                       "run":  "wave3_host2080_gated_45m_stride8",
+                       "pid":  28140,
+                       "script":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\run_host_2080_gated.ps1",
+                       "stdout":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\host_2080_gated.stdout.log",
+                       "stderr":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\host_2080_gated.stderr.log"
+                   },
+    "remote_jobs":  [
+                        {
+                            "run":  "wave3_3080_gated_stride8_85m_100m",
+                            "job_id":  "20260604-164139-5f53a1",
+                            "status":  "queued",
+                            "worker":  "mwstroud-mwstr-6aea1cf3",
+                            "root":  "D:\\CodexLLM\\research1_longseq",
+                            "cache":  "D:\\CodexLLM\\research1_longseq\\cache\\finewebedu_fresh_after2b_train3000289275_val325152_seq10160_gpt2.pt",
+                            "steps":  9843,
+                            "tokens":  100004880,
+                            "embed":  896,
+                            "rank":  320,
+                            "block_type":  "gated",
+                            "layers":  2,
+                            "kernel":  7,
+                            "sampled":  32768,
+                            "stride":  8,
+                            "rationale":  "gated conv/SwiGLU short screen on 3080 fresh cache after dense-anchor continuation",
+                            "submitted_at":  "2026-06-04T21:41:39Z"
+                        },
+                        {
+                            "run":  "wave3_4060_gated_stride8_55m_80m",
+                            "job_id":  "20260604-164140-74cc42",
+                            "status":  "queued",
+                            "worker":  "t-mwstr-07260bd4",
+                            "root":  "C:\\Users\\mwstr\\CodexHouseWorker\\research1_longseq",
+                            "cache":  "C:\\Users\\mwstr\\CodexHouseWorker\\research1_longseq\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+                            "steps":  7874,
+                            "tokens":  79999840,
+                            "embed":  704,
+                            "rank":  224,
+                            "block_type":  "gated",
+                            "layers":  2,
+                            "kernel":  7,
+                            "sampled":  24576,
+                            "stride":  8,
+                            "rationale":  "gated conv/SwiGLU short screen on 4060 fixed 600M cache after queued continuation",
+                            "submitted_at":  "2026-06-04T21:41:40Z"
+                        },
+                        {
+                            "run":  "wave3_2060_gated_stride8_35m_30m",
+                            "job_id":  "20260604-164140-08d4aa",
+                            "status":  "queued",
+                            "worker":  "Chichen-JoshS-10a81805",
+                            "root":  "auto",
+                            "cache":  "largest existing cache",
+                            "steps":  2953,
+                            "tokens":  30002480,
+                            "embed":  512,
+                            "rank":  192,
+                            "block_type":  "gated",
+                            "layers":  2,
+                            "kernel":  7,
+                            "sampled":  12288,
+                            "stride":  8,
+                            "rationale":  "small gated screen queued behind current Chichen 2060 job",
+                            "submitted_at":  "2026-06-04T21:41:40Z"
+                        }
+                    ]
+}

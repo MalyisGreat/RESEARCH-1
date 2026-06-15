@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\wave10_host2080_lowrank_conv_memory_stride4_continue100m\\checkpoint.pt",
+  "final_train_loss": 5.276318073272705,
+  "final_val_loss": 5.045041977952471,
+  "peak_vram_mb": 4604.36328125,
+  "pure_train_tok_per_sec": 67075.59449670336,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\wave10_host2080_lowrank_conv_memory_stride4_continue100m\\result.json",
+  "run_name": "wave10_host2080_lowrank_conv_memory_stride4_continue100m",
+  "status": "completed",
+  "step": 9843,
+  "tokens_seen": 100004880,
+  "train_steps": 9843
+}

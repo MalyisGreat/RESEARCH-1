@@ -1,0 +1,97 @@
+WAVE6_LOCAL_CONT_START run=wave6_host2080_multiscale_stride4_continue100m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt resume=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave6_multiscale_20260604\wave6_host2080_multiscale_stride4_60m\checkpoint.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+RESUMED step=5906 tokens=60004960
+START run=wave6_host2080_multiscale_stride4_continue100m device=NVIDIA GeForce RTX 2080 SUPER params=51,037,745 seq=10160 steps=9843
+EVAL step=5907/9843 tokens=60015120 train=5.5152 val=5.3842 eval_s=1.4
+TRAIN step=6000/9843 tokens=60960000 loss=5.6214 lr=0.000223877 pure_tok_s=69340
+TRAIN step=6500/9843 tokens=66040000 loss=5.3176 lr=0.00017756 pure_tok_s=69337
+TRAIN step=7000/9843 tokens=71120000 loss=5.2334 lr=0.000134837 pure_tok_s=68786
+TRAIN step=7500/9843 tokens=76200000 loss=5.1181 lr=9.69126e-05 pure_tok_s=68751
+EVAL step=7876/9843 tokens=80020160 train=5.5253 val=5.3128 eval_s=1.4
+TRAIN step=8000/9843 tokens=81280000 loss=5.2806 lr=6.48562e-05 pure_tok_s=68532
+TRAIN step=8500/9843 tokens=86360000 loss=5.3873 lr=3.95718e-05 pure_tok_s=68584
+TRAIN step=9000/9843 tokens=91440000 loss=5.5463 lr=2.17724e-05 pure_tok_s=68616
+TRAIN step=9500/9843 tokens=96520000 loss=5.4815 lr=1.19599e-05 pure_tok_s=68513
+EVAL step=9843/9843 tokens=100004880 train=5.4904 val=5.2701 eval_s=1.3
+RESULT {"candidate_size_mean": 32867.161036322075, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt", "final_train_loss": 5.490428924560547, "final_val_loss": 5.2701041966285604, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.453152656555176, "val_loss": 5.382352503829115}, {"learning_rate": 0.00023278423883243347, "step": 5907.0, "tokens_seen": 60015120.0, "train_loss": 5.515225887298584, "val_loss": 5.384209485692302}, {"learning_rate": 7.220675640846374e-05, "step": 7876.0, "tokens_seen": 80020160.0, "train_loss": 5.525251388549805, "val_loss": 5.312784014286332}, {"learning_rate": 1e-05, "step": 9843.0, "tokens_seen": 100004880.0, "train_loss": 5.490428924560547, "val_loss": 5.2701041966285604}], "parameter_count": 51037745, "peak_vram_mb": 4507.412109375, "pure_train_tok_per_sec": 68559.43670084, "step_time_mean_ms": 148.19258279984555, "step_time_median_ms": 145.94350001425482, "train_tokens_seen": 100004880}
+WAVE6_LOCAL_CONT_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave6_multiscale_20260604\wave6_host2080_multiscale_stride4_continue100m\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 1969,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 1969,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m",
+    "resume_checkpoint": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_60m\\checkpoint.pt",
+    "run_name": "wave6_host2080_multiscale_stride4_continue100m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 9843,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.161036322075,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt",
+    "final_train_loss": 5.490428924560547,
+    "final_val_loss": 5.2701041966285604,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.453152656555176,
+        "val_loss": 5.382352503829115
+      },
+      {
+        "learning_rate": 0.00023278423883243347,
+        "step": 5907.0,
+        "tokens_seen": 60015120.0,
+        "train_loss": 5.515225887298584,
+        "val_loss": 5.384209485692302
+      },
+      {
+        "learning_rate": 7.220675640846374e-05,
+        "step": 7876.0,
+        "tokens_seen": 80020160.0,
+        "train_loss": 5.525251388549805,
+        "val_loss": 5.312784014286332
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 9843.0,
+        "tokens_seen": 100004880.0,
+        "train_loss": 5.490428924560547,
+        "val_loss": 5.2701041966285604
+      }
+    ],
+    "parameter_count": 51037745,
+    "peak_vram_mb": 4507.412109375,
+    "pure_train_tok_per_sec": 68559.43670084,
+    "step_time_mean_ms": 148.19258279984555,
+    "step_time_median_ms": 145.94350001425482,
+    "train_tokens_seen": 100004880
+  }
+}
+
+WAVE6_LOCAL_CONT_DONE run=wave6_host2080_multiscale_stride4_continue100m

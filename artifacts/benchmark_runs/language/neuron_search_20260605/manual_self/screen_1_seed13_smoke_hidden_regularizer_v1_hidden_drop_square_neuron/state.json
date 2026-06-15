@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_hidden_regularizer_v1_hidden_drop_square_neuron\\checkpoint.pt",
+  "final_train_loss": 8.761380195617676,
+  "final_val_loss": 10.830974242266487,
+  "peak_vram_mb": 200.47607421875,
+  "pure_train_tok_per_sec": 11175.975598995368,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_hidden_regularizer_v1_hidden_drop_square_neuron\\result.json",
+  "run_name": "screen_1_seed13_smoke_hidden_regularizer_v1_hidden_drop_square_neuron",
+  "status": "completed",
+  "step": 1,
+  "tokens_seen": 255,
+  "train_steps": 1
+}

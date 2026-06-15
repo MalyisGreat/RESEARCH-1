@@ -1,0 +1,183 @@
+starting causal_conv_mixer_sampled_vocab_anchor16: params=40,100,417 seq=10160 steps=9843
+resumed causal_conv_mixer_sampled_vocab_anchor16: step=2500/9843
+causal_conv_mixer_sampled_vocab_anchor16 step=2600/9843 train=6.2976 pure_tok/s=38,733
+causal_conv_mixer_sampled_vocab_anchor16 step=2700/9843 train=5.9938 pure_tok/s=39,865
+causal_conv_mixer_sampled_vocab_anchor16 step=2800/9843 train=5.8777 pure_tok/s=40,977
+causal_conv_mixer_sampled_vocab_anchor16 step=2900/9843 train=6.0147 pure_tok/s=42,066
+causal_conv_mixer_sampled_vocab_anchor16 step=3000/9843 train=5.9518 pure_tok/s=43,135
+causal_conv_mixer_sampled_vocab_anchor16 step=3100/9843 train=5.7638 pure_tok/s=44,187
+causal_conv_mixer_sampled_vocab_anchor16 step=3200/9843 train=5.8140 pure_tok/s=45,220
+causal_conv_mixer_sampled_vocab_anchor16 step=3300/9843 train=5.7531 pure_tok/s=46,235
+causal_conv_mixer_sampled_vocab_anchor16 step=3400/9843 train=5.9761 pure_tok/s=47,235
+causal_conv_mixer_sampled_vocab_anchor16 step=3500/9843 train=5.9163 pure_tok/s=48,218
+causal_conv_mixer_sampled_vocab_anchor16 step=3600/9843 train=5.8243 pure_tok/s=49,183
+causal_conv_mixer_sampled_vocab_anchor16 step=3700/9843 train=5.7490 pure_tok/s=50,134
+causal_conv_mixer_sampled_vocab_anchor16 step=3800/9843 train=5.7706 pure_tok/s=51,059
+causal_conv_mixer_sampled_vocab_anchor16 step=3900/9843 train=6.0508 pure_tok/s=51,963
+causal_conv_mixer_sampled_vocab_anchor16 step=4000/9843 train=5.9697 pure_tok/s=52,854
+causal_conv_mixer_sampled_vocab_anchor16 step=4100/9843 train=5.8861 pure_tok/s=53,728
+causal_conv_mixer_sampled_vocab_anchor16 step=4200/9843 train=5.7594 pure_tok/s=54,580
+causal_conv_mixer_sampled_vocab_anchor16 step=4300/9843 train=5.9439 pure_tok/s=55,439
+causal_conv_mixer_sampled_vocab_anchor16 step=4400/9843 train=5.6024 pure_tok/s=56,283
+causal_conv_mixer_sampled_vocab_anchor16 step=4500/9843 train=5.7645 pure_tok/s=57,114
+causal_conv_mixer_sampled_vocab_anchor16 step=4600/9843 train=5.7436 pure_tok/s=57,930
+causal_conv_mixer_sampled_vocab_anchor16 step=4700/9843 train=5.3222 pure_tok/s=58,729
+causal_conv_mixer_sampled_vocab_anchor16 step=4800/9843 train=5.8660 pure_tok/s=59,514
+causal_conv_mixer_sampled_vocab_anchor16 step=4900/9843 train=5.7677 pure_tok/s=60,283
+causal_conv_mixer_sampled_vocab_anchor16 step=5000/9843 train=5.9211 pure_tok/s=61,044
+causal_conv_mixer_sampled_vocab_anchor16 step=5100/9843 train=5.9531 pure_tok/s=61,779
+causal_conv_mixer_sampled_vocab_anchor16 step=5200/9843 train=5.6978 pure_tok/s=62,416
+causal_conv_mixer_sampled_vocab_anchor16 step=5300/9843 train=5.8767 pure_tok/s=63,144
+causal_conv_mixer_sampled_vocab_anchor16 step=5400/9843 train=5.8185 pure_tok/s=63,860
+causal_conv_mixer_sampled_vocab_anchor16 step=5500/9843 train=6.1085 pure_tok/s=64,568
+causal_conv_mixer_sampled_vocab_anchor16 step=5600/9843 train=5.7260 pure_tok/s=65,263
+causal_conv_mixer_sampled_vocab_anchor16 step=5700/9843 train=5.7128 pure_tok/s=65,948
+causal_conv_mixer_sampled_vocab_anchor16 step=5800/9843 train=5.3151 pure_tok/s=66,622
+causal_conv_mixer_sampled_vocab_anchor16 step=5900/9843 train=5.7549 pure_tok/s=67,288
+causal_conv_mixer_sampled_vocab_anchor16 step=6000/9843 train=5.6104 pure_tok/s=67,941
+causal_conv_mixer_sampled_vocab_anchor16 step=6100/9843 train=5.6045 pure_tok/s=68,588
+causal_conv_mixer_sampled_vocab_anchor16 step=6200/9843 train=5.5599 pure_tok/s=69,226
+causal_conv_mixer_sampled_vocab_anchor16 step=6300/9843 train=5.6106 pure_tok/s=69,852
+causal_conv_mixer_sampled_vocab_anchor16 step=6400/9843 train=5.7135 pure_tok/s=70,475
+causal_conv_mixer_sampled_vocab_anchor16 step=6500/9843 train=5.7355 pure_tok/s=71,086
+causal_conv_mixer_sampled_vocab_anchor16 step=6600/9843 train=5.7789 pure_tok/s=71,688
+causal_conv_mixer_sampled_vocab_anchor16 step=6700/9843 train=6.0865 pure_tok/s=72,286
+causal_conv_mixer_sampled_vocab_anchor16 step=6800/9843 train=5.6536 pure_tok/s=72,875
+causal_conv_mixer_sampled_vocab_anchor16 step=6900/9843 train=5.6597 pure_tok/s=73,452
+causal_conv_mixer_sampled_vocab_anchor16 step=7000/9843 train=5.7215 pure_tok/s=74,020
+causal_conv_mixer_sampled_vocab_anchor16 step=7100/9843 train=5.4097 pure_tok/s=74,580
+causal_conv_mixer_sampled_vocab_anchor16 step=7200/9843 train=5.7144 pure_tok/s=75,137
+causal_conv_mixer_sampled_vocab_anchor16 step=7300/9843 train=5.8784 pure_tok/s=75,687
+causal_conv_mixer_sampled_vocab_anchor16 step=7400/9843 train=5.4822 pure_tok/s=76,226
+causal_conv_mixer_sampled_vocab_anchor16 step=7500/9843 train=5.5134 pure_tok/s=76,758
+causal_conv_mixer_sampled_vocab_anchor16 step=7600/9843 train=5.6052 pure_tok/s=77,284
+causal_conv_mixer_sampled_vocab_anchor16 step=7700/9843 train=5.7311 pure_tok/s=77,804
+causal_conv_mixer_sampled_vocab_anchor16 step=7800/9843 train=5.5017 pure_tok/s=78,317
+causal_conv_mixer_sampled_vocab_anchor16 step=7900/9843 train=5.3776 pure_tok/s=78,728
+causal_conv_mixer_sampled_vocab_anchor16 step=8000/9843 train=5.9041 pure_tok/s=79,200
+causal_conv_mixer_sampled_vocab_anchor16 step=8100/9843 train=5.4253 pure_tok/s=79,694
+causal_conv_mixer_sampled_vocab_anchor16 step=8200/9843 train=5.5219 pure_tok/s=80,187
+causal_conv_mixer_sampled_vocab_anchor16 step=8300/9843 train=5.7091 pure_tok/s=80,669
+causal_conv_mixer_sampled_vocab_anchor16 step=8400/9843 train=5.3188 pure_tok/s=81,149
+causal_conv_mixer_sampled_vocab_anchor16 step=8500/9843 train=5.6846 pure_tok/s=81,618
+causal_conv_mixer_sampled_vocab_anchor16 step=8600/9843 train=5.6931 pure_tok/s=82,087
+causal_conv_mixer_sampled_vocab_anchor16 step=8700/9843 train=5.5161 pure_tok/s=82,548
+causal_conv_mixer_sampled_vocab_anchor16 step=8800/9843 train=5.2846 pure_tok/s=83,005
+causal_conv_mixer_sampled_vocab_anchor16 step=8900/9843 train=5.5930 pure_tok/s=83,456
+causal_conv_mixer_sampled_vocab_anchor16 step=9000/9843 train=5.2581 pure_tok/s=83,903
+causal_conv_mixer_sampled_vocab_anchor16 step=9100/9843 train=5.7016 pure_tok/s=84,343
+causal_conv_mixer_sampled_vocab_anchor16 step=9200/9843 train=6.0681 pure_tok/s=84,779
+causal_conv_mixer_sampled_vocab_anchor16 step=9300/9843 train=5.5914 pure_tok/s=85,209
+causal_conv_mixer_sampled_vocab_anchor16 step=9400/9843 train=5.0547 pure_tok/s=85,631
+causal_conv_mixer_sampled_vocab_anchor16 step=9500/9843 train=5.5510 pure_tok/s=86,050
+causal_conv_mixer_sampled_vocab_anchor16 step=9600/9843 train=5.6714 pure_tok/s=86,464
+causal_conv_mixer_sampled_vocab_anchor16 step=9700/9843 train=5.3663 pure_tok/s=86,762
+causal_conv_mixer_sampled_vocab_anchor16 step=9800/9843 train=5.5560 pure_tok/s=87,170
+causal_conv_mixer_sampled_vocab_anchor16 step=9843/9843 train=5.8219 pure_tok/s=87,344
+causal_conv_mixer_sampled_vocab_anchor16 eval step=9843 val=5.6078 mode=full
+{
+  "benchmark": "language_longseq_replay_probe",
+  "comparisons": {},
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "cache_dataset_on_device": true,
+    "cache_path": "artifacts\\benchmark_runs\\language\\longseq_anchor16_100m_20260602\\cache\\finewebedu_train100014723_val325152_seq10160_gpt2.pt",
+    "conv_embedding_dim": 560,
+    "conv_kernel_size": 7,
+    "conv_layers": 1,
+    "conv_rank": 160,
+    "dataset_name": "HuggingFaceFW/fineweb-edu",
+    "device": "cuda",
+    "dropout": 0.1,
+    "embedding_dim": 320,
+    "eval_batch_size": 1,
+    "eval_interval": 999999,
+    "eval_loss_mode": "full",
+    "factorized_embedding_dim": 280,
+    "factorized_hidden_dim": 560,
+    "factorized_memory_dim": 280,
+    "full_eval_token_chunk_size": 1024,
+    "full_loss_interval": 4,
+    "full_loss_token_stride": 8,
+    "hidden_dim": 640,
+    "hierarchical_class_count": 256,
+    "initial_eval": false,
+    "learning_rate": 0.002,
+    "local_files_only": false,
+    "max_eval_seconds": 600.0,
+    "max_gpu_used_mb": 1200.0,
+    "max_step_seconds": 600.0,
+    "memory_dim": 320,
+    "no_replay_embedding_dim": 260,
+    "no_replay_hidden_dim": 520,
+    "no_replay_rank": 96,
+    "output_dir": "artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_100m_20260602",
+    "partial_token_count": 1024,
+    "pin_memory": true,
+    "resolved_cache_path": "artifacts\\benchmark_runs\\language\\longseq_anchor16_100m_20260602\\cache\\finewebedu_train100014723_val325152_seq10160_gpt2.pt",
+    "resume_variant_checkpoints": true,
+    "reuse_variant_results": false,
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "split": "train",
+    "text_column": "text",
+    "tokenization_batch_size": 512,
+    "tokenizer_name": "gpt2",
+    "torch_compile": false,
+    "torch_compile_mode": "reduce-overhead",
+    "train_blocks": 9843,
+    "train_log_interval": 100,
+    "train_loss_token_chunk_size": 1024,
+    "train_steps": 9843,
+    "untied_rank": 64,
+    "use_amp": true,
+    "use_fused_adamw": true,
+    "val_blocks": 32,
+    "variant_artifact_dir": "artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_100m_20260602\\variant_results\\seq10160_steps9843_val32_batch1_eval999999_init0_seed13",
+    "variant_checkpoint_interval": 500,
+    "variants": [
+      "causal_conv_mixer_sampled_vocab_anchor16"
+    ],
+    "weight_decay": 0.0001,
+    "window_size": 128
+  },
+  "fairness": {
+    "probe_only": true,
+    "real_fineweb_edu_data": true,
+    "reused_completed_variant_results": false,
+    "same_batch_schedule": true,
+    "same_cache": true,
+    "same_model_size_target": "20m_parameter_partial_untied_family",
+    "same_token_budget": true,
+    "validation_loss_mode": "full"
+  },
+  "results": {
+    "causal_conv_mixer_sampled_vocab_anchor16": {
+      "final_val_loss": 5.607791304588318,
+      "history": [
+        {
+          "step": 9843.0,
+          "tokens_seen": 100004880.0,
+          "train_loss": 5.8219499588012695,
+          "val_loss": 5.607791304588318
+        }
+      ],
+      "initial_val_loss": NaN,
+      "parameter_count": 40100417,
+      "peak_vram_mb": 3975.97998046875,
+      "pure_train_time_seconds": 1144.9503566002022,
+      "pure_train_tok_per_sec": 87344.2935088932,
+      "sampled_candidate_size_mean": 16831.298181448747,
+      "sampled_eval_candidate_size_mean": null,
+      "step_time_mean_ms": 116.32127975212863,
+      "step_time_median_ms": 62.982700001157355,
+      "total_training_time_seconds": 507.6496418999959,
+      "train_tok_per_sec": 196995.86436367544,
+      "train_tokens_seen": 100004880,
+      "validation_loss_mode": "full",
+      "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+    }
+  }
+}

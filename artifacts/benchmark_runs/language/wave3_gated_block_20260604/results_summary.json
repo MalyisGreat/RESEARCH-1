@@ -1,0 +1,87 @@
+﻿{
+    "updated_at":  "2026-06-04T17:14:59",
+    "trainer_patch":  {
+                          "path":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\standalone_longseq_anchor_train.py",
+                          "added":  "--block-type relu_square|gated with CausalGatedConvMixerBlock; default remains relu_square for checkpoint compatibility",
+                          "py_compile":  "passed"
+                      },
+    "completed":  [
+                      {
+                          "run":  "wave3_host2080_gated_45m_stride8",
+                          "worker":  "RTX 2080 SUPER",
+                          "tokens":  44998640,
+                          "val_loss":  5.7421438174923578,
+                          "train_loss":  5.7508125305175781,
+                          "tok_per_sec":  105908.607993911,
+                          "interpretation":  "gated path fits/runs fast but stride8 result is weak on this short host screen"
+                      },
+                      {
+                          "run":  "wave3_host2080_dense_stride4_60m",
+                          "worker":  "RTX 2080 SUPER",
+                          "tokens":  60004960,
+                          "val_loss":  5.4645802578901055,
+                          "train_loss":  5.5475606918334961,
+                          "tok_per_sec":  75602.423401048625,
+                          "interpretation":  "stride4 dense anchor is much stronger than host gated stride8; supports dense-anchor direction"
+                      },
+                      {
+                          "run":  "wave2_4060_dense_stride4_60m_k7_80m",
+                          "job_id":  "20260604-163118-495c4b",
+                          "worker":  "RTX 4060 Ti",
+                          "tokens":  79999840,
+                          "val_loss":  5.3327,
+                          "train_loss":  5.4629,
+                          "interpretation":  "stride4 beat 4060 stride8 wave1 val 5.4190 on same 80M budget"
+                      }
+                  ],
+    "active":  [
+                   {
+                       "run":  "wave2_3080_dense_stride8_90m_continue500m",
+                       "job_id":  "20260604-163118-2e4251",
+                       "worker":  "RTX 3080",
+                       "status":  "running",
+                       "last_seen_step":  36000,
+                       "last_seen_tokens":  365760000,
+                       "prior_eval":  "200M val 5.1570"
+                   },
+                   {
+                       "run":  "wave2_4060_dense_stride8_60m_continue300m",
+                       "job_id":  "20260604-163119-78203f",
+                       "worker":  "RTX 4060 Ti",
+                       "status":  "running",
+                       "last_seen_step":  18500,
+                       "last_seen_tokens":  187960000
+                   },
+                   {
+                       "run":  "wave3_host2080_gated_stride4_60m",
+                       "pid":  37384,
+                       "worker":  "RTX 2080 SUPER",
+                       "status":  "running",
+                       "last_seen_step":  1500,
+                       "last_seen_tokens":  15240000
+                   },
+                   {
+                       "run":  "wave3_3080_gated_stride8_85m_100m",
+                       "job_id":  "20260604-164139-5f53a1",
+                       "worker":  "RTX 3080",
+                       "status":  "queued behind 500M continuation"
+                   },
+                   {
+                       "run":  "wave3_4060_gated_stride8_55m_80m",
+                       "job_id":  "20260604-164140-74cc42",
+                       "worker":  "RTX 4060 Ti",
+                       "status":  "queued behind 300M continuation"
+                   },
+                   {
+                       "run":  "wave3_2060_gated_stride8_35m_30m_venv",
+                       "job_id":  "20260604-171415-efd0b9",
+                       "worker":  "RTX 2060",
+                       "status":  "queued with venv python after prior default-python torch failure"
+                   }
+               ],
+    "decision_notes":  [
+                           "Dense anchors are the current strongest direction: stride4 improved 4060 80M val from 5.4190 to 5.3327 and host stride4 val 5.4646 beat host gated stride8 val 5.7421.",
+                           "Gated block is not rejected yet: it runs and fits, but needs stride4 result before promotion. Host gated+stride4 is currently running.",
+                           "Do not promote solely from cached short screens; longer 3080 continuation and fresh-data continuation remain necessary before claiming architecture improvement."
+                       ]
+}

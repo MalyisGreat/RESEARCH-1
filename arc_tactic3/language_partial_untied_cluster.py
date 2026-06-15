@@ -65,6 +65,7 @@ class ClusterHardwareProfile:
 class PartialUntiedClusterConfig:
     output_dir: Path
     cache_path: Path | None = None
+    validation_cache_path: Path | None = None
     dataset_name: str = "HuggingFaceFW/fineweb-edu"
     split: str = "train"
     text_column: str = "text"
@@ -72,6 +73,7 @@ class PartialUntiedClusterConfig:
     total_tokens: int = 100_000_000
     train_tokens: int = 98_000_000
     val_tokens: int = 2_000_000
+    train_token_offset: int = 0
     sequence_length: int = 127
     seed: int = 13
     learning_rate: float = 2e-3
@@ -213,7 +215,11 @@ def resolve_cluster_config(config: PartialUntiedClusterConfig) -> tuple[PartialU
 
 
 def _default_cache_path(config: PartialUntiedClusterConfig) -> Path:
-    safe_name = f"finewebedu_train{config.train_tokens}_val{config.val_tokens}_seq{config.sequence_length}_{config.tokenizer_name}.pt"
+    offset = f"_offset{config.train_token_offset}" if config.train_token_offset else ""
+    safe_name = (
+        f"finewebedu_train{config.train_tokens}_val{config.val_tokens}{offset}_"
+        f"seq{config.sequence_length}_{config.tokenizer_name}.pt"
+    )
     return config.output_dir / "cache" / safe_name
 
 
@@ -240,15 +246,21 @@ def _config_payload(config: PartialUntiedClusterConfig, *, profile: ClusterHardw
     payload = asdict(config)
     payload["output_dir"] = str(config.output_dir)
     payload["cache_path"] = str(config.cache_path) if config.cache_path is not None else None
+    payload["validation_cache_path"] = (
+        str(config.validation_cache_path) if config.validation_cache_path is not None else None
+    )
     payload["hardware_profile"] = asdict(profile)
     return payload
 
 
 def _fill_token_buffer(
-    texts: Iterable[str],
+    text_rows: Iterable[tuple[int, str]],
     *,
     tokenizer,
     total_tokens: int,
+    skip_tokens: int = 0,
+    initial_skipped_tokens: int = 0,
+    skip_progress_path: Path | None = None,
     batch_size: int,
     print_prefix: str | None,
 ) -> torch.Tensor:
@@ -257,19 +269,50 @@ def _fill_token_buffer(
         raise ValueError(f"Tokenizer {tokenizer.name_or_path} does not expose eos_token_id.")
     buffer = torch.empty(total_tokens, dtype=torch.int32)
     cursor = 0
-    pending: list[str] = []
+    skipped = initial_skipped_tokens
+    pending: list[tuple[int, str]] = []
     started = time.perf_counter()
     last_report = started
+    last_progress_write = started
 
-    def _consume(batch_texts: Sequence[str]) -> None:
-        nonlocal cursor
+    def _write_skip_progress(rows_consumed: int, *, force: bool = False) -> None:
+        nonlocal last_progress_write
+        if skip_progress_path is None or skipped >= skip_tokens:
+            return
+        now = time.perf_counter()
+        if not force and now - last_progress_write < 5.0:
+            return
+        _write_json(
+            skip_progress_path,
+            {
+                "rows_consumed": rows_consumed,
+                "skipped_tokens": skipped,
+                "skip_tokens": skip_tokens,
+                "total_tokens": total_tokens,
+                "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            },
+        )
+        last_progress_write = now
+
+    def _consume(batch_rows: Sequence[tuple[int, str]]) -> None:
+        nonlocal cursor, skipped
+        batch_texts = [text for _, text in batch_rows]
         encoded = tokenizer(batch_texts, add_special_tokens=False, truncation=False)
-        for token_ids in encoded["input_ids"]:
+        for (rows_consumed, _), token_ids in zip(batch_rows, encoded["input_ids"]):
             if cursor >= total_tokens:
                 break
             if not token_ids:
+                _write_skip_progress(rows_consumed)
                 continue
             ids = list(token_ids) + [eos_id]
+            if skipped < skip_tokens:
+                remaining_skip = skip_tokens - skipped
+                if len(ids) <= remaining_skip:
+                    skipped += len(ids)
+                    _write_skip_progress(rows_consumed, force=True)
+                    continue
+                ids = ids[remaining_skip:]
+                skipped = skip_tokens
             remaining = total_tokens - cursor
             if len(ids) > remaining:
                 ids = ids[:remaining]
@@ -277,22 +320,25 @@ def _fill_token_buffer(
             buffer[cursor : cursor + chunk.numel()] = chunk
             cursor += chunk.numel()
 
-    for text in texts:
+    for rows_consumed, text in text_rows:
         if cursor >= total_tokens:
             break
         if not text or not text.strip():
+            _write_skip_progress(rows_consumed)
             continue
-        pending.append(text)
+        pending.append((rows_consumed, text))
         if len(pending) < batch_size:
             continue
         _consume(pending)
         pending = []
         now = time.perf_counter()
         if print_prefix is not None and now - last_report >= 5.0:
-            tok_per_sec = cursor / max(now - started, 1e-9)
+            processed = skipped + cursor
+            tok_per_sec = processed / max(now - started, 1e-9)
+            skip_text = f" skipped={skipped:,}/{skip_tokens:,}" if skip_tokens else ""
             print(
                 f"{print_prefix} cache_build {_bar(cursor / total_tokens)} "
-                f"{cursor:,}/{total_tokens:,} tokens tok/s={tok_per_sec:,.0f}",
+                f"{cursor:,}/{total_tokens:,} tokens{skip_text} tok/s={tok_per_sec:,.0f}",
                 flush=True,
             )
             last_report = now
@@ -300,13 +346,28 @@ def _fill_token_buffer(
         _consume(pending)
     if cursor != total_tokens:
         raise RuntimeError(f"Token stream ended early: expected {total_tokens} tokens, got {cursor}.")
+    if skip_progress_path is not None and skip_progress_path.exists():
+        skip_progress_path.unlink()
     return buffer
+
+
+def _load_validation_tokens_from_cache(config: PartialUntiedClusterConfig) -> torch.Tensor:
+    if config.validation_cache_path is None:
+        raise ValueError("validation_cache_path is required.")
+    payload = torch.load(config.validation_cache_path, map_location="cpu", weights_only=False)
+    val_tokens = payload["val_tokens"]
+    if val_tokens.numel() < config.val_tokens:
+        raise ValueError(
+            f"Validation cache {config.validation_cache_path} is too small: "
+            f"{val_tokens.numel()} < {config.val_tokens}."
+        )
+    return val_tokens[: config.val_tokens].clone()
 
 
 def _buffer_to_dataset(token_buffer: torch.Tensor, *, sequence_length: int) -> TokenBlockDataset:
     block_size = sequence_length + 1
-    blocks = token_buffer.long().view(-1, block_size)
-    return TokenBlockDataset(blocks[:, :-1].contiguous(), blocks[:, 1:].contiguous())
+    blocks = token_buffer.view(-1, block_size)
+    return TokenBlockDataset(blocks[:, :-1], blocks[:, 1:])
 
 
 def ensure_fineweb_cache(
@@ -344,21 +405,61 @@ def ensure_fineweb_cache(
         streaming=True,
         download_config=download_config,
     )
+    skip_progress_path = (
+        cache_path.with_suffix(cache_path.suffix + ".skip_progress.json")
+        if config.train_token_offset
+        else None
+    )
+    resume_rows_consumed = 0
+    resume_skipped_tokens = 0
+    if skip_progress_path is not None:
+        progress = _load_json_if_exists(skip_progress_path)
+        if (
+            progress
+            and int(progress.get("skip_tokens", -1)) == config.train_token_offset
+            and int(progress.get("total_tokens", -1)) == (config.train_tokens if config.validation_cache_path is not None else config.total_tokens)
+        ):
+            resume_rows_consumed = max(0, int(progress.get("rows_consumed", 0)))
+            resume_skipped_tokens = max(0, int(progress.get("skipped_tokens", 0)))
+            if resume_rows_consumed and print_progress:
+                print(
+                    "cluster_partial_untied cache_build resume "
+                    f"rows={resume_rows_consumed:,} skipped={resume_skipped_tokens:,}/{config.train_token_offset:,}",
+                    flush=True,
+                )
+            if resume_rows_consumed:
+                stream = stream.skip(resume_rows_consumed)
+
+    def _text_rows() -> Iterable[tuple[int, str]]:
+        rows_consumed = resume_rows_consumed
+        for row in stream:
+            rows_consumed += 1
+            yield rows_consumed, row[config.text_column]
+
+    stream_tokens = config.train_tokens if config.validation_cache_path is not None else config.total_tokens
     token_buffer = _fill_token_buffer(
-        (row[config.text_column] for row in stream),
+        _text_rows(),
         tokenizer=tokenizer,
-        total_tokens=config.total_tokens,
+        total_tokens=stream_tokens,
+        skip_tokens=config.train_token_offset,
+        initial_skipped_tokens=resume_skipped_tokens,
+        skip_progress_path=skip_progress_path,
         batch_size=config.tokenization_batch_size,
         print_prefix="cluster_partial_untied" if print_progress else None,
     )
     train_tokens = token_buffer[: config.train_tokens].clone()
-    val_tokens = token_buffer[config.train_tokens : config.train_tokens + config.val_tokens].clone()
+    if config.validation_cache_path is not None:
+        val_tokens = _load_validation_tokens_from_cache(config)
+    else:
+        val_tokens = token_buffer[config.train_tokens : config.train_tokens + config.val_tokens].clone()
     torch.save(
         {
             "dataset_name": config.dataset_name,
             "split": config.split,
             "tokenizer_name": config.tokenizer_name,
             "sequence_length": config.sequence_length,
+            "train_token_offset": config.train_token_offset,
+            "validation_cache_path": str(config.validation_cache_path) if config.validation_cache_path is not None else None,
             "train_tokens": train_tokens,
             "val_tokens": val_tokens,
             "vocab_size": tokenizer.vocab_size,
@@ -637,6 +738,7 @@ def run_partial_untied_cluster(
     model.to(device)
     if resolved_config.use_compile and hasattr(torch, "compile"):
         model = torch.compile(model, mode="max-autotune")
+    parameter_count = count_parameters(model)
     optimizer = _build_optimizer(model, real_config, model_name="partial_untied_cluster")
     scheduler = _build_scheduler(optimizer, real_config)
     use_scaler = resolved_config.use_amp and resolved_config.amp_dtype == "fp16" and device.type == "cuda"
@@ -673,6 +775,7 @@ def run_partial_untied_cluster(
 
     history: list[dict[str, float]] = []
     step_times: list[float] = []
+    pure_train_time = 0.0
     tokens_seen = 0
     sequences_seen = 0
     start_step = 1
@@ -741,51 +844,55 @@ def run_partial_untied_cluster(
             optimizer.step()
         if scheduler is not None:
             scheduler.step()
-        if device.type == "cuda":
+        should_eval = step_index % real_config.eval_interval == 0 or step_index == real_config.train_steps
+        should_ckpt = step_index % resolved_config.checkpoint_interval == 0 or should_eval
+        should_sample = step_index % resolved_config.sample_interval == 0 or step_index == real_config.train_steps
+        should_log = step_index % resolved_config.log_interval == 0 or step_index == real_config.train_steps
+        should_report = should_log or should_eval or should_ckpt or should_sample
+        if should_report and device.type == "cuda":
             torch.cuda.synchronize()
         step_duration = time.perf_counter() - step_start
         step_times.append(step_duration)
+        pure_train_time += step_duration
         tokens_seen += token_count
         sequences_seen += batch["input_ids"].size(0)
         elapsed = time.perf_counter() - start
         progress = step_index / real_config.train_steps
         train_tok_per_sec = tokens_seen / max(elapsed, 1e-9)
-        pure_train_tok_per_sec = tokens_seen / max(sum(step_times), 1e-9)
+        pure_train_tok_per_sec = tokens_seen / max(pure_train_time, 1e-9)
         remaining_tokens = max(actual_train_tokens - tokens_seen, 0)
         eta_seconds = remaining_tokens / max(train_tok_per_sec, 1e-9)
-        state_payload = {
-            "benchmark": "language_partial_untied_cluster",
-            "status": "running",
-            "step": step_index,
-            "train_steps": real_config.train_steps,
-            "progress": progress,
-            "tokens_seen": tokens_seen,
-            "target_tokens": actual_train_tokens,
-            "train_tok_per_sec": train_tok_per_sec,
-            "pure_train_tok_per_sec": pure_train_tok_per_sec,
-            "eta_seconds": eta_seconds,
-            "latest_train_loss": float(loss.item()),
-            "latest_val_loss": latest_val_loss,
-            "best_val_loss": best_val_loss,
-            "peak_vram_mb": _peak_vram_mb(real_config.device),
-            "parameter_count": count_parameters(model),
-            "hardware_profile": profile.name,
-            "cache_path": str(resolved_cache_path),
-        }
-        if step_index % resolved_config.log_interval == 0 or step_index == real_config.train_steps:
+        train_loss_value = float(loss.detach().item()) if should_report else None
+        state_payload = None
+        if should_log:
+            state_payload = {
+                "benchmark": "language_partial_untied_cluster",
+                "status": "running",
+                "step": step_index,
+                "train_steps": real_config.train_steps,
+                "progress": progress,
+                "tokens_seen": tokens_seen,
+                "target_tokens": actual_train_tokens,
+                "train_tok_per_sec": train_tok_per_sec,
+                "pure_train_tok_per_sec": pure_train_tok_per_sec,
+                "eta_seconds": eta_seconds,
+                "latest_train_loss": train_loss_value,
+                "latest_val_loss": latest_val_loss,
+                "best_val_loss": best_val_loss,
+                "peak_vram_mb": _peak_vram_mb(real_config.device),
+                "parameter_count": parameter_count,
+                "hardware_profile": profile.name,
+                "cache_path": str(resolved_cache_path),
+            }
             _write_json(state_path, state_payload)
             _append_jsonl(metrics_path, {"kind": "train", **state_payload, "timestamp": time.time()})
             if print_progress:
                 print(
                     f"cluster_partial_untied {_bar(progress)} {step_index}/{real_config.train_steps} "
-                    f"train={loss.item():.4f} val={latest_val_loss:.4f} tok={tokens_seen:,}/{actual_train_tokens:,} "
+                    f"train={train_loss_value:.4f} val={latest_val_loss:.4f} tok={tokens_seen:,}/{actual_train_tokens:,} "
                     f"tok/s={train_tok_per_sec:,.0f} eta={eta_seconds/60:.1f}m",
                     flush=True,
                 )
-
-        should_eval = step_index % real_config.eval_interval == 0 or step_index == real_config.train_steps
-        should_ckpt = step_index % resolved_config.checkpoint_interval == 0 or should_eval
-        should_sample = step_index % resolved_config.sample_interval == 0 or step_index == real_config.train_steps
 
         if should_eval:
             latest_val_loss = _evaluate_loss(model, val_source, device=device, config=resolved_config)
@@ -796,7 +903,7 @@ def run_partial_untied_cluster(
                     "step": float(step_index),
                     "tokens_seen": float(tokens_seen),
                     "sequences_seen": float(sequences_seen),
-                    "train_loss": float(loss.item()),
+                    "train_loss": float(train_loss_value),
                     "val_loss": float(latest_val_loss),
                 }
             )
@@ -805,12 +912,32 @@ def run_partial_untied_cluster(
                 "step": step_index,
                 "tokens_seen": tokens_seen,
                 "val_loss": latest_val_loss,
-                "train_loss": float(loss.item()),
+                "train_loss": float(train_loss_value),
                 "train_tok_per_sec": train_tok_per_sec,
                 "pure_train_tok_per_sec": pure_train_tok_per_sec,
                 "peak_vram_mb": _peak_vram_mb(real_config.device),
                 "timestamp": time.time(),
             }
+            if state_payload is None:
+                state_payload = {
+                    "benchmark": "language_partial_untied_cluster",
+                    "status": "running",
+                    "step": step_index,
+                    "train_steps": real_config.train_steps,
+                    "progress": progress,
+                    "tokens_seen": tokens_seen,
+                    "target_tokens": actual_train_tokens,
+                    "train_tok_per_sec": train_tok_per_sec,
+                    "pure_train_tok_per_sec": pure_train_tok_per_sec,
+                    "eta_seconds": eta_seconds,
+                    "latest_train_loss": train_loss_value,
+                    "latest_val_loss": latest_val_loss,
+                    "best_val_loss": best_val_loss,
+                    "peak_vram_mb": _peak_vram_mb(real_config.device),
+                    "parameter_count": parameter_count,
+                    "hardware_profile": profile.name,
+                    "cache_path": str(resolved_cache_path),
+                }
             _write_json(state_path, {**state_payload, "latest_val_loss": latest_val_loss, "best_val_loss": best_val_loss})
             _append_jsonl(metrics_path, eval_payload)
             if print_progress:
@@ -878,9 +1005,8 @@ def run_partial_untied_cluster(
             )
 
     total_time = time.perf_counter() - start
-    pure_train_time = sum(step_times)
     report = {
-        "parameter_count": count_parameters(model),
+        "parameter_count": parameter_count,
         "history": history,
         "initial_val_loss": initial_val_loss,
         "final_val_loss": latest_val_loss,

@@ -469,6 +469,7 @@ def _train_model(
     eval_steps = 64
     history: list[dict[str, float]] = []
     step_times: list[float] = []
+    pure_train_time = 0.0
     tokens_seen = 0
     best_val_loss = float("inf")
     tokens_to_target_loss = None
@@ -535,10 +536,11 @@ def _train_model(
             scheduler.step()
         if device.type == "cuda":
             torch.cuda.synchronize()
-        step_times.append(time.perf_counter() - step_start)
+        step_duration = time.perf_counter() - step_start
+        step_times.append(step_duration)
+        pure_train_time += step_duration
         tokens_seen += token_count
 
-        pure_train_time = sum(step_times)
         elapsed = time.perf_counter() - start
         train_tok_per_sec = tokens_seen / max(elapsed, 1e-9)
         pure_train_tok_per_sec = tokens_seen / max(pure_train_time, 1e-9)
@@ -637,7 +639,6 @@ def _train_model(
                 next_sample_tokens += config.sample_every_tokens
 
     total_time = time.perf_counter() - start
-    pure_train_time = sum(step_times)
     report = {
         "parameter_count": parameter_count,
         "initial_val_loss": initial_val_loss,

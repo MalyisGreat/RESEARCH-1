@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_val8_seed31_hidden_regularizer_1024_v1_rank_competition_fixed_feather_hidden_drop_neuron\\checkpoint.pt",
+  "final_train_loss": 5.591558456420898,
+  "final_val_loss": 6.488661163247476,
+  "peak_vram_mb": 4337.9853515625,
+  "pure_train_tok_per_sec": 81599.08282225367,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_val8_seed31_hidden_regularizer_1024_v1_rank_competition_fixed_feather_hidden_drop_neuron\\result.json",
+  "run_name": "screen_1024_seed31_real_seq10160_val8_seed31_hidden_regularizer_1024_v1_rank_competition_fixed_feather_hidden_drop_neuron",
+  "status": "completed",
+  "step": 1024,
+  "tokens_seen": 10403840,
+  "train_steps": 1024
+}

@@ -1,0 +1,13 @@
+{
+  "chars_read": 986155,
+  "config_attempted_first": "sample-10BT",
+  "dataset": "HuggingFaceFW/fineweb-edu",
+  "docs_read": 229,
+  "encoding": "gpt2",
+  "path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\real_cache_finewebedu_sample_seq255_train768_val64_gpt2.pt",
+  "sequence_length": 255,
+  "train_blocks": 768,
+  "train_tokens": 196608,
+  "val_blocks": 64,
+  "val_tokens": 16384
+}

@@ -1,0 +1,10 @@
+starting causal_conv_mixer_sampled_vocab_anchor16: params=40,100,417 seq=10160 steps=9843
+resumed causal_conv_mixer_sampled_vocab_anchor16: step=500/9843
+causal_conv_mixer_sampled_vocab_anchor16 step=600/9843 train=6.4766 pure_tok/s=15,050
+causal_conv_mixer_sampled_vocab_anchor16 step=700/9843 train=6.4041 pure_tok/s=17,301
+causal_conv_mixer_sampled_vocab_anchor16 step=800/9843 train=6.4782 pure_tok/s=18,515
+causal_conv_mixer_sampled_vocab_anchor16 step=900/9843 train=6.4491 pure_tok/s=19,253
+causal_conv_mixer_sampled_vocab_anchor16 step=1000/9843 train=6.2926 pure_tok/s=17,439
+causal_conv_mixer_sampled_vocab_anchor16 step=1100/9843 train=6.2016 pure_tok/s=15,300
+causal_conv_mixer_sampled_vocab_anchor16 step=1200/9843 train=6.3781 pure_tok/s=12,099
+causal_conv_mixer_sampled_vocab_anchor16 step=1300/9843 train=6.0642 pure_tok/s=9,982

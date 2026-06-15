@@ -1,0 +1,79 @@
+﻿{
+    "created_at":  "2026-06-04T16:37:29",
+    "five_b_run":  {
+                       "history":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_160m_5b_fresh_after2b_20260604_samples_loss\\loss_history_160m_5b.json",
+                       "loss_curve":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_160m_5b_fresh_after2b_20260604_samples_loss\\loss_curve_160m_5b.png",
+                       "expanded_samples":  "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_160m_5b_fresh_after2b_20260604_samples_loss\\samples_160m_5b_more_24.txt",
+                       "val_at_2b":  4.6422031002368511,
+                       "val_at_5b":  4.58411523998957,
+                       "ppl_at_2b":  103.77,
+                       "ppl_at_5b":  97.92
+                   },
+    "wave1_results":  [
+                          {
+                              "run":  "wave1_3080_dense_stride8_90m_k7_100m",
+                              "job_id":  "20260604-152638-a2ea98",
+                              "worker":  "RTX 3080",
+                              "tokens":  100004880,
+                              "val_loss":  5.2887,
+                              "train_loss":  5.3231,
+                              "decision":  "best 3080 short screen; promoted to wave2 500M continuation"
+                          },
+                          {
+                              "run":  "wave1_3080_depth4_110m_k15_stride16_100m",
+                              "job_id":  "20260604-152638-e9d9c4",
+                              "worker":  "RTX 3080",
+                              "tokens":  100004880,
+                              "val_loss":  5.2977,
+                              "train_loss":  5.2667,
+                              "decision":  "close second; not promoted before dense continuation"
+                          },
+                          {
+                              "run":  "wave1_3080_baseline160m_sched_control_100m",
+                              "job_id":  "20260604-155119-b10bf5",
+                              "worker":  "RTX 3080",
+                              "tokens":  100004880,
+                              "val_loss":  5.526,
+                              "train_loss":  5.4888,
+                              "decision":  "control confirms smaller dense/depth variants beat schedule-matched baseline"
+                          },
+                          {
+                              "run":  "wave1_4060_dense_stride8_60m_k7_80m",
+                              "job_id":  "20260604-152639-ad36f5",
+                              "worker":  "RTX 4060 Ti",
+                              "tokens":  79999840,
+                              "val_loss":  5.419,
+                              "train_loss":  5.4917,
+                              "decision":  "best 4060 short screen; queued for 300M continuation after stride4 probe"
+                          },
+                          {
+                              "run":  "wave1_4060_depth4_60m_k15_stride16_80m",
+                              "job_id":  "20260604-152639-f97a46",
+                              "worker":  "RTX 4060 Ti",
+                              "tokens":  79999840,
+                              "val_loss":  5.4369,
+                              "train_loss":  5.4871,
+                              "decision":  "slightly worse than dense_stride8 on same cache/budget"
+                          }
+                      ],
+    "wave2_queued":  [
+                         {
+                             "run":  "wave2_3080_dense_stride8_90m_continue500m",
+                             "job_id":  "20260604-163118-2e4251",
+                             "target":  "500M total",
+                             "status":  "running at startup check"
+                         },
+                         {
+                             "run":  "wave2_4060_dense_stride4_60m_k7_80m",
+                             "job_id":  "20260604-163118-495c4b",
+                             "target":  "80M screen",
+                             "status":  "running at startup check"
+                         },
+                         {
+                             "run":  "wave2_4060_dense_stride8_60m_continue300m",
+                             "job_id":  "20260604-163119-78203f",
+                             "target":  "300M total",
+                             "status":  "queued behind stride4 screen"
+                         }
+                     ]
+}

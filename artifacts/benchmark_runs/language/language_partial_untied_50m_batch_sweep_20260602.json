@@ -1,0 +1,37 @@
+{
+  "benchmark": "language_partial_untied_50m_batch_sweep",
+  "config": {
+    "amp": "fp16 autocast",
+    "embedding_dim": 672,
+    "hidden_dim": 1344,
+    "memory_dim": 672,
+    "optimizer": "fused AdamW",
+    "partial_tokens": 1024,
+    "sequence_length": 127,
+    "vocab_size": 50257
+  },
+  "notes": {
+    "batch_96": "started but was stopped because it was not useful as a quick setting on the 8GB RTX 2080 SUPER",
+    "data": "synthetic token batches for speed and VRAM only"
+  },
+  "results": [
+    {
+      "batch_size": 32,
+      "last_train_loss": 0.035669948905706406,
+      "parameter_count": 49880083,
+      "tokens_per_step": 4064,
+      "train_peak_vram_mb": 2861.8271484375,
+      "train_step_ms": 162.67936250005732,
+      "train_tok_per_sec": 24981.656785128893
+    },
+    {
+      "batch_size": 64,
+      "last_train_loss": 0.04761355742812157,
+      "parameter_count": 49880083,
+      "tokens_per_step": 8128,
+      "train_peak_vram_mb": 5031.6904296875,
+      "train_step_ms": 292.7436333332783,
+      "train_tok_per_sec": 27764.907839162322
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "block_type": "rank_competition_fixed_feather_channel_drop_neuron",
+    "final_train_loss": 8.75916862487793,
+    "final_val_loss": 10.83086701374428,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 22.039290605089676,
+    "tok_per_sec": 14896.077956034447,
+    "val_delta_vs_baseline": -7.647346047789938e-05
+  },
+  {
+    "block_type": "rank_competition_fixed_feather_hidden_drop_neuron",
+    "final_train_loss": 8.761372566223145,
+    "final_val_loss": 10.830974240396538,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 11.622045061250834,
+    "tok_per_sec": 7855.193360940446,
+    "val_delta_vs_baseline": 3.075319177980873e-05
+  },
+  {
+    "block_type": "hidden_drop_square_neuron",
+    "final_train_loss": 8.761380195617676,
+    "final_val_loss": 10.830974242266487,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 16.535263493426395,
+    "tok_per_sec": 11175.975598995368,
+    "val_delta_vs_baseline": 3.0755061729337285e-05
+  },
+  {
+    "block_type": "hidden_drop_low_square_neuron",
+    "final_train_loss": 8.759419441223145,
+    "final_val_loss": 10.830974358203365,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 17.219773798920105,
+    "tok_per_sec": 11638.627462662364,
+    "val_delta_vs_baseline": 3.0870998607213096e-05
+  },
+  {
+    "block_type": "channel_drop_square_neuron",
+    "final_train_loss": 8.759191513061523,
+    "final_val_loss": 10.83100487578149,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 4934961,
+    "speed_ratio_vs_baseline": 11.899794669005782,
+    "tok_per_sec": 8042.9208102268685,
+    "val_delta_vs_baseline": 6.13885767322131e-05
+  }
+]

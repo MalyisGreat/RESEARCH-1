@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_rank_pressure_v1_rank_competition_mild_centered_residual_neuron\\checkpoint.pt",
+  "final_train_loss": 8.75890827178955,
+  "final_val_loss": 10.830821072821523,
+  "peak_vram_mb": 313.49462890625,
+  "pure_train_tok_per_sec": 10336.357224337811,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_rank_pressure_v1_rank_competition_mild_centered_residual_neuron\\result.json",
+  "run_name": "screen_1_seed13_smoke_rank_pressure_v1_rank_competition_mild_centered_residual_neuron",
+  "status": "completed",
+  "step": 1,
+  "tokens_seen": 255,
+  "train_steps": 1
+}

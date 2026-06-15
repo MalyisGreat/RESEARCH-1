@@ -1,0 +1,142 @@
+WAVE6_LOCAL_CONT300_START run=wave6_host2080_multiscale_stride4_continue300m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt resume=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave6_multiscale_20260604\wave6_host2080_multiscale_stride4_continue100m\checkpoint.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+RESUMED step=9843 tokens=100004880
+START run=wave6_host2080_multiscale_stride4_continue300m device=NVIDIA GeForce RTX 2080 SUPER params=51,037,745 seq=10160 steps=29529
+TRAIN step=10000/29529 tokens=101600000 loss=5.3045 lr=0.000457348 pure_tok_s=68510
+TRAIN step=10500/29529 tokens=106680000 loss=5.5109 lr=0.000443462 pure_tok_s=68472
+TRAIN step=11000/29529 tokens=111760000 loss=5.5965 lr=0.000429171 pure_tok_s=68442
+TRAIN step=11500/29529 tokens=116840000 loss=5.3567 lr=0.000414517 pure_tok_s=68484
+TRAIN step=12000/29529 tokens=121920000 loss=5.5550 lr=0.000399542 pure_tok_s=68525
+TRAIN step=12500/29529 tokens=127000000 loss=5.4573 lr=0.00038429 pure_tok_s=68560
+TRAIN step=13000/29529 tokens=132080000 loss=5.4277 lr=0.000368806 pure_tok_s=68601
+TRAIN step=13500/29529 tokens=137160000 loss=5.5753 lr=0.000353135 pure_tok_s=68642
+TRAIN step=14000/29529 tokens=142240000 loss=5.4050 lr=0.000337324 pure_tok_s=68694
+TRAIN step=14500/29529 tokens=147320000 loss=5.2857 lr=0.000321417 pure_tok_s=68671
+TRAIN step=15000/29529 tokens=152400000 loss=5.4200 lr=0.000305463 pure_tok_s=68621
+TRAIN step=15500/29529 tokens=157480000 loss=5.4125 lr=0.000289507 pure_tok_s=68654
+TRAIN step=16000/29529 tokens=162560000 loss=4.9435 lr=0.000273597 pure_tok_s=68696
+TRAIN step=16500/29529 tokens=167640000 loss=5.1231 lr=0.000257778 pure_tok_s=68736
+TRAIN step=17000/29529 tokens=172720000 loss=5.1184 lr=0.000242098 pure_tok_s=68731
+TRAIN step=17500/29529 tokens=177800000 loss=4.9637 lr=0.000226602 pure_tok_s=68621
+TRAIN step=18000/29529 tokens=182880000 loss=5.3065 lr=0.000211336 pure_tok_s=68582
+TRAIN step=18500/29529 tokens=187960000 loss=5.3068 lr=0.000196343 pure_tok_s=68607
+TRAIN step=19000/29529 tokens=193040000 loss=5.1278 lr=0.000181669 pure_tok_s=68595
+TRAIN step=19500/29529 tokens=198120000 loss=5.0574 lr=0.000167356 pure_tok_s=68637
+EVAL step=19686/29529 tokens=200009760 train=5.3018 val=5.0059 eval_s=1.3
+TRAIN step=20000/29529 tokens=203200000 loss=6.0217 lr=0.000153445 pure_tok_s=68680
+TRAIN step=20500/29529 tokens=208280000 loss=4.9777 lr=0.000139979 pure_tok_s=68722
+TRAIN step=21000/29529 tokens=213360000 loss=4.9843 lr=0.000126995 pure_tok_s=68737
+TRAIN step=21500/29529 tokens=218440000 loss=4.9611 lr=0.000114533 pure_tok_s=68725
+TRAIN step=22000/29529 tokens=223520000 loss=4.8448 lr=0.000102628 pure_tok_s=68756
+TRAIN step=22500/29529 tokens=228600000 loss=4.9740 lr=9.1315e-05 pure_tok_s=68735
+TRAIN step=23000/29529 tokens=233680000 loss=4.8650 lr=8.06279e-05 pure_tok_s=68710
+TRAIN step=23500/29529 tokens=238760000 loss=4.9140 lr=7.05976e-05 pure_tok_s=68701
+TRAIN step=24000/29529 tokens=243840000 loss=4.7617 lr=6.12536e-05 pure_tok_s=68675
+TRAIN step=24500/29529 tokens=248920000 loss=4.9985 lr=5.2623e-05 pure_tok_s=68687
+TRAIN step=25000/29529 tokens=254000000 loss=5.1028 lr=4.47312e-05 pure_tok_s=68691
+TRAIN step=25500/29529 tokens=259080000 loss=4.8936 lr=3.76014e-05 pure_tok_s=68708
+TRAIN step=26000/29529 tokens=264160000 loss=4.9514 lr=3.12542e-05 pure_tok_s=68724
+TRAIN step=26500/29529 tokens=269240000 loss=5.3062 lr=2.57085e-05 pure_tok_s=68748
+TRAIN step=27000/29529 tokens=274320000 loss=4.7452 lr=2.09803e-05 pure_tok_s=68772
+TRAIN step=27500/29529 tokens=279400000 loss=5.0736 lr=1.70835e-05 pure_tok_s=68798
+TRAIN step=28000/29529 tokens=284480000 loss=4.9299 lr=1.40295e-05 pure_tok_s=68820
+TRAIN step=28500/29529 tokens=289560000 loss=4.7800 lr=1.18273e-05 pure_tok_s=68844
+TRAIN step=29000/29529 tokens=294640000 loss=4.8974 lr=1.04833e-05 pure_tok_s=68863
+TRAIN step=29500/29529 tokens=299720000 loss=5.0784 lr=1.00015e-05 pure_tok_s=68883
+EVAL step=29529/29529 tokens=300014640 train=4.9923 val=4.8792 eval_s=1.3
+RESULT {"candidate_size_mean": 32867.020877781164, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m\\checkpoint.pt", "final_train_loss": 4.992288589477539, "final_val_loss": 4.879228965097212, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.453152656555176, "val_loss": 5.382352503829115}, {"learning_rate": 0.00023278423883243347, "step": 5907.0, "tokens_seen": 60015120.0, "train_loss": 5.515225887298584, "val_loss": 5.384209485692302}, {"learning_rate": 7.220675640846374e-05, "step": 7876.0, "tokens_seen": 80020160.0, "train_loss": 5.525251388549805, "val_loss": 5.312784014286332}, {"learning_rate": 1e-05, "step": 9843.0, "tokens_seen": 100004880.0, "train_loss": 5.490428924560547, "val_loss": 5.2701041966285604}, {"learning_rate": 0.0001621318144210678, "step": 19686.0, "tokens_seen": 200009760.0, "train_loss": 5.301837921142578, "val_loss": 5.005851191516936}, {"learning_rate": 1e-05, "step": 29529.0, "tokens_seen": 300014640.0, "train_loss": 4.992288589477539, "val_loss": 4.879228965097212}], "parameter_count": 51037745, "peak_vram_mb": 4507.6015625, "pure_train_tok_per_sec": 68884.05176542787, "step_time_mean_ms": 147.49422746789105, "step_time_median_ms": 145.94350001425482, "train_tokens_seen": 300014640}
+WAVE6_LOCAL_CONT300_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave6_multiscale_20260604\wave6_host2080_multiscale_stride4_continue300m\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 9843,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 9843,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m",
+    "resume_checkpoint": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt",
+    "run_name": "wave6_host2080_multiscale_stride4_continue300m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 29529,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.020877781164,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m\\checkpoint.pt",
+    "final_train_loss": 4.992288589477539,
+    "final_val_loss": 4.879228965097212,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.453152656555176,
+        "val_loss": 5.382352503829115
+      },
+      {
+        "learning_rate": 0.00023278423883243347,
+        "step": 5907.0,
+        "tokens_seen": 60015120.0,
+        "train_loss": 5.515225887298584,
+        "val_loss": 5.384209485692302
+      },
+      {
+        "learning_rate": 7.220675640846374e-05,
+        "step": 7876.0,
+        "tokens_seen": 80020160.0,
+        "train_loss": 5.525251388549805,
+        "val_loss": 5.312784014286332
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 9843.0,
+        "tokens_seen": 100004880.0,
+        "train_loss": 5.490428924560547,
+        "val_loss": 5.2701041966285604
+      },
+      {
+        "learning_rate": 0.0001621318144210678,
+        "step": 19686.0,
+        "tokens_seen": 200009760.0,
+        "train_loss": 5.301837921142578,
+        "val_loss": 5.005851191516936
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 29529.0,
+        "tokens_seen": 300014640.0,
+        "train_loss": 4.992288589477539,
+        "val_loss": 4.879228965097212
+      }
+    ],
+    "parameter_count": 51037745,
+    "peak_vram_mb": 4507.6015625,
+    "pure_train_tok_per_sec": 68884.05176542787,
+    "step_time_mean_ms": 147.49422746789105,
+    "step_time_median_ms": 145.94350001425482,
+    "train_tokens_seen": 300014640
+  }
+}
+
+WAVE6_LOCAL_CONT300_DONE run=wave6_host2080_multiscale_stride4_continue300m

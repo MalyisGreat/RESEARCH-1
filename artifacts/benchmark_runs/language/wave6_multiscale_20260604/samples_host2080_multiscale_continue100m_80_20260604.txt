@@ -1,0 +1,445 @@
+LongSeq checkpoint expanded samples
+{
+  "checkpoint": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt",
+  "step": 9843,
+  "tokens_seen": 100004880,
+  "count": 80,
+  "max_new_tokens": 90,
+  "device": "cuda"
+}
+
+=== sample 01 temp=0.65 top_k=40 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is the best way to find out how much of their lives.
+When a person is the first time that the people who are in the world are most likely to be.”
+This is a very good example of what is a very important.
+The first step is to be used to describe the same or an object.
+The first one, on the other hand, can be used in a wide range of resources, or the amount of
+
+=== sample 02 temp=0.75 top_k=50 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that in which the system is very important and how it is, because in our universe is the same; it is not true, but the more "white" is no longer an offence. The true name is that the same is a sort of an expression of the one being of the 'interference'.
+A second example of this point is the word "an" of a 'stressed' in which it comes to
+the word ‘a
+
+=== sample 03 temp=0.85 top_k=64 prompt='Question: What is machine learning? Answer:' ===
+Question: What is machine learning? Answer:
+- What is the truth of the same word, in fact, his words, or
+- "I have the right to God?
+Linda is in the holy Father of God, there are some words of the Holy Spirit. (3) There are two different reasons, and all, is the time of God, in a different way to make a kind of responsibility, not even better, and all who is being, they are that
+
+=== sample 04 temp=0.95 top_k=80 prompt='Question: Why do plants need sunlight? Answer:' ===
+Question: Why do plants need sunlight? Answer:
+A "giversibility: When a young people, too fast enough. This happens, she has no such name because this doesn’t
+from the most common kind, the great people of the earth that he can help with it what he says.
+With the old-dayer?
+Bever is a good idea about the amount of light.
+- Can you will call a computer. If you are a very large problem
+
+=== sample 05 temp=0.65 top_k=40 prompt='Explain the difference between training loss and validation loss.' ===
+Explain the difference between training loss and validation loss.
+This is what happens when the student responds to the public. For example, if you have a computer, the person who is in response to the right hand, you can do to use a new book that will be able to give a more efficient way to meet your own computer.
+If you are getting caught on the internet, you need to do something.
+We’ll look at the time of your browser you have.
+Your
+
+=== sample 06 temp=0.75 top_k=50 prompt='A small neural network can learn' ===
+A small neural network can learn how to get a link between the two-dimensional process.
+Some of the following section is the most common method for the use of a particular component and then write out the following. As the data from the database, the file may be used to determine whether the file is released is used. The file is used as using a system, the user will be used to describe the method to use it into the file.
+4. The user must
+
+=== sample 07 temp=0.85 top_k=64 prompt='Once upon a time in a small town' ===
+Once upon a time in a small town, the number of people who had received a time while their lives were removed from the world.
+A few months later, the war was not allowed to get to the rest of the family.
+“The researchers have looked at the most intense and most recent events in the study. For more details, it is not a problem from the need to read data from a number of points.
+By the time the next step is as clear where
+
+=== sample 08 temp=0.95 top_k=80 prompt='The old library at the edge of the city' ===
+The old library at the edge of the city, who was not involved. The great industry is the largest of the world’s most important. In Britain, I just was able to get a strong reason-party program. Our first generation of you and your own online or other resources, you can see this chapter, or "know" as a tool on a personal website that are a person to "know" or "CAS" and "one," and “How long ago
+
+=== sample 09 temp=0.65 top_k=40 prompt='The captain looked at the map and realized' ===
+The captain looked at the map and realized that, in this case, the team of the UN Secretary of Defense as a "frequently") in nature."
+The team was used to make a number of different species that they were not all the same as their own.
+When he also had a long way to keep the power to his own life in the morning.
+The new government decided to be a place of a man for him to go to a man in the world, and
+
+=== sample 10 temp=0.75 top_k=50 prompt='During the experiment, the scientist noticed' ===
+During the experiment, the scientist noticed that the majority of the government has been a good news for their use.
+The U.S. Supreme Court would have chosen to use the number of other languages.
+The researchers found that the United States has become the highest priority to the first and most common causes of the disease. It is, however, there is an extensive effect on the world and the best part.
+“I have all seen what we see, I have found
+
+=== sample 11 temp=0.85 top_k=64 prompt='Python function to add two numbers:' ===
+Python function to add two numbers: in that respect, we can only find that all students should consider the best results that are more often in the environment.
+"The United States is now a critical component of the disease has been studied.
+The second-line system is often used in many regions of the body and not being used as a "natural effect" that can increase the use of protein and may also be used to treat any of the immune system, the immune system is
+
+=== sample 12 temp=0.95 top_k=80 prompt='Here is a short recipe for tomato soup:' ===
+Here is a short recipe for tomato soup: a single two-year session, and the real number of the four-year history of the next century.
+The work was designed by Domus, which is the only way to get home. To see the two main reasons for the one who eats this year that there are two other types of care may be based on all other ways in which patients are the most important factor in a very similar way.
+Drinking a team conducted by
+
+=== sample 13 temp=0.65 top_k=40 prompt='The main causes of climate change include' ===
+The main causes of climate change include a new species of the land and the first part of the nation. In this case, a number of other reasons, the new study was used to make the number of these sites.
+It was not a case study of the U.S. Army.
+The next year, a large number of men to give the total income of the state’s most important and the international crisis.
+The U.S. government has been a
+
+=== sample 14 temp=0.75 top_k=50 prompt='A good way to test a hypothesis is' ===
+A good way to test a hypothesis is to have an increase in a number of reasons. If any, a person sees you would like to go to you.
+"It is essential to use that you can do the amount of water that your home can be placed on the inside.
+- A catheter is not a problem, you will have a thin tube that can cause a good chance of your doctor.
+- Trouble your doctor may help prevent the disorder?
+- Do not
+
+=== sample 15 temp=0.85 top_k=64 prompt='The patient reported mild symptoms and' ===
+The patient reported mild symptoms and research have an increased risk of heart disease. The team of these factors occur in the brain’s disease.
+One of the types of cancer is a risk of developing heart disease and the severity of the body, the brain is not in the brain or condition.
+The most common causes of the person's skin cells are common:
+- Trouble and heart problems for the medical condition of the body (e.g., the lungs and infection
+
+=== sample 16 temp=0.95 top_k=80 prompt='The history of mathematics includes' ===
+The history of mathematics includes two years. It shows that in the wild? He noted that they are too rare to be seen, who must be seen, often that they are exposed to all the poor. But of course, this is not the case it might be seen in life.
+“If the people are still missing between their culture and people of its life.
+On a short-term figure with this one is to know what it is about making things possible
+
+=== sample 17 temp=0.65 top_k=40 prompt='If a ball is dropped from a tower' ===
+If a ball is dropped from a tower on the Internet. If you need to create a “waste”.
+"The idea that the same time as a man should be done to get the same thing to be able to do.
+However, the researchers need to be the most interesting thing to make a plan.
+In order to create an interactive account of other species of the world, and is a good choice of any language and not in the future.
+The
+
+=== sample 18 temp=0.75 top_k=50 prompt='The team built a simple robot that' ===
+The team built a simple robot that is the one who has already been said to be "a small, but we are all so much the best possible effect? What makes this problem, we must be glad to be something better, and the fact that the story is the idea of a child, it is not the only thing. It’s not a good idea to do is that it is not a good thing. I think, but I don’t think that this
+
+=== sample 19 temp=0.85 top_k=64 prompt='News report: Local officials announced' ===
+News report: Local officials announced it was almost impossible to go straight back-to-one.
+The number of Americans who ate the first-day American population was the first step in the last century.
+The USGS data were conducted to maintain the state to a global scale.
+He was able to help her and be used to describe the number of citizens and to learn about the same and the process,” said Dr. Leafett, director of the International
+
+=== sample 20 temp=0.95 top_k=80 prompt='The meaning of life is' ===
+The meaning of life is to produce a large number of animals whooping coughs of the world’s, and there would be a good solution for the years, and we could afford their parents.<|endoftext|>
+
+=== sample 21 temp=0.65 top_k=40 prompt='Step 1: collect the data. Step 2:' ===
+Step 1: collect the data. Step 2:00-5.
+- The “The most important,” the U.S. Department of Agriculture and Environmental Health News, Texas Press and Technology. http://www.nasa.org/cgi/online/2007/2005/08/06/2011/.<|endoftext|>
+
+=== sample 22 temp=0.75 top_k=50 prompt='A concise summary of this article:' ===
+A concise summary of this article: a student's report in the journal Nature, the University of Florida, have made a "green" to the "P" of the system," in the United States, with a new home of the “Betsy’s.”
+The first two species of the island was a high-risk. The second, who was elected president of the National Academy of Sciences. The study was to develop and promote the establishment of the Federal
+
+=== sample 23 temp=0.85 top_k=64 prompt='To debug a failing training run, first' ===
+To debug a failing training run, first step is used. That is why we don't know exactly why the project has been told by the person who is not simply a change in the case of our planet?
+This is, if the government should be found here as a teacher or a history of the history of a particular world," he said.
+A. We hope how a specific way in which the Bible is "not just for the time of society.”
+“
+
+=== sample 24 temp=0.95 top_k=80 prompt='The most important limitation of this model is' ===
+The most important limitation of this model is an important solution to the market, which are necessary.
+The "Seed" was then used to determine the extent to the development of a new drug that shows how the system would be the second most serious threat to the world may not be able to use the structure to the existing system in which the patient does have to be able to increase, as if the new approach should be needed for those on the next best choices, as you get a
+
+=== sample 25 temp=0.65 top_k=40 prompt='A careful scientist should avoid' ===
+A careful scientist should avoid the same as the “satellite” of the International Space Station. The U.S. Department of Energy’s Hospital in the US and the Department of Technology and Human Services Administration (WHO)
+- The Government of the U.S. Department of Energy.
+- The National Center for Research, Research and Policy Studies,
+- The American Cancer Society.
+- "The American Society of America's Research Group (NI
+
+=== sample 26 temp=0.75 top_k=50 prompt='The city council voted to approve' ===
+The city council voted to approve the first and the more accurate and the impact of the country, it is important to be very similar since the U.S. Environmental Protection Agency (CSAN) was not part of the disease.
+In the study, the National Institute of Health has developed high school and the UNFCCC level, and were developed by the researchers that people with ASD. The number of years in the United States have now emerged in the United States, where she
+
+=== sample 27 temp=0.85 top_k=64 prompt='The following table compares the results:' ===
+The following table compares the results: “That means they don’t tell the “interling” or “A”, “deter”, “I’m so, I have ever seen a lot of his life,” or “s-world,” the “Mention of the first,” that is an unkind of the individual and the most recent, the study used, is a
+
+=== sample 28 temp=0.95 top_k=80 prompt='Write a polite email asking for more information:' ===
+Write a polite email asking for more information:
+With these people who use my colleagues can be used to measure. Some doctors will include:
+- In some species, which could be taken in the form of heart-made material to patients in the body. The surgeon says the case in the process is no longer the source for a certain time when there can be no exception. It will be to find and re-atry.
+In addition to the government's history, it uses "
+
+=== sample 29 temp=0.65 top_k=40 prompt='The theorem can be explained with a simple example:' ===
+The theorem can be explained with a simple example:
+- The study of the U.S. Centers for Disease Control and Prevention.
+- If you have a strong role in the future, and a team of students (1) and other non-regulatory system.
+A number of people are the first time we will never be encouraged to get the following:
+- The results can be used in the area of the paper.
+- In the context of the
+- If you are
+
+=== sample 30 temp=0.75 top_k=50 prompt='When the spacecraft entered orbit,' ===
+When the spacecraft entered orbit, the U.S. economy and the United States and is now available. The agency was the last step in the city of the United States, and in the area, in 1874, the National Park Service. The majority of the country was introduced by the federal government.
+The World Bank was officially adopted in 1970, the National Association for the publication, which aims to be paid on this state, the committee's new approach, and the report
+
+=== sample 31 temp=0.85 top_k=64 prompt='A farmer wants to increase crop yield by' ===
+A farmer wants to increase crop yield by the National Geographic Center in Japan, which was the first to go to Canada, and the government's leading private sectors, and the federal government could be implemented. While the first was then introduced an important group of people living in the nation's largest commercial industry, and a much more fully increase. The population was made. From the war, a court-five years, were the official government-making.
+Now what is now possible to address our
+
+=== sample 32 temp=0.95 top_k=80 prompt='The data suggest that the original hypothesis' ===
+The data suggest that the original hypothesis is a new way to make sure this was done to see it. This is a major part, the researchers said. “It’s a good job between young people with their own social and religious beliefs that can help, and learn about. Let’s not only does this because in order to keep kids. That's just something very much more difficult to do with the people of the world.
+But a question and an individual
+
+=== sample 33 temp=0.65 top_k=40 prompt='The program crashed because' ===
+The program crashed because it was not a surprise to the original "diss of the "rese" of the Bible," and later the world's most difficult to understand the most of the most powerful in the world, but at least in the first part of the United States. It is estimated that the United States would be a great-American country and a higher cost of the U.S. economy.
+The United States government, the government's largest industrial sector
+
+=== sample 34 temp=0.75 top_k=50 prompt='In plain English, validation loss measures' ===
+In plain English, validation loss measures, one of seven-acre and other things that are all the key, the world has become so easy to be the most efficient and effective.
+The world's main goal is to protect all the benefits it is that people have to be in danger of any other world.
+This is the first time that we have to understand the results of a specific medical condition in the past few days. This is how our body is required. The results of
+
+=== sample 35 temp=0.85 top_k=64 prompt='A child asked why the sky is blue. The teacher said' ===
+A child asked why the sky is blue. The teacher said that it is the most important of the people, but others were more like the other works of the country.
+The first thing that he was in a country of the conflict with the death of the Lord God as a man, was to the general belief that he was forced to pay at each day. This became one of the most popular vote for the first time in this century and did not see the first time. In fact, he joined the
+
+=== sample 36 temp=0.95 top_k=80 prompt='The restaurant menu included' ===
+The restaurant menu included a wide variety of different materials that are a series of examples of the country's "inclusive in different situations.
+The law prohibits these are not always a matter of different kind, but it cannot be necessary. And this is an indication of truth is the most dangerous thing.” In addition to the present invention in the United States has been able to work with their own education programs in a comprehensive introduction to the current state of the State College
+
+=== sample 37 temp=0.65 top_k=40 prompt='The economic report found that' ===
+The economic report found that in the mid-scale area of the world, and the highest levels were not enough.
+The study was built on the southern hemisphere, with the USGS report, the University of Colorado, the National Institutes of Health, and the United States was the largest national government to protect the country's financial institutions that enable the environment. The U.S. government officials and the United Nations Office (DHA)
+In addition to the national government,
+
+=== sample 38 temp=0.75 top_k=50 prompt='A useful checklist for evaluating model samples is' ===
+A useful checklist for evaluating model samples is to be a major challenge for the use of an animal’s population and that is not an important factor. But that’s time to see what constitutes a woman is a good choice for you. The story of what we get to the next place?
+In addition to a good condition, you can't make our own.
+I don't know what to do? Well, a person could be a lot more successful. You don
+
+=== sample 39 temp=0.85 top_k=64 prompt='The river flowed through the valley and' ===
+The river flowed through the valley and other cities of the water in the country. The next generation of the United States in the state of American military operations. However, the population changes that had been completed, the World Bank may continue to receive the state of military operations. In 2006, the government began to fight the development of the industry that his decision was well understood. In 1781, the Jews were the most remarkable of the West Coast, also in an international government of the public
+
+=== sample 40 temp=0.95 top_k=80 prompt='The engineer opened the log file and saw' ===
+The engineer opened the log file and saw the Internet, only a year could be made of three different sources of the United States. Furthermore, it is not "long" has seen in the context of our religion. The government is to be able to determine the nature of the world. One would have brought the fact that this might not necessarily endorse, but also to establish a long time. We have made a very significant improvement on the subject, it is neither a number of times, not
+
+=== sample 41 temp=0.65 top_k=40 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is to develop a large extent, a “discovering” and “the first-century.” He told the "The Lord of the king of God’s life, and that was that the king of the world were only one of his own, and that which they were in a great point of worship.
+The Christian historian of the city was to have been found in the same life at the end of the century
+
+=== sample 42 temp=0.75 top_k=50 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that the government has become a significant effect on the “bad” that’s an overall number of people than any other person. The authors say the project does not mean that the idea is to be as difficult to describe the real world.
+In some cases, the two of the word "Evalbard," the “Nomac” in the world, the "Nanian" that the first and most popular of
+
+=== sample 43 temp=0.85 top_k=64 prompt='Question: What is machine learning? Answer:' ===
+Question: What is machine learning? Answer:
+At the end of the century, they didn't learn how to bring in a more common way.
+To answer the real people in the past year, in the case of the
+future that, when they're
+not even the same amount
+that in the midst of the country
+by the first date. Although the other
+after the
+no, however, the world is
+two of the
+the
+southeast
+You will
+
+=== sample 44 temp=0.95 top_k=80 prompt='Question: Why do plants need sunlight? Answer:' ===
+Question: Why do plants need sunlight? Answer: “Your brain’s just how much the water is called to determine the baby’s lifetime.
+In the first section, the goal of a human-based condition are
+most important as it has been a small piece of all the elements in two sections of
+the brain, the new software, one does not move that these rules of the problem are not much harder.
+First, the reason for understanding which will result in
+
+=== sample 45 temp=0.65 top_k=40 prompt='Explain the difference between training loss and validation loss.' ===
+Explain the difference between training loss and validation loss.
+According to the study, the first and most recent study of the population, we have to be able to do the use of the world, and the risk factors to the use of human activity, and the most common causes of the patient. It is believed that this is a good thing to be used to predict the potential for human beings and is not a mistake. You can take a few hours before it is a nice example of your computer.
+
+=== sample 46 temp=0.75 top_k=50 prompt='A small neural network can learn' ===
+A small neural network can learn and make it easier for up to 12-3 days.
+In addition to the number of years that were not related to the same kind of change?
+That's about the new name of the human brain, a more complicated social structure, the value of the law and the other people.
+- A variety of theories of a society, of which would be
+and must be used as a way to the government and its
+that the name
+
+=== sample 47 temp=0.85 top_k=64 prompt='Once upon a time in a small town' ===
+Once upon a time in a small town, although it is an individual to work for the United States of the government of the country’s development has been considered a major hurdle in which he also came to the “Banks of Independence's
+- (7) is the first human being of the name and the "Achards" to "sister", and "fought", where."
+1. The first one-half of the two sets of the Church and
+
+=== sample 48 temp=0.95 top_k=80 prompt='The old library at the edge of the city' ===
+The old library at the edge of the city:
+Cranov, the most popular research that they are being asked to help the world. (This is a model, the team that is called the same name that would you look at all, since the other is that you'll be sure to perform, what is no longer in our case study so if you have a person with his wife before it will tell your friends on your own. If you need a child will be an opportunity to
+
+=== sample 49 temp=0.65 top_k=40 prompt='The captain looked at the map and realized' ===
+The captain looked at the map and realized that they are able to stop the quality of the world.
+Now that a new one can be a sign of the program.
+The answer is that the
+c. I think of it is a lot of time to be used in a variety of ways to create a particular person's feelings and that the child is in a very exciting part of the body, which is a very important factor.
+This information is used to find the type of
+
+=== sample 50 temp=0.75 top_k=50 prompt='During the experiment, the scientist noticed' ===
+During the experiment, the scientist noticed that the city has become a major threat to the past, and that our communities have to be achieved.
+The first man of the term "Einstein" was in the Middle East where they came to the state of the city.
+The British rule,
+the same group of people who were to be regarded as in a particular, he would also have to be a "stake".
+As we are talking about the human soul, we
+
+=== sample 51 temp=0.85 top_k=64 prompt='Python function to add two numbers:' ===
+Python function to add two numbers:
+(n+0-5:00:26 AM
+The latter is the original idea that we have to keep the whole story.
+- The only thing about some good works, the
+- the object the whole class for a good question,
+- how to make a family history of it when making a person who wishes to the whole thing. The story is, therefore, because a person can be a great deal of life not yet
+
+=== sample 52 temp=0.95 top_k=80 prompt='Here is a short recipe for tomato soup:' ===
+Here is a short recipe for tomato soup: If no scientific process is the first method for having a chance of knowledge. The way you have a negative answer, you can help students build a good job.
+It is worth that you'd be a great deal.
+- The child has an increased risk of vitamin E. coli a person is exposed to such a doctor, or a doctor may add up to 1 year periods.
+The patient is most important since they can make no significant difference
+
+=== sample 53 temp=0.65 top_k=40 prompt='The main causes of climate change include' ===
+The main causes of climate change include:
+"The largest and body part of the US Department of Health and Technology in the United States. The federal government will be built at www.wikipedia.org/
+A.D. Department of Energy, DC: http://www.studymode.com/article/3.
+- "The most exciting to implement the U.S. Department of Education, The National Institute of Medicine, University of California, Berkeley, and the
+
+=== sample 54 temp=0.75 top_k=50 prompt='A good way to test a hypothesis is' ===
+A good way to test a hypothesis is about 11.5 billion cubic metres. The company said that the first half of the two million people, many of the other one in the same area could be used for the long-term future.
+The scientists are not the first time that these are the different types of the test data.
+The most common form of this approach is a simple concept.
+The term “a-up” or “Curt”,
+
+=== sample 55 temp=0.85 top_k=64 prompt='The patient reported mild symptoms and' ===
+The patient reported mild symptoms and the following reasons why you get one of his own, the first time the way they’re ready to be a lot of time,” said the idea of the “O' is the story of the brain's personal mind in the mind.”
+The last ten years by an English-year-old girl in a country with a more diverse and no-initiated. The same way to be seen with any reason
+
+=== sample 56 temp=0.95 top_k=80 prompt='The history of mathematics includes' ===
+The history of mathematics includes an interactive method that the government’s “all of the world” and was set in this way it will also have a difference in your mind.”
+"We understand that ‘the same one is that one can be one of that. [the second version, I suppose you will look for my hand, but you’re always to the same. The person who has not been the subject of God. It
+
+=== sample 57 temp=0.65 top_k=40 prompt='If a ball is dropped from a tower' ===
+If a ball is dropped from a tower in the same direction and the other way, the researchers said.
+And it is no longer possible to stop the area of the air.
+- The idea of the new way, I am talking to tell them, and then I would see a lot of time. I have not yet been in the same way, and the word is that it is my life, the same thing.
+And you need to be a real difference and a number
+
+=== sample 58 temp=0.75 top_k=50 prompt='The team built a simple robot that' ===
+The team built a simple robot that allows the use of the problem.
+The most common type of protein that occurs when the infection is affected by the symptoms of the artery.
+- The blood and physical activity is caused by the disease (and sometimes in the blood) are often the most popular form of the body.
+Cotton: What is the disease by the nerve cell, and it is
+remaining the cause of the physical symptoms
+- Heart disease - a person
+
+
+=== sample 59 temp=0.85 top_k=64 prompt='News report: Local officials announced' ===
+News report: Local officials announced that the majority of government by the United States, the United States Department of Labor in the U.S. Department of Education and the United States, and the United States and the Bureau of Education. The United States government has already begun to reduce their efforts to work to develop.
+For more information on the Government and their schools are included:
+2. Why do the data and skills are to use the following:
+- Make sure that the
+
+=== sample 60 temp=0.95 top_k=80 prompt='The meaning of life is' ===
+The meaning of life is a member of his post in the U.S., because it brings to his or her to keep it. They also provide a number of real works.
+The "green" when the Lord hath the man was to take hold on the earth at which he would be well worth the entire home. The term was only the Lord is an important site of the
+of the first half are the oldest,000 people had to be the last and
+
+
+=== sample 61 temp=0.65 top_k=40 prompt='Step 1: collect the data. Step 2:' ===
+Step 1: collect the data. Step 2:50, 2009)
+- Fruits, J. (2012)
+- ↑ S. (2008). "A list of the European Union". Retrieved 2012-06-07.
+- "Fisher", "Museum" (1882-1865)
+- David Zieve, J. (2010). "It's a great way to understand the first,” she said. "We don't know that if you're
+
+=== sample 62 temp=0.75 top_k=50 prompt='A concise summary of this article:' ===
+A concise summary of this article:
+We think it's not possible to have an even better understanding of the world’s rights of a new nation.
+The second of the history of this discovery, of which it is often made, but the importance of all the reasons expressed in the present, being a few and the truth of the "a feeling of the Holy Spirit"; which, the humanist. This is true for an instance of the soul of the Father, and
+
+=== sample 63 temp=0.85 top_k=64 prompt='To debug a failing training run, first' ===
+To debug a failing training run, first-aged parents, while others, to be able to make better understanding of their time and to play their own personal or their own knowledge with feelings.
+You’re not aware of God’s experience, the people who have been, just as saying “unavoiding” that the students who believe it (and perhaps the words that's the truth or not it is more difficult to use of our present order. The reason
+
+=== sample 64 temp=0.95 top_k=80 prompt='The most important limitation of this model is' ===
+The most important limitation of this model is to say: How about the nature and the most common ones in the area of the Earth-state function of the body and the entire universe. It is best suited to such its effects, and the
+substantial numbers, a system must be made to make it a clear way to the specific elements of the file:
+2.||- The amount of "turtle" is used as a means of the text in the name of the
+
+
+=== sample 65 temp=0.65 top_k=40 prompt='A careful scientist should avoid' ===
+A careful scientist should avoid having any other way. The first thing to be the first, the only way to the new, you’re asking a different source of learning and a simple, that is, in fact, or to the fact that the government could be a "brief" of the subject" (in the same as his most important species of the name of the Lord.
+The fact that the German government was established in the early part of the American
+
+=== sample 66 temp=0.75 top_k=50 prompt='The city council voted to approve' ===
+The city council voted to approve the effect of the United States, the U.S. economy.
+The two government to the military government and the government would have been more likely to have the highest levels of the country, as well as the economic importance of their own economy. It is evident that the discovery of the world should be the most important of the government.
+The United States will be to be a priority to the national state.
+The government, published in the
+
+=== sample 67 temp=0.85 top_k=64 prompt='The following table compares the results:' ===
+The following table compares the results:
+- The New York Times in which a person who knows all the other, but it was so hard that it would be worth the same as to see the word of the word of the man," says the Church.
+This is the best time to be one of the most difficult. It was also the question for them.
+"The best way to know how to do with
+the reason that it was not a problem of the two to
+
+=== sample 68 temp=0.95 top_k=80 prompt='Write a polite email asking for more information:' ===
+Write a polite email asking for more information: as a group of people in a community? How can I be proud that you have already provided
+and in teaching, just like those who can be considered for a long term and they may well lose their actions on it, or they do better but not going to.”
+Since then there's a big deal with our nation.
+The more people had had an attack on this task, as long as you had to be made of nothing
+
+=== sample 69 temp=0.65 top_k=40 prompt='The theorem can be explained with a simple example:' ===
+The theorem can be explained with a simple example:
+- A recent study in the journal Science, a scientist's role in the study.
+"The researchers are not currently available for a child's brain, and the number of people who are not taking a lack of disability, and many researchers have to become familiar with their patients.
+One of the most important thing for many generations.
+The researchers found that the virus had been found in those that are most commonly used and other common types of
+
+=== sample 70 temp=0.75 top_k=50 prompt='When the spacecraft entered orbit,' ===
+When the spacecraft entered orbit, the scientists who made the first in a given age with the time of the image, the first three or four to the current in the line.
+"The right of the time, the one is
+not-mixed by the
+same the side of it.
+The following information is a set of text-up of the web pages, on the right side.
+- This is a way to create
+make and you can put your
+
+=== sample 71 temp=0.85 top_k=64 prompt='A farmer wants to increase crop yield by' ===
+A farmer wants to increase crop yield by the scientists and how it should be used to test the needs of their own, but because it were, he was known for the future for the new study.
+On June 2003, a research scientist at the University of Edinburgh.<|endoftext|>
+
+=== sample 72 temp=0.95 top_k=80 prompt='The data suggest that the original hypothesis' ===
+The data suggest that the original hypothesis is that most people, the brain receives a number of specific medical care.
+In the earliest stages, the virus can be found in the same way as if parents have left the “the very beginning” would not be limited to an average population of energy.
+“We don’t know that the entire day is the use of something new that you can access your home because, too.
+Once the doctor will make you
+
+=== sample 73 temp=0.65 top_k=40 prompt='The program crashed because' ===
+The program crashed because of the total number of women who were born in Europe.
+The researchers found that the U.S. population is $3.00,000,000 per cent.
+The study was published in the journal PLoS Research Institute.
+The research will be on the first quarter-time program, which uses an independent, the first step is to develop a new treatment that is not a factor in the body.
+If the person is the most
+
+=== sample 74 temp=0.75 top_k=50 prompt='In plain English, validation loss measures' ===
+In plain English, validation loss measures to be done with each other to another, because it is difficult to understand the role of the other.
+A very specific application of a “perform”” and “toxic” the person is always an infinite way and to make sure that it should be difficult to make a better job or an environment. The results of the results are to say about the importance of a new way to maintain the same source of information
+
+=== sample 75 temp=0.85 top_k=64 prompt='A child asked why the sky is blue. The teacher said' ===
+A child asked why the sky is blue. The teacher said they’re going to meet the environment to go through the U.S.”
+But the program was first completed. In January 2006, it was estimated that when people were given a significant degree of time to keep the next generation of a country that the group can be found in the same way. One hundred years later, the government has gone through the American army.
+This was a few years ago, and some other group members
+
+=== sample 76 temp=0.95 top_k=80 prompt='The restaurant menu included' ===
+The restaurant menu included her name and other European people, as well as well known as the way to preserve the local farmers who have reached a much more powerful effort. The organization continued to focus on the basis of the new class. It is a great way to help people respond at their own lives. They’re now because they are not in the world.’’s and easy to do so, and will it find evidence of a healthy life.
+
+=== sample 77 temp=0.65 top_k=40 prompt='The economic report found that' ===
+The economic report found that the government’s first aid in the United States and its development. The project is to provide a variety of technical and national and the development of the International Water Act. The government is to ensure that the data are not intended to be able to be able to use the “new,” which has been done on the other hand, of course, and therefore they would not be seen in the process.
+The first two years after
+
+=== sample 78 temp=0.75 top_k=50 prompt='A useful checklist for evaluating model samples is' ===
+A useful checklist for evaluating model samples is one of the most common cancers of the most important factors for the vaccine. The study suggested that the drug is at a greater risk of vitamin D. The more frequent form of blood is the most common cause of the treatment and it is not used to treat the disease. Some patients should have been removed from the heart.
+Fracticosteroids have been found in a number of types of disease is associated with a treatment plan for the condition.
+
+=== sample 79 temp=0.85 top_k=64 prompt='The river flowed through the valley and' ===
+The river flowed through the valley and is a human being of certain human genome. The company’s efforts to make progress in terms of future changes in the world as they require. This can potentially support and useful. In this case, we should be aware of this important question are being used to determine the effect of language. The best way to know that any part of a particular method for students, the community which is currently the most powerful information of the original content or the page
+
+=== sample 80 temp=0.95 top_k=80 prompt='The engineer opened the log file and saw' ===
+The engineer opened the log file and saw the company with its energy source. The key rules for the field for any one, even if a country is at the command, the answer was also made. The number of units on the
+or the “possibility”.
+There will be few or be delivered to this purpose, where the people were used for, by putting their own duties and a few are not available in a manner that would probably be the only way that they

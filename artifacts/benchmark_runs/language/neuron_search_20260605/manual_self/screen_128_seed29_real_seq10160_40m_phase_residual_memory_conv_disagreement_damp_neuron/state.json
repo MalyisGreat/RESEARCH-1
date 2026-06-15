@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_disagreement_damp_neuron\\checkpoint.pt",
+  "final_train_loss": 7.133666038513184,
+  "final_val_loss": 7.049205162956959,
+  "peak_vram_mb": 4777.5322265625,
+  "pure_train_tok_per_sec": 72102.39324920178,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_disagreement_damp_neuron\\result.json",
+  "run_name": "screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_disagreement_damp_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

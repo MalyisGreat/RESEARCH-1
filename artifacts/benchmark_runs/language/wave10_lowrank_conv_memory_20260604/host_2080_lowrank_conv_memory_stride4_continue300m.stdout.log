@@ -1,0 +1,33 @@
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+RESUMED step=9843 tokens=100004880
+START run=wave10_host2080_lowrank_conv_memory_stride4_continue300m device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 seq=10160 steps=29529
+TRAIN step=10000/29529 tokens=101600000 loss=5.1148 lr=0.000457348 pure_tok_s=67075
+TRAIN step=10500/29529 tokens=106680000 loss=5.2702 lr=0.000443462 pure_tok_s=67127
+TRAIN step=11000/29529 tokens=111760000 loss=5.3942 lr=0.000429171 pure_tok_s=67123
+TRAIN step=11500/29529 tokens=116840000 loss=5.1330 lr=0.000414517 pure_tok_s=67159
+TRAIN step=12000/29529 tokens=121920000 loss=5.3702 lr=0.000399542 pure_tok_s=67079
+TRAIN step=12500/29529 tokens=127000000 loss=5.2588 lr=0.00038429 pure_tok_s=66936
+TRAIN step=13000/29529 tokens=132080000 loss=5.2401 lr=0.000368806 pure_tok_s=66873
+TRAIN step=13500/29529 tokens=137160000 loss=5.3676 lr=0.000353135 pure_tok_s=66871
+TRAIN step=14000/29529 tokens=142240000 loss=5.1906 lr=0.000337324 pure_tok_s=66891
+TRAIN step=14500/29529 tokens=147320000 loss=5.1240 lr=0.000321417 pure_tok_s=66982
+TRAIN step=15000/29529 tokens=152400000 loss=5.1744 lr=0.000305463 pure_tok_s=67064
+TRAIN step=15500/29529 tokens=157480000 loss=5.2267 lr=0.000289507 pure_tok_s=67152
+TRAIN step=16000/29529 tokens=162560000 loss=4.7549 lr=0.000273597 pure_tok_s=67226
+TRAIN step=16500/29529 tokens=167640000 loss=4.9582 lr=0.000257778 pure_tok_s=67307
+TRAIN step=17000/29529 tokens=172720000 loss=4.9256 lr=0.000242098 pure_tok_s=67367
+TRAIN step=17500/29529 tokens=177800000 loss=4.7254 lr=0.000226602 pure_tok_s=67414
+TRAIN step=18000/29529 tokens=182880000 loss=5.1282 lr=0.000211336 pure_tok_s=67455
+TRAIN step=18500/29529 tokens=187960000 loss=5.1086 lr=0.000196343 pure_tok_s=67435
+TRAIN step=19000/29529 tokens=193040000 loss=4.9570 lr=0.000181669 pure_tok_s=67438
+TRAIN step=19500/29529 tokens=198120000 loss=4.8573 lr=0.000167356 pure_tok_s=67435
+EVAL step=19686/29529 tokens=200009760 train=5.1144 val=4.8113 eval_s=1.4
+TRAIN step=20000/29529 tokens=203200000 loss=5.9004 lr=0.000153445 pure_tok_s=67452
+TRAIN step=20500/29529 tokens=208280000 loss=4.7878 lr=0.000139979 pure_tok_s=67487
+TRAIN step=21000/29529 tokens=213360000 loss=4.7889 lr=0.000126995 pure_tok_s=67523
+TRAIN step=21500/29529 tokens=218440000 loss=4.7687 lr=0.000114533 pure_tok_s=67581
+TRAIN step=22000/29529 tokens=223520000 loss=4.6362 lr=0.000102628 pure_tok_s=67557
+TRAIN step=22500/29529 tokens=228600000 loss=4.7840 lr=9.1315e-05 pure_tok_s=67358
+TRAIN step=23000/29529 tokens=233680000 loss=4.6592 lr=8.06279e-05 pure_tok_s=67211
+TRAIN step=23500/29529 tokens=238760000 loss=4.6981 lr=7.05976e-05 pure_tok_s=63277

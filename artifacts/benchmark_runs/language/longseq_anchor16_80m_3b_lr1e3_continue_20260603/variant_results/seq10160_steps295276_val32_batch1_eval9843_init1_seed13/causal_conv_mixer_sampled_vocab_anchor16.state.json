@@ -1,0 +1,14 @@
+{
+  "latest_learning_rate": 0.001,
+  "latest_train_loss": 4.596919059753418,
+  "latest_val_loss": 4.79719540476799,
+  "lr_schedule": "constant",
+  "peak_vram_mb": 3460.53564453125,
+  "pure_train_tok_per_sec": 87835.77544137705,
+  "status": "running",
+  "step": 217106,
+  "step_time_ms": 116.08569999225438,
+  "tokens_seen": 2205796960,
+  "train_steps": 295276,
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

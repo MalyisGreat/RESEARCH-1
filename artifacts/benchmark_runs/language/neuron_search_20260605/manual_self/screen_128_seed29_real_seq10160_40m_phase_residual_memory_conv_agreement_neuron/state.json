@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_agreement_neuron\\checkpoint.pt",
+  "final_train_loss": 7.133660316467285,
+  "final_val_loss": 7.049207873044051,
+  "peak_vram_mb": 4313.5205078125,
+  "pure_train_tok_per_sec": 70843.38524997958,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_agreement_neuron\\result.json",
+  "run_name": "screen_128_seed29_real_seq10160_40m_phase_residual_memory_conv_agreement_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

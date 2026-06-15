@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": null,
+  "final_learning_rate": 0.002,
+  "final_val_loss": 7.733556509017944,
+  "lr_schedule": "constant",
+  "peak_vram_mb": 1911.54150390625,
+  "pure_train_tok_per_sec": 279150.4686012465,
+  "result_path": "artifacts\\benchmark_runs\\language\\local_arch_split_20260603_convonly\\variant_results\\seq635_steps48_val16_batch8_eval24_init1_seed13\\causal_conv_mixer_sampled_vocab_anchor16.json",
+  "status": "completed",
+  "step": 48,
+  "tokens_seen": 243840,
+  "train_steps": 48,
+  "validation_loss_mode": "full",
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

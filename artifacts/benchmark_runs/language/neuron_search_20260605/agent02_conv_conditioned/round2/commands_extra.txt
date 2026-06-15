@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=-1 python -B -m py_compile E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\neuron_search_20260605\agent02_conv_conditioned\round2\agent02_conv_conditioned_trainer.py
+CUDA_VISIBLE_DEVICES=-1 python -B -c "import importlib.util,json,torch,pathlib,sys; load isolated trainer; instantiate baseline and candidate mini configs; run candidate features/logits CE backward; save gradient_param_check.json"

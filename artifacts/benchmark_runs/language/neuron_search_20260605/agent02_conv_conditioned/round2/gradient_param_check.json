@@ -1,0 +1,9 @@
+{
+  "finite_forward": true,
+  "finite_loss": true,
+  "finite_grads": true,
+  "loss": 5.568265914916992,
+  "grad_norm": 4.766638278961182,
+  "baseline_params": 609824,
+  "candidate_params": 613984
+}

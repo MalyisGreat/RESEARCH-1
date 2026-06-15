@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_boundary_residual_v1_phase_residual_memory_boundary_gate_neuron\\checkpoint.pt",
+  "final_train_loss": 8.72768783569336,
+  "final_val_loss": 10.83484841702031,
+  "peak_vram_mb": null,
+  "pure_train_tok_per_sec": 4386.3270447560235,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_boundary_residual_v1_phase_residual_memory_boundary_gate_neuron\\result.json",
+  "run_name": "screen_1_seed13_smoke_boundary_residual_v1_phase_residual_memory_boundary_gate_neuron",
+  "status": "completed",
+  "step": 1,
+  "tokens_seen": 255,
+  "train_steps": 1
+}

@@ -1,0 +1,11 @@
+{
+  "final_val_loss": 7.963529825210571,
+  "peak_vram_mb": 3331.79345703125,
+  "pure_train_tok_per_sec": 94965.0011270442,
+  "result_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602\\variant_results\\seq5080_steps24_val64_batch1_eval999_init0_seed17\\causal_conv_mixer_sampled_vocab_full4.json",
+  "status": "completed",
+  "step": 24,
+  "tokens_seen": 121920,
+  "train_steps": 24,
+  "variant": "causal_conv_mixer_sampled_vocab_full4"
+}

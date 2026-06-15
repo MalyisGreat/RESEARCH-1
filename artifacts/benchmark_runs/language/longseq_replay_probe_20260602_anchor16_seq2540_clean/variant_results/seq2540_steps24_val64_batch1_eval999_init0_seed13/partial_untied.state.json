@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602_anchor16_seq2540_clean\\variant_results\\seq2540_steps24_val64_batch1_eval999_init0_seed13\\partial_untied.checkpoint.pt",
+  "final_val_loss": 8.705521777272224,
+  "peak_vram_mb": 1915.4423828125,
+  "pure_train_tok_per_sec": 10528.737806430452,
+  "result_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602_anchor16_seq2540_clean\\variant_results\\seq2540_steps24_val64_batch1_eval999_init0_seed13\\partial_untied.json",
+  "status": "completed",
+  "step": 24,
+  "tokens_seen": 60960,
+  "train_steps": 24,
+  "validation_loss_mode": "full",
+  "variant": "partial_untied"
+}

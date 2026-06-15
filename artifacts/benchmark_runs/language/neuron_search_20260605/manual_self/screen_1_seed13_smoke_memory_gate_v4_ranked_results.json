@@ -1,0 +1,74 @@
+[
+  {
+    "block_type": "phase_residual_memory_bounded_gate_neuron",
+    "final_train_loss": 8.726419448852539,
+    "final_val_loss": 10.834728351293826,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 0.8281305238605419,
+    "tok_per_sec": 2740.1116891263882,
+    "val_delta_vs_baseline": 0.0038770357767745622
+  },
+  {
+    "block_type": "phase_residual_memory_sparse_gate_neuron",
+    "final_train_loss": 8.726419448852539,
+    "final_val_loss": 10.834728351293826,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.086935182214139,
+    "tok_per_sec": 3596.4424837566266,
+    "val_delta_vs_baseline": 0.0038770357767745622
+  },
+  {
+    "block_type": "phase_residual_memory_delta_gate_neuron",
+    "final_train_loss": 8.726419448852539,
+    "final_val_loss": 10.834728353163776,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.001995738057683,
+    "tok_per_sec": 3315.395526670671,
+    "val_delta_vs_baseline": 0.003877037646724091
+  },
+  {
+    "block_type": "phase_residual_memory_rms_gate_neuron",
+    "final_train_loss": 8.726419448852539,
+    "final_val_loss": 10.83472859064738,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.2343759760270574,
+    "tok_per_sec": 4084.2934093540575,
+    "val_delta_vs_baseline": 0.003877275130328428
+  },
+  {
+    "block_type": "phase_residual_memory_sparse_centered_gate_neuron",
+    "final_train_loss": 8.726998329162598,
+    "final_val_loss": 10.834848966785506,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 0.832574228730807,
+    "tok_per_sec": 2754.8149844490613,
+    "val_delta_vs_baseline": 0.003997651268454305
+  },
+  {
+    "block_type": "phase_residual_memory_bounded_centered_gate_neuron",
+    "final_train_loss": 8.726998329162598,
+    "final_val_loss": 10.834849443622664,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.053427685248342,
+    "tok_per_sec": 3485.573144366343,
+    "val_delta_vs_baseline": 0.003998128105612508
+  }
+]

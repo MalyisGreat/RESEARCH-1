@@ -1,0 +1,159 @@
+{
+  "benchmark": "language_partial_untied_muon_probe",
+  "comparison": {
+    "muon_minus_adamw_final_val_loss": 0.03404521942138672,
+    "muon_speed_ratio_vs_adamw": 0.5724682775860892
+  },
+  "config": {
+    "batch_size": 16,
+    "cache_dataset_on_device": true,
+    "cache_path": "artifacts\\benchmark_runs\\language\\partial_untied_muon_probe_synthetic_cache.pt",
+    "device": "cuda",
+    "dropout": 0.1,
+    "eval_batch_size": 32,
+    "eval_interval": 16,
+    "learning_rate": 0.002,
+    "muon_lr_multiplier": 0.5,
+    "muon_momentum": 0.95,
+    "muon_ns_steps": 5,
+    "partial_untied_tokens": 512,
+    "pin_memory": true,
+    "recurrent_embedding_dim": 144,
+    "recurrent_hidden_dim": 288,
+    "recurrent_memory_dim": 144,
+    "seed": 13,
+    "sequence_length": 63,
+    "train_blocks": 1024,
+    "train_steps": 64,
+    "use_amp": false,
+    "use_fused_adamw": true,
+    "val_blocks": 128,
+    "weight_decay": 0.0001
+  },
+  "fairness": {
+    "amp_disabled_for_optimizer_comparison": true,
+    "probe_only": true,
+    "same_batch_schedule": true,
+    "same_dataset": true,
+    "same_model_init": true,
+    "same_token_budget": true
+  },
+  "results": {
+    "adamw": {
+      "eval_overhead_seconds": 0.1242666999969515,
+      "final_val_loss": 7.591075658798218,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 7.680569648742676
+        },
+        {
+          "step": 16.0,
+          "tokens_seen": 16128.0,
+          "train_loss": 7.641423225402832,
+          "val_loss": 7.631952881813049
+        },
+        {
+          "step": 32.0,
+          "tokens_seen": 32256.0,
+          "train_loss": 7.628359794616699,
+          "val_loss": 7.621336460113525
+        },
+        {
+          "step": 48.0,
+          "tokens_seen": 48384.0,
+          "train_loss": 7.616869926452637,
+          "val_loss": 7.607982516288757
+        },
+        {
+          "step": 64.0,
+          "tokens_seen": 64512.0,
+          "train_loss": 7.582704067230225,
+          "val_loss": 7.591075658798218
+        }
+      ],
+      "initial_val_loss": 7.680569648742676,
+      "optimizer_report": {
+        "adamw_parameter_count": 1079250,
+        "fused": true,
+        "muon_parameter_count": 0,
+        "optimizer": "adamw"
+      },
+      "parameter_count": 1079250,
+      "peak_vram_mb": 119.7763671875,
+      "pure_train_time_seconds": 1.0457578000023204,
+      "pure_train_tok_per_sec": 61689.23626470379,
+      "step_time_mean_ms": 16.339965625036257,
+      "step_time_median_ms": 14.200599999639962,
+      "total_training_time_seconds": 1.170024499999272,
+      "train_tok_per_sec": 55137.30695386305,
+      "train_tokens_seen": 64512
+    },
+    "muon_adamw": {
+      "eval_overhead_seconds": 0.1288447000024462,
+      "final_val_loss": 7.6251208782196045,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 7.680569648742676
+        },
+        {
+          "step": 16.0,
+          "tokens_seen": 16128.0,
+          "train_loss": 7.640512943267822,
+          "val_loss": 7.638806581497192
+        },
+        {
+          "step": 32.0,
+          "tokens_seen": 32256.0,
+          "train_loss": 7.636707782745361,
+          "val_loss": 7.631377935409546
+        },
+        {
+          "step": 48.0,
+          "tokens_seen": 48384.0,
+          "train_loss": 7.632813930511475,
+          "val_loss": 7.628549814224243
+        },
+        {
+          "step": 64.0,
+          "tokens_seen": 64512.0,
+          "train_loss": 7.632124423980713,
+          "val_loss": 7.6251208782196045
+        }
+      ],
+      "initial_val_loss": 7.680569648742676,
+      "optimizer_report": {
+        "adamw_lr": 0.002,
+        "adamw_parameter_count": 373938,
+        "adamw_tensor_count": 12,
+        "muon_lr": 0.001,
+        "muon_parameter_count": 705312,
+        "muon_parameter_names": [
+          "encoder.weight_ih_l0",
+          "encoder.weight_hh_l0",
+          "query_proj.weight",
+          "key_proj.weight",
+          "gate.weight",
+          "head_fc.weight",
+          "head_proj.weight"
+        ],
+        "muon_tensor_count": 7,
+        "optimizer": "muon_adamw"
+      },
+      "parameter_count": 1079250,
+      "peak_vram_mb": 116.1435546875,
+      "pure_train_time_seconds": 1.8267523999966215,
+      "pure_train_tok_per_sec": 35315.13083005629,
+      "step_time_mean_ms": 28.54300624994721,
+      "step_time_median_ms": 27.78130000024248,
+      "total_training_time_seconds": 1.9555970999990677,
+      "train_tok_per_sec": 32988.39009325119,
+      "train_tokens_seen": 64512
+    }
+  }
+}

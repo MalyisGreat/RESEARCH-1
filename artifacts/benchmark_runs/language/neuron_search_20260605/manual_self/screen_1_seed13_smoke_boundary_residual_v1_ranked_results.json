@@ -1,0 +1,62 @@
+[
+  {
+    "block_type": "phase_residual_boundary_centered_neuron",
+    "final_train_loss": 8.760512351989746,
+    "final_val_loss": 10.831151857563093,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.1170945585423755,
+    "tok_per_sec": 4228.617291793685,
+    "val_delta_vs_baseline": 0.0003005420460411301
+  },
+  {
+    "block_type": "phase_residual_boundary_blend_neuron",
+    "final_train_loss": 8.760821342468262,
+    "final_val_loss": 10.831248191758698,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.1538808069271382,
+    "tok_per_sec": 4367.866887837728,
+    "val_delta_vs_baseline": 0.0003968762416466376
+  },
+  {
+    "block_type": "phase_residual_memory_boundary_gate_neuron",
+    "final_train_loss": 8.72768783569336,
+    "final_val_loss": 10.83484841702031,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.1587575170714415,
+    "tok_per_sec": 4386.3270447560235,
+    "val_delta_vs_baseline": 0.0039971015032591595
+  },
+  {
+    "block_type": "phase_residual_memory_boundary_centered_gate_neuron",
+    "final_train_loss": 8.728001594543457,
+    "final_val_loss": 10.834906927744548,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 1792,
+    "parameter_count": 4936753,
+    "speed_ratio_vs_baseline": 1.0393606270626392,
+    "tok_per_sec": 3934.3655256377137,
+    "val_delta_vs_baseline": 0.004055612227496397
+  },
+  {
+    "block_type": "phase_residual_memory_boundary_scalar_gate_neuron",
+    "final_train_loss": 8.700454711914062,
+    "final_val_loss": 10.84269224054673,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 141,
+    "parameter_count": 4935102,
+    "speed_ratio_vs_baseline": 1.0521493712956635,
+    "tok_per_sec": 3982.7756665613765,
+    "val_delta_vs_baseline": 0.011840925029678928
+  }
+]

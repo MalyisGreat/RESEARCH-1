@@ -1,0 +1,103 @@
+80M 2B checkpoint samples, same prompts as lowrank76M
+{
+  "checkpoint": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603\\variant_results\\seq10160_steps196851_val32_batch1_eval9843_init1_seed13\\causal_conv_mixer_sampled_vocab_anchor16.checkpoint.pt",
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16",
+  "step": 196851,
+  "tokens_seen": 2000006160,
+  "count": 16,
+  "max_new_tokens": 120,
+  "device": "cuda"
+}
+
+=== sample 01 temp=0.65 top_k=40 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is the use of drugs to treat Alzheimer's. If you have a clear sense of what the child has been doing for a long time. We know that the data is too small to be able to move around.
+The first two words of the alphabet are in the language of their peers.
+The findings, published today in the journal Nature Structural Biology and Evolution:
+- A copy of the Declaration of Independence.
+From the outset, the U.S. Supreme Court ruled that the state government was not a single-handedly barred the British government from seizing territory in the early half of the
+
+=== sample 02 temp=0.75 top_k=50 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that it is not possible to know whether one can do this as well as to the point of origin of the world's oceans, the resulting data suggest that the process of determining whether a person does not want to know what you have. You may find the original article in the journal Science in May 2007.
+The mission of the mission is to protect the native vegetation of the country, the British Isles, the Bahamas, and the Far East, and the French Revolution.
+“The other part of the first generation of the American Revolution. He also published his seminal paper in the Philosophical Transactions of
+
+=== sample 03 temp=0.85 top_k=64 prompt='Question: What is machine learning? Answer:' ===
+Question: What is machine learning? Answer: It may have been a positive impact on the social sciences and how their knowledge of the life is, however, the first step in getting these studies to be able to provide a new generation of information about the organization of the United States government, and in fact, there are other possible solutions that cannot be solved. For example, if you plan to take the job.
+"Technology has grown quickly."
+The team tested this year to look at in the next step," says Alan Harsh, senior coauthor of the paper, says that "no" the most powerful weapon against Napoleon's troops in
+
+=== sample 04 temp=0.95 top_k=80 prompt='Question: Why do plants need sunlight? Answer:' ===
+Question: Why do plants need sunlight? Answer:
+- What happens if I look forward to that one.
+The first part of this report is based on a number of other factors that cannot be measured at the same time.
+- More likely, the most useful for the group, at the present time the researchers concluded that these two bones of the animal kingdom are found in the region.
+“I’ll want to connect to the text.
+Step 1: Compare a section
+- "The first of its kind was the "Socratic community" in terms of the extent of his book, his personal experiences, his friends
+
+=== sample 05 temp=0.65 top_k=40 prompt='Explain the difference between training loss and validation loss.' ===
+Explain the difference between training loss and validation loss.
+The report also showed that the majority of cases, which can be fatal, if not all of the more than one
+-
+You have a new and more advanced technology. It is also a technical challenge for a few years.
+The USGS has developed to provide a model for the future.
+The first part of the second stage is the second-largest city in the world.
+The first thing we heard is that in part because we are seeing more than a decade ago, it was a huge opportunity for a child to learn about the environment, especially when they are not being adequately
+
+=== sample 06 temp=0.75 top_k=50 prompt='A small neural network can learn' ===
+A small neural network can learn to identify, diagnose, treat, diagnose, treat, treat, and treat infections.
+As a result, the report said, "This is the second time you give you a small change in your body. If you have a child with diabetes, you may need a small percentage of your weight, and subtracting it up with half the number of words as well as the authors of the study, and was based on data from the National Institutes of Health, and the National Institute of Allergy and Infectious Diseases (NINDK) is a worldwide research center.
+- The National Institutes of
+
+=== sample 07 temp=0.85 top_k=64 prompt='Once upon a time in a small town' ===
+Once upon a time in a small town. In addition to the national park, the National Park Service, the British government issued a patent for the settlement of its company in 1884, and in 1840, he published his work on the subject of the name of the victim (which is the other side of the cell, or "a" we didn't know about the possibility of a "shadowing" of the first wave of the revolution that followed to the present day to the heart of the American people were born in France, and the second largest of the third and sixth graders in the Netherlands, the researchers concluded that the U.
+
+=== sample 08 temp=0.95 top_k=80 prompt='The old library at the edge of the city' ===
+The old library at the edge of the city, in which I had been given one of the most important for our world is to come up to you, and the best way to explain these two important questions.
+- What is the difference between one's own characters. The reader is a reader of many new characters to be included in the text, the URL for a new client router in the network.
+Secure DNS servers send their computer one more outgoing MAC address only one node. Alternatively, another thread can move the data into the computer, then they may also receive a permit, the client will notify you for permission, regardless of whether the
+
+=== sample 09 temp=0.65 top_k=40 prompt='The captain looked at the map and realized' ===
+The captain looked at the map and realized that they had to be able to see if they do not know the distance to the planet. In this case, the starboard-sized star, one of the most powerful stars in the universe. The star does not disappear. It has been suggested that these two species should be treated equally with respect to an organism that is not the most important factor in establishing the proper use of the word “dynamical” of the human brain, and is not necessarily consistent with the fact that the entire group of researchers at the University of Notre Dame, he died on 18 August 1832. He
+
+=== sample 10 temp=0.75 top_k=50 prompt='During the experiment, the scientist noticed' ===
+During the experiment, the scientist noticed that "the best thing I could do for it, but I can't say good".
+In the end, the system improves quality.
+In addition to the public health crisis, the situation has worsened.
+The majority of those who are unemployed are also likely to live in the atmosphere as the ocean of life. But it was soon proved that his nephew was imprisoned in October of 1943. She took command of the American Revolutionary War, it was during the Battle of the Spanish invasion of Iraq in 1805.
+During the War of 1812, the U.S. Supreme Court ruled that
+
+=== sample 11 temp=0.85 top_k=64 prompt='Python function to add two numbers:' ===
+Python function to add two numbers:
+(1) the type of an array is the maximum amount of input voltage from the motor to the battery.
+The car is running a four-wheeler; you have more than 150 percent of the world's species is disappearing.
+The only way they wish to explain is that she was not the only victim of a crime, but to give up her two sons, Margaret, and John were both the first ever to be born.
+I think I want to stop doing this."
+In my opinion, I am not afraid to discuss with the health care team at the University of Arizona
+
+=== sample 12 temp=0.95 top_k=80 prompt='Here is a short recipe for tomato soup:' ===
+Here is a short recipe for tomato soup:
+We also have to look at how it comes to mind! It's a tricky one, and a powerful force would be a vital part of the military. The two sons of James II erected the relics of the Crown, so that some of the chief places on the Earth, was very likely to be one of the most fascinating. And now, we know, is that there isn't a single tree. It was on the ground, such as the lumen could not be made in the absence of knowledge. As people began to consider them:
+There are many facets of the development of a
+
+=== sample 13 temp=0.65 top_k=40 prompt='The main causes of climate change include' ===
+The main causes of climate change include:
+- A second type of cancer, and has been used to monitor the success of the "virtual" of the device's output, a device that converts the current to the transmitter address to the computer.
+The FCC has a free public domain name, not a proprietary DNS server DNS server?
+The DNS server uses a client or server.
+You will send messages from the Internet and other users.
+“There is no magic bullet or a bullet, but it doesn't have to be the difference between a given number of bits and registers and the IP address. This means that TCP
+
+=== sample 14 temp=0.75 top_k=50 prompt='A good way to test a hypothesis is' ===
+A good way to test a hypothesis is that the brain is programmed to recognize the difference between the two factors that can be found in the environment as well as the individual's ability to move from one place to another.
+In the midst of the war, he asked for his son to be a priest and his son was banished from Rome. He had been arrested for murdering his father.
+After the death of John Hancock, a priest in Providence and Jefferson. He was promoted to brigadier general of the militia, which was the second time the British defeat in France in 1848, it was adopted, and that it was not until the
+
+=== sample 15 temp=0.85 top_k=64 prompt='The patient reported mild symptoms and' ===
+The patient reported mild symptoms and the second most common symptoms of glaucoma and also by the University of Maryland, and a fourth-Year Chronicle of the National Electrical Code), “the best way to fulfill your needs. You don't have to be able to do it. They tend to be a great complement to the brain to protect the spinal cord from harmful side-effects. However, the most common side effect of the war in which it will not be able to read it.
+Once you're finished, move their first time, but it was decided that he was part of a new nation with a third party
+
+=== sample 16 temp=0.95 top_k=80 prompt='The history of mathematics includes' ===
+The history of mathematics includes a study of the mind of the first group of characters?
+"Why "Praise for Laughter," that "I'm an American and a Canadian.
+A new study from the Massachusetts Institute of Technology in Pasadena, manages the mission for NASA's Science Mission Directorate. "The data system was established, the new study says. "We know that a child will continue to be fully engaged if the battery is under $1.50 a year. If we take a little more time for the future, as well as the national debt of the United States and a few other European countries, such

@@ -1,0 +1,50 @@
+[
+  {
+    "block_type": "rank_competition_memory_scalar_centered_gate_neuron",
+    "final_train_loss": 7.101296424865723,
+    "final_val_loss": 7.164458171213706,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2180,
+    "parameter_count": 40439189,
+    "speed_ratio_vs_baseline": 0.8957117070939992,
+    "tok_per_sec": 73733.07088446518,
+    "val_delta_vs_baseline": -0.034894245628296794
+  },
+  {
+    "block_type": "rank_competition_centered_residual_neuron",
+    "final_train_loss": 7.116476058959961,
+    "final_val_loss": 7.167313136923031,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 2050,
+    "parameter_count": 40439059,
+    "speed_ratio_vs_baseline": 0.910905238113671,
+    "tok_per_sec": 74983.76984350114,
+    "val_delta_vs_baseline": -0.03203927991897171
+  },
+  {
+    "block_type": "rank_competition_memory_factor_centered_gate_neuron",
+    "final_train_loss": 7.076443195343018,
+    "final_val_loss": 7.173671487842019,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 36898,
+    "parameter_count": 40473907,
+    "speed_ratio_vs_baseline": 0.8852003593567346,
+    "tok_per_sec": 72867.79923325781,
+    "val_delta_vs_baseline": -0.025680928999983976
+  },
+  {
+    "block_type": "rank_competition_memory_group_centered_gate_neuron",
+    "final_train_loss": 7.097527980804443,
+    "final_val_loss": 7.179897532876082,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 4130,
+    "parameter_count": 40441139,
+    "speed_ratio_vs_baseline": 0.8925024293846833,
+    "tok_per_sec": 73468.8900113619,
+    "val_delta_vs_baseline": -0.019454883965920544
+  }
+]

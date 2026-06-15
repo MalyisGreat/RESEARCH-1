@@ -1,0 +1,24 @@
+{
+  "baseline_40m_600m": 5.094722971320152,
+  "checkpoint_80m_600m": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603\\variant_results\\seq10160_steps196851_val32_batch1_eval9843_init1_seed13\\causal_conv_mixer_sampled_vocab_anchor16.checkpoint.step59058_tokens600029280.pt",
+  "launch_160m_pending": false,
+  "launched_160m": true,
+  "160m_unstable": true,
+  "160m_unstable_step": 29413,
+  "160m_unstable_train_loss": "nan",
+  "160m_unstable_val_loss": "5.324856370687485",
+  "loss_80m_600m": 5.0363,
+  "primary_80m_unstable": true,
+  "primary_80m_unstable_step": 11617,
+  "primary_80m_unstable_train_loss": "nan",
+  "primary_80m_unstable_val_loss": "nan",
+  "restart_counts": {
+    "160m": 1,
+    "80m": 1
+  },
+  "retry_80m_launched": true,
+  "retry_80m_pending": false,
+  "scaling_decided": true,
+  "scaling_holds": true,
+  "scaling_run": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603"
+}

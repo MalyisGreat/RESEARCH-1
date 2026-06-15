@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1720, in <module>
+    main()
+    ~~~~^^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1711, in main
+    payload = run_longseq_replay_probe(config)
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1578, in run_longseq_replay_probe
+    reports[variant] = _train_variant(
+                       ~~~~~~~~~~~~~~^
+        variant,
+        ^^^^^^^^
+    ...<7 lines>...
+        variant_artifact_dir=variant_artifact_dir,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 1378, in _train_variant
+    _write_json_atomic(
+    ~~~~~~~~~~~~~~~~~~^
+        state_path,
+        ^^^^^^^^^^^
+    ...<11 lines>...
+        },
+        ^^
+    )
+    ^
+  File "E:\CODEXRESEARCH\RESEARCH-1\arc_tactic3\language_longseq_replay_probe.py", line 112, in _write_json_atomic
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\joshj\miniconda3\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_100m_20260602\\variant_results\\seq10160_steps9843_val32_batch1_eval999999_init0_seed13\\causal_conv_mixer_sampled_vocab_anchor16.state.json.tmp' -> 'artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_100m_20260602\\variant_results\\seq10160_steps9843_val32_batch1_eval999999_init0_seed13\\causal_conv_mixer_sampled_vocab_anchor16.state.json'

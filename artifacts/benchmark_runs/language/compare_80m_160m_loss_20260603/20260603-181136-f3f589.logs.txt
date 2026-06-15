@@ -1,0 +1,289 @@
+﻿[2026-06-03T23:11:17Z] starting in C:\Users\mwstr\CodexHouseWorker
+$ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
+$env:PYTHONUNBUFFERED='1'
+$env:TOKENIZERS_PARALLELISM='false'
+$root = Join-Path $env:USERPROFILE 'CodexHouseWorker\research1_longseq'
+$script = Join-Path $root 'standalone_longseq_anchor_train.py'
+$cache = Join-Path $root 'cache\finewebedu_train2000203011_val325152_seq10160_gpt2.pt'
+$out = Join-Path $root 'runs\longseq_anchor16_160m_2b_cosine_20260603_restart2'
+$checkpoint = Join-Path $out 'checkpoint.pt'
+Write-Host "TRAIN3080_RESUME_START $(Get-Date -Format o)"
+hostname; whoami; python --version
+nvidia-smi --query-gpu=name,memory.total,memory.free,memory.used,utilization.gpu,temperature.gpu,power.draw --format=csv,noheader,nounits
+if (-not (Test-Path $script)) { throw "missing script $script" }
+if (-not (Test-Path $cache)) { throw "missing cache $cache" }
+if (-not (Test-Path $checkpoint)) { throw "missing resume checkpoint $checkpoint" }
+Write-Host "RESUME_CHECKPOINT $checkpoint $((Get-Item $checkpoint).Length) bytes"
+python $script `
+  --cache-path $cache `
+  --output-dir $out `
+  --run-name longseq_anchor16_160m_2b_cosine_20260603_restart2 `
+  --train-steps 196851 `
+  --eval-interval 9843 `
+  --checkpoint-interval 9843 `
+  --milestone-checkpoint-interval 59058 `
+  --val-blocks 32 `
+  --embedding-dim 1831 `
+  --conv-rank 531 `
+  --learning-rate 0.0006 `
+  --min-learning-rate 0.00006 `
+  --warmup-steps 2000 `
+  --resume-checkpoint $checkpoint
+$code=$LASTEXITCODE
+nvidia-smi --query-gpu=name,memory.total,memory.free,memory.used,utilization.gpu,temperature.gpu,power.draw --format=csv,noheader,nounits
+Write-Host "TRAIN3080_RESUME_EXIT=$code $(Get-Date -Format o)"
+exit $code
+TRAIN3080_RESUME_START 2026-06-03T18:11:19.1355471-05:00
+mwstroud
+mwstroud\mwstr
+Python 3.12.6
+NVIDIA GeForce RTX 3080, 10240, 9171, 883, 0, 45, 22.22
+RESUME_CHECKPOINT C:\Users\mwstr\CodexHouseWorker\research1_longseq\runs\longseq_anchor16_160m_2b_cosine_20260603_restart2\checkpoint.pt 1920214500 bytes
+top_token_hist rows=787/196851
+top_token_hist rows=40137/196851
+top_token_hist rows=79487/196851
+top_token_hist rows=118837/196851
+top_token_hist rows=158187/196851
+top_token_hist rows=196851/196851
+RESUMED step=19686 tokens=200009760
+START run=longseq_anchor16_160m_2b_cosine_20260603_restart2 device=NVIDIA GeForce RTX 3080 params=160,000,566 seq=10160 steps=196851
+TRAIN step=20000/196851 tokens=203200000 loss=5.1376 lr=0.000588709 pure_tok_s=77525
+TRAIN step=20500/196851 tokens=208280000 loss=5.4094 lr=0.000588078 pure_tok_s=77526
+TRAIN step=21000/196851 tokens=213360000 loss=5.1840 lr=0.00058743 pure_tok_s=77525
+TRAIN step=21500/196851 tokens=218440000 loss=5.1603 lr=0.000586765 pure_tok_s=77525
+TRAIN step=22000/196851 tokens=223520000 loss=5.1121 lr=0.000586084 pure_tok_s=77525
+TRAIN step=22500/196851 tokens=228600000 loss=5.3892 lr=0.000585386 pure_tok_s=77525
+TRAIN step=23000/196851 tokens=233680000 loss=5.4397 lr=0.000584671 pure_tok_s=77525
+TRAIN step=23500/196851 tokens=238760000 loss=5.2782 lr=0.00058394 pure_tok_s=77525
+TRAIN step=24000/196851 tokens=243840000 loss=4.8939 lr=0.000583192 pure_tok_s=77524
+TRAIN step=24500/196851 tokens=248920000 loss=5.3525 lr=0.000582428 pure_tok_s=77524
+TRAIN step=25000/196851 tokens=254000000 loss=5.1189 lr=0.000581647 pure_tok_s=77523
+TRAIN step=25500/196851 tokens=259080000 loss=5.1977 lr=0.00058085 pure_tok_s=77523
+TRAIN step=26000/196851 tokens=264160000 loss=5.0584 lr=0.000580037 pure_tok_s=77522
+TRAIN step=26500/196851 tokens=269240000 loss=5.1773 lr=0.000579208 pure_tok_s=77522
+TRAIN step=27000/196851 tokens=274320000 loss=5.3229 lr=0.000578362 pure_tok_s=77521
+TRAIN step=27500/196851 tokens=279400000 loss=5.0323 lr=0.0005775 pure_tok_s=77520
+TRAIN step=28000/196851 tokens=284480000 loss=5.2181 lr=0.000576622 pure_tok_s=77518
+TRAIN step=28500/196851 tokens=289560000 loss=5.1959 lr=0.000575728 pure_tok_s=77517
+TRAIN step=29000/196851 tokens=294640000 loss=5.1889 lr=0.000574818 pure_tok_s=77516
+TRAIN step=29500/196851 tokens=299720000 loss=5.3336 lr=0.000573892 pure_tok_s=77515
+EVAL step=29529/196851 tokens=300014640 train=4.9749 val=5.1578 eval_s=1.6
+TRAIN step=30000/196851 tokens=304800000 loss=4.3040 lr=0.000572951 pure_tok_s=77511
+TRAIN step=30500/196851 tokens=309880000 loss=5.1864 lr=0.000571993 pure_tok_s=77510
+TRAIN step=31000/196851 tokens=314960000 loss=5.1859 lr=0.00057102 pure_tok_s=77509
+TRAIN step=31500/196851 tokens=320040000 loss=4.8917 lr=0.000570031 pure_tok_s=77509
+TRAIN step=32000/196851 tokens=325120000 loss=5.1043 lr=0.000569027 pure_tok_s=77508
+TRAIN step=32500/196851 tokens=330200000 loss=5.0626 lr=0.000568007 pure_tok_s=77508
+TRAIN step=33000/196851 tokens=335280000 loss=4.8529 lr=0.000566971 pure_tok_s=77508
+TRAIN step=33500/196851 tokens=340360000 loss=4.9331 lr=0.00056592 pure_tok_s=77507
+TRAIN step=34000/196851 tokens=345440000 loss=5.3720 lr=0.000564854 pure_tok_s=77506
+TRAIN step=34500/196851 tokens=350520000 loss=4.9628 lr=0.000563773 pure_tok_s=77506
+TRAIN step=35000/196851 tokens=355600000 loss=5.0045 lr=0.000562676 pure_tok_s=77505
+TRAIN step=35500/196851 tokens=360680000 loss=4.9368 lr=0.000561564 pure_tok_s=77505
+TRAIN step=36000/196851 tokens=365760000 loss=4.8452 lr=0.000560438 pure_tok_s=77505
+TRAIN step=36500/196851 tokens=370840000 loss=5.4127 lr=0.000559296 pure_tok_s=77505
+TRAIN step=37000/196851 tokens=375920000 loss=5.0684 lr=0.000558139 pure_tok_s=77505
+TRAIN step=37500/196851 tokens=381000000 loss=5.2618 lr=0.000556968 pure_tok_s=77505
+TRAIN step=38000/196851 tokens=386080000 loss=5.1053 lr=0.000555781 pure_tok_s=77504
+TRAIN step=38500/196851 tokens=391160000 loss=4.8675 lr=0.00055458 pure_tok_s=77504
+TRAIN step=39000/196851 tokens=396240000 loss=5.1166 lr=0.000553365 pure_tok_s=77504
+EVAL step=39372/196851 tokens=400019520 train=4.9269 val=5.0655 eval_s=1.6
+TRAIN step=39500/196851 tokens=401320000 loss=4.7941 lr=0.000552135 pure_tok_s=77500
+TRAIN step=40000/196851 tokens=406400000 loss=4.8661 lr=0.00055089 pure_tok_s=77499
+TRAIN step=40500/196851 tokens=411480000 loss=5.2079 lr=0.000549631 pure_tok_s=77498
+TRAIN step=41000/196851 tokens=416560000 loss=4.9292 lr=0.000548358 pure_tok_s=77497
+TRAIN step=41500/196851 tokens=421640000 loss=5.3630 lr=0.000547071 pure_tok_s=77495
+TRAIN step=42000/196851 tokens=426720000 loss=4.9362 lr=0.00054577 pure_tok_s=77494
+TRAIN step=42500/196851 tokens=431800000 loss=4.7644 lr=0.000544454 pure_tok_s=77494
+TRAIN step=43000/196851 tokens=436880000 loss=4.8733 lr=0.000543125 pure_tok_s=77494
+TRAIN step=43500/196851 tokens=441960000 loss=5.0771 lr=0.000541782 pure_tok_s=77494
+TRAIN step=44000/196851 tokens=447040000 loss=4.4839 lr=0.000540425 pure_tok_s=77493
+TRAIN step=44500/196851 tokens=452120000 loss=4.8927 lr=0.000539054 pure_tok_s=77493
+TRAIN step=45000/196851 tokens=457200000 loss=5.4322 lr=0.00053767 pure_tok_s=77493
+TRAIN step=45500/196851 tokens=462280000 loss=5.0912 lr=0.000536272 pure_tok_s=77493
+TRAIN step=46000/196851 tokens=467360000 loss=4.8505 lr=0.000534861 pure_tok_s=77493
+TRAIN step=46500/196851 tokens=472440000 loss=5.5754 lr=0.000533436 pure_tok_s=77493
+TRAIN step=47000/196851 tokens=477520000 loss=4.8168 lr=0.000531999 pure_tok_s=77493
+TRAIN step=47500/196851 tokens=482600000 loss=4.7848 lr=0.000530548 pure_tok_s=77493
+TRAIN step=48000/196851 tokens=487680000 loss=4.7976 lr=0.000529084 pure_tok_s=77492
+TRAIN step=48500/196851 tokens=492760000 loss=5.0849 lr=0.000527607 pure_tok_s=77492
+TRAIN step=49000/196851 tokens=497840000 loss=4.9376 lr=0.000526118 pure_tok_s=77492
+EVAL step=49215/196851 tokens=500024400 train=4.9888 val=5.0048 eval_s=1.6
+TRAIN step=49500/196851 tokens=502920000 loss=4.6798 lr=0.000524615 pure_tok_s=77489
+TRAIN step=50000/196851 tokens=508000000 loss=4.7161 lr=0.0005231 pure_tok_s=77488
+TRAIN step=50500/196851 tokens=513080000 loss=5.1881 lr=0.000521573 pure_tok_s=77487
+TRAIN step=51000/196851 tokens=518160000 loss=4.8932 lr=0.000520033 pure_tok_s=77486
+TRAIN step=51500/196851 tokens=523240000 loss=4.9670 lr=0.00051848 pure_tok_s=77485
+TRAIN step=52000/196851 tokens=528320000 loss=4.5130 lr=0.000516916 pure_tok_s=77484
+TRAIN step=52500/196851 tokens=533400000 loss=4.9302 lr=0.000515339 pure_tok_s=77484
+TRAIN step=53000/196851 tokens=538480000 loss=4.9705 lr=0.00051375 pure_tok_s=77483
+TRAIN step=53500/196851 tokens=543560000 loss=4.6490 lr=0.000512149 pure_tok_s=77482
+TRAIN step=54000/196851 tokens=548640000 loss=4.6529 lr=0.000510537 pure_tok_s=77481
+TRAIN step=54500/196851 tokens=553720000 loss=4.6942 lr=0.000508912 pure_tok_s=77481
+TRAIN step=55000/196851 tokens=558800000 loss=4.6589 lr=0.000507276 pure_tok_s=77480
+TRAIN step=55500/196851 tokens=563880000 loss=5.0127 lr=0.000505629 pure_tok_s=77478
+TRAIN step=56000/196851 tokens=568960000 loss=4.8769 lr=0.00050397 pure_tok_s=77478
+TRAIN step=56500/196851 tokens=574040000 loss=5.0406 lr=0.0005023 pure_tok_s=77477
+TRAIN step=57000/196851 tokens=579120000 loss=4.7508 lr=0.000500619 pure_tok_s=77476
+TRAIN step=57500/196851 tokens=584200000 loss=4.9687 lr=0.000498926 pure_tok_s=77475
+TRAIN step=58000/196851 tokens=589280000 loss=4.9792 lr=0.000497223 pure_tok_s=77475
+TRAIN step=58500/196851 tokens=594360000 loss=5.1484 lr=0.000495508 pure_tok_s=77474
+TRAIN step=59000/196851 tokens=599440000 loss=4.9460 lr=0.000493783 pure_tok_s=77473
+EVAL step=59058/196851 tokens=600029280 train=4.6838 val=4.9497 eval_s=1.6
+MILESTONE C:\Users\mwstr\CodexHouseWorker\research1_longseq\runs\longseq_anchor16_160m_2b_cosine_20260603_restart2\checkpoint.step59058_tokens600029280.pt
+TRAIN step=59500/196851 tokens=604520000 loss=4.8557 lr=0.000492047 pure_tok_s=77471
+TRAIN step=60000/196851 tokens=609600000 loss=4.7647 lr=0.000490301 pure_tok_s=77471
+TRAIN step=60500/196851 tokens=614680000 loss=4.8732 lr=0.000488545 pure_tok_s=77469
+TRAIN step=61000/196851 tokens=619760000 loss=4.9443 lr=0.000486778 pure_tok_s=77468
+TRAIN step=61500/196851 tokens=624840000 loss=4.9145 lr=0.000485 pure_tok_s=77467
+TRAIN step=62000/196851 tokens=629920000 loss=4.5450 lr=0.000483213 pure_tok_s=77466
+TRAIN step=62500/196851 tokens=635000000 loss=4.8628 lr=0.000481416 pure_tok_s=77465
+TRAIN step=63000/196851 tokens=640080000 loss=4.7892 lr=0.000479609 pure_tok_s=77464
+TRAIN step=63500/196851 tokens=645160000 loss=4.8245 lr=0.000477792 pure_tok_s=77464
+TRAIN step=64000/196851 tokens=650240000 loss=4.3810 lr=0.000475966 pure_tok_s=77463
+TRAIN step=64500/196851 tokens=655320000 loss=5.1992 lr=0.00047413 pure_tok_s=77462
+TRAIN step=65000/196851 tokens=660400000 loss=4.8100 lr=0.000472285 pure_tok_s=77462
+TRAIN step=65500/196851 tokens=665480000 loss=5.1588 lr=0.00047043 pure_tok_s=77461
+TRAIN step=66000/196851 tokens=670560000 loss=4.8789 lr=0.000468567 pure_tok_s=77460
+TRAIN step=66500/196851 tokens=675640000 loss=4.9319 lr=0.000466694 pure_tok_s=77460
+TRAIN step=67000/196851 tokens=680720000 loss=4.8563 lr=0.000464813 pure_tok_s=77459
+TRAIN step=67500/196851 tokens=685800000 loss=4.9718 lr=0.000462922 pure_tok_s=77458
+TRAIN step=68000/196851 tokens=690880000 loss=4.6927 lr=0.000461024 pure_tok_s=77458
+TRAIN step=68500/196851 tokens=695960000 loss=5.1252 lr=0.000459116 pure_tok_s=77457
+EVAL step=68901/196851 tokens=700034160 train=4.6324 val=4.9120 eval_s=1.6
+TRAIN step=69000/196851 tokens=701040000 loss=4.7123 lr=0.0004572 pure_tok_s=77454
+TRAIN step=69500/196851 tokens=706120000 loss=5.0049 lr=0.000455276 pure_tok_s=77454
+TRAIN step=70000/196851 tokens=711200000 loss=4.7442 lr=0.000453344 pure_tok_s=77454
+TRAIN step=70500/196851 tokens=716280000 loss=4.6749 lr=0.000451404 pure_tok_s=77454
+TRAIN step=71000/196851 tokens=721360000 loss=4.9372 lr=0.000449456 pure_tok_s=77453
+TRAIN step=71500/196851 tokens=726440000 loss=4.8119 lr=0.0004475 pure_tok_s=77453
+TRAIN step=72000/196851 tokens=731520000 loss=4.3900 lr=0.000445537 pure_tok_s=77453
+TRAIN step=72500/196851 tokens=736600000 loss=4.6404 lr=0.000443566 pure_tok_s=77453
+TRAIN step=73000/196851 tokens=741680000 loss=4.6924 lr=0.000441587 pure_tok_s=77453
+TRAIN step=73500/196851 tokens=746760000 loss=4.9921 lr=0.000439602 pure_tok_s=77453
+TRAIN step=74000/196851 tokens=751840000 loss=4.7256 lr=0.000437609 pure_tok_s=77453
+TRAIN step=74500/196851 tokens=756920000 loss=4.9248 lr=0.000435609 pure_tok_s=77453
+TRAIN step=75000/196851 tokens=762000000 loss=4.3088 lr=0.000433602 pure_tok_s=77453
+TRAIN step=75500/196851 tokens=767080000 loss=4.8959 lr=0.000431589 pure_tok_s=77453
+TRAIN step=76000/196851 tokens=772160000 loss=4.8602 lr=0.000429569 pure_tok_s=77453
+TRAIN step=76500/196851 tokens=777240000 loss=5.3148 lr=0.000427543 pure_tok_s=77453
+TRAIN step=77000/196851 tokens=782320000 loss=4.9481 lr=0.00042551 pure_tok_s=77453
+TRAIN step=77500/196851 tokens=787400000 loss=4.6628 lr=0.000423471 pure_tok_s=77452
+TRAIN step=78000/196851 tokens=792480000 loss=4.9784 lr=0.000421426 pure_tok_s=77452
+TRAIN step=78500/196851 tokens=797560000 loss=4.9340 lr=0.000419375 pure_tok_s=77452
+EVAL step=78744/196851 tokens=800039040 train=4.5004 val=4.8836 eval_s=1.6
+TRAIN step=79000/196851 tokens=802640000 loss=4.7514 lr=0.000417318 pure_tok_s=77450
+TRAIN step=79500/196851 tokens=807720000 loss=4.8438 lr=0.000415256 pure_tok_s=77450
+TRAIN step=80000/196851 tokens=812800000 loss=5.0201 lr=0.000413188 pure_tok_s=77450
+TRAIN step=80500/196851 tokens=817880000 loss=4.6790 lr=0.000411114 pure_tok_s=77449
+TRAIN step=81000/196851 tokens=822960000 loss=4.8725 lr=0.000409036 pure_tok_s=77449
+TRAIN step=81500/196851 tokens=828040000 loss=4.9496 lr=0.000406952 pure_tok_s=77449
+TRAIN step=82000/196851 tokens=833120000 loss=4.8128 lr=0.000404863 pure_tok_s=77449
+TRAIN step=82500/196851 tokens=838200000 loss=4.8785 lr=0.000402769 pure_tok_s=77448
+TRAIN step=83000/196851 tokens=843280000 loss=4.7430 lr=0.000400671 pure_tok_s=77448
+TRAIN step=83500/196851 tokens=848360000 loss=4.6592 lr=0.000398568 pure_tok_s=77447
+TRAIN step=84000/196851 tokens=853440000 loss=4.9485 lr=0.000396461 pure_tok_s=77447
+TRAIN step=84500/196851 tokens=858520000 loss=5.0834 lr=0.000394349 pure_tok_s=77447
+TRAIN step=85000/196851 tokens=863600000 loss=4.8867 lr=0.000392233 pure_tok_s=77447
+TRAIN step=85500/196851 tokens=868680000 loss=4.8280 lr=0.000390113 pure_tok_s=77447
+TRAIN step=86000/196851 tokens=873760000 loss=4.5998 lr=0.000387989 pure_tok_s=77446
+TRAIN step=86500/196851 tokens=878840000 loss=4.7955 lr=0.000385861 pure_tok_s=77446
+TRAIN step=87000/196851 tokens=883920000 loss=4.7879 lr=0.00038373 pure_tok_s=77446
+TRAIN step=87500/196851 tokens=889000000 loss=5.3344 lr=0.000381595 pure_tok_s=77445
+TRAIN step=88000/196851 tokens=894080000 loss=4.6697 lr=0.000379457 pure_tok_s=77445
+TRAIN step=88500/196851 tokens=899160000 loss=4.9413 lr=0.000377316 pure_tok_s=77445
+EVAL step=88587/196851 tokens=900043920 train=4.7392 val=4.8352 eval_s=1.6
+TRAIN step=89000/196851 tokens=904240000 loss=4.7339 lr=0.000375171 pure_tok_s=77443
+TRAIN step=89500/196851 tokens=909320000 loss=4.6520 lr=0.000373024 pure_tok_s=77443
+TRAIN step=90000/196851 tokens=914400000 loss=4.6662 lr=0.000370874 pure_tok_s=77443
+TRAIN step=90500/196851 tokens=919480000 loss=4.6370 lr=0.000368721 pure_tok_s=77442
+TRAIN step=91000/196851 tokens=924560000 loss=4.5921 lr=0.000366565 pure_tok_s=77442
+TRAIN step=91500/196851 tokens=929640000 loss=4.8037 lr=0.000364408 pure_tok_s=77442
+TRAIN step=92000/196851 tokens=934720000 loss=4.5740 lr=0.000362248 pure_tok_s=77442
+TRAIN step=92500/196851 tokens=939800000 loss=4.8370 lr=0.000360086 pure_tok_s=77442
+TRAIN step=93000/196851 tokens=944880000 loss=4.5055 lr=0.000357922 pure_tok_s=77442
+TRAIN step=93500/196851 tokens=949960000 loss=4.9194 lr=0.000355756 pure_tok_s=77442
+TRAIN step=94000/196851 tokens=955040000 loss=4.6029 lr=0.000353588 pure_tok_s=77441
+TRAIN step=94500/196851 tokens=960120000 loss=4.7003 lr=0.000351419 pure_tok_s=77441
+TRAIN step=95000/196851 tokens=965200000 loss=4.6372 lr=0.000349249 pure_tok_s=77441
+TRAIN step=95500/196851 tokens=970280000 loss=4.6248 lr=0.000347077 pure_tok_s=77441
+TRAIN step=96000/196851 tokens=975360000 loss=4.6233 lr=0.000344904 pure_tok_s=77440
+TRAIN step=96500/196851 tokens=980440000 loss=4.7655 lr=0.000342731 pure_tok_s=77440
+TRAIN step=97000/196851 tokens=985520000 loss=4.6177 lr=0.000340556 pure_tok_s=77440
+TRAIN step=97500/196851 tokens=990600000 loss=4.9231 lr=0.000338381 pure_tok_s=77440
+TRAIN step=98000/196851 tokens=995680000 loss=4.8078 lr=0.000336205 pure_tok_s=77440
+EVAL step=98430/196851 tokens=1000048800 train=4.5181 val=4.8109 eval_s=1.6
+TRAIN step=98500/196851 tokens=1000760000 loss=4.6368 lr=0.000334029 pure_tok_s=77438
+TRAIN step=99000/196851 tokens=1005840000 loss=4.5435 lr=0.000331852 pure_tok_s=77438
+TRAIN step=99500/196851 tokens=1010920000 loss=4.8427 lr=0.000329676 pure_tok_s=77438
+TRAIN step=100000/196851 tokens=1016000000 loss=4.7879 lr=0.000327499 pure_tok_s=77437
+TRAIN step=100500/196851 tokens=1021080000 loss=5.2373 lr=0.000325323 pure_tok_s=77436
+TRAIN step=101000/196851 tokens=1026160000 loss=4.5316 lr=0.000323147 pure_tok_s=77436
+TRAIN step=101500/196851 tokens=1031240000 loss=4.6723 lr=0.000320971 pure_tok_s=77436
+TRAIN step=102000/196851 tokens=1036320000 loss=4.5946 lr=0.000318796 pure_tok_s=77436
+TRAIN step=102500/196851 tokens=1041400000 loss=5.0391 lr=0.000316621 pure_tok_s=77436
+TRAIN step=103000/196851 tokens=1046480000 loss=4.8774 lr=0.000314448 pure_tok_s=77436
+TRAIN step=103500/196851 tokens=1051560000 loss=4.6645 lr=0.000312276 pure_tok_s=77436
+TRAIN step=104000/196851 tokens=1056640000 loss=4.5165 lr=0.000310104 pure_tok_s=77435
+TRAIN step=104500/196851 tokens=1061720000 loss=4.6778 lr=0.000307934 pure_tok_s=77435
+TRAIN step=105000/196851 tokens=1066800000 loss=4.1993 lr=0.000305766 pure_tok_s=77435
+TRAIN step=105500/196851 tokens=1071880000 loss=4.8073 lr=0.000303599 pure_tok_s=77435
+TRAIN step=106000/196851 tokens=1076960000 loss=4.8536 lr=0.000301433 pure_tok_s=77435
+TRAIN step=106500/196851 tokens=1082040000 loss=4.6076 lr=0.00029927 pure_tok_s=77435
+TRAIN step=107000/196851 tokens=1087120000 loss=4.7700 lr=0.000297108 pure_tok_s=77434
+TRAIN step=107500/196851 tokens=1092200000 loss=4.6619 lr=0.000294949 pure_tok_s=77434
+TRAIN step=108000/196851 tokens=1097280000 loss=4.7169 lr=0.000292792 pure_tok_s=77434
+EVAL step=108273/196851 tokens=1100053680 train=5.0713 val=4.7793 eval_s=1.6
+TRAIN step=108500/196851 tokens=1102360000 loss=4.8485 lr=0.000290637 pure_tok_s=77433
+TRAIN step=109000/196851 tokens=1107440000 loss=4.8423 lr=0.000288485 pure_tok_s=77433
+TRAIN step=109500/196851 tokens=1112520000 loss=4.7556 lr=0.000286336 pure_tok_s=77433
+TRAIN step=110000/196851 tokens=1117600000 loss=4.7425 lr=0.00028419 pure_tok_s=77432
+TRAIN step=110500/196851 tokens=1122680000 loss=4.8093 lr=0.000282046 pure_tok_s=77432
+TRAIN step=111000/196851 tokens=1127760000 loss=4.4444 lr=0.000279906 pure_tok_s=77432
+TRAIN step=111500/196851 tokens=1132840000 loss=4.8822 lr=0.000277768 pure_tok_s=77432
+TRAIN step=112000/196851 tokens=1137920000 loss=4.7043 lr=0.000275635 pure_tok_s=77432
+TRAIN step=112500/196851 tokens=1143000000 loss=4.4714 lr=0.000273504 pure_tok_s=77432
+TRAIN step=113000/196851 tokens=1148080000 loss=4.6014 lr=0.000271378 pure_tok_s=77432
+TRAIN step=113500/196851 tokens=1153160000 loss=4.4091 lr=0.000269255 pure_tok_s=77432
+TRAIN step=114000/196851 tokens=1158240000 loss=4.4972 lr=0.000267136 pure_tok_s=77432
+TRAIN step=114500/196851 tokens=1163320000 loss=4.5511 lr=0.000265021 pure_tok_s=77431
+TRAIN step=115000/196851 tokens=1168400000 loss=4.6654 lr=0.000262911 pure_tok_s=77431
+TRAIN step=115500/196851 tokens=1173480000 loss=4.7298 lr=0.000260805 pure_tok_s=77431
+TRAIN step=116000/196851 tokens=1178560000 loss=4.6571 lr=0.000258703 pure_tok_s=77431
+TRAIN step=116500/196851 tokens=1183640000 loss=4.4876 lr=0.000256606 pure_tok_s=77431
+TRAIN step=117000/196851 tokens=1188720000 loss=4.8739 lr=0.000254514 pure_tok_s=77431
+TRAIN step=117500/196851 tokens=1193800000 loss=4.7051 lr=0.000252427 pure_tok_s=77431
+TRAIN step=118000/196851 tokens=1198880000 loss=4.4947 lr=0.000250344 pure_tok_s=77430
+EVAL step=118116/196851 tokens=1200058560 train=4.8486 val=4.7519 eval_s=1.6
+MILESTONE C:\Users\mwstr\CodexHouseWorker\research1_longseq\runs\longseq_anchor16_160m_2b_cosine_20260603_restart2\checkpoint.step118116_tokens1200058560.pt
+TRAIN step=118500/196851 tokens=1203960000 loss=4.8647 lr=0.000248267 pure_tok_s=77429
+TRAIN step=119000/196851 tokens=1209040000 loss=4.4021 lr=0.000246195 pure_tok_s=77429
+TRAIN step=119500/196851 tokens=1214120000 loss=4.8547 lr=0.000244129 pure_tok_s=77429
+TRAIN step=120000/196851 tokens=1219200000 loss=4.7490 lr=0.000242068 pure_tok_s=77429
+TRAIN step=120500/196851 tokens=1224280000 loss=4.4485 lr=0.000240013 pure_tok_s=77428
+TRAIN step=121000/196851 tokens=1229360000 loss=4.4320 lr=0.000237964 pure_tok_s=77428
+TRAIN step=121500/196851 tokens=1234440000 loss=4.5233 lr=0.000235921 pure_tok_s=77428
+TRAIN step=122000/196851 tokens=1239520000 loss=4.2416 lr=0.000233884 pure_tok_s=77428
+TRAIN step=122500/196851 tokens=1244600000 loss=4.3904 lr=0.000231853 pure_tok_s=77428
+TRAIN step=123000/196851 tokens=1249680000 loss=4.6876 lr=0.000229828 pure_tok_s=77427
+TRAIN step=123500/196851 tokens=1254760000 loss=4.4927 lr=0.00022781 pure_tok_s=77427
+TRAIN step=124000/196851 tokens=1259840000 loss=4.6317 lr=0.000225799 pure_tok_s=77427
+TRAIN step=124500/196851 tokens=1264920000 loss=4.7173 lr=0.000223794 pure_tok_s=77427
+TRAIN step=125000/196851 tokens=1270000000 loss=4.5152 lr=0.000221797 pure_tok_s=77427
+TRAIN step=125500/196851 tokens=1275080000 loss=4.5163 lr=0.000219806 pure_tok_s=77427
+TRAIN step=126000/196851 tokens=1280160000 loss=4.6760 lr=0.000217822 pure_tok_s=77427
+TRAIN step=126500/196851 tokens=1285240000 loss=4.4237 lr=0.000215846 pure_tok_s=77427
+TRAIN step=127000/196851 tokens=1290320000 loss=4.4659 lr=0.000213878 pure_tok_s=77427
+TRAIN step=127500/196851 tokens=1295400000 loss=4.6328 lr=0.000211916 pure_tok_s=77427
+EVAL step=127959/196851 tokens=1300063440 train=4.3487 val=4.7331 eval_s=1.6
+TRAIN step=128000/196851 tokens=1300480000 loss=4.9027 lr=0.000209963 pure_tok_s=77426
+TRAIN step=128500/196851 tokens=1305560000 loss=4.2560 lr=0.000208017 pure_tok_s=77426
+TRAIN step=129000/196851 tokens=1310640000 loss=5.3339 lr=0.000206079 pure_tok_s=77426
+TRAIN step=129500/196851 tokens=1315720000 loss=4.8890 lr=0.000204149 pure_tok_s=77426
+TRAIN step=130000/196851 tokens=1320800000 loss=4.4299 lr=0.000202228 pure_tok_s=77426
+TRAIN step=130500/196851 tokens=1325880000 loss=4.6630 lr=0.000200314 pure_tok_s=77425
+TRAIN step=131000/196851 tokens=1330960000 loss=4.5579 lr=0.00019841 pure_tok_s=77425
+TRAIN step=131500/196851 tokens=1336040000 loss=4.6091 lr=0.000196513 pure_tok_s=77425
+TRAIN step=132000/196851 tokens=1341120000 loss=4.4587 lr=0.000194626 pure_tok_s=77425
+TRAIN step=132500/196851 tokens=1346200000 loss=4.6273 lr=0.000192747 pure_tok_s=77425

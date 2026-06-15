@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "branch_disagreement_conditioned_lowrank_conv_memory": {
+      "block_type": "branch_disagreement_conditioned_lowrank_conv_memory",
+      "cuda_available": false,
+      "finite_gradients": true,
+      "finite_loss": true,
+      "grad_norm": 0.40019241647044984,
+      "grad_tensors": 62,
+      "loss": 6.21298885345459,
+      "parameter_count": 137863
+    },
+    "branch_disagreement_gain_only_lowrank_conv_memory": {
+      "block_type": "branch_disagreement_gain_only_lowrank_conv_memory",
+      "cuda_available": false,
+      "finite_gradients": true,
+      "finite_loss": true,
+      "grad_norm": 0.40254290931038966,
+      "grad_tensors": 62,
+      "loss": 6.214734077453613,
+      "parameter_count": 135559
+    },
+    "multi_scale_lowrank_conv_memory": {
+      "block_type": "multi_scale_lowrank_conv_memory",
+      "cuda_available": false,
+      "finite_gradients": true,
+      "finite_loss": true,
+      "grad_norm": 0.3898105052133258,
+      "grad_tensors": 50,
+      "loss": 6.2312235832214355,
+      "parameter_count": 131927
+    }
+  },
+  "cuda_visible_devices": "-1",
+  "screen_parameter_counts": {
+    "branch_disagreement_conditioned_lowrank_conv_memory": 15314417,
+    "branch_disagreement_gain_only_lowrank_conv_memory": 15289073,
+    "multi_scale_lowrank_conv_memory": 15250481
+  },
+  "trainer_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent02_conv_conditioned\\standalone_longseq_anchor_train_conv_conditioned.py"
+}

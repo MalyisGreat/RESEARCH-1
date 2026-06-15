@@ -1,0 +1,292 @@
+﻿LongSeq checkpoint expanded samples
+{
+  "checkpoint": "D:\\CodexLLM\\research1_longseq\\runs\\longseq_anchor16_160m_5b_fresh_after2b_20260604\\checkpoint.pt",
+  "step": 492126,
+  "tokens_seen": 5000000160,
+  "count": 40,
+  "max_new_tokens": 140,
+  "device": "cuda"
+}
+
+=== sample 01 temp=0.65 top_k=40 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is a great way to get the correct answer. In the first place, we must consider the same kind of thing that is happening, and how is it possible to make one more thing.
+The first thing you do is to keep a journal from the National Museum of American History and History, vol. 24, pp. 613-530.
+- National Center for Health Statistics, National Center for Health Statistics, Centers for Disease Control and Prevention, National Center for Health Statistics, U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station, San Francisco, CA, USA.
+A complete list of the authors' views on the topic (e.g., a name change,
+
+=== sample 02 temp=0.75 top_k=50 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that most patients were more likely than nonsmokers to be underweight, and in the following week (Oct. 2), one of which is more than 10,000 feet. The total length of the shell is 9.5?10^8/mm
+5.5 x 5.5 cm
+|show 1||Mountain Lionfish|
+|Location||Sugar, Ojibwe, and P. B. Saunders. 2000. A collection of over 20,000 pieces of equipment every week.
+Maintaining a high level of security that could be used to help develop these skills and the skills necessary to successfully reduce the amount of energy stored in our bodies.
+The
+
+=== sample 03 temp=0.85 top_k=64 prompt='Question: What is machine learning? Answer:' ===
+Question: What is machine learning? Answer:
+- Developing and measuring, while the latter with the rest of the state in which it was written, but the text was not so popular as the same as the other five, or 10 or 15 years old, but the whole group had left and right
+I was in school as a child
+of one year or more of these conditions are considered desirable.
+The first question is: Does it really matter that you mean they're going to get out of the way to the top of the neck to prevent it from getting worse. That might make people feel better when they are not being asked to take a piece of paper in order to see exactly the right sequence of the text.
+Please
+
+=== sample 04 temp=0.95 top_k=80 prompt='Question: Why do plants need sunlight? Answer:' ===
+Question: Why do plants need sunlight? Answer:
+1. How can I tell if this is correct, the source is acknowledged.
+? 2005-2012 American Society of Clinical Oncology|
+|Deposited On:||01 Oct 2010 11:03|
+|Contributors: ||Hagley Institute |
+Links to articles from leading academic publishers, researchers, and social media sources. In order to promote awareness and foster good, self-esteem and mental functioning and/or other disorders. In the United States, a major economic crisis, which saw the emergence of the Church in the first instance, if so, you can run out of it and get it off the ground. The weather is free from dust and dirt.
+
+=== sample 05 temp=0.65 top_k=40 prompt='Explain the difference between training loss and validation loss.' ===
+Explain the difference between training loss and validation loss.
+The study is one of the most complete and accurate clocks to identify the source.
+As with any other country in the world.
+The new study, which appeared in the journal Nature.
+?This study suggests that the high levels of vitamin D might be the answer to the question of how the universe works, and how to use it, and to improve the quality of life for people with disabilities, and the public.
+- The National Association of School Psychologists (NASP)
+- The Global Fund for Refugees and the International Monetary Fund.
+The first European to achieve this is to take place at the site of the original site.
+The following resources are available in the
+
+=== sample 06 temp=0.75 top_k=50 prompt='A small neural network can learn' ===
+A small neural network can learn that they can be customized to help you save money.
+What does that mean?
+The first step is to develop a new, more effective approach to treatment, and also to assess the risk of heart disease, as well as the ability to distinguish between male and female, as well as female.
+Powered by WordPress<|endoftext|>
+
+=== sample 07 temp=0.85 top_k=64 prompt='Once upon a time in a small town' ===
+Once upon a time in a small town at present, and I had the privilege of having a son.
+Answering the following:
+- The "nigger" (which stands for "a" for the time of the war is not exactly so, then I also found that in the case of the people who had not been vaccinated. There were, or are still very rare.
+The first ever national park opened in 1993.
+While he was a passionate campaigner for the rest of his career in education. In a letter to the New Testament, the Holy Spirit, and the holy Scriptures of every human being, this time of year, a year is a major public health problem, making it possible to save lives, and
+
+=== sample 08 temp=0.95 top_k=80 prompt='The old library at the edge of the city' ===
+The old library at the edge of the city at Miskito, which is a very large waterfowl and the land cover.
+The city is still in keeping with the rising cost of the system as the source code itself and that it resides with its own unique feature.
+We are doing this in an entertaining manner and become a leading and thorough process will be necessary for the diagnosis and treatment of any
+diagnoses, including congenital rubella, tuberculosis, lupus erythematosus, the parasite?s common origin. It is important to remember them to recognize them when you go down it, your eyes are on the ground, thus, where the number of cases exceeds the current
+location of a function
+
+=== sample 09 temp=0.65 top_k=40 prompt='The captain looked at the map and realized' ===
+The captain looked at the map and realized that a few years ago the United States is now more than twice as many as the previous one. The average life expectancy for these babies is about 1 year. If you have not yet found this article helpful.
+In addition to the above, the system detects the direction of the magnetic field. The laser will be a bit smaller than the sum of the squares of the cube.
+The best way to find the right answers.
+This was a very important milestone for the growth of the plant.
+The term "microorganisms" is used as a "flat" by the current "lumpers"
+- "The New York Times" on the National Register of Historic Places.
+The
+
+=== sample 10 temp=0.75 top_k=50 prompt='During the experiment, the scientist noticed' ===
+During the experiment, the scientist noticed that the average temperature of the ice is about 50? C.
+- Temperature: 35?C (55?F). If it is too hot and airy, this is not the case. The next step is to build a wind turbine that could be deployed to make the world's first nuclear power plants.
+The U.S. Department of Energy ? the largest single-cell organ of the body, which makes it the oldest known human to human.
+The same is true for the state of the art movement and the way they express their feelings in their daily lives.
+- In the future, the project will be implemented using the following steps:
+1. Set the stage to
+
+=== sample 11 temp=0.85 top_k=64 prompt='Python function to add two numbers:' ===
+Python function to add two numbers:
+The following information is from the author's Web site. The reader has a lot of talk about the importance of the most important changes in the planet's climate. Some of the most common types of carburized are the same as the human beings.
+- Describe the work of the family of plants.
+In fact, many of these are not entirely clear. The first of these would be the first recorded migration to Earth every few hours.
+The moon is full of fascinating scenes in the art of the Old Age. The painting of the old Styx is also an imposing feature on the right.
+What does it mean to be a significant factor driving the rate of obesity in young
+
+=== sample 12 temp=0.95 top_k=80 prompt='Here is a short recipe for tomato soup:' ===
+Here is a short recipe for tomato soup:
+- Make a list of all the pertinent information for any of the images and use the logo to access the source code. We'll use it in a quick and open form.
+This page created by Eileen Johnston<|endoftext|>
+
+=== sample 13 temp=0.65 top_k=40 prompt='The main causes of climate change include' ===
+The main causes of climate change include the ability to produce and distribute food to consumers.
+The FDA recommends that all men are brought in to the city, and had become a huge problem.<|endoftext|>
+
+=== sample 14 temp=0.75 top_k=50 prompt='A good way to test a hypothesis is' ===
+A good way to test a hypothesis is to diagnose an individual?s physical health. A healthy diet includes an increased risk of developing the disease.
+In addition to having a good working relationship with other teachers.
+Our aim is to increase the number of cases that are associated with a particular
+character. He is responsible for the decline in spending.
+As the world moves, it is a matter of convenience.
+In this example, an object is a set of variables that are not possible to predict the impact of its actions on a patient's psychological distress, and the need for care.
+The same may be true for children who cannot afford to have their
+right answer the question ?yes,? and it was
+
+=== sample 15 temp=0.85 top_k=64 prompt='The patient reported mild symptoms and' ===
+The patient reported mild symptoms and its treatment.
+It is the most common source of drinking water to do so, though, with the exception of one's own hand.
+In fact, at the same time, that I said, for example, that the most common sources of protein are the carbohydrates in the form of vitamins.
+Drink the juice from a supermarket that had been established in the late medieval period. This is a great one to see how many of them are to be used by the user.?
+?It is true that the first people in the world are also at risk.
+These technologies are for the first time to analyse the characteristics of the original model of a given machine and a different
+
+=== sample 16 temp=0.95 top_k=80 prompt='The history of mathematics includes' ===
+The history of mathematics includes: 1) identification by age group (e.g., PPPs): A
+rejected by an exegetical view of the mind:
+"The mind?s history, we must remember that it is the only way to define what this means for the purposes of the author. He is a graduate of The Great Barrier Reef. The species is not known to occur as long as the length of the skull to look for. They can be seen only on the face with the eyes and neck, they are no longer considered to be a part of the "Housing History."
+A child who works in the United States. The first issue, on July 26, 1956.
+
+=== sample 17 temp=0.65 top_k=40 prompt='If a ball is dropped from a tower' ===
+If a ball is dropped from a tower.
+The first thing you can do is make sure you have enough room for another day to get the best benefits.
+What other symptoms have you found a great deal of information about the current state of the art of the world, and the ability to identify and analyse the underlying principles of the
+scientific community. To this end, the committee?s report is based on a recent study by the University of California, Berkeley, have discovered a new way to make sure that the new technologies are a bit more complicated than ever, and it is very important that you get a lot of information about your child's language development.
+- Help your child learn what is being bullied to their children.
+
+=== sample 18 temp=0.75 top_k=50 prompt='The team built a simple robot that' ===
+The team built a simple robot that uses a computer to store data from the Internet.
+- Encourage your child to take notes, and use it, and add new ideas and insights into a life of a person, and the relationship may be reduced to the level of carbon dioxide in the atmosphere is a key factor in the development of breast cancer and other bone disorders, the doctor may prescribe a topical antibiotic.
+The next day, the government continued to be "a great deal of new knowledge about the disease and how to identify and treat diseases. This can be caused by a combination of a few chemicals, in addition to its potential to influence the development of the disease.
+The study was published in the journal Nature.<|endoftext|>
+
+=== sample 19 temp=0.85 top_k=64 prompt='News report: Local officials announced' ===
+News report: Local officials announced that he had never seen anything like this before. Those who seek to make a change in their child?s education and make her the world's deepest, he was able to make that connection with the Internet.
+"The goal is to understand why these words are a bit more complicated, and there would be more to do it than to look at the natural world. We are not so lucky that we think any more than once if we eat more grain than we did before we can determine this, and more than three times as much as the national average is now around 70%, and many more. A person who has a fever, but who is not with men and women (for example,
+
+=== sample 20 temp=0.95 top_k=80 prompt='The meaning of life is' ===
+The meaning of life is a simple form of the word grafted from the Greek word "drum".
+Also important is the number of lines of communication and a high-risk
+OCR for page 156
+Finding the right of each type of soil type in the area. We know the power of a modern nation and have no significant impact on the industry.
+What is the difference between the basic requirements of the three-tiered planters. During the first summer of 1941, these forces were to be overthrown by the invading armies. But in 1854, the U.S. Army Signal Corps, including the Second Air Combat Command and the Military Establishment, it was the first to describe the time as ?
+
+=== sample 21 temp=0.65 top_k=40 prompt='Step 1: collect the data. Step 2:' ===
+Step 1: collect the data. Step 2: The user can also use the ?virtual world? of the universe.
+- To prevent the development of heart disease, stroke and diabetes.
+"It's important to understand that this is the most important place in the world.
+The United Nations is currently working on an international scale. The new research suggests that the genetic makeup of the plant is not a lot of fun with the kids that they have been told to read the book.
+The most important thing is to make sure the world is completely immersed in a natural cycle.
+This is the most common type of cancer of the pancreas, which in turn activates the immune system of the immune system. In addition, the
+
+=== sample 22 temp=0.75 top_k=50 prompt='A concise summary of this article:' ===
+A concise summary of this article:
+- The history of this country is very different from the rest of the body,? said Kesselring, an assistant professor at the University of Glasgow, said: "I'm sorry I could get there for a time and now, it is one of the most widely used forms of the word "Cultural and Spirituality in the United States. It was the last time they were sent to the U.S.
+- 3/2 cup water
+- 1/2 teaspoon raw egg yolks per day.
+The average annual precipitation in the Western Hemisphere and northern parts of the Arabian Peninsula and the Northern Ireland.
+The name "Lutheranism", and thus, there
+
+=== sample 23 temp=0.85 top_k=64 prompt='To debug a failing training run, first' ===
+To debug a failing training run, first before starting to lose weight). The result is a slight alteration of the
+sperm of the water is very large and often wet.
+Packet type: Remove the object and fill in the box that you can find.
+The first step is to determine if this is not achieved, and the actual change in the rate of inflation was much higher than predicted by the
+original work of the prophet Nathan, is a great-great-great-granddaughter has been the "Lucky to the United States."
+The original text is from the original source.
+The following are some of the most popular and convenient ways of preparing and preparing for a new world, and the world. This is
+
+=== sample 24 temp=0.95 top_k=80 prompt='The most important limitation of this model is' ===
+The most important limitation of this model is the ability of a computer to create new devices. (PETA on Facebook also, ?and, by these, the Lord made me angry as I saw it, by their inability to detect them in the laboratory.
+RICHARDY: So we know that at least five people have
+been tested for HIV infection. The other groups in the community are:
+1) How does CVS occur?
+? What are the two primary types of air traffic controllers (MEMS) to the other end of the genome where the egg cellends its size. This gives rise to the point that it provides the same information that could be used to develop a nuclear weapon, and are also now
+
+=== sample 25 temp=0.65 top_k=40 prompt='A careful scientist should avoid' ===
+A careful scientist should avoid the possibility that it will cause the problem to be solved in the future.
+The main focus of this effort is to investigate the relationship between the three groups. In addition, the group is the most common. The word ?snip? is more like the ?Greatest Places? (Walsh, MI: ENSO
+- Routing of the world?s largest and most populous counties in the world, and that of the two countries (those who had been arrested and tried in the U.S.
+- "Settlement of the United States." In the past century, the world has become a reality.
+The first major change to the ?
+
+=== sample 26 temp=0.75 top_k=50 prompt='The city council voted to approve' ===
+The city council voted to approve the use of the term "medical" is used to refer to a woman.
+There is no known way to prevent it from being used by the parents to have a ?right to bear the burden for the long term. As the disease progresses, the brain develops in its own stem cells.
+These findings, coupled with a new study of the brain, which helps to break down fat, then this is not true. The first
+happens to have the first time the patient has been given the drug to be effective. The goal of this project was to identify and identify the genes that regulate the enzyme that regulates the production of antibodies to bind to the host cell.
+- In
+
+=== sample 27 temp=0.85 top_k=64 prompt='The following table compares the results:' ===
+The following table compares the results:
+This section discusses the issue of the issue, but is not to be seen until the end of the second century, it was thought that the world was better than ours, the next generation of people in this country are now being abused by the law,? said Goya, which was followed by the conquest of the Kingdom of Sardinia, which was occupied by Aedes aegypti (Arabic: ????? ?????? ???????? ??????).
+[C.H.M.
+Virtually all the plants should be watered and ready for planting by springing up a landscape of new
+
+=== sample 28 temp=0.95 top_k=80 prompt='Write a polite email asking for more information:' ===
+Write a polite email asking for more information:
+- Students will perform an assignment in a different direction. It can be made to reflect the precise moment of the conflict within the entire continent.
+Although we can see a lot of other factors, it?s important to determine if the project or field of ground where it is needed. This provides a framework which has many disadvantages. It also means more effective anti-Jewish antihistamines, or anti-inflammatory and anti-inflammatory drugs (e.g. cortisone, dna testis, and so forth. A strong, long-term goal, and a long term outcome. But even today, this would not yet be accepted, and all forms of personal information have been
+
+=== sample 29 temp=0.65 top_k=40 prompt='The theorem can be explained with a simple example:' ===
+The theorem can be explained with a simple example:
+There are a number of things you can do to make sure that your child has enough sleep, you are not sure what your child has done you, and you will have to be careful when you have a lot of people with a particular source of income and wealth, which is a very strong and complex one.
+So far, scientists are looking at the way that it is in a very real sense. The goal is to try to find the answer to that question.
+What is the best approach?
+The most common type of cancer is cancer.
+The research, funded by the Canadian Institutes of Health Sciences.
+?We have been able to detect the presence of bacteria in a
+
+=== sample 30 temp=0.75 top_k=50 prompt='When the spacecraft entered orbit,' ===
+When the spacecraft entered orbit, the Hubble Space Telescope.
+The moon is a planet that has undergone a series of devastating earthquakes and tsunamis.
+"It's probably just one part of a
+"buzz" in the light of his own mind, and the soul of the Father, to his own children, to the very end of the war, including the massacre of Armenians and Sikhs were slaughtered and relocated to the mainland.
+The largest known species of the genus Gigantopithecus.
+In the following verse, I?m not referring to a problem with the same name on the same page as the file.
+Include this file in the Format menu.
+- Copy the new
+
+=== sample 31 temp=0.85 top_k=64 prompt='A farmer wants to increase crop yield by' ===
+A farmer wants to increase crop yield by over-exploitation of the central nervous system. The problem is that there is a great deal of risk, as they had expected, it was necessary that the United States could afford to pay for his slave inheritance, he had no choice but to go with the "Roma County Public Health Laboratory at the University of Michigan and the University of California, San Francisco.
+But in recent months the number of new cases of AIDS, and the
+women of the United States in the 19th and early 20th centuries.
+The modern building on the other side of the building, and we have to keep the whole population alive (or lack thereof) to use their own words, but also a
+
+=== sample 32 temp=0.95 top_k=80 prompt='The data suggest that the original hypothesis' ===
+The data suggest that the original hypothesis of a universe is extremely difficult.
+It seems like we were speaking on the basis of the work, and they are all written in multiple languages.
+The Internet is distributed as a platform for learning through its hard disk drive, but they're getting lighter. They aren?t enough to handle it, and vice versa
+The only thing that makes the difference.?
+Kohn has also written a lot of information about the Earth. Students will learn mathematics on a wide range of topics, ranging from "hardwired" to "right" and "definitely" about the new way in which the sun's energy is reflected off the surface of the Moon. The first step in the
+
+=== sample 33 temp=0.65 top_k=40 prompt='The program crashed because' ===
+The program crashed because of the high-speed rail system. The U.S. Department of Agriculture, Food and Rural Affairs, the International Congress of the Red Cross and Red Crescent Societies, Inc.
+- In the early 20th century, the French revolution and the modern-day state of Israel.
+The city of Troy is the oldest city in Palestine and is the birthplace of the two major faiths, and the world record for the first time.
+The most interesting thing about the question is that the whole country is the highest of all human beings.
+In the first place, the U.S. Department of Housing and Urban Development, and a joint venture of the University of North Carolina Press, 1991
+
+=== sample 34 temp=0.75 top_k=50 prompt='In plain English, validation loss measures' ===
+In plain English, validation loss measures are sometimes made so that patients with a medical condition are more likely to be hospitalized after having been given to the nurse the children of God, a man can scarcely be made between the soul of the universe and the eternal life as it is to you, I may be told that I have learned to make a difference?
+I've always been amazed at the time. So they are the other way around.
+As a result of this process, the researchers found that one of the largest of these devices. The process of converting power into a single electrical energy source. This is the method of estimating the amount of air that was necessary to maintain a strong grip on the
+surface. If you could try
+
+=== sample 35 temp=0.85 top_k=64 prompt='A child asked why the sky is blue. The teacher said' ===
+A child asked why the sky is blue. The teacher said: "I'll get out of his way up to its original position as a single file into the file on your hard drive, and you must complete the project in order to demonstrate the possibility that this is no coincidence, and we can
+find such a solution and change the color of the color shades. It is used to describe all aspects of the social sciences and how we can make money and help.?
+He explained that ?The brain might be the origin of the human form, and there may be two rows of four or more individual units (e.g., the number of people living with HIV/AIDS.<|endoftext|>
+
+=== sample 36 temp=0.95 top_k=80 prompt='The restaurant menu included' ===
+The restaurant menu included the oldest, most frequently visited, among other things. As he wrote, the people knew that the Jews were able to obtain the consent of the spouse or guardian
+- The baby is born with weakened immune system disease but not in control.
+The following guidelines can help you build a vocabulary.
+- We must, therefore, be regarded as a statement of faith, which in the Torah is called the Holy Prophets, but God and man, that the soul had the power to do.?<|endoftext|>
+
+=== sample 37 temp=0.65 top_k=40 prompt='The economic report found that' ===
+The economic report found that many of the countries of Europe.
+The US has been doing so since the beginning of the 19th century, and it was the tallest building in the world of the United States, and the United States.<|endoftext|>
+
+=== sample 38 temp=0.75 top_k=50 prompt='A useful checklist for evaluating model samples is' ===
+A useful checklist for evaluating model samples is the following:
+The following are some of the most common causes of death and disability. An extensive study of the relationships between the two groups.
+A common cause of infection with penile cancer;
+- a history of cancer
+- About 50 of the women who have been breastfed for several years, but it is impossible to distinguish between the two terms.
+The "right" means a more flexible, flexible, flexible tube that allows the surgeon to select a single individual using an identifier (like a keyword to a column)
+There are two ways that people can use to help their child's development.
+- To prevent the growth of bacteria and fungi from which it is found.
+
+
+=== sample 39 temp=0.85 top_k=64 prompt='The river flowed through the valley and' ===
+The river flowed through the valley and the floodplain was built.
+The main gate was originally built in 1650, in the late 19th century.
+When the Englishman David said, "The way that we can do this is to prevent the spread of rabies in the UK, and also from the French Congo.
+The word ?lobby? is not necessarily so important. The majority of these are based on the results of the latest research.
+Researchers led by Dr. Dr. Diane A. Dickey, Jr., M.D., L. Maud, and S. J. Fisci, A. E. (1975). The genus Antelopes, named after its discovery,
+
+=== sample 40 temp=0.95 top_k=80 prompt='The engineer opened the log file and saw' ===
+The engineer opened the log file and saw a clear, open-door window that runs the range of frequencies between 0 and 1 Hz. The power density was only 16 milliarcseconds in terms of the total weight of the U.S. population, particularly in southern China, the researchers said.
+They?re eating fish.<|endoftext|>
+

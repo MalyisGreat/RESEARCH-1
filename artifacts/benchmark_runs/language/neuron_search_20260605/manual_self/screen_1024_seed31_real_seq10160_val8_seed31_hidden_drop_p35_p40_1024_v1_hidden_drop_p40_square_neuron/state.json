@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_val8_seed31_hidden_drop_p35_p40_1024_v1_hidden_drop_p40_square_neuron\\checkpoint.pt",
+  "final_train_loss": 5.721555709838867,
+  "final_val_loss": 6.490488214286294,
+  "peak_vram_mb": 4300.447265625,
+  "pure_train_tok_per_sec": 83036.59306695264,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1024_seed31_real_seq10160_val8_seed31_hidden_drop_p35_p40_1024_v1_hidden_drop_p40_square_neuron\\result.json",
+  "run_name": "screen_1024_seed31_real_seq10160_val8_seed31_hidden_drop_p35_p40_1024_v1_hidden_drop_p40_square_neuron",
+  "status": "completed",
+  "step": 1024,
+  "tokens_seen": 10403840,
+  "train_steps": 1024
+}

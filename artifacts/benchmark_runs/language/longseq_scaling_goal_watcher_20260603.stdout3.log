@@ -1,0 +1,27 @@
+2026-06-03T06:32:07Z watcher_start
+2026-06-03T06:32:07Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:32:07Z heartbeat 80m: status=running step=14078/196851 tokens=143032480 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:33:07Z launch_80m_retry_wait_gpu gpu_used_mb=4756
+2026-06-03T06:33:07Z heartbeat 80m: status=running step=14660/196851 tokens=148945600 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:34:07Z launch_80m_retry_wait_gpu gpu_used_mb=4757
+2026-06-03T06:34:07Z heartbeat 80m: status=running step=15213/196851 tokens=154564080 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:35:08Z launch_80m_retry_wait_gpu gpu_used_mb=4757
+2026-06-03T06:35:08Z heartbeat 80m: status=running step=15791/196851 tokens=160436560 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:36:08Z launch_80m_retry_wait_gpu gpu_used_mb=4757
+2026-06-03T06:36:08Z heartbeat 80m: status=running step=16338/196851 tokens=165994080 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:37:08Z launch_80m_retry_wait_gpu gpu_used_mb=4902
+2026-06-03T06:37:08Z heartbeat 80m: status=running step=16912/196851 tokens=171825920 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:38:08Z launch_80m_retry_wait_gpu gpu_used_mb=4824
+2026-06-03T06:38:08Z heartbeat 80m: status=running step=17454/196851 tokens=177332640 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:39:09Z launch_80m_retry_wait_gpu gpu_used_mb=4835
+2026-06-03T06:39:09Z heartbeat 80m: status=running step=18000/196851 tokens=182880000 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:40:09Z restarting run=80m attempt=1
+2026-06-03T06:40:09Z launched run=longseq_anchor16_80m_2b_20260603 pid=23796 conv_dim=1034 conv_rank=295 lr=0.002
+2026-06-03T06:40:09Z launched run=longseq_anchor16_80m_2b_lr1e3_20260603 pid=26700 conv_dim=1034 conv_rank=295 lr=0.001
+2026-06-03T06:40:09Z heartbeat 80m: status=running step=18044/196851 tokens=183327040 train=nan val=nan | 80m_retry: no_state tail= | 160m: no_state tail=
+2026-06-03T06:41:10Z restart_wait_gpu run=80m gpu_used_mb=4581
+2026-06-03T06:41:10Z heartbeat 80m: status=running step=18044/196851 tokens=183327040 train=nan val=nan | 80m_retry: status=running step=88/196851 tokens=894080 train=7.127278804779053 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:42:10Z restart_wait_gpu run=80m gpu_used_mb=4600
+2026-06-03T06:42:10Z heartbeat 80m: status=running step=18044/196851 tokens=183327040 train=nan val=nan | 80m_retry: status=running step=610/196851 tokens=6197600 train=6.587642669677734 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:43:11Z restart_wait_gpu run=80m gpu_used_mb=4587
+2026-06-03T06:43:11Z heartbeat 80m: status=running step=18044/196851 tokens=183327040 train=nan val=nan | 80m_retry: status=running step=1094/196851 tokens=11115040 train=6.607088088989258 val=10.829497367143631 | 160m: no_state tail=

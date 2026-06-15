@@ -1,0 +1,50 @@
+[
+  {
+    "block_type": "phase_residual_blend_half_neuron",
+    "final_train_loss": 7.053462028503418,
+    "final_val_loss": 8.505032185012219,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.0856194426845045,
+    "tok_per_sec": 16884.632669508173,
+    "val_delta_vs_baseline": -0.0013910920012225603
+  },
+  {
+    "block_type": "phase_residual_blend_large_neuron",
+    "final_train_loss": 7.055129528045654,
+    "final_val_loss": 8.50574258963267,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.0318398428911344,
+    "tok_per_sec": 16048.198877037765,
+    "val_delta_vs_baseline": -0.0006806873807718716
+  },
+  {
+    "block_type": "phase_residual_blend_neuron",
+    "final_train_loss": 7.055332183837891,
+    "final_val_loss": 8.506067165673947,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.0579086718768262,
+    "tok_per_sec": 16453.647217626807,
+    "val_delta_vs_baseline": -0.0003561113394940918
+  },
+  {
+    "block_type": "phase_residual_blend_tiny_neuron",
+    "final_train_loss": 7.055518627166748,
+    "final_val_loss": 8.506518980101044,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.0837211411057155,
+    "tok_per_sec": 16855.10839645855,
+    "val_delta_vs_baseline": 9.570308760231683e-05
+  }
+]

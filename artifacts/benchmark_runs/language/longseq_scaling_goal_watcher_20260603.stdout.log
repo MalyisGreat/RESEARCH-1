@@ -1,0 +1,24 @@
+2026-06-03T06:04:40Z watcher_start
+2026-06-03T06:04:40Z heartbeat 80m: status=starting step=0/196851 tokens=0 train=None val=None | 160m: no_state tail=
+2026-06-03T06:05:40Z heartbeat 80m: status=running step=224/196851 tokens=2275840 train=7.012016773223877 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:06:40Z heartbeat 80m: status=running step=752/196851 tokens=7640320 train=6.7174553871154785 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:07:40Z heartbeat 80m: status=running step=1250/196851 tokens=12700000 train=6.313143730163574 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:08:40Z heartbeat 80m: status=running step=1765/196851 tokens=17932400 train=6.405596733093262 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:09:40Z heartbeat 80m: status=running step=2256/196851 tokens=22920960 train=6.4276018142700195 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:10:40Z heartbeat 80m: status=running step=2774/196851 tokens=28183840 train=5.908212184906006 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:11:40Z heartbeat 80m: status=running step=3265/196851 tokens=33172400 train=5.730895042419434 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:12:40Z heartbeat 80m: status=running step=3783/196851 tokens=38435280 train=5.806852340698242 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:13:41Z heartbeat 80m: status=running step=4275/196851 tokens=43434000 train=6.053553581237793 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:14:41Z heartbeat 80m: status=running step=4793/196851 tokens=48696880 train=5.732428550720215 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:15:41Z heartbeat 80m: status=running step=5285/196851 tokens=53695600 train=5.640781402587891 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:16:41Z heartbeat 80m: status=running step=5802/196851 tokens=58948320 train=5.995904445648193 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:17:41Z heartbeat 80m: status=running step=6293/196851 tokens=63936880 train=5.9273786544799805 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:18:41Z heartbeat 80m: status=running step=6810/196851 tokens=69189600 train=5.458127498626709 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:19:41Z heartbeat 80m: status=running step=7301/196851 tokens=74178160 train=5.630221366882324 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:20:41Z heartbeat 80m: status=running step=7819/196851 tokens=79441040 train=5.652010917663574 val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:21:41Z heartbeat 80m: status=running step=8318/196851 tokens=84510880 train=nan val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:22:41Z heartbeat 80m: status=running step=8845/196851 tokens=89865200 train=nan val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:23:42Z heartbeat 80m: status=running step=9394/196851 tokens=95443040 train=nan val=10.829497367143631 | 160m: no_state tail=
+2026-06-03T06:24:42Z heartbeat 80m: status=running step=9930/196851 tokens=100888800 train=nan val=nan | 160m: no_state tail=
+2026-06-03T06:25:42Z heartbeat 80m: status=running step=10484/196851 tokens=106517440 train=nan val=nan | 160m: no_state tail=
+2026-06-03T06:26:42Z heartbeat 80m: status=running step=11034/196851 tokens=112105440 train=nan val=nan | 160m: no_state tail=

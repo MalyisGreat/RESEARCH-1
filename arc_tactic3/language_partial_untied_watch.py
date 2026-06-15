@@ -280,6 +280,7 @@ def run_partial_untied_watch(config: PartialUntiedWatchConfig, *, print_progress
 
     history: list[dict[str, float]] = []
     step_times: list[float] = []
+    pure_train_time = 0.0
     tokens_seen = 0
     sequences_seen = 0
     latest_val_loss = float("nan")
@@ -326,13 +327,14 @@ def run_partial_untied_watch(config: PartialUntiedWatchConfig, *, print_progress
             torch.cuda.synchronize()
         step_duration = time.perf_counter() - step_start
         step_times.append(step_duration)
+        pure_train_time += step_duration
         tokens_seen += token_count
         sequences_seen += batch["input_ids"].size(0)
 
         elapsed = time.perf_counter() - start
         progress = step / real_config.train_steps
         train_tok_per_sec = tokens_seen / max(elapsed, 1e-9)
-        pure_train_tok_per_sec = tokens_seen / max(sum(step_times), 1e-9)
+        pure_train_tok_per_sec = tokens_seen / max(pure_train_time, 1e-9)
         remaining_tokens = max(actual_target_tokens - tokens_seen, 0)
         eta_seconds = remaining_tokens / max(train_tok_per_sec, 1e-9)
         state_payload = {
@@ -400,7 +402,6 @@ def run_partial_untied_watch(config: PartialUntiedWatchConfig, *, print_progress
                 )
 
     total_time = time.perf_counter() - start
-    pure_train_time = sum(step_times)
     report = {
         "parameter_count": count_parameters(model),
         "history": history,

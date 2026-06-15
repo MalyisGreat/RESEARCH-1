@@ -1,0 +1,91 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 9843,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 9843,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m",
+    "resume_checkpoint": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt",
+    "run_name": "wave6_host2080_multiscale_stride4_continue300m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 29529,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.020877781164,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m\\checkpoint.pt",
+    "final_train_loss": 4.992288589477539,
+    "final_val_loss": 4.879228965097212,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.453152656555176,
+        "val_loss": 5.382352503829115
+      },
+      {
+        "learning_rate": 0.00023278423883243347,
+        "step": 5907.0,
+        "tokens_seen": 60015120.0,
+        "train_loss": 5.515225887298584,
+        "val_loss": 5.384209485692302
+      },
+      {
+        "learning_rate": 7.220675640846374e-05,
+        "step": 7876.0,
+        "tokens_seen": 80020160.0,
+        "train_loss": 5.525251388549805,
+        "val_loss": 5.312784014286332
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 9843.0,
+        "tokens_seen": 100004880.0,
+        "train_loss": 5.490428924560547,
+        "val_loss": 5.2701041966285604
+      },
+      {
+        "learning_rate": 0.0001621318144210678,
+        "step": 19686.0,
+        "tokens_seen": 200009760.0,
+        "train_loss": 5.301837921142578,
+        "val_loss": 5.005851191516936
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 29529.0,
+        "tokens_seen": 300014640.0,
+        "train_loss": 4.992288589477539,
+        "val_loss": 4.879228965097212
+      }
+    ],
+    "parameter_count": 51037745,
+    "peak_vram_mb": 4507.6015625,
+    "pure_train_tok_per_sec": 68884.05176542787,
+    "step_time_mean_ms": 147.49422746789105,
+    "step_time_median_ms": 145.94350001425482,
+    "train_tokens_seen": 300014640
+  }
+}

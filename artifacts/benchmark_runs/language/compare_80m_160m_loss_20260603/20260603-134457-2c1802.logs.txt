@@ -1,0 +1,64 @@
+﻿[2026-06-03T18:44:40Z] starting in C:\Users\mwstr\CodexHouseWorker
+$env:PYTHONUNBUFFERED='1'; $root=Join-Path $env:USERPROFILE 'CodexHouseWorker\research1_longseq'; $script=Join-Path $root 'standalone_longseq_anchor_train.py'; $cache=Join-Path $root 'cache\finewebedu_train2000203011_val325152_seq10160_gpt2.pt'; $out=Join-Path $root 'runs\longseq_anchor16_160m_2b_cosine_20260603_restart2'; Write-Host 'TRAIN3080_SHORT_START'; python $script --cache-path $cache --output-dir $out --run-name longseq_anchor16_160m_2b_cosine_20260603_restart2 --train-steps 196851 --eval-interval 9843 --checkpoint-interval 9843 --milestone-checkpoint-interval 59058 --val-blocks 32 --embedding-dim 1831 --conv-rank 531 --learning-rate 0.0006 --min-learning-rate 0.00006 --warmup-steps 2000; $code=$LASTEXITCODE; Write-Host "TRAIN3080_SHORT_EXIT=$code"; exit $code
+TRAIN3080_SHORT_START
+top_token_hist rows=787/196851
+top_token_hist rows=40137/196851
+top_token_hist rows=79487/196851
+top_token_hist rows=118837/196851
+top_token_hist rows=158187/196851
+top_token_hist rows=196851/196851
+START run=longseq_anchor16_160m_2b_cosine_20260603_restart2 device=NVIDIA GeForce RTX 3080 params=160,000,566 seq=10160 steps=196851
+TRAIN step=1/196851 tokens=10160 loss=10.2862 lr=3e-07 pure_tok_s=10788
+TRAIN step=500/196851 tokens=5080000 loss=6.7118 lr=0.00015 pure_tok_s=76378
+TRAIN step=1000/196851 tokens=10160000 loss=6.2173 lr=0.0003 pure_tok_s=76831
+TRAIN step=1500/196851 tokens=15240000 loss=6.2222 lr=0.00045 pure_tok_s=77015
+TRAIN step=2000/196851 tokens=20320000 loss=6.1925 lr=0.0006 pure_tok_s=77128
+TRAIN step=2500/196851 tokens=25400000 loss=5.8748 lr=0.000599991 pure_tok_s=77222
+TRAIN step=3000/196851 tokens=30480000 loss=6.3029 lr=0.000599965 pure_tok_s=77289
+TRAIN step=3500/196851 tokens=35560000 loss=6.1201 lr=0.000599921 pure_tok_s=77341
+TRAIN step=4000/196851 tokens=40640000 loss=5.9854 lr=0.00059986 pure_tok_s=77379
+TRAIN step=4500/196851 tokens=45720000 loss=6.2504 lr=0.000599781 pure_tok_s=77408
+TRAIN step=5000/196851 tokens=50800000 loss=5.8295 lr=0.000599684 pure_tok_s=77432
+TRAIN step=5500/196851 tokens=55880000 loss=5.9588 lr=0.00059957 pure_tok_s=77453
+TRAIN step=6000/196851 tokens=60960000 loss=5.6739 lr=0.000599439 pure_tok_s=77463
+TRAIN step=6500/196851 tokens=66040000 loss=5.7253 lr=0.00059929 pure_tok_s=77473
+TRAIN step=7000/196851 tokens=71120000 loss=5.8872 lr=0.000599123 pure_tok_s=77482
+TRAIN step=7500/196851 tokens=76200000 loss=5.2074 lr=0.000598939 pure_tok_s=77491
+TRAIN step=8000/196851 tokens=81280000 loss=5.5032 lr=0.000598738 pure_tok_s=77499
+TRAIN step=8500/196851 tokens=86360000 loss=5.8264 lr=0.000598519 pure_tok_s=77507
+TRAIN step=9000/196851 tokens=91440000 loss=5.8260 lr=0.000598282 pure_tok_s=77511
+TRAIN step=9500/196851 tokens=96520000 loss=5.5870 lr=0.000598028 pure_tok_s=77516
+EVAL step=9843/196851 tokens=100004880 train=5.4832 val=5.6011 eval_s=1.6
+TRAIN step=10000/196851 tokens=101600000 loss=5.8066 lr=0.000597757 pure_tok_s=77506
+TRAIN step=10500/196851 tokens=106680000 loss=5.3970 lr=0.000597468 pure_tok_s=77512
+TRAIN step=11000/196851 tokens=111760000 loss=5.3133 lr=0.000597162 pure_tok_s=77514
+TRAIN step=11500/196851 tokens=116840000 loss=5.3302 lr=0.000596839 pure_tok_s=77518
+TRAIN step=12000/196851 tokens=121920000 loss=5.3200 lr=0.000596498 pure_tok_s=77520
+TRAIN step=12500/196851 tokens=127000000 loss=5.2688 lr=0.00059614 pure_tok_s=77523
+EVAL step=9843/196851 tokens=100004880 train=5.4832 val=5.6011 eval_s=1.6
+TRAIN step=13000/196851 tokens=132080000 loss=5.6478 lr=0.000595765 pure_tok_s=77526
+TRAIN step=13500/196851 tokens=137160000 loss=5.6644 lr=0.000595372 pure_tok_s=77528
+TRAIN step=14000/196851 tokens=142240000 loss=5.1293 lr=0.000594962 pure_tok_s=77530
+TRAIN step=14500/196851 tokens=147320000 loss=5.5683 lr=0.000594535 pure_tok_s=77532
+TRAIN step=15000/196851 tokens=152400000 loss=5.4744 lr=0.000594091 pure_tok_s=77533
+TRAIN step=15500/196851 tokens=157480000 loss=5.5663 lr=0.000593629 pure_tok_s=77534
+TRAIN step=16000/196851 tokens=162560000 loss=5.2878 lr=0.000593151 pure_tok_s=77535
+TRAIN step=16500/196851 tokens=167640000 loss=5.2158 lr=0.000592655 pure_tok_s=77537
+TRAIN step=17000/196851 tokens=172720000 loss=5.3731 lr=0.000592142 pure_tok_s=77539
+TRAIN step=17500/196851 tokens=177800000 loss=5.4005 lr=0.000591613 pure_tok_s=77540
+TRAIN step=18000/196851 tokens=182880000 loss=5.2370 lr=0.000591066 pure_tok_s=77541
+TRAIN step=18500/196851 tokens=187960000 loss=5.1646 lr=0.000590502 pure_tok_s=77543
+TRAIN step=19000/196851 tokens=193040000 loss=5.1660 lr=0.000589921 pure_tok_s=77547
+TRAIN step=19500/196851 tokens=198120000 loss=5.1233 lr=0.000589324 pure_tok_s=77551
+EVAL step=19686/196851 tokens=200009760 train=5.5174 val=5.3055 eval_s=1.6
+TRAIN step=20000/196851 tokens=203200000 loss=5.1376 lr=0.000588709 pure_tok_s=77549
+TRAIN step=20500/196851 tokens=208280000 loss=5.4094 lr=0.000588078 pure_tok_s=77552
+TRAIN step=21000/196851 tokens=213360000 loss=5.1840 lr=0.00058743 pure_tok_s=77556
+TRAIN step=21500/196851 tokens=218440000 loss=5.1603 lr=0.000586765 pure_tok_s=77559
+TRAIN step=22000/196851 tokens=223520000 loss=5.1121 lr=0.000586084 pure_tok_s=77562
+TRAIN step=22500/196851 tokens=228600000 loss=5.3892 lr=0.000585386 pure_tok_s=77566
+TRAIN step=23000/196851 tokens=233680000 loss=5.4397 lr=0.000584671 pure_tok_s=77569
+TRAIN step=23500/196851 tokens=238760000 loss=5.2782 lr=0.00058394 pure_tok_s=77573
+TRAIN step=24000/196851 tokens=243840000 loss=4.8939 lr=0.000583192 pure_tok_s=77576
+TRAIN step=24500/196851 tokens=248920000 loss=5.3525 lr=0.000582428 pure_tok_s=77578
+[2026-06-03T22:59:57Z] hub marked this assignment failed because the worker heartbeat is idle and no final job update arrived

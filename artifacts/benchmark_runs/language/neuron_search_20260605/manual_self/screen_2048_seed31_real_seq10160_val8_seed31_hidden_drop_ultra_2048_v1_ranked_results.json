@@ -1,0 +1,14 @@
+[
+  {
+    "block_type": "hidden_drop_ultra_square_neuron",
+    "final_train_loss": 4.655778884887695,
+    "final_val_loss": 6.710196517583892,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9899024503176759,
+    "tok_per_sec": 82707.87350979594,
+    "val_delta_vs_baseline": -0.07787378951320534
+  }
+]

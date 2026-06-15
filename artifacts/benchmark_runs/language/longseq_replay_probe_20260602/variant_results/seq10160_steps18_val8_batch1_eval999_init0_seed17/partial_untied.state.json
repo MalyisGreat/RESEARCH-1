@@ -1,0 +1,10 @@
+{
+  "parameter_count": 19949523,
+  "sequence_length": 10160,
+  "status": "starting",
+  "step": 0,
+  "tokens_seen": 0,
+  "train_steps": 18,
+  "val_blocks": 8,
+  "variant": "partial_untied"
+}

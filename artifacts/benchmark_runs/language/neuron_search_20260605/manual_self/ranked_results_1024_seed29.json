@@ -1,0 +1,14 @@
+[
+  {
+    "block_type": "phase_residual_blend_half_neuron",
+    "final_train_loss": 6.360987663269043,
+    "final_val_loss": 7.762950226956723,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 128,
+    "parameter_count": 4935089,
+    "speed_ratio_vs_baseline": 1.082105341420525,
+    "tok_per_sec": 16650.435170500466,
+    "val_delta_vs_baseline": -0.002024431789622305
+  }
+]

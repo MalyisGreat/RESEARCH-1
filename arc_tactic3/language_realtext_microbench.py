@@ -77,8 +77,8 @@ class RealTextConfig:
 
 class TokenBlockDataset(Dataset[dict[str, torch.Tensor]]):
     def __init__(self, input_ids: torch.Tensor, targets: torch.Tensor) -> None:
-        self.input_ids = input_ids.long()
-        self.targets = targets.long()
+        self.input_ids = input_ids
+        self.targets = targets
 
     def __len__(self) -> int:
         return self.input_ids.size(0)
@@ -454,10 +454,15 @@ def build_models(config: RealTextConfig, *, vocab_size: int) -> dict[str, nn.Mod
 
 
 def _move_batch(batch: dict[str, torch.Tensor], device: torch.device) -> dict[str, torch.Tensor]:
-    return {
+    moved = {
         key: value.to(device, non_blocking=device.type == "cuda") if value.device != device else value
         for key, value in batch.items()
     }
+    if moved["input_ids"].dtype != torch.long:
+        moved["input_ids"] = moved["input_ids"].long()
+    if moved["targets"].dtype != torch.long:
+        moved["targets"] = moved["targets"].long()
+    return moved
 
 
 def _dataset_tensors(
@@ -504,6 +509,10 @@ def _iter_tensor_batches(
         if batch_input_ids.device != device:
             batch_input_ids = batch_input_ids.to(device, non_blocking=non_blocking)
             batch_targets = batch_targets.to(device, non_blocking=non_blocking)
+        if batch_input_ids.dtype != torch.long:
+            batch_input_ids = batch_input_ids.long()
+        if batch_targets.dtype != torch.long:
+            batch_targets = batch_targets.long()
         yield {
             "input_ids": batch_input_ids,
             "targets": batch_targets,
@@ -569,6 +578,10 @@ def _scheduled_batch_from_tensors(
     if batch_input_ids.device != device:
         batch_input_ids = batch_input_ids.to(device, non_blocking=non_blocking)
         batch_targets = batch_targets.to(device, non_blocking=non_blocking)
+    if batch_input_ids.dtype != torch.long:
+        batch_input_ids = batch_input_ids.long()
+    if batch_targets.dtype != torch.long:
+        batch_targets = batch_targets.long()
     return {
         "input_ids": batch_input_ids,
         "targets": batch_targets,
@@ -636,7 +649,7 @@ def _build_optimizer(
     else:
         param_groups = model.parameters()
         optimizer_kwargs["weight_decay"] = config.weight_decay
-    if config.use_fused_adamw and config.device == "cuda":
+    if config.use_fused_adamw and torch.device(config.device).type == "cuda":
         try:
             return torch.optim.AdamW(param_groups, fused=True, **optimizer_kwargs)
         except (TypeError, RuntimeError):
@@ -715,6 +728,7 @@ def train_microbenchmark(
 ) -> dict[str, object]:
     device = torch.device(config.device)
     model.to(device)
+    parameter_count = count_parameters(model)
     optimizer = _build_optimizer(model, config, model_name=model_name)
     scheduler = _build_scheduler(optimizer, config)
     scaler = torch.amp.GradScaler(device="cuda", enabled=config.use_amp and device.type == "cuda")
@@ -823,7 +837,7 @@ def train_microbenchmark(
             )
 
     return {
-        "parameter_count": count_parameters(model),
+        "parameter_count": parameter_count,
         "history": history,
         "initial_val_loss": initial_val_loss,
         "final_val_loss": history[-1]["val_loss"],

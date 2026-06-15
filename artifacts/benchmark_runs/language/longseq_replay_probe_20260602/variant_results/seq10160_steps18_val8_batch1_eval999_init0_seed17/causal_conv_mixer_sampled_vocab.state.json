@@ -1,0 +1,12 @@
+{
+  "latest_train_loss": 7.355447292327881,
+  "latest_val_loss": NaN,
+  "peak_vram_mb": 2124.78271484375,
+  "pure_train_tok_per_sec": 48332.70662200081,
+  "status": "running",
+  "step": 18,
+  "step_time_ms": 86.99170000181766,
+  "tokens_seen": 182880,
+  "train_steps": 18,
+  "variant": "causal_conv_mixer_sampled_vocab"
+}

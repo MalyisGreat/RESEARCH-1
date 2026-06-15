@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\checkpoint.pt",
+  "final_train_loss": 5.490428924560547,
+  "final_val_loss": 5.2701041966285604,
+  "peak_vram_mb": 4507.412109375,
+  "pure_train_tok_per_sec": 68559.43670084,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue100m\\result.json",
+  "run_name": "wave6_host2080_multiscale_stride4_continue100m",
+  "status": "completed",
+  "step": 9843,
+  "tokens_seen": 100004880,
+  "train_steps": 9843
+}

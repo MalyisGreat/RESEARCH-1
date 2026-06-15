@@ -1,0 +1,2218 @@
+starting causal_conv_mixer_sampled_vocab_anchor16: params=79,999,460 seq=10160 steps=196851
+causal_conv_mixer_sampled_vocab_anchor16 step=1/196851 train=10.2835 pure_tok/s=15,929
+causal_conv_mixer_sampled_vocab_anchor16 step=100/196851 train=7.1179 pure_tok/s=86,636
+causal_conv_mixer_sampled_vocab_anchor16 step=200/196851 train=6.7518 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=300/196851 train=6.6112 pure_tok/s=88,641
+causal_conv_mixer_sampled_vocab_anchor16 step=400/196851 train=6.6355 pure_tok/s=88,749
+causal_conv_mixer_sampled_vocab_anchor16 step=500/196851 train=6.5592 pure_tok/s=88,656
+causal_conv_mixer_sampled_vocab_anchor16 step=600/196851 train=6.6847 pure_tok/s=88,781
+causal_conv_mixer_sampled_vocab_anchor16 step=700/196851 train=6.9019 pure_tok/s=88,428
+causal_conv_mixer_sampled_vocab_anchor16 step=800/196851 train=6.3052 pure_tok/s=88,421
+causal_conv_mixer_sampled_vocab_anchor16 step=900/196851 train=6.5579 pure_tok/s=88,426
+causal_conv_mixer_sampled_vocab_anchor16 step=1000/196851 train=6.1771 pure_tok/s=88,429
+causal_conv_mixer_sampled_vocab_anchor16 step=1100/196851 train=6.5180 pure_tok/s=88,430
+causal_conv_mixer_sampled_vocab_anchor16 step=1200/196851 train=6.4462 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=1300/196851 train=6.2746 pure_tok/s=88,123
+causal_conv_mixer_sampled_vocab_anchor16 step=1400/196851 train=6.3159 pure_tok/s=88,104
+causal_conv_mixer_sampled_vocab_anchor16 step=1500/196851 train=6.1061 pure_tok/s=88,104
+causal_conv_mixer_sampled_vocab_anchor16 step=1600/196851 train=6.0568 pure_tok/s=88,063
+causal_conv_mixer_sampled_vocab_anchor16 step=1700/196851 train=6.1266 pure_tok/s=88,043
+causal_conv_mixer_sampled_vocab_anchor16 step=1800/196851 train=6.3730 pure_tok/s=88,035
+causal_conv_mixer_sampled_vocab_anchor16 step=1900/196851 train=6.4393 pure_tok/s=87,972
+causal_conv_mixer_sampled_vocab_anchor16 step=2000/196851 train=6.0882 pure_tok/s=87,858
+causal_conv_mixer_sampled_vocab_anchor16 step=2100/196851 train=5.9019 pure_tok/s=87,789
+causal_conv_mixer_sampled_vocab_anchor16 step=2200/196851 train=6.3154 pure_tok/s=87,788
+causal_conv_mixer_sampled_vocab_anchor16 step=2300/196851 train=5.9687 pure_tok/s=87,800
+causal_conv_mixer_sampled_vocab_anchor16 step=2400/196851 train=6.6304 pure_tok/s=87,774
+causal_conv_mixer_sampled_vocab_anchor16 step=2500/196851 train=5.7682 pure_tok/s=87,757
+causal_conv_mixer_sampled_vocab_anchor16 step=2600/196851 train=6.0212 pure_tok/s=87,771
+causal_conv_mixer_sampled_vocab_anchor16 step=2700/196851 train=5.8813 pure_tok/s=87,771
+causal_conv_mixer_sampled_vocab_anchor16 step=2800/196851 train=6.1825 pure_tok/s=87,755
+causal_conv_mixer_sampled_vocab_anchor16 step=2900/196851 train=6.0913 pure_tok/s=87,692
+causal_conv_mixer_sampled_vocab_anchor16 step=3000/196851 train=6.2131 pure_tok/s=87,688
+causal_conv_mixer_sampled_vocab_anchor16 step=3100/196851 train=5.8498 pure_tok/s=87,711
+causal_conv_mixer_sampled_vocab_anchor16 step=3200/196851 train=6.1862 pure_tok/s=87,736
+causal_conv_mixer_sampled_vocab_anchor16 step=3300/196851 train=5.9828 pure_tok/s=87,724
+causal_conv_mixer_sampled_vocab_anchor16 step=3400/196851 train=6.0756 pure_tok/s=87,742
+causal_conv_mixer_sampled_vocab_anchor16 step=3500/196851 train=5.9460 pure_tok/s=87,757
+causal_conv_mixer_sampled_vocab_anchor16 step=3600/196851 train=5.9334 pure_tok/s=87,771
+causal_conv_mixer_sampled_vocab_anchor16 step=3700/196851 train=5.8107 pure_tok/s=87,783
+causal_conv_mixer_sampled_vocab_anchor16 step=3800/196851 train=5.6862 pure_tok/s=87,786
+causal_conv_mixer_sampled_vocab_anchor16 step=3900/196851 train=5.7920 pure_tok/s=87,765
+causal_conv_mixer_sampled_vocab_anchor16 step=4000/196851 train=5.8504 pure_tok/s=87,767
+causal_conv_mixer_sampled_vocab_anchor16 step=4100/196851 train=5.7453 pure_tok/s=87,783
+causal_conv_mixer_sampled_vocab_anchor16 step=4200/196851 train=5.7388 pure_tok/s=87,799
+causal_conv_mixer_sampled_vocab_anchor16 step=4300/196851 train=5.9910 pure_tok/s=87,776
+causal_conv_mixer_sampled_vocab_anchor16 step=4400/196851 train=6.0497 pure_tok/s=87,778
+causal_conv_mixer_sampled_vocab_anchor16 step=4500/196851 train=6.0965 pure_tok/s=87,788
+causal_conv_mixer_sampled_vocab_anchor16 step=4600/196851 train=5.8430 pure_tok/s=87,765
+causal_conv_mixer_sampled_vocab_anchor16 step=4700/196851 train=5.8793 pure_tok/s=87,769
+causal_conv_mixer_sampled_vocab_anchor16 step=4800/196851 train=6.0530 pure_tok/s=87,774
+causal_conv_mixer_sampled_vocab_anchor16 step=4900/196851 train=5.8128 pure_tok/s=87,759
+causal_conv_mixer_sampled_vocab_anchor16 step=5000/196851 train=5.7165 pure_tok/s=87,754
+causal_conv_mixer_sampled_vocab_anchor16 step=5100/196851 train=5.8954 pure_tok/s=87,774
+causal_conv_mixer_sampled_vocab_anchor16 step=5200/196851 train=5.7717 pure_tok/s=87,783
+causal_conv_mixer_sampled_vocab_anchor16 step=5300/196851 train=5.6889 pure_tok/s=87,759
+causal_conv_mixer_sampled_vocab_anchor16 step=5400/196851 train=5.9539 pure_tok/s=87,764
+causal_conv_mixer_sampled_vocab_anchor16 step=5500/196851 train=5.8737 pure_tok/s=87,768
+causal_conv_mixer_sampled_vocab_anchor16 step=5600/196851 train=5.7116 pure_tok/s=87,769
+causal_conv_mixer_sampled_vocab_anchor16 step=5700/196851 train=5.6989 pure_tok/s=87,747
+causal_conv_mixer_sampled_vocab_anchor16 step=5800/196851 train=5.6963 pure_tok/s=87,731
+causal_conv_mixer_sampled_vocab_anchor16 step=5900/196851 train=5.5647 pure_tok/s=87,729
+causal_conv_mixer_sampled_vocab_anchor16 step=6000/196851 train=5.6033 pure_tok/s=87,728
+causal_conv_mixer_sampled_vocab_anchor16 step=6100/196851 train=5.6792 pure_tok/s=87,729
+causal_conv_mixer_sampled_vocab_anchor16 step=6200/196851 train=5.9247 pure_tok/s=87,738
+causal_conv_mixer_sampled_vocab_anchor16 step=6300/196851 train=5.7268 pure_tok/s=87,718
+causal_conv_mixer_sampled_vocab_anchor16 step=6400/196851 train=6.1227 pure_tok/s=87,724
+causal_conv_mixer_sampled_vocab_anchor16 step=6500/196851 train=5.7075 pure_tok/s=87,729
+causal_conv_mixer_sampled_vocab_anchor16 step=6600/196851 train=5.7131 pure_tok/s=87,731
+causal_conv_mixer_sampled_vocab_anchor16 step=6700/196851 train=5.6642 pure_tok/s=87,723
+causal_conv_mixer_sampled_vocab_anchor16 step=6800/196851 train=5.5875 pure_tok/s=87,726
+causal_conv_mixer_sampled_vocab_anchor16 step=6900/196851 train=5.6821 pure_tok/s=87,734
+causal_conv_mixer_sampled_vocab_anchor16 step=7000/196851 train=5.8462 pure_tok/s=87,741
+causal_conv_mixer_sampled_vocab_anchor16 step=7100/196851 train=5.7002 pure_tok/s=87,757
+causal_conv_mixer_sampled_vocab_anchor16 step=7200/196851 train=5.7198 pure_tok/s=87,766
+causal_conv_mixer_sampled_vocab_anchor16 step=7300/196851 train=5.4477 pure_tok/s=87,754
+causal_conv_mixer_sampled_vocab_anchor16 step=7400/196851 train=5.6448 pure_tok/s=87,760
+causal_conv_mixer_sampled_vocab_anchor16 step=7500/196851 train=5.1690 pure_tok/s=87,768
+causal_conv_mixer_sampled_vocab_anchor16 step=7600/196851 train=5.5280 pure_tok/s=87,770
+causal_conv_mixer_sampled_vocab_anchor16 step=7700/196851 train=5.6740 pure_tok/s=87,771
+causal_conv_mixer_sampled_vocab_anchor16 step=7800/196851 train=5.6890 pure_tok/s=87,779
+causal_conv_mixer_sampled_vocab_anchor16 step=7900/196851 train=6.0104 pure_tok/s=87,782
+causal_conv_mixer_sampled_vocab_anchor16 step=8000/196851 train=5.4747 pure_tok/s=87,772
+causal_conv_mixer_sampled_vocab_anchor16 step=8100/196851 train=5.5559 pure_tok/s=87,783
+causal_conv_mixer_sampled_vocab_anchor16 step=8200/196851 train=5.2868 pure_tok/s=87,788
+causal_conv_mixer_sampled_vocab_anchor16 step=8300/196851 train=5.4347 pure_tok/s=87,787
+causal_conv_mixer_sampled_vocab_anchor16 step=8400/196851 train=5.8520 pure_tok/s=87,784
+causal_conv_mixer_sampled_vocab_anchor16 step=8500/196851 train=5.7949 pure_tok/s=87,788
+causal_conv_mixer_sampled_vocab_anchor16 step=8600/196851 train=5.5093 pure_tok/s=87,790
+causal_conv_mixer_sampled_vocab_anchor16 step=8700/196851 train=5.6233 pure_tok/s=87,796
+causal_conv_mixer_sampled_vocab_anchor16 step=8800/196851 train=5.2020 pure_tok/s=87,803
+causal_conv_mixer_sampled_vocab_anchor16 step=8900/196851 train=5.4193 pure_tok/s=87,806
+causal_conv_mixer_sampled_vocab_anchor16 step=9000/196851 train=5.8166 pure_tok/s=87,797
+causal_conv_mixer_sampled_vocab_anchor16 step=9100/196851 train=5.5773 pure_tok/s=87,801
+causal_conv_mixer_sampled_vocab_anchor16 step=9200/196851 train=5.3822 pure_tok/s=87,798
+causal_conv_mixer_sampled_vocab_anchor16 step=9300/196851 train=5.4735 pure_tok/s=87,796
+causal_conv_mixer_sampled_vocab_anchor16 step=9400/196851 train=5.5253 pure_tok/s=87,787
+causal_conv_mixer_sampled_vocab_anchor16 step=9500/196851 train=5.5955 pure_tok/s=87,787
+causal_conv_mixer_sampled_vocab_anchor16 step=9600/196851 train=5.4366 pure_tok/s=87,780
+causal_conv_mixer_sampled_vocab_anchor16 step=9700/196851 train=5.6208 pure_tok/s=87,785
+causal_conv_mixer_sampled_vocab_anchor16 step=9800/196851 train=5.4029 pure_tok/s=87,786
+causal_conv_mixer_sampled_vocab_anchor16 eval step=9843 val=5.6117 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=9900/196851 train=5.6411 pure_tok/s=87,796
+causal_conv_mixer_sampled_vocab_anchor16 step=10000/196851 train=5.8112 pure_tok/s=87,803
+causal_conv_mixer_sampled_vocab_anchor16 step=10100/196851 train=5.4823 pure_tok/s=87,811
+causal_conv_mixer_sampled_vocab_anchor16 step=10200/196851 train=5.5858 pure_tok/s=87,809
+causal_conv_mixer_sampled_vocab_anchor16 step=10300/196851 train=5.6158 pure_tok/s=87,793
+causal_conv_mixer_sampled_vocab_anchor16 step=10400/196851 train=5.2453 pure_tok/s=87,790
+causal_conv_mixer_sampled_vocab_anchor16 step=10500/196851 train=5.3672 pure_tok/s=87,783
+causal_conv_mixer_sampled_vocab_anchor16 step=10600/196851 train=5.3243 pure_tok/s=87,770
+causal_conv_mixer_sampled_vocab_anchor16 step=10700/196851 train=5.1594 pure_tok/s=87,752
+causal_conv_mixer_sampled_vocab_anchor16 step=10800/196851 train=5.2505 pure_tok/s=87,750
+causal_conv_mixer_sampled_vocab_anchor16 step=10900/196851 train=6.1140 pure_tok/s=87,747
+causal_conv_mixer_sampled_vocab_anchor16 step=11000/196851 train=5.3362 pure_tok/s=87,734
+causal_conv_mixer_sampled_vocab_anchor16 step=11100/196851 train=5.4394 pure_tok/s=87,736
+causal_conv_mixer_sampled_vocab_anchor16 step=11200/196851 train=5.4644 pure_tok/s=87,723
+causal_conv_mixer_sampled_vocab_anchor16 step=11300/196851 train=5.7010 pure_tok/s=87,692
+causal_conv_mixer_sampled_vocab_anchor16 step=11400/196851 train=5.2944 pure_tok/s=87,637
+causal_conv_mixer_sampled_vocab_anchor16 step=11500/196851 train=5.3346 pure_tok/s=87,623
+causal_conv_mixer_sampled_vocab_anchor16 step=11600/196851 train=5.4563 pure_tok/s=87,619
+causal_conv_mixer_sampled_vocab_anchor16 step=11700/196851 train=5.3070 pure_tok/s=87,613
+causal_conv_mixer_sampled_vocab_anchor16 step=11800/196851 train=5.5311 pure_tok/s=87,612
+causal_conv_mixer_sampled_vocab_anchor16 step=11900/196851 train=5.4276 pure_tok/s=87,604
+causal_conv_mixer_sampled_vocab_anchor16 step=12000/196851 train=5.3370 pure_tok/s=87,602
+causal_conv_mixer_sampled_vocab_anchor16 step=12100/196851 train=5.2622 pure_tok/s=87,609
+causal_conv_mixer_sampled_vocab_anchor16 step=12200/196851 train=5.7099 pure_tok/s=87,613
+causal_conv_mixer_sampled_vocab_anchor16 step=12300/196851 train=5.2995 pure_tok/s=87,618
+causal_conv_mixer_sampled_vocab_anchor16 step=12400/196851 train=5.3402 pure_tok/s=87,620
+causal_conv_mixer_sampled_vocab_anchor16 step=12500/196851 train=5.2912 pure_tok/s=87,618
+causal_conv_mixer_sampled_vocab_anchor16 step=12600/196851 train=5.4472 pure_tok/s=87,617
+causal_conv_mixer_sampled_vocab_anchor16 step=12700/196851 train=5.3707 pure_tok/s=87,614
+causal_conv_mixer_sampled_vocab_anchor16 step=12800/196851 train=5.1989 pure_tok/s=87,617
+causal_conv_mixer_sampled_vocab_anchor16 step=12900/196851 train=5.2867 pure_tok/s=87,616
+causal_conv_mixer_sampled_vocab_anchor16 step=13000/196851 train=5.6772 pure_tok/s=87,619
+causal_conv_mixer_sampled_vocab_anchor16 step=13100/196851 train=5.4002 pure_tok/s=87,655
+causal_conv_mixer_sampled_vocab_anchor16 step=13200/196851 train=5.4505 pure_tok/s=87,654
+causal_conv_mixer_sampled_vocab_anchor16 step=13300/196851 train=5.4825 pure_tok/s=87,661
+causal_conv_mixer_sampled_vocab_anchor16 step=13400/196851 train=5.2996 pure_tok/s=87,666
+causal_conv_mixer_sampled_vocab_anchor16 step=13500/196851 train=5.7024 pure_tok/s=87,670
+causal_conv_mixer_sampled_vocab_anchor16 step=13600/196851 train=5.3489 pure_tok/s=87,673
+causal_conv_mixer_sampled_vocab_anchor16 step=13700/196851 train=5.3605 pure_tok/s=87,679
+causal_conv_mixer_sampled_vocab_anchor16 step=13800/196851 train=5.6502 pure_tok/s=87,685
+causal_conv_mixer_sampled_vocab_anchor16 step=13900/196851 train=5.3069 pure_tok/s=87,690
+causal_conv_mixer_sampled_vocab_anchor16 step=14000/196851 train=5.1084 pure_tok/s=87,695
+causal_conv_mixer_sampled_vocab_anchor16 step=14100/196851 train=5.3989 pure_tok/s=87,706
+causal_conv_mixer_sampled_vocab_anchor16 step=14200/196851 train=5.3332 pure_tok/s=87,712
+causal_conv_mixer_sampled_vocab_anchor16 step=14300/196851 train=5.2293 pure_tok/s=87,717
+causal_conv_mixer_sampled_vocab_anchor16 step=14400/196851 train=5.4382 pure_tok/s=87,722
+causal_conv_mixer_sampled_vocab_anchor16 step=14500/196851 train=5.5696 pure_tok/s=87,726
+causal_conv_mixer_sampled_vocab_anchor16 step=14600/196851 train=5.6260 pure_tok/s=87,731
+causal_conv_mixer_sampled_vocab_anchor16 step=14700/196851 train=5.3990 pure_tok/s=87,735
+causal_conv_mixer_sampled_vocab_anchor16 step=14800/196851 train=5.1788 pure_tok/s=87,738
+causal_conv_mixer_sampled_vocab_anchor16 step=14900/196851 train=5.2597 pure_tok/s=87,743
+causal_conv_mixer_sampled_vocab_anchor16 step=15000/196851 train=5.5336 pure_tok/s=87,746
+causal_conv_mixer_sampled_vocab_anchor16 step=15100/196851 train=5.5200 pure_tok/s=87,752
+causal_conv_mixer_sampled_vocab_anchor16 step=15200/196851 train=5.2966 pure_tok/s=87,756
+causal_conv_mixer_sampled_vocab_anchor16 step=15300/196851 train=5.0000 pure_tok/s=87,760
+causal_conv_mixer_sampled_vocab_anchor16 step=15400/196851 train=5.3250 pure_tok/s=87,763
+causal_conv_mixer_sampled_vocab_anchor16 step=15500/196851 train=5.6195 pure_tok/s=87,768
+causal_conv_mixer_sampled_vocab_anchor16 step=15600/196851 train=5.0069 pure_tok/s=87,772
+causal_conv_mixer_sampled_vocab_anchor16 step=15700/196851 train=5.6534 pure_tok/s=87,776
+causal_conv_mixer_sampled_vocab_anchor16 step=15800/196851 train=5.3742 pure_tok/s=87,779
+causal_conv_mixer_sampled_vocab_anchor16 step=15900/196851 train=5.2822 pure_tok/s=87,784
+causal_conv_mixer_sampled_vocab_anchor16 step=16000/196851 train=5.2853 pure_tok/s=87,787
+causal_conv_mixer_sampled_vocab_anchor16 step=16100/196851 train=5.3638 pure_tok/s=87,792
+causal_conv_mixer_sampled_vocab_anchor16 step=16200/196851 train=5.7088 pure_tok/s=87,796
+causal_conv_mixer_sampled_vocab_anchor16 step=16300/196851 train=5.4242 pure_tok/s=87,799
+causal_conv_mixer_sampled_vocab_anchor16 step=16400/196851 train=5.3567 pure_tok/s=87,802
+causal_conv_mixer_sampled_vocab_anchor16 step=16500/196851 train=5.2486 pure_tok/s=87,805
+causal_conv_mixer_sampled_vocab_anchor16 step=16600/196851 train=5.1768 pure_tok/s=87,807
+causal_conv_mixer_sampled_vocab_anchor16 step=16700/196851 train=5.2452 pure_tok/s=87,810
+causal_conv_mixer_sampled_vocab_anchor16 step=16800/196851 train=5.4992 pure_tok/s=87,812
+causal_conv_mixer_sampled_vocab_anchor16 step=16900/196851 train=5.3975 pure_tok/s=87,815
+causal_conv_mixer_sampled_vocab_anchor16 step=17000/196851 train=5.4055 pure_tok/s=87,818
+causal_conv_mixer_sampled_vocab_anchor16 step=17100/196851 train=5.3386 pure_tok/s=87,821
+causal_conv_mixer_sampled_vocab_anchor16 step=17200/196851 train=5.3010 pure_tok/s=87,824
+causal_conv_mixer_sampled_vocab_anchor16 step=17300/196851 train=6.2692 pure_tok/s=87,827
+causal_conv_mixer_sampled_vocab_anchor16 step=17400/196851 train=5.4035 pure_tok/s=87,830
+causal_conv_mixer_sampled_vocab_anchor16 step=17500/196851 train=5.4089 pure_tok/s=87,832
+causal_conv_mixer_sampled_vocab_anchor16 step=17600/196851 train=5.2004 pure_tok/s=87,835
+causal_conv_mixer_sampled_vocab_anchor16 step=17700/196851 train=5.3080 pure_tok/s=87,838
+causal_conv_mixer_sampled_vocab_anchor16 step=17800/196851 train=5.4155 pure_tok/s=87,841
+causal_conv_mixer_sampled_vocab_anchor16 step=17900/196851 train=5.4015 pure_tok/s=87,844
+causal_conv_mixer_sampled_vocab_anchor16 step=18000/196851 train=5.2813 pure_tok/s=87,846
+causal_conv_mixer_sampled_vocab_anchor16 step=18100/196851 train=5.0419 pure_tok/s=87,850
+causal_conv_mixer_sampled_vocab_anchor16 step=18200/196851 train=5.2693 pure_tok/s=87,853
+causal_conv_mixer_sampled_vocab_anchor16 step=18300/196851 train=5.1561 pure_tok/s=87,856
+causal_conv_mixer_sampled_vocab_anchor16 step=18400/196851 train=5.0440 pure_tok/s=87,858
+causal_conv_mixer_sampled_vocab_anchor16 step=18500/196851 train=5.2330 pure_tok/s=87,860
+causal_conv_mixer_sampled_vocab_anchor16 step=18600/196851 train=5.3806 pure_tok/s=87,863
+causal_conv_mixer_sampled_vocab_anchor16 step=18700/196851 train=5.2603 pure_tok/s=87,865
+causal_conv_mixer_sampled_vocab_anchor16 step=18800/196851 train=5.5224 pure_tok/s=87,868
+causal_conv_mixer_sampled_vocab_anchor16 step=18900/196851 train=5.2132 pure_tok/s=87,870
+causal_conv_mixer_sampled_vocab_anchor16 step=19000/196851 train=5.2124 pure_tok/s=87,872
+causal_conv_mixer_sampled_vocab_anchor16 step=19100/196851 train=5.3441 pure_tok/s=87,875
+causal_conv_mixer_sampled_vocab_anchor16 step=19200/196851 train=5.4947 pure_tok/s=87,878
+causal_conv_mixer_sampled_vocab_anchor16 step=19300/196851 train=5.5127 pure_tok/s=87,880
+causal_conv_mixer_sampled_vocab_anchor16 step=19400/196851 train=5.1524 pure_tok/s=87,884
+causal_conv_mixer_sampled_vocab_anchor16 step=19500/196851 train=5.1352 pure_tok/s=87,886
+causal_conv_mixer_sampled_vocab_anchor16 step=19600/196851 train=5.2810 pure_tok/s=87,888
+causal_conv_mixer_sampled_vocab_anchor16 eval step=19686 val=5.3505 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=19700/196851 train=5.2619 pure_tok/s=87,890
+causal_conv_mixer_sampled_vocab_anchor16 step=19800/196851 train=5.3957 pure_tok/s=87,894
+causal_conv_mixer_sampled_vocab_anchor16 step=19900/196851 train=5.1733 pure_tok/s=87,897
+causal_conv_mixer_sampled_vocab_anchor16 step=20000/196851 train=5.1437 pure_tok/s=87,899
+causal_conv_mixer_sampled_vocab_anchor16 step=20100/196851 train=5.3772 pure_tok/s=87,904
+causal_conv_mixer_sampled_vocab_anchor16 step=20200/196851 train=5.5034 pure_tok/s=87,907
+causal_conv_mixer_sampled_vocab_anchor16 step=20300/196851 train=5.2159 pure_tok/s=87,907
+causal_conv_mixer_sampled_vocab_anchor16 step=20400/196851 train=5.2251 pure_tok/s=87,908
+causal_conv_mixer_sampled_vocab_anchor16 step=20500/196851 train=5.4657 pure_tok/s=87,909
+causal_conv_mixer_sampled_vocab_anchor16 step=20600/196851 train=5.9432 pure_tok/s=87,912
+causal_conv_mixer_sampled_vocab_anchor16 step=20700/196851 train=5.2726 pure_tok/s=87,914
+causal_conv_mixer_sampled_vocab_anchor16 step=20800/196851 train=5.1529 pure_tok/s=87,916
+causal_conv_mixer_sampled_vocab_anchor16 step=20900/196851 train=5.0392 pure_tok/s=87,918
+causal_conv_mixer_sampled_vocab_anchor16 step=21000/196851 train=5.2466 pure_tok/s=87,920
+causal_conv_mixer_sampled_vocab_anchor16 step=21100/196851 train=5.2485 pure_tok/s=87,922
+causal_conv_mixer_sampled_vocab_anchor16 step=21200/196851 train=5.2216 pure_tok/s=87,923
+causal_conv_mixer_sampled_vocab_anchor16 step=21300/196851 train=5.0491 pure_tok/s=87,924
+causal_conv_mixer_sampled_vocab_anchor16 step=21400/196851 train=5.0461 pure_tok/s=87,925
+causal_conv_mixer_sampled_vocab_anchor16 step=21500/196851 train=5.2369 pure_tok/s=87,927
+causal_conv_mixer_sampled_vocab_anchor16 step=21600/196851 train=5.1745 pure_tok/s=87,929
+causal_conv_mixer_sampled_vocab_anchor16 step=21700/196851 train=5.5272 pure_tok/s=87,931
+causal_conv_mixer_sampled_vocab_anchor16 step=21800/196851 train=5.1388 pure_tok/s=87,933
+causal_conv_mixer_sampled_vocab_anchor16 step=21900/196851 train=5.2741 pure_tok/s=87,934
+causal_conv_mixer_sampled_vocab_anchor16 step=22000/196851 train=5.1357 pure_tok/s=87,934
+causal_conv_mixer_sampled_vocab_anchor16 step=22100/196851 train=5.5588 pure_tok/s=87,935
+causal_conv_mixer_sampled_vocab_anchor16 step=22200/196851 train=5.2971 pure_tok/s=87,937
+causal_conv_mixer_sampled_vocab_anchor16 step=22300/196851 train=5.0198 pure_tok/s=87,940
+causal_conv_mixer_sampled_vocab_anchor16 step=22400/196851 train=5.1299 pure_tok/s=87,941
+causal_conv_mixer_sampled_vocab_anchor16 step=22500/196851 train=5.4314 pure_tok/s=87,943
+causal_conv_mixer_sampled_vocab_anchor16 step=22600/196851 train=5.0353 pure_tok/s=87,945
+causal_conv_mixer_sampled_vocab_anchor16 step=22700/196851 train=5.1213 pure_tok/s=87,946
+causal_conv_mixer_sampled_vocab_anchor16 step=22800/196851 train=5.3993 pure_tok/s=87,948
+causal_conv_mixer_sampled_vocab_anchor16 step=22900/196851 train=5.2692 pure_tok/s=87,948
+causal_conv_mixer_sampled_vocab_anchor16 step=23000/196851 train=5.5177 pure_tok/s=87,950
+causal_conv_mixer_sampled_vocab_anchor16 step=23100/196851 train=5.0994 pure_tok/s=87,951
+causal_conv_mixer_sampled_vocab_anchor16 step=23200/196851 train=5.1075 pure_tok/s=87,953
+causal_conv_mixer_sampled_vocab_anchor16 step=23300/196851 train=5.4966 pure_tok/s=87,955
+causal_conv_mixer_sampled_vocab_anchor16 step=23400/196851 train=5.4352 pure_tok/s=87,956
+causal_conv_mixer_sampled_vocab_anchor16 step=23500/196851 train=5.3146 pure_tok/s=87,957
+causal_conv_mixer_sampled_vocab_anchor16 step=23600/196851 train=5.5373 pure_tok/s=87,958
+causal_conv_mixer_sampled_vocab_anchor16 step=23700/196851 train=4.9637 pure_tok/s=87,959
+causal_conv_mixer_sampled_vocab_anchor16 step=23800/196851 train=5.4051 pure_tok/s=87,960
+causal_conv_mixer_sampled_vocab_anchor16 step=23900/196851 train=5.0610 pure_tok/s=87,961
+causal_conv_mixer_sampled_vocab_anchor16 step=24000/196851 train=4.9661 pure_tok/s=87,962
+causal_conv_mixer_sampled_vocab_anchor16 step=24100/196851 train=5.3292 pure_tok/s=87,963
+causal_conv_mixer_sampled_vocab_anchor16 step=24200/196851 train=5.3965 pure_tok/s=87,964
+causal_conv_mixer_sampled_vocab_anchor16 step=24300/196851 train=5.3009 pure_tok/s=87,965
+causal_conv_mixer_sampled_vocab_anchor16 step=24400/196851 train=5.1504 pure_tok/s=87,966
+causal_conv_mixer_sampled_vocab_anchor16 step=24500/196851 train=5.3926 pure_tok/s=87,967
+causal_conv_mixer_sampled_vocab_anchor16 step=24600/196851 train=5.0408 pure_tok/s=87,968
+causal_conv_mixer_sampled_vocab_anchor16 step=24700/196851 train=4.9663 pure_tok/s=87,970
+causal_conv_mixer_sampled_vocab_anchor16 step=24800/196851 train=4.9808 pure_tok/s=87,971
+causal_conv_mixer_sampled_vocab_anchor16 step=24900/196851 train=5.2010 pure_tok/s=87,972
+causal_conv_mixer_sampled_vocab_anchor16 step=25000/196851 train=5.2063 pure_tok/s=87,973
+causal_conv_mixer_sampled_vocab_anchor16 step=25100/196851 train=5.3299 pure_tok/s=87,974
+causal_conv_mixer_sampled_vocab_anchor16 step=25200/196851 train=4.9621 pure_tok/s=87,975
+causal_conv_mixer_sampled_vocab_anchor16 step=25300/196851 train=5.5419 pure_tok/s=87,976
+causal_conv_mixer_sampled_vocab_anchor16 step=25400/196851 train=5.3182 pure_tok/s=87,977
+causal_conv_mixer_sampled_vocab_anchor16 step=25500/196851 train=5.2756 pure_tok/s=87,979
+causal_conv_mixer_sampled_vocab_anchor16 step=25600/196851 train=5.1581 pure_tok/s=87,980
+causal_conv_mixer_sampled_vocab_anchor16 step=25700/196851 train=5.2671 pure_tok/s=87,981
+causal_conv_mixer_sampled_vocab_anchor16 step=25800/196851 train=5.4173 pure_tok/s=87,982
+causal_conv_mixer_sampled_vocab_anchor16 step=25900/196851 train=5.3388 pure_tok/s=87,983
+causal_conv_mixer_sampled_vocab_anchor16 step=26000/196851 train=5.0975 pure_tok/s=87,984
+causal_conv_mixer_sampled_vocab_anchor16 step=26100/196851 train=5.0752 pure_tok/s=87,985
+causal_conv_mixer_sampled_vocab_anchor16 step=26200/196851 train=4.5435 pure_tok/s=87,986
+causal_conv_mixer_sampled_vocab_anchor16 step=26300/196851 train=5.0805 pure_tok/s=87,987
+causal_conv_mixer_sampled_vocab_anchor16 step=26400/196851 train=5.1535 pure_tok/s=87,988
+causal_conv_mixer_sampled_vocab_anchor16 step=26500/196851 train=5.2162 pure_tok/s=87,989
+causal_conv_mixer_sampled_vocab_anchor16 step=26600/196851 train=5.0177 pure_tok/s=87,989
+causal_conv_mixer_sampled_vocab_anchor16 step=26700/196851 train=4.9623 pure_tok/s=87,990
+causal_conv_mixer_sampled_vocab_anchor16 step=26800/196851 train=4.9934 pure_tok/s=87,991
+causal_conv_mixer_sampled_vocab_anchor16 step=26900/196851 train=5.2585 pure_tok/s=87,992
+causal_conv_mixer_sampled_vocab_anchor16 step=27000/196851 train=5.3952 pure_tok/s=87,993
+causal_conv_mixer_sampled_vocab_anchor16 step=27100/196851 train=5.1901 pure_tok/s=87,995
+causal_conv_mixer_sampled_vocab_anchor16 step=27200/196851 train=5.3870 pure_tok/s=87,997
+causal_conv_mixer_sampled_vocab_anchor16 step=27300/196851 train=5.0352 pure_tok/s=87,998
+causal_conv_mixer_sampled_vocab_anchor16 step=27400/196851 train=5.1096 pure_tok/s=87,999
+causal_conv_mixer_sampled_vocab_anchor16 step=27500/196851 train=5.0466 pure_tok/s=88,000
+causal_conv_mixer_sampled_vocab_anchor16 step=27600/196851 train=4.8912 pure_tok/s=88,001
+causal_conv_mixer_sampled_vocab_anchor16 step=27700/196851 train=5.2014 pure_tok/s=88,002
+causal_conv_mixer_sampled_vocab_anchor16 step=27800/196851 train=5.1705 pure_tok/s=88,003
+causal_conv_mixer_sampled_vocab_anchor16 step=27900/196851 train=4.9497 pure_tok/s=88,004
+causal_conv_mixer_sampled_vocab_anchor16 step=28000/196851 train=5.2561 pure_tok/s=88,005
+causal_conv_mixer_sampled_vocab_anchor16 step=28100/196851 train=5.2882 pure_tok/s=88,006
+causal_conv_mixer_sampled_vocab_anchor16 step=28200/196851 train=5.1485 pure_tok/s=88,007
+causal_conv_mixer_sampled_vocab_anchor16 step=28300/196851 train=5.1044 pure_tok/s=88,008
+causal_conv_mixer_sampled_vocab_anchor16 step=28400/196851 train=5.1044 pure_tok/s=88,009
+causal_conv_mixer_sampled_vocab_anchor16 step=28500/196851 train=5.2250 pure_tok/s=88,010
+causal_conv_mixer_sampled_vocab_anchor16 step=28600/196851 train=5.2455 pure_tok/s=88,011
+causal_conv_mixer_sampled_vocab_anchor16 step=28700/196851 train=5.2108 pure_tok/s=88,011
+causal_conv_mixer_sampled_vocab_anchor16 step=28800/196851 train=4.8944 pure_tok/s=88,011
+causal_conv_mixer_sampled_vocab_anchor16 step=28900/196851 train=5.2833 pure_tok/s=88,011
+causal_conv_mixer_sampled_vocab_anchor16 step=29000/196851 train=5.2219 pure_tok/s=88,011
+causal_conv_mixer_sampled_vocab_anchor16 step=29100/196851 train=4.8000 pure_tok/s=88,012
+causal_conv_mixer_sampled_vocab_anchor16 step=29200/196851 train=5.3673 pure_tok/s=88,014
+causal_conv_mixer_sampled_vocab_anchor16 step=29300/196851 train=4.9368 pure_tok/s=88,015
+causal_conv_mixer_sampled_vocab_anchor16 step=29400/196851 train=5.0931 pure_tok/s=88,016
+causal_conv_mixer_sampled_vocab_anchor16 step=29500/196851 train=5.4395 pure_tok/s=88,017
+causal_conv_mixer_sampled_vocab_anchor16 eval step=29529 val=5.2119 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=29600/196851 train=4.9994 pure_tok/s=88,017
+causal_conv_mixer_sampled_vocab_anchor16 step=29700/196851 train=5.7287 pure_tok/s=88,019
+causal_conv_mixer_sampled_vocab_anchor16 step=29800/196851 train=5.1071 pure_tok/s=88,019
+causal_conv_mixer_sampled_vocab_anchor16 step=29900/196851 train=5.2351 pure_tok/s=88,020
+causal_conv_mixer_sampled_vocab_anchor16 step=30000/196851 train=4.3747 pure_tok/s=88,021
+causal_conv_mixer_sampled_vocab_anchor16 step=30100/196851 train=5.0645 pure_tok/s=88,023
+causal_conv_mixer_sampled_vocab_anchor16 step=30200/196851 train=4.9404 pure_tok/s=88,024
+causal_conv_mixer_sampled_vocab_anchor16 step=30300/196851 train=4.7965 pure_tok/s=88,025
+causal_conv_mixer_sampled_vocab_anchor16 step=30400/196851 train=5.3305 pure_tok/s=88,026
+causal_conv_mixer_sampled_vocab_anchor16 step=30500/196851 train=5.2444 pure_tok/s=88,027
+causal_conv_mixer_sampled_vocab_anchor16 step=30600/196851 train=5.1399 pure_tok/s=88,028
+causal_conv_mixer_sampled_vocab_anchor16 step=30700/196851 train=5.5932 pure_tok/s=88,028
+causal_conv_mixer_sampled_vocab_anchor16 step=30800/196851 train=5.0629 pure_tok/s=88,027
+causal_conv_mixer_sampled_vocab_anchor16 step=30900/196851 train=4.9500 pure_tok/s=88,026
+causal_conv_mixer_sampled_vocab_anchor16 step=31000/196851 train=5.2181 pure_tok/s=88,026
+causal_conv_mixer_sampled_vocab_anchor16 step=31100/196851 train=5.0596 pure_tok/s=88,026
+causal_conv_mixer_sampled_vocab_anchor16 step=31200/196851 train=5.6018 pure_tok/s=88,027
+causal_conv_mixer_sampled_vocab_anchor16 step=31300/196851 train=4.9320 pure_tok/s=88,029
+causal_conv_mixer_sampled_vocab_anchor16 step=31400/196851 train=4.9104 pure_tok/s=88,029
+causal_conv_mixer_sampled_vocab_anchor16 step=31500/196851 train=4.9543 pure_tok/s=88,030
+causal_conv_mixer_sampled_vocab_anchor16 step=31600/196851 train=4.7847 pure_tok/s=88,031
+causal_conv_mixer_sampled_vocab_anchor16 step=31700/196851 train=5.6491 pure_tok/s=88,032
+causal_conv_mixer_sampled_vocab_anchor16 step=31800/196851 train=5.1568 pure_tok/s=88,033
+causal_conv_mixer_sampled_vocab_anchor16 step=31900/196851 train=4.9623 pure_tok/s=88,034
+causal_conv_mixer_sampled_vocab_anchor16 step=32000/196851 train=5.1635 pure_tok/s=88,035
+causal_conv_mixer_sampled_vocab_anchor16 step=32100/196851 train=5.1963 pure_tok/s=88,036
+causal_conv_mixer_sampled_vocab_anchor16 step=32200/196851 train=4.9930 pure_tok/s=88,038
+causal_conv_mixer_sampled_vocab_anchor16 step=32300/196851 train=5.2519 pure_tok/s=88,039
+causal_conv_mixer_sampled_vocab_anchor16 step=32400/196851 train=5.0715 pure_tok/s=88,040
+causal_conv_mixer_sampled_vocab_anchor16 step=32500/196851 train=5.1008 pure_tok/s=88,041
+causal_conv_mixer_sampled_vocab_anchor16 step=32600/196851 train=5.8761 pure_tok/s=88,042
+causal_conv_mixer_sampled_vocab_anchor16 step=32700/196851 train=4.9758 pure_tok/s=88,043
+causal_conv_mixer_sampled_vocab_anchor16 step=32800/196851 train=5.1406 pure_tok/s=88,044
+causal_conv_mixer_sampled_vocab_anchor16 step=32900/196851 train=5.2192 pure_tok/s=88,045
+causal_conv_mixer_sampled_vocab_anchor16 step=33000/196851 train=4.9061 pure_tok/s=88,046
+causal_conv_mixer_sampled_vocab_anchor16 step=33100/196851 train=4.9840 pure_tok/s=88,047
+causal_conv_mixer_sampled_vocab_anchor16 step=33200/196851 train=5.1437 pure_tok/s=88,047
+causal_conv_mixer_sampled_vocab_anchor16 step=33300/196851 train=5.0297 pure_tok/s=88,048
+causal_conv_mixer_sampled_vocab_anchor16 step=33400/196851 train=4.8969 pure_tok/s=88,049
+causal_conv_mixer_sampled_vocab_anchor16 step=33500/196851 train=4.9700 pure_tok/s=88,051
+causal_conv_mixer_sampled_vocab_anchor16 step=33600/196851 train=5.4836 pure_tok/s=88,051
+causal_conv_mixer_sampled_vocab_anchor16 step=33700/196851 train=5.0750 pure_tok/s=88,052
+causal_conv_mixer_sampled_vocab_anchor16 step=33800/196851 train=5.1137 pure_tok/s=88,053
+causal_conv_mixer_sampled_vocab_anchor16 step=33900/196851 train=5.2482 pure_tok/s=88,054
+causal_conv_mixer_sampled_vocab_anchor16 step=34000/196851 train=5.4334 pure_tok/s=88,055
+causal_conv_mixer_sampled_vocab_anchor16 step=34100/196851 train=4.9375 pure_tok/s=88,056
+causal_conv_mixer_sampled_vocab_anchor16 step=34200/196851 train=5.0011 pure_tok/s=88,057
+causal_conv_mixer_sampled_vocab_anchor16 step=34300/196851 train=5.1956 pure_tok/s=88,058
+causal_conv_mixer_sampled_vocab_anchor16 step=34400/196851 train=4.7800 pure_tok/s=88,058
+causal_conv_mixer_sampled_vocab_anchor16 step=34500/196851 train=5.0233 pure_tok/s=88,059
+causal_conv_mixer_sampled_vocab_anchor16 step=34600/196851 train=4.9873 pure_tok/s=88,059
+causal_conv_mixer_sampled_vocab_anchor16 step=34700/196851 train=4.8886 pure_tok/s=88,060
+causal_conv_mixer_sampled_vocab_anchor16 step=34800/196851 train=5.4035 pure_tok/s=88,061
+causal_conv_mixer_sampled_vocab_anchor16 step=34900/196851 train=5.0466 pure_tok/s=88,061
+causal_conv_mixer_sampled_vocab_anchor16 step=35000/196851 train=5.0553 pure_tok/s=88,061
+causal_conv_mixer_sampled_vocab_anchor16 step=35100/196851 train=4.8335 pure_tok/s=88,062
+causal_conv_mixer_sampled_vocab_anchor16 step=35200/196851 train=5.0015 pure_tok/s=88,063
+causal_conv_mixer_sampled_vocab_anchor16 step=35300/196851 train=5.1575 pure_tok/s=88,063
+causal_conv_mixer_sampled_vocab_anchor16 step=35400/196851 train=5.2730 pure_tok/s=88,064
+causal_conv_mixer_sampled_vocab_anchor16 step=35500/196851 train=4.9896 pure_tok/s=88,065
+causal_conv_mixer_sampled_vocab_anchor16 step=35600/196851 train=5.0491 pure_tok/s=88,065
+causal_conv_mixer_sampled_vocab_anchor16 step=35700/196851 train=5.7602 pure_tok/s=88,065
+causal_conv_mixer_sampled_vocab_anchor16 step=35800/196851 train=5.1085 pure_tok/s=88,066
+causal_conv_mixer_sampled_vocab_anchor16 step=35900/196851 train=4.9738 pure_tok/s=88,066
+causal_conv_mixer_sampled_vocab_anchor16 step=36000/196851 train=4.9203 pure_tok/s=88,067
+causal_conv_mixer_sampled_vocab_anchor16 step=36100/196851 train=5.0541 pure_tok/s=88,067
+causal_conv_mixer_sampled_vocab_anchor16 step=36200/196851 train=5.0624 pure_tok/s=88,067
+causal_conv_mixer_sampled_vocab_anchor16 step=36300/196851 train=5.1427 pure_tok/s=88,068
+causal_conv_mixer_sampled_vocab_anchor16 step=36400/196851 train=5.0298 pure_tok/s=88,068
+causal_conv_mixer_sampled_vocab_anchor16 step=36500/196851 train=5.5129 pure_tok/s=88,069
+causal_conv_mixer_sampled_vocab_anchor16 step=36600/196851 train=5.0367 pure_tok/s=88,069
+causal_conv_mixer_sampled_vocab_anchor16 step=36700/196851 train=5.1558 pure_tok/s=88,070
+causal_conv_mixer_sampled_vocab_anchor16 step=36800/196851 train=5.1258 pure_tok/s=88,070
+causal_conv_mixer_sampled_vocab_anchor16 step=36900/196851 train=4.7759 pure_tok/s=88,070
+causal_conv_mixer_sampled_vocab_anchor16 step=37000/196851 train=5.1449 pure_tok/s=88,071
+causal_conv_mixer_sampled_vocab_anchor16 step=37100/196851 train=5.1860 pure_tok/s=88,072
+causal_conv_mixer_sampled_vocab_anchor16 step=37200/196851 train=5.4541 pure_tok/s=88,073
+causal_conv_mixer_sampled_vocab_anchor16 step=37300/196851 train=4.7616 pure_tok/s=88,073
+causal_conv_mixer_sampled_vocab_anchor16 step=37400/196851 train=4.7686 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=37500/196851 train=5.2830 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=37600/196851 train=5.0816 pure_tok/s=88,075
+causal_conv_mixer_sampled_vocab_anchor16 step=37700/196851 train=4.9303 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=37800/196851 train=4.8413 pure_tok/s=88,075
+causal_conv_mixer_sampled_vocab_anchor16 step=37900/196851 train=5.1819 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=38000/196851 train=5.1733 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=38100/196851 train=5.0876 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=38200/196851 train=4.9355 pure_tok/s=88,074
+causal_conv_mixer_sampled_vocab_anchor16 step=38300/196851 train=4.7238 pure_tok/s=88,075
+causal_conv_mixer_sampled_vocab_anchor16 step=38400/196851 train=5.0729 pure_tok/s=88,075
+causal_conv_mixer_sampled_vocab_anchor16 step=38500/196851 train=4.9619 pure_tok/s=88,076
+causal_conv_mixer_sampled_vocab_anchor16 step=38600/196851 train=5.1224 pure_tok/s=88,076
+causal_conv_mixer_sampled_vocab_anchor16 step=38700/196851 train=5.2228 pure_tok/s=88,077
+causal_conv_mixer_sampled_vocab_anchor16 step=38800/196851 train=5.0699 pure_tok/s=88,077
+causal_conv_mixer_sampled_vocab_anchor16 step=38900/196851 train=5.4788 pure_tok/s=88,078
+causal_conv_mixer_sampled_vocab_anchor16 step=39000/196851 train=5.1827 pure_tok/s=88,078
+causal_conv_mixer_sampled_vocab_anchor16 step=39100/196851 train=4.9176 pure_tok/s=88,079
+causal_conv_mixer_sampled_vocab_anchor16 step=39200/196851 train=5.2715 pure_tok/s=88,079
+causal_conv_mixer_sampled_vocab_anchor16 step=39300/196851 train=4.9016 pure_tok/s=88,081
+causal_conv_mixer_sampled_vocab_anchor16 eval step=39372 val=5.1360 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=39400/196851 train=5.0883 pure_tok/s=88,081
+causal_conv_mixer_sampled_vocab_anchor16 step=39500/196851 train=4.8871 pure_tok/s=88,082
+causal_conv_mixer_sampled_vocab_anchor16 step=39600/196851 train=5.2193 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=39700/196851 train=4.9749 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=39800/196851 train=5.0677 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=39900/196851 train=5.2671 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=40000/196851 train=4.9215 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=40100/196851 train=5.0849 pure_tok/s=88,083
+causal_conv_mixer_sampled_vocab_anchor16 step=40200/196851 train=5.0003 pure_tok/s=88,084
+causal_conv_mixer_sampled_vocab_anchor16 step=40300/196851 train=5.1286 pure_tok/s=88,085
+causal_conv_mixer_sampled_vocab_anchor16 step=40400/196851 train=5.2792 pure_tok/s=88,085
+causal_conv_mixer_sampled_vocab_anchor16 step=40500/196851 train=5.2614 pure_tok/s=88,086
+causal_conv_mixer_sampled_vocab_anchor16 step=40600/196851 train=5.1043 pure_tok/s=88,086
+causal_conv_mixer_sampled_vocab_anchor16 step=40700/196851 train=4.8330 pure_tok/s=88,086
+causal_conv_mixer_sampled_vocab_anchor16 step=40800/196851 train=4.8604 pure_tok/s=88,086
+causal_conv_mixer_sampled_vocab_anchor16 step=40900/196851 train=5.3849 pure_tok/s=88,086
+causal_conv_mixer_sampled_vocab_anchor16 step=41000/196851 train=4.9775 pure_tok/s=88,087
+causal_conv_mixer_sampled_vocab_anchor16 step=41100/196851 train=4.8913 pure_tok/s=88,087
+causal_conv_mixer_sampled_vocab_anchor16 step=41200/196851 train=4.8408 pure_tok/s=88,088
+causal_conv_mixer_sampled_vocab_anchor16 step=41300/196851 train=4.6170 pure_tok/s=88,088
+causal_conv_mixer_sampled_vocab_anchor16 step=41400/196851 train=4.8468 pure_tok/s=88,089
+causal_conv_mixer_sampled_vocab_anchor16 step=41500/196851 train=5.4374 pure_tok/s=88,089
+causal_conv_mixer_sampled_vocab_anchor16 step=41600/196851 train=5.1243 pure_tok/s=88,089
+causal_conv_mixer_sampled_vocab_anchor16 step=41700/196851 train=4.9953 pure_tok/s=88,089
+causal_conv_mixer_sampled_vocab_anchor16 step=41800/196851 train=5.1918 pure_tok/s=88,089
+causal_conv_mixer_sampled_vocab_anchor16 step=41900/196851 train=4.9239 pure_tok/s=88,090
+causal_conv_mixer_sampled_vocab_anchor16 step=42000/196851 train=4.9946 pure_tok/s=88,090
+causal_conv_mixer_sampled_vocab_anchor16 step=42100/196851 train=5.1911 pure_tok/s=88,091
+causal_conv_mixer_sampled_vocab_anchor16 step=42200/196851 train=4.8520 pure_tok/s=88,092
+causal_conv_mixer_sampled_vocab_anchor16 step=42300/196851 train=4.8531 pure_tok/s=88,092
+causal_conv_mixer_sampled_vocab_anchor16 step=42400/196851 train=4.8601 pure_tok/s=88,092
+causal_conv_mixer_sampled_vocab_anchor16 step=42500/196851 train=4.8147 pure_tok/s=88,093
+causal_conv_mixer_sampled_vocab_anchor16 step=42600/196851 train=4.9414 pure_tok/s=88,093
+causal_conv_mixer_sampled_vocab_anchor16 step=42700/196851 train=4.6538 pure_tok/s=88,094
+causal_conv_mixer_sampled_vocab_anchor16 step=42800/196851 train=5.0224 pure_tok/s=88,094
+causal_conv_mixer_sampled_vocab_anchor16 step=42900/196851 train=5.0110 pure_tok/s=88,095
+causal_conv_mixer_sampled_vocab_anchor16 step=43000/196851 train=4.9323 pure_tok/s=88,095
+causal_conv_mixer_sampled_vocab_anchor16 step=43100/196851 train=5.1550 pure_tok/s=88,096
+causal_conv_mixer_sampled_vocab_anchor16 step=43200/196851 train=4.8264 pure_tok/s=88,097
+causal_conv_mixer_sampled_vocab_anchor16 step=43300/196851 train=4.8819 pure_tok/s=88,097
+causal_conv_mixer_sampled_vocab_anchor16 step=43400/196851 train=5.0034 pure_tok/s=88,098
+causal_conv_mixer_sampled_vocab_anchor16 step=43500/196851 train=5.1237 pure_tok/s=88,098
+causal_conv_mixer_sampled_vocab_anchor16 step=43600/196851 train=5.1218 pure_tok/s=88,099
+causal_conv_mixer_sampled_vocab_anchor16 step=43700/196851 train=4.7589 pure_tok/s=88,099
+causal_conv_mixer_sampled_vocab_anchor16 step=43800/196851 train=4.9417 pure_tok/s=88,100
+causal_conv_mixer_sampled_vocab_anchor16 step=43900/196851 train=5.2791 pure_tok/s=88,100
+causal_conv_mixer_sampled_vocab_anchor16 step=44000/196851 train=4.5855 pure_tok/s=88,101
+causal_conv_mixer_sampled_vocab_anchor16 step=44100/196851 train=4.9041 pure_tok/s=88,102
+causal_conv_mixer_sampled_vocab_anchor16 step=44200/196851 train=5.1748 pure_tok/s=88,102
+causal_conv_mixer_sampled_vocab_anchor16 step=44300/196851 train=5.2425 pure_tok/s=88,103
+causal_conv_mixer_sampled_vocab_anchor16 step=44400/196851 train=4.9273 pure_tok/s=88,104
+causal_conv_mixer_sampled_vocab_anchor16 step=44500/196851 train=4.9901 pure_tok/s=88,104
+causal_conv_mixer_sampled_vocab_anchor16 step=44600/196851 train=5.3515 pure_tok/s=88,105
+causal_conv_mixer_sampled_vocab_anchor16 step=44700/196851 train=5.4551 pure_tok/s=88,105
+causal_conv_mixer_sampled_vocab_anchor16 step=44800/196851 train=4.9324 pure_tok/s=88,106
+causal_conv_mixer_sampled_vocab_anchor16 step=44900/196851 train=4.9672 pure_tok/s=88,106
+causal_conv_mixer_sampled_vocab_anchor16 step=45000/196851 train=5.5148 pure_tok/s=88,107
+causal_conv_mixer_sampled_vocab_anchor16 step=45100/196851 train=5.0493 pure_tok/s=88,108
+causal_conv_mixer_sampled_vocab_anchor16 step=45200/196851 train=5.2168 pure_tok/s=88,108
+causal_conv_mixer_sampled_vocab_anchor16 step=45300/196851 train=4.9444 pure_tok/s=88,109
+causal_conv_mixer_sampled_vocab_anchor16 step=45400/196851 train=4.9544 pure_tok/s=88,109
+causal_conv_mixer_sampled_vocab_anchor16 step=45500/196851 train=5.1571 pure_tok/s=88,109
+causal_conv_mixer_sampled_vocab_anchor16 step=45600/196851 train=5.0162 pure_tok/s=88,110
+causal_conv_mixer_sampled_vocab_anchor16 step=45700/196851 train=5.0856 pure_tok/s=88,110
+causal_conv_mixer_sampled_vocab_anchor16 step=45800/196851 train=5.2054 pure_tok/s=88,111
+causal_conv_mixer_sampled_vocab_anchor16 step=45900/196851 train=5.0517 pure_tok/s=88,111
+causal_conv_mixer_sampled_vocab_anchor16 step=46000/196851 train=4.9654 pure_tok/s=88,112
+causal_conv_mixer_sampled_vocab_anchor16 step=46100/196851 train=4.7555 pure_tok/s=88,112
+causal_conv_mixer_sampled_vocab_anchor16 step=46200/196851 train=5.0332 pure_tok/s=88,113
+causal_conv_mixer_sampled_vocab_anchor16 step=46300/196851 train=4.7760 pure_tok/s=88,113
+causal_conv_mixer_sampled_vocab_anchor16 step=46400/196851 train=4.9116 pure_tok/s=88,114
+causal_conv_mixer_sampled_vocab_anchor16 step=46500/196851 train=5.6544 pure_tok/s=88,114
+causal_conv_mixer_sampled_vocab_anchor16 step=46600/196851 train=5.3620 pure_tok/s=88,115
+causal_conv_mixer_sampled_vocab_anchor16 step=46700/196851 train=5.3454 pure_tok/s=88,115
+causal_conv_mixer_sampled_vocab_anchor16 step=46800/196851 train=5.1333 pure_tok/s=88,116
+causal_conv_mixer_sampled_vocab_anchor16 step=46900/196851 train=4.9210 pure_tok/s=88,116
+causal_conv_mixer_sampled_vocab_anchor16 step=47000/196851 train=4.8634 pure_tok/s=88,117
+causal_conv_mixer_sampled_vocab_anchor16 step=47100/196851 train=4.7636 pure_tok/s=88,117
+causal_conv_mixer_sampled_vocab_anchor16 step=47200/196851 train=4.3655 pure_tok/s=88,118
+causal_conv_mixer_sampled_vocab_anchor16 step=47300/196851 train=5.2679 pure_tok/s=88,119
+causal_conv_mixer_sampled_vocab_anchor16 step=47400/196851 train=5.0256 pure_tok/s=88,119
+causal_conv_mixer_sampled_vocab_anchor16 step=47500/196851 train=4.8404 pure_tok/s=88,118
+causal_conv_mixer_sampled_vocab_anchor16 step=47600/196851 train=5.3021 pure_tok/s=88,119
+causal_conv_mixer_sampled_vocab_anchor16 step=47700/196851 train=4.8915 pure_tok/s=88,119
+causal_conv_mixer_sampled_vocab_anchor16 step=47800/196851 train=5.1337 pure_tok/s=88,119
+causal_conv_mixer_sampled_vocab_anchor16 step=47900/196851 train=5.0509 pure_tok/s=88,120
+causal_conv_mixer_sampled_vocab_anchor16 step=48000/196851 train=4.8539 pure_tok/s=88,120
+causal_conv_mixer_sampled_vocab_anchor16 step=48100/196851 train=5.1310 pure_tok/s=88,120
+causal_conv_mixer_sampled_vocab_anchor16 step=48200/196851 train=5.1076 pure_tok/s=88,121
+causal_conv_mixer_sampled_vocab_anchor16 step=48300/196851 train=5.2090 pure_tok/s=88,121
+causal_conv_mixer_sampled_vocab_anchor16 step=48400/196851 train=4.8224 pure_tok/s=88,121
+causal_conv_mixer_sampled_vocab_anchor16 step=48500/196851 train=5.1532 pure_tok/s=88,122
+causal_conv_mixer_sampled_vocab_anchor16 step=48600/196851 train=5.3504 pure_tok/s=88,122
+causal_conv_mixer_sampled_vocab_anchor16 step=48700/196851 train=4.7114 pure_tok/s=88,122
+causal_conv_mixer_sampled_vocab_anchor16 step=48800/196851 train=4.9232 pure_tok/s=88,123
+causal_conv_mixer_sampled_vocab_anchor16 step=48900/196851 train=4.8069 pure_tok/s=88,123
+causal_conv_mixer_sampled_vocab_anchor16 step=49000/196851 train=5.0568 pure_tok/s=88,123
+causal_conv_mixer_sampled_vocab_anchor16 step=49100/196851 train=4.9974 pure_tok/s=88,124
+causal_conv_mixer_sampled_vocab_anchor16 step=49200/196851 train=5.1358 pure_tok/s=88,124
+causal_conv_mixer_sampled_vocab_anchor16 eval step=49215 val=5.0717 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=49300/196851 train=4.8728 pure_tok/s=88,124
+causal_conv_mixer_sampled_vocab_anchor16 step=49400/196851 train=4.9563 pure_tok/s=88,124
+causal_conv_mixer_sampled_vocab_anchor16 step=49500/196851 train=4.7628 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=49600/196851 train=4.8102 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=49700/196851 train=5.0800 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=49800/196851 train=5.1854 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=49900/196851 train=4.9072 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=50000/196851 train=4.7917 pure_tok/s=88,125
+causal_conv_mixer_sampled_vocab_anchor16 step=50100/196851 train=5.0522 pure_tok/s=88,126
+causal_conv_mixer_sampled_vocab_anchor16 step=50200/196851 train=4.8465 pure_tok/s=88,126
+causal_conv_mixer_sampled_vocab_anchor16 step=50300/196851 train=4.7373 pure_tok/s=88,127
+causal_conv_mixer_sampled_vocab_anchor16 step=50400/196851 train=5.3851 pure_tok/s=88,127
+causal_conv_mixer_sampled_vocab_anchor16 step=50500/196851 train=5.2612 pure_tok/s=88,127
+causal_conv_mixer_sampled_vocab_anchor16 step=50600/196851 train=4.6731 pure_tok/s=88,128
+causal_conv_mixer_sampled_vocab_anchor16 step=50700/196851 train=4.8447 pure_tok/s=88,128
+causal_conv_mixer_sampled_vocab_anchor16 step=50800/196851 train=4.9674 pure_tok/s=88,128
+causal_conv_mixer_sampled_vocab_anchor16 step=50900/196851 train=4.9465 pure_tok/s=88,129
+causal_conv_mixer_sampled_vocab_anchor16 step=51000/196851 train=4.9572 pure_tok/s=88,130
+causal_conv_mixer_sampled_vocab_anchor16 step=51100/196851 train=5.0446 pure_tok/s=88,130
+causal_conv_mixer_sampled_vocab_anchor16 step=51200/196851 train=4.8569 pure_tok/s=88,130
+causal_conv_mixer_sampled_vocab_anchor16 step=51300/196851 train=5.0933 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51400/196851 train=4.9858 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51500/196851 train=5.0770 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51600/196851 train=4.9338 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51700/196851 train=4.8218 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51800/196851 train=4.9677 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=51900/196851 train=4.8922 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=52000/196851 train=4.5872 pure_tok/s=88,131
+causal_conv_mixer_sampled_vocab_anchor16 step=52100/196851 train=5.2292 pure_tok/s=88,132
+causal_conv_mixer_sampled_vocab_anchor16 step=52200/196851 train=4.9924 pure_tok/s=88,132
+causal_conv_mixer_sampled_vocab_anchor16 step=52300/196851 train=4.8865 pure_tok/s=88,133
+causal_conv_mixer_sampled_vocab_anchor16 step=52400/196851 train=4.7593 pure_tok/s=88,133
+causal_conv_mixer_sampled_vocab_anchor16 step=52500/196851 train=4.9906 pure_tok/s=88,133
+causal_conv_mixer_sampled_vocab_anchor16 step=52600/196851 train=4.9078 pure_tok/s=88,134
+causal_conv_mixer_sampled_vocab_anchor16 step=52700/196851 train=5.1709 pure_tok/s=88,134
+causal_conv_mixer_sampled_vocab_anchor16 step=52800/196851 train=5.7677 pure_tok/s=88,135
+causal_conv_mixer_sampled_vocab_anchor16 step=52900/196851 train=4.8365 pure_tok/s=88,135
+causal_conv_mixer_sampled_vocab_anchor16 step=53000/196851 train=5.0494 pure_tok/s=88,135
+causal_conv_mixer_sampled_vocab_anchor16 step=53100/196851 train=4.8612 pure_tok/s=88,135
+causal_conv_mixer_sampled_vocab_anchor16 step=53200/196851 train=4.9675 pure_tok/s=88,136
+causal_conv_mixer_sampled_vocab_anchor16 step=53300/196851 train=4.7442 pure_tok/s=88,136
+causal_conv_mixer_sampled_vocab_anchor16 step=53400/196851 train=4.7915 pure_tok/s=88,136
+causal_conv_mixer_sampled_vocab_anchor16 step=53500/196851 train=4.7098 pure_tok/s=88,137
+causal_conv_mixer_sampled_vocab_anchor16 step=53600/196851 train=4.8040 pure_tok/s=88,137
+causal_conv_mixer_sampled_vocab_anchor16 step=53700/196851 train=4.8151 pure_tok/s=88,138
+causal_conv_mixer_sampled_vocab_anchor16 step=53800/196851 train=4.9150 pure_tok/s=88,138
+causal_conv_mixer_sampled_vocab_anchor16 step=53900/196851 train=4.9974 pure_tok/s=88,138
+causal_conv_mixer_sampled_vocab_anchor16 step=54000/196851 train=4.6578 pure_tok/s=88,139
+causal_conv_mixer_sampled_vocab_anchor16 step=54100/196851 train=4.7857 pure_tok/s=88,139
+causal_conv_mixer_sampled_vocab_anchor16 step=54200/196851 train=5.0097 pure_tok/s=88,140
+causal_conv_mixer_sampled_vocab_anchor16 step=54300/196851 train=5.0254 pure_tok/s=88,140
+causal_conv_mixer_sampled_vocab_anchor16 step=54400/196851 train=5.0730 pure_tok/s=88,140
+causal_conv_mixer_sampled_vocab_anchor16 step=54500/196851 train=4.7396 pure_tok/s=88,141
+causal_conv_mixer_sampled_vocab_anchor16 step=54600/196851 train=4.8599 pure_tok/s=88,141
+causal_conv_mixer_sampled_vocab_anchor16 step=54700/196851 train=4.5839 pure_tok/s=88,142
+causal_conv_mixer_sampled_vocab_anchor16 step=54800/196851 train=5.0766 pure_tok/s=88,142
+causal_conv_mixer_sampled_vocab_anchor16 step=54900/196851 train=5.0467 pure_tok/s=88,143
+causal_conv_mixer_sampled_vocab_anchor16 step=55000/196851 train=4.7137 pure_tok/s=88,143
+causal_conv_mixer_sampled_vocab_anchor16 step=55100/196851 train=5.7427 pure_tok/s=88,144
+causal_conv_mixer_sampled_vocab_anchor16 step=55200/196851 train=5.0095 pure_tok/s=88,144
+causal_conv_mixer_sampled_vocab_anchor16 step=55300/196851 train=5.6120 pure_tok/s=88,144
+causal_conv_mixer_sampled_vocab_anchor16 step=55400/196851 train=4.7366 pure_tok/s=88,145
+causal_conv_mixer_sampled_vocab_anchor16 step=55500/196851 train=5.0985 pure_tok/s=88,145
+causal_conv_mixer_sampled_vocab_anchor16 step=55600/196851 train=5.1023 pure_tok/s=88,145
+causal_conv_mixer_sampled_vocab_anchor16 step=55700/196851 train=4.9621 pure_tok/s=88,145
+causal_conv_mixer_sampled_vocab_anchor16 step=55800/196851 train=4.9190 pure_tok/s=88,145
+causal_conv_mixer_sampled_vocab_anchor16 step=55900/196851 train=4.9606 pure_tok/s=88,146
+causal_conv_mixer_sampled_vocab_anchor16 step=56000/196851 train=4.9443 pure_tok/s=88,146
+causal_conv_mixer_sampled_vocab_anchor16 step=56100/196851 train=5.0479 pure_tok/s=88,146
+causal_conv_mixer_sampled_vocab_anchor16 step=56200/196851 train=4.9422 pure_tok/s=88,147
+causal_conv_mixer_sampled_vocab_anchor16 step=56300/196851 train=4.9957 pure_tok/s=88,147
+causal_conv_mixer_sampled_vocab_anchor16 step=56400/196851 train=5.1336 pure_tok/s=88,148
+causal_conv_mixer_sampled_vocab_anchor16 step=56500/196851 train=5.1201 pure_tok/s=88,148
+causal_conv_mixer_sampled_vocab_anchor16 step=56600/196851 train=4.9946 pure_tok/s=88,148
+causal_conv_mixer_sampled_vocab_anchor16 step=56700/196851 train=5.1381 pure_tok/s=88,149
+causal_conv_mixer_sampled_vocab_anchor16 step=56800/196851 train=4.6953 pure_tok/s=88,149
+causal_conv_mixer_sampled_vocab_anchor16 step=56900/196851 train=5.0367 pure_tok/s=88,150
+causal_conv_mixer_sampled_vocab_anchor16 step=57000/196851 train=4.8561 pure_tok/s=88,150
+causal_conv_mixer_sampled_vocab_anchor16 step=57100/196851 train=5.0260 pure_tok/s=88,150
+causal_conv_mixer_sampled_vocab_anchor16 step=57200/196851 train=5.0105 pure_tok/s=88,151
+causal_conv_mixer_sampled_vocab_anchor16 step=57300/196851 train=4.9084 pure_tok/s=88,151
+causal_conv_mixer_sampled_vocab_anchor16 step=57400/196851 train=4.8221 pure_tok/s=88,151
+causal_conv_mixer_sampled_vocab_anchor16 step=57500/196851 train=5.0136 pure_tok/s=88,151
+causal_conv_mixer_sampled_vocab_anchor16 step=57600/196851 train=4.9495 pure_tok/s=88,152
+causal_conv_mixer_sampled_vocab_anchor16 step=57700/196851 train=4.9133 pure_tok/s=88,152
+causal_conv_mixer_sampled_vocab_anchor16 step=57800/196851 train=4.7552 pure_tok/s=88,152
+causal_conv_mixer_sampled_vocab_anchor16 step=57900/196851 train=4.7511 pure_tok/s=88,153
+causal_conv_mixer_sampled_vocab_anchor16 step=58000/196851 train=5.0346 pure_tok/s=88,153
+causal_conv_mixer_sampled_vocab_anchor16 step=58100/196851 train=5.2483 pure_tok/s=88,153
+causal_conv_mixer_sampled_vocab_anchor16 step=58200/196851 train=4.7610 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58300/196851 train=4.9188 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58400/196851 train=4.8879 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58500/196851 train=5.2759 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=58600/196851 train=4.5564 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58700/196851 train=4.9131 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58800/196851 train=4.7901 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=58900/196851 train=5.0930 pure_tok/s=88,154
+causal_conv_mixer_sampled_vocab_anchor16 step=59000/196851 train=5.0387 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 eval step=59058 val=5.0363 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=59100/196851 train=4.9137 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=59200/196851 train=5.1987 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=59300/196851 train=5.0731 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=59400/196851 train=5.1711 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=59500/196851 train=4.9337 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=59600/196851 train=5.1001 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=59700/196851 train=4.9671 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=59800/196851 train=5.0062 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=59900/196851 train=4.9420 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60000/196851 train=4.8668 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60100/196851 train=4.6371 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60200/196851 train=4.8745 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60300/196851 train=4.8769 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60400/196851 train=5.3835 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60500/196851 train=4.9581 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60600/196851 train=5.4913 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60700/196851 train=5.0176 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60800/196851 train=5.1568 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=60900/196851 train=5.0798 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=61000/196851 train=5.0746 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=61100/196851 train=4.9870 pure_tok/s=88,155
+causal_conv_mixer_sampled_vocab_anchor16 step=61200/196851 train=4.8690 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=61300/196851 train=5.8120 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=61400/196851 train=4.9177 pure_tok/s=88,156
+causal_conv_mixer_sampled_vocab_anchor16 step=61500/196851 train=4.9905 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=61600/196851 train=4.8802 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=61700/196851 train=4.9331 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=61800/196851 train=5.4622 pure_tok/s=88,157
+causal_conv_mixer_sampled_vocab_anchor16 step=61900/196851 train=4.7933 pure_tok/s=88,158
+causal_conv_mixer_sampled_vocab_anchor16 step=62000/196851 train=4.6281 pure_tok/s=88,158
+causal_conv_mixer_sampled_vocab_anchor16 step=62100/196851 train=4.8434 pure_tok/s=88,158
+causal_conv_mixer_sampled_vocab_anchor16 step=62200/196851 train=4.7959 pure_tok/s=88,159
+causal_conv_mixer_sampled_vocab_anchor16 step=62300/196851 train=5.2280 pure_tok/s=88,159
+causal_conv_mixer_sampled_vocab_anchor16 step=62400/196851 train=5.0740 pure_tok/s=88,160
+causal_conv_mixer_sampled_vocab_anchor16 step=62500/196851 train=4.9540 pure_tok/s=88,160
+causal_conv_mixer_sampled_vocab_anchor16 step=62600/196851 train=4.8964 pure_tok/s=88,160
+causal_conv_mixer_sampled_vocab_anchor16 step=62700/196851 train=4.9825 pure_tok/s=88,161
+causal_conv_mixer_sampled_vocab_anchor16 step=62800/196851 train=5.0762 pure_tok/s=88,161
+causal_conv_mixer_sampled_vocab_anchor16 step=62900/196851 train=4.9776 pure_tok/s=88,161
+causal_conv_mixer_sampled_vocab_anchor16 step=63000/196851 train=4.8924 pure_tok/s=88,161
+causal_conv_mixer_sampled_vocab_anchor16 step=63100/196851 train=4.9171 pure_tok/s=88,161
+causal_conv_mixer_sampled_vocab_anchor16 step=63200/196851 train=5.0056 pure_tok/s=88,162
+causal_conv_mixer_sampled_vocab_anchor16 step=63300/196851 train=5.0030 pure_tok/s=88,162
+causal_conv_mixer_sampled_vocab_anchor16 step=63400/196851 train=5.3056 pure_tok/s=88,162
+causal_conv_mixer_sampled_vocab_anchor16 step=63500/196851 train=4.8869 pure_tok/s=88,162
+causal_conv_mixer_sampled_vocab_anchor16 step=63600/196851 train=5.2031 pure_tok/s=88,163
+causal_conv_mixer_sampled_vocab_anchor16 step=63700/196851 train=5.1255 pure_tok/s=88,163
+causal_conv_mixer_sampled_vocab_anchor16 step=63800/196851 train=4.7924 pure_tok/s=88,163
+causal_conv_mixer_sampled_vocab_anchor16 step=63900/196851 train=4.8027 pure_tok/s=88,163
+causal_conv_mixer_sampled_vocab_anchor16 step=64000/196851 train=4.4945 pure_tok/s=88,163
+causal_conv_mixer_sampled_vocab_anchor16 step=64100/196851 train=4.8902 pure_tok/s=88,164
+causal_conv_mixer_sampled_vocab_anchor16 step=64200/196851 train=5.0279 pure_tok/s=88,164
+causal_conv_mixer_sampled_vocab_anchor16 step=64300/196851 train=4.8471 pure_tok/s=88,165
+causal_conv_mixer_sampled_vocab_anchor16 step=64400/196851 train=4.6823 pure_tok/s=88,165
+causal_conv_mixer_sampled_vocab_anchor16 step=64500/196851 train=5.2436 pure_tok/s=88,166
+causal_conv_mixer_sampled_vocab_anchor16 step=64600/196851 train=4.8330 pure_tok/s=88,166
+causal_conv_mixer_sampled_vocab_anchor16 step=64700/196851 train=5.1910 pure_tok/s=88,166
+causal_conv_mixer_sampled_vocab_anchor16 step=64800/196851 train=4.7882 pure_tok/s=88,167
+causal_conv_mixer_sampled_vocab_anchor16 step=64900/196851 train=5.0679 pure_tok/s=88,167
+causal_conv_mixer_sampled_vocab_anchor16 step=65000/196851 train=4.9050 pure_tok/s=88,167
+causal_conv_mixer_sampled_vocab_anchor16 step=65100/196851 train=4.9623 pure_tok/s=88,167
+causal_conv_mixer_sampled_vocab_anchor16 step=65200/196851 train=5.1942 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65300/196851 train=5.1238 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65400/196851 train=5.1211 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65500/196851 train=5.2525 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65600/196851 train=4.9158 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65700/196851 train=5.1960 pure_tok/s=88,168
+causal_conv_mixer_sampled_vocab_anchor16 step=65800/196851 train=5.0833 pure_tok/s=88,169
+causal_conv_mixer_sampled_vocab_anchor16 step=65900/196851 train=4.7897 pure_tok/s=88,169
+causal_conv_mixer_sampled_vocab_anchor16 step=66000/196851 train=4.9574 pure_tok/s=88,169
+causal_conv_mixer_sampled_vocab_anchor16 step=66100/196851 train=4.7566 pure_tok/s=88,169
+causal_conv_mixer_sampled_vocab_anchor16 step=66200/196851 train=5.1220 pure_tok/s=88,170
+causal_conv_mixer_sampled_vocab_anchor16 step=66300/196851 train=5.0828 pure_tok/s=88,170
+causal_conv_mixer_sampled_vocab_anchor16 step=66400/196851 train=4.7016 pure_tok/s=88,170
+causal_conv_mixer_sampled_vocab_anchor16 step=66500/196851 train=5.0488 pure_tok/s=88,170
+causal_conv_mixer_sampled_vocab_anchor16 step=66600/196851 train=4.9386 pure_tok/s=88,171
+causal_conv_mixer_sampled_vocab_anchor16 step=66700/196851 train=4.7886 pure_tok/s=88,171
+causal_conv_mixer_sampled_vocab_anchor16 step=66800/196851 train=4.9152 pure_tok/s=88,171
+causal_conv_mixer_sampled_vocab_anchor16 step=66900/196851 train=5.1855 pure_tok/s=88,171
+causal_conv_mixer_sampled_vocab_anchor16 step=67000/196851 train=4.9677 pure_tok/s=88,171
+causal_conv_mixer_sampled_vocab_anchor16 step=67100/196851 train=5.0068 pure_tok/s=88,172
+causal_conv_mixer_sampled_vocab_anchor16 step=67200/196851 train=4.7664 pure_tok/s=88,172
+causal_conv_mixer_sampled_vocab_anchor16 step=67300/196851 train=5.3155 pure_tok/s=88,172
+causal_conv_mixer_sampled_vocab_anchor16 step=67400/196851 train=5.0747 pure_tok/s=88,172
+causal_conv_mixer_sampled_vocab_anchor16 step=67500/196851 train=5.0284 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=67600/196851 train=4.6071 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=67700/196851 train=4.9310 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=67800/196851 train=4.9410 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=67900/196851 train=5.0266 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=68000/196851 train=4.7865 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=68100/196851 train=5.0696 pure_tok/s=88,173
+causal_conv_mixer_sampled_vocab_anchor16 step=68200/196851 train=4.9635 pure_tok/s=88,174
+causal_conv_mixer_sampled_vocab_anchor16 step=68300/196851 train=5.2791 pure_tok/s=88,174
+causal_conv_mixer_sampled_vocab_anchor16 step=68400/196851 train=4.9064 pure_tok/s=88,174
+causal_conv_mixer_sampled_vocab_anchor16 step=68500/196851 train=5.2133 pure_tok/s=88,175
+causal_conv_mixer_sampled_vocab_anchor16 step=68600/196851 train=4.8674 pure_tok/s=88,175
+causal_conv_mixer_sampled_vocab_anchor16 step=68700/196851 train=4.9195 pure_tok/s=88,175
+causal_conv_mixer_sampled_vocab_anchor16 step=68800/196851 train=4.8840 pure_tok/s=88,175
+causal_conv_mixer_sampled_vocab_anchor16 step=68900/196851 train=4.8737 pure_tok/s=88,176
+causal_conv_mixer_sampled_vocab_anchor16 eval step=68901 val=5.0014 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=69000/196851 train=4.8428 pure_tok/s=88,176
+causal_conv_mixer_sampled_vocab_anchor16 step=69100/196851 train=5.1100 pure_tok/s=88,176
+causal_conv_mixer_sampled_vocab_anchor16 step=69200/196851 train=5.1102 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69300/196851 train=4.8558 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69400/196851 train=4.9642 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69500/196851 train=5.0590 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69600/196851 train=4.7597 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69700/196851 train=4.9098 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69800/196851 train=4.8186 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=69900/196851 train=5.2277 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=70000/196851 train=4.8121 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=70100/196851 train=5.0090 pure_tok/s=88,177
+causal_conv_mixer_sampled_vocab_anchor16 step=70200/196851 train=4.6301 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70300/196851 train=4.7992 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70400/196851 train=4.9689 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70500/196851 train=4.7630 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70600/196851 train=4.7662 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70700/196851 train=5.0282 pure_tok/s=88,178
+causal_conv_mixer_sampled_vocab_anchor16 step=70800/196851 train=5.0831 pure_tok/s=88,179
+causal_conv_mixer_sampled_vocab_anchor16 step=70900/196851 train=4.6754 pure_tok/s=88,179
+causal_conv_mixer_sampled_vocab_anchor16 step=71000/196851 train=5.0358 pure_tok/s=88,179
+causal_conv_mixer_sampled_vocab_anchor16 step=71100/196851 train=5.0537 pure_tok/s=88,179
+causal_conv_mixer_sampled_vocab_anchor16 step=71200/196851 train=4.7714 pure_tok/s=88,179
+causal_conv_mixer_sampled_vocab_anchor16 step=71300/196851 train=4.4693 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71400/196851 train=4.9299 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71500/196851 train=4.9111 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71600/196851 train=4.8752 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71700/196851 train=4.8854 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71800/196851 train=4.8903 pure_tok/s=88,180
+causal_conv_mixer_sampled_vocab_anchor16 step=71900/196851 train=4.7268 pure_tok/s=88,181
+causal_conv_mixer_sampled_vocab_anchor16 step=72000/196851 train=4.4951 pure_tok/s=88,181
+causal_conv_mixer_sampled_vocab_anchor16 step=72100/196851 train=5.3000 pure_tok/s=88,181
+causal_conv_mixer_sampled_vocab_anchor16 step=72200/196851 train=4.6464 pure_tok/s=88,182
+causal_conv_mixer_sampled_vocab_anchor16 step=72300/196851 train=4.6398 pure_tok/s=88,182
+causal_conv_mixer_sampled_vocab_anchor16 step=72400/196851 train=4.4871 pure_tok/s=88,182
+causal_conv_mixer_sampled_vocab_anchor16 step=72500/196851 train=4.7422 pure_tok/s=88,182
+causal_conv_mixer_sampled_vocab_anchor16 step=72600/196851 train=4.9213 pure_tok/s=88,182
+causal_conv_mixer_sampled_vocab_anchor16 step=72700/196851 train=4.6799 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=72800/196851 train=4.6551 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=72900/196851 train=5.1690 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=73000/196851 train=4.7781 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=73100/196851 train=4.8343 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=73200/196851 train=5.1582 pure_tok/s=88,183
+causal_conv_mixer_sampled_vocab_anchor16 step=73300/196851 train=5.1826 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73400/196851 train=4.9557 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73500/196851 train=5.0740 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73600/196851 train=4.6744 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73700/196851 train=5.0246 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73800/196851 train=4.9518 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=73900/196851 train=4.9454 pure_tok/s=88,184
+causal_conv_mixer_sampled_vocab_anchor16 step=74000/196851 train=4.8251 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74100/196851 train=4.7443 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74200/196851 train=5.1641 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74300/196851 train=5.0471 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74400/196851 train=4.8584 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74500/196851 train=5.0009 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74600/196851 train=4.9705 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74700/196851 train=4.9094 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74800/196851 train=4.8467 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=74900/196851 train=4.8889 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=75000/196851 train=4.4395 pure_tok/s=88,185
+causal_conv_mixer_sampled_vocab_anchor16 step=75100/196851 train=5.0135 pure_tok/s=88,186
+causal_conv_mixer_sampled_vocab_anchor16 step=75200/196851 train=5.0019 pure_tok/s=88,186
+causal_conv_mixer_sampled_vocab_anchor16 step=75300/196851 train=4.8089 pure_tok/s=88,186
+causal_conv_mixer_sampled_vocab_anchor16 step=75400/196851 train=5.4019 pure_tok/s=88,186
+causal_conv_mixer_sampled_vocab_anchor16 step=75500/196851 train=5.0028 pure_tok/s=88,186
+causal_conv_mixer_sampled_vocab_anchor16 step=75600/196851 train=4.8270 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=75700/196851 train=4.9713 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=75800/196851 train=5.2573 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=75900/196851 train=4.7984 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=76000/196851 train=4.9407 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=76100/196851 train=4.8186 pure_tok/s=88,187
+causal_conv_mixer_sampled_vocab_anchor16 step=76200/196851 train=4.9506 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76300/196851 train=4.7414 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76400/196851 train=5.2425 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76500/196851 train=5.4480 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76600/196851 train=4.9378 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76700/196851 train=4.8942 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76800/196851 train=4.6034 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=76900/196851 train=4.8383 pure_tok/s=88,188
+causal_conv_mixer_sampled_vocab_anchor16 step=77000/196851 train=5.0308 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77100/196851 train=5.1950 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77200/196851 train=4.8598 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77300/196851 train=4.8493 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77400/196851 train=4.9776 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77500/196851 train=4.7559 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77600/196851 train=4.7545 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77700/196851 train=5.0190 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77800/196851 train=4.4992 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=77900/196851 train=5.4379 pure_tok/s=88,189
+causal_conv_mixer_sampled_vocab_anchor16 step=78000/196851 train=5.0717 pure_tok/s=88,190
+causal_conv_mixer_sampled_vocab_anchor16 step=78100/196851 train=4.8080 pure_tok/s=88,190
+causal_conv_mixer_sampled_vocab_anchor16 step=78200/196851 train=5.0505 pure_tok/s=88,190
+causal_conv_mixer_sampled_vocab_anchor16 step=78300/196851 train=5.3123 pure_tok/s=88,190
+causal_conv_mixer_sampled_vocab_anchor16 step=78400/196851 train=4.9879 pure_tok/s=88,190
+causal_conv_mixer_sampled_vocab_anchor16 step=78500/196851 train=5.0621 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=78600/196851 train=4.9762 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=78700/196851 train=4.8939 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 eval step=78744 val=4.9783 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=78800/196851 train=5.1465 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=78900/196851 train=5.0128 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=79000/196851 train=4.8545 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=79100/196851 train=5.1796 pure_tok/s=88,191
+causal_conv_mixer_sampled_vocab_anchor16 step=79200/196851 train=5.1785 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79300/196851 train=4.8817 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79400/196851 train=4.9634 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79500/196851 train=4.9743 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79600/196851 train=4.8744 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79700/196851 train=4.7369 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79800/196851 train=4.8124 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=79900/196851 train=4.8560 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=80000/196851 train=5.1177 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=80100/196851 train=4.9798 pure_tok/s=88,192
+causal_conv_mixer_sampled_vocab_anchor16 step=80200/196851 train=5.0329 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80300/196851 train=5.6423 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80400/196851 train=4.8439 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80500/196851 train=4.7651 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80600/196851 train=4.7630 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80700/196851 train=4.9392 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80800/196851 train=4.8801 pure_tok/s=88,193
+causal_conv_mixer_sampled_vocab_anchor16 step=80900/196851 train=4.9016 pure_tok/s=88,194
+causal_conv_mixer_sampled_vocab_anchor16 step=81000/196851 train=4.9680 pure_tok/s=88,194
+causal_conv_mixer_sampled_vocab_anchor16 step=81100/196851 train=4.7513 pure_tok/s=88,194
+causal_conv_mixer_sampled_vocab_anchor16 step=81200/196851 train=4.9666 pure_tok/s=88,194
+causal_conv_mixer_sampled_vocab_anchor16 step=81300/196851 train=4.9063 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81400/196851 train=4.7564 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81500/196851 train=5.0319 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81600/196851 train=4.8343 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81700/196851 train=4.8356 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81800/196851 train=5.0304 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=81900/196851 train=4.9368 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=82000/196851 train=4.9346 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=82100/196851 train=4.6879 pure_tok/s=88,195
+causal_conv_mixer_sampled_vocab_anchor16 step=82200/196851 train=5.0818 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82300/196851 train=4.8215 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82400/196851 train=4.7510 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82500/196851 train=4.9895 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82600/196851 train=5.0140 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82700/196851 train=5.0384 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82800/196851 train=4.9101 pure_tok/s=88,196
+causal_conv_mixer_sampled_vocab_anchor16 step=82900/196851 train=4.9852 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83000/196851 train=4.8421 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83100/196851 train=5.0629 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83200/196851 train=4.9601 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83300/196851 train=4.4738 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83400/196851 train=4.7529 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83500/196851 train=4.7515 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83600/196851 train=4.6734 pure_tok/s=88,197
+causal_conv_mixer_sampled_vocab_anchor16 step=83700/196851 train=4.6113 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=83800/196851 train=4.6617 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=83900/196851 train=4.7310 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=84000/196851 train=5.0326 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=84100/196851 train=5.7289 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=84200/196851 train=5.2897 pure_tok/s=88,198
+causal_conv_mixer_sampled_vocab_anchor16 step=84300/196851 train=4.9043 pure_tok/s=88,199
+causal_conv_mixer_sampled_vocab_anchor16 step=84400/196851 train=4.9616 pure_tok/s=88,199
+causal_conv_mixer_sampled_vocab_anchor16 step=84500/196851 train=5.1914 pure_tok/s=88,199
+causal_conv_mixer_sampled_vocab_anchor16 step=84600/196851 train=5.2156 pure_tok/s=88,199
+causal_conv_mixer_sampled_vocab_anchor16 step=84700/196851 train=4.9902 pure_tok/s=88,199
+causal_conv_mixer_sampled_vocab_anchor16 step=84800/196851 train=4.9397 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=84900/196851 train=5.3440 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=85000/196851 train=4.9920 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=85100/196851 train=4.8962 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=85200/196851 train=5.1396 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=85300/196851 train=4.6797 pure_tok/s=88,200
+causal_conv_mixer_sampled_vocab_anchor16 step=85400/196851 train=4.9335 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=85500/196851 train=4.9735 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=85600/196851 train=4.5557 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=85700/196851 train=4.5966 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=85800/196851 train=4.5535 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=85900/196851 train=4.8520 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86000/196851 train=4.6809 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86100/196851 train=4.6479 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86200/196851 train=4.7407 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86300/196851 train=4.7977 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86400/196851 train=5.1537 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86500/196851 train=4.9296 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86600/196851 train=5.0349 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86700/196851 train=4.9081 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86800/196851 train=5.0226 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=86900/196851 train=4.6390 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87000/196851 train=4.9179 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87100/196851 train=4.7940 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87200/196851 train=4.8771 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87300/196851 train=4.5667 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87400/196851 train=4.8365 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=87500/196851 train=5.4705 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=87600/196851 train=5.2928 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=87700/196851 train=4.7780 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=87800/196851 train=4.9251 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=87900/196851 train=4.9343 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88000/196851 train=4.7771 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88100/196851 train=4.7350 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=88200/196851 train=4.7670 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=88300/196851 train=4.7165 pure_tok/s=88,201
+causal_conv_mixer_sampled_vocab_anchor16 step=88400/196851 train=4.8932 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88500/196851 train=5.0557 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 eval step=88587 val=4.9657 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=88600/196851 train=5.0711 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88700/196851 train=4.6800 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88800/196851 train=4.9510 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=88900/196851 train=4.6184 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89000/196851 train=4.8194 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89100/196851 train=5.0237 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89200/196851 train=4.4868 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89300/196851 train=5.1129 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89400/196851 train=4.7078 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89500/196851 train=4.7713 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=89600/196851 train=4.7933 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=89700/196851 train=4.7319 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=89800/196851 train=4.9225 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=89900/196851 train=4.7397 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=90000/196851 train=4.7731 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=90100/196851 train=4.6547 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=90200/196851 train=4.6803 pure_tok/s=88,202
+causal_conv_mixer_sampled_vocab_anchor16 step=90300/196851 train=4.6881 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=90400/196851 train=4.7589 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=90500/196851 train=4.7326 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=90600/196851 train=5.1645 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=90700/196851 train=4.8372 pure_tok/s=88,203
+causal_conv_mixer_sampled_vocab_anchor16 step=90800/196851 train=5.0168 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=90900/196851 train=5.2873 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=91000/196851 train=4.7084 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=91100/196851 train=5.0945 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=91200/196851 train=4.8219 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=91300/196851 train=4.8143 pure_tok/s=88,204
+causal_conv_mixer_sampled_vocab_anchor16 step=91400/196851 train=4.8037 pure_tok/s=88,205
+causal_conv_mixer_sampled_vocab_anchor16 step=91500/196851 train=4.9138 pure_tok/s=88,205
+causal_conv_mixer_sampled_vocab_anchor16 step=91600/196851 train=5.2380 pure_tok/s=88,205
+causal_conv_mixer_sampled_vocab_anchor16 step=91700/196851 train=4.7234 pure_tok/s=88,205
+causal_conv_mixer_sampled_vocab_anchor16 step=91800/196851 train=4.8382 pure_tok/s=88,206
+causal_conv_mixer_sampled_vocab_anchor16 step=91900/196851 train=5.7794 pure_tok/s=88,206
+causal_conv_mixer_sampled_vocab_anchor16 step=92000/196851 train=4.6682 pure_tok/s=88,206
+causal_conv_mixer_sampled_vocab_anchor16 step=92100/196851 train=4.6635 pure_tok/s=88,206
+causal_conv_mixer_sampled_vocab_anchor16 step=92200/196851 train=4.7519 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92300/196851 train=4.7233 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92400/196851 train=4.6399 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92500/196851 train=4.9312 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92600/196851 train=4.5826 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92700/196851 train=4.9501 pure_tok/s=88,207
+causal_conv_mixer_sampled_vocab_anchor16 step=92800/196851 train=5.0098 pure_tok/s=88,208
+causal_conv_mixer_sampled_vocab_anchor16 step=92900/196851 train=5.0599 pure_tok/s=88,208
+causal_conv_mixer_sampled_vocab_anchor16 step=93000/196851 train=4.6389 pure_tok/s=88,208
+causal_conv_mixer_sampled_vocab_anchor16 step=93100/196851 train=4.9033 pure_tok/s=88,208
+causal_conv_mixer_sampled_vocab_anchor16 step=93200/196851 train=4.4851 pure_tok/s=88,209
+causal_conv_mixer_sampled_vocab_anchor16 step=93300/196851 train=4.7203 pure_tok/s=88,209
+causal_conv_mixer_sampled_vocab_anchor16 step=93400/196851 train=5.3414 pure_tok/s=88,209
+causal_conv_mixer_sampled_vocab_anchor16 step=93500/196851 train=4.9881 pure_tok/s=88,209
+causal_conv_mixer_sampled_vocab_anchor16 step=93600/196851 train=4.7325 pure_tok/s=88,209
+causal_conv_mixer_sampled_vocab_anchor16 step=93700/196851 train=4.7286 pure_tok/s=88,210
+causal_conv_mixer_sampled_vocab_anchor16 step=93800/196851 train=4.7517 pure_tok/s=88,210
+causal_conv_mixer_sampled_vocab_anchor16 step=93900/196851 train=4.7438 pure_tok/s=88,210
+causal_conv_mixer_sampled_vocab_anchor16 step=94000/196851 train=4.7049 pure_tok/s=88,210
+causal_conv_mixer_sampled_vocab_anchor16 step=94100/196851 train=4.9507 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94200/196851 train=4.9634 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94300/196851 train=4.9121 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94400/196851 train=5.0600 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94500/196851 train=4.8204 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94600/196851 train=4.9788 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94700/196851 train=4.9788 pure_tok/s=88,211
+causal_conv_mixer_sampled_vocab_anchor16 step=94800/196851 train=4.4266 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=94900/196851 train=5.2345 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=95000/196851 train=4.7088 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=95100/196851 train=4.6770 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=95200/196851 train=4.6358 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=95300/196851 train=5.0248 pure_tok/s=88,212
+causal_conv_mixer_sampled_vocab_anchor16 step=95400/196851 train=5.1099 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=95500/196851 train=4.7314 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=95600/196851 train=4.8488 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=95700/196851 train=5.5985 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=95800/196851 train=4.7190 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=95900/196851 train=4.6932 pure_tok/s=88,213
+causal_conv_mixer_sampled_vocab_anchor16 step=96000/196851 train=4.7397 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96100/196851 train=4.9605 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96200/196851 train=4.6074 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96300/196851 train=4.8869 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96400/196851 train=4.8007 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96500/196851 train=4.8736 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96600/196851 train=4.7658 pure_tok/s=88,214
+causal_conv_mixer_sampled_vocab_anchor16 step=96700/196851 train=4.6372 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=96800/196851 train=4.6880 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=96900/196851 train=5.0014 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=97000/196851 train=4.7329 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=97100/196851 train=4.9359 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=97200/196851 train=4.8229 pure_tok/s=88,215
+causal_conv_mixer_sampled_vocab_anchor16 step=97300/196851 train=5.2073 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97400/196851 train=4.7303 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97500/196851 train=5.0811 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97600/196851 train=4.5778 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97700/196851 train=4.8718 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97800/196851 train=5.0031 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=97900/196851 train=4.9987 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=98000/196851 train=4.9063 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=98100/196851 train=4.8712 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=98200/196851 train=4.8209 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=98300/196851 train=4.8754 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 step=98400/196851 train=4.6476 pure_tok/s=88,216
+causal_conv_mixer_sampled_vocab_anchor16 eval step=98430 val=4.9307 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=98500/196851 train=4.7840 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=98600/196851 train=4.6991 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=98700/196851 train=4.8937 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=98800/196851 train=4.8133 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=98900/196851 train=4.8632 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=99000/196851 train=4.6722 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=99100/196851 train=4.8083 pure_tok/s=88,217
+causal_conv_mixer_sampled_vocab_anchor16 step=99200/196851 train=5.4768 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99300/196851 train=4.8304 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99400/196851 train=4.6648 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99500/196851 train=4.9481 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99600/196851 train=4.6343 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99700/196851 train=4.9466 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99800/196851 train=4.7057 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=99900/196851 train=4.7446 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=100000/196851 train=4.9601 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=100100/196851 train=4.8033 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=100200/196851 train=4.9335 pure_tok/s=88,218
+causal_conv_mixer_sampled_vocab_anchor16 step=100300/196851 train=4.7396 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100400/196851 train=4.7072 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100500/196851 train=5.3514 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100600/196851 train=4.8123 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100700/196851 train=4.9134 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100800/196851 train=4.9255 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=100900/196851 train=5.1932 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101000/196851 train=4.6766 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101100/196851 train=4.7591 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101200/196851 train=4.8094 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101300/196851 train=4.9341 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101400/196851 train=5.0800 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101500/196851 train=4.8084 pure_tok/s=88,219
+causal_conv_mixer_sampled_vocab_anchor16 step=101600/196851 train=4.8451 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=101700/196851 train=4.5847 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=101800/196851 train=5.0342 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=101900/196851 train=4.5964 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=102000/196851 train=4.7231 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=102100/196851 train=4.9725 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=102200/196851 train=4.7033 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=102300/196851 train=4.8714 pure_tok/s=88,220
+causal_conv_mixer_sampled_vocab_anchor16 step=102400/196851 train=5.1585 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=102500/196851 train=5.1829 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=102600/196851 train=4.6471 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=102700/196851 train=4.6133 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=102800/196851 train=4.5330 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=102900/196851 train=4.8931 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=103000/196851 train=5.0122 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=103100/196851 train=4.8615 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=103200/196851 train=4.8707 pure_tok/s=88,221
+causal_conv_mixer_sampled_vocab_anchor16 step=103300/196851 train=4.6485 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103400/196851 train=4.6253 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103500/196851 train=4.7940 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103600/196851 train=5.5264 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103700/196851 train=4.9022 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103800/196851 train=4.5292 pure_tok/s=88,222
+causal_conv_mixer_sampled_vocab_anchor16 step=103900/196851 train=4.6770 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=104000/196851 train=4.6637 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=104100/196851 train=5.1979 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=104200/196851 train=4.9311 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=104300/196851 train=5.0795 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=104400/196851 train=4.7952 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=104500/196851 train=4.7738 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=104600/196851 train=4.8563 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=104700/196851 train=4.7775 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=104800/196851 train=4.9332 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=104900/196851 train=4.9792 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105000/196851 train=4.3100 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105100/196851 train=4.6645 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105200/196851 train=4.5330 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105300/196851 train=4.8133 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=105400/196851 train=5.1774 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=105500/196851 train=4.9496 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105600/196851 train=4.9168 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105700/196851 train=5.0104 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=105800/196851 train=4.9083 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=105900/196851 train=4.5377 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106000/196851 train=5.0086 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106100/196851 train=5.0281 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106200/196851 train=4.8040 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106300/196851 train=4.6456 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106400/196851 train=4.6030 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106500/196851 train=4.7485 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106600/196851 train=4.6505 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106700/196851 train=4.5260 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106800/196851 train=5.0153 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=106900/196851 train=4.9290 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107000/196851 train=4.8691 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107100/196851 train=4.9090 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107200/196851 train=4.6419 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107300/196851 train=5.0467 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107400/196851 train=4.8695 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107500/196851 train=4.7653 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107600/196851 train=4.7342 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107700/196851 train=4.7050 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107800/196851 train=4.6988 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=107900/196851 train=4.8938 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=108000/196851 train=4.9000 pure_tok/s=88,223
+causal_conv_mixer_sampled_vocab_anchor16 step=108100/196851 train=4.9693 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108200/196851 train=4.7263 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 eval step=108273 val=4.9239 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=108300/196851 train=5.1746 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108400/196851 train=4.8456 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108500/196851 train=4.9379 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108600/196851 train=4.9677 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108700/196851 train=4.6987 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108800/196851 train=4.8060 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=108900/196851 train=4.8633 pure_tok/s=88,224
+causal_conv_mixer_sampled_vocab_anchor16 step=109000/196851 train=4.9796 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109100/196851 train=5.5193 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109200/196851 train=4.8609 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109300/196851 train=4.9922 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109400/196851 train=4.6033 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109500/196851 train=4.8917 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109600/196851 train=4.6934 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109700/196851 train=4.8866 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109800/196851 train=4.6574 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=109900/196851 train=4.7825 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=110000/196851 train=4.8287 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=110100/196851 train=5.1396 pure_tok/s=88,225
+causal_conv_mixer_sampled_vocab_anchor16 step=110200/196851 train=4.8148 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110300/196851 train=4.7315 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110400/196851 train=5.1684 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110500/196851 train=4.9530 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110600/196851 train=5.1094 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110700/196851 train=4.9145 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110800/196851 train=4.6520 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=110900/196851 train=4.8031 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=111000/196851 train=4.5845 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=111100/196851 train=5.0366 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=111200/196851 train=4.5744 pure_tok/s=88,226
+causal_conv_mixer_sampled_vocab_anchor16 step=111300/196851 train=4.8067 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111400/196851 train=4.9564 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111500/196851 train=4.9880 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111600/196851 train=5.1514 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111700/196851 train=4.7958 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111800/196851 train=4.8770 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=111900/196851 train=4.6604 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=112000/196851 train=4.8186 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=112100/196851 train=4.6228 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=112200/196851 train=4.6407 pure_tok/s=88,227
+causal_conv_mixer_sampled_vocab_anchor16 step=112300/196851 train=4.6182 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112400/196851 train=4.7415 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112500/196851 train=4.6565 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112600/196851 train=4.7193 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112700/196851 train=4.6101 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112800/196851 train=5.1671 pure_tok/s=88,228
+causal_conv_mixer_sampled_vocab_anchor16 step=112900/196851 train=4.8322 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113000/196851 train=4.6740 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113100/196851 train=4.8340 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113200/196851 train=4.8076 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113300/196851 train=4.7611 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113400/196851 train=4.8603 pure_tok/s=88,229
+causal_conv_mixer_sampled_vocab_anchor16 step=113500/196851 train=4.5851 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=113600/196851 train=4.8664 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=113700/196851 train=4.8382 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=113800/196851 train=4.8906 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=113900/196851 train=4.6705 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=114000/196851 train=4.6544 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=114100/196851 train=4.5299 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=114200/196851 train=4.5717 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=114300/196851 train=4.8740 pure_tok/s=88,230
+causal_conv_mixer_sampled_vocab_anchor16 step=114400/196851 train=4.7419 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=114500/196851 train=4.6874 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=114600/196851 train=4.8257 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=114700/196851 train=4.8683 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=114800/196851 train=4.8553 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=114900/196851 train=5.4521 pure_tok/s=88,231
+causal_conv_mixer_sampled_vocab_anchor16 step=115000/196851 train=4.8122 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115100/196851 train=4.4428 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115200/196851 train=4.7299 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115300/196851 train=4.3831 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115400/196851 train=4.3678 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115500/196851 train=4.8922 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115600/196851 train=4.7555 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115700/196851 train=4.9523 pure_tok/s=88,232
+causal_conv_mixer_sampled_vocab_anchor16 step=115800/196851 train=4.9065 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=115900/196851 train=4.6174 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116000/196851 train=4.8330 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116100/196851 train=4.7757 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116200/196851 train=4.8486 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116300/196851 train=4.8258 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116400/196851 train=4.9023 pure_tok/s=88,233
+causal_conv_mixer_sampled_vocab_anchor16 step=116500/196851 train=4.6317 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=116600/196851 train=4.6349 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=116700/196851 train=4.9282 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=116800/196851 train=4.9616 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=116900/196851 train=4.6332 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=117000/196851 train=5.0028 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=117100/196851 train=4.4532 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=117200/196851 train=4.8355 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=117300/196851 train=4.4461 pure_tok/s=88,234
+causal_conv_mixer_sampled_vocab_anchor16 step=117400/196851 train=4.5260 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=117500/196851 train=4.8550 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=117600/196851 train=4.7507 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=117700/196851 train=4.9066 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=117800/196851 train=4.6651 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=117900/196851 train=4.7579 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=118000/196851 train=4.6191 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 step=118100/196851 train=4.9244 pure_tok/s=88,235
+causal_conv_mixer_sampled_vocab_anchor16 eval step=118116 val=4.9141 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=118200/196851 train=4.7051 pure_tok/s=88,236
+causal_conv_mixer_sampled_vocab_anchor16 step=118300/196851 train=5.0432 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118400/196851 train=4.8376 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118500/196851 train=5.0009 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118600/196851 train=4.8499 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118700/196851 train=4.8675 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118800/196851 train=4.9164 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=118900/196851 train=5.2987 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119000/196851 train=4.5775 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119100/196851 train=4.5855 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119200/196851 train=4.6500 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119300/196851 train=4.5005 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119400/196851 train=4.5779 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119500/196851 train=4.9523 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119600/196851 train=4.6082 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119700/196851 train=4.7598 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119800/196851 train=4.5002 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=119900/196851 train=4.6285 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=120000/196851 train=4.8693 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=120100/196851 train=4.6925 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=120200/196851 train=4.7892 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=120300/196851 train=4.4720 pure_tok/s=88,237
+causal_conv_mixer_sampled_vocab_anchor16 step=120400/196851 train=5.1676 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=120500/196851 train=4.5723 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=120600/196851 train=5.0226 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=120700/196851 train=4.6859 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=120800/196851 train=4.6841 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=120900/196851 train=4.8667 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=121000/196851 train=4.6632 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=121100/196851 train=4.9590 pure_tok/s=88,238
+causal_conv_mixer_sampled_vocab_anchor16 step=121200/196851 train=4.7013 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121300/196851 train=4.6938 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121400/196851 train=4.8612 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121500/196851 train=4.6667 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121600/196851 train=4.7659 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121700/196851 train=4.7174 pure_tok/s=88,239
+causal_conv_mixer_sampled_vocab_anchor16 step=121800/196851 train=4.8757 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=121900/196851 train=4.7026 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122000/196851 train=4.4049 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122100/196851 train=4.8495 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122200/196851 train=4.6045 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122300/196851 train=4.7694 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122400/196851 train=4.8684 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122500/196851 train=4.5617 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122600/196851 train=4.8665 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122700/196851 train=5.0578 pure_tok/s=88,240
+causal_conv_mixer_sampled_vocab_anchor16 step=122800/196851 train=4.8551 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=122900/196851 train=4.7665 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123000/196851 train=4.8326 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123100/196851 train=4.5864 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123200/196851 train=4.5978 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123300/196851 train=4.9262 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123400/196851 train=4.8722 pure_tok/s=88,241
+causal_conv_mixer_sampled_vocab_anchor16 step=123500/196851 train=4.6622 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=123600/196851 train=4.4973 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=123700/196851 train=4.8479 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=123800/196851 train=4.8010 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=123900/196851 train=4.7468 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=124000/196851 train=4.8034 pure_tok/s=88,242
+causal_conv_mixer_sampled_vocab_anchor16 step=124100/196851 train=4.7459 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124200/196851 train=4.5994 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124300/196851 train=4.4698 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124400/196851 train=4.7233 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124500/196851 train=4.8685 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124600/196851 train=4.7816 pure_tok/s=88,243
+causal_conv_mixer_sampled_vocab_anchor16 step=124700/196851 train=5.0410 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=124800/196851 train=5.0164 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=124900/196851 train=4.6609 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=125000/196851 train=4.6929 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=125100/196851 train=4.7581 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=125200/196851 train=4.9013 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=125300/196851 train=4.6974 pure_tok/s=88,244
+causal_conv_mixer_sampled_vocab_anchor16 step=125400/196851 train=4.7019 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=125500/196851 train=4.7021 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=125600/196851 train=4.4465 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=125700/196851 train=4.7793 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=125800/196851 train=4.6551 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=125900/196851 train=4.6985 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=126000/196851 train=4.7669 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=126100/196851 train=4.3428 pure_tok/s=88,245
+causal_conv_mixer_sampled_vocab_anchor16 step=126200/196851 train=4.8493 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126300/196851 train=4.5558 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126400/196851 train=4.8209 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126500/196851 train=4.5749 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126600/196851 train=4.8410 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126700/196851 train=4.9465 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126800/196851 train=4.9520 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=126900/196851 train=4.7956 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=127000/196851 train=4.6182 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=127100/196851 train=4.4389 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=127200/196851 train=4.6387 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=127300/196851 train=4.6269 pure_tok/s=88,246
+causal_conv_mixer_sampled_vocab_anchor16 step=127400/196851 train=4.6930 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=127500/196851 train=4.7857 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=127600/196851 train=5.1402 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=127700/196851 train=4.7674 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=127800/196851 train=4.7322 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=127900/196851 train=4.7137 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 eval step=127959 val=4.8882 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=128000/196851 train=5.0506 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=128100/196851 train=4.8304 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=128200/196851 train=4.7764 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=128300/196851 train=4.6539 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=128400/196851 train=4.6873 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=128500/196851 train=4.4036 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=128600/196851 train=4.7590 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=128700/196851 train=4.8644 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=128800/196851 train=4.9476 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=128900/196851 train=4.2429 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=129000/196851 train=5.4379 pure_tok/s=88,247
+causal_conv_mixer_sampled_vocab_anchor16 step=129100/196851 train=4.8350 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129200/196851 train=4.7760 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129300/196851 train=4.6541 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129400/196851 train=4.7079 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129500/196851 train=5.0541 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129600/196851 train=4.6998 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129700/196851 train=4.7016 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129800/196851 train=5.2407 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=129900/196851 train=4.8770 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=130000/196851 train=4.5919 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=130100/196851 train=4.7860 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=130200/196851 train=5.0820 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=130300/196851 train=4.7053 pure_tok/s=88,248
+causal_conv_mixer_sampled_vocab_anchor16 step=130400/196851 train=4.6857 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=130500/196851 train=4.7632 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=130600/196851 train=4.7537 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=130700/196851 train=4.9209 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=130800/196851 train=4.6875 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=130900/196851 train=4.3763 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=131000/196851 train=4.6560 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=131100/196851 train=4.5409 pure_tok/s=88,249
+causal_conv_mixer_sampled_vocab_anchor16 step=131200/196851 train=4.8098 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131300/196851 train=4.6925 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131400/196851 train=4.5744 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131500/196851 train=4.7180 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131600/196851 train=4.8016 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131700/196851 train=4.8288 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131800/196851 train=4.8138 pure_tok/s=88,250
+causal_conv_mixer_sampled_vocab_anchor16 step=131900/196851 train=4.5568 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132000/196851 train=4.6036 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132100/196851 train=4.3690 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132200/196851 train=4.5465 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132300/196851 train=4.8141 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132400/196851 train=4.6430 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132500/196851 train=4.8130 pure_tok/s=88,251
+causal_conv_mixer_sampled_vocab_anchor16 step=132600/196851 train=4.7416 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=132700/196851 train=4.8977 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=132800/196851 train=4.5754 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=132900/196851 train=4.7890 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133000/196851 train=4.8505 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133100/196851 train=4.7373 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133200/196851 train=4.7002 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133300/196851 train=4.7038 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133400/196851 train=4.9096 pure_tok/s=88,252
+causal_conv_mixer_sampled_vocab_anchor16 step=133500/196851 train=5.0170 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=133600/196851 train=4.5101 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=133700/196851 train=4.8298 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=133800/196851 train=4.7185 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=133900/196851 train=4.5205 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=134000/196851 train=4.9980 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=134100/196851 train=4.6885 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=134200/196851 train=4.7016 pure_tok/s=88,253
+causal_conv_mixer_sampled_vocab_anchor16 step=134300/196851 train=4.9144 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134400/196851 train=4.8640 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134500/196851 train=5.0843 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134600/196851 train=4.6896 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134700/196851 train=4.8981 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134800/196851 train=5.1955 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=134900/196851 train=4.5853 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=135000/196851 train=5.1865 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=135100/196851 train=4.4839 pure_tok/s=88,254
+causal_conv_mixer_sampled_vocab_anchor16 step=135200/196851 train=4.6702 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135300/196851 train=4.5814 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135400/196851 train=4.9550 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135500/196851 train=4.7611 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135600/196851 train=4.5557 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135700/196851 train=4.9418 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135800/196851 train=4.8669 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=135900/196851 train=4.8581 pure_tok/s=88,255
+causal_conv_mixer_sampled_vocab_anchor16 step=136000/196851 train=5.0062 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136100/196851 train=4.4471 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136200/196851 train=4.9209 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136300/196851 train=4.8024 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136400/196851 train=5.0705 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136500/196851 train=5.0756 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136600/196851 train=4.7844 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136700/196851 train=4.7060 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=136800/196851 train=4.5211 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=136900/196851 train=4.8624 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=137000/196851 train=4.3553 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=137100/196851 train=4.3439 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=137200/196851 train=4.4615 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=137300/196851 train=4.6527 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=137400/196851 train=4.8179 pure_tok/s=88,256
+causal_conv_mixer_sampled_vocab_anchor16 step=137500/196851 train=4.8915 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=137600/196851 train=4.7888 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=137700/196851 train=4.7894 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=137800/196851 train=4.9685 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 eval step=137802 val=4.8727 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=137900/196851 train=4.7132 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=138000/196851 train=5.0117 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=138100/196851 train=4.7857 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=138200/196851 train=4.7986 pure_tok/s=88,257
+causal_conv_mixer_sampled_vocab_anchor16 step=138300/196851 train=4.5603 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138400/196851 train=4.8170 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138500/196851 train=4.8894 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138600/196851 train=5.0425 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138700/196851 train=4.8936 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138800/196851 train=4.6676 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=138900/196851 train=4.6418 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139000/196851 train=4.6438 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139100/196851 train=4.2870 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139200/196851 train=4.7501 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139300/196851 train=4.7863 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139400/196851 train=4.9842 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139500/196851 train=4.5263 pure_tok/s=88,258
+causal_conv_mixer_sampled_vocab_anchor16 step=139600/196851 train=4.7798 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=139700/196851 train=4.6930 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=139800/196851 train=4.8057 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=139900/196851 train=4.6165 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=140000/196851 train=4.9749 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=140100/196851 train=4.7364 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=140200/196851 train=4.8942 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=140300/196851 train=4.7776 pure_tok/s=88,259
+causal_conv_mixer_sampled_vocab_anchor16 step=140400/196851 train=4.8510 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=140500/196851 train=4.6788 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=140600/196851 train=4.8303 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=140700/196851 train=4.6529 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=140800/196851 train=4.7996 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=140900/196851 train=4.9649 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=141000/196851 train=4.8048 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=141100/196851 train=4.7000 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=141200/196851 train=4.9528 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=141300/196851 train=4.4535 pure_tok/s=88,260
+causal_conv_mixer_sampled_vocab_anchor16 step=141400/196851 train=5.2327 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=141500/196851 train=5.2159 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=141600/196851 train=4.8227 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=141700/196851 train=4.9145 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=141800/196851 train=4.9885 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=141900/196851 train=5.0087 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=142000/196851 train=4.5849 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=142100/196851 train=4.9068 pure_tok/s=88,261
+causal_conv_mixer_sampled_vocab_anchor16 step=142200/196851 train=4.9907 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142300/196851 train=4.5347 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142400/196851 train=4.8632 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142500/196851 train=5.0673 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142600/196851 train=4.9385 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142700/196851 train=4.8467 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142800/196851 train=4.7197 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=142900/196851 train=4.6989 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=143000/196851 train=4.7745 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=143100/196851 train=4.9002 pure_tok/s=88,262
+causal_conv_mixer_sampled_vocab_anchor16 step=143200/196851 train=5.1696 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143300/196851 train=4.6969 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143400/196851 train=4.5737 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143500/196851 train=4.6186 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143600/196851 train=4.7585 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143700/196851 train=4.7878 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143800/196851 train=4.7936 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=143900/196851 train=4.6239 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144000/196851 train=4.5495 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144100/196851 train=4.9314 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144200/196851 train=4.6787 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144300/196851 train=4.6953 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=144400/196851 train=4.5468 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=144500/196851 train=5.1531 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=144600/196851 train=4.7169 pure_tok/s=88,263
+causal_conv_mixer_sampled_vocab_anchor16 step=144700/196851 train=4.7057 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144800/196851 train=5.2445 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=144900/196851 train=4.6757 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145000/196851 train=4.6913 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145100/196851 train=4.6260 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145200/196851 train=4.8914 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145300/196851 train=4.7247 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145400/196851 train=4.6699 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145500/196851 train=4.7749 pure_tok/s=88,264
+causal_conv_mixer_sampled_vocab_anchor16 step=145600/196851 train=4.8565 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=145700/196851 train=4.8142 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=145800/196851 train=4.5504 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=145900/196851 train=4.7124 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146000/196851 train=4.9209 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146100/196851 train=4.8179 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146200/196851 train=5.3563 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146300/196851 train=4.6001 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146400/196851 train=4.9894 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146500/196851 train=4.8677 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146600/196851 train=4.7952 pure_tok/s=88,265
+causal_conv_mixer_sampled_vocab_anchor16 step=146700/196851 train=4.7902 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=146800/196851 train=4.6528 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=146900/196851 train=4.7203 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147000/196851 train=4.6768 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147100/196851 train=4.8357 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147200/196851 train=5.3763 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147300/196851 train=4.8698 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147400/196851 train=5.0885 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147500/196851 train=5.5817 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147600/196851 train=4.7530 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 eval step=147645 val=4.8688 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=147700/196851 train=4.6630 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147800/196851 train=4.7779 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=147900/196851 train=4.5852 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148000/196851 train=4.5890 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148100/196851 train=4.8802 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148200/196851 train=5.6620 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148300/196851 train=4.5625 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148400/196851 train=4.8931 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148500/196851 train=4.8046 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148600/196851 train=4.9531 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=148700/196851 train=4.7057 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148800/196851 train=4.8176 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=148900/196851 train=4.9621 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=149000/196851 train=4.6044 pure_tok/s=88,266
+causal_conv_mixer_sampled_vocab_anchor16 step=149100/196851 train=4.8326 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149200/196851 train=4.8505 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149300/196851 train=4.5973 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149400/196851 train=4.8336 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149500/196851 train=4.3790 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149600/196851 train=4.9347 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149700/196851 train=4.8399 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149800/196851 train=4.8797 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=149900/196851 train=4.8014 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150000/196851 train=4.3365 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150100/196851 train=4.6380 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150200/196851 train=5.1201 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150300/196851 train=4.9599 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150400/196851 train=4.7555 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150500/196851 train=4.5292 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150600/196851 train=4.9046 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150700/196851 train=4.7485 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150800/196851 train=4.6798 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=150900/196851 train=4.7420 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=151000/196851 train=4.7970 pure_tok/s=88,267
+causal_conv_mixer_sampled_vocab_anchor16 step=151100/196851 train=4.7477 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151200/196851 train=4.5177 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151300/196851 train=5.0962 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151400/196851 train=4.5799 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151500/196851 train=4.7196 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151600/196851 train=4.2551 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151700/196851 train=4.6955 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151800/196851 train=4.7565 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=151900/196851 train=4.4573 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152000/196851 train=4.7086 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152100/196851 train=5.4320 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152200/196851 train=4.8106 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152300/196851 train=4.9832 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152400/196851 train=4.9516 pure_tok/s=88,268
+causal_conv_mixer_sampled_vocab_anchor16 step=152500/196851 train=4.7185 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=152600/196851 train=4.8174 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=152700/196851 train=4.7179 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=152800/196851 train=4.9520 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=152900/196851 train=4.4981 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153000/196851 train=4.9058 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153100/196851 train=4.7749 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153200/196851 train=4.7435 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153300/196851 train=4.4573 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153400/196851 train=4.7375 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153500/196851 train=4.1729 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153600/196851 train=4.4421 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153700/196851 train=4.6518 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153800/196851 train=4.7008 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=153900/196851 train=4.7114 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=154000/196851 train=4.7099 pure_tok/s=88,269
+causal_conv_mixer_sampled_vocab_anchor16 step=154100/196851 train=4.9752 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154200/196851 train=4.6469 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154300/196851 train=4.9107 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154400/196851 train=4.7142 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154500/196851 train=4.8000 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154600/196851 train=4.5709 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154700/196851 train=4.8626 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154800/196851 train=5.3767 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=154900/196851 train=4.3742 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=155000/196851 train=4.6045 pure_tok/s=88,270
+causal_conv_mixer_sampled_vocab_anchor16 step=155100/196851 train=4.5907 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155200/196851 train=4.8493 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155300/196851 train=4.6337 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155400/196851 train=4.5243 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155500/196851 train=5.0369 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155600/196851 train=4.7481 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155700/196851 train=4.8864 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155800/196851 train=4.6738 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=155900/196851 train=4.6334 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=156000/196851 train=5.1605 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=156100/196851 train=4.5754 pure_tok/s=88,271
+causal_conv_mixer_sampled_vocab_anchor16 step=156200/196851 train=4.6853 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156300/196851 train=4.4093 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156400/196851 train=4.9037 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156500/196851 train=4.7757 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156600/196851 train=4.3412 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156700/196851 train=4.9996 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156800/196851 train=5.0038 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=156900/196851 train=4.5447 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=157000/196851 train=4.4520 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=157100/196851 train=4.4254 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=157200/196851 train=4.6227 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=157300/196851 train=4.7557 pure_tok/s=88,272
+causal_conv_mixer_sampled_vocab_anchor16 step=157400/196851 train=4.8113 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 eval step=157488 val=4.8796 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=157500/196851 train=4.6510 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=157600/196851 train=5.0059 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=157700/196851 train=5.1356 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=157800/196851 train=4.8464 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=157900/196851 train=4.7188 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=158000/196851 train=5.0120 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=158100/196851 train=4.7776 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=158200/196851 train=4.6876 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=158300/196851 train=4.4401 pure_tok/s=88,273
+causal_conv_mixer_sampled_vocab_anchor16 step=158400/196851 train=4.7218 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=158500/196851 train=4.9637 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=158600/196851 train=4.6369 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=158700/196851 train=4.8492 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=158800/196851 train=4.9968 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=158900/196851 train=4.6080 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159000/196851 train=4.8602 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159100/196851 train=4.8229 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159200/196851 train=4.8016 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159300/196851 train=4.4728 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159400/196851 train=4.3763 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159500/196851 train=4.6674 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159600/196851 train=4.4833 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159700/196851 train=4.7827 pure_tok/s=88,274
+causal_conv_mixer_sampled_vocab_anchor16 step=159800/196851 train=4.6792 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=159900/196851 train=4.6876 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160000/196851 train=5.1723 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160100/196851 train=4.9306 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160200/196851 train=4.8406 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160300/196851 train=4.3768 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160400/196851 train=4.6610 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160500/196851 train=4.3691 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160600/196851 train=4.8338 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160700/196851 train=4.6698 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160800/196851 train=4.6610 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=160900/196851 train=4.8273 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=161000/196851 train=4.8151 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=161100/196851 train=4.6943 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161200/196851 train=4.8209 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161300/196851 train=4.5852 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161400/196851 train=4.4977 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161500/196851 train=4.6093 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161600/196851 train=4.7426 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161700/196851 train=4.7746 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161800/196851 train=4.6702 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=161900/196851 train=4.9453 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=162000/196851 train=4.7349 pure_tok/s=88,275
+causal_conv_mixer_sampled_vocab_anchor16 step=162100/196851 train=4.8453 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162200/196851 train=4.6803 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162300/196851 train=4.8535 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162400/196851 train=4.9496 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162500/196851 train=4.7907 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162600/196851 train=4.6338 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162700/196851 train=4.4740 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162800/196851 train=4.7563 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=162900/196851 train=4.8196 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=163000/196851 train=4.6322 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=163100/196851 train=4.8487 pure_tok/s=88,276
+causal_conv_mixer_sampled_vocab_anchor16 step=163200/196851 train=4.7938 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163300/196851 train=4.3316 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163400/196851 train=4.8605 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163500/196851 train=4.6043 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163600/196851 train=4.7861 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163700/196851 train=4.8900 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163800/196851 train=4.5357 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=163900/196851 train=4.4856 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=164000/196851 train=5.0725 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=164100/196851 train=4.6353 pure_tok/s=88,277
+causal_conv_mixer_sampled_vocab_anchor16 step=164200/196851 train=4.6601 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164300/196851 train=4.8044 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164400/196851 train=4.6060 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164500/196851 train=5.2071 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164600/196851 train=4.5362 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164700/196851 train=4.8650 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164800/196851 train=4.6231 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=164900/196851 train=4.5002 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165000/196851 train=4.9482 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165100/196851 train=4.7565 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165200/196851 train=4.4084 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165300/196851 train=4.5634 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165400/196851 train=4.5554 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165500/196851 train=4.6196 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165600/196851 train=4.6602 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165700/196851 train=4.6010 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165800/196851 train=5.7195 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=165900/196851 train=4.1452 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=166000/196851 train=4.5195 pure_tok/s=88,278
+causal_conv_mixer_sampled_vocab_anchor16 step=166100/196851 train=4.8775 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166200/196851 train=4.5779 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166300/196851 train=4.7975 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166400/196851 train=4.3272 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166500/196851 train=4.6426 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166600/196851 train=4.7024 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166700/196851 train=4.4117 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166800/196851 train=4.2891 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=166900/196851 train=4.6837 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=167000/196851 train=4.6805 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=167100/196851 train=4.8285 pure_tok/s=88,279
+causal_conv_mixer_sampled_vocab_anchor16 step=167200/196851 train=4.9030 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167300/196851 train=4.7927 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 eval step=167331 val=4.8428 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=167400/196851 train=4.7076 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167500/196851 train=4.6253 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167600/196851 train=4.7165 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167700/196851 train=4.7004 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167800/196851 train=4.6684 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=167900/196851 train=4.8602 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168000/196851 train=4.5732 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168100/196851 train=4.7500 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168200/196851 train=5.0147 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168300/196851 train=4.7164 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168400/196851 train=4.6863 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168500/196851 train=4.6369 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168600/196851 train=4.8675 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168700/196851 train=4.4822 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168800/196851 train=4.6823 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=168900/196851 train=4.5154 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169000/196851 train=4.8146 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169100/196851 train=4.8276 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169200/196851 train=4.4578 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169300/196851 train=4.8811 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169400/196851 train=4.5548 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169500/196851 train=5.0495 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169600/196851 train=4.8878 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169700/196851 train=4.6162 pure_tok/s=88,280
+causal_conv_mixer_sampled_vocab_anchor16 step=169800/196851 train=4.6330 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=169900/196851 train=5.2706 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170000/196851 train=4.4763 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170100/196851 train=4.7887 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170200/196851 train=4.7486 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170300/196851 train=4.7972 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170400/196851 train=4.6354 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170500/196851 train=4.5660 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170600/196851 train=4.7422 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170700/196851 train=4.6449 pure_tok/s=88,281
+causal_conv_mixer_sampled_vocab_anchor16 step=170800/196851 train=5.0376 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=170900/196851 train=4.9112 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171000/196851 train=4.9043 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171100/196851 train=4.8515 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171200/196851 train=5.3266 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171300/196851 train=4.7356 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171400/196851 train=4.9377 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171500/196851 train=4.6134 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171600/196851 train=4.8632 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171700/196851 train=4.4017 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171800/196851 train=4.9448 pure_tok/s=88,282
+causal_conv_mixer_sampled_vocab_anchor16 step=171900/196851 train=4.6587 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172000/196851 train=4.4441 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172100/196851 train=4.6457 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172200/196851 train=4.6442 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172300/196851 train=4.8535 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172400/196851 train=4.7034 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172500/196851 train=4.5365 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172600/196851 train=4.2776 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172700/196851 train=4.7839 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172800/196851 train=4.4898 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=172900/196851 train=4.2120 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173000/196851 train=5.4934 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173100/196851 train=5.0578 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173200/196851 train=4.7878 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173300/196851 train=4.9111 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173400/196851 train=4.9983 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173500/196851 train=4.7627 pure_tok/s=88,283
+causal_conv_mixer_sampled_vocab_anchor16 step=173600/196851 train=4.7558 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=173700/196851 train=4.8309 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=173800/196851 train=4.6190 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=173900/196851 train=4.8470 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174000/196851 train=4.7735 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174100/196851 train=4.6916 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174200/196851 train=4.8728 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174300/196851 train=4.8951 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174400/196851 train=4.6540 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174500/196851 train=4.6037 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174600/196851 train=4.5152 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174700/196851 train=4.3814 pure_tok/s=88,284
+causal_conv_mixer_sampled_vocab_anchor16 step=174800/196851 train=4.7477 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=174900/196851 train=4.4041 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175000/196851 train=4.6148 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175100/196851 train=4.8193 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175200/196851 train=4.5373 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175300/196851 train=4.4143 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175400/196851 train=5.4033 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175500/196851 train=4.7566 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175600/196851 train=4.6798 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175700/196851 train=4.7517 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175800/196851 train=4.5971 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=175900/196851 train=5.1922 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176000/196851 train=4.4976 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176100/196851 train=5.1046 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=176200/196851 train=4.7134 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=176300/196851 train=4.7490 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176400/196851 train=4.7784 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176500/196851 train=4.8691 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176600/196851 train=4.8862 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176700/196851 train=4.8421 pure_tok/s=88,285
+causal_conv_mixer_sampled_vocab_anchor16 step=176800/196851 train=4.9513 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=176900/196851 train=4.7778 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=177000/196851 train=4.7633 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=177100/196851 train=4.5730 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 eval step=177174 val=4.8169 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=177200/196851 train=4.8243 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=177300/196851 train=4.7757 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=177400/196851 train=4.8728 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=177500/196851 train=4.7320 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=177600/196851 train=4.5323 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=177700/196851 train=4.8307 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=177800/196851 train=5.0142 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=177900/196851 train=4.6380 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=178000/196851 train=4.5249 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=178100/196851 train=4.9093 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178200/196851 train=4.9228 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=178300/196851 train=4.7162 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=178400/196851 train=4.4642 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178500/196851 train=4.5308 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178600/196851 train=4.4763 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178700/196851 train=4.7739 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178800/196851 train=4.8028 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=178900/196851 train=4.6434 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=179000/196851 train=4.6620 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=179100/196851 train=4.7423 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=179200/196851 train=4.9608 pure_tok/s=88,286
+causal_conv_mixer_sampled_vocab_anchor16 step=179300/196851 train=4.8769 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179400/196851 train=4.7179 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179500/196851 train=4.9076 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179600/196851 train=4.6209 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179700/196851 train=5.0184 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179800/196851 train=4.8397 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=179900/196851 train=4.8148 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180000/196851 train=4.8221 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180100/196851 train=4.6102 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180200/196851 train=4.9364 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180300/196851 train=5.3752 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180400/196851 train=4.7473 pure_tok/s=88,287
+causal_conv_mixer_sampled_vocab_anchor16 step=180500/196851 train=4.7289 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=180600/196851 train=4.6853 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=180700/196851 train=4.8027 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=180800/196851 train=4.6874 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=180900/196851 train=4.6064 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181000/196851 train=4.5392 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181100/196851 train=4.7089 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181200/196851 train=4.7355 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181300/196851 train=4.6923 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181400/196851 train=4.4547 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181500/196851 train=4.6193 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181600/196851 train=4.8063 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181700/196851 train=4.7025 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181800/196851 train=4.6219 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=181900/196851 train=4.5650 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182000/196851 train=4.7232 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182100/196851 train=4.7480 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182200/196851 train=4.8794 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182300/196851 train=4.5945 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=182400/196851 train=4.6701 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=182500/196851 train=4.7042 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182600/196851 train=4.5838 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182700/196851 train=4.4516 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182800/196851 train=4.7381 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=182900/196851 train=4.9990 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183000/196851 train=4.5341 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183100/196851 train=5.1294 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183200/196851 train=4.7479 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183300/196851 train=4.9453 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183400/196851 train=4.6618 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183500/196851 train=4.4875 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183600/196851 train=4.7071 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183700/196851 train=4.7656 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183800/196851 train=4.5226 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=183900/196851 train=4.6450 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=184000/196851 train=4.6208 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=184100/196851 train=4.3056 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=184200/196851 train=4.7072 pure_tok/s=88,288
+causal_conv_mixer_sampled_vocab_anchor16 step=184300/196851 train=4.6197 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184400/196851 train=4.6134 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184500/196851 train=4.8774 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184600/196851 train=5.2409 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184700/196851 train=5.0263 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184800/196851 train=4.7232 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=184900/196851 train=4.7687 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185000/196851 train=4.9103 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185100/196851 train=4.8731 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185200/196851 train=4.7742 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185300/196851 train=4.6262 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185400/196851 train=4.3465 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185500/196851 train=4.8094 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185600/196851 train=4.6213 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185700/196851 train=4.8594 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185800/196851 train=4.4958 pure_tok/s=88,289
+causal_conv_mixer_sampled_vocab_anchor16 step=185900/196851 train=4.5409 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186000/196851 train=4.2456 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186100/196851 train=4.6771 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186200/196851 train=4.7459 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186300/196851 train=4.6827 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186400/196851 train=4.7304 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186500/196851 train=4.7282 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186600/196851 train=5.2012 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186700/196851 train=4.6396 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186800/196851 train=4.9741 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=186900/196851 train=4.7030 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=187000/196851 train=4.6113 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 eval step=187017 val=4.8316 mode=full
+causal_conv_mixer_sampled_vocab_anchor16 step=187100/196851 train=4.5465 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=187200/196851 train=4.7651 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187300/196851 train=4.7916 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187400/196851 train=4.4740 pure_tok/s=88,290
+causal_conv_mixer_sampled_vocab_anchor16 step=187500/196851 train=4.8065 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187600/196851 train=4.6626 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187700/196851 train=4.7024 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187800/196851 train=4.4678 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=187900/196851 train=4.7402 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188000/196851 train=4.8039 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188100/196851 train=4.9184 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188200/196851 train=5.0460 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188300/196851 train=4.7933 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188400/196851 train=4.5565 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188500/196851 train=4.5647 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188600/196851 train=4.6455 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188700/196851 train=4.5694 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188800/196851 train=4.6435 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=188900/196851 train=5.0543 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189000/196851 train=4.6227 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189100/196851 train=4.7668 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189200/196851 train=4.5836 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189300/196851 train=4.6778 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189400/196851 train=4.5393 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189500/196851 train=4.6700 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189600/196851 train=4.7624 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189700/196851 train=4.8691 pure_tok/s=88,291
+causal_conv_mixer_sampled_vocab_anchor16 step=189800/196851 train=5.1656 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=189900/196851 train=4.7286 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190000/196851 train=4.9379 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190100/196851 train=4.6465 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190200/196851 train=4.7209 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190300/196851 train=4.6387 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190400/196851 train=4.9055 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190500/196851 train=4.4925 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190600/196851 train=5.0144 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190700/196851 train=4.3809 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190800/196851 train=4.1418 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=190900/196851 train=4.6211 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191000/196851 train=4.6760 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191100/196851 train=4.5134 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191200/196851 train=4.8733 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191300/196851 train=4.6502 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191400/196851 train=4.6696 pure_tok/s=88,292
+causal_conv_mixer_sampled_vocab_anchor16 step=191500/196851 train=4.9987 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=191600/196851 train=4.5082 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=191700/196851 train=4.7500 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=191800/196851 train=4.5938 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=191900/196851 train=4.7587 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192000/196851 train=4.5982 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192100/196851 train=4.8057 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192200/196851 train=4.9552 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192300/196851 train=4.9013 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192400/196851 train=4.4616 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192500/196851 train=4.9036 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192600/196851 train=4.4691 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192700/196851 train=4.9143 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192800/196851 train=4.7858 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=192900/196851 train=4.3955 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193000/196851 train=4.7088 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193100/196851 train=4.6852 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193200/196851 train=4.8809 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193300/196851 train=4.6328 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193400/196851 train=4.4672 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193500/196851 train=5.0183 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193600/196851 train=4.6223 pure_tok/s=88,293
+causal_conv_mixer_sampled_vocab_anchor16 step=193700/196851 train=4.4624 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=193800/196851 train=4.8755 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=193900/196851 train=4.9200 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194000/196851 train=4.6275 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194100/196851 train=4.5894 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194200/196851 train=4.9434 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194300/196851 train=4.4512 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194400/196851 train=5.0932 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194500/196851 train=4.5315 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194600/196851 train=4.6625 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194700/196851 train=4.5664 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194800/196851 train=4.6786 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=194900/196851 train=4.5976 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195000/196851 train=4.6771 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195100/196851 train=5.0307 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195200/196851 train=4.6643 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195300/196851 train=4.6437 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195400/196851 train=4.9316 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195500/196851 train=4.4288 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195600/196851 train=4.5309 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195700/196851 train=4.8805 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195800/196851 train=4.7432 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=195900/196851 train=4.8282 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=196000/196851 train=4.7126 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=196100/196851 train=4.8937 pure_tok/s=88,294
+causal_conv_mixer_sampled_vocab_anchor16 step=196200/196851 train=4.3922 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196300/196851 train=4.9295 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196400/196851 train=4.7675 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196500/196851 train=4.5514 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196600/196851 train=4.7619 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196700/196851 train=5.2019 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196800/196851 train=4.6513 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 step=196851/196851 train=4.8441 pure_tok/s=88,295
+causal_conv_mixer_sampled_vocab_anchor16 eval step=196851 val=4.8262 mode=full
+{
+  "benchmark": "language_longseq_replay_probe",
+  "comparisons": {},
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "cache_dataset_on_device": false,
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_20260603\\cache\\finewebedu_train2000203011_val325152_seq10160_gpt2.pt",
+    "conv_embedding_dim": 1034,
+    "conv_kernel_size": 7,
+    "conv_layers": 1,
+    "conv_rank": 295,
+    "dataset_name": "HuggingFaceFW/fineweb-edu",
+    "device": "cuda",
+    "dropout": 0.1,
+    "embedding_dim": 320,
+    "eval_batch_size": 1,
+    "eval_interval": 9843,
+    "eval_loss_mode": "full",
+    "factorized_embedding_dim": 280,
+    "factorized_hidden_dim": 560,
+    "factorized_memory_dim": 280,
+    "full_eval_token_chunk_size": 1024,
+    "full_loss_interval": 4,
+    "full_loss_token_stride": 8,
+    "hidden_dim": 640,
+    "hierarchical_class_count": 256,
+    "initial_eval": true,
+    "learning_rate": 0.001,
+    "local_files_only": false,
+    "max_eval_seconds": 1200.0,
+    "max_gpu_used_mb": 2000.0,
+    "max_step_seconds": 600.0,
+    "memory_dim": 320,
+    "milestone_checkpoint_interval": 59058,
+    "no_replay_embedding_dim": 260,
+    "no_replay_hidden_dim": 520,
+    "no_replay_rank": 96,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603",
+    "partial_token_count": 1024,
+    "pin_memory": false,
+    "resolved_cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_20260603\\cache\\finewebedu_train2000203011_val325152_seq10160_gpt2.pt",
+    "resume_variant_checkpoints": true,
+    "reuse_variant_results": false,
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "split": "train",
+    "text_column": "text",
+    "tokenization_batch_size": 512,
+    "tokenizer_name": "gpt2",
+    "torch_compile": false,
+    "torch_compile_mode": "reduce-overhead",
+    "train_blocks": 196851,
+    "train_log_interval": 100,
+    "train_loss_token_chunk_size": 1024,
+    "train_steps": 196851,
+    "untied_rank": 64,
+    "use_amp": true,
+    "use_fused_adamw": true,
+    "val_blocks": 32,
+    "variant_artifact_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603\\variant_results\\seq10160_steps196851_val32_batch1_eval9843_init1_seed13",
+    "variant_checkpoint_interval": 1000,
+    "variants": [
+      "causal_conv_mixer_sampled_vocab_anchor16"
+    ],
+    "weight_decay": 0.0001,
+    "window_size": 128
+  },
+  "fairness": {
+    "probe_only": true,
+    "real_fineweb_edu_data": true,
+    "reused_completed_variant_results": false,
+    "same_batch_schedule": true,
+    "same_cache": true,
+    "same_model_size_target": "20m_parameter_partial_untied_family",
+    "same_token_budget": true,
+    "validation_loss_mode": "full"
+  },
+  "results": {
+    "causal_conv_mixer_sampled_vocab_anchor16": {
+      "final_val_loss": 4.826209872961044,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.829497367143631
+        },
+        {
+          "step": 9843.0,
+          "tokens_seen": 100004880.0,
+          "train_loss": 5.470432281494141,
+          "val_loss": 5.611664071679115
+        },
+        {
+          "step": 19686.0,
+          "tokens_seen": 200009760.0,
+          "train_loss": 5.535058498382568,
+          "val_loss": 5.350542351603508
+        },
+        {
+          "step": 29529.0,
+          "tokens_seen": 300014640.0,
+          "train_loss": 5.016024589538574,
+          "val_loss": 5.211947754025459
+        },
+        {
+          "step": 39372.0,
+          "tokens_seen": 400019520.0,
+          "train_loss": 4.990780830383301,
+          "val_loss": 5.135958731174469
+        },
+        {
+          "step": 49215.0,
+          "tokens_seen": 500024400.0,
+          "train_loss": 5.04383659362793,
+          "val_loss": 5.071734294295311
+        },
+        {
+          "step": 59058.0,
+          "tokens_seen": 600029280.0,
+          "train_loss": 4.775114059448242,
+          "val_loss": 5.036295384168625
+        },
+        {
+          "step": 68901.0,
+          "tokens_seen": 700034160.0,
+          "train_loss": 4.728560447692871,
+          "val_loss": 5.001431107521057
+        },
+        {
+          "step": 78744.0,
+          "tokens_seen": 800039040.0,
+          "train_loss": 4.549887657165527,
+          "val_loss": 4.978268176317215
+        },
+        {
+          "step": 88587.0,
+          "tokens_seen": 900043920.0,
+          "train_loss": 4.8510332107543945,
+          "val_loss": 4.965719997882843
+        },
+        {
+          "step": 98430.0,
+          "tokens_seen": 1000048800.0,
+          "train_loss": 4.643503189086914,
+          "val_loss": 4.930744215846062
+        },
+        {
+          "step": 108273.0,
+          "tokens_seen": 1100053680.0,
+          "train_loss": 5.225663185119629,
+          "val_loss": 4.923869073390961
+        },
+        {
+          "step": 118116.0,
+          "tokens_seen": 1200058560.0,
+          "train_loss": 4.945501327514648,
+          "val_loss": 4.914090633392334
+        },
+        {
+          "step": 127959.0,
+          "tokens_seen": 1300063440.0,
+          "train_loss": 4.4933061599731445,
+          "val_loss": 4.888244584202766
+        },
+        {
+          "step": 137802.0,
+          "tokens_seen": 1400068320.0,
+          "train_loss": 4.618273735046387,
+          "val_loss": 4.872741833329201
+        },
+        {
+          "step": 147645.0,
+          "tokens_seen": 1500073200.0,
+          "train_loss": 4.9318389892578125,
+          "val_loss": 4.868787184357643
+        },
+        {
+          "step": 157488.0,
+          "tokens_seen": 1600078080.0,
+          "train_loss": 4.927633285522461,
+          "val_loss": 4.8796427100896835
+        },
+        {
+          "step": 167331.0,
+          "tokens_seen": 1700082960.0,
+          "train_loss": 4.7128586769104,
+          "val_loss": 4.842793866991997
+        },
+        {
+          "step": 177174.0,
+          "tokens_seen": 1800087840.0,
+          "train_loss": 5.080331325531006,
+          "val_loss": 4.816918730735779
+        },
+        {
+          "step": 187017.0,
+          "tokens_seen": 1900092720.0,
+          "train_loss": 5.069347381591797,
+          "val_loss": 4.831647455692291
+        },
+        {
+          "step": 196851.0,
+          "tokens_seen": 2000006160.0,
+          "train_loss": 4.8441314697265625,
+          "val_loss": 4.826209872961044
+        }
+      ],
+      "initial_val_loss": 10.829497367143631,
+      "parameter_count": 79999460,
+      "peak_vram_mb": 3178.03857421875,
+      "pure_train_time_seconds": 22651.465523096194,
+      "pure_train_tok_per_sec": 88294.77977752594,
+      "sampled_candidate_size_mean": 16834.905629130662,
+      "sampled_eval_candidate_size_mean": null,
+      "step_time_mean_ms": 115.06909044453009,
+      "step_time_median_ms": 114.94089999177959,
+      "total_training_time_seconds": 24037.560766900002,
+      "train_tok_per_sec": 83203.3740609002,
+      "train_tokens_seen": 2000006160,
+      "validation_loss_mode": "full",
+      "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+    }
+  }
+}

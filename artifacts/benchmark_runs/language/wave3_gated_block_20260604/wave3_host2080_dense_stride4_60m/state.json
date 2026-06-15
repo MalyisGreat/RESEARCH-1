@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_dense_stride4_60m\\checkpoint.pt",
+  "final_train_loss": 5.547560691833496,
+  "final_val_loss": 5.4645802578901055,
+  "peak_vram_mb": 4359.5458984375,
+  "pure_train_tok_per_sec": 75602.42340104863,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_dense_stride4_60m\\result.json",
+  "run_name": "wave3_host2080_dense_stride4_60m",
+  "status": "completed",
+  "step": 5906,
+  "tokens_seen": 60004960,
+  "train_steps": 5906
+}

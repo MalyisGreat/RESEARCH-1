@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\candidate_v1\\checkpoint.pt",
+  "final_train_loss": 9.59893798828125,
+  "final_val_loss": 10.833111882209778,
+  "peak_vram_mb": null,
+  "pure_train_tok_per_sec": 61.904983696632485,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent03_adaptive_basis\\candidate_v1\\result.json",
+  "run_name": "agent03_adaptive_basis_cpu64",
+  "status": "completed",
+  "step": 64,
+  "tokens_seen": 16320,
+  "train_steps": 64
+}

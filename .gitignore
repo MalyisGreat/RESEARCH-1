@@ -2,3 +2,21 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+
+# Local training/runtime state.
+*.pid
+*.tmp
+
+# Heavy derived model/data artifacts stay local and are documented in
+# docs/large_artifacts_manifest.md instead of being pushed to GitHub.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.gguf
+*.bin
+*.arrow
+*.parquet
+artifacts/**/cache/
+artifacts/runtime_cache/

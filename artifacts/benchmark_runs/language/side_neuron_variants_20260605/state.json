@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\side_neuron_variants_20260605\\checkpoint.pt",
+  "final_train_loss": 6.995581150054932,
+  "final_val_loss": 6.930970085793593,
+  "peak_vram_mb": 2316.8671875,
+  "pure_train_tok_per_sec": 129440.32234351977,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\side_neuron_variants_20260605\\result.json",
+  "run_name": "silu_square_lowrank_40m_steps256",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 2600960,
+  "train_steps": 256
+}

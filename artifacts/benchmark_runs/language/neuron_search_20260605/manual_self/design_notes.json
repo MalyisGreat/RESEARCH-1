@@ -1,0 +1,560 @@
+{
+  "adaptive_basis_neuron": {
+    "design": "Adaptive nonlinear basis neuron",
+    "equations": "w=softmax(Wr x); h=sum_i w_i basis_i(z), bases=[relu(z)^2, z*tanh(z), relu(z)*sigmoid(1.5z)]",
+    "novelty": "Token-local mixture of nonlinear bases, not a single known activation replacement.",
+    "why": "A block can choose sharper, signed, or smoother responses per token without expensive routing or seq attention."
+  },
+  "bottleneck_aware_neuron": {
+    "design": "Bottleneck-aware low-rank echo neuron",
+    "equations": "e=U silu(D norm(x)); h=relu(z+sigmoid(G norm(x)) e)^2",
+    "novelty": "Block-local low-rank basis injection aimed at the output compression bottleneck without touching the head or loss.",
+    "why": "The factorized output bottleneck rewards features already compressible into low-rank subspaces; this adds a block-local low-rank echo before FFN squaring."
+  },
+  "channel_drop_square_neuron": {
+    "design": "Sequence-shared channel-drop squared neuron",
+    "equations": "h=m_channel*relu(Wf norm(x))^2 where m_channel is shared over the sequence during train",
+    "novelty": "Block-local sequence-shared hidden channel dropout for a causal conv-memory FFN.",
+    "why": "Regularizes whole expanded channels consistently across the long sequence, targeting channel co-adaptation rather than token noise."
+  },
+  "conv_disagreement_neuron": {
+    "design": "Conv-disagreement curvature neuron",
+    "equations": "d=mean_channel(var_branch(conv_k(x))); z=Wf norm(x); h=relu(z)^2/(1+0.5 tanh(log(1+d)))",
+    "novelty": "Uses disagreement among existing causal conv branches as a local context signal controlling neuron curvature.",
+    "why": "Multi-scale branch disagreement marks uncertain local context. The neuron dampens curvature there to stabilize updates over ambiguous spans."
+  },
+  "hidden_drop_extreme_square_neuron": {
+    "design": "Extreme hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.20 during train); y=ffn_out(h)",
+    "novelty": "Stress-test endpoint for the zero-parameter hidden regularization curve inside the conv-memory block.",
+    "why": "Bounds the useful dropout-strength range and tests whether the apparent monotonic improvement breaks under aggressive hidden regularization."
+  },
+  "hidden_drop_high_square_neuron": {
+    "design": "High hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.10 during train); y=ffn_out(h)",
+    "novelty": "Aggressive train-time activation thinning inside the long-context conv-memory FFN without changing inference math.",
+    "why": "Tests whether the hidden-drop win is robust to stronger anti-coadaptation or whether p=0.05 is near the safe edge."
+  },
+  "hidden_drop_low_square_neuron": {
+    "design": "Low hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.02 during train); y=ffn_out(h)",
+    "novelty": "Very light train-time activation thinning on the squared-neuron FFN hidden state.",
+    "why": "Tests whether a lighter block-local hidden regularizer can reduce overfit while preserving the near-baseline 2048 validation level."
+  },
+  "hidden_drop_mid_square_neuron": {
+    "design": "Medium hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.075 during train); y=ffn_out(h)",
+    "novelty": "A stronger zero-parameter train-time thinning point for the block-local squared-neuron expansion.",
+    "why": "The p=0.05 version won multiple 2048-step seeds while p=0.02 was too weak at 1024, so this checks whether the regularization optimum is higher."
+  },
+  "hidden_drop_p25_square_neuron": {
+    "design": "p=0.25 hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.25 during train); y=ffn_out(h)",
+    "novelty": "High-strength zero-parameter hidden activation thinning for the squared-neuron conv-memory FFN.",
+    "why": "The 2048 curve continued improving through p=0.20, so this probes the next stronger point before committing scale-up evidence."
+  },
+  "hidden_drop_p30_square_neuron": {
+    "design": "p=0.30 hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.30 during train); y=ffn_out(h)",
+    "novelty": "Upper curve endpoint for squared-neuron hidden regularization with baseline-equivalent inference math.",
+    "why": "Tests whether very high train-time thinning still improves 2048-step generalization or crosses into underfitting."
+  },
+  "hidden_drop_p35_square_neuron": {
+    "design": "p=0.35 hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.35 during train); y=ffn_out(h)",
+    "novelty": "Very high train-time activation thinning endpoint for the squared-neuron conv-memory FFN.",
+    "why": "The 2048 curve improved through p=0.30 even as 1024 weakened, so this tests whether later generalization still benefits from heavier hidden thinning."
+  },
+  "hidden_drop_p40_square_neuron": {
+    "design": "p=0.40 hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.40 during train); y=ffn_out(h)",
+    "novelty": "Aggressive zero-parameter hidden regularization curve endpoint with baseline-equivalent inference math.",
+    "why": "Stress-tests the high-dropout regime to locate the underfitting boundary before scale-up recommendations."
+  },
+  "hidden_drop_square_neuron": {
+    "design": "Hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.05 during train); y=ffn_out(h)",
+    "novelty": "Train-time activation thinning inside the block-local squared-neuron expansion rather than adding memory-route capacity.",
+    "why": "The 2048 failures repeatedly show lower train loss but worse validation, so this regularizes the FFN hidden path without changing tokenizer, objective, or eval metric."
+  },
+  "hidden_drop_ultra_square_neuron": {
+    "design": "Ultra hidden-dropout squared neuron",
+    "equations": "h=dropout(relu(Wf norm(x))^2, p=0.15 during train); y=ffn_out(h)",
+    "novelty": "Very strong train-time thinning on the squared-neuron expansion with baseline-equivalent inference math.",
+    "why": "The p=0.05, p=0.075, and p=0.10 curve improved on seed 31, so this checks whether stronger regularization is still beneficial or starts to underfit."
+  },
+  "mem_threshold_neuron": {
+    "design": "Memory-threshold neuron",
+    "equations": "m=memory_conv(memory_down(norm(x))); z=Wf norm(x); h=(1+0.25 tanh(Wg m)) * relu(z-0.25 tanh(Wt m))^2",
+    "novelty": "Low-rank causal memory modulates the activation threshold/curvature inside the FFN rather than only adding a residual memory vector.",
+    "why": "The existing memory path is additive. This lets causal memory change the FFN decision surface at the same token, allowing long-range evidence to alter neuron thresholds without attention."
+  },
+  "memory_energy_drop_square_neuron": {
+    "design": "Memory-energy conditioned hidden-dropout squared neuron",
+    "equations": "e=rms(memory); p=0.02+0.08*sigmoid((e-mean_seq(e))/std_seq(e)); h=dropout_tensor(relu(Wf norm(x))^2,p) during train",
+    "novelty": "Zero-parameter stochastic coupling between low-rank causal memory energy and squared-neuron hidden activation thinning.",
+    "why": "The long-context memory path identifies tokens with stronger causal state. This regularizes the FFN hidden expansion most where memory energy is high, targeting memory-neuron co-adaptation while keeping inference identical to baseline."
+  },
+  "memory_square_centered_gain_neuron": {
+    "design": "Centered memory-gated square neuron",
+    "equations": "r=tanh(Wm memory)-mean_channel(tanh(Wm memory)); h=relu(z)^2*(1+0.25*r)",
+    "novelty": "Zero-mean memory gain over the baseline square neuron.",
+    "why": "Preserves per-channel memory routing while preventing global token-wise FFN gain shifts."
+  },
+  "memory_square_conv_agreement_gain_neuron": {
+    "design": "Memory-conv agreement square gain neuron",
+    "equations": "a=mean(norm(conv)*norm(memory_up(memory))); h=relu(z)^2*(1+tanh(s)a)",
+    "novelty": "Block-local conv-memory agreement directly modulates squared FFN features.",
+    "why": "Tests the agreement signal on the baseline squared neuron without signed phase residuals."
+  },
+  "memory_square_gain_neuron": {
+    "design": "Memory-gated square neuron",
+    "equations": "h=relu(z)^2 * (1+0.25*tanh(Wm memory))",
+    "novelty": "Causal low-rank memory multiplicatively modulates the existing squared FFN feature map.",
+    "why": "Tests memory-neuron coupling without adding the signed phase residual path that produced seed-mixed overfit."
+  },
+  "memory_square_novelty_gain_neuron": {
+    "design": "Memory-novelty square gain neuron",
+    "equations": "novelty_t=m_t-mean_{i<=t}(m_i); h=relu(z)^2*(1+0.25*tanh(W novelty_t))",
+    "novelty": "Causal memory novelty multiplicatively modulates baseline squared features.",
+    "why": "Tests memory-neuron coupling through novelty gain without the signed phase residual path."
+  },
+  "memory_square_scalar_gain_neuron": {
+    "design": "Scalar memory-gated square neuron",
+    "equations": "g_t=1+0.25*tanh(wm memory_t); h=relu(z)^2*g_t",
+    "novelty": "A single causal-memory gain applied to all expanded FFN channels at each token.",
+    "why": "Tests whether token-wise memory confidence is enough without expensive per-channel memory routing."
+  },
+  "memory_square_small_gain_neuron": {
+    "design": "Small memory-gated square neuron",
+    "equations": "h=relu(z)^2 * (1+0.10*tanh(Wm memory))",
+    "novelty": "Low-amplitude causal-memory gain over baseline squared features.",
+    "why": "Tests whether a conservative memory gain improves validation without the stronger gate's overfit."
+  },
+  "phase_amplitude_neuron": {
+    "design": "Signed amplitude-phase neuron",
+    "equations": "amp=softplus(Wa u); phase=tanh(Wp u); h=amp * sign(phase)*phase^2",
+    "novelty": "Signed-amplitude carrier neuron inside this conv-memory block rather than a standard gate.",
+    "why": "Separating magnitude from signed carrier may preserve directional information lost by nonnegative squared ReLU features."
+  },
+  "phase_amplitude_neutral_neuron": {
+    "design": "Parameter-neutral signed amplitude neuron",
+    "equations": "z=Wf norm(x); phase=tanh(z); h=softplus(z)*phase*abs(phase)",
+    "novelty": "Signed amplitude carrier with no extra projection parameters.",
+    "why": "Tests whether the phase-amplitude signal was real or just extra parameters by reusing the baseline FFN projection."
+  },
+  "phase_amplitude_one_extra_neuron": {
+    "design": "One-extra-projection phase-amplitude neuron",
+    "equations": "amp=softplus(Wf norm(x)); phase=tanh(Wp norm(x)); h=amp*phase*abs(phase)",
+    "novelty": "Uses the baseline FFN projection as amplitude and adds a distinct signed phase carrier.",
+    "why": "Tests whether separate signed carrier is the key mechanism with only one added projection instead of two."
+  },
+  "phase_amplitude_replace_neuron": {
+    "design": "Replacement phase-amplitude neuron",
+    "equations": "amp=softplus(Wa norm(x)); phase=tanh(Wp norm(x)); h=amp*phase*abs(phase)",
+    "novelty": "Separate amplitude and signed carrier projections replace, rather than stack on top of, the squared FFN input.",
+    "why": "Removes the unused baseline FFN input projection from the first phase-amplitude variant while preserving separate amplitude/phase channels."
+  },
+  "phase_residual_blend_centered_neuron": {
+    "design": "Centered phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*(signed-mean_channel(signed))",
+    "novelty": "Channel-centered signed phase correction inside the block-local neuron.",
+    "why": "Removes token-wise signed residual bias so the phase path reallocates channel evidence instead of shifting all FFN features."
+  },
+  "phase_residual_blend_half_neuron": {
+    "design": "Half phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*signed, a_c=0 init",
+    "novelty": "Strength ablation of the signed-phase residual correction.",
+    "why": "Tests whether high signed-phase mixing causes the seed instability seen in full phase replacement."
+  },
+  "phase_residual_blend_large_neuron": {
+    "design": "Large phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*signed, a_c=-1 init",
+    "novelty": "Strength ablation of the signed-phase residual correction.",
+    "why": "Tests whether the signed-phase residual should influence the neuron more strongly."
+  },
+  "phase_residual_blend_neuron": {
+    "design": "Phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*signed",
+    "novelty": "A conservative per-channel signed-phase residual around the baseline neuron, designed after full replacement proved seed-unstable on real text.",
+    "why": "Preserves the known-working squared neuron while allowing each channel to learn a small signed phase correction."
+  },
+  "phase_residual_blend_normed_neuron": {
+    "design": "RMS-limited phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*signed/(1+rms_channel(signed))",
+    "novelty": "Token-local residual normalization around the baseline squared neuron, not an activation swap.",
+    "why": "Keeps the signed phase path but prevents it from lowering train loss by growing unchecked residual scale."
+  },
+  "phase_residual_blend_quarter_neuron": {
+    "design": "Quarter phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+0.25-learnable signed",
+    "novelty": "A precise residual-strength ablation after half strength showed mixed long-sequence validation behavior.",
+    "why": "Targets the 40M/1024 overfit signal by testing a fixed midpoint between large and half residual strength."
+  },
+  "phase_residual_blend_tiny_neuron": {
+    "design": "Tiny phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); h=base+sigmoid(a_c)*signed, a_c=-4 init",
+    "novelty": "Strength ablation of the signed-phase residual correction.",
+    "why": "Tests whether the positive residual-blend signal is best as an almost-baseline perturbation."
+  },
+  "phase_residual_boundary_blend_neuron": {
+    "design": "Boundary-local phase residual blend neuron",
+    "equations": "base=relu(z)^2; signed=softplus(z)*tanh(z)*abs(tanh(z)); boundary=1/(1+abs(z)); h=base+sigmoid(a_c)*boundary*signed",
+    "novelty": "A decision-boundary-local signed residual around the squared-ReLU neuron, not an activation swap.",
+    "why": "The signed residual helped short screens but overfit at longer gates; this confines it to uncertain near-threshold FFN channels."
+  },
+  "phase_residual_boundary_centered_neuron": {
+    "design": "Centered boundary-local phase residual neuron",
+    "equations": "local=boundary*softplus(z)*tanh(z)*abs(tanh(z)); h=relu(z)^2+sigmoid(a_c)*(local-mean_channel(local))",
+    "novelty": "Channel-centered signed residual restricted to the FFN activation boundary.",
+    "why": "Combines the strongest short-screen centered residual with a boundary mask that avoids modifying high-confidence FFN activations."
+  },
+  "phase_residual_conv_energy_gate_neuron": {
+    "design": "Conv-energy-gated phase residual neuron",
+    "equations": "e=log(1+mean_channel(conv^2)); gate=sigmoid(a_c-softplus(s)e); h=relu(z)^2+gate*signed",
+    "novelty": "Uses block-local causal conv energy as a continuous phase-residual gain control.",
+    "why": "High conv energy marks sharp local context where the signed residual may overfit; the gate suppresses it there."
+  },
+  "phase_residual_memory_boundary_centered_gate_neuron": {
+    "design": "Centered memory-gated boundary-local phase residual neuron",
+    "equations": "local=boundary*signed; centered=local-mean_channel(local); h=relu(z)^2+gate(memory)*centered",
+    "novelty": "Boundary-local, channel-centered signed residual routed by causal low-rank memory.",
+    "why": "Tests whether memory routing needs both boundary localization and channel-centering to avoid seed-specific overfit."
+  },
+  "phase_residual_memory_boundary_gate_neuron": {
+    "design": "Memory-gated boundary-local phase residual neuron",
+    "equations": "boundary=1/(1+abs(z)); gate=sigmoid(a_c+0.5*tanh(Wm memory)); h=relu(z)^2+gate*boundary*signed",
+    "novelty": "Causal memory gates a residual that is localized by the FFN preactivation boundary.",
+    "why": "Keeps causal memory routing but prevents it from rewriting high-confidence expanded FFN features that drove train/val separation."
+  },
+  "phase_residual_memory_boundary_scalar_gate_neuron": {
+    "design": "Scalar memory-gated boundary-local phase residual neuron",
+    "equations": "g_t=sigmoid(a_c+0.5*tanh(wm memory_t)); h=relu(z)^2+g_t*boundary*signed",
+    "novelty": "Single-channel causal memory route over decision-boundary-local signed residuals.",
+    "why": "Cheap test of whether token-level memory confidence is enough when the residual is restricted to threshold-local FFN features."
+  },
+  "phase_residual_memory_bounded_centered_gate_neuron": {
+    "design": "Bounded centered memory-gated phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); gate=0.25+0.5*sigmoid(a_c+0.5*tanh(Wm memory)); h=relu(z)^2+gate*centered",
+    "novelty": "A range-limited causal-memory route over zero-mean signed residual features.",
+    "why": "Combines bias-free centered residuals with a bounded memory gate to reduce seed-specific over-routing while preserving channel competition."
+  },
+  "phase_residual_memory_bounded_gate_neuron": {
+    "design": "Bounded memory-gated phase residual neuron",
+    "equations": "r=0.5*tanh(Wm memory); gate=0.25+0.5*sigmoid(a_c+r); h=relu(z)^2+gate*signed",
+    "novelty": "Causal memory controls a residual gate with an explicit functional floor and ceiling instead of an unconstrained sigmoid.",
+    "why": "Keeps the current memory-gate lead's per-channel routing but prevents the learned gate from collapsing toward 0 or 1 on unlucky seeds."
+  },
+  "phase_residual_memory_centered_gate_neuron": {
+    "design": "Centered memory-gated phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); h=relu(z)^2+gate(memory)*centered",
+    "novelty": "Combines causal-memory residual routing with channel-centered signed phase features.",
+    "why": "Targets the seed 13 overfit by removing the phase residual's token-wise channel bias while preserving memory routing."
+  },
+  "phase_residual_memory_conv_agreement_neuron": {
+    "design": "Memory-conv agreement phase residual neuron",
+    "equations": "a=mean(norm(conv)*norm(memory_up(memory))); h=relu(z)^2+sigmoid(p+a)*signed",
+    "novelty": "Agreement between the block's two non-FFN context paths controls the neuron residual.",
+    "why": "Lets signed phase corrections through only when local causal conv context agrees with low-rank memory context."
+  },
+  "phase_residual_memory_conv_centered_agreement_neuron": {
+    "design": "Centered memory-conv agreement phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); a=agreement(conv,memory); h=relu(z)^2+sigmoid(p+a)*centered",
+    "novelty": "Conv-memory agreement gates a channel-centered signed phase residual.",
+    "why": "Combines the useful centered signed residual with context agreement gating to reduce unconstrained shifts."
+  },
+  "phase_residual_memory_conv_disagreement_damp_neuron": {
+    "design": "Memory-conv disagreement damped phase residual neuron",
+    "equations": "d=relu(-mean(norm(conv)*norm(memory_up(memory)))); h=relu(z)^2+sigmoid(p-softplus(s)d)*signed",
+    "novelty": "Conflict between causal conv and causal memory acts as a residual suppressor.",
+    "why": "Targets seed overfit by damping signed residuals specifically when memory and local convolution conflict."
+  },
+  "phase_residual_memory_delta_gate_neuron": {
+    "design": "Causal memory-delta gated phase residual neuron",
+    "equations": "delta_t=memory_t-memory_{t-1}; gate=sigmoid(a_c+0.5*tanh(Wm delta_t)); h=relu(z)^2+gate*signed",
+    "novelty": "A causal finite-difference memory state controls the FFN signed residual gate.",
+    "why": "Static memory gates may learn seed-specific biases; routing from memory changes emphasizes transitions and long-context updates."
+  },
+  "phase_residual_memory_gate_neuron": {
+    "design": "Memory-gated phase residual neuron",
+    "equations": "gate=sigmoid(a_c+0.5*tanh(Wm memory)); h=relu(z)^2+gate*softplus(z)*tanh(z)*abs(tanh(z))",
+    "novelty": "Couples the existing causal memory state directly into the per-channel neuron residual gate.",
+    "why": "Lets the causal low-rank memory decide when signed phase information helps long-context prediction."
+  },
+  "phase_residual_memory_group_gate_neuron": {
+    "design": "Group memory-gated phase residual neuron",
+    "equations": "g_{t,group}=sigmoid(a_c+0.5*tanh(Wm memory_t)); h=relu(z)^2+repeat(g)*signed",
+    "novelty": "Memory-conditioned channel-group residual routing inside the local neuron.",
+    "why": "Splits the difference between cheap scalar memory gates and expensive per-channel gates."
+  },
+  "phase_residual_memory_normed_gate_neuron": {
+    "design": "Normed memory-gated phase residual neuron",
+    "equations": "limited=signed/(1+rms_channel(signed)); h=relu(z)^2+gate(memory)*limited",
+    "novelty": "Causal-memory gating plus token-local residual RMS limiting.",
+    "why": "Keeps memory routing but limits residual scale to address the low-train/high-val overfit pattern."
+  },
+  "phase_residual_memory_novelty_centered_gate_neuron": {
+    "design": "Centered memory-novelty gated phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); novelty_t=m_t-mean_{i<=t}(m_i); h=relu(z)^2+gate(novelty_t)*centered",
+    "novelty": "Memory-novelty routing over channel-centered signed phase features.",
+    "why": "Combines the 128-step centered-residual signal with novelty-only memory routing to reduce long-run overfit."
+  },
+  "phase_residual_memory_novelty_gate_neuron": {
+    "design": "Memory-novelty gated phase residual neuron",
+    "equations": "novelty_t=m_t-mean_{i<=t}(m_i); gate=sigmoid(a_c+0.5*tanh(W novelty_t)); h=relu(z)^2+gate*signed",
+    "novelty": "Uses causal memory novelty as the neuron residual routing signal.",
+    "why": "Targets seed-specific overfit by routing only from changes in causal memory state, not static memory bias."
+  },
+  "phase_residual_memory_novelty_tiny_gate_neuron": {
+    "design": "Tiny memory-novelty gated phase residual neuron",
+    "equations": "novelty_t=m_t-mean_{i<=t}(m_i); gate=sigmoid(-1+0.5*tanh(W novelty_t)); h=relu(z)^2+gate*signed",
+    "novelty": "Low-initial-strength causal memory novelty gate.",
+    "why": "Tests whether novelty routing should enter as a smaller perturbation after raw/tiny gates were seed mixed."
+  },
+  "phase_residual_memory_rms_gate_neuron": {
+    "design": "RMS-normalized memory-gated phase residual neuron",
+    "equations": "r=tanh(Wm memory); r'=0.5*r/(1+rms_channel(r)); h=relu(z)^2+sigmoid(a_c+r')*signed",
+    "novelty": "Token-local normalization of the causal-memory routing logits before they enter the neuron gate.",
+    "why": "Targets seed 13/31 failures by making the memory gate depend on direction more than raw learned routing magnitude."
+  },
+  "phase_residual_memory_scalar_centered_gate_neuron": {
+    "design": "Scalar centered memory-gated phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); h=relu(z)^2+g_t*centered",
+    "novelty": "Token-wise causal-memory gate over a centered signed phase correction.",
+    "why": "Tests a low-parameter memory-conditioned centered residual that may keep the cheap centered benefit without per-channel overfit."
+  },
+  "phase_residual_memory_scalar_gate_neuron": {
+    "design": "Scalar memory-gated phase residual neuron",
+    "equations": "g_t=sigmoid(a_c+0.5*tanh(wm memory_t)); h=relu(z)^2+g_t*signed",
+    "novelty": "Low-rank causal memory controls a token-wise residual gain with only one added gate channel.",
+    "why": "Tests whether the strong memory-gate signal needs expensive per-channel routing or only a token-level causal gain."
+  },
+  "phase_residual_memory_small_gate_neuron": {
+    "design": "Small memory-gated phase residual neuron",
+    "equations": "gate=sigmoid(-1+0.25*tanh(Wm memory)); h=relu(z)^2+gate*signed",
+    "novelty": "Constrained causal-memory residual routing after the unconstrained memory gate proved seed-mixed.",
+    "why": "Targets seed 13/31 overfit by reducing both initial signed residual strength and memory-gate amplitude."
+  },
+  "phase_residual_memory_sparse_centered_gate_neuron": {
+    "design": "Sparse centered memory-gated phase residual neuron",
+    "equations": "centered=signed-mean_channel(signed); s=sparse_centered(tanh(Wm memory)); h=relu(z)^2+sigmoid(a_c+0.5*s)*centered",
+    "novelty": "Coupled sparse channel competition in the memory route and centered signed residual feature.",
+    "why": "Tests whether both the routed residual and the route itself need zero-mean competition to keep validation gains at longer horizons."
+  },
+  "phase_residual_memory_sparse_gate_neuron": {
+    "design": "Sparse-confidence memory-gated phase residual neuron",
+    "equations": "r=tanh(Wm memory)-mean_channel; s=sign(r)*relu(abs(r)-mean_channel(abs(r))); h=relu(z)^2+sigmoid(a_c+0.5*s)*signed",
+    "novelty": "Soft thresholded per-token channel competition inside the memory-to-neuron gate.",
+    "why": "Forces memory routing to act only on above-average channel evidence instead of globally shifting the residual path."
+  },
+  "phase_residual_memory_tiny_gate_neuron": {
+    "design": "Tiny memory-gated phase residual neuron",
+    "equations": "gate=sigmoid(-2+0.25*tanh(Wm memory)); h=relu(z)^2+gate*signed",
+    "novelty": "Low-amplitude causal-memory gate over the signed phase residual.",
+    "why": "Tests whether memory routing is useful only as a small perturbation around the baseline square neuron."
+  },
+  "phase_residual_memory_zero_mean_gate_neuron": {
+    "design": "Zero-mean memory-gated phase residual neuron",
+    "equations": "r=0.5*tanh(Wm memory); gate=sigmoid(a_c+r-mean_channel(r)); h=relu(z)^2+gate*signed",
+    "novelty": "Channel-centered memory routing gate inside the FFN neuron.",
+    "why": "Keeps per-channel memory routing while removing token-wise global gate shifts that may drive overfit."
+  },
+  "rank_competition_centered_residual_neuron": {
+    "design": "Rank-competition centered residual neuron",
+    "equations": "base=rank_competition(relu(z))^2; centered=signed-mean_channel(signed); h=base+sigmoid(p)*centered",
+    "novelty": "Cheap zero-mean signed residual on top of a rank-competitive squared base.",
+    "why": "Isolates whether the hybrid gain comes from rank competition plus centered signed residual before adding memory routing cost."
+  },
+  "rank_competition_feather_neuron": {
+    "design": "Feather-pressure grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(a)p)^2, a initialized to -3.5",
+    "novelty": "Near-zero group pressure that can still learn if useful.",
+    "why": "Tests whether only a very weak competition prior is enough to help without the longer-screen overfit seen in stronger pressure settings."
+  },
+  "rank_competition_fixed_dust_neuron": {
+    "design": "Fixed dust-pressure grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(-5.5)p)^2",
+    "novelty": "Near-baseline fixed channel pressure as a block-local inductive-bias probe.",
+    "why": "Tests whether an almost-zero competition prior can produce a small stable validation improvement without lowering train loss too much."
+  },
+  "rank_competition_fixed_feather_channel_drop_neuron": {
+    "design": "Fixed feather-pressure channel-drop rank-competition neuron",
+    "equations": "h=m_channel*fixed_feather_rank_competition(z) with sequence-shared channel mask during train",
+    "novelty": "Fixed near-zero channel competition plus sequence-shared FFN expansion channel dropout.",
+    "why": "Tests whether sequence-shared channel regularization is more appropriate for long-context conv-memory blocks than token-independent dropout."
+  },
+  "rank_competition_fixed_feather_hidden_drop_neuron": {
+    "design": "Fixed feather-pressure hidden-drop rank-competition neuron",
+    "equations": "h=dropout(fixed_feather_rank_competition(z), p=0.05 during train)",
+    "novelty": "Combines fixed near-zero channel competition with train-time hidden activation thinning.",
+    "why": "Fixed feather was the closest 2048 miss; this adds train-time hidden regularization to reduce the remaining lower-train/worse-val gap."
+  },
+  "rank_competition_fixed_feather_neuron": {
+    "design": "Fixed feather-pressure grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(-3.5)p)^2",
+    "novelty": "Fixed near-zero local channel competition as a non-capacity regularizing perturbation.",
+    "why": "The learned feather-pressure run nearly matched the 2048 baseline but its inhibition drifted upward; this tests the same weak prior without train-fit drift."
+  },
+  "rank_competition_fixed_trace_neuron": {
+    "design": "Fixed trace-pressure grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(-4.5)p)^2",
+    "novelty": "Trace-level fixed group pressure inside the squared FFN neuron.",
+    "why": "Probes a weaker fixed pressure after the 2048 curve approached the baseline as inhibition decreased."
+  },
+  "rank_competition_memory_centered_gate_neuron": {
+    "design": "Rank-competition centered memory-gated phase residual neuron",
+    "equations": "base=rank_competition(relu(z))^2; centered=signed-mean_channel(signed); h=base+gate(memory)*centered",
+    "novelty": "Rank-competitive squared base with centered causal-memory signed residual routing.",
+    "why": "Tests whether rank competition plus zero-mean signed residual routing can keep the robust rank win while improving memory-gate seed stability."
+  },
+  "rank_competition_memory_factor_centered_gate_neuron": {
+    "design": "Factorized-memory rank-competition centered gate neuron",
+    "equations": "r=U silu(D memory_t); g=sigmoid(p+0.5*tanh(r)); h=rank_competition(z)+g*centered",
+    "novelty": "Low-rank memory-to-neuron gating over a rank-competitive zero-mean signed residual.",
+    "why": "Approximates the full per-channel memory gate with a low-rank route to test whether the expensive map is necessary."
+  },
+  "rank_competition_memory_gate_neuron": {
+    "design": "Rank-competition memory-gated phase residual neuron",
+    "equations": "base=relu(group(z)-sigmoid(a)*mean_group(relu(z)))^2; h=base+sigmoid(p+0.5*tanh(Wm memory))*signed",
+    "novelty": "Combines group-wise FFN channel competition with causal-memory residual routing inside one block-local primitive.",
+    "why": "Rank competition was the first cheap 1024-step 3/3 baseline winner; this tests whether it can stabilize the stronger memory-gated signed residual."
+  },
+  "rank_competition_memory_group_centered_gate_neuron": {
+    "design": "Group-memory rank-competition centered gate neuron",
+    "equations": "g_{t,k}=sigmoid(p_k+0.5*tanh(Wg memory_t)_k); h=rank_competition(z)+repeat(g)*centered",
+    "novelty": "Coarse causal-memory channel routing coupled to rank competition and centered signed residuals.",
+    "why": "Keeps memory-conditioned channel selectivity while avoiding the full memory-rank to FFN-width gate."
+  },
+  "rank_competition_memory_normed_centered_gate_neuron": {
+    "design": "Normed full-memory rank-competition centered gate neuron",
+    "equations": "limited=centered/(1+rms(centered)); route=zero_mean(tanh(Wm memory)); h=rank_competition(z)+sigmoid(p+0.5*route/(1+rms(route)))*limited",
+    "novelty": "Coupled token-local normalization of memory route and centered signed residual inside the rank-competitive block.",
+    "why": "Targets seed-specific overfit by limiting both the signed residual scale and the per-token memory-route scale."
+  },
+  "rank_competition_memory_scalar_centered_gate_neuron": {
+    "design": "Scalar-memory rank-competition centered gate neuron",
+    "equations": "g_t=sigmoid(p+0.5*tanh(wm memory_t)); h=rank_competition(z)+g_t*centered",
+    "novelty": "A single causal-memory route gates a rank-competitive zero-mean signed residual.",
+    "why": "Tests whether token-level memory confidence is enough to recover the full hybrid's gain at a fraction of the parameters."
+  },
+  "rank_competition_memory_small_centered_gate_neuron": {
+    "design": "Small full-memory rank-competition centered gate neuron",
+    "equations": "gate=sigmoid(-1+0.25*tanh(Wm memory)); h=rank_competition(z)+gate*centered",
+    "novelty": "Conservative per-channel causal-memory routing over a rank-competitive centered signed residual.",
+    "why": "Targets the seed 31 train/val split by keeping the full per-channel memory route but reducing its initial strength."
+  },
+  "rank_competition_memory_suppressed_aux_head_centered_gate_neuron": {
+    "design": "Auxiliary-head competition-suppressed memory-routed centered residual neuron",
+    "equations": "y=ffn_out(base)+alpha*residual_out(gate(memory)*s*tanh(centered)); residual_out starts at zero",
+    "novelty": "Separate low-amplitude output projection for rank-competition loser-channel memory recovery inside the conv-memory block.",
+    "why": "The failing variants mix signed memory residuals through the main FFN output projection; this isolates that route behind a controlled zero-init head."
+  },
+  "rank_competition_memory_suppressed_bounded_centered_gate_neuron": {
+    "design": "Bounded competition-suppressed memory-routed centered residual neuron",
+    "equations": "s=sigmoid(-4*margin/pressure); h=rank_competition(z)+gate(memory)*s*tanh(centered)",
+    "novelty": "Combines rank-competition loser-channel routing with a bounded signed residual to stabilize long linear-sequence training.",
+    "why": "Targets the 2048 NaN by hard-bounding the signed residual while preserving the full memory gate and suppressed-channel routing."
+  },
+  "rank_competition_memory_suppressed_bounded_small_centered_gate_neuron": {
+    "design": "Bounded small-gain competition-suppressed memory-routed centered residual neuron",
+    "equations": "s=sigmoid(-4*margin/pressure); gate=sigmoid(-1+0.25*tanh(Wm memory)); h=rank_competition(z)+gate*s*tanh(centered)",
+    "novelty": "A double-constrained loser-channel memory recovery path for rank-competitive low-rank conv-memory blocks.",
+    "why": "Tests whether both failure controls are needed: bounded residual magnitude and smaller memory-route strength."
+  },
+  "rank_competition_memory_suppressed_centered_gate_neuron": {
+    "design": "Competition-suppressed memory-routed centered residual neuron",
+    "equations": "s=sigmoid(-4*(relu(z)-threshold)/pressure); h=rank_competition(z)+gate(memory)*s*centered",
+    "novelty": "Causal memory is restricted to the loser side of the rank-competition neuron.",
+    "why": "Tests whether memory should only recover information from channels suppressed by local rank competition rather than modifying winners."
+  },
+  "rank_competition_memory_suppressed_energy_matched_centered_gate_neuron": {
+    "design": "Energy-matched competition-suppressed memory-routed centered residual neuron",
+    "equations": "r=s*tanh(centered); r'=r*rms(base).detach()/(rms(base).detach()+rms(r)); h=rank_competition(z)+gate(memory)*r'",
+    "novelty": "A loser-channel causal-memory residual whose token-local RMS is tied to the rank-competitive base activation.",
+    "why": "The bounded route still diverged at 2048, so this constrains residual energy relative to the current base neuron rather than bounding values independently."
+  },
+  "rank_competition_memory_suppressed_normed_centered_gate_neuron": {
+    "design": "RMS-limited competition-suppressed memory-routed centered residual neuron",
+    "equations": "limited=centered/(1+rms(centered)); h=rank_competition(z)+gate(memory)*s*limited",
+    "novelty": "Rank-competition loser-channel routing with token-local residual RMS limiting.",
+    "why": "Keeps more amplitude information than tanh while preventing token-local centered residuals from dominating longer runs."
+  },
+  "rank_competition_memory_suppressed_small_centered_gate_neuron": {
+    "design": "Small-gain competition-suppressed memory-routed centered residual neuron",
+    "equations": "s=sigmoid(-4*margin/pressure); gate=sigmoid(-1+0.25*tanh(Wm memory)); h=rank_competition(z)+gate*s*centered",
+    "novelty": "A causal-memory residual explicitly limited to suppressed competition channels with conservative learnable route strength.",
+    "why": "The 1024-step suppressed route was robust but blew up at 2048, so this keeps the same loser-channel route while reducing route amplitude."
+  },
+  "rank_competition_memory_suppressed_stopgrad_mask_centered_gate_neuron": {
+    "design": "Detached-mask competition-suppressed memory-routed centered residual neuron",
+    "equations": "s=stopgrad(sigmoid(-4*margin/pressure)); h=rank_competition(z)+gate(memory)*s*tanh(centered)",
+    "novelty": "Allows residual learning while making the suppression route a local selector instead of a trainable escape path.",
+    "why": "Tests whether 2048 divergence comes from gradients gaming the competition mask rather than the signed residual value alone."
+  },
+  "rank_competition_memory_uncertainty_centered_gate_neuron": {
+    "design": "Competition-uncertainty memory-routed centered residual neuron",
+    "equations": "u=exp(-2*abs(relu(z)-threshold)/pressure); h=rank_competition(z)+gate(memory)*u*centered",
+    "novelty": "Rank-competition margin acts as a differentiable uncertainty mask for causal-memory residual routing.",
+    "why": "The seed 31 failure looks like the memory route rewriting confident features; this only routes signed residuals near the competition boundary."
+  },
+  "rank_competition_memory_within_group_centered_gate_neuron": {
+    "design": "Within-group centered memory-routed rank residual neuron",
+    "equations": "centered_g=signed_g-mean_group(signed_g); h=rank_competition(z)+gate(memory)*centered_g",
+    "novelty": "Aligns signed residual centering with the rank-competition groups instead of whole-token channel centering.",
+    "why": "The base competition is group-local, so centering the residual within the same groups may reduce token-wide shifts that hurt seed 31."
+  },
+  "rank_competition_mild_centered_residual_neuron": {
+    "design": "Mild rank-competition centered residual neuron",
+    "equations": "base=mild_rank_competition(z); centered=signed-mean_channel(signed); h=base+sigmoid(p)*centered",
+    "novelty": "Zero-mean signed residual on a softer group-competition base.",
+    "why": "The centered residual was the closest stable 2048 miss; this tests whether softer pressure fixes the final validation regression."
+  },
+  "rank_competition_mild_neuron": {
+    "design": "Mild grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(a)p)^2, a initialized to -0.5",
+    "novelty": "Softer learnable group inhibition as a low-cost channel competition prior.",
+    "why": "The original rank competition wins shorter gates but loses at 2048, so this lowers initial pressure without changing the comparison objective."
+  },
+  "rank_competition_neuron": {
+    "design": "Grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(a)p)^2",
+    "novelty": "Cheap local channel inhibition before the squared nonlinearity, no top-k or sorting.",
+    "why": "The low-rank head and memory force compression; group competition may allocate FFN expansion capacity to fewer stronger features."
+  },
+  "rank_competition_soft_centered_residual_neuron": {
+    "design": "Soft rank-competition centered residual neuron",
+    "equations": "base=soft_rank_competition(z); centered=signed-mean_channel(signed); h=base+sigmoid(p)*centered",
+    "novelty": "Centered signed residual combined with very soft local channel competition.",
+    "why": "Tests a near-baseline pressure setting with the centered residual that had the closest 2048 miss."
+  },
+  "rank_competition_soft_neuron": {
+    "design": "Soft grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(a)p)^2, a initialized to -1.5",
+    "novelty": "Very soft local channel competition before the squared neuron.",
+    "why": "Tests a near-baseline competition regime after aggressive pressure showed longer-screen overfit."
+  },
+  "rank_competition_ultrasoft_neuron": {
+    "design": "Ultra-soft grouped rank-competition neuron",
+    "equations": "g=reshape(relu(z)); p=mean_group(g); h=relu(g-sigmoid(a)p)^2, a initialized to -2.5",
+    "novelty": "Minimal local channel competition as a learnable perturbation of the original squared neuron.",
+    "why": "The 2048 pressure curve improved as inhibition softened, so this probes the near-baseline region for a small but stable win."
+  },
+  "stable_competition_neuron": {
+    "design": "Stable competition neuron",
+    "equations": "g=relu(z); c=relu(g-sigmoid(a)mean_group(g)); h=c^2/(1+rms_channel(c^2))+0.03 sigmoid(b)z",
+    "novelty": "A grouped inhibitory square neuron with local curvature normalization, still linear in sequence length.",
+    "why": "Combines the two cheap first-pass signals: channel competition for allocation and RMS stabilization for curvature control."
+  },
+  "stable_square_neuron": {
+    "design": "RMS-stabilized square neuron",
+    "equations": "s=relu(z)^2; h=s/(1+rms_channel(s)) + 0.05 sigmoid(a) z",
+    "novelty": "Local curvature normalization and leak around the squared neuron, not a simple activation swap.",
+    "why": "Keeps square-like sample efficiency while bounding large channel curvature and adding a small gradient path for inactive units."
+  },
+  "stateful_threshold_neuron": {
+    "design": "Causal stateful threshold neuron",
+    "equations": "c_t=mean_{i<=t} z_i; h=relu(z_t-tanh(a)c_t)^2",
+    "novelty": "Uses cumsum-derived causal preactivation state inside the neuron with no recurrent Python loop.",
+    "why": "Long-context linear models need causal state. This gives every FFN neuron a parallel causal running threshold."
+  }
+}

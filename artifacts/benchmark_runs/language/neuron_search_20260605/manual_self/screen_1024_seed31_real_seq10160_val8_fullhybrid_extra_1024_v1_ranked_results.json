@@ -1,0 +1,14 @@
+[
+  {
+    "block_type": "rank_competition_memory_centered_gate_neuron",
+    "final_train_loss": 5.530543327331543,
+    "final_val_loss": 6.494787213182825,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 135170,
+    "parameter_count": 40572179,
+    "speed_ratio_vs_baseline": 0.859159076508536,
+    "tok_per_sec": 72542.55804008748,
+    "val_delta_vs_baseline": 0.003996099261787123
+  }
+]

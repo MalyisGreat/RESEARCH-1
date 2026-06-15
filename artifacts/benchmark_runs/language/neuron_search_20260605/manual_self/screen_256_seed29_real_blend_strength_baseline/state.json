@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed29_real_blend_strength_baseline\\checkpoint.pt",
+  "final_train_loss": 7.055885314941406,
+  "final_val_loss": 8.506423277013441,
+  "peak_vram_mb": 143.97119140625,
+  "pure_train_tok_per_sec": 15552.993991850488,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed29_real_blend_strength_baseline\\result.json",
+  "run_name": "screen_256_seed29_real_blend_strength_baseline",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 65280,
+  "train_steps": 256
+}

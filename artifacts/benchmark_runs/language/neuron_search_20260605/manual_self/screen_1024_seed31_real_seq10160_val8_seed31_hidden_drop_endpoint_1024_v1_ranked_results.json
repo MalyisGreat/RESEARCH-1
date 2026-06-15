@@ -1,0 +1,26 @@
+[
+  {
+    "block_type": "hidden_drop_ultra_square_neuron",
+    "final_train_loss": 5.637836456298828,
+    "final_val_loss": 6.485865390863944,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.982116369918832,
+    "tok_per_sec": 82719.60772025741,
+    "val_delta_vs_baseline": -0.0049257230570933785
+  },
+  {
+    "block_type": "hidden_drop_extreme_square_neuron",
+    "final_train_loss": 5.659146308898926,
+    "final_val_loss": 6.486462109201536,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 0,
+    "parameter_count": 40437009,
+    "speed_ratio_vs_baseline": 0.9819296209738854,
+    "tok_per_sec": 82703.8786275131,
+    "val_delta_vs_baseline": -0.004329004719501484
+  }
+]

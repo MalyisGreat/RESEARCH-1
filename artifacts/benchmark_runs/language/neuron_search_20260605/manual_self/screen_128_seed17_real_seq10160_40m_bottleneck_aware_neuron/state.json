@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed17_real_seq10160_40m_bottleneck_aware_neuron\\checkpoint.pt",
+  "final_train_loss": 7.237236022949219,
+  "final_val_loss": 7.066368136818953,
+  "peak_vram_mb": 5204.69482421875,
+  "pure_train_tok_per_sec": 79833.25624195447,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_128_seed17_real_seq10160_40m_bottleneck_aware_neuron\\result.json",
+  "run_name": "screen_128_seed17_real_seq10160_40m_bottleneck_aware_neuron",
+  "status": "completed",
+  "step": 128,
+  "tokens_seen": 1300480,
+  "train_steps": 128
+}

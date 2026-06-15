@@ -1,0 +1,53 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "block_type": "gated",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 4429,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 4429,
+    "full_eval_token_chunk_size": 1024,
+    "learning_rate": 0.0006,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8",
+    "resume_checkpoint": null,
+    "run_name": "wave3_host2080_gated_45m_stride8",
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 8,
+    "train_steps": 4429,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 400,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 16832.78663355159,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave3_gated_block_20260604\\wave3_host2080_gated_45m_stride8\\checkpoint.pt",
+    "final_train_loss": 5.750812530517578,
+    "final_val_loss": 5.742143817492358,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 4429.0,
+        "tokens_seen": 44998640.0,
+        "train_loss": 5.750812530517578,
+        "val_loss": 5.742143817492358
+      }
+    ],
+    "parameter_count": 51844145,
+    "peak_vram_mb": 3022.13037109375,
+    "pure_train_tok_per_sec": 105908.607993911,
+    "step_time_mean_ms": 95.93176789354202,
+    "step_time_median_ms": 95.83320000092499,
+    "train_tokens_seen": 44998640
+  }
+}

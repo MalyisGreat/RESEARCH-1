@@ -1,0 +1,213 @@
+{
+  "benchmark": "language_longseq_replay_probe_variant",
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 1,
+    "cache_dataset_on_device": false,
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_20260603\\cache\\finewebedu_train2000203011_val325152_seq10160_gpt2.pt",
+    "conv_embedding_dim": 1034,
+    "conv_kernel_size": 7,
+    "conv_layers": 1,
+    "conv_rank": 295,
+    "dataset_name": "HuggingFaceFW/fineweb-edu",
+    "device": "cuda",
+    "dropout": 0.1,
+    "embedding_dim": 320,
+    "eval_batch_size": 1,
+    "eval_interval": 9843,
+    "eval_loss_mode": "full",
+    "factorized_embedding_dim": 280,
+    "factorized_hidden_dim": 560,
+    "factorized_memory_dim": 280,
+    "full_eval_token_chunk_size": 1024,
+    "full_loss_interval": 4,
+    "full_loss_token_stride": 8,
+    "hidden_dim": 640,
+    "hierarchical_class_count": 256,
+    "initial_eval": true,
+    "learning_rate": 0.001,
+    "local_files_only": false,
+    "max_eval_seconds": 1200.0,
+    "max_gpu_used_mb": 2000.0,
+    "max_step_seconds": 600.0,
+    "memory_dim": 320,
+    "milestone_checkpoint_interval": 59058,
+    "no_replay_embedding_dim": 260,
+    "no_replay_hidden_dim": 520,
+    "no_replay_rank": 96,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_2b_lr1e3_20260603",
+    "partial_token_count": 1024,
+    "pin_memory": false,
+    "resume_variant_checkpoints": true,
+    "reuse_variant_results": false,
+    "sampled_vocab_size": 16384,
+    "seed": 13,
+    "sequence_length": 10160,
+    "split": "train",
+    "text_column": "text",
+    "tokenization_batch_size": 512,
+    "tokenizer_name": "gpt2",
+    "torch_compile": false,
+    "torch_compile_mode": "reduce-overhead",
+    "train_blocks": 196851,
+    "train_log_interval": 100,
+    "train_loss_token_chunk_size": 1024,
+    "train_steps": 196851,
+    "untied_rank": 64,
+    "use_amp": true,
+    "use_fused_adamw": true,
+    "val_blocks": 32,
+    "variant_checkpoint_interval": 1000,
+    "variants": [
+      "causal_conv_mixer_sampled_vocab_anchor16"
+    ],
+    "weight_decay": 0.0001,
+    "window_size": 128
+  },
+  "report": {
+    "final_val_loss": 4.826209872961044,
+    "history": [
+      {
+        "step": 0.0,
+        "tokens_seen": 0.0,
+        "train_loss": NaN,
+        "val_loss": 10.829497367143631
+      },
+      {
+        "step": 9843.0,
+        "tokens_seen": 100004880.0,
+        "train_loss": 5.470432281494141,
+        "val_loss": 5.611664071679115
+      },
+      {
+        "step": 19686.0,
+        "tokens_seen": 200009760.0,
+        "train_loss": 5.535058498382568,
+        "val_loss": 5.350542351603508
+      },
+      {
+        "step": 29529.0,
+        "tokens_seen": 300014640.0,
+        "train_loss": 5.016024589538574,
+        "val_loss": 5.211947754025459
+      },
+      {
+        "step": 39372.0,
+        "tokens_seen": 400019520.0,
+        "train_loss": 4.990780830383301,
+        "val_loss": 5.135958731174469
+      },
+      {
+        "step": 49215.0,
+        "tokens_seen": 500024400.0,
+        "train_loss": 5.04383659362793,
+        "val_loss": 5.071734294295311
+      },
+      {
+        "step": 59058.0,
+        "tokens_seen": 600029280.0,
+        "train_loss": 4.775114059448242,
+        "val_loss": 5.036295384168625
+      },
+      {
+        "step": 68901.0,
+        "tokens_seen": 700034160.0,
+        "train_loss": 4.728560447692871,
+        "val_loss": 5.001431107521057
+      },
+      {
+        "step": 78744.0,
+        "tokens_seen": 800039040.0,
+        "train_loss": 4.549887657165527,
+        "val_loss": 4.978268176317215
+      },
+      {
+        "step": 88587.0,
+        "tokens_seen": 900043920.0,
+        "train_loss": 4.8510332107543945,
+        "val_loss": 4.965719997882843
+      },
+      {
+        "step": 98430.0,
+        "tokens_seen": 1000048800.0,
+        "train_loss": 4.643503189086914,
+        "val_loss": 4.930744215846062
+      },
+      {
+        "step": 108273.0,
+        "tokens_seen": 1100053680.0,
+        "train_loss": 5.225663185119629,
+        "val_loss": 4.923869073390961
+      },
+      {
+        "step": 118116.0,
+        "tokens_seen": 1200058560.0,
+        "train_loss": 4.945501327514648,
+        "val_loss": 4.914090633392334
+      },
+      {
+        "step": 127959.0,
+        "tokens_seen": 1300063440.0,
+        "train_loss": 4.4933061599731445,
+        "val_loss": 4.888244584202766
+      },
+      {
+        "step": 137802.0,
+        "tokens_seen": 1400068320.0,
+        "train_loss": 4.618273735046387,
+        "val_loss": 4.872741833329201
+      },
+      {
+        "step": 147645.0,
+        "tokens_seen": 1500073200.0,
+        "train_loss": 4.9318389892578125,
+        "val_loss": 4.868787184357643
+      },
+      {
+        "step": 157488.0,
+        "tokens_seen": 1600078080.0,
+        "train_loss": 4.927633285522461,
+        "val_loss": 4.8796427100896835
+      },
+      {
+        "step": 167331.0,
+        "tokens_seen": 1700082960.0,
+        "train_loss": 4.7128586769104,
+        "val_loss": 4.842793866991997
+      },
+      {
+        "step": 177174.0,
+        "tokens_seen": 1800087840.0,
+        "train_loss": 5.080331325531006,
+        "val_loss": 4.816918730735779
+      },
+      {
+        "step": 187017.0,
+        "tokens_seen": 1900092720.0,
+        "train_loss": 5.069347381591797,
+        "val_loss": 4.831647455692291
+      },
+      {
+        "step": 196851.0,
+        "tokens_seen": 2000006160.0,
+        "train_loss": 4.8441314697265625,
+        "val_loss": 4.826209872961044
+      }
+    ],
+    "initial_val_loss": 10.829497367143631,
+    "parameter_count": 79999460,
+    "peak_vram_mb": 3178.03857421875,
+    "pure_train_time_seconds": 22651.465523096194,
+    "pure_train_tok_per_sec": 88294.77977752594,
+    "sampled_candidate_size_mean": 16834.905629130662,
+    "sampled_eval_candidate_size_mean": null,
+    "step_time_mean_ms": 115.06909044453009,
+    "step_time_median_ms": 114.94089999177959,
+    "total_training_time_seconds": 24037.560766900002,
+    "train_tok_per_sec": 83203.3740609002,
+    "train_tokens_seen": 2000006160,
+    "validation_loss_mode": "full",
+    "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+  },
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

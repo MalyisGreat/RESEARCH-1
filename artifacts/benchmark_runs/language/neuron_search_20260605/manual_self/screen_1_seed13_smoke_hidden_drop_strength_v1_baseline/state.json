@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_hidden_drop_strength_v1_baseline\\checkpoint.pt",
+  "final_train_loss": 8.700194358825684,
+  "final_val_loss": 10.840487480163574,
+  "peak_vram_mb": 192.6865234375,
+  "pure_train_tok_per_sec": 722.8200526831182,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_1_seed13_smoke_hidden_drop_strength_v1_baseline\\result.json",
+  "run_name": "screen_1_seed13_smoke_hidden_drop_strength_v1_baseline",
+  "status": "completed",
+  "step": 1,
+  "tokens_seen": 255,
+  "train_steps": 1
+}

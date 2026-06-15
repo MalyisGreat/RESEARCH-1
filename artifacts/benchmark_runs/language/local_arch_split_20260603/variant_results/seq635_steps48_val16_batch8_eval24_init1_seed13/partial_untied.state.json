@@ -1,0 +1,15 @@
+{
+  "learning_rate": 0.002,
+  "lr_schedule": "constant",
+  "min_learning_rate": 0.0,
+  "parameter_count": 19949523,
+  "sequence_length": 635,
+  "status": "starting",
+  "step": 0,
+  "tokens_seen": 0,
+  "train_steps": 48,
+  "val_blocks": 16,
+  "validation_loss_mode": "full",
+  "variant": "partial_untied",
+  "warmup_steps": 0
+}

@@ -1,0 +1,77 @@
+WAVE8_ADAPTIVE_LOCAL_START run=wave8_host2080_adaptive_multiscale_stride4_60m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=wave8_host2080_adaptive_multiscale_stride4_60m device=NVIDIA GeForce RTX 2080 SUPER params=51,041,585 seq=10160 steps=5906
+TRAIN step=1/5906 tokens=10160 loss=10.6121 lr=1.2e-06 pure_tok_s=15973
+TRAIN step=500/5906 tokens=5080000 loss=7.1166 lr=0.0006 pure_tok_s=67924
+TRAIN step=1000/5906 tokens=10160000 loss=6.4682 lr=0.000587634 pure_tok_s=67733
+TRAIN step=1500/5906 tokens=15240000 loss=6.0063 lr=0.000551574 pure_tok_s=67182
+TRAIN step=2000/5906 tokens=20320000 loss=5.9256 lr=0.000494841 pure_tok_s=66974
+TRAIN step=2500/5906 tokens=25400000 loss=5.6039 lr=0.000422193 pure_tok_s=66985
+TRAIN step=3000/5906 tokens=30480000 loss=5.5006 lr=0.00033972 pure_tok_s=67010
+TRAIN step=3500/5906 tokens=35560000 loss=5.5515 lr=0.000254337 pure_tok_s=67158
+TRAIN step=4000/5906 tokens=40640000 loss=5.4257 lr=0.0001732 pure_tok_s=67311
+TRAIN step=4500/5906 tokens=45720000 loss=5.3786 lr=0.000103114 pure_tok_s=67404
+TRAIN step=5000/5906 tokens=50800000 loss=5.3922 lr=4.99522e-05 pure_tok_s=67086
+TRAIN step=5500/5906 tokens=55880000 loss=5.2853 lr=1.81729e-05 pure_tok_s=66663
+EVAL step=5906/5906 tokens=60004960 train=5.4511 val=5.3805 eval_s=1.4
+RESULT {"candidate_size_mean": 32867.42008127328, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave8_adaptive_multiscale_20260604\\wave8_host2080_adaptive_multiscale_stride4_60m\\checkpoint.pt", "final_train_loss": 5.451070785522461, "final_val_loss": 5.380507930088544, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.451070785522461, "val_loss": 5.380507930088544}], "parameter_count": 51041585, "peak_vram_mb": 4363.189453125, "pure_train_tok_per_sec": 66740.96639413181, "step_time_mean_ms": 152.23033990849308, "step_time_median_ms": 149.98059999197721, "train_tokens_seen": 60004960}
+WAVE8_ADAPTIVE_LOCAL_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave8_adaptive_multiscale_20260604\wave8_host2080_adaptive_multiscale_stride4_60m\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "adaptive_multi_scale",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 5906,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 5906,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave8_adaptive_multiscale_20260604\\wave8_host2080_adaptive_multiscale_stride4_60m",
+    "resume_checkpoint": null,
+    "run_name": "wave8_host2080_adaptive_multiscale_stride4_60m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 5906,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.42008127328,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave8_adaptive_multiscale_20260604\\wave8_host2080_adaptive_multiscale_stride4_60m\\checkpoint.pt",
+    "final_train_loss": 5.451070785522461,
+    "final_val_loss": 5.380507930088544,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.451070785522461,
+        "val_loss": 5.380507930088544
+      }
+    ],
+    "parameter_count": 51041585,
+    "peak_vram_mb": 4363.189453125,
+    "pure_train_tok_per_sec": 66740.96639413181,
+    "step_time_mean_ms": 152.23033990849308,
+    "step_time_median_ms": 149.98059999197721,
+    "train_tokens_seen": 60004960
+  }
+}
+
+WAVE8_ADAPTIVE_LOCAL_DONE run=wave8_host2080_adaptive_multiscale_stride4_60m

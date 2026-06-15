@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave5_landmark_attention_20260604\\wave5_host2080_landmark_stride4_60m\\checkpoint.pt",
+  "final_train_loss": 5.598670959472656,
+  "final_val_loss": 5.50221453407618,
+  "peak_vram_mb": 4446.33984375,
+  "pure_train_tok_per_sec": 64557.21615105253,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave5_landmark_attention_20260604\\wave5_host2080_landmark_stride4_60m\\result.json",
+  "run_name": "wave5_host2080_landmark_stride4_60m",
+  "status": "completed",
+  "step": 5906,
+  "tokens_seen": 60004960,
+  "train_steps": 5906
+}

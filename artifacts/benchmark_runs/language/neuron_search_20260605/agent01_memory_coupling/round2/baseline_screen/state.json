@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "baseline_screen\\checkpoint.pt",
+  "final_train_loss": 8.986903190612793,
+  "final_val_loss": 10.833873510360718,
+  "peak_vram_mb": null,
+  "pure_train_tok_per_sec": 286.0195735532777,
+  "result_path": "baseline_screen\\result.json",
+  "run_name": "baseline_multi_scale_lowrank_conv_memory",
+  "status": "completed",
+  "step": 32,
+  "tokens_seen": 8160,
+  "train_steps": 32
+}

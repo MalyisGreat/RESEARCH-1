@@ -1,0 +1,19 @@
+WAVE10_LOW_RANK_CONV_MEMORY_LOCAL_START run=wave10_host2080_lowrank_conv_memory_stride4_60m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=wave10_host2080_lowrank_conv_memory_stride4_60m device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 seq=10160 steps=5906
+TRAIN step=1/5906 tokens=10160 loss=10.6088 lr=1.2e-06 pure_tok_s=18422
+TRAIN step=500/5906 tokens=5080000 loss=7.0876 lr=0.0006 pure_tok_s=67019
+TRAIN step=1000/5906 tokens=10160000 loss=6.3986 lr=0.000587634 pure_tok_s=67298
+TRAIN step=1500/5906 tokens=15240000 loss=5.8822 lr=0.000551574 pure_tok_s=67354
+TRAIN step=2000/5906 tokens=20320000 loss=5.7679 lr=0.000494841 pure_tok_s=67246
+TRAIN step=2500/5906 tokens=25400000 loss=5.4247 lr=0.000422193 pure_tok_s=67306
+TRAIN step=3000/5906 tokens=30480000 loss=5.3196 lr=0.00033972 pure_tok_s=67341
+TRAIN step=3500/5906 tokens=35560000 loss=5.3640 lr=0.000254337 pure_tok_s=67346
+TRAIN step=4000/5906 tokens=40640000 loss=5.2331 lr=0.0001732 pure_tok_s=67347
+TRAIN step=4500/5906 tokens=45720000 loss=5.1847 lr=0.000103114 pure_tok_s=67360
+TRAIN step=5000/5906 tokens=50800000 loss=5.1968 lr=4.99522e-05 pure_tok_s=67347
+TRAIN step=5500/5906 tokens=55880000 loss=5.1069 lr=1.81729e-05 pure_tok_s=67244
+EVAL step=5906/5906 tokens=60004960 train=5.2348 val=5.1627 eval_s=1.4
+RESULT {"candidate_size_mean": 32867.42008127328, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\wave10_host2080_lowrank_conv_memory_stride4_60m\\checkpoint.pt", "final_train_loss": 5.2348103523254395, "final_val_loss": 5.162740405025132, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.2348103523254395, "val_loss": 5.162740405025132}], "parameter_count": 51220529, "peak_vram_mb": 4411.25537109375, "pure_train_tok_per_sec": 67253.62160104814, "step_time_mean_ms": 151.06993137514036, "step_time_median_ms": 150.9611500077881, "train_tokens_seen": 60004960}
+WAVE10_LOW_RANK_CONV_MEMORY_LOCAL_DONE run=wave10_host2080_lowrank_conv_memory_stride4_60m

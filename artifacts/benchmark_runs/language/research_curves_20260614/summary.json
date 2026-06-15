@@ -1,0 +1,287 @@
+{
+  "point_count": 1557,
+  "curve_count": 694,
+  "top_by_long_final_loss": [
+    {
+      "label": "wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605",
+      "points": 22,
+      "max_tokens": 2200107360.0,
+      "final_val_loss": 4.1517,
+      "best_val_loss": 4.1517,
+      "best_tokens": 2200107360.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-024617-ebeaa2\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "longseq_anchor16_160m_5b_fresh_after2b_20260604",
+      "points": 31,
+      "max_tokens": 5000000160.0,
+      "final_val_loss": 4.5841,
+      "best_val_loss": 4.5841,
+      "best_tokens": 5000000160.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-022628-5c855b\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "longseq_anchor16_160m_2b_cosine_20260603_restart2",
+      "points": 20,
+      "max_tokens": 2000006160.0,
+      "final_val_loss": 4.6422,
+      "best_val_loss": 4.6422,
+      "best_tokens": 2000006160.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260603-181136-f3f589\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave10_host2080_lowrank_conv_memory_stride4_continue300m_shifted_to_3080_retry1",
+      "points": 1,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.6809,
+      "best_val_loss": 4.6809,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-011144-50d666\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave6_3080_multiscale_stride4_continue500m_total49215_resume_after_cuda",
+      "points": 1,
+      "max_tokens": 500024400.0,
+      "final_val_loss": 4.7431,
+      "best_val_loss": 4.7431,
+      "best_tokens": 500024400.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-205451-0ffce6\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave4_3080_dense_stride4_fresh_continue500m",
+      "points": 4,
+      "max_tokens": 500024400.0,
+      "final_val_loss": 4.7682,
+      "best_val_loss": 4.7682,
+      "best_tokens": 500024400.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-180347-2a8730\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave6_3080_multiscale_stride4_continue500m_total49215",
+      "points": 1,
+      "max_tokens": 400019520.0,
+      "final_val_loss": 4.7744,
+      "best_val_loss": 4.7744,
+      "best_tokens": 400019520.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-202043-ffd781\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave6_4060_multiscale_stride4_continue300m",
+      "points": 3,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.7892,
+      "best_val_loss": 4.7892,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-191304-3fe8cd\\t-mwstr-07260bd4.log"
+    },
+    {
+      "label": "wave2_3080_dense_stride8_90m_continue500m",
+      "points": 4,
+      "max_tokens": 500024400.0,
+      "final_val_loss": 4.7943,
+      "best_val_loss": 4.7943,
+      "best_tokens": 500024400.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-163118-2e4251\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "language_longseq_anchor16_80m_fresh1b_after2b_seq10160_seed13_20260603/causal_conv_mixer_sampled_vocab_anchor16",
+      "points": 35,
+      "max_tokens": 3204728160.0,
+      "final_val_loss": 4.805925071239471,
+      "best_val_loss": 4.771521881222725,
+      "best_tokens": 2500122000.0,
+      "params": 79999460.0,
+      "kind": "json_history",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_fresh1b_after2b_20260603\\language_longseq_anchor16_80m_fresh1b_after2b_seq10160_seed13_20260603.json"
+    },
+    {
+      "label": "wave10_host2080_lowrank_conv_memory_stride4_continue300m",
+      "points": 1,
+      "max_tokens": 200009760.0,
+      "final_val_loss": 4.8113,
+      "best_val_loss": 4.8113,
+      "best_tokens": 200009760.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\host_2080_lowrank_conv_memory_stride4_continue300m.stdout.log"
+    },
+    {
+      "label": "wave6_3080_multiscale_stride4_continue300m",
+      "points": 2,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.814,
+      "best_val_loss": 4.814,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-193841-a8232f\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "language_longseq_anchor16_80m_2b_lr1e3_seq10160_seed13_20260603/causal_conv_mixer_sampled_vocab_anchor16",
+      "points": 21,
+      "max_tokens": 2000006160.0,
+      "final_val_loss": 4.826209872961044,
+      "best_val_loss": 4.816918730735779,
+      "best_tokens": 1800087840.0,
+      "params": 79999460.0,
+      "kind": "json_history",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\language_longseq_anchor16_80m_2b_lr1e3_seq10160_seed13_20260603.json"
+    },
+    {
+      "label": "wave6_host2080_multiscale_stride4_continue300m",
+      "points": 2,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.8792,
+      "best_val_loss": 4.8792,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\host_2080_multiscale_continue300m.stdout.log"
+    },
+    {
+      "label": "wave6_host2080_multiscale_stride4_continue300m/standalone_longseq_anchor_train",
+      "points": 6,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.879228965097212,
+      "best_val_loss": 4.879228965097212,
+      "best_tokens": 300014640.0,
+      "params": 51037745.0,
+      "kind": "json_report_history",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave6_multiscale_20260604\\wave6_host2080_multiscale_stride4_continue300m\\result.json"
+    },
+    {
+      "label": "wave4_4060_dense_stride4_continue500m",
+      "points": 2,
+      "max_tokens": 399999200.0,
+      "final_val_loss": 4.8873,
+      "best_val_loss": 4.8873,
+      "best_tokens": 399999200.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-191304-307977\\t-mwstr-07260bd4.log"
+    },
+    {
+      "label": "longseq_anchor16_80m_600m_2060_20260603_1845",
+      "points": 6,
+      "max_tokens": 600029280.0,
+      "final_val_loss": 4.9125,
+      "best_val_loss": 4.9125,
+      "best_tokens": 600029280.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260603-184409-9ceb40\\Chichen-JoshS-10a81805.log"
+    },
+    {
+      "label": "wave10_2060_lowrank_conv_memory_stride4_continue300m",
+      "points": 1,
+      "max_tokens": 200009760.0,
+      "final_val_loss": 4.9206,
+      "best_val_loss": 4.9206,
+      "best_tokens": 200009760.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-205817-df624b\\Chichen-JoshS-10a81805.log"
+    },
+    {
+      "label": "wave10_3080_lowrank_conv_memory_stride4_100m_fresh",
+      "points": 1,
+      "max_tokens": 100004880.0,
+      "final_val_loss": 4.9289,
+      "best_val_loss": 4.9289,
+      "best_tokens": 100004880.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-210436-c98623\\mwstroud-mwstr-6aea1cf3.log"
+    },
+    {
+      "label": "wave4_4060_dense_stride4_continue300m",
+      "points": 3,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.9309,
+      "best_val_loss": 4.9309,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-175518-85b379\\t-mwstr-07260bd4.log"
+    },
+    {
+      "label": "longseq_anchor16_40m_600m_4060ti_20260603_1812",
+      "points": 6,
+      "max_tokens": 600029280.0,
+      "final_val_loss": 4.9599,
+      "best_val_loss": 4.9599,
+      "best_tokens": 600029280.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260603-181305-c1d854\\t-mwstr-07260bd4.log"
+    },
+    {
+      "label": "wave8_2060_multiscale_stride4_continue300m",
+      "points": 2,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 4.9968,
+      "best_val_loss": 4.9968,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-192237-248694\\Chichen-JoshS-10a81805.log"
+    },
+    {
+      "label": "wave2_4060_dense_stride8_60m_continue300m",
+      "points": 3,
+      "max_tokens": 300014640.0,
+      "final_val_loss": 5.011,
+      "best_val_loss": 5.011,
+      "best_tokens": 300014640.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260604-163119-78203f\\t-mwstr-07260bd4.log"
+    },
+    {
+      "label": "wave13_2060_lowrank_conv_memory_memoryrank128_stride4_100m",
+      "points": 1,
+      "max_tokens": 100004880.0,
+      "final_val_loss": 5.0399,
+      "best_val_loss": 5.0399,
+      "best_tokens": 100004880.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-015212-267bfb\\Chichen-JoshS-10a81805.log"
+    },
+    {
+      "label": "wave10_host2080_lowrank_conv_memory_stride4_continue100m",
+      "points": 2,
+      "max_tokens": 100004880.0,
+      "final_val_loss": 5.045,
+      "best_val_loss": 5.045,
+      "best_tokens": 100004880.0,
+      "params": null,
+      "kind": "log_eval",
+      "source": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\host_2080_lowrank_conv_memory_stride4_continue100m.stdout.log"
+    }
+  ],
+  "outputs": {
+    "curves_png": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\all_language_val_loss_vs_tokens.png",
+    "final_scatter_png": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\final_points_val_loss_vs_tokens.png",
+    "points_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\extracted_points.csv",
+    "summary_csv": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\research_curves_20260614\\curve_summary.csv"
+  }
+}

@@ -1,0 +1,77 @@
+WAVE5_LOCAL_START run=wave5_host2080_landmark_stride4_60m host=MALY cache=E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\longseq_anchor16_40m_600m_20260602\cache\finewebedu_train600088338_val325152_seq10160_gpt2.pt
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=wave5_host2080_landmark_stride4_60m device=NVIDIA GeForce RTX 2080 SUPER params=53,472,305 seq=10160 steps=5906
+TRAIN step=1/5906 tokens=10160 loss=10.6125 lr=1.2e-06 pure_tok_s=14042
+TRAIN step=500/5906 tokens=5080000 loss=7.2583 lr=0.0006 pure_tok_s=63701
+TRAIN step=1000/5906 tokens=10160000 loss=6.6002 lr=0.000587634 pure_tok_s=64134
+TRAIN step=1500/5906 tokens=15240000 loss=6.0593 lr=0.000551574 pure_tok_s=64528
+TRAIN step=2000/5906 tokens=20320000 loss=6.0109 lr=0.000494841 pure_tok_s=64482
+TRAIN step=2500/5906 tokens=25400000 loss=5.7138 lr=0.000422193 pure_tok_s=64097
+TRAIN step=3000/5906 tokens=30480000 loss=5.6635 lr=0.00033972 pure_tok_s=64264
+TRAIN step=3500/5906 tokens=35560000 loss=5.6815 lr=0.000254337 pure_tok_s=64396
+TRAIN step=4000/5906 tokens=40640000 loss=5.5642 lr=0.0001732 pure_tok_s=64509
+TRAIN step=4500/5906 tokens=45720000 loss=5.5125 lr=0.000103114 pure_tok_s=64587
+TRAIN step=5000/5906 tokens=50800000 loss=5.5160 lr=4.99522e-05 pure_tok_s=64459
+TRAIN step=5500/5906 tokens=55880000 loss=5.4570 lr=1.81729e-05 pure_tok_s=64509
+EVAL step=5906/5906 tokens=60004960 train=5.5987 val=5.5022 eval_s=1.4
+RESULT {"candidate_size_mean": 32867.42008127328, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave5_landmark_attention_20260604\\wave5_host2080_landmark_stride4_60m\\checkpoint.pt", "final_train_loss": 5.598670959472656, "final_val_loss": 5.50221453407618, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.598670959472656, "val_loss": 5.50221453407618}], "parameter_count": 53472305, "peak_vram_mb": 4446.33984375, "pure_train_tok_per_sec": 64557.21615105253, "step_time_mean_ms": 157.3797726380795, "step_time_median_ms": 156.7001000075834, "train_tokens_seen": 60004960}
+WAVE5_LOCAL_RESULT_PATH E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\wave5_landmark_attention_20260604\wave5_host2080_landmark_stride4_60m\result.json
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "landmark_attention",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 5906,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 5906,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave5_landmark_attention_20260604\\wave5_host2080_landmark_stride4_60m",
+    "resume_checkpoint": null,
+    "run_name": "wave5_host2080_landmark_stride4_60m",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 5906,
+    "val_blocks": 24,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 32867.42008127328,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave5_landmark_attention_20260604\\wave5_host2080_landmark_stride4_60m\\checkpoint.pt",
+    "final_train_loss": 5.598670959472656,
+    "final_val_loss": 5.50221453407618,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 5906.0,
+        "tokens_seen": 60004960.0,
+        "train_loss": 5.598670959472656,
+        "val_loss": 5.50221453407618
+      }
+    ],
+    "parameter_count": 53472305,
+    "peak_vram_mb": 4446.33984375,
+    "pure_train_tok_per_sec": 64557.21615105253,
+    "step_time_mean_ms": 157.3797726380795,
+    "step_time_median_ms": 156.7001000075834,
+    "train_tokens_seen": 60004960
+  }
+}
+
+WAVE5_LOCAL_DONE run=wave5_host2080_landmark_stride4_60m

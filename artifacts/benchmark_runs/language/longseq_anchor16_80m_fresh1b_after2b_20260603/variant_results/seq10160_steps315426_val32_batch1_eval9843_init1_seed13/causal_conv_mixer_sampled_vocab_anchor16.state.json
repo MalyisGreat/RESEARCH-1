@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_fresh1b_after2b_20260603\\variant_results\\seq10160_steps315426_val32_batch1_eval9843_init1_seed13\\causal_conv_mixer_sampled_vocab_anchor16.checkpoint.pt",
+  "final_learning_rate": 0.001,
+  "final_val_loss": 4.805925071239471,
+  "lr_schedule": "constant",
+  "peak_vram_mb": 3473.3212890625,
+  "pure_train_tok_per_sec": 85099.54025544506,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_80m_fresh1b_after2b_20260603\\variant_results\\seq10160_steps315426_val32_batch1_eval9843_init1_seed13\\causal_conv_mixer_sampled_vocab_anchor16.json",
+  "status": "completed",
+  "step": 315426,
+  "tokens_seen": 3204728160,
+  "train_steps": 315426,
+  "validation_loss_mode": "full",
+  "variant": "causal_conv_mixer_sampled_vocab_anchor16"
+}

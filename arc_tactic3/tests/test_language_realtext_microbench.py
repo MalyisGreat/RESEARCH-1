@@ -125,6 +125,27 @@ def test_effective_tokenization_batch_size_shrinks_small_runs() -> None:
     assert realtext._effective_tokenization_batch_size(requested_batch_size=256, max_sequences=2048) == 256
 
 
+def test_build_optimizer_uses_fused_adamw_for_indexed_cuda_device() -> None:
+    calls: list[dict[str, object]] = []
+    original_adamw = realtext.torch.optim.AdamW
+
+    def _fake_adamw(param_groups, **kwargs):
+        del param_groups
+        calls.append(kwargs)
+        return object()
+
+    try:
+        realtext.torch.optim.AdamW = _fake_adamw
+        model = realtext.torch.nn.Linear(2, 2)
+        config = realtext.RealTextConfig(device="cuda:1", use_fused_adamw=True)
+        realtext._build_optimizer(model, config)
+    finally:
+        realtext.torch.optim.AdamW = original_adamw
+
+    assert calls
+    assert calls[0]["fused"] is True
+
+
 def test_texts_to_blocks_caps_batch_tokenization_work_for_small_runs() -> None:
     texts = ["abcdefghij"] * 100
     tokenizer = _BatchFakeTokenizer()

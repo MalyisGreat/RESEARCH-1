@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent02_conv_conditioned\\candidate_v1\\checkpoint.pt",
+  "final_train_loss": 9.607295989990234,
+  "final_val_loss": 10.830102562904358,
+  "peak_vram_mb": null,
+  "pure_train_tok_per_sec": 75.52784120866048,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent02_conv_conditioned\\candidate_v1\\result.json",
+  "run_name": "agent02_candidate_v1_64",
+  "status": "completed",
+  "step": 64,
+  "tokens_seen": 16320,
+  "train_steps": 64
+}

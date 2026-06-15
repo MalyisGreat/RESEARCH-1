@@ -1,0 +1,15 @@
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+RESUMED step=5906 tokens=60004960
+START run=wave10_host2080_lowrank_conv_memory_stride4_continue100m device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 seq=10160 steps=9843
+TRAIN step=6000/9843 tokens=60960000 loss=5.4163 lr=0.000223877 pure_tok_s=67250
+TRAIN step=6500/9843 tokens=66040000 loss=5.1333 lr=0.00017756 pure_tok_s=67196
+TRAIN step=7000/9843 tokens=71120000 loss=5.0339 lr=0.000134837 pure_tok_s=67139
+TRAIN step=7500/9843 tokens=76200000 loss=4.8777 lr=9.69126e-05 pure_tok_s=67120
+TRAIN step=8000/9843 tokens=81280000 loss=5.0451 lr=6.48562e-05 pure_tok_s=67115
+TRAIN step=8500/9843 tokens=86360000 loss=5.1736 lr=3.95718e-05 pure_tok_s=67051
+EVAL step=8859/9843 tokens=90007440 train=5.2443 val=5.0606 eval_s=1.4
+TRAIN step=9000/9843 tokens=91440000 loss=5.3282 lr=2.17724e-05 pure_tok_s=67051
+TRAIN step=9500/9843 tokens=96520000 loss=5.2921 lr=1.19599e-05 pure_tok_s=67060
+EVAL step=9843/9843 tokens=100004880 train=5.2763 val=5.0450 eval_s=1.4
+RESULT {"candidate_size_mean": 32867.161036322075, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\wave10_lowrank_conv_memory_20260604\\wave10_host2080_lowrank_conv_memory_stride4_continue100m\\checkpoint.pt", "final_train_loss": 5.276318073272705, "final_val_loss": 5.045041977952471, "history": [{"learning_rate": 1e-05, "step": 5906.0, "tokens_seen": 60004960.0, "train_loss": 5.2348103523254395, "val_loss": 5.162740405025132}, {"learning_rate": 2.600086977773113e-05, "step": 8859.0, "tokens_seen": 90007440.0, "train_loss": 5.244345664978027, "val_loss": 5.0605956905783005}, {"learning_rate": 1e-05, "step": 9843.0, "tokens_seen": 100004880.0, "train_loss": 5.276318073272705, "val_loss": 5.045041977952471}], "parameter_count": 51220529, "peak_vram_mb": 4604.36328125, "pure_train_tok_per_sec": 67075.59449670336, "step_time_mean_ms": 151.4708900641849, "step_time_median_ms": 151.28809999441728, "train_tokens_seen": 100004880}

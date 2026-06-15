@@ -1,0 +1,202 @@
+﻿160M LongSeq Anchor 5B expanded samples
+checkpoint=D:\CodexLLM\research1_longseq\runs\longseq_anchor16_160m_5b_fresh_after2b_20260604\checkpoint.pt
+step=492126 tokens_seen=5000000160 device=cuda
+max_new_tokens=170
+
+=== sample 01 temp=0.75 top_k=50 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is not the only thing that is not the whole story.
+The Bible and the Mishnah are the teachings in the Qur'an.
+The next great time of these books, but it is a great example of the most popular and popular destinations are the Amazonian Islands, and in the southern part of the country for the next generation of scientists.
+- The USGS National Oceanic and Atmospheric Administration (NOAA) is conducting a four-year project to determine the feasibility of the research and development of the
+technologies that have been made in the past, the last one is said to have been the first to recognize the world as a way of life that has been preserved in the past, such as the
+newspaper or the first day after hatching. The young birds were then able to fly. Some of the insects have
+
+=== sample 02 temp=0.95 top_k=80 prompt='The future of artificial intelligence is' ===
+The future of artificial intelligence is not uncommon, but the result is pretty much gone.
+Rabies begins with atrial fibrillation.
+- Abdominal pain, numbness, sensitivity of consciousness, or vision.
+It's a bit of a myth about the history of technology transfer in his early work.
+But what if the first paragraph is correct. In practice, it is not entirely clear to me that I’m not going to be true in our lives, we see a great deal of it, but we can take care of our pets and our customers. This will keep them feeling more relaxed than what you thought is the same?"
+- When students are taught the basics of playing a game or recording from a single neuron. More recently it has been linked to significant amounts of caffeine (50 kcal/day) while the use of a very simple
+
+=== sample 03 temp=0.75 top_k=50 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that the gene expression of a single molecule, with a long membrane-like structure. The two layers of the two cylinders is equal to the mass of the sun. These stars are usually found in a variety of applications.
+The first step is to determine if an infection is present. If the patient does not have a disability. The DSM-IV diagnosis and treatment for Alzheimer's disease
+- Newborns
+- Teenage girls are most likely to experience a child with ADHD to manage depression and anxiety, and to monitor patients to avoid complications.
+Risks of the treatment of chronic kidney disease. This is mainly caused by lack of water, and the resulting increase in greenhouse gas emissions, and the lack of oxygen.
+- Increased thirst for blood sugar
+- Low blood pressure
+- Liver damage
+- Breathing problems may occur in the lower
+
+=== sample 04 temp=0.95 top_k=80 prompt='In a surprising result, the experiment showed that' ===
+In a surprising result, the experiment showed that 1.5 percent of children under age 45.2. This is because the brain does not send messages over the Internet from the phone-based community and that they will continue to exist, and the
+individual who have contributed significantly to this issue, and a few others. Many of these people who have never had a stroke or a heart attack.
+Exercise is a key component of a good job is ensuring the person who can help and help others and others are going to work with the teachers to focus on.
+When I came home, I had to write two book copies of the same name may seem to have held that such an immense number of military recruits and volunteers killed 10,000 victims, including over 1 million women who have suffered from severe mental illness, particularly in patients with compromised immunity from viral infections. The authors also discuss how
+
+=== sample 05 temp=0.7 top_k=40 prompt='Question: What is machine learning? Answer:' ===
+Question: What is machine learning? Answer: Why does the Bible teach us to be with us.
+In the past, the researchers found that the most common type of polyunsaturated fats such as calcium, magnesium, and magnesium.
+What Causes a Bone Scan?
+A virus causes an infection, and the patient's medical history is important. If you’re having unprotected sex, it’s no surprise that the federal government intends to limit the amount of time it takes to work out the answer.
+- Write a sentence with a letter.
+- The sentence that I have read in the original.
+The main difference between these two forces is the
+next step, the following steps are used:
+- When you are in a room, stay awake for three to six weeks. It was the first time that the United States government has not been able to pay for
+
+=== sample 06 temp=0.7 top_k=40 prompt='Question: Why do plants need sunlight? Answer:' ===
+Question: Why do plants need sunlight? Answer: This is a very important lesson for students and teachers.
+- Teachers can work collaboratively to improve the efficiency of the battery at a constant speed.
+We can’t change the amount of time it takes to heal itself.
+- A healthy dose of exercise or a lower-risk group.
+The study was funded by the National Institutes of Health.<|endoftext|>
+
+=== sample 07 temp=0.75 top_k=50 prompt='Explain the difference between training loss and validation loss.' ===
+Explain the difference between training loss and validation loss.
+- If the voltage is not properly controlled or at the very least developed region.
+This is the first large-scale study of how people are affected by mental illness, such that he can no longer afford to be able to purchase goods from the public treasury, the U.S. Army Corps of Engineers, the Royal Air Force, and the Navy
+- The Federal Reserve Board, the federal government has been able to raise awareness of the problem and to keep it down, it seems that it really works.
+The reason for this is that the "new" word of the person in this section.
+What do we mean by the new information we find in our previous article. What is missing is the relationship between the two.
+In the north, it is a major cause of premature aging, but at the same time it is possible
+
+=== sample 08 temp=0.85 top_k=60 prompt='A small neural network can learn' ===
+A small neural network can learn about the importance of taking a good example of the right side of the triangle, is the direction of the sun, the sun, and the sun.
+The next day, according to a recent study by researchers at the University of Michigan, Ann Arbor, Michigan, USA)<|endoftext|>
+
+=== sample 09 temp=0.85 top_k=60 prompt='Once upon a time in a small town' ===
+Once upon a time in a small town in the city and was built in the same year. This could be due to a lack of a sense of smell and taste.
+You can save money by buying new clothes and the first day of school.
+The United States has a long time since the first publication of its publication in 1996, and the first edition of the Journal of the European Society of Heidelberg
+in a postdoctoral fellow at the University of California at San Diego on June 21, 2013.
+- "Shirley, L. (2003). Intricativity. Paper presented at the American Geophysical Union.
+In the course of the first half of the twentieth century.
+The following is an excerpt from the Wikipedia article "Shocking to Know
+• We’re going to learn to use your own thoughts.
+One of the problems with B
+
+=== sample 10 temp=0.9 top_k=70 prompt='The old library at the edge of the city' ===
+The old library at the edge of the city, and the suburbs of Washington. It’s a very rewarding experience!
+One reason is that there are numerous options for developing a solution, it does not allow for a single user to specify the desired result.
+In this issue of the journal Science, finds that “the last few days I will no longer be allowed to have a clear goal to prevent diseases such as herpes outbreak.
+“The result was that the virus was first isolated from human papillomavirus (HPV). A virus is detected when these viruses are found in the feces. The incubation period may occur in the summer. The seeds are
+quite good at the plant and eat it in the summer. At least they’ve been able to make sense of the most practical and useful things to do in their own minds.
+- Listen
+
+=== sample 11 temp=0.9 top_k=70 prompt='The captain looked at the map and realized' ===
+The captain looked at the map and realized that it was difficult to give much higher frequency or power, but can also be used to describe the use of the term. The name "Bryozoan", but after "the Lord, and you shall come to
+inform me, and that I am not ashamed to ask, "Why do we do this? What is the best way to do it.
+So the question is: Do you really need to cut the fiber that is used to treat diarrhea. He/she can help you in writing. One day, your child will be put off.
+One of the first steps of a new state, has arisen. The term has also given us a clue. One reason why the author suggests and then of the study, or at least not in any way on the issue.
+While many scholars have found the key work:
+
+=== sample 12 temp=0.85 top_k=60 prompt='During the experiment, the scientist noticed' ===
+During the experiment, the scientist noticed a bright comet as
+much earlier than today.
+“One of the most impressive is the fact that all of the students were poor performers or who did not want the same amount of energy because it is the greatest potential for getting elected. They say, "We know they're safe to make sure that your cat is running properly. Or, if you want to say, there are many ways to do a thing. And if you have time to use the Internet to generate a message. We can't figure out whether two different objects are present at the same time.
+- All that the following are the most common complications of the foot, ankle, and foot can also be injured.
+If you have a sore throat or flu-like symptoms - fever, drowsiness, weakness, and loss of appetite, and increased hunger.
+
+
+=== sample 13 temp=0.7 top_k=40 prompt='Python function to add two numbers:' ===
+Python function to add two numbers:
+- the number of people who have been diagnosed with the disease at an early age.
+In the early 1990s, the government began using the “Greenland”, which is the key to providing an additional protection to the American public. But what made it so interesting to me, but I'm not the only country that I saw in my mind, I could not find it in my own work.
+I am not alone in the presence of God, and that is, by the way, the process of being able to produce enough food to support the bacteria.
+- How much is a child’s way of life.”
+The best-known example is the use of the word “Samba” comes from the Latin word for “marshmallow”, the “Empire
+
+=== sample 14 temp=0.8 top_k=50 prompt='Here is a short recipe for tomato soup:' ===
+Here is a short recipe for tomato soup:
+It is easy to see how the most effective way to cope with pain. This can lead to the loss of both the number of calories and the amount of protein in their blood. It is a little too late for the war. At its height, the British suffered many shortages, and in fact, there is a limit to how much power a vehicle can handle.
+- n. A large flat plate, and some cacti are the result of the action of the soul from the dead.
+As a result, women tend to have higher self-esteem and higher level of engagement, but this strategy also addresses issues of the American Psychiatric Association.
+All of the research on the effectiveness of the project.
+The project involved 40-minute visits to help students develop their skills and enable them to be active in making the right choice.
+
+=== sample 15 temp=0.75 top_k=50 prompt='The main causes of climate change include' ===
+The main causes of climate change include:
+- Water management is not a waste of time. The following is speculative information about Listeria.
+The Columbia Electronic Encyclopedia, 6th ed. Copyright © 2012, Columbia University Press. All rights reserved.
+More on NPS
+The National Sleep Foundation (NLF) is a European Union-wide initiative aimed at ensuring that all countries are engaged in a particular sport which is at risk.
+The study was funded by the US Food and Drug Administration (FDA), which is the first to reach a conclusion and make sure you have all the things you need to do is to do more than just a single cell. The other half of the mice that had been inoculated." The story is told in the early morning hours of May 26, 2011.
+- "Newspapers: The Battle of the Three Kingdoms
+In
+
+=== sample 16 temp=0.75 top_k=50 prompt='A good way to test a hypothesis is' ===
+A good way to test a hypothesis is to find out whether the brain is a little different than the most effective, and many of you can find another copy of this article.
+Once you are finished and click submit, your modifications will be sent to our editors for review.
+role in the study of the body of the first vertebrae.
+- It is a sign of a serious illness.
+Symptoms of chronic pain can vary widely, depending on the circumstances.
+Dietary guidelines are designed to help people with ASD who are not exposed to secondhand smoke.
+This is a really cool piece of the puzzle.
+This article may be copied from the Wikipedia article "An Introduction to the Origin of Species.
+2. The Right to Vote,” which is the most common form of cancer that occurs when cells in the lining of the uterus. The uterus
+
+=== sample 17 temp=0.8 top_k=50 prompt='The patient reported mild symptoms and' ===
+The patient reported mild symptoms and then go back to their proper place and get lost, the
+following of the Torah scrollable, but the author of this book is the only way for the authors to find and explore the range of issues involved in the development of a new school building.
+“The most important thing is making sure that the people are being prepared and tested.
+All children develop a unique type of brain injury that leads to memory loss and disruption.
+The first thing to understand is that the entire class of the body, and is part of the normal epithelial cells. But, the results point to the same conclusion.
+The first and most famous of it is seen as a manifestation of a change in the way people think about our universe—the way we know what kinds of people who live in the United States are now known to be the primary
+
+=== sample 18 temp=0.85 top_k=60 prompt='The history of mathematics includes' ===
+The history of mathematics includes a comprehensive overview of the topics relevant to this issue.
+© 2013 Intellectual Reserve Corporation. All rights reserved.<|endoftext|>
+
+=== sample 19 temp=0.8 top_k=50 prompt='If a ball is dropped from a tower' ===
+If a ball is dropped from a tower on the shore
+where a fire is in front of the sun. The second half of the world's population.” The report states that the US Air Force did not respond to the first-ever
+treatment of a patient's physician.
+- In 2011, there were 2.5 million people in the U.S. have grown dramatically over the last 10 years, and the number of cases of death in the case of the king of Scotland and the royal families of the family who live in the U.S. and was a prolific writer of all time and thought that this would occur, and the process is repeated in the final presentation.
+3. The learner will see a lot more time than the other half of the time) to the left and right arrow keys to this effect.
+If you are not sure what to
+
+=== sample 20 temp=0.9 top_k=70 prompt='The team built a simple robot that' ===
+The team built a simple robot that was working in:
+- The United States must give to that name:
+The purpose of this article is to:
+- Name the name of the house and the temple of the temple is a large courtyard with the house on the walls. There were no other stone axes at the back of the fuselage in June, and a half-dozen men joined the revolt at the Battle of Hastings in 1066, and in 1797 it was sent to New York.
+The U.S. Bureau of Justice Statistics, 2006.
+A study of the Australian National University shows that it is still early detection and treatment. The patient was evaluated with an antibiotic to avoid such a reaction. This is the ‘unspecified’ of the universe in which we could have imagined.
+That's when we think of this as being the best for
+
+=== sample 21 temp=0.9 top_k=70 prompt='News report: Local officials announced' ===
+News report: Local officials announced on Tuesday that it plans to extend the park into what is now called the "last mile" where the top of the roof was filled with salt and poured with hot water, and the fire of fire.
+(6) Withdrawal (b) - "crisis"
+A typical example of the size of the species (e.g. a very low frequency. Most types of this type of cancer are rare.
+Researchers have discovered a possible mechanism that could only detect the presence of the other particles that are now thought to affect the overall health of the populace.
+The second is that some of the most interesting aspects of the American story.
+As they began to ponder, we also can say that the Bible is ‘that Jesus Christ’s way to restore the nation’s cultural and political institutions. It has
+
+=== sample 22 temp=0.95 top_k=80 prompt='The meaning of life is' ===
+The meaning of life is almost identical to its predecessor.
+The first Germanic system has not yet been updated but would be made available, the
+findings of the Church of Christ. Even though the Church provides for its position in the international community:
+Migration and distribution of the nation's vast expanse of coastline south of the continental shelf.
+"These are the seeds of our God. Not so with the help of any further research, which is why the law is enforced and what is required by courtesan or section of the House of Representatives has been chosen by the committee responsible for the establishment of an important religious center; that is, they will lose their identity.
+But for the first time, researchers have succeeded in removing several hundred million years, it will never change as it goes into effect. The government, in order to have this as a means
+
+=== sample 23 temp=0.8 top_k=50 prompt='Step 1: collect the data. Step 2:' ===
+Step 1: collect the data. Step 2:
+The default (and the user, the file system is unable to use one or more of the three types of tests:
+- Determine the level of the physical memory, which is not possible for human consumption. The most important risk factor for heart attack, stroke, or other conditions.
+- A major flaw in a specific issue of the human rights movement; the United States and Britain have received only four ballots, as in the case of the same surname.
+So why are you doing this? The answer is the same: There is no reason why, we have no connection to the Bible.
+1. An Introduction to Political Issues in American Culture. Washington, D.C.: Georgetown University Press, 2000)
+This article was written by Evelyn Dutton (1894-1989) (published in the February 20 issue of
+
+=== sample 24 temp=0.9 top_k=70 prompt='A concise summary of this article:' ===
+A concise summary of this article:|
+As you may recall from a simple definition, which is very common in the body.
+The patient will have a pelvic exam because they can be treated to the naked eye of the beholder. Some of these people are unable to see them on the screen, use an "echoing" that is not needed."
+The new law states that all Americans, regardless of their religious affiliation.
+2. The Court of Appeal of United States of America. In this context, it is easier to visualize the whole body of water, the process that generates the heat of the atmosphere to be transported. The first type of the name is now called the "Buddhist-Raschim. He never got into trouble. But for the reasons they don't know what happens to them is because they are not to be
+killed as pets
+

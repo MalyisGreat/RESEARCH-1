@@ -1,0 +1,212 @@
+{
+  "benchmark": "language_longseq_replay_probe",
+  "comparisons": {
+    "factorized_no_replay_20m": {
+      "loss_delta_vs_baseline": -0.04045158624649048,
+      "pure_speed_ratio_vs_baseline": 1.5265377110857112
+    },
+    "factorized_untied_20m": {
+      "loss_delta_vs_baseline": -0.034459710121154785,
+      "pure_speed_ratio_vs_baseline": 1.1500809022978078
+    }
+  },
+  "config": {
+    "amp_dtype": "fp16",
+    "batch_size": 8,
+    "cache_dataset_on_device": true,
+    "cache_path": null,
+    "dataset_name": "HuggingFaceFW/fineweb-edu",
+    "device": "cuda",
+    "dropout": 0.1,
+    "embedding_dim": 320,
+    "eval_batch_size": 8,
+    "eval_interval": 24,
+    "factorized_embedding_dim": 256,
+    "factorized_hidden_dim": 512,
+    "factorized_memory_dim": 256,
+    "full_loss_interval": 4,
+    "hidden_dim": 640,
+    "hierarchical_class_count": 256,
+    "learning_rate": 0.002,
+    "local_files_only": false,
+    "memory_dim": 320,
+    "no_replay_embedding_dim": 260,
+    "no_replay_hidden_dim": 520,
+    "no_replay_rank": 96,
+    "output_dir": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602",
+    "partial_token_count": 1024,
+    "pin_memory": true,
+    "resolved_cache_path": "artifacts\\benchmark_runs\\language\\longseq_replay_probe_20260602\\cache\\finewebedu_train325632_val40704_seq635_gpt2.pt",
+    "sampled_vocab_size": 4096,
+    "seed": 13,
+    "sequence_length": 635,
+    "split": "train",
+    "text_column": "text",
+    "tokenization_batch_size": 512,
+    "tokenizer_name": "gpt2",
+    "train_blocks": 512,
+    "train_steps": 96,
+    "untied_rank": 96,
+    "use_amp": true,
+    "use_fused_adamw": true,
+    "val_blocks": 64,
+    "variants": [
+      "partial_untied",
+      "factorized_untied_20m",
+      "factorized_no_replay_20m"
+    ],
+    "weight_decay": 0.0001,
+    "window_size": 128
+  },
+  "fairness": {
+    "probe_only": true,
+    "real_fineweb_edu_data": true,
+    "same_batch_schedule": true,
+    "same_cache": true,
+    "same_model_size_target": "20m_parameter_partial_untied_family",
+    "same_token_budget": true
+  },
+  "results": {
+    "factorized_no_replay_20m": {
+      "final_val_loss": 7.328208386898041,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.82966423034668
+        },
+        {
+          "step": 24.0,
+          "tokens_seen": 121920.0,
+          "train_loss": 7.797962188720703,
+          "val_loss": 8.257652878761292
+        },
+        {
+          "step": 48.0,
+          "tokens_seen": 243840.0,
+          "train_loss": 7.348865985870361,
+          "val_loss": 7.623372852802277
+        },
+        {
+          "step": 72.0,
+          "tokens_seen": 365760.0,
+          "train_loss": 6.848104476928711,
+          "val_loss": 7.439850270748138
+        },
+        {
+          "step": 96.0,
+          "tokens_seen": 487680.0,
+          "train_loss": 6.894738674163818,
+          "val_loss": 7.328208386898041
+        }
+      ],
+      "initial_val_loss": 10.82966423034668,
+      "parameter_count": 19999129,
+      "peak_vram_mb": 3279.0185546875,
+      "pure_train_time_seconds": 11.381852000002254,
+      "pure_train_tok_per_sec": 42847.157035595206,
+      "sampled_candidate_size_mean": null,
+      "step_time_mean_ms": 118.56095833335682,
+      "step_time_median_ms": 119.4412499999089,
+      "total_training_time_seconds": 13.029391099998975,
+      "train_tok_per_sec": 37429.22414847447,
+      "train_tokens_seen": 487680,
+      "variant": "factorized_no_replay_20m"
+    },
+    "factorized_untied_20m": {
+      "final_val_loss": 7.3342002630233765,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.806041598320007
+        },
+        {
+          "step": 24.0,
+          "tokens_seen": 121920.0,
+          "train_loss": 7.987501621246338,
+          "val_loss": 7.994814455509186
+        },
+        {
+          "step": 48.0,
+          "tokens_seen": 243840.0,
+          "train_loss": 7.361572742462158,
+          "val_loss": 7.665134251117706
+        },
+        {
+          "step": 72.0,
+          "tokens_seen": 365760.0,
+          "train_loss": 6.892746448516846,
+          "val_loss": 7.491584241390228
+        },
+        {
+          "step": 96.0,
+          "tokens_seen": 487680.0,
+          "train_loss": 6.939670085906982,
+          "val_loss": 7.3342002630233765
+        }
+      ],
+      "initial_val_loss": 10.806041598320007,
+      "parameter_count": 19998899,
+      "peak_vram_mb": 3335.86181640625,
+      "pure_train_time_seconds": 15.107481800007008,
+      "pure_train_tok_per_sec": 32280.694192183226,
+      "sampled_candidate_size_mean": null,
+      "step_time_mean_ms": 157.36960208340633,
+      "step_time_median_ms": 158.85789999992994,
+      "total_training_time_seconds": 16.892177900001116,
+      "train_tok_per_sec": 28870.167179565862,
+      "train_tokens_seen": 487680,
+      "variant": "factorized_untied_20m"
+    },
+    "partial_untied": {
+      "final_val_loss": 7.368659973144531,
+      "history": [
+        {
+          "step": 0.0,
+          "tokens_seen": 0.0,
+          "train_loss": NaN,
+          "val_loss": 10.82306718826294
+        },
+        {
+          "step": 24.0,
+          "tokens_seen": 121920.0,
+          "train_loss": 8.248961448669434,
+          "val_loss": 8.420276403427124
+        },
+        {
+          "step": 48.0,
+          "tokens_seen": 243840.0,
+          "train_loss": 7.386871814727783,
+          "val_loss": 7.684738278388977
+        },
+        {
+          "step": 72.0,
+          "tokens_seen": 365760.0,
+          "train_loss": 6.539368629455566,
+          "val_loss": 7.436068534851074
+        },
+        {
+          "step": 96.0,
+          "tokens_seen": 487680.0,
+          "train_loss": 6.732062816619873,
+          "val_loss": 7.368659973144531
+        }
+      ],
+      "initial_val_loss": 10.82306718826294,
+      "parameter_count": 19949523,
+      "peak_vram_mb": 3384.28955078125,
+      "pure_train_time_seconds": 17.374826299999768,
+      "pure_train_tok_per_sec": 28068.194270236043,
+      "sampled_candidate_size_mean": null,
+      "step_time_mean_ms": 180.9877739583309,
+      "step_time_median_ms": 180.46804999994492,
+      "total_training_time_seconds": 19.939127499999813,
+      "train_tok_per_sec": 24458.442326526303,
+      "train_tokens_seen": 487680,
+      "variant": "partial_untied"
+    }
+  }
+}

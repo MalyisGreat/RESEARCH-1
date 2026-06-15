@@ -1,0 +1,14 @@
+[
+  {
+    "block_type": "rank_competition_memory_suppressed_bounded_centered_gate_neuron",
+    "final_train_loss": 268.264404296875,
+    "final_val_loss": 276.37643069169656,
+    "grad_ok": true,
+    "ok": true,
+    "param_delta": 135170,
+    "parameter_count": 40572179,
+    "speed_ratio_vs_baseline": 0.830201384878572,
+    "tok_per_sec": 69432.50667902244,
+    "val_delta_vs_baseline": 269.58836038459947
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "agent_id": "agent04_rank_competition",
+  "artifact_dir": "E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/agent04_rank_competition",
+  "baseline": {
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "final_train_loss": 9.59754753112793,
+    "final_val_loss": 10.832715392112732,
+    "parameter_count": 15250481,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 65.15254413672825
+  },
+  "candidate_v1": {
+    "block_type": "rank_competition_lowrank_conv_memory",
+    "final_train_loss": 9.597831726074219,
+    "final_val_loss": 10.83288323879242,
+    "parameter_count": 15250485,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 80.47606488003925,
+    "val_delta_vs_baseline": 0.000167846679688
+  },
+  "candidate_v2": {
+    "block_type": "energy_preserving_rank_competition_lowrank_conv_memory",
+    "final_train_loss": 9.597482681274414,
+    "final_val_loss": 10.832782506942749,
+    "parameter_count": 15250485,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 165.88483359029297,
+    "val_delta_vs_baseline": 0.000067114830017
+  },
+  "smoke_grad": {
+    "path": "E:/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/neuron_search_20260605/agent04_rank_competition/tests/smoke_grad_result.json",
+    "cuda_available": false,
+    "baseline_finite": true,
+    "candidate_v1_finite": true,
+    "candidate_v2_finite": true
+  },
+  "recommendation": "kill",
+  "reason": "Both tested rank-competition variants were stable, but neither beat the baseline validation loss under the matched 64-step CPU screen. Observed CPU throughput differences are not a defensible win for a softmax-based channel primitive."
+}

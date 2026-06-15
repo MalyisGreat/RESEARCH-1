@@ -1,0 +1,11 @@
+{
+  "latest_train_loss": 10.255054473876953,
+  "max_step_seconds": 8.0,
+  "peak_vram_mb": 6333.326171875,
+  "status": "aborted_slow_step",
+  "step": 4,
+  "step_time_ms": 55059.59979999898,
+  "tokens_seen": 40640,
+  "train_steps": 18,
+  "variant": "causal_conv_mixer_sampled_vocab_full4"
+}

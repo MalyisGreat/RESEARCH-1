@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_baseline\\checkpoint.pt",
+  "final_train_loss": 8.608527183532715,
+  "final_val_loss": 11.254442387001188,
+  "peak_vram_mb": 143.97119140625,
+  "pure_train_tok_per_sec": 15958.434146061452,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\screen_256_seed17_baseline\\result.json",
+  "run_name": "screen_256_seed17_baseline",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 65280,
+  "train_steps": 256
+}

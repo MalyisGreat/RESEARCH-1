@@ -1,0 +1,51 @@
+{
+  "cuda_available": false,
+  "gradient_checks": {
+    "memory_selected_threshold_basis_lowrank_conv_memory": {
+      "block_type": "memory_selected_threshold_basis_lowrank_conv_memory",
+      "finite_input_grad": true,
+      "finite_parameter_grads": true,
+      "loss": 1.0926228761672974,
+      "nonzero_parameter_grads": 26,
+      "output_shape": [
+        2,
+        15,
+        24
+      ],
+      "parameter_grad_tensors": 26
+    },
+    "memory_tiled_threshold_lowrank_conv_memory": {
+      "block_type": "memory_tiled_threshold_lowrank_conv_memory",
+      "finite_input_grad": true,
+      "finite_parameter_grads": true,
+      "loss": 1.0670034885406494,
+      "nonzero_parameter_grads": 22,
+      "output_shape": [
+        2,
+        15,
+        24
+      ],
+      "parameter_grad_tensors": 22
+    },
+    "multi_scale_lowrank_conv_memory": {
+      "block_type": "multi_scale_lowrank_conv_memory",
+      "finite_input_grad": true,
+      "finite_parameter_grads": true,
+      "loss": 1.066499948501587,
+      "nonzero_parameter_grads": 20,
+      "output_shape": [
+        2,
+        15,
+        24
+      ],
+      "parameter_grad_tensors": 20
+    }
+  },
+  "parameter_counts": {
+    "memory_selected_threshold_basis_lowrank_conv_memory": 15257017,
+    "memory_tiled_threshold_lowrank_conv_memory": 15250609,
+    "multi_scale_lowrank_conv_memory": 15250481
+  },
+  "torch_version": "2.6.0+cu124",
+  "trainer_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\agent01_memory_coupling\\standalone_longseq_anchor_train_memory_coupling.py"
+}
