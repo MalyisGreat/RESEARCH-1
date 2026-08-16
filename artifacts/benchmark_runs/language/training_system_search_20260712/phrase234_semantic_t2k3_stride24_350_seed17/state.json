@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\phrase234_semantic_t2k3_stride24_350_seed17\\checkpoint.pt",
+  "final_train_loss": 6.190014839172363,
+  "final_val_loss": 6.688571356225202,
+  "peak_vram_mb": 1760.66015625,
+  "pure_train_tok_per_sec": 89643.31180844258,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\phrase234_semantic_t2k3_stride24_350_seed17\\result.json",
+  "run_name": "phrase234_semantic_t2k3_stride24_350_seed17",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

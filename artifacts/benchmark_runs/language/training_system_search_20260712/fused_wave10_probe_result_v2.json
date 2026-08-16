@@ -1,0 +1,39 @@
+{
+  "benchmark": {
+    "fused": {
+      "mean_step_ms": 35.08103999997729,
+      "median_step_ms": 29.0168999999878,
+      "parameter_count": 4188032
+    },
+    "fused_speed_ratio": 1.1294767772006464,
+    "original": {
+      "mean_step_ms": 39.62322000002132,
+      "median_step_ms": 37.39429999995991,
+      "parameter_count": 4170112
+    }
+  },
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "equivalence": {
+    "max_bias_grad_abs_diff": 2.3283064365386963e-10,
+    "max_input_grad_abs_diff": 5.820766091346741e-11,
+    "max_output_abs_diff": 0.0,
+    "max_weight_grad_abs_diff": 0.0
+  },
+  "full_training_benchmark": {
+    "fused": {
+      "last_loss": 8.26823902130127,
+      "mean_step_ms": 144.06245999998646,
+      "median_step_ms": 144.2558999999619,
+      "parameter_count": 76254353,
+      "tokens_per_second": 70524.96535184083
+    },
+    "fused_speed_ratio": 1.1537217953936203,
+    "original": {
+      "last_loss": 8.266794204711914,
+      "mean_step_ms": 166.208000000006,
+      "median_step_ms": 160.97390000004452,
+      "parameter_count": 76218513,
+      "tokens_per_second": 61128.2248748534
+    }
+  }
+}

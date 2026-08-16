@@ -1,0 +1,12 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "tables": 3,
+  "buckets": 4096,
+  "positions": 804,
+  "candidates": 50257,
+  "direct_build_decode_mean_ms": 8.303139999952691,
+  "direct_build_decode_median_ms": 8.27839999965363,
+  "output_mb": 77.06952667236328,
+  "peak_vram_mb": 332.28369140625,
+  "finite": true
+}

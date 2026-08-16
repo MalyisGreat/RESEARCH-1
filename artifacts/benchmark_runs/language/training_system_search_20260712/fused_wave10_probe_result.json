@@ -1,0 +1,22 @@
+{
+  "benchmark": {
+    "fused": {
+      "mean_step_ms": 30.328666666643283,
+      "median_step_ms": 28.623199999969984,
+      "parameter_count": 4188032
+    },
+    "fused_speed_ratio": 1.263963137186496,
+    "original": {
+      "mean_step_ms": 38.334316666653955,
+      "median_step_ms": 37.355699999920944,
+      "parameter_count": 4170112
+    }
+  },
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "equivalence": {
+    "max_bias_grad_abs_diff": 2.3283064365386963e-10,
+    "max_input_grad_abs_diff": 5.820766091346741e-11,
+    "max_output_abs_diff": 0.0,
+    "max_weight_grad_abs_diff": 0.0
+  }
+}

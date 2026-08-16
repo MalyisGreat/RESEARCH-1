@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\longconfirm_reference_654_seed13\\checkpoint.pt",
+  "final_train_loss": 5.501765251159668,
+  "final_val_loss": 6.5036235972652285,
+  "peak_vram_mb": 3054.703125,
+  "pure_train_tok_per_sec": 100114.19150667096,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\longconfirm_reference_654_seed13\\result.json",
+  "run_name": "longconfirm_reference_654_seed13",
+  "status": "completed",
+  "step": 654,
+  "tokens_seen": 6644640,
+  "train_steps": 654
+}

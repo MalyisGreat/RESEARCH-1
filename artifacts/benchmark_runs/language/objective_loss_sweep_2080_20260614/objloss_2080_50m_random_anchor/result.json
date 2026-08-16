@@ -1,0 +1,81 @@
+{
+  "benchmark": "objective_loss_sweep_2080_20260614",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\longseq_anchor16_40m_600m_20260602\\cache\\finewebedu_train600088338_val325152_seq10160_gpt2.pt",
+    "checkpoint_interval": 0,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 224,
+    "embedding_dim": 640,
+    "eval_interval": 2461,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 0,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\objective_loss_sweep_2080_20260614\\objloss_2080_50m_random_anchor",
+    "resume_checkpoint": null,
+    "run_name": "objloss_2080_50m_random_anchor",
+    "sampled_vocab_size": 32768,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 4,
+    "train_steps": 4922,
+    "val_blocks": 32,
+    "vocab_size": 50257,
+    "warmup_steps": 500,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "aux_parameter_count": 0,
+    "base_model_parameter_count": 51220529,
+    "candidate_size_mean": 32867.298455912234,
+    "final_train_loss": 5.750849723815918,
+    "final_val_loss": 5.2627810501207515,
+    "history": [
+      {
+        "learning_rate": 0.00035712035777465983,
+        "step": 2461.0,
+        "tokens_seen": 25003760.0,
+        "train_loss": 5.727419853210449,
+        "val_loss": 5.575189991541735
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 4922.0,
+        "tokens_seen": 50007520.0,
+        "train_loss": 5.750849723815918,
+        "val_loss": 5.2627810501207515
+      }
+    ],
+    "objective_parts_last": {
+      "anchor": 5.738250732421875,
+      "sampled": 5.763448715209961
+    },
+    "parameter_count": 51220529,
+    "peak_vram_mb": 4413.173828125,
+    "pure_train_tok_per_sec": 69822.77603825615,
+    "step_time_mean_ms": 145.51125830965668,
+    "step_time_median_ms": 145.66014999945764,
+    "train_tokens_seen": 50007520
+  },
+  "variant": {
+    "copy_bucket": false,
+    "hard_negatives": false,
+    "mtp": false,
+    "name": "random_anchor",
+    "prefix_inventory": false,
+    "random_anchor": true,
+    "random_tail": false,
+    "rdrop": false,
+    "rtd": false,
+    "token_order": false,
+    "unlikelihood": false
+  }
+}

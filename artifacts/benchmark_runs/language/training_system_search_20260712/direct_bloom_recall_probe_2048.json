@@ -1,0 +1,18 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "tables": 3,
+  "buckets": 2048,
+  "positions": 64,
+  "candidates": 4096,
+  "build_ms": 100.86150000006455,
+  "decode_mean_ms": 4.9404499999582185,
+  "decode_median_ms": 5.493249999744876,
+  "direct_build_decode_mean_ms": 5.317999999897438,
+  "direct_build_decode_median_ms": 4.603150000093592,
+  "sketch_memory_mb": 119.0625,
+  "precision": 0.47602996254681645,
+  "recall": 1.0,
+  "false_positive_rate": 0.010778037149174505,
+  "direct_matches_dense": true,
+  "finite": true
+}

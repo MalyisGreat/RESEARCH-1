@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\wallclock290_collapsed_rotating_stride8_seed13\\checkpoint.pt",
+  "final_train_loss": 6.89640998840332,
+  "final_val_loss": 6.809257732038422,
+  "peak_vram_mb": 2397.69091796875,
+  "pure_train_tok_per_sec": 122425.11182695653,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\wallclock290_collapsed_rotating_stride8_seed13\\result.json",
+  "run_name": "wallclock290_collapsed_rotating_stride8_seed13",
+  "status": "completed",
+  "step": 290,
+  "tokens_seen": 2946400,
+  "train_steps": 290
+}

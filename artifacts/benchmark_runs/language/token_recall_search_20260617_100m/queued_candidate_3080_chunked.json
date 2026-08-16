@@ -1,0 +1,59 @@
+{
+  "run_name": "candidate_3080_40m_100m_seed13_factor_recall_scale256_common600m_20260617_0248",
+  "jobs": [
+    {
+      "kind": "chunk",
+      "index": 0,
+      "job_id": "20260617-024118-082e43",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 1,
+      "job_id": "20260617-024120-587602",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 2,
+      "job_id": "20260617-024124-6dd984",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 3,
+      "job_id": "20260617-024127-cf924c",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 4,
+      "job_id": "20260617-024129-352a0f",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 5,
+      "job_id": "20260617-024131-b226a6",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 6,
+      "job_id": "20260617-024134-d14f82",
+      "status": "queued"
+    },
+    {
+      "kind": "chunk",
+      "index": 7,
+      "job_id": "20260617-024136-cebfd5",
+      "status": "queued"
+    },
+    {
+      "kind": "run",
+      "job_id": "20260617-024139-ba16d3",
+      "status": "queued",
+      "run_name": "candidate_3080_40m_100m_seed13_factor_recall_scale256_common600m_20260617_0248"
+    }
+  ]
+}

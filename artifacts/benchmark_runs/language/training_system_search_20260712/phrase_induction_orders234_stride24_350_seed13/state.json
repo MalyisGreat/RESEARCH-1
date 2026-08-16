@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\phrase_induction_orders234_stride24_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.308396339416504,
+  "final_val_loss": 6.705375320704904,
+  "peak_vram_mb": 1734.8447265625,
+  "pure_train_tok_per_sec": 116870.17990414031,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\phrase_induction_orders234_stride24_350_seed13\\result.json",
+  "run_name": "phrase_induction_orders234_stride24_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

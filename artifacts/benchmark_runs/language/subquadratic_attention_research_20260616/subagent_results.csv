@@ -1,0 +1,2 @@
+task_id,direction,output_dir,job_id,item_id,row_index,source_id,status,attempt_count,last_error,result_json,reported_at,completed_at
+sqattn_001,subquadratic_attention_for_lowrank_conv_memory,E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\subquadratic_attention_research_20260616\sqattn_001,228b9fc0-d96a-4229-aace-6153c83913bc,sqattn_001,0,sqattn_001,failed,1,worker finished without calling report_agent_job_result,,,2026-06-16T18:42:39+00:00

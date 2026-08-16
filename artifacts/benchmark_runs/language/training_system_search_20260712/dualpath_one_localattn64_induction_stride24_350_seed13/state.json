@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\dualpath_one_localattn64_induction_stride24_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.476620674133301,
+  "final_val_loss": 6.799531048113906,
+  "peak_vram_mb": 1692.35400390625,
+  "pure_train_tok_per_sec": 137112.43585274921,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\dualpath_one_localattn64_induction_stride24_350_seed13\\result.json",
+  "run_name": "dualpath_one_localattn64_induction_stride24_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

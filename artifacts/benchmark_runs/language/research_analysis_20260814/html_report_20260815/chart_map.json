@@ -1,0 +1,57 @@
+[
+  {
+    "section": "mature_chart_block",
+    "chart_id": "mature_scaling",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_under_1m",
+    "chart_id": "chart_under_1m",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_1m_10m",
+    "chart_id": "chart_1m_10m",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_10m_50m",
+    "chart_id": "chart_10m_50m",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_50m_300m",
+    "chart_id": "chart_50m_300m",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_300m_1b",
+    "chart_id": "chart_300m_1b",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_1b_2_5b",
+    "chart_id": "chart_1b_2_5b",
+    "table_id": null
+  },
+  {
+    "section": "block_chart_over_2_5b",
+    "chart_id": "chart_over_2_5b",
+    "table_id": null
+  },
+  {
+    "section": "endpoint_scatter_block",
+    "chart_id": "endpoint_scatter",
+    "table_id": null
+  },
+  {
+    "section": "neuron_tradeoff_block",
+    "chart_id": "neuron_tradeoff",
+    "table_id": null
+  },
+  {
+    "section": "fastlearn_scaling_block",
+    "chart_id": "fastlearn_scaling",
+    "table_id": null
+  }
+]

@@ -2,13 +2,25 @@
 
 Local language-model architecture research focused on long-context, linear-sequence alternatives to small transformer baselines.
 
-The current best family in this snapshot is **causal multi-scale low-rank conv-memory**: causal depthwise convolutions, low-rank causal memory, and a squared-activation FFN. The strongest measured run so far is the 76M-parameter low-rank conv-memory line at 2.20B tokens with validation loss `4.1517`.
+The current best family in this snapshot is **causal multi-scale low-rank conv-memory**: causal depthwise convolutions, low-rank causal memory, and a squared-activation FFN. Across the preserved direct and resumed histories, the strongest observed checkpoint is the 76M-parameter Wave10 line at 4.01B tokens with validation loss about `4.090`.
 
 This repository is an artifact trail, not a polished benchmark paper. It preserves code, logs, plots, JSON/CSV summaries, negative results, and short-screen neuron experiments so claims can be checked instead of reconstructed from memory.
 
 ## Current Picture
 
 ![Research evidence map](./figures/research_overview_20260614.png)
+
+The complete repository-wide analysis is now in [`research_analysis_20260814`](./artifacts/benchmark_runs/language/research_analysis_20260814/). It rescans every result JSON/JSONL/CSV and recognized log, preserves all extracted points, classifies incompatible regimes, and writes separate views for exhaustive loss curves, major long runs, parameter scale, throughput, the empirical frontier, synthetic fast-learning scaling, and neuron-search tradeoffs.
+
+Open the self-contained [Research Scaling Atlas HTML report](./artifacts/benchmark_runs/language/research_analysis_20260814/html_report_20260815/report.html) for combined views plus clean graphs split into seven training-token horizons. It covers 107 unique multi-checkpoint histories, 84 long-context histories, architecture-family evidence, neuron tradeoffs, synthetic fast-learning results, methodology, limitations, and the next controlled experiment.
+
+![Long-context language-model scaling](./artifacts/benchmark_runs/language/research_analysis_20260814/clean_long_context_scaling.png)
+
+The broad single-canvas view below overlays every deduplicated experiment with at least three validation checkpoints. Lines are fully opaque; color separates evaluation regimes, which should not be treated as directly comparable metrics.
+
+![All multi-checkpoint experiments on one graph](./artifacts/benchmark_runs/language/research_analysis_20260814/all_experiments_opaque_overlay.png)
+
+For the broad experiment history, open the [multipage experiment curve atlas](./artifacts/benchmark_runs/language/research_analysis_20260814/experiment_curve_atlas.pdf). It gives every unique experiment with at least three recorded validation checkpoints its own opaque, labeled panel; the [atlas index](./artifacts/benchmark_runs/language/research_analysis_20260814/experiment_curve_atlas_index.csv) maps each panel back to its source.
 
 Generated from:
 
@@ -21,19 +33,21 @@ Extraction scope:
 - `1,585` validation-loss points
 - `696` distinct extracted curves
 - `74` aggregated real-sequence neuron-search rows
-- old 50M-token `partial_untied` and Nanochat watch runs
+- old 50M-token `partial_untied` and NanoChat-inspired mini-port watch runs
 - long-sequence anchor scaling runs
 - local/house GPU wave runs
 - manual neuron-search screens
+
+The dated analysis contains `3,464` deduplicated validation-loss points across `824` curves, plus `30` synthetic fast-learning rows and `74` neuron-search summaries. The all-points table deliberately retains incompatible tokenizers, objectives, contexts, and validation sets; the colored regime labels are a comparability warning, not a claim that all losses form one scaling law.
 
 The left panel shows absolute validation loss versus training tokens. The right panel shows short neuron-search deltas versus matched baselines, where negative means the candidate beat its baseline.
 
 ## TL;DR
 
-- The best current measured model is `wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605`: `2.200B` tokens, final validation loss `4.1517`.
+- The best mature recorded family is Wave10 76M low-rank conv-memory. Its direct run reached `4.1517` at 2.20B tokens, and preserved resume segments later reached about `4.090` at 4.01B tokens.
 - Scaling the older dense anchor larger did not beat it. The 160M 5B-token anchor ended at `4.5841`; the 160M 2B-token run ended at `4.6422`.
 - The older 80M anchor line reached around `4.82` at 2B tokens; its later fresh-after-2B continuation briefly reached `4.7715` best validation loss but ended at `4.8059`.
-- The original 8M-parameter `partial_untied` result is still real: it beat the local Nanochat-style watch run at 50M tokens (`5.3370` vs `5.3958`) with lower VRAM. It is no longer the frontier of this repo.
+- The original 8M-parameter `partial_untied` result is still real inside its matched local harness: it beat the local NanoChat-inspired mini-port at 50M token exposures (`5.3370` vs `5.3958`) with lower VRAM. This was not a replication of Karpathy's official NanoChat training system.
 - The neuron search found real short-screen signals, but no candidate is scale-cleared. The best multi-seed signal is rank-competition/memory coupling; the best 2048-step hidden-drop rows are strong but still short-screen evidence.
 - Simple activation swaps were not the answer. Plain SwiGLU and SiLU-square were already tested and were not promoted.
 
@@ -54,12 +68,14 @@ The important result is not just "more tokens helped." The 76M low-rank conv-mem
 
 ## Historical Baselines
 
-The earlier README centered on 8M-parameter recurrent memory models versus a small Nanochat-style baseline. That evidence is still preserved, but it is now a historical baseline for this repo rather than the main result.
+The earlier README centered on 8M-parameter recurrent memory models versus a small NanoChat-inspired baseline. That evidence is still preserved, but it is now a historical baseline for this repo rather than the main result.
+
+> **Comparability warning:** `nanochat_watch` used a custom 4-layer, width-40 `NanochatMiniLM`, GPT-2 tokens, sequence length 127, a cached FineWeb-Edu token set, and one global AdamW learning rate. Official NanoChat derives width and heads from depth, uses its own 32,768-token tokenizer and ClimbMix document stream, sequence length 2048, BOS-aligned best-fit packing, a split Muon/AdamW optimizer with parameter-group learning rates, and a warmup/hold/warmdown schedule. The row below is a matched local architecture probe, not an official NanoChat quality or speed result. See the [`NanoChat comparability audit`](./docs/nanochat_comparability_audit.md).
 
 | Model | Tokens | Params | Final val loss | Train tok/s | Peak VRAM | Artifact |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | `partial_untied` | `50.0M` | `8.07M` | `5.3370` | `37.5k` | `2201.9 MB` | [`final.json`](./artifacts/watch_runs/partial_untied_watch_50m_20260328/final.json) |
-| `nanochat_watch` | `50.0M` | `8.13M` | `5.3958` | `39.9k` | `3931.2 MB` | [`final.json`](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json) |
+| `nanochat_watch` (mini-port) | `50.0M` | `8.13M` | `5.3958` | `39.9k` | `3931.2 MB` | [`final.json`](./artifacts/watch_runs/nanochat_watch_50m_20260328_retry2/final.json) |
 
 There are also older short-budget sweeps where `partial_untied`, `factorized_untied`, `full_untied`, and Nanochat-style variants were compared. Those are useful for history, but they should not be mixed with the long-sequence 2026 runs as if they were the same regime.
 
@@ -68,7 +84,8 @@ There are also older short-budget sweeps where `partial_untied`, `factorized_unt
 The research moved through several stages:
 
 1. **Recurrent memory and partial untie experiments**
-   - Main result: `partial_untied` beat the local Nanochat-style 50M-token watch run at similar parameter count and much lower VRAM.
+   - Main result: `partial_untied` beat the local NanoChat-inspired mini-port in the matched 50M-token harness at similar parameter count and much lower VRAM.
+   - Comparability limit: this does not establish a win over official NanoChat; the upstream recipe was not run.
    - Main limitation: this was an 8M-parameter, 50M-token regime.
 
 2. **Long-sequence anchor experiments**

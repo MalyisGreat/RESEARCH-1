@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_collapsed_factor_seed13\\checkpoint.pt",
+  "final_train_loss": 6.668596267700195,
+  "final_val_loss": 6.797415021460826,
+  "peak_vram_mb": 3014.810546875,
+  "pure_train_tok_per_sec": 104748.55961971062,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_collapsed_factor_seed13\\result.json",
+  "run_name": "real256_collapsed_factor_seed13",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 2600960,
+  "train_steps": 256
+}

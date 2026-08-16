@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_fused_factor_seed13_retry1\\checkpoint.pt",
+  "final_train_loss": 6.66864538192749,
+  "final_val_loss": 6.797406949771671,
+  "peak_vram_mb": 3013.46875,
+  "pure_train_tok_per_sec": 88168.29818153412,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_fused_factor_seed13_retry1\\result.json",
+  "run_name": "real256_fused_factor_seed13_retry1",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 2600960,
+  "train_steps": 256
+}

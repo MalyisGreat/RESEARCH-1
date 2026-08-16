@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "full_vocab_loss": 6.797395099429633,
+    "top1_accuracy": 0.13154527559055118,
+    "valid_retrieval_positions": 58495,
+    "exact_induction_opportunities": 8769,
+    "induction_opportunity_top1": 0.301744782757441
+  },
+  "candidate": {
+    "full_vocab_loss": 6.790969791562539,
+    "top1_accuracy": 0.13523622047244094,
+    "valid_retrieval_positions": 58495,
+    "exact_induction_opportunities": 8769,
+    "induction_opportunity_top1": 0.47382825863838524
+  },
+  "generation_error": "RuntimeError('generation skipped by request')"
+}

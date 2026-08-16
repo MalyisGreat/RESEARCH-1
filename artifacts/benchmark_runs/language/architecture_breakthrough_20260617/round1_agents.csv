@@ -1,0 +1,3 @@
+id,direction,brief
+r1_token_recall,"token-addressable recall and copy path","Design a non-quadratic local primitive that improves exact token identity recall/logit binding over factor_recall_gated_multiscale without large VRAM growth."
+r1_fast_state,"stateful recurrence or fast-weight memory","Design a block-local recurrent/fast-weight/memory primitive that improves long-context conditioning without seq x seq attention."

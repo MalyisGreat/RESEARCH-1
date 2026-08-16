@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\head2x_rank224_stride12_vocab4096_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.54608678817749,
+  "final_val_loss": 6.80913751416319,
+  "peak_vram_mb": 1926.7158203125,
+  "pure_train_tok_per_sec": 131566.23355722363,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\head2x_rank224_stride12_vocab4096_350_seed13\\result.json",
+  "run_name": "head2x_rank224_stride12_vocab4096_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

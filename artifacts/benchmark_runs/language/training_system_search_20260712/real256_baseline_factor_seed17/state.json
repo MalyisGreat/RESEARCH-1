@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_baseline_factor_seed17\\checkpoint.pt",
+  "final_train_loss": 6.492345333099365,
+  "final_val_loss": 6.818092964953325,
+  "peak_vram_mb": 3054.0185546875,
+  "pure_train_tok_per_sec": 93576.4614069902,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\real256_baseline_factor_seed17\\result.json",
+  "run_name": "real256_baseline_factor_seed17",
+  "status": "completed",
+  "step": 256,
+  "tokens_seen": 2600960,
+  "train_steps": 256
+}

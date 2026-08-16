@@ -1,0 +1,23 @@
+{
+  "latest_train_loss": 5.735352516174316,
+  "latest_val_loss": 5.266846526349624,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\objective_loss_sweep_2080_20260614\\objloss_2080_50m_baseline\\result.json",
+  "run_name": "objloss_2080_50m_baseline",
+  "status": "completed",
+  "step": 4922,
+  "tokens_seen": 50007520,
+  "train_steps": 4922,
+  "variant": {
+    "copy_bucket": false,
+    "hard_negatives": false,
+    "mtp": false,
+    "name": "baseline",
+    "prefix_inventory": false,
+    "random_anchor": false,
+    "random_tail": false,
+    "rdrop": false,
+    "rtd": false,
+    "token_order": false,
+    "unlikelihood": false
+  }
+}

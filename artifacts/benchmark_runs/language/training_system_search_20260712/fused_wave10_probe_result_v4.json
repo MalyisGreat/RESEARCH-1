@@ -1,0 +1,60 @@
+{
+  "benchmark": {
+    "fused": {
+      "mean_step_ms": 28.92853999996987,
+      "median_step_ms": 28.77859999989596,
+      "parameter_count": 4188032
+    },
+    "fused_speed_ratio": 1.3784138432170445,
+    "original": {
+      "mean_step_ms": 39.87550000001647,
+      "median_step_ms": 38.66280000011102,
+      "parameter_count": 4170112
+    }
+  },
+  "collapsed_equivalence": {
+    "max_input_grad_abs_diff": 1.7462298274040222e-10,
+    "max_output_abs_diff": 4.76837158203125e-07
+  },
+  "collapsed_training_benchmark": {
+    "collapsed": {
+      "last_loss": 8.268232345581055,
+      "mean_step_ms": 138.36897999999564,
+      "median_step_ms": 138.5345999999572,
+      "parameter_count": 76197009,
+      "tokens_per_second": 73426.86200332126
+    },
+    "collapsed_speed_ratio": 1.1722240056983868,
+    "original": {
+      "last_loss": 8.266794204711914,
+      "mean_step_ms": 162.19943999999487,
+      "median_step_ms": 161.0732999999982,
+      "parameter_count": 76218513,
+      "tokens_per_second": 62638.933895211485
+    }
+  },
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "equivalence": {
+    "max_bias_grad_abs_diff": 2.3283064365386963e-10,
+    "max_input_grad_abs_diff": 5.820766091346741e-11,
+    "max_output_abs_diff": 0.0,
+    "max_weight_grad_abs_diff": 0.0
+  },
+  "full_training_benchmark": {
+    "fused": {
+      "last_loss": 8.26823902130127,
+      "mean_step_ms": 151.0291199999756,
+      "median_step_ms": 148.01330000000235,
+      "parameter_count": 76254353,
+      "tokens_per_second": 67271.79500219323
+    },
+    "fused_speed_ratio": 1.0703212731426124,
+    "original": {
+      "last_loss": 8.266794204711914,
+      "mean_step_ms": 161.64967999998225,
+      "median_step_ms": 161.3244999998642,
+      "parameter_count": 76218513,
+      "tokens_per_second": 62851.96481676373
+    }
+  }
+}

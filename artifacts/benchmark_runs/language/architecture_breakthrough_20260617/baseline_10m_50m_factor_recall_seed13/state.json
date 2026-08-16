@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\architecture_breakthrough_20260617\\baseline_10m_50m_factor_recall_seed13\\checkpoint.pt",
+  "final_train_loss": 6.166834354400635,
+  "final_val_loss": 5.998482483226483,
+  "peak_vram_mb": 2565.98681640625,
+  "pure_train_tok_per_sec": 73744.34813888332,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\architecture_breakthrough_20260617\\baseline_10m_50m_factor_recall_seed13\\result.json",
+  "run_name": "baseline_10m_50m_factor_recall_seed13",
+  "status": "completed",
+  "step": 4922,
+  "tokens_seen": 50007520,
+  "train_steps": 4922
+}

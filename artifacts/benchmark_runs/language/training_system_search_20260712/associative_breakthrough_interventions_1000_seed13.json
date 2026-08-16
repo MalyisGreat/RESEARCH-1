@@ -1,0 +1,184 @@
+{
+  "learned_retrieval_state": {
+    "unigram_scale": 2.2239949703216553,
+    "phrase_scales": {
+      "2": 1.1887319087982178,
+      "3": 1.186538577079773
+    },
+    "semantic_scale": 1.192690134048462,
+    "semantic_temperature": 0.19270582497119904,
+    "unigram_gate_bias": 0.027369657531380653,
+    "phrase_gate_biases": {
+      "2": -0.9188807010650635,
+      "3": -0.91229248046875
+    },
+    "semantic_gate_bias": -0.9338591694831848
+  },
+  "interventions": {
+    "full_model": {
+      "full_vocab_loss": 6.3765530631298155,
+      "top1_accuracy": 0.16969734251968505,
+      "token_count": 81280,
+      "frequency_buckets": {
+        "unseen_or_rare_0_10": {
+          "loss": 11.089681015318796,
+          "tokens": 6522
+        },
+        "frequency_11_100": {
+          "loss": 9.167968276220849,
+          "tokens": 15749
+        },
+        "frequency_101_1000": {
+          "loss": 7.3968735135853185,
+          "tokens": 21459
+        },
+        "frequency_over_1000": {
+          "loss": 3.8040876325056177,
+          "tokens": 37550
+        }
+      },
+      "phrase_opportunities": {
+        "2": {
+          "positions": 5740,
+          "top1_accuracy": 0.6081881533101046
+        },
+        "3": {
+          "positions": 3054,
+          "top1_accuracy": 0.6077275703994761
+        }
+      }
+    },
+    "semantic_disabled": {
+      "full_vocab_loss": 6.407179871506578,
+      "top1_accuracy": 0.1657357283464567,
+      "token_count": 81280,
+      "frequency_buckets": {
+        "unseen_or_rare_0_10": {
+          "loss": 11.149155160248261,
+          "tokens": 6522
+        },
+        "frequency_11_100": {
+          "loss": 9.204176189982858,
+          "tokens": 15749
+        },
+        "frequency_101_1000": {
+          "loss": 7.426913216216371,
+          "tokens": 21459
+        },
+        "frequency_over_1000": {
+          "loss": 3.8276987803696634,
+          "tokens": 37550
+        }
+      },
+      "phrase_opportunities": {
+        "2": {
+          "positions": 5740,
+          "top1_accuracy": 0.5738675958188153
+        },
+        "3": {
+          "positions": 3054,
+          "top1_accuracy": 0.5844793713163065
+        }
+      }
+    },
+    "phrase_disabled": {
+      "full_vocab_loss": 6.455828101991669,
+      "top1_accuracy": 0.1595226377952756,
+      "token_count": 81280,
+      "frequency_buckets": {
+        "unseen_or_rare_0_10": {
+          "loss": 11.23329636364106,
+          "tokens": 6522
+        },
+        "frequency_11_100": {
+          "loss": 9.267919792433498,
+          "tokens": 15749
+        },
+        "frequency_101_1000": {
+          "loss": 7.487306630135338,
+          "tokens": 21459
+        },
+        "frequency_over_1000": {
+          "loss": 3.8571389648600043,
+          "tokens": 37550
+        }
+      },
+      "phrase_opportunities": {
+        "2": {
+          "positions": 5740,
+          "top1_accuracy": 0.4210801393728223
+        },
+        "3": {
+          "positions": 3054,
+          "top1_accuracy": 0.3880157170923379
+        }
+      }
+    },
+    "semantic_and_phrase_disabled": {
+      "full_vocab_loss": 6.492636946430356,
+      "top1_accuracy": 0.1549212598425197,
+      "token_count": 81280,
+      "frequency_buckets": {
+        "unseen_or_rare_0_10": {
+          "loss": 11.29582308289903,
+          "tokens": 6522
+        },
+        "frequency_11_100": {
+          "loss": 9.307544011389673,
+          "tokens": 15749
+        },
+        "frequency_101_1000": {
+          "loss": 7.521853967772664,
+          "tokens": 21459
+        },
+        "frequency_over_1000": {
+          "loss": 3.889592525720914,
+          "tokens": 37550
+        }
+      },
+      "phrase_opportunities": {
+        "2": {
+          "positions": 5740,
+          "top1_accuracy": 0.37630662020905925
+        },
+        "3": {
+          "positions": 3054,
+          "top1_accuracy": 0.34512115258677145
+        }
+      }
+    },
+    "all_induction_disabled": {
+      "full_vocab_loss": 6.617763908266083,
+      "top1_accuracy": 0.14375,
+      "token_count": 81280,
+      "frequency_buckets": {
+        "unseen_or_rare_0_10": {
+          "loss": 11.496003832637221,
+          "tokens": 6522
+        },
+        "frequency_11_100": {
+          "loss": 9.455432377131645,
+          "tokens": 15749
+        },
+        "frequency_101_1000": {
+          "loss": 7.6557653935448124,
+          "tokens": 21459
+        },
+        "frequency_over_1000": {
+          "loss": 3.987116934907103,
+          "tokens": 37550
+        }
+      },
+      "phrase_opportunities": {
+        "2": {
+          "positions": 5740,
+          "top1_accuracy": 0.25365853658536586
+        },
+        "3": {
+          "positions": 3054,
+          "top1_accuracy": 0.22298624754420432
+        }
+      }
+    }
+  }
+}

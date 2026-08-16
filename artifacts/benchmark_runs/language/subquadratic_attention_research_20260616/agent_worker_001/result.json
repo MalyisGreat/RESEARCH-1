@@ -1,0 +1,58 @@
+{
+  "cost_estimate_default_seq10160": {
+    "max_state_elements_training_chunked": 2097152,
+    "projection_multiply_adds_approx": 3571768320,
+    "state_elements_streaming_inference": 2080,
+    "state_update_multiply_adds_approx": 20807680
+  },
+  "device": "cpu",
+  "parameter_counts": {
+    "default_dim1831_memory64_full_block_with_linear_attention": 17430158,
+    "default_dim1831_rank32_value64_primitive": 357046,
+    "small_full_block": 2384,
+    "small_primitive": 460
+  },
+  "status": "passed",
+  "tests": {
+    "block_causal_prefix_max_abs_diff": 0.0,
+    "block_forward_backward_finite_gradients": {
+      "input_grad_norm": 0.1158383439878976,
+      "loss": 1.1209837279894623,
+      "parameter_grad_norms_sample": {
+        "conv_norm.bias": 0.02939147209696597,
+        "conv_norm.weight": 0.036518537318568724,
+        "depthwise_layers.0.bias": 0.04360151220212605,
+        "depthwise_layers.0.weight": 0.06524816387444887,
+        "depthwise_layers.1.bias": 0.04360151220212605,
+        "depthwise_layers.1.weight": 0.07785785008246286,
+        "memory_norm.weight": 0.01363361387189281,
+        "mix.weight": 0.13323196197441994
+      }
+    },
+    "primitive_causal_prefix_max_abs_diff": 0.0,
+    "primitive_directional_finite_difference": {
+      "analytical_directional_grad": 0.0005948430437086221,
+      "finite_difference_directional_grad": 0.0005948430636948387,
+      "relative_error": 3.3599142184767453e-08
+    },
+    "primitive_forward_backward_finite_gradients": {
+      "input_grad_norm": 0.1159094521997549,
+      "loss": 1.027026216444519,
+      "parameter_grad_norms_sample": {
+        "gate.bias": 0.003548204223459209,
+        "gate.weight": 0.015854879798828013,
+        "key.weight": 0.0025781619083690053,
+        "norm.bias": 0.003492721736200441,
+        "norm.weight": 0.004224227851636671,
+        "out.weight": 0.019276243850523827,
+        "query.weight": 0.0015636140557591602,
+        "value.weight": 0.028463606488953557
+      }
+    },
+    "syntax_import_smoke": {
+      "module_imported": true,
+      "py_compile": true
+    }
+  },
+  "torch_version": "2.6.0+cu124"
+}

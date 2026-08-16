@@ -1,0 +1,3 @@
+name,enabled,orders,slots,tables,warm_start_checkpoint,parameter_count,train_tokens_seen,final_train_loss,final_val_loss,pure_train_tok_per_sec,peak_vram_mb,step_time_mean_ms,candidate_size_mean
+smoke_baseline,False,,0,0,,4935089,255,8.527618408203125,10.825434789470599,1710.9673003568344,,149.03850000337115,491.0
+smoke_lz_o0_1_2_4,True,"0,1,2,4",2048,2,,4935225,255,8.52965259552002,10.823191983092064,372.5861894138064,,684.4053999993776,491.0

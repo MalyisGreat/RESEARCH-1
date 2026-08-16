@@ -1,0 +1,12 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "learning_rate": 0.0006,
+  "min_learning_rate": 1e-05,
+  "parameter_count": 15250775,
+  "run_name": "seq255_512_seed17_token_recall_gated_recent",
+  "status": "running",
+  "step": 0,
+  "tokens_seen": 0,
+  "train_steps": 512,
+  "warmup_steps": 128
+}
