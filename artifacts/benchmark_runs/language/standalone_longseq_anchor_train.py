@@ -1096,6 +1096,7 @@ def parse_args() -> TrainConfig:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--run-name", type=str, required=True)
     parser.add_argument("--train-steps", type=int, default=196_851)
+    parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--eval-interval", type=int, default=9_843)
     parser.add_argument("--checkpoint-interval", type=int, default=9_843)
     parser.add_argument("--milestone-checkpoint-interval", type=int, default=59_058)
@@ -1140,6 +1141,7 @@ def parse_args() -> TrainConfig:
         output_dir=args.output_dir,
         run_name=args.run_name,
         train_steps=args.train_steps,
+        batch_size=args.batch_size,
         eval_interval=args.eval_interval,
         checkpoint_interval=args.checkpoint_interval,
         milestone_checkpoint_interval=args.milestone_checkpoint_interval,
