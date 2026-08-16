@@ -1,0 +1,36 @@
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START run=control_2080_40m_100m_seed13_common600m_20260617_0222 device=NVIDIA GeForce RTX 2080 SUPER params=40,437,009 seq=10160 steps=9843
+TRAIN step=1/9843 tokens=10160 loss=10.2705 lr=1.17187e-06 pure_tok_s=17494
+TRAIN step=500/9843 tokens=5080000 loss=7.1192 lr=0.000585937 pure_tok_s=95299
+EVAL step=984/9843 tokens=9997440 train=6.1646 val=6.2520 eval_s=2.7
+TRAIN step=1000/9843 tokens=10160000 loss=6.3630 lr=0.000596027 pure_tok_s=87977
+TRAIN step=1500/9843 tokens=15240000 loss=5.9186 lr=0.000583829 pure_tok_s=29136
+EVAL step=1968/9843 tokens=19994880 train=5.5583 val=5.8329 eval_s=6.3
+TRAIN step=2000/9843 tokens=20320000 loss=5.8183 lr=0.000563747 pure_tok_s=27983
+TRAIN step=2500/9843 tokens=25400000 loss=5.4727 lr=0.000536351 pure_tok_s=27815
+EVAL step=2952/9843 tokens=29992320 train=5.4512 val=5.5907 eval_s=7.9
+TRAIN step=3000/9843 tokens=30480000 loss=5.3795 lr=0.000502413 pure_tok_s=26619
+TRAIN step=3500/9843 tokens=35560000 loss=5.4318 lr=0.000462894 pure_tok_s=27395
+EVAL step=3936/9843 tokens=39989760 train=5.1495 val=5.4529 eval_s=3.5
+TRAIN step=4000/9843 tokens=40640000 loss=5.3133 lr=0.000418912 pure_tok_s=28024
+TRAIN step=4500/9843 tokens=45720000 loss=5.2608 lr=0.000371708 pure_tok_s=28738
+EVAL step=4920/9843 tokens=49987200 train=5.1520 val=5.3229 eval_s=3.7
+TRAIN step=5000/9843 tokens=50800000 loss=5.2120 lr=0.000322619 pure_tok_s=29378
+TRAIN step=5500/9843 tokens=55880000 loss=5.0495 lr=0.000273032 pure_tok_s=29758
+EVAL step=5904/9843 tokens=59984640 train=5.4706 val=5.2379 eval_s=3.8
+TRAIN step=6000/9843 tokens=60960000 loss=5.3191 lr=0.000224348 pure_tok_s=30271
+TRAIN step=6500/9843 tokens=66040000 loss=5.0526 lr=0.000177945 pure_tok_s=30755
+EVAL step=6888/9843 tokens=69982080 train=4.9299 val=5.1645 eval_s=3.8
+TRAIN step=7000/9843 tokens=71120000 loss=4.9995 lr=0.000135133 pure_tok_s=31152
+TRAIN step=7500/9843 tokens=76200000 loss=4.8259 lr=9.71246e-05 pure_tok_s=31506
+EVAL step=7872/9843 tokens=79979520 train=5.0384 val=5.1102 eval_s=1.5
+TRAIN step=8000/9843 tokens=81280000 loss=4.9853 lr=6.49929e-05 pure_tok_s=32177
+TRAIN step=8500/9843 tokens=86360000 loss=5.1142 lr=3.96466e-05 pure_tok_s=33117
+EVAL step=8856/9843 tokens=89976960 train=5.0727 val=5.0853 eval_s=1.5
+TRAIN step=9000/9843 tokens=91440000 loss=5.2661 lr=2.18025e-05 pure_tok_s=33422
+TRAIN step=9500/9843 tokens=96520000 loss=5.2539 lr=1.19649e-05 pure_tok_s=33310
+EVAL step=9840/9843 tokens=99974400 train=5.1392 val=5.0739 eval_s=5.8
+EVAL step=9843/9843 tokens=100004880 train=5.2253 val=5.0740 eval_s=5.2
+MILESTONE E:\CODEXRESEARCH\RESEARCH-1\artifacts\benchmark_runs\language\token_recall_search_20260617_100m\control_2080_40m_100m_seed13_common600m_20260617_0222\checkpoint.step9843_tokens100004880.pt
+RESULT {"candidate_size_mean": 16833.0713197196, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\token_recall_search_20260617_100m\\control_2080_40m_100m_seed13_common600m_20260617_0222\\checkpoint.pt", "final_train_loss": 5.2252912521362305, "final_val_loss": 5.074035842141767, "history": [{"learning_rate": 0.000596282891612816, "step": 984.0, "tokens_seen": 9997440.0, "train_loss": 6.164612770080566, "val_loss": 6.252015615870634}, {"learning_rate": 0.0005652588924554657, "step": 1968.0, "tokens_seen": 19994880.0, "train_loss": 5.558257102966309, "val_loss": 5.8329067899486216}, {"learning_rate": 0.0005059298873395582, "step": 2952.0, "tokens_seen": 29992320.0, "train_loss": 5.451248645782471, "val_loss": 5.590741672501789}, {"learning_rate": 0.0004247483276202704, "step": 3936.0, "tokens_seen": 39989760.0, "train_loss": 5.14946174621582, "val_loss": 5.452891880367685}, {"learning_rate": 0.0003305432854184426, "step": 4920.0, "tokens_seen": 49987200.0, "train_loss": 5.1519670486450195, "val_loss": 5.3228794431123205}, {"learning_rate": 0.00023356022922005625, "step": 5904.0, "tokens_seen": 59984640.0, "train_loss": 5.470613479614258, "val_loss": 5.2378862822619014}, {"learning_rate": 0.0001443467562951799, "step": 6888.0, "tokens_seen": 69982080.0, "train_loss": 4.929886817932129, "val_loss": 5.164456651482995}, {"learning_rate": 7.260546646239364e-05, "step": 7872.0, "tokens_seen": 79979520.0, "train_loss": 5.038432598114014, "val_loss": 5.110172003061753}, {"learning_rate": 2.6138735337120438e-05, "step": 8856.0, "tokens_seen": 89976960.0, "train_loss": 5.07274866104126, "val_loss": 5.085340492251351}, {"learning_rate": 1.000015047968014e-05, "step": 9840.0, "tokens_seen": 99974400.0, "train_loss": 5.139195442199707, "val_loss": 5.073942208642096}, {"learning_rate": 1e-05, "step": 9843.0, "tokens_seen": 100004880.0, "train_loss": 5.2252912521362305, "val_loss": 5.074035842141767}], "parameter_count": 40437009, "peak_vram_mb": 3443.89013671875, "pure_train_tok_per_sec": 32787.050771578746, "step_time_mean_ms": 309.878435568445, "step_time_median_ms": 242.82909999601543, "train_tokens_seen": 100004880}

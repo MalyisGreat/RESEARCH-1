@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\h100_wave10_350m_fullvocab_20260616\\runs\\local_cpu_smoke\\checkpoint.pt",
+  "final_train_loss": 7.91357421875,
+  "final_val_loss_full_vocab": 10.8427734375,
+  "peak_allocated_mb": 107.12939453125,
+  "peak_reserved_mb": 128.0,
+  "pure_train_tok_per_sec": 68.95858422847924,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\h100_wave10_350m_fullvocab_20260616\\runs\\local_cpu_smoke\\result.json",
+  "run_name": "local_cpu_smoke",
+  "status": "completed",
+  "step": 2,
+  "tokens_seen": 64,
+  "train_steps": 2,
+  "wall_tok_per_sec": 46.23669764793577
+}

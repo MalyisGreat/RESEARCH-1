@@ -20,3 +20,12 @@ __pycache__/
 *.parquet
 artifacts/**/cache/
 artifacts/runtime_cache/
+
+# Local report verification and service artifacts.
+*.verification-failure.png
+*.tmp-*.verification-failure.png
+artifacts/benchmark_runs/language/file_server_*.out.log
+artifacts/benchmark_runs/language/checkpoint_transfer_*/upload_token.txt
+artifacts/benchmark_runs/language/checkpoint_transfer_*/upload_server.*.log
+artifacts/benchmark_runs/language/h100_wave10_*/runpod_setup/
+tmp/

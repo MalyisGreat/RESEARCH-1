@@ -1,0 +1,78 @@
+{
+  "reference": {
+    "full_vocab_loss": 6.811915113794522,
+    "top1_accuracy": 0.13838582677165354,
+    "valid_retrieval_positions": 14817,
+    "exact_induction_opportunities": 1965,
+    "induction_opportunity_top1": 0.3669211195928753
+  },
+  "candidate": {
+    "full_vocab_loss": 6.846831578532542,
+    "top1_accuracy": 0.1372047244094488,
+    "valid_retrieval_positions": 14817,
+    "exact_induction_opportunities": 1965,
+    "induction_opportunity_top1": 0.5119592875318066
+  },
+  "generation": {
+    "reference": [
+      {
+        "prompt": "The most important thing",
+        "text": "The most important thing and most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most most",
+        "distinct_1": 0.03125,
+        "distinct_2": 0.031746031746031744,
+        "immediate_repeat_rate": 0.9841269841269841
+      },
+      {
+        "prompt": "In the year 2050",
+        "text": "In the year 2050 the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      },
+      {
+        "prompt": "Once upon a time",
+        "text": "Once upon a time a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      },
+      {
+        "prompt": "The computer",
+        "text": "The computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      }
+    ],
+    "candidate": [
+      {
+        "prompt": "The most important thing",
+        "text": "The most important thing or important or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or or",
+        "distinct_1": 0.03125,
+        "distinct_2": 0.047619047619047616,
+        "immediate_repeat_rate": 0.9682539682539683
+      },
+      {
+        "prompt": "In the year 2050",
+        "text": "In the year 2050 the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      },
+      {
+        "prompt": "Once upon a time",
+        "text": "Once upon a time a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      },
+      {
+        "prompt": "The computer",
+        "text": "The computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer computer",
+        "distinct_1": 0.015625,
+        "distinct_2": 0.015873015873015872,
+        "immediate_repeat_rate": 1.0
+      }
+    ]
+  }
+}

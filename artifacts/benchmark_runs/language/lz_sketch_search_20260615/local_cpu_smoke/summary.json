@@ -1,0 +1,65 @@
+[
+  {
+    "candidate_size_mean": 491.0,
+    "elapsed_s": 2.4830817000001844,
+    "enabled": false,
+    "final_train_loss": 8.527618408203125,
+    "final_val_loss": 10.825434789470599,
+    "history": [
+      {
+        "learning_rate": 0.0006,
+        "step": 1.0,
+        "tokens_seen": 255.0,
+        "train_loss": 8.527618408203125,
+        "val_loss": 10.825434789470599
+      }
+    ],
+    "init_logit": null,
+    "name": "smoke_baseline",
+    "orders": [],
+    "parameter_count": 4935089,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 1710.9673003568344,
+    "slots": 0,
+    "status": "completed",
+    "step_time_mean_ms": 149.03850000337115,
+    "step_time_median_ms": 149.03850000337115,
+    "tables": 0,
+    "train_tokens_seen": 255,
+    "warm_start_checkpoint": ""
+  },
+  {
+    "candidate_size_mean": 491.0,
+    "elapsed_s": 2.8433250000016415,
+    "enabled": true,
+    "final_train_loss": 8.52965259552002,
+    "final_val_loss": 10.823191983092064,
+    "history": [
+      {
+        "learning_rate": 0.0006,
+        "step": 1.0,
+        "tokens_seen": 255.0,
+        "train_loss": 8.52965259552002,
+        "val_loss": 10.823191983092064
+      }
+    ],
+    "init_logit": -2.0,
+    "name": "smoke_lz_o0_1_2_4",
+    "orders": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "parameter_count": 4935225,
+    "peak_vram_mb": null,
+    "pure_train_tok_per_sec": 372.5861894138064,
+    "slots": 2048,
+    "status": "completed",
+    "step_time_mean_ms": 684.4053999993776,
+    "step_time_median_ms": 684.4053999993776,
+    "tables": 2,
+    "train_tokens_seen": 255,
+    "warm_start_checkpoint": ""
+  }
+]

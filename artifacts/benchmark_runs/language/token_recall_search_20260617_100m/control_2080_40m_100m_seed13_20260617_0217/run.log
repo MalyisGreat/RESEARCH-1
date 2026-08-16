@@ -1,0 +1,3 @@
+top_token_hist rows=787/9843
+START run=control_2080_40m_100m_seed13_20260617_0217 device=NVIDIA GeForce RTX 2080 SUPER params=40,437,009 seq=10160 steps=9843
+TRAIN step=1/9843 tokens=10160 loss=10.2704 lr=1.17187e-06 pure_tok_s=8338

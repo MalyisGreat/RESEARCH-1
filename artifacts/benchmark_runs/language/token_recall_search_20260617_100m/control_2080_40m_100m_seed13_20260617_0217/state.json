@@ -1,0 +1,14 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\token_recall_search_20260617_100m\\control_2080_40m_100m_seed13_20260617_0217\\checkpoint.pt",
+  "latest_learning_rate": 0.000234375,
+  "latest_train_loss": 7.237923622131348,
+  "latest_val_loss": NaN,
+  "peak_vram_mb": 3428.56005859375,
+  "pure_train_tok_per_sec": 27136.857886411417,
+  "run_name": "control_2080_40m_100m_seed13_20260617_0217",
+  "status": "running",
+  "step": 200,
+  "step_time_ms": 149.87980000296375,
+  "tokens_seen": 2032000,
+  "train_steps": 9843
+}

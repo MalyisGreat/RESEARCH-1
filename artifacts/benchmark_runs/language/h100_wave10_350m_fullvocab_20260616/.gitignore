@@ -1,0 +1,4 @@
+runs/**/checkpoint*.pt
+runs/**/*.tmp
+runs/**/torchinductor_cache/
+runs/tiny_cache.pt

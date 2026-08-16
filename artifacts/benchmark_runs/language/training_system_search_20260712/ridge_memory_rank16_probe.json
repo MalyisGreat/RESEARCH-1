@@ -1,0 +1,20 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "benchmark": {
+    "collapsed_wave10": {
+      "parameters": 1397248,
+      "mean_step_ms": 16.324720000193338,
+      "median_step_ms": 15.691850000166596,
+      "all_finite": true,
+      "peak_vram_mb": 424.556640625
+    },
+    "ridge_memory": {
+      "parameters": 1356802,
+      "mean_step_ms": 26.33281000016723,
+      "median_step_ms": 24.42860000019209,
+      "all_finite": true,
+      "peak_vram_mb": 483.607421875
+    },
+    "speedup": 0.6199383962474824
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\sparse_exact512_identity_rank192_stride12_vocab4096_350_seed13\\checkpoint.pt",
+  "history": [
+    {
+      "learning_rate": 0.00046875,
+      "step": 50.0,
+      "tokens_seen": 508000.0,
+      "train_loss": 8.454023361206055,
+      "val_loss": 9.086715427346117
+    },
+    {
+      "learning_rate": 0.000577233417796815,
+      "step": 100.0,
+      "tokens_seen": 1016000.0,
+      "train_loss": 7.151362419128418,
+      "val_loss": 7.423501458599811
+    },
+    {
+      "learning_rate": 0.00047787191493845187,
+      "step": 150.0,
+      "tokens_seen": 1524000.0,
+      "train_loss": 6.953940391540527,
+      "val_loss": 7.103086705095186
+    },
+    {
+      "learning_rate": 0.0003276608323320608,
+      "step": 200.0,
+      "tokens_seen": 2032000.0,
+      "train_loss": 6.676163673400879,
+      "val_loss": 6.940917938337551
+    },
+    {
+      "learning_rate": 0.00017078415687193135,
+      "step": 250.0,
+      "tokens_seen": 2540000.0,
+      "train_loss": 6.566872596740723,
+      "val_loss": 6.879911996154335
+    }
+  ],
+  "latest_learning_rate": 0.00017078415687193135,
+  "latest_train_loss": 6.566872596740723,
+  "latest_val_loss": 6.879911996154335,
+  "peak_vram_mb": 1792.47900390625,
+  "pure_train_tok_per_sec": 115529.16521719225,
+  "run_name": "sparse_exact512_identity_rank192_stride12_vocab4096_350_seed13",
+  "status": "running",
+  "step": 250,
+  "tokens_seen": 2540000,
+  "train_steps": 350
+}

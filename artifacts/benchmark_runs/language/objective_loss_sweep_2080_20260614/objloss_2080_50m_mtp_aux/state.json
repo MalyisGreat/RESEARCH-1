@@ -1,0 +1,20 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "parameter_count": 51371729,
+  "run_name": "objloss_2080_50m_mtp_aux",
+  "status": "running",
+  "train_steps": 4922,
+  "variant": {
+    "copy_bucket": false,
+    "hard_negatives": false,
+    "mtp": true,
+    "name": "mtp_aux",
+    "prefix_inventory": false,
+    "random_anchor": true,
+    "random_tail": false,
+    "rdrop": false,
+    "rtd": false,
+    "token_order": false,
+    "unlikelihood": false
+  }
+}

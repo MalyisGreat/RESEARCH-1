@@ -1,0 +1,59 @@
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START_OBJECTIVE run=objloss_2080_50m_baseline device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 steps=4922 variant=baseline
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=1/4922 tokens=10160 loss=10.6088 lr=1.2e-06 pure_tok_s=8514
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=500/4922 tokens=5080000 loss=7.0876 lr=0.0006 pure_tok_s=69483
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=1000/4922 tokens=10160000 loss=6.3973 lr=0.000581583 pure_tok_s=69858
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=1500/4922 tokens=15240000 loss=5.8789 lr=0.000528631 pure_tok_s=69908
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=2000/4922 tokens=20320000 loss=5.7598 lr=0.000447756 pure_tok_s=69850
+EVAL_OBJECTIVE run=objloss_2080_50m_baseline step=2461/4922 tokens=25003760 train=5.6754 val=5.5763 eval_s=1.9
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=2500/4922 tokens=25400000 loss=5.4148 lr=0.000349056 pure_tok_s=69901
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=3000/4922 tokens=30480000 loss=5.3031 lr=0.000244856 pure_tok_s=69901
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=3500/4922 tokens=35560000 loss=5.3497 lr=0.000148165 pure_tok_s=69889
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=4000/4922 tokens=40640000 loss=5.2390 lr=7.10565e-05 pure_tok_s=69893
+TRAIN_OBJECTIVE run=objloss_2080_50m_baseline step=4500/4922 tokens=45720000 loss=5.2053 lr=2.3159e-05 pure_tok_s=69904
+EVAL_OBJECTIVE run=objloss_2080_50m_baseline step=4922/4922 tokens=50007520 train=5.7354 val=5.2668 eval_s=1.8
+RESULT_OBJECTIVE {"aux_parameter_count": 0, "base_model_parameter_count": 51220529, "candidate_size_mean": 32867.298455912234, "final_train_loss": 5.735352516174316, "final_val_loss": 5.266846526349624, "history": [{"learning_rate": 0.00035712035777465983, "step": 2461.0, "tokens_seen": 25003760.0, "train_loss": 5.675419807434082, "val_loss": 5.576345798467088}, {"learning_rate": 1e-05, "step": 4922.0, "tokens_seen": 50007520.0, "train_loss": 5.735352516174316, "val_loss": 5.266846526349624}], "objective_parts_last": {"anchor": 5.70603084564209, "sampled": 5.764674186706543}, "parameter_count": 51220529, "peak_vram_mb": 4412.48046875, "pure_train_tok_per_sec": 69887.3155765879, "step_time_mean_ms": 145.376881572535, "step_time_median_ms": 145.16159999948286, "train_tokens_seen": 50007520}
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START_OBJECTIVE run=objloss_2080_50m_random_anchor device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 steps=4922 variant=random_anchor
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=1/4922 tokens=10160 loss=10.6091 lr=1.2e-06 pure_tok_s=46737
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=500/4922 tokens=5080000 loss=7.1020 lr=0.0006 pure_tok_s=70265
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=1000/4922 tokens=10160000 loss=6.3911 lr=0.000581583 pure_tok_s=69876
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=1500/4922 tokens=15240000 loss=5.8576 lr=0.000528631 pure_tok_s=69911
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=2000/4922 tokens=20320000 loss=5.7409 lr=0.000447756 pure_tok_s=69867
+EVAL_OBJECTIVE run=objloss_2080_50m_random_anchor step=2461/4922 tokens=25003760 train=5.7274 val=5.5752 eval_s=1.8
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=2500/4922 tokens=25400000 loss=5.3711 lr=0.000349056 pure_tok_s=69897
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=3000/4922 tokens=30480000 loss=5.2352 lr=0.000244856 pure_tok_s=69773
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=3500/4922 tokens=35560000 loss=5.3942 lr=0.000148165 pure_tok_s=69808
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=4000/4922 tokens=40640000 loss=5.2005 lr=7.10565e-05 pure_tok_s=69855
+TRAIN_OBJECTIVE run=objloss_2080_50m_random_anchor step=4500/4922 tokens=45720000 loss=5.1483 lr=2.3159e-05 pure_tok_s=69838
+EVAL_OBJECTIVE run=objloss_2080_50m_random_anchor step=4922/4922 tokens=50007520 train=5.7508 val=5.2628 eval_s=1.9
+RESULT_OBJECTIVE {"aux_parameter_count": 0, "base_model_parameter_count": 51220529, "candidate_size_mean": 32867.298455912234, "final_train_loss": 5.750849723815918, "final_val_loss": 5.2627810501207515, "history": [{"learning_rate": 0.00035712035777465983, "step": 2461.0, "tokens_seen": 25003760.0, "train_loss": 5.727419853210449, "val_loss": 5.575189991541735}, {"learning_rate": 1e-05, "step": 4922.0, "tokens_seen": 50007520.0, "train_loss": 5.750849723815918, "val_loss": 5.2627810501207515}], "objective_parts_last": {"anchor": 5.738250732421875, "sampled": 5.763448715209961}, "parameter_count": 51220529, "peak_vram_mb": 4413.173828125, "pure_train_tok_per_sec": 69822.77603825615, "step_time_mean_ms": 145.51125830965668, "step_time_median_ms": 145.66014999945764, "train_tokens_seen": 50007520}
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor device=NVIDIA GeForce RTX 2080 SUPER params=51,220,529 steps=4922 variant=hardneg_random_anchor
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=1/4922 tokens=10160 loss=10.6261 lr=1.2e-06 pure_tok_s=36549
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=500/4922 tokens=5080000 loss=7.3617 lr=0.0006 pure_tok_s=64466
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=1000/4922 tokens=10160000 loss=6.5631 lr=0.000581583 pure_tok_s=64082
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=1500/4922 tokens=15240000 loss=5.9816 lr=0.000528631 pure_tok_s=63951
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=2000/4922 tokens=20320000 loss=5.9126 lr=0.000447756 pure_tok_s=64655
+EVAL_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=2461/4922 tokens=25003760 train=5.8880 val=5.8070 eval_s=1.6
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=2500/4922 tokens=25400000 loss=5.5016 lr=0.000349056 pure_tok_s=65761
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=3000/4922 tokens=30480000 loss=5.3647 lr=0.000244856 pure_tok_s=65250
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=3500/4922 tokens=35560000 loss=5.5348 lr=0.000148165 pure_tok_s=65044
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=4000/4922 tokens=40640000 loss=5.3240 lr=7.10565e-05 pure_tok_s=64854
+TRAIN_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=4500/4922 tokens=45720000 loss=5.2680 lr=2.3159e-05 pure_tok_s=64774
+EVAL_OBJECTIVE run=objloss_2080_50m_hardneg_random_anchor step=4922/4922 tokens=50007520 train=5.8692 val=5.4957 eval_s=2.1
+RESULT_OBJECTIVE {"aux_parameter_count": 0, "base_model_parameter_count": 51220529, "candidate_size_mean": 33275.614181227145, "final_train_loss": 5.869185447692871, "final_val_loss": 5.495685894423582, "history": [{"learning_rate": 0.00035712035777465983, "step": 2461.0, "tokens_seen": 25003760.0, "train_loss": 5.88796329498291, "val_loss": 5.806986938123628}, {"learning_rate": 1e-05, "step": 4922.0, "tokens_seen": 50007520.0, "train_loss": 5.869185447692871, "val_loss": 5.495685894423582}], "objective_parts_last": {"anchor": 5.966775417327881, "sampled": 5.771595478057861}, "parameter_count": 51220529, "peak_vram_mb": 4461.74755859375, "pure_train_tok_per_sec": 64196.089813108025, "step_time_mean_ms": 158.26509106050656, "step_time_median_ms": 157.9875000006723, "train_tokens_seen": 50007520}
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+top_token_hist rows=787/59058
+top_token_hist rows=40137/59058
+START_OBJECTIVE run=objloss_2080_50m_mtp_aux device=NVIDIA GeForce RTX 2080 SUPER params=51,371,729 steps=4922 variant=mtp_aux

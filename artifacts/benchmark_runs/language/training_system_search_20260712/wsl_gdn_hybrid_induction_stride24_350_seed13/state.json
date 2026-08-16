@@ -1,0 +1,14 @@
+{
+  "checkpoint_path": "/mnt/e/CODEXRESEARCH/RESEARCH-1/artifacts/benchmark_runs/language/training_system_search_20260712/wsl_gdn_hybrid_induction_stride24_350_seed13/checkpoint.pt",
+  "latest_learning_rate": 0.000577233417796815,
+  "latest_train_loss": 6.958564758300781,
+  "latest_val_loss": NaN,
+  "peak_vram_mb": 1675.072265625,
+  "pure_train_tok_per_sec": 2410.0263065353333,
+  "run_name": "wsl_gdn_hybrid_induction_stride24_350_seed13",
+  "status": "running",
+  "step": 100,
+  "step_time_ms": 1758.8180130001092,
+  "tokens_seen": 1016000,
+  "train_steps": 350
+}

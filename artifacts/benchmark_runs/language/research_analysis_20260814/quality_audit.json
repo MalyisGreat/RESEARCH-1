@@ -1,0 +1,27 @@
+{
+  "analysis_date": "2026-08-14",
+  "json_files_seen": 1723,
+  "jsonl_files_seen": 3,
+  "csv_files_seen": 33,
+  "json_parse_errors": 0,
+  "raw_points": 3471,
+  "deduped_points": 3467,
+  "unique_curves": 976,
+  "fastlearn_rows": 30,
+  "neuron_rows": 74,
+  "inventory_files": 2845,
+  "inventory_bytes": 255499933306,
+  "inventory_heavy_bytes": 255470453321,
+  "regime_counts": {
+    "long_context_lm": 424,
+    "short_lm": 123,
+    "neuron_search": 423,
+    "synthetic_fastlearn": 0,
+    "other": 6
+  },
+  "notes": [
+    "Curves are extracted from result JSON, JSONL metrics, CSV curves, and recognized log evaluations.",
+    "Losses from different tokenizers, objectives, contexts, and validation sets are retained but classified; they are not treated as one causal scaling law.",
+    "Large caches and checkpoints are intentionally not loaded; only metadata/result files are read."
+  ]
+}

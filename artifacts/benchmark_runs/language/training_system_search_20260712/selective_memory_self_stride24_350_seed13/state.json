@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\selective_memory_self_stride24_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.476557731628418,
+  "final_val_loss": 6.790956103613996,
+  "peak_vram_mb": 1649.65673828125,
+  "pure_train_tok_per_sec": 119567.15439287701,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\selective_memory_self_stride24_350_seed13\\result.json",
+  "run_name": "selective_memory_self_stride24_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

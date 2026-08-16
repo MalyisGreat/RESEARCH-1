@@ -1,0 +1,18 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "benchmark": {
+    "collapsed_wave10": {
+      "parameters": 1397248,
+      "mean_step_ms": 15.840559999833204,
+      "median_step_ms": 15.671199999815144,
+      "all_finite": true
+    },
+    "multigrid": {
+      "parameters": 1391364,
+      "mean_step_ms": 15.117019999888726,
+      "median_step_ms": 14.874900000449998,
+      "all_finite": true
+    },
+    "speedup": 1.0478626078387012
+  }
+}

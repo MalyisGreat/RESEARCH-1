@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\sparse_exact_unique128_identity_rank192_stride12_vocab4096_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.432676315307617,
+  "final_val_loss": 6.67036838831864,
+  "peak_vram_mb": 1869.232421875,
+  "pure_train_tok_per_sec": 124456.38136845957,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\sparse_exact_unique128_identity_rank192_stride12_vocab4096_350_seed13\\result.json",
+  "run_name": "sparse_exact_unique128_identity_rank192_stride12_vocab4096_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

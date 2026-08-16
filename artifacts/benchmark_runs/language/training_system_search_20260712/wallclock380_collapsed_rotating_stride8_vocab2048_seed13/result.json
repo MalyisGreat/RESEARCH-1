@@ -1,0 +1,58 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "relu_square",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt",
+    "checkpoint_interval": 380,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 192,
+    "embedding_dim": 512,
+    "eval_interval": 380,
+    "full_eval_token_chunk_size": 1024,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 59058,
+    "min_learning_rate": 6e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\wallclock380_collapsed_rotating_stride8_vocab2048_seed13",
+    "recall_initial_scale": 0.025,
+    "recall_mode": "factor_recall_gated_multiscale",
+    "resume_checkpoint": null,
+    "run_name": "wallclock380_collapsed_rotating_stride8_vocab2048_seed13",
+    "sampled_vocab_size": 2048,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 1024,
+    "token_stride": 8,
+    "train_steps": 380,
+    "val_blocks": 8,
+    "vocab_size": 50257,
+    "warmup_steps": 2000,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 3847.05,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\wallclock380_collapsed_rotating_stride8_vocab2048_seed13\\checkpoint.pt",
+    "final_train_loss": 7.12383508682251,
+    "final_val_loss": 7.355495881189512,
+    "history": [
+      {
+        "learning_rate": 0.00011399999999999999,
+        "step": 380.0,
+        "tokens_seen": 3860800.0,
+        "train_loss": 7.12383508682251,
+        "val_loss": 7.355495881189512
+      }
+    ],
+    "parameter_count": 39743513,
+    "peak_vram_mb": 1911.890625,
+    "pure_train_tok_per_sec": 93998.21769562126,
+    "step_time_mean_ms": 108.08715578947924,
+    "step_time_median_ms": 105.89920000006714,
+    "train_tokens_seen": 3860800
+  }
+}

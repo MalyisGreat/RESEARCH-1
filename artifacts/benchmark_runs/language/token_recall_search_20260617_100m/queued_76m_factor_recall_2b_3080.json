@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "job_id": "20260617-031531-c1d31e",
+  "job_status": "running",
+  "assignment_status": "running",
+  "worker": "mwstroud-mwstr-6aea1cf3",
+  "run_name": "factor_recall_3080_76m_2b_seed13_common3b_20260617_0310",
+  "remote_output_dir": "D:\\CodexLLM\\token_recall_76m_2b_20260617\\factor_recall_3080_76m_2b_seed13_common3b_20260617_0310",
+  "tokens_target": 2000006160,
+  "train_steps": 196851,
+  "param_config": {
+    "embedding_dim": 896,
+    "conv_rank": 320,
+    "memory_rank": 64,
+    "conv_layers": 2,
+    "expected_params": 76219801
+  }
+}

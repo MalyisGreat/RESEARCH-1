@@ -1,0 +1,16 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "dense": {
+    "parameters": 1397248,
+    "mean_step_ms": 18.369089999850985,
+    "median_step_ms": 16.604949999873497,
+    "all_finite": true
+  },
+  "spectral": {
+    "parameters": 1399300,
+    "mean_step_ms": 19.028179999804706,
+    "median_step_ms": 18.505200000163313,
+    "all_finite": true
+  },
+  "speedup": 0.9653624256255466
+}

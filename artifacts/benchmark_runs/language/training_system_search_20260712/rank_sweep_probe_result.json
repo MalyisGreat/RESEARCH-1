@@ -1,0 +1,61 @@
+{
+  "device": "NVIDIA GeForce RTX 2080 SUPER",
+  "results": [
+    {
+      "rank": 96,
+      "parameters": 35551289,
+      "mean_step_ms": 72.13090999989618,
+      "median_step_ms": 71.76324999977624,
+      "tokens_per_second": 140855.00931590388,
+      "last_loss": 6.357636451721191
+    },
+    {
+      "rank": 128,
+      "parameters": 37176025,
+      "mean_step_ms": 72.54278999989765,
+      "median_step_ms": 72.49119999983122,
+      "tokens_per_second": 140055.26944875342,
+      "last_loss": 5.927364349365234
+    },
+    {
+      "rank": 160,
+      "parameters": 38800761,
+      "mean_step_ms": 75.22781000002396,
+      "median_step_ms": 75.435299999981,
+      "tokens_per_second": 135056.43724038708,
+      "last_loss": 5.77141809463501
+    },
+    {
+      "rank": 192,
+      "parameters": 40425497,
+      "mean_step_ms": 79.40135000003465,
+      "median_step_ms": 79.32980000009593,
+      "tokens_per_second": 127957.52213275425,
+      "last_loss": 5.673847675323486
+    },
+    {
+      "rank": 224,
+      "parameters": 42050233,
+      "mean_step_ms": 79.19894999990902,
+      "median_step_ms": 78.65730000003168,
+      "tokens_per_second": 128284.52902483771,
+      "last_loss": 5.580081939697266
+    },
+    {
+      "rank": 256,
+      "parameters": 43674969,
+      "mean_step_ms": 82.4541599999975,
+      "median_step_ms": 82.63020000003962,
+      "tokens_per_second": 123219.98065349653,
+      "last_loss": 5.424269676208496
+    },
+    {
+      "rank": 320,
+      "parameters": 46924441,
+      "mean_step_ms": 86.3505599999371,
+      "median_step_ms": 86.7460500001016,
+      "tokens_per_second": 117659.92021368942,
+      "last_loss": 5.152980327606201
+    }
+  ]
+}

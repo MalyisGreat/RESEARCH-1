@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\sparse_exact512_identity_rank192_fast150_lr800_seed13\\checkpoint.pt",
+  "final_train_loss": 6.889963626861572,
+  "final_val_loss": 6.911897689620341,
+  "peak_vram_mb": 1874.69580078125,
+  "pure_train_tok_per_sec": 122101.36252621489,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\sparse_exact512_identity_rank192_fast150_lr800_seed13\\result.json",
+  "run_name": "sparse_exact512_identity_rank192_fast150_lr800_seed13",
+  "status": "completed",
+  "step": 150,
+  "tokens_seen": 1524000,
+  "train_steps": 150
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\semantic_successor_stopgrad_t2k3_rank32_stride24_350_seed13\\checkpoint.pt",
+  "final_train_loss": 6.440194129943848,
+  "final_val_loss": 6.770806206305196,
+  "peak_vram_mb": 1626.37841796875,
+  "pure_train_tok_per_sec": 113929.48244327147,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\training_system_search_20260712\\semantic_successor_stopgrad_t2k3_rank32_stride24_350_seed13\\result.json",
+  "run_name": "semantic_successor_stopgrad_t2k3_rank32_stride24_350_seed13",
+  "status": "completed",
+  "step": 350,
+  "tokens_seen": 3556000,
+  "train_steps": 350
+}

@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "job_id": "20260617-031858-8d2bbf",
+  "job_status": "queued",
+  "assignment_status": "queued",
+  "worker": "mwstroud-mwstr-6aea1cf3",
+  "run_name": "factor_recall_3080_76m_2b_seed13_common3b_20260617_0318",
+  "remote_output_dir": "D:\\CodexLLM\\token_recall_76m_2b_20260617\\factor_recall_3080_76m_2b_seed13_common3b_20260617_0318",
+  "tokens_target": 2000006160,
+  "train_steps": 196851,
+  "expected_params": 76219801
+}

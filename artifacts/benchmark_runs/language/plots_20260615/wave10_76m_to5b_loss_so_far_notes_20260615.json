@@ -1,0 +1,47 @@
+{
+  "logs_used": [
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-223723-f1c35a\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-235439-ba54d5\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260615-133210-8023da\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260615-141307-266267\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-024617-ebeaa2\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-132842-a5bf41\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260605-132950-d666f0\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-223247-775073\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-231543-4d3784\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-234730-4edf59\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-234809-f029e0\\mwstroud-mwstr-6aea1cf3.log",
+    "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260615-135558-64b86e\\mwstroud-mwstr-6aea1cf3.log"
+  ],
+  "notes": [
+    {
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-223723-f1c35a\\mwstroud-mwstr-6aea1cf3.log",
+      "kind": "resume_meta",
+      "checkpoint": "D:\\CodexLLM\\research1_longseq\\runs\\wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605\\checkpoint.pt",
+      "config_block_type": "multi_scale_lowrank_conv_memory",
+      "config_run_name": "wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605",
+      "step": 216546,
+      "tokens_seen": 2200107360
+    },
+    {
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260614-235439-ba54d5\\mwstroud-mwstr-6aea1cf3.log",
+      "kind": "resume_meta",
+      "checkpoint": "D:\\CodexLLM\\research1_longseq\\runs\\wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605\\checkpoint.pt",
+      "config_block_type": "multi_scale_lowrank_conv_memory",
+      "config_run_name": "wave10_3080_lowrank_conv_memory_76m_3b_scratch_existingcache_20260605",
+      "scheduled_resume_lr": 0.0001831824621731437,
+      "step": 216546,
+      "tokens_seen": 2200107360
+    },
+    {
+      "source": "E:\\CODEXRESEARCH\\house_compute_hub\\runs\\20260615-141307-266267\\mwstroud-mwstr-6aea1cf3.log",
+      "kind": "resume_meta",
+      "checkpoint": "D:\\CodexLLM\\research1_longseq\\runs\\wave10_3080_lowrank_conv_memory_76m_to5b_fresh_after2b_smartlr_20260615\\checkpoint.pt",
+      "config_block_type": "multi_scale_lowrank_conv_memory",
+      "config_run_name": "wave10_3080_lowrank_conv_memory_76m_to5b_fresh_after2b_smartlr_20260615",
+      "scheduled_resume_lr": 0.00010673819320342085,
+      "step": 300000,
+      "tokens_seen": 3048000000
+    }
+  ]
+}

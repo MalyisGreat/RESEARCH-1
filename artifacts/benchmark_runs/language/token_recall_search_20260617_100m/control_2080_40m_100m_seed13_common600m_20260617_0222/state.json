@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\token_recall_search_20260617_100m\\control_2080_40m_100m_seed13_common600m_20260617_0222\\checkpoint.pt",
+  "final_train_loss": 5.2252912521362305,
+  "final_val_loss": 5.074035842141767,
+  "peak_vram_mb": 3443.89013671875,
+  "pure_train_tok_per_sec": 32787.050771578746,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\token_recall_search_20260617_100m\\control_2080_40m_100m_seed13_common600m_20260617_0222\\result.json",
+  "run_name": "control_2080_40m_100m_seed13_common600m_20260617_0222",
+  "status": "completed",
+  "step": 9843,
+  "tokens_seen": 100004880,
+  "train_steps": 9843
+}
