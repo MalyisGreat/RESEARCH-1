@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "artifacts\\benchmark_runs\\language\\hrm_wave_20260816\\stable_recipe_runs\\hrm_text_stable_wave_seed13\\checkpoint.pt",
+  "final_train_loss": 6.538220405578613,
+  "final_val_loss": 7.04511207060551,
+  "peak_vram_mb": 2578.943359375,
+  "pure_train_tok_per_sec": 72273.54638723083,
+  "result_path": "artifacts\\benchmark_runs\\language\\hrm_wave_20260816\\stable_recipe_runs\\hrm_text_stable_wave_seed13\\result.json",
+  "run_name": "hrm_text_stable_wave_seed13",
+  "status": "completed",
+  "step": 1000,
+  "tokens_seen": 10160000,
+  "train_steps": 1000
+}
