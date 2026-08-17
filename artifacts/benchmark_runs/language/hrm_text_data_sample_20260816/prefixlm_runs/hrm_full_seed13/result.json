@@ -1,0 +1,78 @@
+{
+  "config": {
+    "variant": "hrm_full",
+    "output_dir": "artifacts\\benchmark_runs\\language\\hrm_text_data_sample_20260816\\prefixlm_runs\\hrm_full_seed13",
+    "seed": 13,
+    "steps": 500,
+    "eval_interval": 100,
+    "batch_size": 4,
+    "max_length": 192,
+    "dim": 128,
+    "heads": 4,
+    "expansion": 4,
+    "learning_rate": 0.0003,
+    "min_learning_rate": 3e-05,
+    "warmup_steps": 32,
+    "bp_warmup_ratio": 0.2
+  },
+  "parameter_count": 8914568,
+  "peak_vram_mb": 737.77001953125,
+  "train_examples": 23848,
+  "validation_examples": 512,
+  "history": [
+    {
+      "step": 1,
+      "response_tokens": 316,
+      "train_loss": 11.683828353881836,
+      "val_loss": 11.68836360413978,
+      "lr": 9.375e-06,
+      "bp_steps": 5,
+      "response_tok_per_sec": 168.14614880143517
+    },
+    {
+      "step": 100,
+      "response_tokens": 20707,
+      "train_loss": 7.950088024139404,
+      "val_loss": 8.068201909851933,
+      "lr": 0.00028617785323126687,
+      "bp_steps": 5,
+      "response_tok_per_sec": 3442.8401005038795
+    },
+    {
+      "step": 200,
+      "response_tokens": 42529,
+      "train_loss": 6.5529866218566895,
+      "val_loss": 7.151482558579158,
+      "lr": 0.00022287349578941227,
+      "bp_steps": 5,
+      "response_tok_per_sec": 4203.890248741868
+    },
+    {
+      "step": 300,
+      "response_tokens": 64991,
+      "train_loss": 7.1728515625,
+      "val_loss": 6.984780761702168,
+      "lr": 0.00013445503467198752,
+      "bp_steps": 5,
+      "response_tok_per_sec": 4556.826549453817
+    },
+    {
+      "step": 400,
+      "response_tokens": 87191,
+      "train_loss": 6.411342144012451,
+      "val_loss": 6.91576058361134,
+      "lr": 5.9291508573621e-05,
+      "bp_steps": 5,
+      "response_tok_per_sec": 4743.433228870151
+    },
+    {
+      "step": 500,
+      "response_tokens": 110868,
+      "train_loss": 6.432487487792969,
+      "val_loss": 6.887362497199256,
+      "lr": 3e-05,
+      "bp_steps": 5,
+      "response_tok_per_sec": 4908.844300392359
+    }
+  ]
+}
