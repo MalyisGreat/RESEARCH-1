@@ -114,6 +114,7 @@ class PhraseInductionModel(BaseModel):
             bias=bias,
             positions=positions,
         )
+        base_logits = logits
         candidate_map = None
         if candidate_ids.numel() != self.vocab_size:
             candidate_map = torch.full(
@@ -136,7 +137,11 @@ class PhraseInductionModel(BaseModel):
             weights = weights / weights.sum(dim=-1, keepdim=True).clamp_min(1.0)
             values = scale * gate * weights
             logits = logits.scatter_add(2, candidate_indices, values)
-        return logits
+        return self._bound_phrase_logits(base_logits, logits)
+
+    def _bound_phrase_logits(self, base_logits: torch.Tensor, recall_logits: torch.Tensor) -> torch.Tensor:
+        """Extension point for experiments; the baseline remains exactly unbounded."""
+        return recall_logits
 
 
 experiment.experiment.experiment.trainer.CausalConvFactorizedLM = PhraseInductionModel

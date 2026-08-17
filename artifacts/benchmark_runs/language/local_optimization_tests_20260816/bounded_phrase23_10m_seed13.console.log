@@ -1,0 +1,7 @@
+top_token_hist rows=192/192
+START run=bounded_phrase23_10m_seed13 device=NVIDIA GeForce RTX 2080 SUPER params=38,325,591 seq=10160 steps=1000
+TRAIN step=1/1000 tokens=10160 loss=9.7281 lr=9.375e-06 pure_tok_s=22124
+TRAIN step=500/1000 tokens=5080000 loss=6.6020 lr=0.000336624 pure_tok_s=212127
+TRAIN step=1000/1000 tokens=10160000 loss=5.8538 lr=1e-05 pure_tok_s=213462
+EVAL step=1000/1000 tokens=10160000 train=5.8538 val=6.5100 eval_s=1.3
+RESULT {"candidate_size_mean": 5442.211, "checkpoint_path": "artifacts\\benchmark_runs\\language\\local_optimization_tests_20260816\\bounded_phrase23_10m_seed13\\checkpoint.pt", "final_train_loss": 5.853789329528809, "final_val_loss": 6.509974378206598, "history": [{"learning_rate": 1e-05, "step": 1000.0, "tokens_seen": 10160000.0, "train_loss": 5.853789329528809, "val_loss": 6.509974378206598}], "parameter_count": 38325591, "peak_vram_mb": 1558.58203125, "pure_train_tok_per_sec": 213461.7438506912, "step_time_mean_ms": 47.596350599977086, "step_time_median_ms": 46.97145000045566, "train_tokens_seen": 10160000}

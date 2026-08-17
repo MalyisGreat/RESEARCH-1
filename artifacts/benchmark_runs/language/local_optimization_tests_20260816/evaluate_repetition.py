@@ -13,6 +13,10 @@ sys.path.insert(0, str(SEARCH_DIR))
 
 import phrase_induction_train as phrase
 import phrase_semantic_induction_train as phrase_semantic
+import bounded_phrase_recall_train as bounded_phrase
+import confidence_semantic_retrieval_train as confidence_semantic
+import hidden_phrase_retrieval_train as hidden_phrase
+import hidden_phrase_diagonal_train as hidden_phrase_diagonal
 
 
 PROMPTS = (
@@ -99,10 +103,40 @@ def main() -> None:
             root / "phrase23_semantic_10m_seed13" / "checkpoint.pt",
             "2,3",
         ),
+        "bounded_phrase23": (
+            bounded_phrase.BoundedPhraseRecallModel,
+            root / "bounded_phrase23_10m_seed13" / "checkpoint.pt",
+            "2,3",
+        ),
+        "confidence_semantic_phrase23": (
+            confidence_semantic.ConfidenceSemanticRetrievalModel,
+            root / "confidence_semantic_phrase23_10m_seed13" / "checkpoint.pt",
+            "2,3",
+        ),
+        "confidence_semantic_soft_phrase23": (
+            confidence_semantic.ConfidenceSemanticRetrievalModel,
+            root / "confidence_semantic_soft_phrase23_10m_seed13" / "checkpoint.pt",
+            "2,3",
+        ),
+        "hidden_phrase23": (
+            hidden_phrase.HiddenPhraseRetrievalModel,
+            root / "hidden_phrase23_10m_seed13" / "checkpoint.pt",
+            "2,3",
+        ),
+        "hidden_phrase23_diagonal": (
+            hidden_phrase_diagonal.HiddenPhraseDiagonalModel,
+            root / "hidden_phrase23_diagonal_10m_seed13" / "checkpoint.pt",
+            "2,3",
+        ),
     }
     payload: dict[str, object] = {"variants": {}}
     for name, (model_class, checkpoint_path, phrase_orders) in variants.items():
         model = load_model(model_class, checkpoint_path, device, phrase_orders)
+        if name == "confidence_semantic_soft_phrase23":
+            model.retrieval_confidence_threshold = 0.30
+            model.retrieval_confidence_temperature = 0.10
+            model.retrieval_entropy_threshold = 0.50
+            model.retrieval_entropy_temperature = 0.10
         samples = [
             generate(model, tokenizer, prompt, 100 + index, device)
             for index, prompt in enumerate(PROMPTS)

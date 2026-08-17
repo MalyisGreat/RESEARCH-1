@@ -1,0 +1,58 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "cache_path": "artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt",
+    "checkpoint_interval": 0,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 192,
+    "embedding_dim": 512,
+    "eval_interval": 1000,
+    "full_eval_token_chunk_size": 512,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 59058,
+    "min_learning_rate": 1e-05,
+    "output_dir": "artifacts\\benchmark_runs\\language\\local_optimization_tests_20260816\\hidden_phrase23_10m_seed13",
+    "recall_initial_scale": 0.025,
+    "recall_mode": "none",
+    "resume_checkpoint": null,
+    "run_name": "hidden_phrase23_10m_seed13",
+    "sampled_vocab_size": 4096,
+    "seed": 13,
+    "sequence_length": 10160,
+    "token_chunk_size": 20000,
+    "token_stride": 24,
+    "train_steps": 1000,
+    "val_blocks": 8,
+    "vocab_size": 50257,
+    "warmup_steps": 64,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 5442.211,
+    "checkpoint_path": "artifacts\\benchmark_runs\\language\\local_optimization_tests_20260816\\hidden_phrase23_10m_seed13\\checkpoint.pt",
+    "final_train_loss": 5.815013408660889,
+    "final_val_loss": 6.48767769111423,
+    "history": [
+      {
+        "learning_rate": 1e-05,
+        "step": 1000.0,
+        "tokens_seen": 10160000.0,
+        "train_loss": 5.815013408660889,
+        "val_loss": 6.48767769111423
+      }
+    ],
+    "parameter_count": 38588760,
+    "peak_vram_mb": 1601.9111328125,
+    "pure_train_tok_per_sec": 190403.2261321066,
+    "step_time_mean_ms": 53.36044040005254,
+    "step_time_median_ms": 52.64149999948131,
+    "train_tokens_seen": 10160000
+  }
+}

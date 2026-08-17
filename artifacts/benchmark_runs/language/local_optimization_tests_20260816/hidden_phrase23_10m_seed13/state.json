@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "artifacts\\benchmark_runs\\language\\local_optimization_tests_20260816\\hidden_phrase23_10m_seed13\\checkpoint.pt",
+  "final_train_loss": 5.815013408660889,
+  "final_val_loss": 6.48767769111423,
+  "peak_vram_mb": 1601.9111328125,
+  "pure_train_tok_per_sec": 190403.2261321066,
+  "result_path": "artifacts\\benchmark_runs\\language\\local_optimization_tests_20260816\\hidden_phrase23_10m_seed13\\result.json",
+  "run_name": "hidden_phrase23_10m_seed13",
+  "status": "completed",
+  "step": 1000,
+  "tokens_seen": 10160000,
+  "train_steps": 1000
+}

@@ -195,6 +195,496 @@
           }
         }
       ]
+    },
+    "bounded_phrase23": {
+      "aggregate": {
+        "distinct_1": 0.59375,
+        "repeat_1": 0.40625,
+        "distinct_2": 0.828042328042328,
+        "repeat_2": 0.171957671957672,
+        "distinct_3": 0.9435483870967741,
+        "repeat_3": 0.05645161290322581,
+        "distinct_4": 0.9781420765027322,
+        "repeat_4": 0.021857923497267766
+      },
+      "samples": [
+        {
+          "prompt": "The most important thing",
+          "text": "The most important thing for the first time to be an object to the same time to take the same-speaking countries.\nThe most important and more than the last year's own system from a single or to be more than the way to be able to be used in the body, as a new role.\nThe same-pressure of",
+          "metrics": {
+            "distinct_1": 0.640625,
+            "repeat_1": 0.359375,
+            "distinct_2": 0.8412698412698413,
+            "repeat_2": 0.15873015873015872,
+            "distinct_3": 0.967741935483871,
+            "repeat_3": 0.032258064516129004,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "In the year 2050",
+          "text": "In the year 2050\n- Little other. They are not only.\n- Little \"We have an important part of the most common of the word time, which are a long time and even just that would allow the only have a new time, the world, he will be seen in the same way to the first thing.\nThere",
+          "metrics": {
+            "distinct_1": 0.6875,
+            "repeat_1": 0.3125,
+            "distinct_2": 0.9206349206349206,
+            "repeat_2": 0.07936507936507942,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Once upon a time",
+          "text": "Once upon a time. It is the first year.\nThe researchers used in the same system of the American system of the body and the other, the government did not only a major time in a great and even as a lot of an NGO and the world-driven, and the most common and other issues.\nThis is a variety",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.9206349206349206,
+            "repeat_2": 0.07936507936507942,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "The computer",
+          "text": "The computer. The next year\u2019s two or other, the United States. The new problem that are in the new system is a single time of the first, the following people, the last. \"It is a large, \u201cThis is a huge amount of the government.\nThe \u201cIt's what's",
+          "metrics": {
+            "distinct_1": 0.65625,
+            "repeat_1": 0.34375,
+            "distinct_2": 0.8888888888888888,
+            "repeat_2": 0.11111111111111116,
+            "distinct_3": 1.0,
+            "repeat_3": 0.0,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Question: What is machine learning? Answer:",
+          "text": "Question: What is machine learning? Answer:\nA group of a new study is a new area of the number of the people of the people in the world. It was created with the same term \"The U. To take the same time, \u201cIt was a new, and the first time, and the other for example, with the first time,",
+          "metrics": {
+            "distinct_1": 0.5625,
+            "repeat_1": 0.4375,
+            "distinct_2": 0.7936507936507936,
+            "repeat_2": 0.2063492063492064,
+            "distinct_3": 0.9354838709677419,
+            "repeat_3": 0.06451612903225812,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "Python function to add two numbers:\n",
+          "text": "Python function to add two numbers:\nThe University of the International Information\nThe University of the\nThe study of the world, the world, the body of the world, the world was to the new study of the \"Oh of the University of the new study of the United Kingdom.\nThe law is the\nIf the only a new number of the",
+          "metrics": {
+            "distinct_1": 0.390625,
+            "repeat_1": 0.609375,
+            "distinct_2": 0.6031746031746031,
+            "repeat_2": 0.39682539682539686,
+            "distinct_3": 0.7903225806451613,
+            "repeat_3": 0.20967741935483875,
+            "distinct_4": 0.8852459016393442,
+            "repeat_4": 0.11475409836065575
+          }
+        }
+      ]
+    },
+    "confidence_semantic_phrase23": {
+      "aggregate": {
+        "distinct_1": 0.5755208333333334,
+        "repeat_1": 0.4244791666666667,
+        "distinct_2": 0.8174603174603176,
+        "repeat_2": 0.18253968253968256,
+        "distinct_3": 0.9301075268817204,
+        "repeat_3": 0.06989247311827958,
+        "distinct_4": 0.9699453551912568,
+        "repeat_4": 0.030054644808743185
+      },
+      "samples": [
+        {
+          "prompt": "The most important thing",
+          "text": "The most important thing for the first time to be an object to be an object. And the two-foot to the main major effect on the \"in, to the new research and all of the use of a variety of the body in the most important.\nIn the U.\u2019s the first time, to the same time",
+          "metrics": {
+            "distinct_1": 0.609375,
+            "repeat_1": 0.390625,
+            "distinct_2": 0.8571428571428571,
+            "repeat_2": 0.1428571428571429,
+            "distinct_3": 0.9354838709677419,
+            "repeat_3": 0.06451612903225812,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "In the year 2050",
+          "text": "In the year 2050\n- Little other. They are not only.\n- \u201cIt\u201d\n\u2019s\n- Let-type has been the one or even in the state.\n- \u2191 the end of the\n- \u2191 is not a great amount of the\n- \u2191:\n-\n- The primary system",
+          "metrics": {
+            "distinct_1": 0.578125,
+            "repeat_1": 0.421875,
+            "distinct_2": 0.8095238095238095,
+            "repeat_2": 0.19047619047619047,
+            "distinct_3": 0.9193548387096774,
+            "repeat_3": 0.08064516129032262,
+            "distinct_4": 0.9672131147540983,
+            "repeat_4": 0.032786885245901676
+          }
+        },
+        {
+          "prompt": "Once upon a time",
+          "text": "Once upon a time. It is the first year.\nThe state would have a new new plant of the two-added-east, it is a significant effect on.\nThe most recent study has done at the study of the study has to be the best to the same time. The team has been discovered that a new way the",
+          "metrics": {
+            "distinct_1": 0.640625,
+            "repeat_1": 0.359375,
+            "distinct_2": 0.9047619047619048,
+            "repeat_2": 0.09523809523809523,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "The computer",
+          "text": "The computer. The next year\u2019s two or other, the United States. The new problem that are in the new system is a single time of the new way to be to be a variety of the first time. The study can be a major person with the first time.\nWhen you are a very long that can",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.8571428571428571,
+            "repeat_2": 0.1428571428571429,
+            "distinct_3": 0.967741935483871,
+            "repeat_3": 0.032258064516129004,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "Question: What is machine learning? Answer:",
+          "text": "Question: What is machine learning? Answer:\nA group of a new study is a new area of the number of the people, if we will be a number of the \u201cin-friendly may be a few people to take the following a family in the first-pressure cell.\nIn the past, we\u2019s work of the past.\n",
+          "metrics": {
+            "distinct_1": 0.609375,
+            "repeat_1": 0.390625,
+            "distinct_2": 0.873015873015873,
+            "repeat_2": 0.12698412698412698,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Python function to add two numbers:\n",
+          "text": "Python function to add two numbers:\nThe University of the International Information\nThe University of the\nThe study of the world, the world, the body of the world, the world was to the new study of the \"Oh of the University of the new study of the United Kingdom.\nThe law is the\nIf the only a new number of the",
+          "metrics": {
+            "distinct_1": 0.390625,
+            "repeat_1": 0.609375,
+            "distinct_2": 0.6031746031746031,
+            "repeat_2": 0.39682539682539686,
+            "distinct_3": 0.7903225806451613,
+            "repeat_3": 0.20967741935483875,
+            "distinct_4": 0.8852459016393442,
+            "repeat_4": 0.11475409836065575
+          }
+        }
+      ]
+    },
+    "confidence_semantic_soft_phrase23": {
+      "aggregate": {
+        "distinct_1": 0.5989583333333334,
+        "repeat_1": 0.4010416666666667,
+        "distinct_2": 0.828042328042328,
+        "repeat_2": 0.17195767195767198,
+        "distinct_3": 0.9381720430107526,
+        "repeat_3": 0.06182795698924731,
+        "distinct_4": 0.9726775956284154,
+        "repeat_4": 0.027322404371584712
+      },
+      "samples": [
+        {
+          "prompt": "The most important thing",
+          "text": "The most important thing for the first time to be an object to be a list. And the first-century new life\" in the country's \u201cThe state\u201d (or as a single point of a good for the body in the way of the way to the body in the body, the same time, it is the more",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.8571428571428571,
+            "repeat_2": 0.1428571428571429,
+            "distinct_3": 0.967741935483871,
+            "repeat_3": 0.032258064516129004,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "In the year 2050",
+          "text": "In the year 2050\n- Little other. They are not only.\n- \u201cIt\u201d\n\u2019s\n- Let-type has been the one or even in the state.\n- \u2191 the end of the end of the first year, is no longer to the United States, we have the two of the country",
+          "metrics": {
+            "distinct_1": 0.65625,
+            "repeat_1": 0.34375,
+            "distinct_2": 0.873015873015873,
+            "repeat_2": 0.12698412698412698,
+            "distinct_3": 0.9516129032258065,
+            "repeat_3": 0.048387096774193505,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "Once upon a time",
+          "text": "Once upon a time. It is the first year.\nThe state would have a new new plant of the two-added-east, it is a significant effect on.\nThe most recent study has done at the study of the United States and the same amount of the same time. The team has been replaced by a new group would",
+          "metrics": {
+            "distinct_1": 0.65625,
+            "repeat_1": 0.34375,
+            "distinct_2": 0.9047619047619048,
+            "repeat_2": 0.09523809523809523,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "The computer",
+          "text": "The computer. The next year\u2019s two or other, the United States. The new problem that are in the new system is a single time of the new way to be to be a variety of the first time. The study are not that of the next year. The study are some of the first time and their time",
+          "metrics": {
+            "distinct_1": 0.546875,
+            "repeat_1": 0.453125,
+            "distinct_2": 0.7936507936507936,
+            "repeat_2": 0.2063492063492064,
+            "distinct_3": 0.9354838709677419,
+            "repeat_3": 0.06451612903225812,
+            "distinct_4": 0.9672131147540983,
+            "repeat_4": 0.032786885245901676
+          }
+        },
+        {
+          "prompt": "Question: What is machine learning? Answer:",
+          "text": "Question: What is machine learning? Answer:\nA group of a new study is a new area of the number of the people, if we will be a number of the \u201cin-friendly may be a few people to take the following a family in the first-pressure cell.\nIn the past, we\u2019s work of the past.\n",
+          "metrics": {
+            "distinct_1": 0.609375,
+            "repeat_1": 0.390625,
+            "distinct_2": 0.873015873015873,
+            "repeat_2": 0.12698412698412698,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Python function to add two numbers:\n",
+          "text": "Python function to add two numbers:\nThe University of the International Information\nThe University of the\nThe study of the world, the world, the body of the world, the world was to the new study of the body of the water.\nIf you can create the world's use a good first very low levels the water. It was also be in",
+          "metrics": {
+            "distinct_1": 0.5,
+            "repeat_1": 0.5,
+            "distinct_2": 0.6666666666666666,
+            "repeat_2": 0.33333333333333337,
+            "distinct_3": 0.8064516129032258,
+            "repeat_3": 0.19354838709677424,
+            "distinct_4": 0.9016393442622951,
+            "repeat_4": 0.09836065573770492
+          }
+        }
+      ]
+    },
+    "hidden_phrase23": {
+      "aggregate": {
+        "distinct_1": 0.6171875,
+        "repeat_1": 0.3828125,
+        "distinct_2": 0.8412698412698413,
+        "repeat_2": 0.15873015873015875,
+        "distinct_3": 0.935483870967742,
+        "repeat_3": 0.06451612903225806,
+        "distinct_4": 0.9699453551912568,
+        "repeat_4": 0.030054644808743185
+      },
+      "samples": [
+        {
+          "prompt": "The most important thing",
+          "text": "The most important thing is a new role in the United Nations.\nIn the same, the body is a number of the end of the state's child's most important, and the best to a \"there, to be able to be able to be able to be traced from a very good, but they are used by the most important",
+          "metrics": {
+            "distinct_1": 0.59375,
+            "repeat_1": 0.40625,
+            "distinct_2": 0.8412698412698413,
+            "repeat_2": 0.15873015873015872,
+            "distinct_3": 0.9032258064516129,
+            "repeat_3": 0.09677419354838712,
+            "distinct_4": 0.9180327868852459,
+            "repeat_4": 0.08196721311475408
+          }
+        },
+        {
+          "prompt": "In the year 2050",
+          "text": "In the year 2050\n|J, there, the 20th century, the New York:\nA study of the New York:\nA system also and\nThe following other of the \u2018Abaric\u2019t also be seen by an object. These include:\nThe new research, the \u2018P.\nIt",
+          "metrics": {
+            "distinct_1": 0.640625,
+            "repeat_1": 0.359375,
+            "distinct_2": 0.8095238095238095,
+            "repeat_2": 0.19047619047619047,
+            "distinct_3": 0.9193548387096774,
+            "repeat_3": 0.08064516129032262,
+            "distinct_4": 0.9508196721311475,
+            "repeat_4": 0.049180327868852514
+          }
+        },
+        {
+          "prompt": "Once upon a time",
+          "text": "Once upon a time, which is the first place.\nThe University of a high pressure on the public of life, the U.\nThe United Nations\u201d\n- Promia's a few American Bth.\nThe American Journal of the British and then, the first time of the country and the water.\nThe state as",
+          "metrics": {
+            "distinct_1": 0.609375,
+            "repeat_1": 0.390625,
+            "distinct_2": 0.8571428571428571,
+            "repeat_2": 0.1428571428571429,
+            "distinct_3": 0.9516129032258065,
+            "repeat_3": 0.048387096774193505,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "The computer",
+          "text": "The computer. The next year\u2019d for an object. The end of the first \"blue is not just an object. The project was a high-dimensional of the \u201cbad\u2019ll know that the end of the one of the American community, a high-eight,\u2019ll know that a major time",
+          "metrics": {
+            "distinct_1": 0.59375,
+            "repeat_1": 0.40625,
+            "distinct_2": 0.7619047619047619,
+            "repeat_2": 0.23809523809523814,
+            "distinct_3": 0.8870967741935484,
+            "repeat_3": 0.11290322580645162,
+            "distinct_4": 0.9508196721311475,
+            "repeat_4": 0.049180327868852514
+          }
+        },
+        {
+          "prompt": "Question: What is machine learning? Answer:",
+          "text": "Question: What is machine learning? Answer:\nA group of a new study is a new work (2.g.6. Rulf.\nThe same as the study in the world and to the following of high-resistant.\nThe number of the world's first new study with its own hand, a number of the body was developed by the country",
+          "metrics": {
+            "distinct_1": 0.640625,
+            "repeat_1": 0.359375,
+            "distinct_2": 0.8888888888888888,
+            "repeat_2": 0.11111111111111116,
+            "distinct_3": 0.967741935483871,
+            "repeat_3": 0.032258064516129004,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Python function to add two numbers:\n",
+          "text": "Python function to add two numbers:\nThe University of the\n\u2022 It is a very useful\nTeacher, which the most of the\nHulfar are the first time. A series of America's one's end at the city of the National Institute of the British and a year in the amount of the time at the past of a number of the",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.8888888888888888,
+            "repeat_2": 0.11111111111111116,
+            "distinct_3": 0.9838709677419355,
+            "repeat_3": 0.016129032258064502,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        }
+      ]
+    },
+    "hidden_phrase23_diagonal": {
+      "aggregate": {
+        "distinct_1": 0.609375,
+        "repeat_1": 0.390625,
+        "distinct_2": 0.8465608465608465,
+        "repeat_2": 0.15343915343915346,
+        "distinct_3": 0.9516129032258065,
+        "repeat_3": 0.04838709677419354,
+        "distinct_4": 0.9808743169398907,
+        "repeat_4": 0.01912568306010931
+      },
+      "samples": [
+        {
+          "prompt": "The most important thing",
+          "text": "The most important thing the state is not the one that is an astonishing new and other to the country, the other. What is a number of the time, there is a number of the same way through the world-dimensional types of the world\u2019s life, you\u201d said.\n- \"The U.\nThe United",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.8888888888888888,
+            "repeat_2": 0.11111111111111116,
+            "distinct_3": 0.9516129032258065,
+            "repeat_3": 0.048387096774193505,
+            "distinct_4": 0.9672131147540983,
+            "repeat_4": 0.032786885245901676
+          }
+        },
+        {
+          "prompt": "In the year 2050",
+          "text": "In the year 2050\n- Take and the year of the American (for example, but they are more than one of the first time.\nIf some of the National Academy of the \"in the U.||In the the brain of the United States and the British system, or the government, the law of the country.\nA",
+          "metrics": {
+            "distinct_1": 0.625,
+            "repeat_1": 0.375,
+            "distinct_2": 0.8888888888888888,
+            "repeat_2": 0.11111111111111116,
+            "distinct_3": 1.0,
+            "repeat_3": 0.0,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "Once upon a time",
+          "text": "Once upon a time, which is the first problem of the first time on a small century in the brain.\u2019s most of the time and a \"for example is a lot of these people by the country was an integral and more common and more than 20 percent of the country of the country is a person. The most of the",
+          "metrics": {
+            "distinct_1": 0.59375,
+            "repeat_1": 0.40625,
+            "distinct_2": 0.8412698412698413,
+            "repeat_2": 0.15873015873015872,
+            "distinct_3": 0.967741935483871,
+            "repeat_3": 0.032258064516129004,
+            "distinct_4": 1.0,
+            "repeat_4": 0.0
+          }
+        },
+        {
+          "prompt": "The computer",
+          "text": "The computer. The next year\u2019s \"If the use of the state, and the American\nIn the most of the United States. The American\n- \"Prolul was the right in the right of the same as the Americanapeake to the end of the United States.\nThe \"It is that of the",
+          "metrics": {
+            "distinct_1": 0.578125,
+            "repeat_1": 0.421875,
+            "distinct_2": 0.8253968253968254,
+            "repeat_2": 0.17460317460317465,
+            "distinct_3": 0.9516129032258065,
+            "repeat_3": 0.048387096774193505,
+            "distinct_4": 0.9672131147540983,
+            "repeat_4": 0.032786885245901676
+          }
+        },
+        {
+          "prompt": "Question: What is machine learning? Answer:",
+          "text": "Question: What is machine learning? Answer:\nA long-east, and the past, that I'm not know that the world's use of the world's end.\nTo come to provide the world's first state\u2019s a person does this is an object,\u2019s the world's first part of the most commonly at the most important to",
+          "metrics": {
+            "distinct_1": 0.640625,
+            "repeat_1": 0.359375,
+            "distinct_2": 0.8253968253968254,
+            "repeat_2": 0.17460317460317465,
+            "distinct_3": 0.9193548387096774,
+            "repeat_3": 0.08064516129032262,
+            "distinct_4": 0.9836065573770492,
+            "repeat_4": 0.016393442622950838
+          }
+        },
+        {
+          "prompt": "Python function to add two numbers:\n",
+          "text": "Python function to add two numbers:\nThe American B.\nThe most of the world that the child\u2019s \u201cThe study is a great problem by the child\u2019s most of one of the body\u2019s an example, or a lot of the first, or a large power is a high power, and it was in the time",
+          "metrics": {
+            "distinct_1": 0.59375,
+            "repeat_1": 0.40625,
+            "distinct_2": 0.8095238095238095,
+            "repeat_2": 0.19047619047619047,
+            "distinct_3": 0.9193548387096774,
+            "repeat_3": 0.08064516129032262,
+            "distinct_4": 0.9672131147540983,
+            "repeat_4": 0.032786885245901676
+          }
+        }
+      ]
     }
   }
 }

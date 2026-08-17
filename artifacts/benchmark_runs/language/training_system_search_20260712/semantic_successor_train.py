@@ -121,8 +121,18 @@ class SemanticSuccessorModel(BaseModel):
             weights = weights * valid.to(weights.dtype)
         scale = F.softplus(self.semantic_log_scale).to(logits.dtype)
         gate = torch.sigmoid(self.semantic_gate(hidden)).to(logits.dtype)
-        values = weights.to(logits.dtype) * scale * gate
+        confidence = self._semantic_confidence(logits, weights, valid).to(logits.dtype)
+        values = weights.to(logits.dtype) * scale * gate * confidence
         return logits.scatter_add(2, candidate_indices, values)
+
+    def _semantic_confidence(
+        self,
+        logits: torch.Tensor,
+        weights: torch.Tensor,
+        valid: torch.Tensor,
+    ) -> torch.Tensor:
+        """Extension point for confidence experiments; baseline is always enabled."""
+        return torch.ones_like(weights[..., :1])
 
 
 experiment.experiment.experiment.trainer.CausalConvFactorizedLM = SemanticSuccessorModel
