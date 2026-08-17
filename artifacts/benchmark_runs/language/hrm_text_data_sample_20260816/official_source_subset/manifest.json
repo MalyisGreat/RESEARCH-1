@@ -1,0 +1,31 @@
+{
+  "dataset": "sapientinc/HRM-Text-data-io-cleaned-20260515",
+  "revision": "main",
+  "files": [
+    {
+      "path": "data/no_robots.jsonl",
+      "bytes": 12530321,
+      "sha256": "c132cf46fd77a16b63a85a4e2712098d27f28ad596205a7e2ed331a494eeba39",
+      "url": "https://huggingface.co/datasets/sapientinc/HRM-Text-data-io-cleaned-20260515/resolve/main/data/no_robots.jsonl?download=true"
+    },
+    {
+      "path": "data/gsm8k_train.jsonl",
+      "bytes": 2174321,
+      "sha256": "776caaeb17042aeac1e7fb2b016612acae4441dd1de63a3794240bec2abc4299",
+      "url": "https://huggingface.co/datasets/sapientinc/HRM-Text-data-io-cleaned-20260515/resolve/main/data/gsm8k_train.jsonl?download=true"
+    },
+    {
+      "path": "data/Platypus/openbookqa.jsonl",
+      "bytes": 1939736,
+      "sha256": "f99b9f2aab286ecd63c0b0883f2823e130283dbddaef438325c627e69034a2ff",
+      "url": "https://huggingface.co/datasets/sapientinc/HRM-Text-data-io-cleaned-20260515/resolve/main/data/Platypus/openbookqa.jsonl?download=true"
+    },
+    {
+      "path": "data_clustered/flan/flan_fsopt_data__ai2_arc_ARC-Challenge_1.0.0.parquet",
+      "bytes": 647711,
+      "sha256": "f3f9080f85a83efd436500c77de2dc6ec4f155c0906f30944a0b369c0ab51c8f",
+      "url": "https://huggingface.co/datasets/sapientinc/HRM-Text-data-io-cleaned-20260515/resolve/main/data_clustered/flan/flan_fsopt_data__ai2_arc_ARC-Challenge_1.0.0.parquet?download=true"
+    }
+  ],
+  "total_bytes": 17292089
+}

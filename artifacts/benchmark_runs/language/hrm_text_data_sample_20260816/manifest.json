@@ -1,0 +1,77 @@
+{
+  "dataset": "sapientinc/HRM-Text-data-io-cleaned-20260515",
+  "config": "default",
+  "api": "https://datasets-server.huggingface.co/rows",
+  "sampling": "deterministic evenly spaced 100-row pages across each split",
+  "splits": {
+    "train": {
+      "total_rows": 103999896,
+      "sample_rows": 2000,
+      "offsets": [
+        0,
+        5473673,
+        10947347,
+        16421020,
+        21894694,
+        27368367,
+        32842041,
+        38315714,
+        43789388,
+        49263061,
+        54736735,
+        60210408,
+        65684082,
+        71157755,
+        76631429,
+        82105102,
+        87578776,
+        93052449,
+        98526123,
+        103999796
+      ],
+      "file": "official_cleaned_train_2000.jsonl",
+      "sha256": "e852fbb243fe4bff56a29fceaf4de68916d762b006e173de6d2cb78f1414174e",
+      "instruction_chars": 147649,
+      "response_chars": 8849,
+      "conditions": [
+        "direct"
+      ]
+    },
+    "validation": {
+      "total_rows": 161730,
+      "sample_rows": 200,
+      "offsets": [
+        0,
+        161630
+      ],
+      "file": "official_cleaned_validation_200.jsonl",
+      "sha256": "ccb224a670e7eadefae4815147d163ff8946a786fcf203279a58d48c31bc2b7c",
+      "instruction_chars": 77192,
+      "response_chars": 1148,
+      "conditions": [
+        "direct"
+      ]
+    },
+    "test": {
+      "total_rows": 522597,
+      "sample_rows": 200,
+      "offsets": [
+        0,
+        522497
+      ],
+      "file": "official_cleaned_test_200.jsonl",
+      "sha256": "eb8f9bfc514d66fb8822c4fa85ac6726350afd7982c25d39dfc1d7379f8a7c6d",
+      "instruction_chars": 140025,
+      "response_chars": 4838,
+      "conditions": [
+        "direct"
+      ]
+    }
+  },
+  "combined": {
+    "file": "official_cleaned_sample_2400.jsonl",
+    "rows": 2400,
+    "bytes": 619130,
+    "sha256": "cb59dcdd2959dfda3091cdf884cfd73c99f62200afdd53f32084f794d91048d8"
+  }
+}

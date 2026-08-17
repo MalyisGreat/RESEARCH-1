@@ -1,0 +1,7 @@
+{
+  "source_repo": "https://github.com/sapientinc/data_io",
+  "source_commit": "c82cd5f66459c5e66709e8430eccf8daecd0ca7d",
+  "source_path": "trained_tokenizers/bpe/tokenizer.json",
+  "bytes": 5059646,
+  "sha256": "a42fb3616ecbce5fe62bbd7dd7bc2ce52f8703f21813d2cc62a78ef2f8836701"
+}
