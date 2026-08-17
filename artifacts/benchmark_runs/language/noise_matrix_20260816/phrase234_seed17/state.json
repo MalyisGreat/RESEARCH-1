@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase234_seed17\\checkpoint.pt",
+  "final_train_loss": 6.07087516784668,
+  "final_val_loss": 6.501742670761319,
+  "peak_vram_mb": 1558.927734375,
+  "pure_train_tok_per_sec": 202727.5288974209,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase234_seed17\\result.json",
+  "run_name": "phrase234_seed17",
+  "status": "completed",
+  "step": 1000,
+  "tokens_seen": 10160000,
+  "train_steps": 1000
+}

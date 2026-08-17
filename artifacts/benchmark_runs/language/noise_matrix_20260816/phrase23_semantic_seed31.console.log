@@ -1,0 +1,10 @@
+top_token_hist rows=192/192
+START run=phrase23_semantic_seed31 device=NVIDIA GeForce RTX 2080 SUPER params=38,342,170 seq=10160 steps=1000
+TRAIN step=1/1000 tokens=10160 loss=9.7903 lr=9.375e-06 pure_tok_s=21293
+EVAL step=250/1000 tokens=2540000 train=6.5747 val=6.8785 eval_s=0.9
+TRAIN step=500/1000 tokens=5080000 loss=6.1574 lr=0.000336624 pure_tok_s=196589
+EVAL step=500/1000 tokens=5080000 train=6.1574 val=6.6335 eval_s=0.9
+EVAL step=750/1000 tokens=7620000 train=6.1577 val=6.5251 eval_s=0.9
+TRAIN step=1000/1000 tokens=10160000 loss=6.0973 lr=1e-05 pure_tok_s=197739
+EVAL step=1000/1000 tokens=10160000 train=6.0973 val=6.4954 eval_s=0.8
+RESULT {"candidate_size_mean": 5442.299, "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase23_semantic_seed31\\checkpoint.pt", "final_train_loss": 6.097285270690918, "final_val_loss": 6.49539189573348, "history": [{"learning_rate": 0.000544356462374189, "step": 250.0, "tokens_seen": 2540000.0, "train_loss": 6.574712753295898, "val_loss": 6.878522981151821}, {"learning_rate": 0.0003366235562572971, "step": 500.0, "tokens_seen": 5080000.0, "train_loss": 6.157397270202637, "val_loss": 6.633535549115008}, {"learning_rate": 0.00010790097551725769, "step": 750.0, "tokens_seen": 7620000.0, "train_loss": 6.157681465148926, "val_loss": 6.525086680547459}, {"learning_rate": 1e-05, "step": 1000.0, "tokens_seen": 10160000.0, "train_loss": 6.097285270690918, "val_loss": 6.49539189573348}], "parameter_count": 38342170, "peak_vram_mb": 1573.1572265625, "pure_train_tok_per_sec": 197739.3668753948, "step_time_mean_ms": 51.380765300023995, "step_time_median_ms": 49.560749999727705, "train_tokens_seen": 10160000}

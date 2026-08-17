@@ -6,6 +6,8 @@ Protocol: same cache, seed 13, 38M-class Wave10, sequence length 10,160, 1,000 s
 
 This is a controlled local screen on a small repeated cache. It is evidence for ranking mechanisms, not evidence of fresh-data scaling.
 
+**Correction from the later five-seed audit:** the active trainer used `recall_mode="none"`, so direct phrase and semantic `candidate_logits` were bypassed during training and applied only during validation/generation. Their loss changes below are inference-time recall effects, not faster learning. The hidden-state variants modify `features` and therefore did participate in training. See `noise_matrix_20260816/SUMMARY.md` for the paired audit.
+
 ## Results
 
 | Rank | Variant | Full-vocab loss | Params | Tok/s | Peak VRAM | Decision |

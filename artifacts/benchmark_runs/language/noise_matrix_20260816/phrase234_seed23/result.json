@@ -1,0 +1,79 @@
+{
+  "benchmark": "standalone_longseq_anchor_train",
+  "config": {
+    "amp_dtype": "fp16",
+    "attention_heads": 4,
+    "batch_size": 1,
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "cache_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\neuron_search_20260605\\manual_self\\real_cache_finewebedu_sample_seq10160_train192_val8_gpt2.pt",
+    "checkpoint_interval": 0,
+    "conv_kernel_size": 7,
+    "conv_layers": 2,
+    "conv_rank": 192,
+    "embedding_dim": 512,
+    "eval_interval": 250,
+    "full_eval_token_chunk_size": 512,
+    "landmark_stride": 128,
+    "learning_rate": 0.0006,
+    "memory_rank": 64,
+    "milestone_checkpoint_interval": 59058,
+    "min_learning_rate": 1e-05,
+    "output_dir": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase234_seed23",
+    "recall_initial_scale": 0.025,
+    "recall_mode": "none",
+    "resume_checkpoint": null,
+    "run_name": "phrase234_seed23",
+    "sampled_vocab_size": 4096,
+    "seed": 23,
+    "sequence_length": 10160,
+    "token_chunk_size": 20000,
+    "token_stride": 24,
+    "train_steps": 1000,
+    "val_blocks": 8,
+    "vocab_size": 50257,
+    "warmup_steps": 64,
+    "weight_decay": 0.0001
+  },
+  "report": {
+    "candidate_size_mean": 5442.789,
+    "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase234_seed23\\checkpoint.pt",
+    "final_train_loss": 6.213973522186279,
+    "final_val_loss": 6.488251337948746,
+    "history": [
+      {
+        "learning_rate": 0.000544356462374189,
+        "step": 250.0,
+        "tokens_seen": 2540000.0,
+        "train_loss": 6.717428207397461,
+        "val_loss": 6.862478279222653
+      },
+      {
+        "learning_rate": 0.0003366235562572971,
+        "step": 500.0,
+        "tokens_seen": 5080000.0,
+        "train_loss": 6.2085795402526855,
+        "val_loss": 6.629094415480696
+      },
+      {
+        "learning_rate": 0.00010790097551725769,
+        "step": 750.0,
+        "tokens_seen": 7620000.0,
+        "train_loss": 6.066132068634033,
+        "val_loss": 6.523163391661456
+      },
+      {
+        "learning_rate": 1e-05,
+        "step": 1000.0,
+        "tokens_seen": 10160000.0,
+        "train_loss": 6.213973522186279,
+        "val_loss": 6.488251337948746
+      }
+    ],
+    "parameter_count": 38325785,
+    "peak_vram_mb": 1558.927734375,
+    "pure_train_tok_per_sec": 207624.74916431186,
+    "step_time_mean_ms": 48.9344360000141,
+    "step_time_median_ms": 46.73129999991943,
+    "train_tokens_seen": 10160000
+  }
+}

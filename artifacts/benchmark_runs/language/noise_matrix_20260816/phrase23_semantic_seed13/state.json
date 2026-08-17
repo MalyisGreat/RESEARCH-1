@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase23_semantic_seed13\\checkpoint.pt",
+  "final_train_loss": 5.853789329528809,
+  "final_val_loss": 6.497947769277678,
+  "peak_vram_mb": 1571.830078125,
+  "pure_train_tok_per_sec": 196955.71865342258,
+  "result_path": "E:\\CODEXRESEARCH\\RESEARCH-1\\artifacts\\benchmark_runs\\language\\noise_matrix_20260816\\phrase23_semantic_seed13\\result.json",
+  "run_name": "phrase23_semantic_seed13",
+  "status": "completed",
+  "step": 1000,
+  "tokens_seen": 10160000,
+  "train_steps": 1000
+}
