@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import json
 import math
@@ -14,12 +15,159 @@ from pathlib import Path
 from typing import Any
 
 import torch
+import torch.nn.functional as F
+from torch import nn
 
 THIS_DIR = Path(__file__).resolve().parent
 LANGUAGE_DIR = THIS_DIR.parent
 sys.path.insert(0, str(LANGUAGE_DIR))
 
 import standalone_longseq_anchor_train as base
+
+
+class CollapsedDepthwiseBank(nn.Module):
+    """Exact collapse of Wave10's averaged, aligned depthwise branches."""
+
+    def __init__(self, layers: nn.ModuleList, left_paddings: list[int], dilation: int) -> None:
+        super().__init__()
+        if not layers:
+            raise ValueError("at least one depthwise layer is required")
+        self.dim = layers[0].in_channels
+        self.dilation = dilation
+        self.kernel_size = max(layer.kernel_size[0] for layer in layers)
+        self.left_padding = (self.kernel_size - 1) * dilation
+        branch_count = len(layers)
+        summed_weight = layers[0].weight.new_zeros(self.dim, 1, self.kernel_size)
+        multiplicity = layers[0].weight.new_zeros(1, 1, self.kernel_size)
+        biases: list[torch.Tensor] = []
+        with torch.no_grad():
+            for layer in layers:
+                kernel = layer.kernel_size[0]
+                summed_weight[:, :, self.kernel_size - kernel :] += layer.weight
+                multiplicity[:, :, self.kernel_size - kernel :] += 1
+                if layer.bias is not None:
+                    biases.append(layer.bias)
+        self.weight = nn.Parameter(summed_weight / multiplicity.clamp_min(1))
+        self.register_buffer("weight_scale", multiplicity / branch_count, persistent=False)
+        self.bias = nn.Parameter(torch.stack(biases).mean(dim=0)) if biases else None
+        expected_paddings = [(layer.kernel_size[0] - 1) * dilation for layer in layers]
+        if list(left_paddings) != expected_paddings:
+            raise ValueError(f"unexpected paddings: {left_paddings} != {expected_paddings}")
+
+    def forward(self, conv_input: torch.Tensor) -> torch.Tensor:
+        output = F.conv1d(
+            F.pad(conv_input, (self.left_padding, 0)),
+            self.weight * self.weight_scale,
+            self.bias,
+            dilation=self.dilation,
+            groups=self.dim,
+        )
+        return output.transpose(1, 2)
+
+
+class CollapsedWave10Block(nn.Module):
+    def __init__(self, source: nn.Module, dilation: int) -> None:
+        super().__init__()
+        self.collapsed_depthwise = CollapsedDepthwiseBank(source.depthwise_layers, source.left_paddings, dilation)
+        self.memory_left_padding = source.memory_left_padding
+        self.conv_norm = copy.deepcopy(source.conv_norm)
+        self.mix = copy.deepcopy(source.mix)
+        self.memory_norm = copy.deepcopy(source.memory_norm)
+        self.memory_down = copy.deepcopy(source.memory_down)
+        self.memory_depthwise = copy.deepcopy(source.memory_depthwise)
+        self.memory_up = copy.deepcopy(source.memory_up)
+        self.ffn_norm = copy.deepcopy(source.ffn_norm)
+        self.ffn_in = copy.deepcopy(source.ffn_in)
+        self.ffn_out = copy.deepcopy(source.ffn_out)
+        self.dropout = copy.deepcopy(source.dropout)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        conv_input = self.conv_norm(x).transpose(1, 2)
+        conv_output = self.collapsed_depthwise(conv_input)
+        x = x + self.dropout(self.mix(F.relu(conv_output).square()))
+        memory_input = self.memory_down(self.memory_norm(x)).transpose(1, 2)
+        memory_output = self.memory_depthwise(F.pad(memory_input, (self.memory_left_padding, 0))).transpose(1, 2)
+        x = x + self.dropout(self.memory_up(F.silu(memory_output)))
+        hidden = F.relu(self.ffn_in(self.ffn_norm(x))).square()
+        return x + self.dropout(self.ffn_out(hidden))
+
+
+def collapse_model_blocks(model: nn.Module) -> nn.Module:
+    for layer_index, block in enumerate(model.blocks):
+        model.blocks[layer_index] = CollapsedWave10Block(block, dilation=2 ** (layer_index % 6))
+    return model
+
+
+def anchor_loss_h100(
+    model: nn.Module,
+    input_ids: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    fixed_candidate_ids: torch.Tensor,
+    config: base.TrainConfig,
+) -> tuple[torch.Tensor, int, int]:
+    """Equivalent anchor loss without a per-step CUDA-to-CPU candidate round trip."""
+    candidate_ids = torch.unique(torch.cat((fixed_candidate_ids, targets.reshape(-1))))
+    candidate_map = torch.full((config.vocab_size,), -1, dtype=torch.long, device=targets.device)
+    candidate_map[candidate_ids] = torch.arange(candidate_ids.numel(), dtype=torch.long, device=targets.device)
+    reduced_targets = candidate_map[targets.reshape(-1)].view_as(targets)
+    hidden = model.factor_down(model.features(input_ids))
+    candidate_weight = model.factor_up.weight.index_select(0, candidate_ids)
+    candidate_bias = model.factor_up.bias.index_select(0, candidate_ids) if model.factor_up.bias is not None else None
+    sampled_sum = base.linear_cross_entropy_sum_chunked(
+        hidden,
+        reduced_targets,
+        candidate_weight,
+        candidate_bias,
+        token_chunk_size=config.token_chunk_size,
+    )
+    sampled_loss = sampled_sum / targets.numel()
+    anchor_hidden = hidden[:, :: config.token_stride, :]
+    anchor_targets = targets[:, :: config.token_stride]
+    anchor_sum = base.linear_cross_entropy_sum_chunked(
+        anchor_hidden,
+        anchor_targets,
+        model.factor_up.weight,
+        model.factor_up.bias,
+        token_chunk_size=config.token_chunk_size,
+    )
+    full_anchor_loss = anchor_sum / anchor_targets.numel()
+    return 0.5 * (sampled_loss + full_anchor_loss), int(targets.numel()), int(candidate_ids.numel())
+
+
+def load_or_build_candidate_ids(
+    train_targets: torch.Tensor,
+    *,
+    config: base.TrainConfig,
+    path: Path | None,
+) -> torch.Tensor:
+    if path is not None and path.exists():
+        payload = torch.load(path, map_location="cpu", weights_only=False)
+        candidate_ids = payload["candidate_ids"] if isinstance(payload, dict) else payload
+        if candidate_ids.numel() != min(config.sampled_vocab_size, config.vocab_size):
+            raise RuntimeError(f"candidate cache {path} has unexpected size {candidate_ids.numel()}")
+        print(f"LOADED_CANDIDATE_IDS path={path} count={candidate_ids.numel()}", flush=True)
+        return candidate_ids.long()
+    candidate_ids = base.top_token_ids(
+        train_targets,
+        count=config.sampled_vocab_size,
+        vocab_size=config.vocab_size,
+    )
+    if path is not None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        torch.save(
+            {
+                "candidate_ids": candidate_ids,
+                "sampled_vocab_size": config.sampled_vocab_size,
+                "vocab_size": config.vocab_size,
+                "train_tokens": int(train_targets.numel()),
+            },
+            tmp,
+        )
+        tmp.replace(path)
+        print(f"SAVED_CANDIDATE_IDS path={path} count={candidate_ids.numel()}", flush=True)
+    return candidate_ids
 
 
 def write_jsonl(path: Path, payload: dict[str, Any]) -> None:
@@ -103,7 +251,18 @@ def save_checkpoint(
     tmp.replace(path)
 
 
-def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, compile_mode: str) -> None:
+def train(
+    config: base.TrainConfig,
+    *,
+    log_interval: int,
+    compile_model: bool,
+    compile_mode: str,
+    collapsed_conv: bool,
+    legacy_candidate_path: bool,
+    save_checkpoints: bool,
+    candidate_ids_path: Path | None,
+    timing_warmup_steps: int,
+) -> None:
     torch.manual_seed(config.seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(config.seed)
@@ -154,6 +313,11 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
         "hardware": hardware_report(device),
         "compile_model": compile_model,
         "compile_mode": compile_mode,
+        "collapsed_conv": collapsed_conv,
+        "legacy_candidate_path": legacy_candidate_path,
+        "save_checkpoints": save_checkpoints,
+        "candidate_ids_path": str(candidate_ids_path) if candidate_ids_path else None,
+        "timing_warmup_steps": timing_warmup_steps,
     }
     base.write_json_atomic(output_dir / "run_meta.json", run_meta)
     base.write_json_atomic(
@@ -169,7 +333,11 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
     train_inputs, train_targets, val_inputs, val_targets, vocab_size = base.load_cache(config)
     if vocab_size != config.vocab_size:
         raise RuntimeError(f"cache vocab size {vocab_size} != configured vocab size {config.vocab_size}")
-    fixed_candidate_ids = base.top_token_ids(train_targets, count=config.sampled_vocab_size, vocab_size=config.vocab_size)
+    fixed_candidate_ids = load_or_build_candidate_ids(
+        train_targets,
+        config=config,
+        path=candidate_ids_path,
+    ).to(device, non_blocking=True)
     schedule = base.build_batch_schedule(
         len(train_inputs),
         batch_size=config.batch_size,
@@ -177,7 +345,10 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
         seed=config.seed,
     )
 
-    model: torch.nn.Module = base.CausalConvFactorizedLM(config).to(device)
+    model: torch.nn.Module = base.CausalConvFactorizedLM(config)
+    if collapsed_conv:
+        model = collapse_model_blocks(model)
+    model = model.to(device)
     parameter_count = base.count_parameters(model)
     if compile_model:
         model = torch.compile(model, mode=compile_mode)
@@ -196,6 +367,8 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
     parameters = [parameter for parameter in model.parameters() if parameter.requires_grad]
     history: list[dict[str, float]] = []
     step_times: list[float] = []
+    measured_step_times: list[float] = []
+    measured_tokens = 0
     tokens_seen = 0
     start_step = 1
 
@@ -220,7 +393,7 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
     print(
         f"START run={config.run_name} device={torch.cuda.get_device_name(0) if device.type == 'cuda' else 'cpu'} "
         f"params={parameter_count:,} seq={config.sequence_length} batch={config.batch_size} steps={config.train_steps} "
-        f"amp={config.amp_dtype} compile={compile_model}",
+        f"amp={config.amp_dtype} compile={compile_model} collapsed_conv={collapsed_conv}",
         flush=True,
     )
     base.write_json_atomic(
@@ -259,7 +432,8 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
         optimizer.zero_grad(set_to_none=True)
 
         with torch.autocast(**autocast_kwargs):
-            loss, token_count, candidate_size = base.anchor_loss(
+            loss_fn = base.anchor_loss if legacy_candidate_path else anchor_loss_h100
+            loss, token_count, candidate_size = loss_fn(
                 model,
                 batch_inputs,
                 batch_targets,
@@ -278,14 +452,17 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
         step_duration = time.perf_counter() - step_start
         step_times.append(step_duration)
         tokens_seen += int(token_count)
+        if step - start_step + 1 > timing_warmup_steps:
+            measured_step_times.append(step_duration)
+            measured_tokens += int(token_count)
         candidate_sizes.append(int(candidate_size))
         latest_train_loss = float(loss.detach().item())
         latest_grad_norm = float(grad_norm.detach().item() if torch.is_tensor(grad_norm) else grad_norm)
-        pure_time = sum(step_times)
-        pure_tps = tokens_seen / max(pure_time, 1e-9)
-        recent_times = step_times[-100:]
+        pure_time = sum(measured_step_times)
+        pure_tps = measured_tokens / max(pure_time, 1e-9) if measured_step_times else float("nan")
+        recent_times = measured_step_times[-100:]
         recent_tokens = config.batch_size * config.sequence_length * len(recent_times)
-        rolling_tps = recent_tokens / max(sum(recent_times), 1e-9)
+        rolling_tps = recent_tokens / max(sum(recent_times), 1e-9) if recent_times else float("nan")
         peak_allocated = (
             torch.cuda.max_memory_allocated(device) / (1024 * 1024) if device.type == "cuda" else None
         )
@@ -409,13 +586,18 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
                 },
             )
 
-        should_checkpoint = (
+        should_checkpoint = save_checkpoints and (
             (config.checkpoint_interval > 0 and step % config.checkpoint_interval == 0)
             or should_eval
             or step == config.train_steps
         )
         if should_checkpoint:
-            h100_args = {"compile_model": compile_model, "compile_mode": compile_mode}
+            h100_args = {
+                "compile_model": compile_model,
+                "compile_mode": compile_mode,
+                "collapsed_conv": collapsed_conv,
+                "legacy_candidate_path": legacy_candidate_path,
+            }
             save_checkpoint(
                 checkpoint_path,
                 config=config,
@@ -444,7 +626,7 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
                 )
                 print(f"MILESTONE {milestone}", flush=True)
 
-    pure_time = sum(step_times)
+    pure_time = sum(measured_step_times)
     wall_seconds = time.perf_counter() - wall_start
     result = {
         "benchmark": "h100_wave10_fullvocab_train",
@@ -460,7 +642,7 @@ def train(config: base.TrainConfig, *, log_interval: int, compile_model: bool, c
             "train_tokens_seen": tokens_seen,
             "final_train_loss": latest_train_loss,
             "final_val_loss_full_vocab": latest_val_loss,
-            "pure_train_tok_per_sec": tokens_seen / max(pure_time, 1e-9),
+            "pure_train_tok_per_sec": measured_tokens / max(pure_time, 1e-9) if measured_step_times else float("nan"),
             "wall_tok_per_sec": tokens_seen / max(wall_seconds, 1e-9),
             "step_time_mean_ms": statistics.fmean(step_times) * 1000.0,
             "step_time_median_ms": statistics.median(step_times) * 1000.0,
@@ -532,6 +714,11 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
     parser.add_argument("--log-interval", type=int, default=100)
     parser.add_argument("--compile", action="store_true", help="Use torch.compile; keep enabled consistently for resume.")
     parser.add_argument("--compile-mode", type=str, default="reduce-overhead")
+    parser.add_argument("--collapsed-conv", action="store_true", help="Collapse the exactly redundant multiscale conv bank.")
+    parser.add_argument("--legacy-candidate-path", action="store_true", help="Use the old per-step CUDA-to-CPU candidate construction.")
+    parser.add_argument("--skip-checkpoints", action="store_true", help="Disable checkpoint writes for disposable profiling runs.")
+    parser.add_argument("--candidate-ids-path", type=Path, default=None, help="Reuse the fixed sampled-vocabulary IDs across runs.")
+    parser.add_argument("--timing-warmup-steps", type=int, default=0, help="Exclude initial compile/autotune steps from throughput.")
     args = parser.parse_args()
 
     train_steps = args.train_steps
@@ -573,7 +760,17 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
 
 def main() -> None:
     config, args = parse_args()
-    train(config, log_interval=args.log_interval, compile_model=args.compile, compile_mode=args.compile_mode)
+    train(
+        config,
+        log_interval=args.log_interval,
+        compile_model=args.compile,
+        compile_mode=args.compile_mode,
+        collapsed_conv=args.collapsed_conv,
+        legacy_candidate_path=args.legacy_candidate_path,
+        save_checkpoints=not args.skip_checkpoints,
+        candidate_ids_path=args.candidate_ids_path,
+        timing_warmup_steps=args.timing_warmup_steps,
+    )
 
 
 if __name__ == "__main__":
