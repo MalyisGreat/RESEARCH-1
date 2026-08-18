@@ -21,14 +21,15 @@ mkdir -p "${RUN_ROOT}"
 run_arm() {
   local batch="$1"
   local compile_mode="$2"
-  local name="wave10_350m_collapsed_b${batch}_${compile_mode}_${STAMP}"
+  local loss_kernel="$3"
+  local name="wave10_350m_collapsed_b${batch}_${compile_mode}_${loss_kernel}_${STAMP}"
   local out="${RUN_ROOT}/${name}"
   local compile_args=()
   if [[ "${compile_mode}" != "eager" ]]; then
     compile_args=(--compile --compile-mode "${compile_mode}")
   fi
   mkdir -p "${out}"
-  printf 'START_ARM batch=%s mode=%s\n' "${batch}" "${compile_mode}" | tee "${out}/launcher.log"
+  printf 'START_ARM batch=%s mode=%s loss=%s\n' "${batch}" "${compile_mode}" "${loss_kernel}" | tee "${out}/launcher.log"
   python -u "${SCRIPT_DIR}/h100_wave10_fullvocab_train.py" \
     --cache-path "${CACHE_PATH}" \
     --output-dir "${out}" \
@@ -58,33 +59,34 @@ run_arm() {
     --amp-dtype bf16 \
     --log-interval 5 \
     --timing-warmup-steps "${TIMING_WARMUP_STEPS}" \
+    --loss-kernel "${loss_kernel}" \
     --collapsed-conv \
     --skip-checkpoints \
     "${compile_args[@]}" 2>&1 | tee -a "${out}/launcher.log"
   local status="${PIPESTATUS[0]}"
-  python - "${out}/result.json" "${name}" "${batch}" "${compile_mode}" "${status}" >> "${SUMMARY}" <<'PY'
+  python - "${out}/result.json" "${name}" "${batch}" "${compile_mode}" "${loss_kernel}" "${status}" >> "${SUMMARY}" <<'PY'
 import json
 import pathlib
 import sys
 
-result_path, name, batch, mode, status = sys.argv[1:]
-row = {"name": name, "batch_size": int(batch), "mode": mode, "exit": int(status)}
+result_path, name, batch, mode, loss_kernel, status = sys.argv[1:]
+row = {"name": name, "batch_size": int(batch), "mode": mode, "loss_kernel": loss_kernel, "exit": int(status)}
 path = pathlib.Path(result_path)
 if path.exists():
     row.update(json.loads(path.read_text())["report"])
 print(json.dumps(row, sort_keys=True))
 PY
-  printf 'END_ARM batch=%s mode=%s exit=%s\n' "${batch}" "${compile_mode}" "${status}" | tee -a "${out}/launcher.log"
+  printf 'END_ARM batch=%s mode=%s loss=%s exit=%s\n' "${batch}" "${compile_mode}" "${loss_kernel}" "${status}" | tee -a "${out}/launcher.log"
   return 0
 }
 
+run_arm 1 eager torch
+run_arm 1 reduce-overhead torch
+run_arm 4 reduce-overhead torch
 for batch in 1 2 4 8; do
-  run_arm "${batch}" eager
+  run_arm "${batch}" eager liger
 done
-
-for batch in 1 2 4 8; do
-  run_arm "${batch}" reduce-overhead
-done
+run_arm 1 reduce-overhead liger
 
 python - "${SUMMARY}" "${RUN_ROOT}/sweep_${STAMP}.json" <<'PY'
 import json
@@ -100,7 +102,7 @@ if successful:
     winner = successful[0]
     print(
         "WINNER "
-        f"batch={winner['batch_size']} mode={winner['mode']} "
+        f"batch={winner['batch_size']} mode={winner['mode']} loss={winner['loss_kernel']} "
         f"tok_s={winner['pure_train_tok_per_sec']:.0f} "
         f"peak_mb={winner['peak_allocated_mb']:.0f}"
     )

@@ -105,13 +105,15 @@ def anchor_loss_h100(
     *,
     fixed_candidate_ids: torch.Tensor,
     config: base.TrainConfig,
+    hidden: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, int, int]:
     """Equivalent anchor loss without a per-step CUDA-to-CPU candidate round trip."""
     candidate_ids = torch.unique(torch.cat((fixed_candidate_ids, targets.reshape(-1))))
     candidate_map = torch.full((config.vocab_size,), -1, dtype=torch.long, device=targets.device)
     candidate_map[candidate_ids] = torch.arange(candidate_ids.numel(), dtype=torch.long, device=targets.device)
     reduced_targets = candidate_map[targets.reshape(-1)].view_as(targets)
-    hidden = model.factor_down(model.features(input_ids))
+    if hidden is None:
+        hidden = model.factor_down(model.features(input_ids))
     candidate_weight = model.factor_up.weight.index_select(0, candidate_ids)
     candidate_bias = model.factor_up.bias.index_select(0, candidate_ids) if model.factor_up.bias is not None else None
     sampled_sum = base.linear_cross_entropy_sum_chunked(
@@ -133,6 +135,37 @@ def anchor_loss_h100(
     )
     full_anchor_loss = anchor_sum / anchor_targets.numel()
     return 0.5 * (sampled_loss + full_anchor_loss), int(targets.numel()), int(candidate_ids.numel())
+
+
+def anchor_loss_liger(
+    model: nn.Module,
+    input_ids: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    fixed_candidate_ids: torch.Tensor,
+    config: base.TrainConfig,
+    loss_module: nn.Module,
+    hidden: torch.Tensor | None = None,
+) -> tuple[torch.Tensor, int, int]:
+    """The same sampled-plus-anchor objective using fused linear cross entropy."""
+    candidate_ids = torch.unique(torch.cat((fixed_candidate_ids, targets.reshape(-1))))
+    candidate_map = torch.full((config.vocab_size,), -1, dtype=torch.long, device=targets.device)
+    candidate_map[candidate_ids] = torch.arange(candidate_ids.numel(), dtype=torch.long, device=targets.device)
+    reduced_targets = candidate_map[targets.reshape(-1)]
+    if hidden is None:
+        hidden = model.factor_down(model.features(input_ids))
+    flat_hidden = hidden.reshape(-1, hidden.size(-1))
+    candidate_weight = model.factor_up.weight.index_select(0, candidate_ids)
+    candidate_bias = model.factor_up.bias.index_select(0, candidate_ids) if model.factor_up.bias is not None else None
+    sampled_sum = loss_module(candidate_weight, flat_hidden, reduced_targets, candidate_bias)
+    anchor_hidden = hidden[:, :: config.token_stride, :].reshape(-1, hidden.size(-1))
+    anchor_targets = targets[:, :: config.token_stride].reshape(-1)
+    anchor_sum = loss_module(model.factor_up.weight, anchor_hidden, anchor_targets, model.factor_up.bias)
+    return (
+        0.5 * (sampled_sum / targets.numel() + anchor_sum / anchor_targets.numel()),
+        int(targets.numel()),
+        int(candidate_ids.numel()),
+    )
 
 
 def load_or_build_candidate_ids(
@@ -262,6 +295,7 @@ def train(
     save_checkpoints: bool,
     candidate_ids_path: Path | None,
     timing_warmup_steps: int,
+    loss_kernel: str,
 ) -> None:
     torch.manual_seed(config.seed)
     if torch.cuda.is_available():
@@ -318,6 +352,7 @@ def train(
         "save_checkpoints": save_checkpoints,
         "candidate_ids_path": str(candidate_ids_path) if candidate_ids_path else None,
         "timing_warmup_steps": timing_warmup_steps,
+        "loss_kernel": loss_kernel,
     }
     base.write_json_atomic(output_dir / "run_meta.json", run_meta)
     base.write_json_atomic(
@@ -350,8 +385,17 @@ def train(
         model = collapse_model_blocks(model)
     model = model.to(device)
     parameter_count = base.count_parameters(model)
+    feature_projector = lambda input_ids: model.factor_down(model.features(input_ids))
     if compile_model:
-        model = torch.compile(model, mode=compile_mode)
+        feature_projector = torch.compile(feature_projector, mode=compile_mode)
+
+    liger_loss: nn.Module | None = None
+    if loss_kernel == "liger":
+        try:
+            from liger_kernel.transformers import LigerFusedLinearCrossEntropyLoss
+        except ImportError as error:
+            raise RuntimeError("--loss-kernel liger requires the liger-kernel package") from error
+        liger_loss = LigerFusedLinearCrossEntropyLoss(reduction="sum", accum_dtype=torch.float32)
 
     try:
         optimizer = torch.optim.AdamW(
@@ -393,7 +437,7 @@ def train(
     print(
         f"START run={config.run_name} device={torch.cuda.get_device_name(0) if device.type == 'cuda' else 'cpu'} "
         f"params={parameter_count:,} seq={config.sequence_length} batch={config.batch_size} steps={config.train_steps} "
-        f"amp={config.amp_dtype} compile={compile_model} collapsed_conv={collapsed_conv}",
+        f"amp={config.amp_dtype} compile={compile_model} collapsed_conv={collapsed_conv} loss_kernel={loss_kernel}",
         flush=True,
     )
     base.write_json_atomic(
@@ -432,14 +476,36 @@ def train(
         optimizer.zero_grad(set_to_none=True)
 
         with torch.autocast(**autocast_kwargs):
-            loss_fn = base.anchor_loss if legacy_candidate_path else anchor_loss_h100
-            loss, token_count, candidate_size = loss_fn(
-                model,
-                batch_inputs,
-                batch_targets,
-                fixed_candidate_ids=fixed_candidate_ids,
-                config=config,
-            )
+            if legacy_candidate_path:
+                loss, token_count, candidate_size = base.anchor_loss(
+                    model,
+                    batch_inputs,
+                    batch_targets,
+                    fixed_candidate_ids=fixed_candidate_ids,
+                    config=config,
+                )
+            else:
+                hidden = feature_projector(batch_inputs)
+                if loss_kernel == "liger":
+                    assert liger_loss is not None
+                    loss, token_count, candidate_size = anchor_loss_liger(
+                        model,
+                        batch_inputs,
+                        batch_targets,
+                        fixed_candidate_ids=fixed_candidate_ids,
+                        config=config,
+                        loss_module=liger_loss,
+                        hidden=hidden,
+                    )
+                else:
+                    loss, token_count, candidate_size = anchor_loss_h100(
+                        model,
+                        batch_inputs,
+                        batch_targets,
+                        fixed_candidate_ids=fixed_candidate_ids,
+                        config=config,
+                        hidden=hidden,
+                    )
 
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)
@@ -597,6 +663,7 @@ def train(
                 "compile_mode": compile_mode,
                 "collapsed_conv": collapsed_conv,
                 "legacy_candidate_path": legacy_candidate_path,
+                "loss_kernel": loss_kernel,
             }
             save_checkpoint(
                 checkpoint_path,
@@ -719,6 +786,7 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
     parser.add_argument("--skip-checkpoints", action="store_true", help="Disable checkpoint writes for disposable profiling runs.")
     parser.add_argument("--candidate-ids-path", type=Path, default=None, help="Reuse the fixed sampled-vocabulary IDs across runs.")
     parser.add_argument("--timing-warmup-steps", type=int, default=0, help="Exclude initial compile/autotune steps from throughput.")
+    parser.add_argument("--loss-kernel", choices=("torch", "liger"), default="torch")
     args = parser.parse_args()
 
     train_steps = args.train_steps
@@ -770,6 +838,7 @@ def main() -> None:
         save_checkpoints=not args.skip_checkpoints,
         candidate_ids_path=args.candidate_ids_path,
         timing_warmup_steps=args.timing_warmup_steps,
+        loss_kernel=args.loss_kernel,
     )
 
 
