@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-: "${CACHE_PATH:?Set CACHE_PATH to the uploaded 1B token cache}"
+: "${CACHE_PATH:?Set CACHE_PATH to a GPT-2 FineWeb-Edu token cache on the node}"
 
 RUN_ROOT="${RUN_ROOT:-$HOME/research1-runs/h100-qualification}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
