@@ -10,6 +10,7 @@ import platform
 import statistics
 import sys
 import time
+from contextlib import nullcontext
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -296,6 +297,7 @@ def train(
     candidate_ids_path: Path | None,
     timing_warmup_steps: int,
     loss_kernel: str,
+    profile_steps: int,
 ) -> None:
     torch.manual_seed(config.seed)
     if torch.cuda.is_available():
@@ -353,6 +355,7 @@ def train(
         "candidate_ids_path": str(candidate_ids_path) if candidate_ids_path else None,
         "timing_warmup_steps": timing_warmup_steps,
         "loss_kernel": loss_kernel,
+        "profile_steps": profile_steps,
     }
     base.write_json_atomic(output_dir / "run_meta.json", run_meta)
     base.write_json_atomic(
@@ -459,6 +462,20 @@ def train(
     latest_grad_norm = float("nan")
     candidate_sizes: list[int] = []
     wall_start = time.perf_counter()
+    profiler = None
+    if profile_steps > 0:
+        if device.type != "cuda":
+            raise RuntimeError("--profile-steps requires CUDA")
+        trace_path = output_dir / "torch_trace.json"
+        profiler = torch.profiler.profile(
+            activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
+            schedule=torch.profiler.schedule(wait=2, warmup=1, active=profile_steps, repeat=1),
+            on_trace_ready=lambda active_profiler: active_profiler.export_chrome_trace(str(trace_path)),
+            record_shapes=False,
+            profile_memory=True,
+            with_stack=False,
+        )
+        profiler.start()
 
     for step in range(start_step, config.train_steps + 1):
         batch_indices = schedule[step - 1]
@@ -485,27 +502,31 @@ def train(
                     config=config,
                 )
             else:
-                hidden = feature_projector(batch_inputs)
-                if loss_kernel == "liger":
-                    assert liger_loss is not None
-                    loss, token_count, candidate_size = anchor_loss_liger(
-                        model,
-                        batch_inputs,
-                        batch_targets,
-                        fixed_candidate_ids=fixed_candidate_ids,
-                        config=config,
-                        loss_module=liger_loss,
-                        hidden=hidden,
-                    )
-                else:
-                    loss, token_count, candidate_size = anchor_loss_h100(
-                        model,
-                        batch_inputs,
-                        batch_targets,
-                        fixed_candidate_ids=fixed_candidate_ids,
-                        config=config,
-                        hidden=hidden,
-                    )
+                feature_context = torch.profiler.record_function("feature_projection") if profiler else nullcontext()
+                with feature_context:
+                    hidden = feature_projector(batch_inputs)
+                loss_context = torch.profiler.record_function("sampled_anchor_loss") if profiler else nullcontext()
+                with loss_context:
+                    if loss_kernel == "liger":
+                        assert liger_loss is not None
+                        loss, token_count, candidate_size = anchor_loss_liger(
+                            model,
+                            batch_inputs,
+                            batch_targets,
+                            fixed_candidate_ids=fixed_candidate_ids,
+                            config=config,
+                            loss_module=liger_loss,
+                            hidden=hidden,
+                        )
+                    else:
+                        loss, token_count, candidate_size = anchor_loss_h100(
+                            model,
+                            batch_inputs,
+                            batch_targets,
+                            fixed_candidate_ids=fixed_candidate_ids,
+                            config=config,
+                            hidden=hidden,
+                        )
 
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)
@@ -514,6 +535,8 @@ def train(
         scaler.update()
         if device.type == "cuda":
             torch.cuda.synchronize(device)
+        if profiler is not None:
+            profiler.step()
 
         step_duration = time.perf_counter() - step_start
         step_times.append(step_duration)
@@ -693,6 +716,13 @@ def train(
                 )
                 print(f"MILESTONE {milestone}", flush=True)
 
+    if profiler is not None:
+        profiler.stop()
+        (output_dir / "torch_profile_cuda.txt").write_text(
+            profiler.key_averages().table(sort_by="self_cuda_time_total", row_limit=40) + "\n",
+            encoding="utf-8",
+        )
+
     pure_time = sum(measured_step_times)
     wall_seconds = time.perf_counter() - wall_start
     result = {
@@ -787,6 +817,7 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
     parser.add_argument("--candidate-ids-path", type=Path, default=None, help="Reuse the fixed sampled-vocabulary IDs across runs.")
     parser.add_argument("--timing-warmup-steps", type=int, default=0, help="Exclude initial compile/autotune steps from throughput.")
     parser.add_argument("--loss-kernel", choices=("torch", "liger"), default="torch")
+    parser.add_argument("--profile-steps", type=int, default=0, help="Capture this many active CUDA-profiler steps.")
     args = parser.parse_args()
 
     train_steps = args.train_steps
@@ -839,6 +870,7 @@ def main() -> None:
         candidate_ids_path=args.candidate_ids_path,
         timing_warmup_steps=args.timing_warmup_steps,
         loss_kernel=args.loss_kernel,
+        profile_steps=args.profile_steps,
     )
 
 
