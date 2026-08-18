@@ -1,0 +1,61 @@
+{
+  "completed_runs": 9,
+  "quality_ranking": [
+    "delta_router",
+    "delta_gain",
+    "wave"
+  ],
+  "architectures": {
+    "wave": {
+      "runs": 3,
+      "seeds": [
+        13,
+        17,
+        23
+      ],
+      "endpoint_loss_mean": 5.016932721322602,
+      "endpoint_loss_stdev": 0.0017932679733480008,
+      "paired_delta_vs_wave_mean": 0.0,
+      "wins_vs_wave": 0,
+      "paired_comparisons": 3,
+      "tok_per_sec_mean": 145647.19018995017,
+      "wall_tok_per_sec_mean": 143625.96910749277,
+      "peak_allocated_mb_mean": 56905.762858072914,
+      "parameter_count": 350307921
+    },
+    "delta_gain": {
+      "runs": 3,
+      "seeds": [
+        13,
+        17,
+        23
+      ],
+      "endpoint_loss_mean": 4.85111794131478,
+      "endpoint_loss_stdev": 0.011851743323595437,
+      "paired_delta_vs_wave_mean": -0.1658147800078226,
+      "wins_vs_wave": 3,
+      "paired_comparisons": 3,
+      "tok_per_sec_mean": 142497.21242353445,
+      "wall_tok_per_sec_mean": 140245.6542725671,
+      "peak_allocated_mb_mean": 59676.668131510414,
+      "parameter_count": 349397332
+    },
+    "delta_router": {
+      "runs": 3,
+      "seeds": [
+        13,
+        17,
+        23
+      ],
+      "endpoint_loss_mean": 4.843452918396534,
+      "endpoint_loss_stdev": 0.006759422146684486,
+      "paired_delta_vs_wave_mean": -0.17347980292606824,
+      "wins_vs_wave": 3,
+      "paired_comparisons": 3,
+      "tok_per_sec_mean": 142336.41247951667,
+      "wall_tok_per_sec_mean": 140048.34886462372,
+      "peak_allocated_mb_mean": 59676.422037760414,
+      "parameter_count": 349401942
+    }
+  }
+}

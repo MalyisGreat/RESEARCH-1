@@ -1,0 +1,35 @@
+START_ARM architecture=delta_router seed=17
+LOADED_CANDIDATE_IDS path=/home/dev/data/finewebedu_train100014723_val325152_seq10160_gpt2.pt.top32768.pt count=32768
+START run=delta_router_350m_100m_seed17_20260818_203320 device=NVIDIA H100 80GB HBM3 params=349,401,942 seq=10160 batch=8 steps=1230 amp=bf16 compile=True collapsed_conv=True architecture=delta_router loss_kernel=torch
+TRAIN step=1/1230 tokens=81280 loss=10.6210 lr=2e-06 grad=0.694 pure_tok_s=nan roll100_tok_s=nan
+TRAIN step=50/1230 tokens=4064000 loss=7.4193 lr=0.0001 grad=1.800 pure_tok_s=140890 roll100_tok_s=140890
+TRAIN step=100/1230 tokens=8128000 loss=6.7828 lr=0.0002 grad=1.581 pure_tok_s=145155 roll100_tok_s=145155
+TRAIN step=150/1230 tokens=12192000 loss=6.7986 lr=0.000199132 grad=1.358 pure_tok_s=143710 roll100_tok_s=144724
+TRAIN step=200/1230 tokens=16256000 loss=6.1124 lr=0.000196544 grad=0.951 pure_tok_s=142407 roll100_tok_s=140151
+EVAL_FULL_VOCAB step=246/1230 tokens=19994880 train=6.0204 val_full=6.0317 eval_s=1.3
+TRAIN step=250/1230 tokens=20320000 loss=5.9596 lr=0.000192287 grad=1.361 pure_tok_s=142659 roll100_tok_s=141263
+TRAIN step=300/1230 tokens=24384000 loss=5.7913 lr=0.000186442 grad=1.171 pure_tok_s=142601 roll100_tok_s=142963
+TRAIN step=350/1230 tokens=28448000 loss=5.6772 lr=0.000179122 grad=1.538 pure_tok_s=142223 roll100_tok_s=141208
+TRAIN step=400/1230 tokens=32512000 loss=5.5803 lr=0.000170469 grad=0.971 pure_tok_s=142459 roll100_tok_s=142054
+TRAIN step=450/1230 tokens=36576000 loss=5.4453 lr=0.00016065 grad=0.802 pure_tok_s=142276 roll100_tok_s=142455
+EVAL_FULL_VOCAB step=492/1230 tokens=39989760 train=5.3888 val_full=5.3770 eval_s=1.2
+TRAIN step=500/1230 tokens=40640000 loss=5.2914 lr=0.000149853 grad=0.978 pure_tok_s=142454 roll100_tok_s=142435
+TRAIN step=550/1230 tokens=44704000 loss=5.3387 lr=0.000138287 grad=0.959 pure_tok_s=142283 roll100_tok_s=142311
+TRAIN step=600/1230 tokens=48768000 loss=5.1755 lr=0.000126176 grad=0.882 pure_tok_s=142702 roll100_tok_s=143917
+TRAIN step=650/1230 tokens=52832000 loss=5.2843 lr=0.000113752 grad=0.863 pure_tok_s=143050 roll100_tok_s=147300
+TRAIN step=700/1230 tokens=56896000 loss=4.9896 lr=0.000101256 grad=0.913 pure_tok_s=142826 roll100_tok_s=143558
+EVAL_FULL_VOCAB step=738/1230 tokens=59984640 train=4.9010 val_full=5.0799 eval_s=1.2
+TRAIN step=750/1230 tokens=60960000 loss=5.1230 lr=8.89291e-05 grad=0.916 pure_tok_s=142753 roll100_tok_s=140896
+TRAIN step=800/1230 tokens=65024000 loss=5.0028 lr=7.70084e-05 grad=0.820 pure_tok_s=142808 roll100_tok_s=142683
+TRAIN step=850/1230 tokens=69088000 loss=5.0278 lr=6.57242e-05 grad=1.034 pure_tok_s=142541 roll100_tok_s=141002
+TRAIN step=900/1230 tokens=73152000 loss=5.0324 lr=5.52942e-05 grad=0.746 pure_tok_s=142435 roll100_tok_s=139576
+TRAIN step=950/1230 tokens=77216000 loss=4.9277 lr=4.59196e-05 grad=0.839 pure_tok_s=142574 roll100_tok_s=142846
+EVAL_FULL_VOCAB step=984/1230 tokens=79979520 train=4.9401 val_full=4.9173 eval_s=1.2
+TRAIN step=1000/1230 tokens=81280000 loss=5.0000 lr=3.77813e-05 grad=0.760 pure_tok_s=142348 roll100_tok_s=141578
+TRAIN step=1050/1230 tokens=85344000 loss=4.9548 lr=3.10362e-05 grad=0.802 pure_tok_s=142488 roll100_tok_s=141696
+TRAIN step=1100/1230 tokens=89408000 loss=4.9417 lr=2.58145e-05 grad=0.726 pure_tok_s=142385 roll100_tok_s=142750
+TRAIN step=1150/1230 tokens=93472000 loss=4.8976 lr=2.22169e-05 grad=0.718 pure_tok_s=142403 roll100_tok_s=141521
+TRAIN step=1200/1230 tokens=97536000 loss=4.8348 lr=2.03129e-05 grad=0.799 pure_tok_s=142476 roll100_tok_s=143471
+EVAL_FULL_VOCAB step=1230/1230 tokens=99974400 train=4.8501 val_full=4.8454 eval_s=1.2
+RESULT {"cache_load_seconds": 0.004709146000095643, "candidate_size_mean": 33533.62601626016, "checkpoint_path": "/home/dev/research1-runs/h100-architecture-matrix/delta_router_350m_100m_seed17_20260818_203320/checkpoint.pt", "final_train_loss": 4.850142002105713, "final_val_loss_full_vocab": 4.845407427202059, "history": [{"eval_seconds": 1.2684987560005538, "grad_norm": 1.103342056274414, "learning_rate": 0.00019268709290151591, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64606.0, "pure_train_tok_per_sec": 142474.26663840355, "rolling_100_tok_per_sec": 141245.92286041204, "step": 246.0, "tokens_seen": 19994880.0, "train_loss": 6.020428657531738, "val_loss_full_vocab": 6.031665159538975}, {"eval_seconds": 1.2431373590006842, "grad_norm": 0.8713440895080566, "learning_rate": 0.0001516375005781443, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64608.0, "pure_train_tok_per_sec": 142450.2617785031, "rolling_100_tok_per_sec": 141905.42054102558, "step": 492.0, "tokens_seen": 39989760.0, "train_loss": 5.38878059387207, "val_loss_full_vocab": 5.376983003940169}, {"eval_seconds": 1.2328130059995601, "grad_norm": 0.9731745719909668, "learning_rate": 9.185941512983153e-05, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64608.0, "pure_train_tok_per_sec": 142798.24547991937, "rolling_100_tok_per_sec": 142719.21727076414, "step": 738.0, "tokens_seen": 59984640.0, "train_loss": 4.900979042053223, "val_loss_full_vocab": 5.079909386996209}, {"eval_seconds": 1.2278910519999044, "grad_norm": 0.7488747239112854, "learning_rate": 4.0240940952750945e-05, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64648.0, "pure_train_tok_per_sec": 142459.21895591385, "rolling_100_tok_per_sec": 142173.35072128748, "step": 984.0, "tokens_seen": 79979520.0, "train_loss": 4.940061569213867, "val_loss_full_vocab": 4.917318999344908}, {"eval_seconds": 1.228095864998977, "grad_norm": 0.7048477530479431, "learning_rate": 2e-05, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64648.0, "pure_train_tok_per_sec": 142514.74667616465, "rolling_100_tok_per_sec": 144409.4215034808, "step": 1230.0, "tokens_seen": 99974400.0, "train_loss": 4.850142002105713, "val_loss_full_vocab": 4.845407427202059}], "metrics_csv": "/home/dev/research1-runs/h100-architecture-matrix/delta_router_350m_100m_seed17_20260818_203320/metrics.csv", "metrics_jsonl": "/home/dev/research1-runs/h100-architecture-matrix/delta_router_350m_100m_seed17_20260818_203320/metrics.jsonl", "parameter_count": 349401942, "peak_allocated_mb": 59691.45361328125, "peak_reserved_mb": 64648.0, "pure_train_tok_per_sec": 142514.74667616465, "step_time_mean_ms": 573.666551157693, "step_time_median_ms": 628.3295419998467, "train_tokens_seen": 99974400, "wall_tok_per_sec": 140227.3157240856}
+END_ARM architecture=delta_router seed=17 exit=0

@@ -1,0 +1,35 @@
+START_ARM architecture=wave seed=17
+LOADED_CANDIDATE_IDS path=/home/dev/data/finewebedu_train100014723_val325152_seq10160_gpt2.pt.top32768.pt count=32768
+START run=wave_350m_100m_seed17_20260818_203320 device=NVIDIA H100 80GB HBM3 params=350,307,921 seq=10160 batch=8 steps=1230 amp=bf16 compile=True collapsed_conv=True architecture=wave loss_kernel=torch
+TRAIN step=1/1230 tokens=81280 loss=10.6205 lr=2e-06 grad=0.695 pure_tok_s=nan roll100_tok_s=nan
+TRAIN step=50/1230 tokens=4064000 loss=7.4416 lr=0.0001 grad=2.887 pure_tok_s=144185 roll100_tok_s=144185
+TRAIN step=100/1230 tokens=8128000 loss=6.8581 lr=0.0002 grad=2.646 pure_tok_s=148627 roll100_tok_s=148627
+TRAIN step=150/1230 tokens=12192000 loss=6.8911 lr=0.000199132 grad=1.381 pure_tok_s=147089 roll100_tok_s=148134
+TRAIN step=200/1230 tokens=16256000 loss=6.1995 lr=0.000196544 grad=1.181 pure_tok_s=145715 roll100_tok_s=143328
+EVAL_FULL_VOCAB step=246/1230 tokens=19994880 train=6.1692 val_full=6.1701 eval_s=1.3
+TRAIN step=250/1230 tokens=20320000 loss=6.1020 lr=0.000192287 grad=1.201 pure_tok_s=145974 roll100_tok_s=144495
+TRAIN step=300/1230 tokens=24384000 loss=5.9375 lr=0.000186442 grad=1.023 pure_tok_s=145930 roll100_tok_s=146329
+TRAIN step=350/1230 tokens=28448000 loss=5.8326 lr=0.000179122 grad=0.797 pure_tok_s=145529 roll100_tok_s=144494
+TRAIN step=400/1230 tokens=32512000 loss=5.7787 lr=0.000170469 grad=0.913 pure_tok_s=145785 roll100_tok_s=145373
+TRAIN step=450/1230 tokens=36576000 loss=5.6520 lr=0.00016065 grad=1.238 pure_tok_s=145610 roll100_tok_s=145882
+EVAL_FULL_VOCAB step=492/1230 tokens=39989760 train=5.5653 val_full=5.5780 eval_s=1.2
+TRAIN step=500/1230 tokens=40640000 loss=5.4710 lr=0.000149853 grad=0.998 pure_tok_s=145808 roll100_tok_s=145900
+TRAIN step=550/1230 tokens=44704000 loss=5.5043 lr=0.000138287 grad=0.713 pure_tok_s=145633 roll100_tok_s=145733
+TRAIN step=600/1230 tokens=48768000 loss=5.3594 lr=0.000126176 grad=0.759 pure_tok_s=146077 roll100_tok_s=147392
+TRAIN step=650/1230 tokens=52832000 loss=5.4591 lr=0.000113752 grad=0.824 pure_tok_s=146443 roll100_tok_s=150937
+TRAIN step=700/1230 tokens=56896000 loss=5.1694 lr=0.000101256 grad=0.926 pure_tok_s=146211 roll100_tok_s=147005
+EVAL_FULL_VOCAB step=738/1230 tokens=59984640 train=5.0856 val_full=5.2618 eval_s=1.2
+TRAIN step=750/1230 tokens=60960000 loss=5.3002 lr=8.89291e-05 grad=0.811 pure_tok_s=146139 roll100_tok_s=144235
+TRAIN step=800/1230 tokens=65024000 loss=5.1740 lr=7.70084e-05 grad=0.699 pure_tok_s=146193 roll100_tok_s=146070
+TRAIN step=850/1230 tokens=69088000 loss=5.1978 lr=6.57242e-05 grad=0.936 pure_tok_s=145910 roll100_tok_s=144245
+TRAIN step=900/1230 tokens=73152000 loss=5.1963 lr=5.52942e-05 grad=0.766 pure_tok_s=145793 roll100_tok_s=142721
+TRAIN step=950/1230 tokens=77216000 loss=5.1036 lr=4.59196e-05 grad=0.805 pure_tok_s=145936 roll100_tok_s=146155
+EVAL_FULL_VOCAB step=984/1230 tokens=79979520 train=5.1093 val_full=5.0900 eval_s=1.2
+TRAIN step=1000/1230 tokens=81280000 loss=5.1612 lr=3.77813e-05 grad=0.717 pure_tok_s=145696 roll100_tok_s=144848
+TRAIN step=1050/1230 tokens=85344000 loss=5.1196 lr=3.10362e-05 grad=0.762 pure_tok_s=145838 roll100_tok_s=144932
+TRAIN step=1100/1230 tokens=89408000 loss=5.0986 lr=2.58145e-05 grad=0.774 pure_tok_s=145728 roll100_tok_s=146041
+TRAIN step=1150/1230 tokens=93472000 loss=5.0511 lr=2.22169e-05 grad=0.728 pure_tok_s=145743 roll100_tok_s=144762
+TRAIN step=1200/1230 tokens=97536000 loss=4.9915 lr=2.03129e-05 grad=0.761 pure_tok_s=145815 roll100_tok_s=146771
+EVAL_FULL_VOCAB step=1230/1230 tokens=99974400 train=5.0155 val_full=5.0158 eval_s=1.2
+RESULT {"cache_load_seconds": 0.004696704999332724, "candidate_size_mean": 33533.62601626016, "checkpoint_path": "/home/dev/research1-runs/h100-architecture-matrix/wave_350m_100m_seed17_20260818_203320/checkpoint.pt", "final_train_loss": 5.015535354614258, "final_val_loss_full_vocab": 5.015789410870845, "history": [{"eval_seconds": 1.259082899000532, "grad_norm": 1.0539710521697998, "learning_rate": 0.00019268709290151591, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61678.0, "pure_train_tok_per_sec": 145783.85754445216, "rolling_100_tok_per_sec": 144481.98632563523, "step": 246.0, "tokens_seen": 19994880.0, "train_loss": 6.169220924377441, "val_loss_full_vocab": 6.170129509211526}, {"eval_seconds": 1.215007438999237, "grad_norm": 1.0715280771255493, "learning_rate": 0.0001516375005781443, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61678.0, "pure_train_tok_per_sec": 145804.6098615734, "rolling_100_tok_per_sec": 145361.1718421688, "step": 492.0, "tokens_seen": 39989760.0, "train_loss": 5.5653181076049805, "val_loss_full_vocab": 5.577977383770342}, {"eval_seconds": 1.2155801770004473, "grad_norm": 0.8726333975791931, "learning_rate": 9.185941512983153e-05, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61678.0, "pure_train_tok_per_sec": 146186.40733378526, "rolling_100_tok_per_sec": 146143.74459057604, "step": 738.0, "tokens_seen": 59984640.0, "train_loss": 5.085647106170654, "val_loss_full_vocab": 5.261774728664263}, {"eval_seconds": 1.2157081949999338, "grad_norm": 0.7488529086112976, "learning_rate": 4.0240940952750945e-05, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61698.0, "pure_train_tok_per_sec": 145815.187985334, "rolling_100_tok_per_sec": 145487.74502896226, "step": 984.0, "tokens_seen": 79979520.0, "train_loss": 5.109341621398926, "val_loss_full_vocab": 5.0899801408212015}, {"eval_seconds": 1.215536849000273, "grad_norm": 0.6964566111564636, "learning_rate": 2e-05, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61698.0, "pure_train_tok_per_sec": 145854.82431770538, "rolling_100_tok_per_sec": 147757.75136972815, "step": 1230.0, "tokens_seen": 99974400.0, "train_loss": 5.015535354614258, "val_loss_full_vocab": 5.015789410870845}], "metrics_csv": "/home/dev/research1-runs/h100-architecture-matrix/wave_350m_100m_seed17_20260818_203320/metrics.csv", "metrics_jsonl": "/home/dev/research1-runs/h100-architecture-matrix/wave_350m_100m_seed17_20260818_203320/metrics.jsonl", "parameter_count": 350307921, "peak_allocated_mb": 56920.79443359375, "peak_reserved_mb": 61698.0, "pure_train_tok_per_sec": 145854.82431770538, "step_time_mean_ms": 559.1747221894307, "step_time_median_ms": 614.7458074997303, "train_tokens_seen": 99974400, "wall_tok_per_sec": 143888.27806359503}
+END_ARM architecture=wave seed=17 exit=0

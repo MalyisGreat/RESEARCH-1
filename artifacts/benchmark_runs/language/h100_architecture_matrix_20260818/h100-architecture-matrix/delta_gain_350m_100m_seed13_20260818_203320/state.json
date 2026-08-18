@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "/home/dev/research1-runs/h100-architecture-matrix/delta_gain_350m_100m_seed13_20260818_203320/checkpoint.pt",
+  "final_train_loss": 4.865357398986816,
+  "final_val_loss_full_vocab": 4.862140746473328,
+  "peak_allocated_mb": 59701.7744140625,
+  "peak_reserved_mb": 64608.0,
+  "pure_train_tok_per_sec": 143127.9478832374,
+  "result_path": "/home/dev/research1-runs/h100-architecture-matrix/delta_gain_350m_100m_seed13_20260818_203320/result.json",
+  "run_name": "delta_gain_350m_100m_seed13_20260818_203320",
+  "status": "completed",
+  "step": 1230,
+  "tokens_seen": 99974400,
+  "train_steps": 1230,
+  "wall_tok_per_sec": 140832.77187788504
+}

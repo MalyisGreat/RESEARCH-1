@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "/home/dev/research1-runs/h100-architecture-matrix/delta_router_350m_100m_seed13_20260818_203320/checkpoint.pt",
+  "final_train_loss": 4.856799125671387,
+  "final_val_loss_full_vocab": 4.849019723074643,
+  "peak_allocated_mb": 59701.5283203125,
+  "peak_reserved_mb": 64608.0,
+  "pure_train_tok_per_sec": 142973.1468062878,
+  "result_path": "/home/dev/research1-runs/h100-architecture-matrix/delta_router_350m_100m_seed13_20260818_203320/result.json",
+  "run_name": "delta_router_350m_100m_seed13_20260818_203320",
+  "status": "completed",
+  "step": 1230,
+  "tokens_seen": 99974400,
+  "train_steps": 1230,
+  "wall_tok_per_sec": 140658.99525042402
+}

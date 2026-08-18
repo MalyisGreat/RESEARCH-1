@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "/home/dev/research1-runs/h100-architecture-matrix/wave_350m_100m_seed23_20260818_203320/checkpoint.pt",
+  "final_train_loss": 5.093491554260254,
+  "final_val_loss_full_vocab": 5.016009237447123,
+  "peak_allocated_mb": 56865.625,
+  "peak_reserved_mb": 61718.0,
+  "pure_train_tok_per_sec": 144764.3903133244,
+  "result_path": "/home/dev/research1-runs/h100-architecture-matrix/wave_350m_100m_seed23_20260818_203320/result.json",
+  "run_name": "wave_350m_100m_seed23_20260818_203320",
+  "status": "completed",
+  "step": 1230,
+  "tokens_seen": 99974400,
+  "train_steps": 1230,
+  "wall_tok_per_sec": 142739.7703311872
+}
