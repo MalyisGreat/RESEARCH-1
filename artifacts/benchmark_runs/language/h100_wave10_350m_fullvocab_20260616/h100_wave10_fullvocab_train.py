@@ -394,6 +394,37 @@ def save_checkpoint(
     tmp.replace(path)
 
 
+def save_weights_checkpoint(
+    path: Path,
+    *,
+    config: base.TrainConfig,
+    model: torch.nn.Module,
+    step: int,
+    tokens_seen: int,
+    h100_args: dict[str, Any],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    torch.save(
+        {
+            "benchmark": "h100_wave10_fullvocab_train",
+            "checkpoint_type": "weights_only",
+            "config": {
+                **asdict(config),
+                "cache_path": str(config.cache_path),
+                "output_dir": str(config.output_dir),
+                "resume_checkpoint": None,
+            },
+            "h100_args": h100_args,
+            "model_state": model.state_dict(),
+            "step": step,
+            "tokens_seen": tokens_seen,
+        },
+        tmp,
+    )
+    tmp.replace(path)
+
+
 def train(
     config: base.TrainConfig,
     *,
@@ -411,6 +442,7 @@ def train(
     cache_on_device: bool,
     cache_mmap: bool,
     save_final_checkpoint_only: bool,
+    final_weights_only: bool,
 ) -> None:
     torch.manual_seed(config.seed)
     if torch.cuda.is_available():
@@ -473,6 +505,7 @@ def train(
         "cache_on_device": cache_on_device,
         "cache_mmap": cache_mmap,
         "save_final_checkpoint_only": save_final_checkpoint_only,
+        "final_weights_only": final_weights_only,
     }
     base.write_json_atomic(output_dir / "run_meta.json", run_meta)
     base.write_json_atomic(
@@ -889,25 +922,36 @@ def train(
     }
     base.write_json_atomic(result_path, result)
     if save_checkpoints and save_final_checkpoint_only:
-        save_checkpoint(
-            checkpoint_path,
-            config=config,
-            model=model,
-            optimizer=optimizer,
-            scaler=scaler,
-            step=config.train_steps,
-            tokens_seen=tokens_seen,
-            history=history,
-            step_times=step_times,
-            h100_args={
-                "compile_model": compile_model,
-                "compile_mode": compile_mode,
-                "collapsed_conv": collapsed_conv,
-                "legacy_candidate_path": legacy_candidate_path,
-                "loss_kernel": loss_kernel,
-                "architecture": architecture,
-            },
-        )
+        final_args = {
+            "compile_model": compile_model,
+            "compile_mode": compile_mode,
+            "collapsed_conv": collapsed_conv,
+            "legacy_candidate_path": legacy_candidate_path,
+            "loss_kernel": loss_kernel,
+            "architecture": architecture,
+        }
+        if final_weights_only:
+            save_weights_checkpoint(
+                checkpoint_path,
+                config=config,
+                model=model,
+                step=config.train_steps,
+                tokens_seen=tokens_seen,
+                h100_args=final_args,
+            )
+        else:
+            save_checkpoint(
+                checkpoint_path,
+                config=config,
+                model=model,
+                optimizer=optimizer,
+                scaler=scaler,
+                step=config.train_steps,
+                tokens_seen=tokens_seen,
+                history=history,
+                step_times=step_times,
+                h100_args=final_args,
+            )
     base.write_json_atomic(
         state_path,
         {
@@ -973,6 +1017,7 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
     parser.add_argument("--cache-on-device", action="store_true", help="Keep the token cache and schedule indices on CUDA.")
     parser.add_argument("--cache-mmap", action="store_true", help="Memory-map the serialized token cache during startup.")
     parser.add_argument("--save-final-checkpoint-only", action="store_true")
+    parser.add_argument("--final-weights-only", action="store_true", help="Omit optimizer state from a final-only checkpoint.")
     args = parser.parse_args()
 
     train_steps = args.train_steps
@@ -1030,6 +1075,7 @@ def main() -> None:
         cache_on_device=args.cache_on_device,
         cache_mmap=args.cache_mmap,
         save_final_checkpoint_only=args.save_final_checkpoint_only,
+        final_weights_only=args.final_weights_only,
     )
 
 
