@@ -93,9 +93,97 @@ class CollapsedWave10Block(nn.Module):
         return x + self.dropout(self.ffn_out(hidden))
 
 
+class DeltaMemory(nn.Module):
+    """Low-rank gated delta-rule memory used by the strongest plasticity candidates."""
+
+    def __init__(
+        self,
+        dim: int,
+        *,
+        heads: int = 2,
+        key_dim: int = 16,
+        value_dim: int = 16,
+        initial_gain: float = 3.0,
+        fixed_write: float = 0.5,
+        write_router: bool = False,
+    ) -> None:
+        super().__init__()
+        self.heads = heads
+        self.key_dim = key_dim
+        self.value_dim = value_dim
+        self.fixed_write = fixed_write
+        self.query = nn.Linear(dim, heads * key_dim, bias=False)
+        self.key = nn.Linear(dim, heads * key_dim, bias=False)
+        self.value = nn.Linear(dim, heads * value_dim, bias=False)
+        self.output = nn.Linear(heads * value_dim, dim, bias=False)
+        self.decay = nn.Linear(dim, heads)
+        self.write_router = nn.Linear(dim, heads) if write_router else None
+        self.read_gain = nn.Linear(dim, 1)
+        nn.init.zeros_(self.decay.weight)
+        with torch.no_grad():
+            self.decay.bias.copy_(torch.linspace(5.0, 8.0, heads))
+        if self.write_router is not None:
+            nn.init.zeros_(self.write_router.weight)
+            nn.init.constant_(self.write_router.bias, torch.logit(torch.tensor(fixed_write)).item())
+        nn.init.zeros_(self.read_gain.weight)
+        nn.init.constant_(self.read_gain.bias, math.log(math.expm1(initial_gain)))
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        try:
+            from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+        except ImportError as error:
+            raise RuntimeError("delta architectures require fla-core") from error
+        batch, length, _ = x.shape
+        q = self.query(x).view(batch, length, self.heads, self.key_dim)
+        k = self.key(x).view(batch, length, self.heads, self.key_dim)
+        v = self.value(x).view(batch, length, self.heads, self.value_dim)
+        log_retention = F.logsigmoid(self.decay(x))
+        if self.write_router is None:
+            write = x.new_full((batch, length, self.heads), self.fixed_write)
+        else:
+            write = torch.sigmoid(self.write_router(x))
+        retrieved, _ = chunk_gated_delta_rule(q, k, v, log_retention, write, use_qk_l2norm_in_kernel=True)
+        retrieved = retrieved.reshape(batch, length, self.heads * self.value_dim)
+        return F.softplus(self.read_gain(x)) * self.output(retrieved)
+
+
+class DeltaWave10Block(nn.Module):
+    def __init__(self, source: CollapsedWave10Block, *, write_router: bool) -> None:
+        super().__init__()
+        self.collapsed_depthwise = source.collapsed_depthwise
+        self.conv_norm = source.conv_norm
+        self.mix = source.mix
+        self.memory_norm = source.memory_norm
+        self.memory = DeltaMemory(source.mix.in_features, write_router=write_router)
+        self.ffn_norm = source.ffn_norm
+        self.ffn_in = source.ffn_in
+        self.ffn_out = source.ffn_out
+        self.dropout = source.dropout
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        conv_input = self.conv_norm(x).transpose(1, 2)
+        conv_output = self.collapsed_depthwise(conv_input)
+        x = x + self.dropout(self.mix(F.relu(conv_output).square()))
+        x = x + self.dropout(self.memory(self.memory_norm(x)))
+        hidden = F.relu(self.ffn_in(self.ffn_norm(x))).square()
+        return x + self.dropout(self.ffn_out(hidden))
+
+
 def collapse_model_blocks(model: nn.Module) -> nn.Module:
     for layer_index, block in enumerate(model.blocks):
         model.blocks[layer_index] = CollapsedWave10Block(block, dilation=2 ** (layer_index % 6))
+    return model
+
+
+def apply_architecture(model: nn.Module, architecture: str) -> nn.Module:
+    model = collapse_model_blocks(model)
+    if architecture == "wave":
+        return model
+    target_index = 1 if len(model.blocks) > 1 else 0
+    source = model.blocks[target_index]
+    if not isinstance(source, CollapsedWave10Block):
+        raise TypeError(f"expected CollapsedWave10Block, got {type(source).__name__}")
+    model.blocks[target_index] = DeltaWave10Block(source, write_router=architecture == "delta_router")
     return model
 
 
@@ -204,6 +292,27 @@ def load_or_build_candidate_ids(
     return candidate_ids
 
 
+def load_cache_h100(config: base.TrainConfig, *, mmap: bool) -> tuple[torch.Tensor, ...]:
+    if not mmap:
+        return base.load_cache(config)
+    payload = torch.load(config.cache_path, map_location="cpu", weights_only=False, mmap=True)
+    train_tokens = payload["train_tokens"]
+    val_tokens = payload["val_tokens"]
+    vocab_size = int(payload.get("vocab_size", config.vocab_size))
+    block_size = config.sequence_length + 1
+    train_blocks = train_tokens[: (train_tokens.numel() // block_size) * block_size].view(-1, block_size)
+    val_blocks = val_tokens[: (val_tokens.numel() // block_size) * block_size].view(-1, block_size)
+    if train_blocks.size(0) <= 0 or val_blocks.size(0) < config.val_blocks:
+        raise RuntimeError("cache does not contain the requested train and validation blocks")
+    return (
+        train_blocks[:, :-1],
+        train_blocks[:, 1:],
+        val_blocks[: config.val_blocks, :-1].contiguous(),
+        val_blocks[: config.val_blocks, 1:].contiguous(),
+        vocab_size,
+    )
+
+
 def write_jsonl(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8", newline="\n") as handle:
@@ -298,6 +407,10 @@ def train(
     timing_warmup_steps: int,
     loss_kernel: str,
     profile_steps: int,
+    architecture: str,
+    cache_on_device: bool,
+    cache_mmap: bool,
+    save_final_checkpoint_only: bool,
 ) -> None:
     torch.manual_seed(config.seed)
     if torch.cuda.is_available():
@@ -356,6 +469,10 @@ def train(
         "timing_warmup_steps": timing_warmup_steps,
         "loss_kernel": loss_kernel,
         "profile_steps": profile_steps,
+        "architecture": architecture,
+        "cache_on_device": cache_on_device,
+        "cache_mmap": cache_mmap,
+        "save_final_checkpoint_only": save_final_checkpoint_only,
     }
     base.write_json_atomic(output_dir / "run_meta.json", run_meta)
     base.write_json_atomic(
@@ -368,7 +485,9 @@ def train(
         },
     )
 
-    train_inputs, train_targets, val_inputs, val_targets, vocab_size = base.load_cache(config)
+    load_started = time.perf_counter()
+    train_inputs, train_targets, val_inputs, val_targets, vocab_size = load_cache_h100(config, mmap=cache_mmap)
+    cache_load_seconds = time.perf_counter() - load_started
     if vocab_size != config.vocab_size:
         raise RuntimeError(f"cache vocab size {vocab_size} != configured vocab size {config.vocab_size}")
     fixed_candidate_ids = load_or_build_candidate_ids(
@@ -382,10 +501,16 @@ def train(
         steps=config.train_steps,
         seed=config.seed,
     )
+    if cache_on_device:
+        train_inputs = train_inputs.to(device)
+        train_targets = train_targets.to(device)
+        schedule = [indices.to(device) for indices in schedule]
 
     model: torch.nn.Module = base.CausalConvFactorizedLM(config)
+    if architecture != "wave" and not collapsed_conv:
+        raise ValueError("delta architectures require --collapsed-conv")
     if collapsed_conv:
-        model = collapse_model_blocks(model)
+        model = apply_architecture(model, architecture)
     model = model.to(device)
     parameter_count = base.count_parameters(model)
     feature_projector = lambda input_ids: model.factor_down(model.features(input_ids))
@@ -440,7 +565,8 @@ def train(
     print(
         f"START run={config.run_name} device={torch.cuda.get_device_name(0) if device.type == 'cuda' else 'cpu'} "
         f"params={parameter_count:,} seq={config.sequence_length} batch={config.batch_size} steps={config.train_steps} "
-        f"amp={config.amp_dtype} compile={compile_model} collapsed_conv={collapsed_conv} loss_kernel={loss_kernel}",
+        f"amp={config.amp_dtype} compile={compile_model} collapsed_conv={collapsed_conv} "
+        f"architecture={architecture} loss_kernel={loss_kernel}",
         flush=True,
     )
     base.write_json_atomic(
@@ -479,8 +605,11 @@ def train(
 
     for step in range(start_step, config.train_steps + 1):
         batch_indices = schedule[step - 1]
-        batch_inputs = train_inputs.index_select(0, batch_indices).to(device, non_blocking=True)
-        batch_targets = train_targets.index_select(0, batch_indices).to(device, non_blocking=True)
+        batch_inputs = train_inputs.index_select(0, batch_indices)
+        batch_targets = train_targets.index_select(0, batch_indices)
+        if not cache_on_device:
+            batch_inputs = batch_inputs.to(device, non_blocking=True)
+            batch_targets = batch_targets.to(device, non_blocking=True)
         if batch_inputs.dtype != torch.long:
             batch_inputs = batch_inputs.long()
         if batch_targets.dtype != torch.long:
@@ -675,7 +804,7 @@ def train(
                 },
             )
 
-        should_checkpoint = save_checkpoints and (
+        should_checkpoint = save_checkpoints and not save_final_checkpoint_only and (
             (config.checkpoint_interval > 0 and step % config.checkpoint_interval == 0)
             or should_eval
             or step == config.train_steps
@@ -687,6 +816,7 @@ def train(
                 "collapsed_conv": collapsed_conv,
                 "legacy_candidate_path": legacy_candidate_path,
                 "loss_kernel": loss_kernel,
+                "architecture": architecture,
             }
             save_checkpoint(
                 checkpoint_path,
@@ -750,6 +880,7 @@ def train(
             if device.type == "cuda"
             else None,
             "candidate_size_mean": statistics.fmean(candidate_sizes) if candidate_sizes else None,
+            "cache_load_seconds": cache_load_seconds,
             "history": history,
             "checkpoint_path": str(checkpoint_path),
             "metrics_csv": str(metrics_csv),
@@ -757,6 +888,26 @@ def train(
         },
     }
     base.write_json_atomic(result_path, result)
+    if save_checkpoints and save_final_checkpoint_only:
+        save_checkpoint(
+            checkpoint_path,
+            config=config,
+            model=model,
+            optimizer=optimizer,
+            scaler=scaler,
+            step=config.train_steps,
+            tokens_seen=tokens_seen,
+            history=history,
+            step_times=step_times,
+            h100_args={
+                "compile_model": compile_model,
+                "compile_mode": compile_mode,
+                "collapsed_conv": collapsed_conv,
+                "legacy_candidate_path": legacy_candidate_path,
+                "loss_kernel": loss_kernel,
+                "architecture": architecture,
+            },
+        )
     base.write_json_atomic(
         state_path,
         {
@@ -818,6 +969,10 @@ def parse_args() -> tuple[base.TrainConfig, argparse.Namespace]:
     parser.add_argument("--timing-warmup-steps", type=int, default=0, help="Exclude initial compile/autotune steps from throughput.")
     parser.add_argument("--loss-kernel", choices=("torch", "liger"), default="torch")
     parser.add_argument("--profile-steps", type=int, default=0, help="Capture this many active CUDA-profiler steps.")
+    parser.add_argument("--architecture", choices=("wave", "delta_gain", "delta_router"), default="wave")
+    parser.add_argument("--cache-on-device", action="store_true", help="Keep the token cache and schedule indices on CUDA.")
+    parser.add_argument("--cache-mmap", action="store_true", help="Memory-map the serialized token cache during startup.")
+    parser.add_argument("--save-final-checkpoint-only", action="store_true")
     args = parser.parse_args()
 
     train_steps = args.train_steps
@@ -871,6 +1026,10 @@ def main() -> None:
         timing_warmup_steps=args.timing_warmup_steps,
         loss_kernel=args.loss_kernel,
         profile_steps=args.profile_steps,
+        architecture=args.architecture,
+        cache_on_device=args.cache_on_device,
+        cache_mmap=args.cache_mmap,
+        save_final_checkpoint_only=args.save_final_checkpoint_only,
     )
 
 
