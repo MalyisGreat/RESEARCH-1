@@ -266,9 +266,9 @@ class DeltaRuleMemory(nn.Module):
         q = F.normalize(q.float(), dim=-1).to(x.dtype)
         k = F.normalize(k.float(), dim=-1).to(x.dtype)
         v = self.value(x).view(batch, length, self.heads, self.value_dim)
-        log_retention = F.logsigmoid(self.retention(x))
+        log_retention = F.logsigmoid(self.retention(x)).to(q.dtype)
         # Keep writes away from the dead extremes while allowing token-specific plasticity.
-        write = 0.05 + 0.90 * torch.sigmoid(self.write(x))
+        write = (0.05 + 0.90 * torch.sigmoid(self.write(x))).to(q.dtype)
         return q, k, v, log_retention, write
 
     @staticmethod

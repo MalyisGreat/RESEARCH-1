@@ -91,9 +91,13 @@ def test_fused_delta_matches_reference() -> None:
     pytest.importorskip("fla")
     torch.manual_seed(13)
     config = tiny_config(use_fused_delta=True)
-    model = DeepWaveDeltaLM(config).cuda().to(torch.bfloat16).eval()
-    tokens = torch.randint(0, config.vocab_size, (2, 17), device="cuda")
+    # Keep parameters in fp32 so autocast exercises the production mixed-precision boundary.
+    model = DeepWaveDeltaLM(config).cuda().eval()
+    tokens = torch.randint(0, config.vocab_size, (2, 257), device="cuda")
     with torch.no_grad(), torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+        recurrent = next(block.recurrent for block in model.blocks if block.recurrent is not None)
+        projected = recurrent._project(model.embedding(tokens))
+        assert all(value.dtype == torch.bfloat16 for value in projected)
         fused = model(tokens)
         for block in model.blocks:
             if block.recurrent is not None:
