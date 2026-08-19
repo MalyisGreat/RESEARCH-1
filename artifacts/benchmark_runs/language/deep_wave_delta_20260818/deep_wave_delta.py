@@ -261,14 +261,14 @@ class DeltaRuleMemory(nn.Module):
         self, x: torch.Tensor
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         batch, length, _ = x.shape
+        v = self.value(x).view(batch, length, self.heads, self.value_dim)
         q = self.query(x).view(batch, length, self.heads, self.key_dim)
         k = self.key(x).view(batch, length, self.heads, self.key_dim)
-        q = F.normalize(q.float(), dim=-1).to(x.dtype)
-        k = F.normalize(k.float(), dim=-1).to(x.dtype)
-        v = self.value(x).view(batch, length, self.heads, self.value_dim)
-        log_retention = F.logsigmoid(self.retention(x)).to(q.dtype)
+        q = F.normalize(q.float(), dim=-1).to(v.dtype)
+        k = F.normalize(k.float(), dim=-1).to(v.dtype)
+        log_retention = F.logsigmoid(self.retention(x)).to(v.dtype)
         # Keep writes away from the dead extremes while allowing token-specific plasticity.
-        write = (0.05 + 0.90 * torch.sigmoid(self.write(x))).to(q.dtype)
+        write = (0.05 + 0.90 * torch.sigmoid(self.write(x))).to(v.dtype)
         return q, k, v, log_retention, write
 
     @staticmethod
