@@ -1,0 +1,75 @@
+{
+  "architecture": "delta_router",
+  "base_parameter_count": 70437078,
+  "config": {
+    "amp_dtype": "bf16",
+    "attention_heads": 4,
+    "batch_size": 16,
+    "block_type": "multi_scale_lowrank_conv_memory",
+    "cache_path": "/scratch/research1-cache/finewebedu_train4196352_val131136_seq2048_gpt2.pt",
+    "checkpoint_interval": 1000000000,
+    "conv_kernel_size": 7,
+    "conv_layers": 4,
+    "conv_rank": 512,
+    "embedding_dim": 640,
+    "eval_interval": 64,
+    "full_eval_token_chunk_size": 4096,
+    "landmark_stride": 128,
+    "learning_rate": 0.0003,
+    "memory_rank": 128,
+    "milestone_checkpoint_interval": 1000000000,
+    "min_learning_rate": 3e-05,
+    "output_dir": "/home/dev/research1-runs/h100-diffusionblocks-probe/baseline_delta_router_compute_matched_20260819_004551",
+    "resume_checkpoint": null,
+    "run_name": "baseline_delta_router_compute_matched_20260819_004551",
+    "sampled_vocab_size": 8192,
+    "seed": 13,
+    "sequence_length": 2048,
+    "token_chunk_size": 4096,
+    "token_stride": 32,
+    "train_steps": 64,
+    "val_blocks": 2,
+    "vocab_size": 50257,
+    "warmup_steps": 8,
+    "weight_decay": 0.0001
+  },
+  "diffusion_blocks": {
+    "enabled": false,
+    "num_blocks": 4,
+    "overlap": 0.1,
+    "p_mean": -1.2,
+    "p_std": 1.2,
+    "sigma_boundaries": null,
+    "sigma_data": 0.5,
+    "weight_normalization": "per-batch mean; constant rescaling within a block"
+  },
+  "effective_full_network_tok_per_sec": 530684.2722945255,
+  "equivalent_full_network_tokens": 2097152.0,
+  "final_train_loss": 7.276498317718506,
+  "finite_gradients": true,
+  "limitations": [
+    "DiffusionBlocks validation uses an all-position deterministic-noise four-step decode; it is not exact autoregressive likelihood.",
+    "All block parameters remain resident on one GPU in this probe, so measured savings are activation/gradient savings rather than the paper's multi-device or one-resident-block theoretical bound.",
+    "The shared embedding and factorized vocabulary head receive updates on every block-local step, matching the official public implementation pattern."
+  ],
+  "mode": "baseline",
+  "parameter_count": 70437078,
+  "peak_allocated_mb": 7809.77734375,
+  "peak_reserved_mb": 8116.0,
+  "raw_tok_per_sec": 530684.2722945255,
+  "samples": [
+    {
+      "completion": " and a- This the for the time",
+      "prompt": "The history of computing began"
+    },
+    {
+      "completion": "\nA of the ( that one.",
+      "prompt": "Question: Why does ice float on water?\nAnswer:"
+    }
+  ],
+  "tokens_presented": 2097152,
+  "total_steps": 64,
+  "val_full_vocab_loss": 7.390712261199951,
+  "val_full_vocab_stdev": 0.1929173469543457,
+  "wall_seconds_including_eval": 33.47525831599887
+}
