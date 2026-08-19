@@ -226,7 +226,9 @@ def fixed_candidate_ids(path: Path, count: int, device: torch.device) -> torch.T
 
 def crop_batch(tokens: torch.Tensor, starts: list[int], sequence_length: int, device: torch.device) -> tuple[torch.Tensor, torch.Tensor]:
     blocks = torch.stack([tokens[start : start + sequence_length + 1] for start in starts])
-    return blocks[:, :-1].to(device, non_blocking=True), blocks[:, 1:].to(device, non_blocking=True)
+    # Large production caches use int32 on disk; embedding accepts it, but
+    # cross-entropy targets require int64.
+    return blocks[:, :-1].to(device, non_blocking=True), blocks[:, 1:].to(device, non_blocking=True).long()
 
 
 def make_starts(tokens: torch.Tensor, *, steps: int, batch: int, sequence_length: int, seed: int) -> list[list[int]]:
