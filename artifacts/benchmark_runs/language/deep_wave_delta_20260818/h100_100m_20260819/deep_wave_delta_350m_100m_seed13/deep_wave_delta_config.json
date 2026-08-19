@@ -1,0 +1,39 @@
+{
+  "architecture": {
+    "conv_kernels": [
+      3,
+      7,
+      15
+    ],
+    "depth": 16,
+    "dim": 1408,
+    "dropout": 0.0,
+    "ffn_expansion": 2,
+    "key_dim": 64,
+    "local_memory_kernel": 128,
+    "local_memory_rank": 192,
+    "max_half_life": 8192.0,
+    "min_half_life": 32.0,
+    "output_rank": 512,
+    "recurrent_heads": 8,
+    "recurrent_layers": 4,
+    "use_fused_delta": true,
+    "value_dim": 64,
+    "vocab_size": 50257
+  },
+  "parameter_report": {
+    "blocks": 254411888,
+    "embedding": 70761856,
+    "final_norm": 1408,
+    "output": 26502737,
+    "recurrent_state_values": 131072,
+    "total": 351677889
+  },
+  "scientific_invariants": {
+    "full_sequence_attention": false,
+    "incremental_inference_context_complexity": "O(1)",
+    "local_fir_retained": true,
+    "persistent_delta_state": true,
+    "training_sequence_complexity": "O(sequence_length)"
+  }
+}

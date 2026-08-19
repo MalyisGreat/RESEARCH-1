@@ -1,0 +1,183 @@
+LOADED_CANDIDATE_IDS path=/scratch/research1-cache/candidate_ids_top32768.pt count=32768
+START run=deep_wave_delta_350m_100m_seed13 device=NVIDIA H100 80GB HBM3 params=351,677,889 seq=2048 batch=12 steps=4070 amp=bf16 compile=False collapsed_conv=True architecture=deep_wave_delta loss_kernel=torch
+TRAIN step=1/4070 tokens=24576 loss=10.6720 lr=1.5e-06 grad=1.400 pure_tok_s=nan roll100_tok_s=nan
+TRAIN step=25/4070 tokens=614400 loss=9.2560 lr=3.75e-05 grad=2.059 pure_tok_s=43772 roll100_tok_s=43772
+TRAIN step=50/4070 tokens=1228800 loss=7.9336 lr=7.5e-05 grad=1.236 pure_tok_s=43799 roll100_tok_s=43799
+TRAIN step=75/4070 tokens=1843200 loss=7.2427 lr=0.0001125 grad=1.322 pure_tok_s=43902 roll100_tok_s=43902
+TRAIN step=100/4070 tokens=2457600 loss=7.3028 lr=0.00015 grad=1.203 pure_tok_s=43928 roll100_tok_s=43928
+TRAIN step=125/4070 tokens=3072000 loss=6.9748 lr=0.0001875 grad=1.682 pure_tok_s=43915 roll100_tok_s=43936
+TRAIN step=150/4070 tokens=3686400 loss=6.9157 lr=0.000225 grad=1.570 pure_tok_s=43923 roll100_tok_s=43972
+TRAIN step=175/4070 tokens=4300800 loss=6.6420 lr=0.0002625 grad=1.026 pure_tok_s=43946 roll100_tok_s=43975
+TRAIN step=200/4070 tokens=4915200 loss=6.4369 lr=0.0003 grad=0.917 pure_tok_s=43938 roll100_tok_s=43947
+TRAIN step=225/4070 tokens=5529600 loss=6.5516 lr=0.000299972 grad=1.008 pure_tok_s=43948 roll100_tok_s=43988
+TRAIN step=250/4070 tokens=6144000 loss=6.4650 lr=0.000299889 grad=0.682 pure_tok_s=43947 roll100_tok_s=43982
+EVAL_FULL_VOCAB step=250/4070 tokens=6144000 train=6.4650 val_full=6.3125 eval_s=0.8
+TRAIN step=275/4070 tokens=6758400 loss=6.2439 lr=0.00029975 grad=0.848 pure_tok_s=43939 roll100_tok_s=43926
+TRAIN step=300/4070 tokens=7372800 loss=6.0915 lr=0.000299555 grad=0.784 pure_tok_s=43942 roll100_tok_s=43950
+TRAIN step=325/4070 tokens=7987200 loss=5.9938 lr=0.000299306 grad=1.029 pure_tok_s=43940 roll100_tok_s=43922
+TRAIN step=350/4070 tokens=8601600 loss=6.0328 lr=0.000299 grad=0.776 pure_tok_s=43925 roll100_tok_s=43870
+TRAIN step=375/4070 tokens=9216000 loss=5.8820 lr=0.00029864 grad=0.769 pure_tok_s=43921 roll100_tok_s=43874
+TRAIN step=400/4070 tokens=9830400 loss=5.9268 lr=0.000298225 grad=0.766 pure_tok_s=43917 roll100_tok_s=43846
+TRAIN step=425/4070 tokens=10444800 loss=5.7882 lr=0.000297754 grad=0.870 pure_tok_s=43916 roll100_tok_s=43840
+TRAIN step=450/4070 tokens=11059200 loss=5.6129 lr=0.000297229 grad=0.738 pure_tok_s=43902 roll100_tok_s=43824
+TRAIN step=475/4070 tokens=11673600 loss=5.7978 lr=0.00029665 grad=0.800 pure_tok_s=43909 roll100_tok_s=43867
+TRAIN step=500/4070 tokens=12288000 loss=5.7399 lr=0.000296016 grad=0.907 pure_tok_s=43919 roll100_tok_s=43925
+EVAL_FULL_VOCAB step=500/4070 tokens=12288000 train=5.7399 val_full=5.6960 eval_s=0.8
+TRAIN step=525/4070 tokens=12902400 loss=5.6770 lr=0.000295329 grad=0.692 pure_tok_s=43917 roll100_tok_s=43920
+TRAIN step=550/4070 tokens=13516800 loss=5.5944 lr=0.000294588 grad=0.651 pure_tok_s=43926 roll100_tok_s=44033
+TRAIN step=575/4070 tokens=14131200 loss=5.6392 lr=0.000293793 grad=0.814 pure_tok_s=43921 roll100_tok_s=43973
+TRAIN step=600/4070 tokens=14745600 loss=5.4075 lr=0.000292945 grad=0.660 pure_tok_s=43920 roll100_tok_s=43925
+TRAIN step=625/4070 tokens=15360000 loss=5.4999 lr=0.000292045 grad=0.811 pure_tok_s=43925 roll100_tok_s=43971
+TRAIN step=650/4070 tokens=15974400 loss=5.5127 lr=0.000291092 grad=0.815 pure_tok_s=43904 roll100_tok_s=43788
+TRAIN step=675/4070 tokens=16588800 loss=5.3328 lr=0.000290088 grad=0.697 pure_tok_s=43904 roll100_tok_s=43813
+TRAIN step=700/4070 tokens=17203200 loss=5.4016 lr=0.000289031 grad=0.674 pure_tok_s=43904 roll100_tok_s=43809
+TRAIN step=725/4070 tokens=17817600 loss=5.3992 lr=0.000287924 grad=0.773 pure_tok_s=43903 roll100_tok_s=43768
+TRAIN step=750/4070 tokens=18432000 loss=5.2317 lr=0.000286766 grad=0.672 pure_tok_s=43897 roll100_tok_s=43850
+EVAL_FULL_VOCAB step=750/4070 tokens=18432000 train=5.2317 val_full=5.3550 eval_s=0.8
+TRAIN step=775/4070 tokens=19046400 loss=5.2048 lr=0.000285558 grad=0.729 pure_tok_s=43893 roll100_tok_s=43814
+TRAIN step=800/4070 tokens=19660800 loss=5.2274 lr=0.000284301 grad=0.647 pure_tok_s=43896 roll100_tok_s=43841
+TRAIN step=825/4070 tokens=20275200 loss=5.2363 lr=0.000282994 grad=0.773 pure_tok_s=43903 roll100_tok_s=43902
+TRAIN step=850/4070 tokens=20889600 loss=5.3626 lr=0.000281638 grad=0.712 pure_tok_s=43910 roll100_tok_s=44009
+TRAIN step=875/4070 tokens=21504000 loss=5.3317 lr=0.000280235 grad=0.732 pure_tok_s=43913 roll100_tok_s=44068
+TRAIN step=900/4070 tokens=22118400 loss=5.0867 lr=0.000278784 grad=0.718 pure_tok_s=43908 roll100_tok_s=44005
+TRAIN step=925/4070 tokens=22732800 loss=5.1428 lr=0.000277286 grad=0.706 pure_tok_s=43902 roll100_tok_s=43891
+TRAIN step=950/4070 tokens=23347200 loss=5.1596 lr=0.000275742 grad=0.699 pure_tok_s=43895 roll100_tok_s=43770
+TRAIN step=975/4070 tokens=23961600 loss=5.1954 lr=0.000274153 grad=0.704 pure_tok_s=43896 roll100_tok_s=43748
+TRAIN step=1000/4070 tokens=24576000 loss=5.0245 lr=0.000272518 grad=0.726 pure_tok_s=43895 roll100_tok_s=43780
+EVAL_FULL_VOCAB step=1000/4070 tokens=24576000 train=5.0245 val_full=5.1115 eval_s=0.8
+TRAIN step=1025/4070 tokens=25190400 loss=5.1361 lr=0.000270839 grad=0.734 pure_tok_s=43895 roll100_tok_s=43834
+TRAIN step=1050/4070 tokens=25804800 loss=5.2664 lr=0.000269117 grad=0.772 pure_tok_s=43896 roll100_tok_s=43904
+TRAIN step=1075/4070 tokens=26419200 loss=5.0520 lr=0.000267352 grad=0.660 pure_tok_s=43900 roll100_tok_s=43938
+TRAIN step=1100/4070 tokens=27033600 loss=4.9180 lr=0.000265544 grad=0.653 pure_tok_s=43900 roll100_tok_s=43952
+TRAIN step=1125/4070 tokens=27648000 loss=5.0213 lr=0.000263695 grad=0.746 pure_tok_s=43898 roll100_tok_s=43921
+TRAIN step=1150/4070 tokens=28262400 loss=4.9079 lr=0.000261806 grad=0.673 pure_tok_s=43899 roll100_tok_s=43928
+TRAIN step=1175/4070 tokens=28876800 loss=4.9735 lr=0.000259876 grad=0.723 pure_tok_s=43905 roll100_tok_s=43958
+TRAIN step=1200/4070 tokens=29491200 loss=5.0631 lr=0.000257908 grad=0.773 pure_tok_s=43903 roll100_tok_s=43938
+TRAIN step=1225/4070 tokens=30105600 loss=5.0422 lr=0.000255901 grad=0.748 pure_tok_s=43908 roll100_tok_s=44030
+TRAIN step=1250/4070 tokens=30720000 loss=4.9451 lr=0.000253857 grad=0.741 pure_tok_s=43904 roll100_tok_s=43960
+EVAL_FULL_VOCAB step=1250/4070 tokens=30720000 train=4.9451 val_full=4.9416 eval_s=0.8
+TRAIN step=1275/4070 tokens=31334400 loss=4.9141 lr=0.000251776 grad=0.646 pure_tok_s=43905 roll100_tok_s=43905
+TRAIN step=1300/4070 tokens=31948800 loss=5.0597 lr=0.00024966 grad=0.788 pure_tok_s=43904 roll100_tok_s=43916
+TRAIN step=1325/4070 tokens=32563200 loss=5.1418 lr=0.000247508 grad=0.700 pure_tok_s=43911 roll100_tok_s=43936
+TRAIN step=1350/4070 tokens=33177600 loss=4.8356 lr=0.000245323 grad=0.710 pure_tok_s=43910 roll100_tok_s=43983
+TRAIN step=1375/4070 tokens=33792000 loss=4.9330 lr=0.000243105 grad=0.678 pure_tok_s=43909 roll100_tok_s=43965
+TRAIN step=1400/4070 tokens=34406400 loss=4.7988 lr=0.000240854 grad=0.649 pure_tok_s=43909 roll100_tok_s=43973
+TRAIN step=1425/4070 tokens=35020800 loss=4.9761 lr=0.000238572 grad=0.660 pure_tok_s=43909 roll100_tok_s=43886
+TRAIN step=1450/4070 tokens=35635200 loss=4.8218 lr=0.00023626 grad=0.715 pure_tok_s=43911 roll100_tok_s=43933
+TRAIN step=1475/4070 tokens=36249600 loss=4.9134 lr=0.000233919 grad=0.781 pure_tok_s=43911 roll100_tok_s=43939
+TRAIN step=1500/4070 tokens=36864000 loss=4.9676 lr=0.000231549 grad=0.727 pure_tok_s=43914 roll100_tok_s=43973
+EVAL_FULL_VOCAB step=1500/4070 tokens=36864000 train=4.9676 val_full=4.7993 eval_s=0.8
+TRAIN step=1525/4070 tokens=37478400 loss=4.9497 lr=0.000229151 grad=0.744 pure_tok_s=43912 roll100_tok_s=43955
+TRAIN step=1550/4070 tokens=38092800 loss=4.8505 lr=0.000226728 grad=0.662 pure_tok_s=43911 roll100_tok_s=43909
+TRAIN step=1575/4070 tokens=38707200 loss=4.6147 lr=0.000224279 grad=0.719 pure_tok_s=43915 roll100_tok_s=43975
+TRAIN step=1600/4070 tokens=39321600 loss=4.8594 lr=0.000221805 grad=0.684 pure_tok_s=43915 roll100_tok_s=43933
+TRAIN step=1625/4070 tokens=39936000 loss=4.7120 lr=0.000219308 grad=0.674 pure_tok_s=43917 roll100_tok_s=43989
+TRAIN step=1650/4070 tokens=40550400 loss=4.8123 lr=0.000216789 grad=0.683 pure_tok_s=43915 roll100_tok_s=43972
+TRAIN step=1675/4070 tokens=41164800 loss=4.8014 lr=0.000214248 grad=0.851 pure_tok_s=43919 roll100_tok_s=43980
+TRAIN step=1700/4070 tokens=41779200 loss=4.7193 lr=0.000211687 grad=0.827 pure_tok_s=43920 roll100_tok_s=44010
+TRAIN step=1725/4070 tokens=42393600 loss=4.6515 lr=0.000209107 grad=0.712 pure_tok_s=43919 roll100_tok_s=43956
+TRAIN step=1750/4070 tokens=43008000 loss=4.7619 lr=0.000206509 grad=0.703 pure_tok_s=43922 roll100_tok_s=44037
+EVAL_FULL_VOCAB step=1750/4070 tokens=43008000 train=4.7619 val_full=4.6975 eval_s=0.8
+TRAIN step=1775/4070 tokens=43622400 loss=4.7839 lr=0.000203893 grad=0.693 pure_tok_s=43923 roll100_tok_s=43982
+TRAIN step=1800/4070 tokens=44236800 loss=4.6652 lr=0.000201262 grad=0.639 pure_tok_s=43924 roll100_tok_s=43978
+TRAIN step=1825/4070 tokens=44851200 loss=4.7087 lr=0.000198616 grad=0.661 pure_tok_s=43925 roll100_tok_s=44025
+TRAIN step=1850/4070 tokens=45465600 loss=4.7979 lr=0.000195955 grad=0.717 pure_tok_s=43925 roll100_tok_s=43977
+TRAIN step=1875/4070 tokens=46080000 loss=4.7896 lr=0.000193282 grad=0.660 pure_tok_s=43928 roll100_tok_s=44025
+TRAIN step=1900/4070 tokens=46694400 loss=4.6439 lr=0.000190598 grad=0.669 pure_tok_s=43926 roll100_tok_s=43974
+TRAIN step=1925/4070 tokens=47308800 loss=4.8231 lr=0.000187903 grad=0.732 pure_tok_s=43928 roll100_tok_s=43981
+TRAIN step=1950/4070 tokens=47923200 loss=4.4165 lr=0.000185198 grad=0.652 pure_tok_s=43926 roll100_tok_s=43936
+TRAIN step=1975/4070 tokens=48537600 loss=4.5323 lr=0.000182485 grad=0.711 pure_tok_s=43922 roll100_tok_s=43813
+TRAIN step=2000/4070 tokens=49152000 loss=4.6577 lr=0.000179765 grad=0.663 pure_tok_s=43922 roll100_tok_s=43837
+EVAL_FULL_VOCAB step=2000/4070 tokens=49152000 train=4.6577 val_full=4.6234 eval_s=0.8
+TRAIN step=2025/4070 tokens=49766400 loss=4.6958 lr=0.000177039 grad=0.674 pure_tok_s=43920 roll100_tok_s=43778
+TRAIN step=2050/4070 tokens=50380800 loss=4.7061 lr=0.000174308 grad=0.704 pure_tok_s=43919 roll100_tok_s=43786
+TRAIN step=2075/4070 tokens=50995200 loss=4.4349 lr=0.000171573 grad=0.664 pure_tok_s=43917 roll100_tok_s=43822
+TRAIN step=2100/4070 tokens=51609600 loss=4.5794 lr=0.000168835 grad=0.674 pure_tok_s=43918 roll100_tok_s=43843
+TRAIN step=2125/4070 tokens=52224000 loss=4.6805 lr=0.000166096 grad=0.691 pure_tok_s=43917 roll100_tok_s=43850
+TRAIN step=2150/4070 tokens=52838400 loss=4.7063 lr=0.000163356 grad=0.696 pure_tok_s=43919 roll100_tok_s=43922
+TRAIN step=2175/4070 tokens=53452800 loss=4.5661 lr=0.000160617 grad=0.681 pure_tok_s=43920 roll100_tok_s=43970
+TRAIN step=2200/4070 tokens=54067200 loss=4.7668 lr=0.00015788 grad=0.683 pure_tok_s=43923 roll100_tok_s=44029
+TRAIN step=2225/4070 tokens=54681600 loss=4.6216 lr=0.000155146 grad=0.692 pure_tok_s=43924 roll100_tok_s=44067
+TRAIN step=2250/4070 tokens=55296000 loss=4.5536 lr=0.000152415 grad=0.702 pure_tok_s=43925 roll100_tok_s=44054
+EVAL_FULL_VOCAB step=2250/4070 tokens=55296000 train=4.5536 val_full=4.5481 eval_s=0.8
+TRAIN step=2275/4070 tokens=55910400 loss=4.5898 lr=0.00014969 grad=0.708 pure_tok_s=43925 roll100_tok_s=44031
+TRAIN step=2300/4070 tokens=56524800 loss=4.7304 lr=0.000146972 grad=0.690 pure_tok_s=43923 roll100_tok_s=43929
+TRAIN step=2325/4070 tokens=57139200 loss=4.5632 lr=0.00014426 grad=0.639 pure_tok_s=43923 roll100_tok_s=43906
+TRAIN step=2350/4070 tokens=57753600 loss=4.6453 lr=0.000141557 grad=0.651 pure_tok_s=43922 roll100_tok_s=43846
+TRAIN step=2375/4070 tokens=58368000 loss=4.4994 lr=0.000138864 grad=0.687 pure_tok_s=43922 roll100_tok_s=43868
+TRAIN step=2400/4070 tokens=58982400 loss=4.5063 lr=0.000136182 grad=0.883 pure_tok_s=43922 roll100_tok_s=43881
+TRAIN step=2425/4070 tokens=59596800 loss=4.4561 lr=0.000133512 grad=0.694 pure_tok_s=43921 roll100_tok_s=43879
+TRAIN step=2450/4070 tokens=60211200 loss=4.4223 lr=0.000130854 grad=0.662 pure_tok_s=43920 roll100_tok_s=43876
+TRAIN step=2475/4070 tokens=60825600 loss=4.4776 lr=0.000128211 grad=0.746 pure_tok_s=43921 roll100_tok_s=43901
+TRAIN step=2500/4070 tokens=61440000 loss=4.5752 lr=0.000125582 grad=0.843 pure_tok_s=43920 roll100_tok_s=43885
+EVAL_FULL_VOCAB step=2500/4070 tokens=61440000 train=4.5752 val_full=4.4698 eval_s=0.8
+TRAIN step=2525/4070 tokens=62054400 loss=4.6320 lr=0.00012297 grad=0.703 pure_tok_s=43920 roll100_tok_s=43886
+TRAIN step=2550/4070 tokens=62668800 loss=4.3847 lr=0.000120375 grad=0.656 pure_tok_s=43920 roll100_tok_s=43929
+TRAIN step=2575/4070 tokens=63283200 loss=4.3250 lr=0.000117799 grad=0.685 pure_tok_s=43921 roll100_tok_s=43909
+TRAIN step=2600/4070 tokens=63897600 loss=4.4659 lr=0.000115242 grad=0.700 pure_tok_s=43923 roll100_tok_s=43987
+TRAIN step=2625/4070 tokens=64512000 loss=4.4034 lr=0.000112706 grad=0.643 pure_tok_s=43923 roll100_tok_s=44017
+TRAIN step=2650/4070 tokens=65126400 loss=4.2862 lr=0.000110191 grad=0.707 pure_tok_s=43922 roll100_tok_s=43974
+TRAIN step=2675/4070 tokens=65740800 loss=4.5156 lr=0.000107698 grad=0.678 pure_tok_s=43925 roll100_tok_s=44024
+TRAIN step=2700/4070 tokens=66355200 loss=4.5129 lr=0.00010523 grad=0.664 pure_tok_s=43927 roll100_tok_s=44036
+TRAIN step=2725/4070 tokens=66969600 loss=4.3211 lr=0.000102785 grad=0.682 pure_tok_s=43927 roll100_tok_s=44033
+TRAIN step=2750/4070 tokens=67584000 loss=4.3623 lr=0.000100367 grad=0.654 pure_tok_s=43928 roll100_tok_s=44075
+EVAL_FULL_VOCAB step=2750/4070 tokens=67584000 train=4.3623 val_full=4.4104 eval_s=0.8
+TRAIN step=2775/4070 tokens=68198400 loss=4.4975 lr=9.79751e-05 grad=0.648 pure_tok_s=43928 roll100_tok_s=44006
+TRAIN step=2800/4070 tokens=68812800 loss=4.3634 lr=9.56108e-05 grad=0.704 pure_tok_s=43929 roll100_tok_s=43991
+TRAIN step=2825/4070 tokens=69427200 loss=4.3610 lr=9.32751e-05 grad=0.695 pure_tok_s=43928 roll100_tok_s=43956
+TRAIN step=2850/4070 tokens=70041600 loss=4.4733 lr=9.0969e-05 grad=0.825 pure_tok_s=43929 roll100_tok_s=43954
+TRAIN step=2875/4070 tokens=70656000 loss=4.3689 lr=8.86933e-05 grad=0.733 pure_tok_s=43929 roll100_tok_s=43952
+TRAIN step=2900/4070 tokens=71270400 loss=4.6272 lr=8.6449e-05 grad=0.747 pure_tok_s=43929 roll100_tok_s=43928
+TRAIN step=2925/4070 tokens=71884800 loss=4.5601 lr=8.42372e-05 grad=0.668 pure_tok_s=43929 roll100_tok_s=43949
+TRAIN step=2950/4070 tokens=72499200 loss=4.3917 lr=8.20585e-05 grad=0.682 pure_tok_s=43929 roll100_tok_s=43928
+TRAIN step=2975/4070 tokens=73113600 loss=4.4008 lr=7.99141e-05 grad=0.667 pure_tok_s=43927 roll100_tok_s=43887
+TRAIN step=3000/4070 tokens=73728000 loss=4.5222 lr=7.78046e-05 grad=0.701 pure_tok_s=43928 roll100_tok_s=43897
+EVAL_FULL_VOCAB step=3000/4070 tokens=73728000 train=4.5222 val_full=4.3534 eval_s=0.8
+TRAIN step=3025/4070 tokens=74342400 loss=4.3490 lr=7.57311e-05 grad=0.801 pure_tok_s=43928 roll100_tok_s=43896
+TRAIN step=3050/4070 tokens=74956800 loss=4.1886 lr=7.36944e-05 grad=0.702 pure_tok_s=43927 roll100_tok_s=43882
+TRAIN step=3075/4070 tokens=75571200 loss=4.5973 lr=7.16952e-05 grad=0.707 pure_tok_s=43927 roll100_tok_s=43926
+TRAIN step=3100/4070 tokens=76185600 loss=4.3692 lr=6.97345e-05 grad=0.678 pure_tok_s=43927 roll100_tok_s=43908
+TRAIN step=3125/4070 tokens=76800000 loss=4.3122 lr=6.7813e-05 grad=0.673 pure_tok_s=43926 roll100_tok_s=43866
+TRAIN step=3150/4070 tokens=77414400 loss=4.0868 lr=6.59316e-05 grad=0.670 pure_tok_s=43925 roll100_tok_s=43859
+TRAIN step=3175/4070 tokens=78028800 loss=4.3440 lr=6.40909e-05 grad=0.655 pure_tok_s=43925 roll100_tok_s=43874
+TRAIN step=3200/4070 tokens=78643200 loss=4.3249 lr=6.22918e-05 grad=0.687 pure_tok_s=43927 roll100_tok_s=43928
+TRAIN step=3225/4070 tokens=79257600 loss=4.4601 lr=6.0535e-05 grad=0.676 pure_tok_s=43927 roll100_tok_s=43950
+TRAIN step=3250/4070 tokens=79872000 loss=4.4922 lr=5.88213e-05 grad=0.721 pure_tok_s=43925 roll100_tok_s=43924
+EVAL_FULL_VOCAB step=3250/4070 tokens=79872000 train=4.4922 val_full=4.3160 eval_s=0.8
+TRAIN step=3275/4070 tokens=80486400 loss=4.4408 lr=5.71512e-05 grad=0.686 pure_tok_s=43925 roll100_tok_s=43899
+TRAIN step=3300/4070 tokens=81100800 loss=4.3527 lr=5.55256e-05 grad=0.673 pure_tok_s=43925 roll100_tok_s=43855
+TRAIN step=3325/4070 tokens=81715200 loss=4.3468 lr=5.39451e-05 grad=0.649 pure_tok_s=43927 roll100_tok_s=43943
+TRAIN step=3350/4070 tokens=82329600 loss=4.3700 lr=5.24103e-05 grad=0.668 pure_tok_s=43928 roll100_tok_s=44022
+TRAIN step=3375/4070 tokens=82944000 loss=4.1794 lr=5.09219e-05 grad=0.704 pure_tok_s=43927 roll100_tok_s=43989
+TRAIN step=3400/4070 tokens=83558400 loss=4.4216 lr=4.94804e-05 grad=0.673 pure_tok_s=43927 roll100_tok_s=43995
+TRAIN step=3425/4070 tokens=84172800 loss=4.3274 lr=4.80866e-05 grad=0.696 pure_tok_s=43926 roll100_tok_s=43883
+TRAIN step=3450/4070 tokens=84787200 loss=4.3337 lr=4.67409e-05 grad=0.654 pure_tok_s=43926 roll100_tok_s=43874
+TRAIN step=3475/4070 tokens=85401600 loss=4.3548 lr=4.54439e-05 grad=0.686 pure_tok_s=43926 roll100_tok_s=43908
+TRAIN step=3500/4070 tokens=86016000 loss=4.2057 lr=4.41961e-05 grad=0.670 pure_tok_s=43927 roll100_tok_s=43904
+EVAL_FULL_VOCAB step=3500/4070 tokens=86016000 train=4.2057 val_full=4.2826 eval_s=0.8
+TRAIN step=3525/4070 tokens=86630400 loss=4.2346 lr=4.29981e-05 grad=0.662 pure_tok_s=43927 roll100_tok_s=43978
+TRAIN step=3550/4070 tokens=87244800 loss=4.1662 lr=4.18503e-05 grad=0.715 pure_tok_s=43927 roll100_tok_s=43947
+TRAIN step=3575/4070 tokens=87859200 loss=4.5185 lr=4.07533e-05 grad=0.742 pure_tok_s=43928 roll100_tok_s=44013
+TRAIN step=3600/4070 tokens=88473600 loss=4.4267 lr=3.97074e-05 grad=0.696 pure_tok_s=43928 roll100_tok_s=43967
+TRAIN step=3625/4070 tokens=89088000 loss=4.2783 lr=3.87131e-05 grad=0.747 pure_tok_s=43927 roll100_tok_s=43919
+TRAIN step=3650/4070 tokens=89702400 loss=4.3028 lr=3.77709e-05 grad=0.712 pure_tok_s=43928 roll100_tok_s=43981
+TRAIN step=3675/4070 tokens=90316800 loss=4.3110 lr=3.6881e-05 grad=0.688 pure_tok_s=43928 roll100_tok_s=43907
+TRAIN step=3700/4070 tokens=90931200 loss=4.4601 lr=3.60439e-05 grad=0.672 pure_tok_s=43929 roll100_tok_s=43971
+TRAIN step=3725/4070 tokens=91545600 loss=4.3423 lr=3.52599e-05 grad=0.687 pure_tok_s=43929 roll100_tok_s=44007
+TRAIN step=3750/4070 tokens=92160000 loss=4.3317 lr=3.45294e-05 grad=0.690 pure_tok_s=43929 roll100_tok_s=43955
+EVAL_FULL_VOCAB step=3750/4070 tokens=92160000 train=4.3317 val_full=4.2532 eval_s=0.8
+TRAIN step=3775/4070 tokens=92774400 loss=4.2650 lr=3.38526e-05 grad=0.686 pure_tok_s=43929 roll100_tok_s=43981
+TRAIN step=3800/4070 tokens=93388800 loss=4.3786 lr=3.32298e-05 grad=0.703 pure_tok_s=43930 roll100_tok_s=43959
+TRAIN step=3825/4070 tokens=94003200 loss=4.3003 lr=3.26612e-05 grad=0.681 pure_tok_s=43929 roll100_tok_s=43912
+TRAIN step=3850/4070 tokens=94617600 loss=4.2378 lr=3.21472e-05 grad=0.679 pure_tok_s=43929 roll100_tok_s=43943
+TRAIN step=3875/4070 tokens=95232000 loss=4.2525 lr=3.16879e-05 grad=0.701 pure_tok_s=43928 roll100_tok_s=43898
+TRAIN step=3900/4070 tokens=95846400 loss=4.4969 lr=3.12835e-05 grad=0.715 pure_tok_s=43926 roll100_tok_s=43777
+TRAIN step=3925/4070 tokens=96460800 loss=4.3716 lr=3.09341e-05 grad=0.690 pure_tok_s=43925 roll100_tok_s=43778
+TRAIN step=3950/4070 tokens=97075200 loss=4.2611 lr=3.064e-05 grad=0.676 pure_tok_s=43926 roll100_tok_s=43815
+TRAIN step=3975/4070 tokens=97689600 loss=4.2471 lr=3.04012e-05 grad=0.702 pure_tok_s=43926 roll100_tok_s=43830
+TRAIN step=4000/4070 tokens=98304000 loss=4.3498 lr=3.02179e-05 grad=0.683 pure_tok_s=43926 roll100_tok_s=43944
+EVAL_FULL_VOCAB step=4000/4070 tokens=98304000 train=4.3498 val_full=4.2366 eval_s=0.8
+TRAIN step=4025/4070 tokens=98918400 loss=4.2101 lr=3.00901e-05 grad=0.675 pure_tok_s=43927 roll100_tok_s=43989
+TRAIN step=4050/4070 tokens=99532800 loss=4.4256 lr=3.00178e-05 grad=0.755 pure_tok_s=43928 roll100_tok_s=43980
+EVAL_FULL_VOCAB step=4070/4070 tokens=100024320 train=4.4201 val_full=4.2338 eval_s=0.8
+RESULT {"cache_load_seconds": 0.25821302400072454, "candidate_size_mean": 33015.605405405404, "checkpoint_path": "/scratch/deep_wave_delta_350m_100m_seed13/checkpoint.pt", "final_train_loss": 4.42012882232666, "final_val_loss_full_vocab": 4.233846195042133, "history": [{"eval_seconds": 0.8156336830033979, "grad_norm": 0.6817999482154846, "learning_rate": 0.0002998888109621781, "peak_allocated_mb": 70442.4228515625, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43947.412050301056, "rolling_100_tok_per_sec": 43982.078342365, "step": 250.0, "tokens_seen": 6144000.0, "train_loss": 6.464958190917969, "val_loss_full_vocab": 6.312491476535797}, {"eval_seconds": 0.8111843009974109, "grad_norm": 0.9066241979598999, "learning_rate": 0.00029601639221124966, "peak_allocated_mb": 70444.1513671875, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43918.966987377564, "rolling_100_tok_per_sec": 43925.37925771841, "step": 500.0, "tokens_seen": 12288000.0, "train_loss": 5.739928722381592, "val_loss_full_vocab": 5.69595904648304}, {"eval_seconds": 0.7924370750006346, "grad_norm": 0.6719719767570496, "learning_rate": 0.0002867663256331217, "peak_allocated_mb": 70444.1513671875, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43897.0375610761, "rolling_100_tok_per_sec": 43850.218919455445, "step": 750.0, "tokens_seen": 18432000.0, "train_loss": 5.231678485870361, "val_loss_full_vocab": 5.35495063662529}, {"eval_seconds": 0.829040864999115, "grad_norm": 0.7256624102592468, "learning_rate": 0.0002725182858593097, "peak_allocated_mb": 70444.1513671875, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43895.11522826843, "rolling_100_tok_per_sec": 43779.84531730933, "step": 1000.0, "tokens_seen": 24576000.0, "train_loss": 5.024535655975342, "val_loss_full_vocab": 5.111465215682983}, {"eval_seconds": 0.8060615449976467, "grad_norm": 0.741357147693634, "learning_rate": 0.00025385709238330095, "peak_allocated_mb": 70444.1513671875, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43903.92570015922, "rolling_100_tok_per_sec": 43960.33756239836, "step": 1250.0, "tokens_seen": 30720000.0, "train_loss": 4.945101737976074, "val_loss_full_vocab": 4.941612496972084}, {"eval_seconds": 0.7681626869998581, "grad_norm": 0.7272613048553467, "learning_rate": 0.00023154870528730706, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43913.64302137054, "rolling_100_tok_per_sec": 43972.53785912333, "step": 1500.0, "tokens_seen": 36864000.0, "train_loss": 4.96760368347168, "val_loss_full_vocab": 4.7992727011442184}, {"eval_seconds": 0.7955110820003028, "grad_norm": 0.7025297284126282, "learning_rate": 0.0002065087859429347, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43922.005843634106, "rolling_100_tok_per_sec": 44037.32401652986, "step": 1750.0, "tokens_seen": 43008000.0, "train_loss": 4.761931419372559, "val_loss_full_vocab": 4.697501793503761}, {"eval_seconds": 0.8074050739996892, "grad_norm": 0.6625213027000427, "learning_rate": 0.00017976511313101305, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43921.82702546879, "rolling_100_tok_per_sec": 43836.820355827695, "step": 2000.0, "tokens_seen": 49152000.0, "train_loss": 4.657691478729248, "val_loss_full_vocab": 4.62343342602253}, {"eval_seconds": 0.7693999080001959, "grad_norm": 0.7021361589431763, "learning_rate": 0.0001524153972338923, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43924.90241892069, "rolling_100_tok_per_sec": 44054.39577518479, "step": 2250.0, "tokens_seen": 55296000.0, "train_loss": 4.5535783767700195, "val_loss_full_vocab": 4.548095121979713}, {"eval_seconds": 0.8021034390003479, "grad_norm": 0.8432084321975708, "learning_rate": 0.0001255822240424524, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43920.06660616426, "rolling_100_tok_per_sec": 43884.638011048184, "step": 2500.0, "tokens_seen": 61440000.0, "train_loss": 4.575207710266113, "val_loss_full_vocab": 4.469775095582008}, {"eval_seconds": 0.8047904620034387, "grad_norm": 0.6540465950965881, "learning_rate": 0.00010036697753677679, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43927.672082002966, "rolling_100_tok_per_sec": 44075.22784460142, "step": 2750.0, "tokens_seen": 67584000.0, "train_loss": 4.362288951873779, "val_loss_full_vocab": 4.41044507175684}, {"eval_seconds": 0.8126495199976489, "grad_norm": 0.701039731502533, "learning_rate": 7.780463290809891e-05, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43928.012396457125, "rolling_100_tok_per_sec": 43896.51676620016, "step": 3000.0, "tokens_seen": 73728000.0, "train_loss": 4.522211074829102, "val_loss_full_vocab": 4.353422395884991}, {"eval_seconds": 0.805289535997872, "grad_norm": 0.7208366394042969, "learning_rate": 5.8821275370040814e-05, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43924.85003917579, "rolling_100_tok_per_sec": 43923.74326496379, "step": 3250.0, "tokens_seen": 79872000.0, "train_loss": 4.49224853515625, "val_loss_full_vocab": 4.315954349935055}, {"eval_seconds": 0.802132442000584, "grad_norm": 0.6700417995452881, "learning_rate": 4.41960884254796e-05, "peak_allocated_mb": 70446.3408203125, "peak_reserved_mb": 75002.0, "pure_train_tok_per_sec": 43926.585405622645, "rolling_100_tok_per_sec": 43903.51138234645, "step": 3500.0, "tokens_seen": 86016000.0, "train_loss": 4.205723762512207, "val_loss_full_vocab": 4.282614029943943}, {"eval_seconds": 0.8064837969977816, "grad_norm": 0.690437376499176, "learning_rate": 3.452937180384152e-05, "peak_allocated_mb": 70456.1455078125, "peak_reserved_mb": 76574.0, "pure_train_tok_per_sec": 43928.973697700276, "rolling_100_tok_per_sec": 43954.687295010546, "step": 3750.0, "tokens_seen": 92160000.0, "train_loss": 4.331719398498535, "val_loss_full_vocab": 4.253162540495396}, {"eval_seconds": 0.8070168349986488, "grad_norm": 0.6833487749099731, "learning_rate": 3.0217901792117328e-05, "peak_allocated_mb": 70456.1455078125, "peak_reserved_mb": 76574.0, "pure_train_tok_per_sec": 43926.164268653934, "rolling_100_tok_per_sec": 43944.122069420766, "step": 4000.0, "tokens_seen": 98304000.0, "train_loss": 4.349788665771484, "val_loss_full_vocab": 4.236556828022003}, {"eval_seconds": 0.805322870000964, "grad_norm": 0.6842423677444458, "learning_rate": 3e-05, "peak_allocated_mb": 70456.1455078125, "peak_reserved_mb": 76574.0, "pure_train_tok_per_sec": 43927.68589762735, "rolling_100_tok_per_sec": 43974.29184469811, "step": 4070.0, "tokens_seen": 100024320.0, "train_loss": 4.42012882232666, "val_loss_full_vocab": 4.233846195042133}], "metrics_csv": "/scratch/deep_wave_delta_350m_100m_seed13/metrics.csv", "metrics_jsonl": "/scratch/deep_wave_delta_350m_100m_seed13/metrics.jsonl", "parameter_count": 351677889, "peak_allocated_mb": 70456.1455078125, "peak_reserved_mb": 76574.0, "pure_train_tok_per_sec": 43927.68589762735, "step_time_mean_ms": 560.0112470373722, "step_time_median_ms": 556.1375150009553, "train_tokens_seen": 100024320, "wall_tok_per_sec": 43575.308537330166}

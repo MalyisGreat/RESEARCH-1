@@ -1,0 +1,34 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+cluster_partial_untied cache_build [#---------------------------] 4,183,010/103,499,088 tokens tok/s=398,505
+cluster_partial_untied cache_build [##--------------------------] 8,324,796/103,499,088 tokens tok/s=455,040
+cluster_partial_untied cache_build [###-------------------------] 12,727,321/103,499,088 tokens tok/s=480,783
+cluster_partial_untied cache_build [####------------------------] 17,006,909/103,499,088 tokens tok/s=496,851
+cluster_partial_untied cache_build [#####-----------------------] 21,244,787/103,499,088 tokens tok/s=507,540
+cluster_partial_untied cache_build [######----------------------] 25,745,258/103,499,088 tokens tok/s=515,000
+cluster_partial_untied cache_build [########--------------------] 30,064,613/103,499,088 tokens tok/s=518,675
+cluster_partial_untied cache_build [#########-------------------] 34,230,447/103,499,088 tokens tok/s=520,671
+cluster_partial_untied cache_build [##########------------------] 38,752,536/103,499,088 tokens tok/s=516,719
+cluster_partial_untied cache_build [###########-----------------] 42,966,206/103,499,088 tokens tok/s=515,405
+cluster_partial_untied cache_build [############----------------] 47,403,728/103,499,088 tokens tok/s=510,502
+cluster_partial_untied cache_build [#############---------------] 51,613,147/103,499,088 tokens tok/s=509,558
+cluster_partial_untied cache_build [###############-------------] 56,134,706/103,499,088 tokens tok/s=507,694
+cluster_partial_untied cache_build [################------------] 60,383,790/103,499,088 tokens tok/s=507,364
+cluster_partial_untied cache_build [#################-----------] 64,668,176/103,499,088 tokens tok/s=506,361
+cluster_partial_untied cache_build [##################----------] 68,970,907/103,499,088 tokens tok/s=504,232
+cluster_partial_untied cache_build [###################---------] 73,197,004/103,499,088 tokens tok/s=503,768
+cluster_partial_untied cache_build [####################--------] 77,340,952/103,499,088 tokens tok/s=504,067
+cluster_partial_untied cache_build [######################------] 81,828,214/103,499,088 tokens tok/s=503,265
+cluster_partial_untied cache_build [#######################-----] 86,159,732/103,499,088 tokens tok/s=504,681
+cluster_partial_untied cache_build [########################----] 90,454,361/103,499,088 tokens tok/s=503,557
+cluster_partial_untied cache_build [#########################---] 94,945,974/103,499,088 tokens tok/s=503,247
+cluster_partial_untied cache_build [##########################--] 99,102,497/103,499,088 tokens tok/s=503,098
+cluster_partial_untied cache_build [############################] 103,499,088/103,499,088 tokens tok/s=502,649
+{
+  "cache_path": "/scratch/research1-cache/finewebedu_train102450000_val1049088_seq2048_gpt2.pt",
+  "train_blocks": 50000,
+  "val_blocks": 512,
+  "train_tokens": 102450000,
+  "val_tokens": 1049088,
+  "vocab_size": 50257,
+  "elapsed_seconds": 212.4251903960012
+}

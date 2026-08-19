@@ -1,0 +1,8 @@
+top_token_hist rows=3906/50000
+SAVED_CANDIDATE_IDS path=/scratch/research1-cache/candidate_ids_top32768.pt count=32768
+START run=qual_b4_v2 device=NVIDIA H100 80GB HBM3 params=351,677,889 seq=2048 batch=4 steps=3 amp=bf16 compile=False collapsed_conv=True architecture=deep_wave_delta loss_kernel=torch
+TRAIN step=1/3 tokens=8192 loss=10.6723 lr=1.5e-06 grad=1.371 pure_tok_s=nan roll100_tok_s=nan
+TRAIN step=2/3 tokens=16384 loss=10.6592 lr=3e-06 grad=1.572 pure_tok_s=35762 roll100_tok_s=35762
+TRAIN step=3/3 tokens=24576 loss=10.6339 lr=4.5e-06 grad=1.544 pure_tok_s=36930 roll100_tok_s=36930
+EVAL_FULL_VOCAB step=3/3 tokens=24576 train=10.6339 val_full=10.8201 eval_s=0.8
+RESULT {"cache_load_seconds": 0.28282681699965906, "candidate_size_mean": 32852.333333333336, "checkpoint_path": "/scratch/qual_b4_v2/checkpoint.pt", "final_train_loss": 10.633888244628906, "final_val_loss_full_vocab": 10.82012939453125, "history": [{"eval_seconds": 0.788365917000192, "grad_norm": 1.5440157651901245, "learning_rate": 4.499999999999999e-06, "peak_allocated_mb": 27399.01953125, "peak_reserved_mb": 29232.0, "pure_train_tok_per_sec": 36930.44858698112, "rolling_100_tok_per_sec": 36930.44858698112, "step": 3.0, "tokens_seen": 24576.0, "train_loss": 10.633888244628906, "val_loss_full_vocab": 10.82012939453125}], "metrics_csv": "/scratch/qual_b4_v2/metrics.csv", "metrics_jsonl": "/scratch/qual_b4_v2/metrics.jsonl", "parameter_count": 351677889, "peak_allocated_mb": 27399.01953125, "peak_reserved_mb": 29232.0, "pure_train_tok_per_sec": 36930.44858698112, "step_time_mean_ms": 19462.549128332586, "step_time_median_ms": 229.0725549992203, "train_tokens_seen": 24576, "wall_tok_per_sec": 414.9270428310394}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "/scratch/deep_wave_delta_350m_100m_seed13/checkpoint.pt",
+  "final_train_loss": 4.42012882232666,
+  "final_val_loss_full_vocab": 4.233846195042133,
+  "peak_allocated_mb": 70456.1455078125,
+  "peak_reserved_mb": 76574.0,
+  "pure_train_tok_per_sec": 43927.68589762735,
+  "result_path": "/scratch/deep_wave_delta_350m_100m_seed13/result.json",
+  "run_name": "deep_wave_delta_350m_100m_seed13",
+  "status": "completed",
+  "step": 4070,
+  "tokens_seen": 100024320,
+  "train_steps": 4070,
+  "wall_tok_per_sec": 43575.308537330166
+}
